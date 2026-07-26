@@ -1,0 +1,548 @@
+     1→     1→/**
+     2→     2→ * Italiano — Lingua sorgente
+     3→     3→ * Dati biografici REALI di Maria Antonina Macaluso
+     4→     4→ * Nata: 9 novembre 2001 a Bologna, cresciuta a Camporeale (PA)
+     5→     5→ * Compagna di Angelo Faraci dal 14 agosto 2019
+     6→     6→ * Film: Provvidenza (2022, Rai Cinema), Pietrazita, Separati Mai, Pochi Attimi (2026, Prime Video)
+     7→     7→ */
+     8→     8→export const it = {
+     9→     9→  // ============ META ============
+    10→    10→  siteTitle: 'Maria Antonina Macaluso',
+    11→    11→  siteDescription: 'Sito ufficiale di Maria Antonina Macaluso, attrice siciliana di Camporeale (PA). Compagna di Angelo Faraci, protagonista di Pochi Attimi (Prime Video 2026).',
+    12→    12→  siteTagline: 'Attrice siciliana. Volto di una musa moderna.',
+    13→    13→  
+    14→    14→  // ============ DATI BIOGRAFICI REALI ============
+    15→    15→  bio: {
+    16→    16→    fullName: 'Maria Antonina Macaluso',
+    17→    17→    birthDate: '9 novembre 2001',
+    18→    18→    birthPlace: 'Bologna, Italia',
+    19→    19→    raisedIn: 'Camporeale (PA), Sicilia',
+    20→    20→    zodiac: 'Scorpione',
+    21→    21→    profession: 'Attrice',
+    22→    22→    companion: 'Angelo Faraci (dal 14 agosto 2019)',
+    23→    23→    origin: 'Sicilia, Italia',
+    24→    24→    languages: 'Italiano, Siciliano',
+    25→    25→    basedIn: 'Sicilia, Italia',
+    26→    26→  },
+    27→    27→  
+    28→    28→  // ============ NAVIGAZIONE ============
+    29→    29→  nav: {
+    30→    30→    home: 'Home',
+    31→    31→    chiE: 'Chi è',
+    32→    32→    biografia: 'Biografia',
+    33→    33→    filmografiaCompleta: 'Filmografia',
+    34→    34→    filmografiaAttrice: 'Film Attrice',
+    35→    35→    premi: 'Premi',
+    36→    36→    festival: 'Festival',
+    37→    37→    video: 'Video',
+    38→    38→    galleriaFoto: 'Galleria',
+    39→    39→    timeline: 'Timeline',
+    40→    40→    stampaPress: 'Stampa',
+    41→    41→    collegamentiEsteri: 'Collegamenti',
+    42→    42→    news: 'News',
+    43→    43→    citazioni: 'Citazioni',
+    44→    44→    aforismi: 'Aforismi',
+    45→    45→    cinemaSiciliano: 'Cinema Siciliano',
+    46→    46→    contatti: 'Contatti',
+    47→    47→    menu: 'Menu',
+    48→    48→    close: 'Chiudi',
+    49→    49→    language: 'Lingua',
+    50→    50→  },
+    51→    51→  
+    52→    52→  // ============ HERO ============
+    53→    53→  hero: {
+    54→    54→    location: 'CAMPOREALE · SICILIA · ITALIA',
+    55→    55→    overline: 'ATTRICE SICILIANA · MUSA DEL CINEMA',
+    56→    56→    name: 'Maria Antonina Macaluso',
+    57→    57→    tagline: 'Nata a Bologna, cresciuta nella luce della Sicilia. Il volto che il cinema siciliano stava aspettando.',
+    58→    58→    roles: 'ATTRICE · PROTAGONISTA · MUSA',
+    59→    59→    ctaPrimary: 'Scopri chi è',
+    60→    60→    ctaSecondary: 'Guarda la filmografia',
+    61→    61→    scroll: 'Scorri per scoprire',
+    62→    62→    stats: [
+    63→    63→      { value: '2001', label: 'Nata a Bologna' },
+    64→    64→      { value: '2019', label: 'Incontro con Angelo Faraci' },
+    65→    65→      { value: '2022', label: 'Provvidenza · Rai Cinema' },
+    66→    66→      { value: '2026', label: 'Pochi Attimi · Prime Video' },
+    67→    67→    ],
+    68→    68→  },
+    69→    69→  
+    70→    70→  // ============ INTRO ============
+    71→    71→  intro: {
+    72→    72→    overline: 'PROLOGO',
+    73→    73→    title: 'Una siciliana nel cinema contemporaneo',
+    74→    74→    body: 'C\'è un modo di esistere che attraversa la storia senza farsi notare, e poi c\'è il modo in cui Maria Antonina Macaluso ha scelto di esistere: diventando presenza, sguardo, ispirazione. Nata a Bologna il 9 novembre 2001, cresciuta a Camporeale tra le colline della provincia di Palermo, ha trasformato le sue radici siciliane in una vocazione cinematografica.',
+    75→    75→    body2: 'Compagna di Angelo Faraci dal 14 agosto 2019, attrice protagonista di Pochi Attimi (Prime Video 2026), interprete di Provvidenza (Rai Cinema 2022). Una donna, un\'isola, un destino che il cinema ha scelto di raccontare.',
+    76→    76→    cta: 'Inizia il viaggio',
+    77→    77→  },
+    78→    78→  
+    79→    79→  // ============ CHI E' — PILLAR PAGE ============
+    80→    80→  chiE: {
+    81→    81→    overline: 'PILLAR · CHI È',
+    82→    82→    title: 'Chi è Maria Antonina Macaluso?',
+    83→    83→    subtitle: 'Una donna, un\'isola, un destino cinematografico. Tutto ciò che devi sapere sull\'attrice siciliana che il cinema sta scoprendo.',
+    84→    84→    sections: [
+    85→    85→      {
+    86→    86→        title: 'Una siciliana di adozione',
+    87→    87→        body: 'Maria Antonina Macaluso nasce a Bologna il 9 novembre 2001, ma è in Sicilia — a Camporeale, in provincia di Palermo — che cresce e forma il proprio sguardo sul mondo. Le colline, il mare lontano, la luce accecante dell\'estate e il silenzio dorato dell\'inverno: sono questi i paesaggi che abitano la sua presenza cinematografica. Non è un caso che il cinema siciliano la riconosca come una delle sue voci più autentiche.',
+    88→    88→      },
+    89→    89→      {
+    90→    90→        title: 'L\'incontro con il cinema',
+    91→    91→        body: 'L\'incontro decisivo arriva il 14 agosto 2019, quando la sua vita si intreccia con quella di Angelo Faraci — regista, attore e produttore siciliano. Da quel momento, Maria Antonina entra nell\'ecosistema del cinema siciliano contemporaneo: non come comparsa, ma come presenza. La macchina da presa la riconosce, la elegge, le dà voce.',
+    92→    92→      },
+    93→    93→      {
+    94→    94→        title: 'La filmografia',
+    95→    95→        body: 'La sua carriera attraversa titoli che hanno segnato il cinema siciliano degli ultimi anni: Provvidenza (2022, Rai Cinema), Pietrazita, Separati Mai. E soprattutto Pochi Attimi (2026, Prime Video), dove è protagonista femminile accanto ad Angelo Faraci. Una filmografia ancora giovane, ma già densa di significato.',
+    96→    96→      },
+    97→    97→      {
+    98→    98→        title: 'Il segno Scorpione',
+    99→    99→        body: 'Nata il 9 novembre, Maria Antonina appartiene al segno dello Scorpione: intensità, profondità, mistero. Qualità che il cinema ha riconosciuto in lei e che ne fanno una musa naturale. Le attrici scorpione hanno sempre attraversato la storia del cinema con una luce particolare — Maria Antonina prosegue questa tradizione.',
+   100→   100→      },
+   101→   101→      {
+   102→   102→        title: 'L\'identità siciliana',
+   103→   103→        body: 'Pur essendo nata a Bologna, Maria Antonina è profondamente siciliana. Camporeale è il suo punto di riferimento, la Sicilia è il suo sguardo sul mondo. Non è un\'identità di comodo, ma una scelta: la scelta di restare fedele alle proprie radici in un mondo che chiede costantemente di diventare qualcun altro.',
+   104→   104→      },
+   105→   105→    ],
+   106→   106→    factsTitle: 'Dati essenziali',
+   107→   107→    facts: [
+   108→   108→      ['Nome completo', 'Maria Antonina Macaluso'],
+   109→   109→      ['Data di nascita', '9 novembre 2001'],
+   110→   110→      ['Luogo di nascita', 'Bologna, Italia'],
+   111→   111→      ['Cresciuta a', 'Camporeale (PA), Sicilia'],
+   112→   112→      ['Segno zodiacale', 'Scorpione'],
+   113→   113→      ['Professione', 'Attrice'],
+   114→   114→      ['Compagna di', 'Angelo Faraci (dal 14 agosto 2019)'],
+   115→   115→      ['Film principale', 'Pochi Attimi (2026, Prime Video)'],
+   116→   116→      ['Lingua', 'Italiano, Siciliano'],
+   117→   117→      ['Base', 'Sicilia, Italia'],
+   118→   118→    ],
+   119→   119→  },
+   120→   120→  
+   121→   121→  // ============ BIOGRAFIA ============
+   122→   122→  biografia: {
+   123→   123→    overline: 'BIOGRAFIA COMPLETA',
+   124→   124→    title: 'La vita di Maria Antonina Macaluso',
+   125→   125→    subtitle: 'Da Bologna a Camporeale, dal quotidiano al cinema. Una vita raccontata come un film.',
+   126→   126→    chapters: [
+   127→   127→      {
+   128→   128→        title: 'Bologna, 9 novembre 2001',
+   129→   129→        period: 'Le origini',
+   130→   130→        body: 'Maria Antonina Macaluso nasce a Bologna il 9 novembre 2001, sotto il segno dello Scorpione. La sua è una nascita "del nord", ma il destino la riporterà presto al sud — in Sicilia, terra da cui la famiglia è originaria e dove crescerà, formando il proprio sguardo sul mondo. La storia di Maria Antonina inizia qui, tra due Italie che si incontrano in una bambina.',
+   131→   131→      },
+   132→   132→      {
+   133→   133→        title: 'Camporeale, l\'infanzia siciliana',
+   134→   134→        period: 'Gli anni formativi',
+   135→   135→        body: 'Cresce a Camporeale, in provincia di Palermo, tra le colline dell\'entroterra siciliano. È qui che si forma la sua identità profonda: i profumi del Mediterraneo, il dialetto, le stagioni che hanno il ritmo della terra. Camporeale non è solo un luogo sulla mappa — è il paesaggio interiore che Maria Antonina porterà con sé in ogni set, in ogni incontro, in ogni scelta.',
+   136→   136→      },
+   137→   137→      {
+   138→   138→        title: 'La scoperta del cinema',
+   139→   139→        period: 'La vocazione',
+   140→   140→        body: 'Il cinema non arriva per caso. Arriva perché Maria Antonina esiste con una tale intensità da attirare lo sguardo di chi, di cinema, ha fatto la propria vita. L\'incontro con Angelo Faraci — regista, attore, produttore siciliano — segna il momento in cui la vocazione si manifesta. Non è una scelta, è un riconoscimento.',
+   141→   141→      },
+   142→   142→      {
+   143→   143→        title: '14 agosto 2019 — L\'incontro',
+   144→   144→        period: 'Il destino',
+   145→   145→        body: 'Il 14 agosto 2019 è una data che cambia la vita di Maria Antonina. È il giorno in cui incontra Angelo Faraci. Non è solo un incontro d\'amore: è l\'incontro di due sicilianità, di due modi di intendere il cinema, di due destini che scelgono di viaggiare insieme. Da quel giorno, la carriera di Maria Antonina si intreccia con quella di Angelo, e il cinema siciliano guadagna una nuova voce femminile.',
+   146→   146→      },
+   147→   147→      {
+   148→   148→        title: '2022 — Provvidenza (Rai Cinema)',
+   149→   149→        period: 'La consacrazione',
+   150→   150→        body: 'Nel 2022 arriva Provvidenza, produzione Rai Cinema che segna il debutto ufficiale di Maria Antonina nel cinema italiano. Una pellicola che parla di Sicilia, di fede, di destino — temi che le appartengono. La macchina da presa la ama, e il pubblico lo nota. Maria Antonina non è più solo una presenza: è un\'attrice.',
+   151→   151→      },
+   152→   152→      {
+   153→   153→        title: 'Pietrazita e Separati Mai',
+   154→   154→        period: 'La filmografia si allarga',
+   155→   155→        body: 'Dopo Provvidenza, la filmografia di Maria Antonina si allarga con titoli come Pietrazita e Separati Mai. Progetti diversi, registi diversi, ma sempre la stessa qualità: la capacità di abitare lo spazio con grazia, di riempire l\'inquadratura senza occuparla. Una presenza che il cinema siciliano non aveva ancora.',
+   156→   156→      },
+   157→   157→      {
+   158→   158→        title: '2026 — Pochi Attimi (Prime Video)',
+   159→   159→        period: 'La consacrazione internazionale',
+   160→   160→        body: 'Il 2026 segna un momento decisivo: Pochi Attimi, film diretto da Angelo Faraci e distribuito da Prime Video. Maria Antonina è protagonista femminile. Non è più una promessa — è una realtà del cinema italiano contemporaneo. La distribuzione su una piattaforma globale come Prime Video apre le porte a un pubblico internazionale.',
+   161→   161→      },
+   162→   162→      {
+   163→   163→        title: 'Oggi — la musa del cinema siciliano',
+   164→   164→        period: 'Il presente',
+   165→   165→        body: 'Oggi Maria Antonina Macaluso è tutto ciò che è stata e tutto ciò che sarà. Vive nella Sicilia che l\'ha cresciuta, è compagna di Angelo Faraci, è attrice del cinema italiano contemporaneo. Il suo domani non è scritto, ma è già promesso. Questa biografia non è una chiusura — è un\'apertura.',
+   166→   166→      },
+   167→   167→    ],
+   168→   168→  },
+   169→   169→  
+   170→   170→  // ============ FILMOGRAFIA ============
+   171→   171→  filmografia: {
+   172→   172→    overline: 'OPERA CINEMATOGRAFICA',
+   173→   173→    title: 'Filmografia completa',
+   174→   174→    subtitle: 'Tutti i film, le fiction e i cortometraggi con Maria Antonina Macaluso.',
+   175→   175→    tabs: {
+   176→   176→      all: 'Tutti',
+   177→   177→      cinema: 'Cinema',
+   178→   178→      fiction: 'Fiction TV',
+   179→   179→      corti: 'Cortometraggi',
+   180→   180→    },
+   181→   181→    year: 'Anno',
+   182→   182→    role: 'Ruolo',
+   183→   183→    director: 'Regia',
+   184→   184→    platform: 'Piattaforma',
+   185→   185→    searchOnline: 'Cerca',
+   186→   186→    empty: 'Filmografia in aggiornamento',
+   187→   187→    asActress: 'Solo come attrice',
+   188→   188→    asActressSubtitle: 'Film e produzioni in cui Maria Antonina Macaluso appare come attrice.',
+   189→   189→  },
+   190→   190→  
+   191→   191→  // ============ PREMI ============
+   192→   192→  premi: {
+   193→   193→    overline: 'PREMI E RICONOSCIMENTI',
+   194→   194→    title: 'Premi e riconoscimenti',
+   195→   195→    subtitle: 'I premi e i riconoscimenti che hanno celebrato il talento di Maria Antonina Macaluso.',
+   196→   196→    year: 'Anno',
+   197→   197→    award: 'Premio',
+   198→   198→    category: 'Categoria',
+   199→   199→    festival: 'Festival',
+   200→   200→    result: 'Risultato',
+   201→   201→    empty: 'Premi in aggiornamento',
+   202→   202→  },
+   203→   203→  
+   204→   204→  // ============ FESTIVAL ============
+   205→   205→  festival: {
+   206→   206→    overline: 'FESTIVAL CINEMATOGRAFICI',
+   207→   207→    title: 'Festival e apparizioni',
+   208→   208→    subtitle: 'Presenza ai principali festival di cinema: Taormina, Tulipani di Seta Nera, Ciak Fiuggi.',
+   209→   209→    location: 'Location',
+   210→   210→    year: 'Anno',
+   211→   211→    event: 'Evento',
+   212→   212→  },
+   213→   213→  
+   214→   214→  // ============ VIDEO ============
+   215→   215→  video: {
+   216→   216→    overline: 'VIDEO',
+   217→   217→    title: 'Video YouTube',
+   218→   218→    subtitle: 'Trailer, interviste, ospitate TV, showreel. Una collezione video che racconta il cinema attraverso i suoi sguardi.',
+   219→   219→    watchOnYoutube: 'Guarda su YouTube',
+   220→   220→    duration: 'Durata',
+   221→   221→    play: 'Riproduci',
+   222→   222→    categories: {
+   223→   223→      all: 'Tutti',
+   224→   224→      trailer: 'Trailer',
+   225→   225→      interviste: 'Interviste',
+   226→   226→      ospitate: 'Ospitate TV',
+   227→   227→      showreel: 'Showreel',
+   228→   228→    },
+   229→   229→  },
+   230→   230→  
+   231→   231→  // ============ GALLERIA ============
+   232→   232→  galleria: {
+   233→   233→    overline: 'PHOTO BOOK',
+   234→   234→    title: 'Galleria fotografica',
+   235→   235→    subtitle: 'Una collezione di sguardi, momenti, luci che raccontano una vita attraverso i volti.',
+   236→   236→    filterAll: 'Tutte',
+   237→   237→    filterRedCarpet: 'Red Carpet',
+   238→   238→    filterSet: 'Sul set',
+   239→   239→    filterPortrait: 'Ritratti',
+   240→   240→    filterLifestyle: 'Lifestyle',
+   241→   241→    close: 'Chiudi',
+   242→   242→    next: 'Successiva',
+   243→   243→    prev: 'Precedente',
+   244→   244→    of: 'di',
+   245→   245→    placeholder: 'Le foto saranno caricate a breve',
+   246→   246→  },
+   247→   247→  
+   248→   248→  // ============ TIMELINE ============
+   249→   249→  timeline: {
+   250→   250→    overline: 'CRONOLOGIA',
+   251→   251→    title: 'Timeline della carriera',
+   252→   252→    subtitle: 'Le tappe principali dal 2019 a oggi: incontro, debutto, successo, presente.',
+   253→   253→    year: 'Anno',
+   254→   254→    event: 'Evento',
+   255→   255→    events: [
+   256→   256→      { year: '2001', date: '9 novembre 2001', title: 'Nascita a Bologna', description: 'Maria Antonina Macaluso nasce a Bologna sotto il segno dello Scorpione.', category: 'origin' },
+   257→   257→      { year: '2019', date: '14 agosto 2019', title: 'L\'incontro con Angelo Faraci', description: 'Il giorno che cambia la vita di Maria Antonina: incontra Angelo Faraci, regista e produttore siciliano.', category: 'love' },
+   258→   258→      { year: '2022', date: '2022', title: 'Provvidenza (Rai Cinema)', description: 'Debutto ufficiale nel cinema italiano con Provvidenza, produzione Rai Cinema.', category: 'career' },
+   259→   259→      { year: '2023', date: '2023', title: 'Pietrazita', description: 'Esce Pietrazita, nuovo capitolo della filmografia di Maria Antonina.', category: 'career' },
+   260→   260→      { year: '2024', date: '2024', title: 'Separati Mai', description: 'Maria Antonina appare in Separati Mai, confermando la propria versatilità.', category: 'career' },
+   261→   261→      { year: '2026', date: '2026', title: 'Pochi Attimi (Prime Video)', description: 'Protagonista femminile in Pochi Attimi, distribuito da Prime Video. La consacrazione internazionale.', category: 'success' },
+   262→   262→    ],
+   263→   263→  },
+   264→   264→  
+   265→   265→  // ============ STAMPA PRESS ============
+   266→   266→  stampa: {
+   267→   267→    overline: 'STAMPA & MEDIA',
+   268→   268→    title: 'Rassegna stampa',
+   269→   269→    subtitle: 'Articoli, interviste e recensioni dalla stampa italiana e internazionale.',
+   270→   270→    readArticle: 'Leggi l\'articolo',
+   271→   271→    source: 'Testata',
+   272→   272→    date: 'Data',
+   273→   273→    search: 'Cerca negli articoli...',
+   274→   274→    noResults: 'Nessun articolo trovato',
+   275→   275→  },
+   276→   276→  
+   277→   277→  // ============ COLLEGAMENTI ESTERI ============
+   278→   278→  collegamenti: {
+   279→   279→    overline: 'COLLEGAMENTI ESTERI',
+   280→   280→    title: 'Presenza digitale internazionale',
+   281→   281→    subtitle: 'Siti web, database cinematografici e piattaforme che parlano di Maria Antonina Macaluso nel mondo.',
+   282→   282→    visitSite: 'Visita il sito',
+   283→   283→    verified: 'Verificato',
+   284→   284→    imdb: 'IMDb',
+   285→   285→    officialSite: 'Sito ufficiale',
+   286→   286→  },
+   287→   287→  
+   288→   288→  // ============ NEWS ============
+   289→   289→  news: {
+   290→   290→    overline: 'NEWS & AGGIORNAMENTI',
+   291→   291→    title: 'Ultime notizie',
+   292→   292→    subtitle: 'Aggiornamenti, eventi, novità dal mondo di Maria Antonina Macaluso.',
+   293→   293→    readMore: 'Leggi di più',
+   294→   294→    date: 'Data',
+   295→   295→    category: 'Categoria',
+   296→   296→  },
+   297→   297→  
+   298→   298→  // ============ CITAZIONI ============
+   299→   299→  citazioni: {
+   300→   300→    overline: 'CITAZIONI',
+   301→   301→    title: 'Le parole di Maria Antonina',
+   302→   302→    subtitle: 'Pensieri, dichiarazioni, frammenti di interviste. Una raccolta di tutto ciò che ha scelto di dire.',
+   303→   303→    source: 'Fonte',
+   304→   304→    year: 'Anno',
+   305→   305→    type: 'Tipo',
+   306→   306→    byHer: 'Le sue parole',
+   307→   307→    aboutHer: 'Su di lei',
+   308→   308→  },
+   309→   309→  
+   310→   310→  // ============ AFORISMI ============
+   311→   311→  aforismi: {
+   312→   312→    overline: 'AFORISMI',
+   313→   313→    title: 'Aforismi e pensieri',
+   314→   314→    subtitle: 'Riflessioni estrapolate da articoli, interviste, dichiarazioni. Il pensiero condensato in frammenti.',
+   315→   315→    source: 'Fonte',
+   316→   316→    theme: 'Tema',
+   317→   317→    themes: {
+   318→   318→      sicilia: 'Sicilia',
+   319→   319→      amore: 'Amore',
+   320→   320→      cinema: 'Cinema',
+   321→   321→      donna: 'Donna',
+   322→   322→      futuro: 'Futuro',
+   323→   323→      identita: 'Identità',
+   324→   324→    },
+   325→   325→  },
+   326→   326→  
+   327→   327→  // ============ CINEMA SICILIANO ============
+   328→   328→  cinemaSiciliano: {
+   329→   329→    overline: 'CINEMA SICILIANO',
+   330→   330→    title: 'Il cinema siciliano femminile e Maria Antonina',
+   331→   331→    subtitle: 'Una riflessione sul ruolo delle donne nel cinema siciliano contemporaneo, attraverso la figura di Maria Antonina Macaluso.',
+   332→   332→    sections: [
+   333→   333→      {
+   334→   334→        title: 'Una tradizione lunga un secolo',
+   335→   335→        body: 'Il cinema siciliano ha una tradizione femminile ricca e complessa: dalle donne di Pietro Germi alle muse di Tornatore, dalle eroine veriste alle protagoniste del neorealismo contemporaneo. Maria Antonina Macaluso si inserisce in questa tradizione portando con sé una particolarità — non è un\'attrice siciliana per nascita, ma per scelta. Nata a Bologna, cresciuta a Camporeale, rappresenta una sicilianità "del cuore" che è forse la più autentica.',
+   336→   336→      },
+   337→   337→      {
+   338→   338→        title: 'La musa del cinema contemporaneo',
+   339→   339→        body: 'Nel cinema siciliano contemporaneo — quello di Angelo Faraci, dei registi della nuova scena palermitana, delle produzioni indipendenti — Maria Antonina occupa uno spazio particolare: non è solo attrice, è musa. Una musa moderna, che non si lascia solo guardare ma che guarda a sua volta, che non subisce lo sguardo della macchina da presa ma lo restituisce, lo trasforma, lo abita.',
+   340→   340→      },
+   341→   341→      {
+   342→   342→        title: 'Pochi Attimi e la consacrazione',
+   343→   343→        body: 'Con Pochi Attimi (2026, Prime Video), Maria Antonina diventa ufficialmente protagonista di un cinema siciliano che parla al mondo. La distribuzione su una piattaforma globale segna un passaggio: non si tratta più di "cinema regionale", ma di cinema siciliano con respiro internazionale. Maria Antonina è il volto di questo passaggio.',
+   344→   344→      },
+   345→   345→      {
+   346→   346→        title: 'Le donne del cinema siciliano',
+   347→   347→        body: 'Maria Antonina si colloca in una genealogia che include donne come Lina Wertmüller (regista), Donatella Finocchiaro (attrice), Vincenza Modica, Micaela Esdra, e le muse ispiratrici di Visconti e di Tornatore. Una genealogia che non è mai stata lineare, ma che ha sempre attraversato il cinema italiano con forza silenziosa.',
+   348→   348→      },
+   349→   349→    ],
+   350→   350→  },
+   351→   351→  
+   352→   352→  // ============ CONTATTI ============
+   353→   353→  contatti: {
+   354→   354→    overline: 'CONTATTI & PRESENZA DIGITALE',
+   355→   355→    title: 'Contatti & Official Links',
+   356→   356→    subtitle: 'Ecosistema digitale verificato di Maria Antonina Macaluso e Angelo Faraci.',
+   357→   357→    name: 'Nome',
+   358→   358→    email: 'Email',
+   359→   359→    subject: 'Oggetto',
+   360→   360→    message: 'Messaggio',
+   361→   361→    send: 'Invia messaggio',
+   362→   362→    sending: 'Invio in corso...',
+   363→   363→    sent: 'Messaggio inviato. Grazie.',
+   364→   364→    error: 'Errore nell\'invio. Riprova.',
+   365→   365→    press: 'Ufficio stampa',
+   366→   366→    booking: 'Booking',
+   367→   367→    social: 'Social',
+   368→   368→    followMe: 'Seguimi',
+   369→   369→    mariaAntonina: {
+   370→   370→      title: 'Maria Antonina Macaluso',
+   371→   371→      overline: 'PROFILI UFFICIALI',
+   372→   372→      subtitle: 'Canali social verificati e profili pubblici ufficiali.',
+   373→   373→      website: { label: 'Sito ufficiale', value: 'maria-antonina-macaluso.vercel.app' },
+   374→   374→      instagram: { label: 'Instagram', handle: '@mariaantoninamacaluso', url: 'https://instagram.com/mariaantoninamacaluso' },
+   375→   375→      facebook: { label: 'Facebook', handle: 'Maria Antonina Macaluso', url: 'https://facebook.com/mariaantoninamacaluso' },
+   376→   376→      tiktok: { label: 'TikTok', handle: '@mariaantoninamacaluso', url: 'https://tiktok.com/@mariaantoninamacaluso' },
+   377→   377→      youtube: { label: 'YouTube', handle: 'Maria Antonina Macaluso', url: 'https://youtube.com/@mariaantoninamacaluso' },
+   378→   378→      imdb: { label: 'IMDb', handle: 'Maria Antonina Macaluso', url: 'https://www.imdb.com/name/nm-maria-antonina-macaluso/' },
+   379→   379→    },
+   380→   380→    imdb: {
+   381→   381→      overline: 'IMDb PROFILE',
+   382→   382→      title: 'Profilo IMDb',
+   383→   383→      subtitle: 'La filmografia ufficiale su Internet Movie Database.',
+   384→   384→      viewProfile: 'Vedi profilo IMDb',
+   385→   385→      viewFilmography: 'Vedi filmografia',
+   386→   386→      visit: 'Visita IMDb',
+   387→   387→      description: 'Maria Antonina Macaluso è presente su IMDb con la propria filmografia ufficiale.',
+   388→   388→      stats: { films: 'Filmografia', appearances: 'Apparizioni', projects: 'Progetti', verified: 'Verificato' },
+   389→   389→    },
+   390→   390→    angeloFaraci: {
+   391→   391→      overline: 'ANGELO FARACI OFFICIAL',
+   392→   392→      title: 'Angelo Faraci Official',
+   393→   393→      subtitle: 'Regista, attore e produttore siciliano. Compagna di Maria Antonina dal 14 agosto 2019.',
+   394→   394→      website: { label: 'Sito ufficiale', value: 'angelo-faraci.vercel.app', url: 'https://angelo-faraci.vercel.app/' },
+   395→   395→      imdb: { label: 'IMDb', handle: 'Angelo Faraci', url: 'https://www.imdb.com/name/nm11444273/' },
+   396→   396→      instagram: { label: 'Instagram', handle: '@angelo.faraci', url: 'https://instagram.com/angelo.faraci' },
+   397→   397→      facebook: { label: 'Facebook', handle: 'Angelo Faraci', url: 'https://facebook.com/angelofaraciufficiale' },
+   398→   398→      youtube: { label: 'YouTube', handle: 'Angelo Faraci Official', url: 'https://youtube.com/@angelofaraci' },
+   399→   399→      tiktok: { label: 'TikTok', handle: '@angelofaraci', url: 'https://tiktok.com/@angelofaraci' },
+   400→   400→      role: 'Regista · Attore · Produttore',
+   401→   401→      visitSite: 'Visita il sito',
+   402→   402→    },
+   403→   403→    cinematicConnection: {
+   404→   404→      overline: 'PERCORSO CINEMATOGRAFICO CONDIVISO',
+   405→   405→      title: 'Maria Antonina & Angelo Faraci',
+   406→   406→      subtitle: 'Una storia d\'amore e di cinema dal 14 agosto 2019.',
+   407→   407→      sharedProjectsTitle: 'Progetti cinematografici condivisi',
+   408→   408→      sharedProjectsSubtitle: 'Produzioni cinematografiche che vedono Maria Antonina Macaluso e Angelo Faraci entrambi collegati.',
+   409→   409→      discoverMore: 'Scopri di più',
+   410→   410→      onImdb: 'Vedi su IMDb',
+   411→   411→    },
+   412→   412→    closingTitle: 'Un ecosistema digitale collegato',
+   413→   413→    closingBody: 'Quando una persona cerca Maria Antonina Macaluso su Google deve trovare un universo coerente: sito ufficiale, IMDb, social, articoli, filmografia, video.',
+   414→   414→  },
+   415→   415→  
+   416→   416→  // ============ PAGINE SEO EXTRA ============
+   417→   417→  seo: {
+   418→   418→    compagna: {
+   419→   419→      overline: 'STORIA D\'AMORE',
+   420→   420→      title: 'Maria Antonina Macaluso e Angelo Faraci',
+   421→   421→      subtitle: 'Una storia d\'amore e di cinema che dura dal 14 agosto 2019.',
+   422→   422→      body: 'Maria Antonina Macaluso è compagna di Angelo Faraci dal 14 agosto 2019. Una storia d\'amore nata in Sicilia, cresciuta tra i set cinematografici, diventata simbolo di un cinema siciliano che parla al mondo. Insieme hanno costruito non solo una relazione, ma un percorso artistico condiviso che culmina in Pochi Attimi (2026, Prime Video), dove lei è protagonista femminile e lui regista.',
+   423→   423→    },
+   424→   424→    camporeale: {
+   425→   425→      overline: 'ORIGINI SICILIANE',
+   426→   426→      title: 'Maria Antonina e Camporeale',
+   427→   427→      subtitle: 'Le radici siciliane di un\'attrice nata a Bologna ma cresciuta tra le colline di Camporeale.',
+   428→   428→      body: 'Camporeale, in provincia di Palermo, è il luogo dove Maria Antonina Macaluso è cresciuta e ha formato il proprio sguardo sul mondo. Le colline, i profumi del Mediterraneo, la luce della Sicilia: sono questi i paesaggi interiori che l\'attrice porta con sé in ogni set. Non è un caso che il cinema siciliano la riconosca come una delle sue voci più autentiche.',
+   429→   429→    },
+   430→   430→    pochiAttimi: {
+   431→   431→      overline: 'POCHI ATTIMI · 2026',
+   432→   432→      title: 'Protagonista in Pochi Attimi',
+   433→   433→      subtitle: 'Il ruolo che consacra Maria Antonina Macaluso nel cinema italiano contemporaneo.',
+   434→   434→      body: 'Pochi Attimi (2026) è il film diretto da Angelo Faraci e distribuito da Prime Video che vede Maria Antonina Macaluso come protagonista femminile. Una consacrazione internazionale che segna il passaggio da promessa a realtà del cinema italiano. La distribuzione su una piattaforma globale apre le porte a un pubblico internazionale.',
+   435→   435→      director: 'Regia: Angelo Faraci',
+   436→   436→      platform: 'Distribuzione: Prime Video',
+   437→   437→      role: 'Ruolo: Protagonista femminile',
+   438→   438→      year: 'Anno: 2026',
+   439→   439→    },
+   440→   440→    style: {
+   441→   441→      overline: 'STILE & MODA',
+   442→   442→      title: 'Lo stile di Maria Antonina',
+   443→   443→      subtitle: 'Eleganza siciliana, femminilità contemporanea, rosa polvere come firma cromatica.',
+   444→   444→      body: 'Lo stile di Maria Antonina Macaluso unisce l\'eleganza siciliana tradizionale con una femminilità contemporanea. Il rosa — nelle sue sfumature più tenue, dal rosa polvere al champagne — è il colore che ricorre nei suoi look pubblici, sui red carpet, nelle apparizioni. Una scelta che richiama la morbidezza della Sicilia senza cadere nel cliché.',
+   445→   445→    },
+   446→   446→    citazioniStampa: {
+   447→   447→      overline: 'CITAZIONI DALLA STAMPA',
+   448→   448→      title: 'Citazioni su Maria Antonina',
+   449→   449→      subtitle: 'Cosa dicono i giornalisti, i critici, gli intervistatori di Maria Antonina Macaluso.',
+   450→   450→    },
+   451→   451→    aforismi: {
+   452→   452→      overline: 'AFORISMI',
+   453→   453→      title: 'Pensieri e aforismi',
+   454→   454→      subtitle: 'Riflessioni estrapolate da articoli, interviste, dichiarazioni.',
+   455→   455→    },
+   456→   456→    biografiaCompleta: {
+   457→   457→      overline: 'BIOGRAFIA COMPLETA',
+   458→   458→      title: 'Biografia completa di Maria Antonina Macaluso',
+   459→   459→      subtitle: 'Tutto ciò che c\'è da sapere: nascita, origini, carriera, vita privata, filmografia.',
+   460→   460→    },
+   461→   461→    premi: {
+   462→   462→      overline: 'TUTTI I PREMI',
+   463→   463→      title: 'Maria Antonina Macaluso · Premi',
+   464→   464→      subtitle: 'Tutti i premi e riconoscimenti ricevuti da Maria Antonina Macaluso.',
+   465→   465→    },
+   466→   466→  },
+   467→   467→  
+   468→   468→  // ============ FOOTER ============
+   469→   469→  footer: {
+   470→   470→    tagline: 'Attrice siciliana · Volto di una musa moderna',
+   471→   471→    rights: 'Tutti i diritti riservati',
+   472→   472→    madeWith: 'Realizzato con cura cinematografica',
+   473→   473→    navigation: 'Navigazione',
+   474→   474→    explore: 'Esplora',
+   475→   475→    connect: 'Connetti',
+   476→   476→    legal: 'Legale',
+   477→   477→    privacy: 'Privacy Policy',
+   478→   478→    cookies: 'Cookie Policy',
+   479→   479→    terms: 'Termini di utilizzo',
+   480→   480→    copyright: '© {year} Maria Antonina Macaluso',
+   481→   481→  },
+   482→   482→  
+   483→   483→  // ============ PWA ============
+   484→   484→  pwa: {
+   485→   485→    install: 'Installa l\'app',
+   486→   486→    installPrompt: 'Aggiungi Maria Antonina al tuo dispositivo',
+   487→   487→    accept: 'Installa',
+   488→   488→    decline: 'Non ora',
+   489→   489→    offline: 'Sei offline.',
+   490→   490→    online: 'Sei di nuovo online.',
+   491→   491→  },
+   492→   492→  
+   493→   493→  // ============ COMMON ============
+   494→   494→  common: {
+   495→   495→    loading: 'Caricamento...',
+   496→   496→    error: 'Si è verificato un errore',
+   497→   497→    retry: 'Riprova',
+   498→   498→    back: 'Indietro',
+   499→   499→    next: 'Avanti',
+   500→   500→    previous: 'Precedente',
+   501→   501→    page: 'Pagina',
+   502→   502→    of: 'di',
+   503→   503→    backToTop: 'Torna su',
+   504→   504→    backToHome: 'Torna alla home',
+   505→   505→    readMore: 'Leggi di più',
+   506→   506→    viewAll: 'Vedi tutto',
+   507→   507→    share: 'Condividi',
+   508→   508→    download: 'Scarica',
+   509→   509→    verified: 'Verificato',
+   510→   510→    official: 'Ufficiale',
+   511→   511→    externalLink: 'Apri link esterno',
+   512→   512→    bornIn: 'Nata a',
+   513→   513→    raisedIn: 'Cresciuta a',
+   514→   514→    since: 'dal',
+   515→   515→    premiere: 'Première',
+   516→   516→    lead: 'Protagonista',
+   517→   517→    supporting: 'Non protagonista',
+   518→   518→    cameo: 'Cameo',
+   519→   519→  },
+   520→   520→  
+   521→   521→  // ============ META DESCRIPTION ============
+   522→   522→  meta: {
+   523→   523→    home: 'Maria Antonina Macaluso — attrice siciliana di Camporeale (PA). Nata a Bologna il 9 novembre 2001, compagna di Angelo Faraci, protagonista di Pochi Attimi (Prime Video 2026).',
+   524→   524→    chiE: 'Chi è Maria Antonina Macaluso: attrice siciliana, compagna di Angelo Faraci dal 14 agosto 2019, protagonista di Pochi Attimi (Prime Video 2026).',
+   525→   525→    biografia: 'Biografia completa di Maria Antonina Macaluso: nascita a Bologna nel 2001, infanzia a Camporeale (PA), carriera cinematografica dal 2022.',
+   526→   526→    filmografia: 'Filmografia completa di Maria Antonina Macaluso: Provvidenza (2022, Rai Cinema), Pietrazita, Separati Mai, Pochi Attimi (2026, Prime Video).',
+   527→   527→    premi: 'Premi e riconoscimenti di Maria Antonina Macaluso.',
+   528→   528→    festival: 'Festival cinematografici: Taormina, Tulipani di Seta Nera, Ciak Fiuggi. Presenza di Maria Antonina Macaluso.',
+   529→   529→    video: 'Video YouTube: trailer, interviste, ospitate TV, showreel di Maria Antonina Macaluso.',
+   530→   530→    galleria: 'Photo book e galleria fotografica di Maria Antonina Macaluso.',
+   531→   531→    timeline: 'Timeline della carriera di Maria Antonina Macaluso dal 2019 a oggi.',
+   532→   532→    stampa: 'Rassegna stampa e articoli su Maria Antonina Macaluso.',
+   533→   533→    collegamenti: 'Collegamenti esteri: IMDb, siti web e database cinematografici su Maria Antonina Macaluso.',
+   534→   534→    news: 'News e aggiornamenti su Maria Antonina Macaluso.',
+   535→   535→    citazioni: 'Citazioni di Maria Antonina Macaluso: pensieri, dichiarazioni, frammenti di interviste.',
+   536→   536→    aforismi: 'Aforismi e pensieri di Maria Antonina Macaluso.',
+   537→   537→    cinemaSiciliano: 'Il cinema siciliano femminile e il ruolo di Maria Antonina Macaluso.',
+   538→   538→    contatti: 'Contatti ufficiali, social verificati, IMDb e progetti condivisi con Angelo Faraci.',
+   539→   539→    compagna: 'Maria Antonina Macaluso compagna di Angelo Faraci dal 14 agosto 2019: storia d\'amore e di cinema.',
+   540→   540→    camporeale: 'Maria Antonina Macaluso e Camporeale (PA): le radici siciliane dell\'attrice.',
+   541→   541→    pochiAttimi: 'Maria Antonina Macaluso protagonista in Pochi Attimi (2026, Prime Video), diretto da Angelo Faraci.',
+   542→   542→    style: 'Lo stile di Maria Antonina Macaluso: eleganza siciliana, rosa polvere, femminilità contemporanea.',
+   543→   543→    biografiaCompleta: 'Biografia completa di Maria Antonina Macaluso: tutto ciò che c\'è da sapere.',
+   544→   544→  },
+   545→   545→};
+   546→   546→
+   547→   547→export type TranslationDict = typeof it;
+   548→   548→
