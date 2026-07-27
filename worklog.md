@@ -66,3 +66,19 @@ Stage Summary:
 - 17 pagine create (15 principali + 2 dinamiche)
 - 81 routes totali prerenderizzate (Static + SSG)
 - Build status: SUCCESS ✓ (Compiled in 9.8s, 0 errori, 0 warning)
+
+---
+Task ID: REBUILD-HERO
+Agent: Full-stack developer
+Task: Ricostruzione completa progetto con nuova foto hero
+
+Work Log:
+- Ricostruito tutti i file del progetto
+- Hero usa nuova foto hero-maria-antonina.jpg
+- Create 14 pagine + 2 dinamiche + sitemap + robots + manifest + sw
+- Verificato TypeScript e build
+
+Stage Summary:
+- Pagine create: 14 statiche + 58 foto dinamiche + 5 tag dinamici = 77 route (+ sitemap.xml + robots.txt = 79)
+- Build status: SUCCESS — 81 pagine generate (incluse _not-found), 0 errori TypeScript, build completata in 9.6s
+- Hero image: /images/hero-maria-antonina.jpg (NUOVA, 797x1280 verticale, object-top)
