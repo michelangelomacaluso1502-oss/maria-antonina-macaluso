@@ -116,3 +116,25 @@ Work Log:
 Stage Summary:
 - File modificati: src/app/biografia/page.tsx (foto radici), src/components/sections/HomePageSections.tsx (rewrite completo long-form)
 - Build status: SUCCESS — 88 pagine generate, 0 errori TypeScript, build completata in ~18s (Compiled successfully in 15.9s)
+
+---
+Task ID: REBUILD-MUSA
+Agent: Full-stack developer
+Task: Ricostruzione completa con foto musa nel capitolo biografia
+
+Work Log:
+- Ricostruito tutto il progetto da zero (config, design system v5, i18n, componenti, pagine)
+- Foto radici.jpg nel capitolo origini (chapter.id === 'origini')
+- Foto musa.jpg nel capitolo evoluzione-stile (chapter.id === 'evoluzione-stile') — la musa ispiratrice
+- BackToTop pulsante fisso bottom-right, appare dopo 600px scroll
+- Homepage long-form con 10 sezioni scorrevoli (intro, photobook, biografia, filmografia, timeline, citazioni, premi, articoli, faq, pillars + quote finale)
+- ErrorBoundary + skipHydration per prevenire client-side exception
+- 14 pagine statiche + 7 film + 58 foto + 5 tag dinamiche = 88 route
+- Schema.org Person (birthDate 2001-11-09, relatedTo Angelo Faraci) + WebSite JSON-LD
+- Sitemap 85 URL, robots multi-crawler, manifest PWA, sw.js v6, icon.svg gradient gold
+- BackToTop, ScrollProgress, FilmGrain, PWARegister nel root layout
+- ContactForm estratto come client component per evitare errore onSubmit in server component
+
+Stage Summary:
+- Build status: SUCCESS — 89 pagine generate (14 statiche + 7 film + 58 foto + 5 tag + _not-found + sitemap/robots), 0 errori TypeScript, build completata in ~12s (Compiled successfully in 9.9s)
+- Foto musa.jpg integrata nel capitolo biografia "L'evoluzione dello stile e la musa ispiratrice"
