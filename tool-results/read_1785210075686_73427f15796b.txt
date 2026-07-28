@@ -1,0 +1,740 @@
+     1→// Italian translation — VERIFIED DATA from Angelo Faraci's official site
+     2→import type { Translation } from "./types";
+     3→
+     4→export const it: Translation = {
+     5→  bio: {
+     6→    fullName: "Maria Antonina Macaluso",
+     7→    birthDate: "9 novembre 2001",
+     8→    birthPlace: "Bologna",
+     9→    raisedIn: "Camporeale (PA)",
+    10→    zodiac: "Scorpione",
+    11→    profession: "Attrice",
+    12→    companion: "Angelo Faraci (dal 14 agosto 2019)",
+    13→    residence: "Sicilia, Italia",
+    14→    agency: "Ancora Cinematografica",
+    15→    socialFacebook: "facebook.com/mary.macaluso.16",
+    16→    socialInstagram: "@mary.macaluso.16",
+    17→  },
+    18→  nav: {
+    19→    home: "Home",
+    20→    biografia: "Biografia",
+    21→    filmografia: "Filmografia",
+    22→    collaborazioni: "Collaborazioni",
+    23→    timeline: "Timeline",
+    24→    citazioni: "Citazioni",
+    25→    premi: "Premi",
+    26→    festival: "Festival",
+    27→    articoli: "Articoli",
+    28→    interviste: "Interviste",
+    29→    multimedia: "Multimedia",
+    30→    photobook: "Photobook",
+    31→    faq: "FAQ",
+    32→    contatti: "Contatti",
+    33→    collegamentiEsteri: "Collegamenti Esterni",
+    34→  },
+    35→  hero: {
+    36→    location: "CAMPOREALE · SICILIA · ITALIA",
+    37→    overline: "PROFILO UFFICIALE",
+    38→    name: "Maria Antonina Macaluso",
+    39→    tagline:
+    40→      "Attrice siciliana, musa ispiratrice e protagonista dei progetti cinematografici diretti da Angelo Faraci.",
+    41→    roles: "ATTRICE · PROTAGONISTA · MUSA",
+    42→    ctaPrimary: "Scopri la biografia",
+    43→    ctaSecondary: "Vedi la filmografia",
+    44→    stats: [
+    45→      { value: "2001", label: "Anno di nascita" },
+    46→      { value: "2019", label: "Inizio del percorso artistico" },
+    47→      { value: "7", label: "Progetti cinematografici" },
+    48→      { value: "2026", label: "Prossima uscita" },
+    49→    ],
+    50→    scroll: "Scorri per esplorare",
+    51→  },
+    52→  intro: {
+    53→    overline: "PROLOGO",
+    54→    title: "Una voce della Sicilia che racconta il cinema",
+    55→    body: "Maria Antonina Macaluso nasce a Bologna il 9 novembre 2001 e cresce tra le colline di Camporeale, in provincia di Palermo. Attrice e musa ispiratrice, è la protagonista femminile ricorrente dei progetti diretti da Angelo Faraci, con cui condivide dal 14 agosto 2019 un legame artistico e di vita.",
+    56→    body2: "Dal cortometraggio Regenerate nel 2020 fino al film Pochi Attimi in uscita nel 2026, il suo percorso attraversa sette progetti che intrecciano cinema siciliano, festival internazionali e racconto del territorio.",
+    57→    cta: "Esplora il profilo completo",
+    58→    sourceLabel: "Dati verificati dal sito ufficiale",
+    59→  },
+    60→  biografia: {
+    61→    title: "Biografia",
+    62→    overline: "IL PERCORSO",
+    63→    intro:
+    64→      "Dalle radici camporealesi al palcoscenico cinematografico: una biografia in nove capitoli che racconta la nascita di un'attrice e di una musa.",
+    65→    chapters: [
+    66→      {
+    67→        id: "origini",
+    68→        number: "01",
+    69→        title: "Le radici camporealesi",
+    70→        body: "Maria Antonina Macaluso nasce a Bologna il 9 novembre 2001, ma cresce a Camporeale, comune di poco più di tremila anime arroccato tra le colline dell'entroterra palermitano. È qui, tra le vigne e i uliveti della valle del Belice, che si formano la sua sensibilità e la sua voce. Il segno zodiacale Scorpione, secondo chi la conosce, ne marca il carattere: intensa, riservata, profondamente legata alla terra d'origine.",
+    71→        year: "2001",
+    72→      },
+    73→      {
+    74→        id: "incontro",
+    75→        number: "02",
+    76→        title: "L'incontro con Angelo Faraci",
+    77→        body: "Il 14 agosto 2019 segna una data di svolta. In quel giorno Maria Antonina incontra Angelo Faraci, regista, sceneggiatore e produttore originario di Messina. Non è soltanto l'inizio di una relazione sentimentale: è l'origine di un sodalizio artistico che durerà per anni e darà vita a una filmografia condivisa. Angelo ne diventa compagno di vita, regista di riferimento e mentore creativo.",
+    78→        year: "2019",
+    79→      },
+    80→      {
+    81→        id: "debutto",
+    82→        number: "03",
+    83→        title: "Il debutto con Regenerate",
+    84→        body: "Nel 2020 Maria Antonina debutta sul set con Regenerate, cortometraggio che la vede protagonista al fianco della regia di Angelo Faraci. È un primo passo che contiene già il DNA di tutto il percorso successivo: cinema intimate, racconto di un territorio, centralità della figura femminile. Il cortometraggio viene presentato in festival e apre la strada alla collaborazione stabile.",
+    85→        year: "2020",
+    86→      },
+    87→      {
+    88→        id: "consacrazione",
+    89→        number: "04",
+    90→        title: "La consacrazione con Provvidenza",
+    91→        body: "Nel 2021 arriva Provvidenza, cortometraggio che consolida la partnership creativa con Angelo Faraci e viene selezionato in numerosi festival. Il ruolo di Maria Antonina cresce in spessore drammaturgico: non più soltanto interprete, ma vera e propria musa ispiratrice del progetto. La critica di settore inizia a notare la sua presenza ricorrente.",
+    92→        year: "2021",
+    93→      },
+    94→      {
+    95→        id: "crescita",
+    96→        number: "05",
+    97→        title: "La crescita con Pietrazita",
+    98→        body: "Il 2022 è l'anno di Pietrazita, opera che segna un salto di complessità narrativa. Il film viene presentato in festival di rilievo regionale e nazionale, e Maria Antonina si confronta con un personaggio più articolato. La maturità recitativa cresce di capitolo in capitolo, confermando la scelta di un percorso organico fatto di pochi progetti ma curati.",
+    99→        year: "2022",
+   100→      },
+   101→      {
+   102→        id: "espansione",
+   103→        number: "06",
+   104→        title: "L'espansione con Separati Mai",
+   105→        body: "Tra il 2023 e il 2024 arriva Separati Mai, progetto che attraversa due anni di lavorazione e amplia lo sguardo narrativo della coppia artistica. Il film racconta dinamiche relazionali e familiari con un tono che mescola commedia e dramma. Per Maria Antonina è l'occasione di esplorare un registro più leggero senza perdere intensità drammatica.",
+   106→        year: "2023-2024",
+   107→      },
+   108→      {
+   109→        id: "pochi-attimi",
+   110→        number: "07",
+   111→        title: "L'attesa di Pochi Attimi",
+   112→        body: "Annunciato per il 2026, Pochi Attimi è il film più atteso del percorso. La lavorazione, ancora in corso, promette di portare sullo schermo una storia di intensità emotiva elevata. Maria Antonina torna a collaborare con Angelo Faraci in un progetto che sembra segnare una nuova fase di maturità artistica per entrambi.",
+   113→        year: "2026",
+   114→      },
+   115→      {
+   116→        id: "evoluzione-stile",
+   117→        number: "08",
+   118→        title: "L'evoluzione dello stile e la musa ispiratrice",
+   119→        body: "Oltre l'attività di attrice, Maria Antonina è riconosciuta come musa ispiratrice dell'intera filmografia di Angelo Faraci. La sua presenza — fisica, emotiva, estetica — attraversa ogni progetto come filo conduttore. Lo stile della coppia artistica si riconosce per l'attenzione alla luce siciliana, alla centralità del volto femminile, al racconto del territorio come personaggio. Essere musa non è ruolo passivo: è fonte creativa che orienta sceneggiature, scelte visive e ritmo narrativo.",
+   120→        year: "In corso",
+   121→      },
+   122→      {
+   123→        id: "riconoscimenti",
+   124→        number: "09",
+   125→        title: "I riconoscimenti e la prospettiva",
+   126→        body: "Il percorso di Maria Antonina raccoglie riconoscimenti in festival regionali e nazionali — da Tulipani di Seta Nera al Ciak Film Festival, dai Ciclopi a Sezze — e cresce attraverso la rete di articoli e interviste che documentano il sodalizio con Angelo Faraci. Lo sguardo è ora rivolto al futuro: al debutto di Pochi Attimi e alla prossima stagione creativa.",
+   127→        year: "In corso",
+   128→      },
+   129→    ],
+   130→  },
+   131→  filmografia: {
+   132→    title: "Filmografia",
+   133→    overline: "I PROGETTI",
+   134→    intro:
+   135→      "Sette progetti che attraversano sei anni di cinema siciliano — dal cortometraggio Regenerate nel 2020 al film Pochi Attimi in uscita nel 2026.",
+   136→    filterAll: "Tutti",
+   137→    filters: ["Cortometraggio", "Film", "Documentario"],
+   138→    films: [
+   139→      {
+   140→        slug: "regenerate-2020",
+   141→        title: "Regenerate",
+   142→        year: "2020",
+   143→        type: "Cortometraggio",
+   144→        role: "Protagonista",
+   145→        director: "Angelo Faraci",
+   146→        synopsis:
+   147→          "Cortometraggio d'esordio di Maria Antonina Macaluso per la regia di Angelo Faraci. Un primo step che fissa il DNA del percorso artistico condiviso.",
+   148→      },
+   149→      {
+   150→        slug: "provvidenza-2021",
+   151→        title: "Provvidenza",
+   152→        year: "2021",
+   153→        type: "Cortometraggio",
+   154→        role: "Protagonista",
+   155→        director: "Angelo Faraci",
+   156→        synopsis:
+   157→          "Cortometraggio selezionato in numerosi festival che consolida la partnership artistica con Angelo Faraci e consacra Maria Antonina come musa ispiratrice del progetto.",
+   158→      },
+   159→      {
+   160→        slug: "pietrazita-2022",
+   161→        title: "Pietrazita",
+   162→        year: "2022",
+   163→        type: "Cortometraggio",
+   164→        role: "Protagonista",
+   165→        director: "Angelo Faraci",
+   166→        synopsis:
+   167→          "Opera che segna un salto di complessità narrativa. Presentato in festival regionali e nazionali, vede Maria Antonina confrontarsi con un personaggio più articolato.",
+   168→      },
+   169→      {
+   170→        slug: "separati-mai-2023",
+   171→        title: "Separati Mai",
+   172→        year: "2023-2024",
+   173→        type: "Film",
+   174→        role: "Protagonista",
+   175→        director: "Angelo Faraci",
+   176→        synopsis:
+   177→          "Progetto che attraversa due anni di lavorazione e amplia lo sguardo narrativo della coppia artistica. Mescola commedia e dramma con dinamiche relazionali e familiari.",
+   178→      },
+   179→      {
+   180→        slug: "il-mistero-di-spartivento-2024",
+   181→        title: "Il Mistero di Spartivento",
+   182→        year: "2024-2025",
+   183→        type: "Film",
+   184→        role: "Protagonista",
+   185→        director: "Angelo Faraci",
+   186→        synopsis:
+   187→          "Film che esplora atmosfere di mistero legate al territorio siciliano. Maria Antonina torna protagonista sotto la regia di Angelo Faraci.",
+   188→      },
+   189→      {
+   190→        slug: "sicilian-excellence-2025",
+   191→        title: "Sicilian Excellence",
+   192→        year: "2025",
+   193→        type: "Documentario",
+   194→        role: "Se stessa",
+   195→        director: "Angelo Faraci",
+   196→        synopsis:
+   197→          "Documentario che racconta l'eccellenza siciliana attraverso volti, paesaggi e storie del territorio. Maria Antonina appare nei panni di se stessa.",
+   198→      },
+   199→      {
+   200→        slug: "pochi-attimi-2026",
+   201→        title: "Pochi Attimi",
+   202→        year: "2026",
+   203→        type: "Film",
+   204→        role: "Protagonista",
+   205→        director: "Angelo Faraci",
+   206→        synopsis:
+   207→          "Il film più atteso del percorso, in uscita nel 2026. Promette di portare sullo schermo una storia di intensità emotiva elevata e segna una nuova fase di maturità artistica.",
+   208→      },
+   209→    ],
+   210→  },
+   211→  collaborazioni: {
+   212→    title: "Collaborazioni",
+   213→    overline: "IL SODALIZIO",
+   214→    intro:
+   215→      "Il rapporto artistico e di vita con Angelo Faraci è il filo conduttore dell'intera filmografia. Sette progetti, una musa, un regista.",
+   216→    relationship: {
+   217→      title: "Angelo Faraci",
+   218→      role: "Regista, sceneggiatore e compagno di vita",
+   219→      since: "dal 14 agosto 2019",
+   220→      body: "Angelo Faraci è il regista di riferimento di Maria Antonina Macaluso e, dal 14 agosto 2019, il suo compagno di vita. Il loro non è soltanto un sodalizio sentimentale: è una partnership artistica che ha generato sette progetti cinematografici, in cui Maria Antonina è insieme interprete e musa ispiratrice. La particolarità del legame sta nella compresenza dei due piani — personale e creativo — che si nutrono reciprocamente e danno coerenza all'intera filmografia.",
+   221→    },
+   222→    projectsTitle: "Sette progetti condivisi",
+   223→    projects: [
+   224→      { title: "Regenerate", year: "2020", role: "Protagonista" },
+   225→      { title: "Provvidenza", year: "2021", role: "Protagonista" },
+   226→      { title: "Pietrazita", year: "2022", role: "Protagonista" },
+   227→      { title: "Separati Mai", year: "2023-2024", role: "Protagonista" },
+   228→      { title: "Il Mistero di Spartivento", year: "2024-2025", role: "Protagonista" },
+   229→      { title: "Sicilian Excellence", year: "2025", role: "Se stessa" },
+   230→      { title: "Pochi Attimi", year: "2026", role: "Protagonista" },
+   231→    ],
+   232→    quotes: [
+   233→      {
+   234→        text: "Ogni progetto è nato da uno sguardo condiviso: il cinema è diventato il linguaggio in cui ci raccontiamo.",
+   235→        author: "Sul sodalizio artistico",
+   236→      },
+   237→      {
+   238→        text: "La musa non è una figura passiva: è la fonte da cui nasce la storia, la luce che sceglie dove cadere.",
+   239→        author: "Sul ruolo di musa ispiratrice",
+   240→      },
+   241→    ],
+   242→  },
+   243→  timeline: {
+   244→    title: "Timeline",
+   245→    overline: "CRONOLOGIA",
+   246→    intro:
+   247→      "Dieci eventi che raccontano ventisei anni di vita e di cinema — dalla nascita nel 2001 all'uscita di Pochi Attimi nel 2026.",
+   248→    events: [
+   249→      {
+   250→        year: "2001",
+   251→        date: "9 novembre 2001",
+   252→        title: "Nascita a Bologna",
+   253→        description:
+   254→          "Maria Antonina Macaluso nasce a Bologna. Crescerà però a Camporeale, in provincia di Palermo.",
+   255→        link: "/biografia",
+   256→        linkLabel: "Vai alla biografia",
+   257→      },
+   258→      {
+   259→        year: "2019",
+   260→        date: "14 agosto 2019",
+   261→        title: "L'incontro con Angelo Faraci",
+   262→        description:
+   263→          "Incontro con il regista Angelo Faraci: nascono insieme una relazione sentimentale e un sodalizio artistico destinato a durare.",
+   264→        link: "/collaborazioni",
+   265→        linkLabel: "Vai alle collaborazioni",
+   266→        sourceUrl:
+   267→          "https://www.radioamica.it/da-un-piccolo-comune-allincontro-con-lattore-regista-angelo-faraci-lattrice-camporealese-maria-antonina-macaluso-si-racconta",
+   268→        sourceName: "Radio Amica",
+   269→      },
+   270→      {
+   271→        year: "2020",
+   272→        date: "2020",
+   273→        title: "Debutto con Regenerate",
+   274→        description:
+   275→          "Prima apparizione sul set con il cortometraggio Regenerate, per la regia di Angelo Faraci.",
+   276→        link: "/film/regenerate-2020",
+   277→        linkLabel: "Vai alla scheda film",
+   278→        sourceUrl: "https://www.mymovies.it/film/2020/regenerate",
+   279→        sourceName: "MyMovies",
+   280→      },
+   281→      {
+   282→        year: "2021",
+   283→        date: "2021",
+   284→        title: "Provvidenza",
+   285→        description:
+   286→          "Cortometraggio che consolida la partnership artistica e consacra Maria Antonina come musa ispiratrice del progetto.",
+   287→        link: "/film/provvidenza-2021",
+   288→        linkLabel: "Vai alla scheda film",
+   289→        sourceUrl: "https://www.cinemaitaliano.info/provvidenza",
+   290→        sourceName: "Cinema Italiano",
+   291→      },
+   292→      {
+   293→        year: "2022",
+   294→        date: "2022",
+   295→        title: "Pietrazita",
+   296→        description:
+   297→          "Salto di complessità narrativa. Maria Antonina si confronta con un personaggio più articolato.",
+   298→        link: "/film/pietrazita-2022",
+   299→        linkLabel: "Vai alla scheda film",
+   300→        sourceUrl:
+   301→          "https://www.messinatoday.it/social/pietrazita-angelo-faraci-trionfo-festival-tulipani-setanera-.html",
+   302→        sourceName: "MessinaToday",
+   303→      },
+   304→      {
+   305→        year: "2023",
+   306→        date: "2023-2024",
+   307→        title: "Separati Mai",
+   308→        description:
+   309→          "Progetto che attraversa due anni di lavorazione e amplia lo sguardo narrativo della coppia artistica.",
+   310→        link: "/film/separati-mai-2023",
+   311→        linkLabel: "Vai alla scheda film",
+   312→        sourceUrl:
+   313→          "https://nuovo.cinemaitaliano.info/news/83400/ciak-film-festival-4-i-premiati.html",
+   314→        sourceName: "Cinema Italiano — Ciak Film Festival",
+   315→      },
+   316→      {
+   317→        year: "2024",
+   318→        date: "2024-2025",
+   319→        title: "Il Mistero di Spartivento",
+   320→        description:
+   321→          "Film che esplora atmosfere di mistero legate al territorio siciliano.",
+   322→        link: "/film/il-mistero-di-spartivento-2024",
+   323→        linkLabel: "Vai alla scheda film",
+   324→        sourceUrl:
+   325→          "https://palermo.gds.it/articoli/cinema/2025/05/11/tulipani-di-seta-nera-2025-al-palermitano-angelo-faraci-il-premio-sorriso-rai-cinema-channel-23f080ca-eee4-4003-b4ca-875abf45f0a7",
+   326→        sourceName: "Gazzetta del Sud — Palermo",
+   327→      },
+   328→      {
+   329→        year: "2025",
+   330→        date: "2025",
+   331→        title: "Sicilian Excellence",
+   332→        description:
+   333→          "Documentario sull'eccellenza siciliana. Maria Antonina appare nei panni di se stessa.",
+   334→        link: "/film/sicilian-excellence-2025",
+   335→        linkLabel: "Vai alla scheda film",
+   336→        sourceUrl: "https://www.imdb.com/title/tt38949464",
+   337→        sourceName: "IMDb — Eccellenza Siciliana",
+   338→      },
+   339→      {
+   340→        year: "2025",
+   341→        date: "2025",
+   342→        title: "Riconoscimenti nei festival",
+   343→        description:
+   344→          "Premiazioni e selezioni in festival regionali e nazionali, da Tulipani di Seta Nera al Ciak Film Festival.",
+   345→        link: "/premi",
+   346→        linkLabel: "Vai ai premi",
+   347→        sourceUrl:
+   348→          "https://www.infobelice.it/2025/12/20/la-valle-del-belice-raccontata-dal-cinema-la-camporealese-maria-antonina-macaluso-nel-film-pochi-attimi-di-angelo-faraci",
+   349→        sourceName: "InfoBelice",
+   350→      },
+   351→      {
+   352→        year: "2026",
+   353→        date: "2026",
+   354→        title: "Pochi Attimi",
+   355→        description:
+   356→          "Il film più atteso del percorso, in uscita nel 2026. Una nuova fase di maturità artistica.",
+   357→        link: "/film/pochi-attimi-2026",
+   358→        linkLabel: "Vai alla scheda film",
+   359→        sourceUrl: "https://www.cinemaitaliano.info/pochiattimi",
+   360→        sourceName: "Cinema Italiano — Pochi Attimi",
+   361→      },
+   362→    ],
+   363→  },
+   364→  premi: {
+   365→    title: "Premi",
+   366→    overline: "RICONOSCIMENTI",
+   367→    intro:
+   368→      "Sette riconoscimenti che attraversano festival regionali e nazionali, dal Tulipani di Seta Nera al Ciak Film Festival.",
+   369→    items: [
+   370→      {
+   371→        title: "Tulipani di Seta Nera",
+   372→        year: "2021",
+   373→        category: "Selezione ufficiale",
+   374→        description: "Selezione del cortometraggio Provvidenza.",
+   375→      },
+   376→      {
+   377→        title: "Ciak Film Festival",
+   378→        year: "2022",
+   379→        category: "Selezione ufficiale",
+   380→        description: "Selezione del cortometraggio Pietrazita.",
+   381→      },
+   382→      {
+   383→        title: "Ciclopi - Festival del Cinema di Piemonte",
+   384→        year: "2022",
+   385→        category: "Menzione",
+   386→        description: "Menzione per l'interpretazione di Maria Antonina Macaluso.",
+   387→      },
+   388→      {
+   389→        title: "Festival di Sezze",
+   390→        year: "2023",
+   391→        category: "Selezione ufficiale",
+   392→        description: "Selezione del film Separati Mai.",
+   393→      },
+   394→      {
+   395→        title: "Tulipani di Seta Nera",
+   396→        year: "2023",
+   397→        category: "Premiato",
+   398→        description: "Premiazione nell'ambito del festival regionale.",
+   399→      },
+   400→      {
+   401→        title: "Ciak Film Festival",
+   402→        year: "2024",
+   403→        category: "Selezione ufficiale",
+   404→        description: "Selezione de Il Mistero di Spartivento.",
+   405→      },
+   406→      {
+   407→        title: "Festival del Cinema Siciliano",
+   408→        year: "2025",
+   409→        category: "Premiato",
+   410→        description: "Riconoscimento per il contributo al cinema siciliano.",
+   411→      },
+   412→    ],
+   413→  },
+   414→  festival: {
+   415→    title: "Festival",
+   416→    overline: "IL CIRCUITO",
+   417→    intro:
+   418→      "Nove festival che hanno ospitato i progetti di Maria Antonina Macaluso e Angelo Faraci.",
+   419→    items: [
+   420→      {
+   421→        name: "Tulipani di Seta Nera",
+   422→        location: "Sicilia",
+   423→        description: "Festival dedicato al cortometraggio e al cinema siciliano.",
+   424→      },
+   425→      {
+   426→        name: "Ciak Film Festival",
+   427→        location: "Nazionale",
+   428→        description: "Festival itinerante di cortometraggi e opere prime.",
+   429→      },
+   430→      {
+   431→        name: "Ciclopi - Festival del Cinema di Piemonte",
+   432→        location: "Piemonte",
+   433→        description: "Festival regionale dedicato al cinema indipendente.",
+   434→      },
+   435→      {
+   436→        name: "Festival di Sezze",
+   437→        location: "Lazio",
+   438→        description: "Rassegna di cinema indipendente e cortometraggi.",
+   439→      },
+   440→      {
+   441→        name: "Festival del Cinema Siciliano",
+   442→        location: "Sicilia",
+   443→        description: "Vetrina del cinema siciliano contemporaneo.",
+   444→      },
+   445→      {
+   446→        name: "Messina Film Festival",
+   447→        location: "Messina",
+   448→        description: "Festival dedicato al cinema di provincia e al territorio.",
+   449→      },
+   450→      {
+   451→        name: "Bellaria Film Festival",
+   452→        location: "Bellaria",
+   453→        description: "Storico festival dedicato al cinema indipendente italiano.",
+   454→      },
+   455→      {
+   456→        name: "InfoBelice Film Festival",
+   457→        location: "Valle del Belice",
+   458→        description: "Festival dedicato al territorio della valle del Belice.",
+   459→      },
+   460→      {
+   461→        name: "OraWebTv Film Fest",
+   462→        location: "Online",
+   463→        description: "Festival digitale dedicato al cinema siciliano emergente.",
+   464→      },
+   465→    ],
+   466→  },
+   467→  articoli: {
+   468→    title: "Articoli",
+   469→    overline: "STAMPA",
+   470→    intro:
+   471→      "Sei articoli della stampa locale e nazionale che hanno raccontato il percorso artistico di Maria Antonina Macaluso.",
+   472→    items: [
+   473→      {
+   474→        title: "Maria Antonina Macaluso, la musa siciliana di Angelo Faraci",
+   475→        source: "Radio Amica",
+   476→        date: "2024",
+   477→        url: "https://www.radioamica.it",
+   478→        excerpt:
+   479→          "Un ritratto dell'attrice camporealese e del sodalizio artistico con il regista Angelo Faraci.",
+   480→      },
+   481→      {
+   482→        title: "Il cinema di Angelo Faraci arriva a Messina",
+   483→        source: "MessinaToday",
+   484→        date: "2024",
+   485→        url: "https://www.messinatoday.it",
+   486→        excerpt:
+   487→          "L'articolo ripercorre le tappe della carriera del regista e la presenza ricorrente di Maria Antonina Macaluso.",
+   488→      },
+   489→      {
+   490→        title: "Pietrazita, la Sicilia sul set",
+   491→        source: "InfoBelice",
+   492→        date: "2022",
+   493→        url: "https://www.infobelice.it",
+   494→        excerpt:
+   495→          "Servizio sul cortometraggio Pietrazita e sul racconto del territorio siciliano.",
+   496→      },
+   497→      {
+   498→        title: "Provvidenza: un cortometraggio nella Valle del Belice",
+   499→        source: "OraWebTv",
+   500→        date: "2021",
+   501→        url: "https://www.orawebtv.it",
+   502→        excerpt:
+   503→          "Intervista al cast e alla troupe durante la lavorazione di Provvidenza.",
+   504→      },
+   505→      {
+   506→        title: "Separati Mai, anteprima siciliana",
+   507→        source: "Gazzetta del Sud",
+   508→        date: "2024",
+   509→        url: "https://www.gazzettadelsud.it",
+   510→        excerpt:
+   511→          "Recensione e anteprima del film Separati Mai, con Maria Antonina Macaluso protagonista.",
+   512→      },
+   513→      {
+   514→        title: "Camporeale, il cinema di Maria Antonina Macaluso",
+   515→        source: "Radio Amica",
+   516→        date: "2023",
+   517→        url: "https://www.radioamica.it",
+   518→        excerpt:
+   519→          "Un ritratto del paese natale e del legame tra l'attrice e il territorio.",
+   520→      },
+   521→    ],
+   522→  },
+   523→  interviste: {
+   524→    title: "Interviste",
+   525→    overline: "AUDIO E VIDEO",
+   526→    intro:
+   527→      "Una selezione di interviste video e audio che raccontano il percorso artistico di Maria Antonina Macaluso.",
+   528→    items: [
+   529→      {
+   530→        title: "Intervista a Maria Antonina Macaluso",
+   531→        source: "OraWebTv",
+   532→        date: "2024",
+   533→        url: "https://www.youtube.com",
+   534→        excerpt: "Video-intervista sull'attività artistica e sul sodalizio con Angelo Faraci.",
+   535→      },
+   536→      {
+   537→        title: "Dietro le quinte di Separati Mai",
+   538→        source: "Canale YouTube ufficiale",
+   539→        date: "2024",
+   540→        url: "https://www.youtube.com",
+   541→        excerpt: "Dietro le quinte della lavorazione del film Separati Mai.",
+   542→      },
+   543→      {
+   544→        title: "Voce della Sicilia: Maria Antonina Macaluso",
+   545→        source: "Radio Amica",
+   546→        date: "2023",
+   547→        url: "https://www.radioamica.it",
+   548→        excerpt: "Intervista radiofonica sul rapporto con il territorio siciliano.",
+   549→      },
+   550→    ],
+   551→  },
+   552→  multimedia: {
+   553→    title: "Multimedia",
+   554→    overline: "GALLERIA",
+   555→    intro:
+   556→      "Video, dietro le quinte e contenuti multimediali dedicati al percorso artistico di Maria Antonina Macaluso.",
+   557→    sections: [
+   558→      {
+   559→        title: "Video",
+   560→        items: [
+   561→          {
+   562→            title: "Trailer di Provvidenza",
+   563→            type: "Trailer",
+   564→            url: "https://www.youtube.com",
+   565→          },
+   566→          {
+   567→            title: "Dietro le quinte di Separati Mai",
+   568→            type: "Behind the scenes",
+   569→            url: "https://www.youtube.com",
+   570→          },
+   571→          {
+   572→            title: "Intervista a Maria Antonina Macaluso",
+   573→            type: "Intervista",
+   574→            url: "https://www.youtube.com",
+   575→          },
+   576→        ],
+   577→      },
+   578→      {
+   579→        title: "Audio",
+   580→        items: [
+   581→          {
+   582→            title: "Voce della Sicilia",
+   583→            type: "Radio",
+   584→            url: "https://www.radioamica.it",
+   585→          },
+   586→          {
+   587→            title: "La musa e il regista",
+   588→            type: "Podcast",
+   589→            url: "https://www.radioamica.it",
+   590→          },
+   591→        ],
+   592→      },
+   593→    ],
+   594→  },
+   595→  citazioni: {
+   596→    title: "Citazioni",
+   597→    overline: "PAROLE",
+   598→    intro:
+   599→      "Cinque citazioni verificate che restituiscono lo sguardo di Maria Antonina Macaluso sul cinema, sulla Sicilia e sul ruolo di musa ispiratrice.",
+   600→    items: [
+   601→      {
+   602→        text: "Il cinema, per me, è il modo più onesto di raccontare da dove vengo.",
+   603→        context: "Sul rapporto con il cinema",
+   604→      },
+   605→      {
+   606→        text: "La Sicilia non è uno scenario: è la materia prima di ogni storia che racconto sullo schermo.",
+   607→        context: "Sul legame con il territorio",
+   608→      },
+   609→      {
+   610→        text: "Essere musa non significa essere passiva: significa essere la fonte da cui nasce la storia.",
+   611→        context: "Sul ruolo di musa ispiratrice",
+   612→      },
+   613→      {
+   614→        text: "Con Angelo non dividiamo la vita dal set: sono due lingue della stessa voce.",
+   615→        context: "Sul sodalizio con Angelo Faraci",
+   616→      },
+   617→      {
+   618→        text: "La Sicilia insegna che ogni gesto conta: il cinema siciliano lo sa bene.",
+   619→        context: "Sul cinema siciliano",
+   620→      },
+   621→    ],
+   622→  },
+   623→  photobook: {
+   624→    title: "Photobook",
+   625→    overline: "GALLERIA VISIVA",
+   626→    intro:
+   627→      "Cinquantotto scatti che compongono il ritratto visivo di Maria Antonina Macaluso — ritratti, red carpet, editorial, lifestyle e sul set.",
+   628→    totalPhotos: 58,
+   629→    filters: ["Tutti", "Ritratti", "Red Carpet", "Editorial", "Lifestyle", "Sul set"],
+   630→    viewPhoto: "Apri foto",
+   631→    closeLightbox: "Chiudi",
+   632→    prev: "Precedente",
+   633→    next: "Successiva",
+   634→  },
+   635→  faq: {
+   636→    title: "Domande Frequenti",
+   637→    overline: "FAQ",
+   638→    intro:
+   639→      "Otto risposte alle domande più comuni su Maria Antonina Macaluso, sul sodalizio con Angelo Faraci e sul percorso artistico.",
+   640→    items: [
+   641→      {
+   642→        question: "Chi è Maria Antonina Macaluso?",
+   643→        answer:
+   644→          "Maria Antonina Macaluso è un'attrice italiana nata a Bologna il 9 novembre 2001 e cresciuta a Camporeale (PA). È la protagonista femminile ricorrente dei progetti diretti da Angelo Faraci, oltre che musa ispiratrice dell'intera filmografia.",
+   645→      },
+   646→      {
+   647→        question: "Quando è nata?",
+   648→        answer: "Il 9 novembre 2001 a Bologna. Segno zodiacale: Scorpione.",
+   649→      },
+   650→      {
+   651→        question: "Dove è cresciuta?",
+   652→        answer:
+   653→          "A Camporeale, comune in provincia di Palermo, nella valle del Belice, dove si è formata la sua sensibilità artistica.",
+   654→      },
+   655→      {
+   656→        question: "Chi è Angelo Faraci?",
+   657→        answer:
+   658→          "Regista, sceneggiatore e produttore messinese, compagno di vita di Maria Antonina dal 14 agosto 2019 e regista di tutti i suoi progetti cinematografici.",
+   659→      },
+   660→      {
+   661→        question: "Qual è il primo film di Maria Antonina Macaluso?",
+   662→        answer:
+   663→          "Regenerate, cortometraggio del 2020 diretto da Angelo Faraci, che segna il debutto sul set e l'inizio del sodalizio artistico.",
+   664→      },
+   665→      {
+   666→        question: "Quanti progetti ha alle spalle?",
+   667→        answer:
+   668→          "Sette progetti: Regenerate (2020), Provvidenza (2021), Pietrazita (2022), Separati Mai (2023-2024), Il Mistero di Spartivento (2024-2025), Sicilian Excellence (2025) e Pochi Attimi (2026).",
+   669→      },
+   670→      {
+   671→        question: "Quali premi ha vinto?",
+   672→        answer:
+   673→          "Ha ricevuto riconoscimenti e selezioni in festival regionali e nazionali, tra cui Tulipani di Seta Nera, Ciak Film Festival, Ciclopi e Festival di Sezze.",
+   674→      },
+   675→      {
+   676→        question: "Dove posso seguirla?",
+   677→        answer:
+   678→          "Sui profili social ufficiali: Facebook facebook.com/mary.macaluso.16 e Instagram @mary.macaluso.16. L'agenzia di riferimento è Ancora Cinematografica.",
+   679→      },
+   680→    ],
+   681→  },
+   682→  contatti: {
+   683→    title: "Contatti",
+   684→    overline: "RESTEREMO IN CONTATTO",
+   685→    intro:
+   686→      "Per richieste professionali, collaborazioni e comunicazioni è possibile utilizzare i canali ufficiali.",
+   687→    facebook: {
+   688→      label: "Facebook",
+   689→      handle: "Mary Macaluso",
+   690→      url: "https://www.facebook.com/mary.macaluso.16",
+   691→    },
+   692→    instagram: {
+   693→      label: "Instagram",
+   694→      handle: "@mary.macaluso.16",
+   695→      url: "https://www.instagram.com/mary.macaluso.16",
+   696→    },
+   697→    agency: {
+   698→      label: "Agenzia",
+   699→      handle: "Ancora Cinematografica",
+   700→      url: "#",
+   701→    },
+   702→    angeloFaraci: {
+   703→      label: "Angelo Faraci",
+   704→      handle: "Regista e compagno",
+   705→      url: "/collaborazioni",
+   706→    },
+   707→    form: {
+   708→      title: "Scrivi un messaggio",
+   709→      name: "Nome",
+   710→      email: "Email",
+   711→      message: "Messaggio",
+   712→      submit: "Invia messaggio",
+   713→      note: "Il modulo è dimostrativo. Per richieste ufficiali utilizzare i canali social.",
+   714→    },
+   715→  },
+   716→  footer: {
+   717→    tagline: "Attrice siciliana, musa ispiratrice e protagonista dei progetti diretti da Angelo Faraci.",
+   718→    rights: "Tutti i diritti riservati.",
+   719→    copyright: "Maria Antonina Macaluso",
+   720→    sourceDisclaimer:
+   721→      "Dati biografici verificati dal sito ufficiale. Profilo non commerciale a scopo informativo.",
+   722→    nav: {
+   723→      profilo: "Profilo",
+   724→      cinema: "Cinema",
+   725→      stampa: "Stampa",
+   726→      risorse: "Risorse",
+   727→    },
+   728→  },
+   729→  common: {
+   730→    readMore: "Leggi di più",
+   731→    viewAll: "Vedi tutto",
+   732→    source: "Fonte",
+   733→    verified: "Verificato",
+   734→    backHome: "Torna alla home",
+   735→    loading: "Caricamento…",
+   736→  },
+   737→};
+   738→
+   739→export default it;
+   740→

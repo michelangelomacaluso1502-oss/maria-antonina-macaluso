@@ -154,3 +154,21 @@ Work Log:
 
 Stage Summary:
 - Build status: SUCCESS — bunx tsc --noEmit 0 errori, bun run build completato in ~14s, 89 pagine generate (14 statiche + 7 film + 58 foto + 5 tag + extra), Compiled successfully in 11.8s
+
+---
+Task ID: HERO-QUOTE-PHOTOBOOK
+Agent: Full-stack developer
+Task: Hero citazione + rimozione Prime Video + photo book unificato senza categorie
+
+Work Log:
+- Rimosso "Prime Video" da tutto il sito: unica occorrenza in src/app/multimedia/page.tsx (descrizione trailer "Pochi Attimi"); sostituito con "(2026)" senza menzione piattaforma. Verificato con grep — nessun'altra occorrenza di "Prime Video" / "Amazon Prime" / "prossimo a Prime" / "distribuito da" in src/ o public/. Hero stats già pulite (label "Prossima uscita" / "Upcoming release", no Prime Video). films.ts non conteneva menzioni Prime Video.
+- Aggiunte 5 citazioni cinematografiche nell'Hero (src/components/sections/Hero.tsx) sotto H1 e sopra CTA: array hardcoded ["Attrice siciliana", "Bologna primo respiro, Sicilia tutto il resto", "Da Camporeale, provincia di Palermo, ai red carpet di Taormina e Fiuggi", "Dal debutto in TV nel 2018 al film Pochi Attimi nel 2026", "Sei cortometraggi Rai Cinema, una fiction Sky, una fiction"]. Animazione fade-up staggerata con blur(8px)→0px, delay 1.6 + i*0.3s, ease [0.16,1,0.3,1]. Classe font-display italic text-cream/90 (adattato da hollywood-cream che non esiste nel sistema colori del progetto). Vecchio t.hero.tagline mantenuto come intro breve sopra le citazioni.
+- Photo book unificato senza categorie (src/app/photobook/page.tsx): rimosso intero blocco filtri (button "Tutti" + 5 button PHOTO_TAGS), rimosso stato activeTag, rimosso filtro visiblePhotos. Ora mostra tutte le foto in singola grid masonry (columns-2 md:columns-3 xl:columns-4) senza filtri. Lightbox mantenuto e funzionante. Header semplice "Photo Book" + "{TOTAL_PHOTOS} scatti". Usato nuovo export TOTAL_PHOTOS invece di literal 58.
+- Rimossi 10 screenshot mam-49.jpg → mam-58.jpg dalla cartella public/images/photobook/.
+- Aggiunta nuova foto come mam-49.jpg: copiata da /home/z/my-project/upload/Screenshot 2026-07-28 053727.png. Originale era PNG 1676x786 RGBA con estensione .jpg (problematico con header X-Content-Type-Options: nosniff) → convertito in JPEG reale con sharp (flatten su sfondo nero, mozjpeg quality 85, 52KB).
+- Aggiornati conteggi 58 → 49 in tutti i file: src/lib/photobook.ts (length 58→49, aggiunto export const TOTAL_PHOTOS = PHOTOS.length), src/lib/translations/it.ts (totalPhotos 58→49, intro "Cinquantotto"→"Quarantanove"), src/lib/translations/en.ts (totalPhotos 58→49, intro "Fifty-eight"→"Forty-nine"), src/app/photo/[id]/page.tsx (sostituiti 3 literal "58" con TOTAL_PHOTOS), src/app/photobook/page.tsx (4 riferimenti a 58 sostituiti con TOTAL_PHOTOS), src/components/sections/HomePageSections.tsx (previewPhotos slice(0,6)→slice(0,8) e grid xl:grid-cols-6→xl:grid-cols-8 come da specifica "8 foto sample"). Sitemap automaticamente corretta via PHOTOS.map.
+- generateStaticParams per /photo/[id] usa PHOTOS.map → 49 pagine generate.
+- Tag pages (/tag/[slug]) lasciate funzionali: non violano il task (photobook page non mostra più filtri, ma le pagine tag esistono ancora per deep-link dal photo/[id] page).
+
+Stage Summary:
+- Build status: SUCCESS — bunx tsc --noEmit 0 errori (exit 0), bun run build completato in ~14s, 80 pagine generate (14 statiche + 7 film + 49 foto + 5 tag + extra), Compiled successfully in 14.4s. Tutti i conteggi coerenti a 49 foto.
