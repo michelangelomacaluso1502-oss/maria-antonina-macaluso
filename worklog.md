@@ -100,3 +100,19 @@ Stage Summary:
 - Pagine create: 7 film dedicate (/film/[slug]) + upgrade Hero/PageHero/Filmografia/Timeline
 - Build status: SUCCESS — 88 pagine generate (14 statiche + 7 film + 58 foto + 5 tag + sitemap/robots/not-found), 0 errori TypeScript, build completata in ~17s
 - Sitemap: 84 URL verificati (14+7+58+5)
+
+---
+Task ID: SCROLLABLE-HOME
+Agent: Full-stack developer
+Task: Homepage scorrevole long-form + foto radici + back-to-top
+
+Work Log:
+- Aggiunta foto radici.jpg nel capitolo biografia origini (chapter.id === 'origini') con bordo gold/20 e aspect-[3/4]
+- Homepage trasformata in pagina long-form con 10 sezioni scorrevoli (Intro, Photo Book, Biografia, Filmografia, Timeline, Citazioni, Premi, Articoli, FAQ, Pillars/CTA finale)
+- Sezioni con background alternato (bg-noir / bg-smoke/40), header con overline gold + title font-display, link "Vedi tutto" per ogni sezione
+- Filmografia preview usa FILMS da src/lib/films.ts (con slug corretti per /film/[slug])
+- BackToTop verificato nel layout (fixed bottom-right, appare dopo 600px scroll, smooth scroll to top)
+
+Stage Summary:
+- File modificati: src/app/biografia/page.tsx (foto radici), src/components/sections/HomePageSections.tsx (rewrite completo long-form)
+- Build status: SUCCESS — 88 pagine generate, 0 errori TypeScript, build completata in ~18s (Compiled successfully in 15.9s)
