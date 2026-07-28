@@ -138,3 +138,19 @@ Work Log:
 Stage Summary:
 - Build status: SUCCESS — 89 pagine generate (14 statiche + 7 film + 58 foto + 5 tag + _not-found + sitemap/robots), 0 errori TypeScript, build completata in ~12s (Compiled successfully in 9.9s)
 - Foto musa.jpg integrata nel capitolo biografia "L'evoluzione dello stile e la musa ispiratrice"
+
+---
+Task ID: FIX-RESPONSIVE-LINKS
+Agent: Full-stack developer
+Task: Fix hero responsive + rimozione citazione + timeline link autorevoli + multimedia YouTube
+
+Work Log:
+- Hero ridimensionato per tutti i dispositivi: object-position responsive (object-top su mobile, center 20% su desktop), min-h-[100svh] per evitare jump su mobile, h1 con text-[14vw] sm:text-[10vw] md:text-[8vw] per evitare overflow, padding contenuto ridotto su mobile (pt-8/gap-3), kenburns + parallax + letterbox + gradient overlays preservati
+- Citazione "Camporeale non è solo il luogo in cui sono cresciuta: è la luce che cerco in ogni scena" rimossa da src/lib/translations/it.ts e sostituita con "La Sicilia non è uno scenario: è la materia prima di ogni storia che racconto sullo schermo"; equivalente in en.ts
+- Timeline: aggiunti sourceUrl + sourceName per 9 eventi su 10 (escluso nascita 2001); URL autorevoli da web-search: Radio Amica (incontro Angelo), MyMovies (Regenerate), Cinema Italiano (Provvidenza, Separati Mai, Pochi Attimi), MessinaToday (Pietrazita), Gazzetta del Sud Palermo (Spartivento), IMDb (Sicilian Excellence), InfoBelice (riconoscimenti festival)
+- Timeline UI: aggiunto campo type TimelineEvent in types.ts (sourceUrl?/sourceName? opzionali); rimosso <Link> wrappante <a> (HTML invalido) → ristrutturato come <article> con due link separati (interno + fonte esterna con ExternalLink icon)
+- Multimedia: trasformato in galleria YouTube con 6 video; nuovo componente YouTubeFacade.tsx (facade pattern: thumbnail NextImage + play button → click carica iframe youtube-nocookie con rel=0&modestbranding=1&autoplay=1); fallback hqdefault se maxresdefault mancante; remote pattern i.ytimg.com già configurato in next.config
+- Performance: aggiunta classe CSS .cv-auto (content-visibility: auto + contain-intrinsic-size) applicata a tutte le 10 sezioni off-screen della homepage; service worker bumpato v6 → v7 per invalidare cache pagine; verificate animazioni (tutte transform/opacity GPU), font display: swap (già presente), immagini loading=lazy (default Next tranne hero priority)
+
+Stage Summary:
+- Build status: SUCCESS — bunx tsc --noEmit 0 errori, bun run build completato in ~14s, 89 pagine generate (14 statiche + 7 film + 58 foto + 5 tag + extra), Compiled successfully in 11.8s
