@@ -1,31 +1,34 @@
-'use client'
+import Hero from "@/components/sections/Hero";
+import Prologue from "@/components/sections/Prologue";
+import Biography from "@/components/sections/Biography";
+import AngeloFaraci from "@/components/sections/AngeloFaraci";
+import Filmography from "@/components/sections/Filmography";
+import Timeline from "@/components/sections/Timeline";
+import Awards from "@/components/sections/Awards";
+import Festivals from "@/components/sections/Festivals";
+import Articles from "@/components/sections/Articles";
+import Quotes from "@/components/sections/Quotes";
+import PhotoBook from "@/components/sections/PhotoBook";
+import FAQ from "@/components/sections/FAQ";
+import Contact from "@/components/sections/Contact";
 
-export default function Home() {
+// One long, scrollable homepage — like the Angelo Faraci reference site.
+export default function HomePage() {
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      minHeight: '100vh',
-      gap: '2rem',
-      padding: '1rem'
-    }}>
-      <div style={{
-        position: 'relative',
-        width: '6rem',
-        height: '6rem'
-      }}>
-        <img
-          src="/logo.svg"
-          alt="Z.ai Logo"
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'contain'
-          }}
-        />
-      </div>
-    </div>
-  )
+    <main id="main" className="bg-noir">
+      <Hero />
+      <Prologue />
+      <Biography />
+      <AngeloFaraci />
+      <Filmography />
+      <Timeline />
+      <Awards />
+      <Festivals />
+      <Articles />
+      <Quotes />
+      <PhotoBook />
+      <FAQ />
+      <Contact />
+    </main>
+  );
 }
