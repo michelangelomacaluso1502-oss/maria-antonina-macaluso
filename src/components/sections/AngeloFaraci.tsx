@@ -78,7 +78,7 @@ export default function AngeloFaraci() {
                   rel="noopener noreferrer"
                   className="btn-cinema btn-cinema-solid w-full justify-center"
                 >
-                  Sito ufficiale Angelo Faraci
+                  Enciclopedia digitale — Angelo Faraci
                   <ExternalLink className="h-4 w-4" />
                 </a>
                 <a

@@ -47,7 +47,7 @@ export default function CollaborazioniPage() {
           </div>
           <Reveal className="mt-10 text-center">
             <a href={ANGELO_FARACI.site} target="_blank" rel="noopener noreferrer" className="btn-cinema btn-cinema-solid">
-              Sito ufficiale Angelo Faraci
+              Enciclopedia digitale — Angelo Faraci
             </a>
           </Reveal>
         </div>

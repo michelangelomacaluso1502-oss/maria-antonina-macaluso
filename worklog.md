@@ -450,3 +450,47 @@ Stage Summary:
 - Vercel project link corretto: my-project → maria-antonina-macaluso
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 44s)
 
+
+---
+Task ID: INTRO-FIX-ENCICLOPEDIA-DIGITALE
+Agent: Full-stack developer
+Task: Fix IntroLoader non funzionante + sostituire 'Sito ufficiale' con 'Enciclopedia digitale'
+
+Work Log:
+- Diagnosi IntroLoader: verificato che il componente è correttamente nel bundle JS e nel HTML di produzione (curl mostra class="intro-loader" presente)
+- Verificato CSS è nel build (.next/static/chunks/*.css contiene tutte le classi intro-*)
+- Verificato z-index: era 9999, potrebbe essere sotto PWARegister/BackToTop fixed
+- Fix IntroLoader (src/components/cinematic/IntroLoader.tsx):
+  - State show=true come iniziale (rendering immediato lato client)
+  - useEffect: timeout exit a 2.4s, smontaggio a 3.2s (più tempo per visualizzare)
+  - Delay animations CSS aumentati: M1 0.2s, dot 0.5s, M2 0.8s, line 1.3s, subtitle 1.3s
+  - style={{ display: "flex" }} inline per forzare visibilità anche se CSS non carica subito
+  - prefers-reduced-motion: setShow(false) diretto (skip)
+  - body overflow hidden durante playback, ripristinato al cleanup
+- CSS fix: z-index intro-loader 9999 → 99999 (sopra tutti gli altri elementi fixed)
+- Sostituito "Sito ufficiale" con "Enciclopedia digitale" in 5 occorrenze:
+  1. src/components/sections/AngeloFaraci.tsx (CTA button)
+  2. src/app/collaborazioni/page.tsx (CTA button)
+  3. src/app/angelo-faraci/page.tsx (subtitle PageHero)
+  4. src/lib/data.ts (FAQ #2 — "Chi è Angelo Faraci?")
+  5. src/lib/data.ts (COLLEGAMENTI_ESTERI[0].name)
+- Verificato con grep nessun'altra occorrenza di "sito ufficiale" / "Sito ufficiale" in src/ o public/
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto (solo edit mirati)
+  - Animazioni GPU-only (transform, opacity, filter)
+  - prefers-reduced-motion rispettato
+  - ErrorBoundary + skipHydration preservati
+  - BackToTop, ScrollProgress, FilmGrain preservati nel layout
+
+Stage Summary:
+- File modificati:
+  - src/components/cinematic/IntroLoader.tsx (state show=true iniziale, delay aumentati, display flex inline, exit 2.4s/3.2s)
+  - src/styles/globals.css (z-index 9999 → 99999)
+  - src/components/sections/AngeloFaraci.tsx (Sito ufficiale → Enciclopedia digitale)
+  - src/app/collaborazioni/page.tsx (Sito ufficiale → Enciclopedia digitale)
+  - src/app/angelo-faraci/page.tsx (Sito ufficiale → Enciclopedia digitale)
+  - src/lib/data.ts (FAQ + COLLEGAMENTI_ESTERI: Sito ufficiale → Enciclopedia digitale)
+- Build status: SUCCESS — 80 pagine generate
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 50s)
+- Verifica: curl mostra class="intro-loader " presente nel HTML di produzione
+

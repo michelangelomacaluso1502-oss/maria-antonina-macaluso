@@ -4,21 +4,25 @@ import { useEffect, useState } from "react";
 
 /**
  * IntroLoader — splash cinematografico con sigla "MM"
- * - Mostra la sigla MM con reveal letter-spacing + blur
- * - Linea gold che si disegna sotto
- * - Auto-dismiss dopo 2.2s
- * - Si mostra a ogni caricamento completo della pagina (full page load)
- *   In Next.js App Router il root layout persiste nelle navigazioni client-side,
- *   quindi questo componente si monta solo al primo caricamento o al refresh.
- * - Skip se prefers-reduced-motion
+ *
+ * Approccio robusto:
+ * - Stato iniziale show=true (rendering immediato)
+ * - useEffect rimuove l'intro dopo 3.2s
+ * - prefers-reduced-motion: salta completamente
+ * - Animation tramite CSS puro (indipendente da JS)
  */
 export default function IntroLoader() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_mounted, setMounted] = useState(false);
   const [show, setShow] = useState(true);
   const [exiting, setExiting] = useState(false);
 
   useEffect(() => {
-    // SSR safety + reduced motion: skip entirely
+    setMounted(true);
+
     if (typeof window === "undefined") return;
+
+    // Skip se l'utente preferisce ridurre le animazioni
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
@@ -27,13 +31,15 @@ export default function IntroLoader() {
       return;
     }
 
+    // Blocca scroll del body durante l'intro
     document.body.style.overflow = "hidden";
 
-    const t1 = window.setTimeout(() => setExiting(true), 2000);
+    // Avvia l'uscita a 2.4s, smonta a 3.2s
+    const t1 = window.setTimeout(() => setExiting(true), 2400);
     const t2 = window.setTimeout(() => {
       setShow(false);
       document.body.style.overflow = "";
-    }, 2700);
+    }, 3200);
 
     return () => {
       window.clearTimeout(t1);
@@ -48,6 +54,7 @@ export default function IntroLoader() {
     <div
       aria-hidden="true"
       className={`intro-loader ${exiting ? "intro-loader-exit" : ""}`}
+      style={{ display: "flex" }}
     >
       <div className="intro-loader-inner">
         {/* Sigla MM con reveal letter-spacing */}
@@ -57,12 +64,12 @@ export default function IntroLoader() {
           </span>
           <span
             className="intro-mm-letter intro-mm-dot"
-            style={{ animationDelay: "0.45s" }}
+            style={{ animationDelay: "0.5s" }}
             aria-hidden="true"
           >
             ·
           </span>
-          <span className="intro-mm-letter" style={{ animationDelay: "0.7s" }}>
+          <span className="intro-mm-letter" style={{ animationDelay: "0.8s" }}>
             M
           </span>
         </div>
@@ -71,7 +78,7 @@ export default function IntroLoader() {
         <span className="intro-line" />
 
         {/* Sottotitolo fade */}
-        <p className="intro-subtitle" style={{ animationDelay: "1.1s" }}>
+        <p className="intro-subtitle" style={{ animationDelay: "1.3s" }}>
           Maria Antonina Macaluso
         </p>
       </div>

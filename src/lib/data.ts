@@ -344,7 +344,7 @@ export interface FAQItem {
 
 export const FAQS: FAQItem[] = [
   { question: "Quando e dove è nata Maria Antonina Macaluso?", answer: "Maria Antonina Macaluso è nata a Bologna il 9 novembre 2001 ed è cresciuta a Camporeale, in provincia di Palermo." },
-  { question: "Chi è Angelo Faraci?", answer: "Angelo Faraci è un regista, attore e produttore italiano nato a Palermo il 13 agosto 1989. Sito ufficiale: angelo-faraci.vercel.app. È il regista di tutti i sette film interpretati da Maria Antonina." },
+  { question: "Chi è Angelo Faraci?", answer: "Angelo Faraci è un regista, attore e produttore italiano nato a Palermo il 13 agosto 1989. Enciclopedia digitale: angelo-faraci.vercel.app. È il regista di tutti i sette film interpretati da Maria Antonina." },
   { question: "Quando si sono incontrati Maria Antonina e Angelo Faraci?", answer: "Il 14 agosto 2019 a Palermo. Da allora condividono un percorso artistico e di vita." },
   { question: "Quali film ha interpretato Maria Antonina Macaluso?", answer: "Sette film diretti da Angelo Faraci: Regenerate (2020), Provvidenza (2021), Pietrazita (2022), Separati Mai (2023–2024), Il Mistero di Spartivento (2024–2025), Sicilian Excellence (2025) e Pochi Attimi (2026)." },
   { question: "Quali cortometraggi sono stati prodotti da Rai Cinema?", answer: "Provvidenza (2021) e Pietrazita (2022) sono cortometraggi prodotti da Rai Cinema con la regia di Angelo Faraci." },
@@ -364,7 +364,7 @@ export const PHOTOBOOK = Array.from({ length: 49 }, (_, i) => {
 });
 
 export const COLLEGAMENTI_ESTERI = [
-  { name: "Angelo Faraci — Sito ufficiale", url: "https://angelo-faraci.vercel.app", note: "Regista, attore, produttore. Compagno artistico e di vita." },
+  { name: "Angelo Faraci — Enciclopedia digitale", url: "https://angelo-faraci.vercel.app", note: "Regista, attore, produttore. Compagno artistico e di vita." },
   { name: "IMDb — Angelo Faraci", url: "https://www.imdb.com/name/nm11444273/", note: "Profilo IMDb: nm11444273." },
   { name: "Rai Cinema", url: "https://www.raicinema.rai.it", note: "Produttore dei cortometraggi Provvidenza e Pietrazita." },
   { name: "Taormina Film Fest", url: "https://www.taorminafilmfest.it", note: "Festival siciliano di riferimento." },
