@@ -52,13 +52,16 @@ export default function Hero() {
       aria-label="Maria Antonina Macaluso — attrice siciliana"
     >
       {/* Layer 1 — background image (parallax + kenburns) */}
-      <motion.div style={{ y: bgY }} className="hero-parallax-bg absolute inset-0 z-0">
+      <motion.div
+        style={{ y: bgY }}
+        className="hero-parallax-bg absolute inset-x-0 top-0 z-0 h-[60svh] md:h-[65svh]"
+      >
         <div className="absolute inset-0 animate-slow-zoom">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/hero-maria-antonina.jpg"
             alt="Maria Antonina Macaluso"
-            className="h-full w-full object-contain object-center md:object-cover md:object-top"
+            className="h-full w-full object-contain object-top"
             fetchPriority="high"
           />
         </div>
@@ -67,7 +70,7 @@ export default function Hero() {
       {/* Layer 2 — gradient overlays (legibility) */}
       <motion.div
         style={{ y: gradientY }}
-        className="hero-vignette pointer-events-none absolute inset-0 z-[1]"
+        className="hero-vignette pointer-events-none absolute inset-x-0 top-0 z-[1] h-[60svh] md:h-[65svh]"
       />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-1/2 bg-gradient-to-t from-noir via-noir/80 to-transparent" />
       <div className="pointer-events-none absolute inset-x-0 top-0 z-[2] h-24 bg-gradient-to-b from-noir/70 to-transparent" />
