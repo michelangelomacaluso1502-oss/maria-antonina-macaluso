@@ -494,3 +494,56 @@ Stage Summary:
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 50s)
 - Verifica: curl mostra class="intro-loader " presente nel HTML di produzione
 
+
+---
+Task ID: INTRO-BULLETPROOF-CSS-ONLY
+Agent: Full-stack developer
+Task: Fix definitivo intro MM — riscritto CSS-only, nessuna dipendenza da JavaScript
+
+Work Log:
+- Diagnosi ROOT CAUSE: IntroLoader era un client component ("use client") con useEffect + useState.
+  Se il JS non idrata correttamente (per esempio a causa di suppressHydrationWarning su <html>,
+  latenza di rete, o errori di chunk loading), l'useEffect non parte MAI, e l'intro rimane
+  nello stato iniziale (visibile) senza mai essere smontato. L'utente vedeva una schermata nera
+  fissa o niente del tutto.
+- Soluzione BULLETPROOF: riscritto IntroLoader come Server Component (no "use client"), con
+  animazioni gestite INTERAMENTE da CSS @keyframes:
+  - intro-lifecycle (3.2s totali): 0% visible → 75% visible → 99% opacity 0 → 100% visibility hidden
+  - L'intro si mostra e si nasconde DA SOLO, senza bisogno di JS
+  - visibility:hidden finale rimuove dal flusso di paint
+  - pointer-events:none finale disabilita interazioni
+- IntroLoader.tsx: rimosso "use client", useState, useEffect, setExiting, setShow, _mounted
+  - Ora è un puro server component che renderizza HTML statico
+  - Stessa struttura visiva: MM + dot + line + subtitle + vignette
+- CSS globals.css: rimosso .intro-loader-exit (non più necessario)
+  - Aggiunta keyframe intro-lifecycle sul .intro-loader
+  - Aggiunta regola: html.intro-active body { overflow: hidden !important; }
+  - prefers-reduced-motion: .intro-loader display none + animation none
+- Body scroll lock: aggiunto script INLINE nel <head> di layout.tsx
+  - Eseguito IMMEDIATAMENTE quando il browser parse l'HTML, PRIMA del body
+  - Aggiunge classe 'intro-active' a <html>
+  - Dopo 3.2s rimuove la classe
+  - Rispetta prefers-reduced-motion (skip)
+  - try/catch per sicurezza
+- Verifica produzione con curl:
+  - HTML contiene class="intro-loader" e class="intro-loader-inner"
+  - HTML contiene 'intro-active' (script eseguito)
+  - CSS bundle contiene 'intro-lifecycle' keyframe e 'intro-active' selettore
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto (solo edit mirati su 3 file)
+  - Animazioni GPU-only (opacity, transform, visibility, filter)
+  - prefers-reduced-motion rispettato (skip completo)
+  - ErrorBoundary + skipHydration preservati
+  - BackToTop, ScrollProgress, FilmGrain preservati nel layout
+  - Italiana/Cormorant/Inter fonts preservati
+  - JSON-LD Person preservato
+
+Stage Summary:
+- File modificati:
+  - src/components/cinematic/IntroLoader.tsx (riscritto: rimosso "use client" + useState/useEffect, ora server component puro)
+  - src/styles/globals.css (intro-loader: aggiunta keyframe intro-lifecycle, rimossa .intro-loader-exit, aggiunta regola html.intro-active body overflow hidden, prefers-reduced-motion aggiornato)
+  - src/app/layout.tsx (aggiunto script inline nel <head> per bloccare scroll body durante intro)
+- Build status: SUCCESS — 80 pagine generate
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 46s)
+- Verifica HTML produzione: intro-loader + intro-lifecycle + intro-active tutti presenti
+

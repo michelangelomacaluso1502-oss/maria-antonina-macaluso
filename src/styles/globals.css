@@ -567,6 +567,7 @@ body {
 
 /* ============================================
    INTRO LOADER — sigla MM cinematografica
+   BULLETPROOF: CSS-only, no JS required
    ============================================ */
 .intro-loader {
   position: fixed;
@@ -577,14 +578,18 @@ body {
   justify-content: center;
   background: radial-gradient(ellipse at center, #15131a 0%, #08070a 70%);
   overflow: hidden;
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
+  visibility: visible;
+  opacity: 1;
+  /* Lifecycle: show for 2.4s, fade out by 3.2s, hide after */
+  animation: intro-lifecycle 3.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: opacity, transform, visibility;
 }
-.intro-loader-exit {
-  opacity: 0;
-  transform: translateY(-30px);
-  pointer-events: none;
+
+@keyframes intro-lifecycle {
+  0% { opacity: 1; visibility: visible; transform: translateY(0); }
+  75% { opacity: 1; visibility: visible; transform: translateY(0); }
+  99% { opacity: 0; visibility: visible; transform: translateY(-30px); pointer-events: none; }
+  100% { opacity: 0; visibility: hidden; transform: translateY(-30px); pointer-events: none; }
 }
 
 .intro-loader-inner {
@@ -705,9 +710,17 @@ body {
   );
 }
 
-/* Reduced motion fallback */
+/* Body scroll lock mentre l'intro è attivo (gestito da script inline nel <head>) */
+html.intro-active body {
+  overflow: hidden !important;
+}
+
+/* Reduced motion fallback — disabilita completamente l'intro */
 @media (prefers-reduced-motion: reduce) {
-  .intro-loader { display: none !important; }
+  .intro-loader {
+    display: none !important;
+    animation: none !important;
+  }
 }
 
 /* ============================================

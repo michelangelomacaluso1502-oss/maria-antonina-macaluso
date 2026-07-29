@@ -1,61 +1,19 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 /**
  * IntroLoader — splash cinematografico con sigla "MM"
  *
- * Approccio robusto:
- * - Stato iniziale show=true (rendering immediato)
- * - useEffect rimuove l'intro dopo 3.2s
- * - prefers-reduced-motion: salta completamente
- * - Animation tramite CSS puro (indipendente da JS)
+ * Approccio BULLETPROOF: CSS-only, nessun JavaScript richiesto.
+ * - Renderizza HTML statico con classi CSS
+ * - Le animazioni sono gestite interamente da @keyframes nel CSS
+ * - L'intro si mostra e si nasconde da solo con CSS animation + visibility:hidden finale
+ * - Funziona anche se JS è disabilitato o fallisce l'idratazione
+ * - Lo scroll del body è bloccato da uno script inline nel <head> del layout
+ *
+ * Server Component (nessun "use client") — viene renderizzato lato server
+ * ed è presente nell'HTML statico fin dal primo byte.
  */
 export default function IntroLoader() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_mounted, setMounted] = useState(false);
-  const [show, setShow] = useState(true);
-  const [exiting, setExiting] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-
-    if (typeof window === "undefined") return;
-
-    // Skip se l'utente preferisce ridurre le animazioni
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (prefersReduced) {
-      setShow(false);
-      return;
-    }
-
-    // Blocca scroll del body durante l'intro
-    document.body.style.overflow = "hidden";
-
-    // Avvia l'uscita a 2.4s, smonta a 3.2s
-    const t1 = window.setTimeout(() => setExiting(true), 2400);
-    const t2 = window.setTimeout(() => {
-      setShow(false);
-      document.body.style.overflow = "";
-    }, 3200);
-
-    return () => {
-      window.clearTimeout(t1);
-      window.clearTimeout(t2);
-      document.body.style.overflow = "";
-    };
-  }, []);
-
-  if (!show) return null;
-
   return (
-    <div
-      aria-hidden="true"
-      className={`intro-loader ${exiting ? "intro-loader-exit" : ""}`}
-      style={{ display: "flex" }}
-    >
+    <div aria-hidden="true" className="intro-loader">
       <div className="intro-loader-inner">
         {/* Sigla MM con reveal letter-spacing */}
         <div className="intro-mm-wrap">
@@ -65,7 +23,6 @@ export default function IntroLoader() {
           <span
             className="intro-mm-letter intro-mm-dot"
             style={{ animationDelay: "0.5s" }}
-            aria-hidden="true"
           >
             ·
           </span>
