@@ -243,3 +243,53 @@ Stage Summary:
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 37s)
 - Risultato: la foto hero è ora chiaramente visibile su tutti gli schermi (mobile, desktop, ultrawide) mantenendo leggibilità del testo grazie al gradient inferiore che ancorà le CTA
 
+
+---
+Task ID: COLLABORAZIONI-ANGELO
+Agent: Full-stack developer
+Task: Arricchire la pagina /collaborazioni con Angelo Faraci + Enciclopedia digitale + storia d'amore con foto e testi copiati dal sito angelo-faraci.vercel.app
+
+Work Log:
+- Fetch del sito Angelo Faraci (https://angelo-faraci.vercel.app) tramite curl — 1.4MB HTML
+- Estratti testi sulla relazione:
+  - Sezione "Storia d'amore in corso — Angelo & Maria Antonina" con 4 tappe temporali
+  - Bio estesa di Angelo Faraci (3 paragrafi autoriali)
+  - Citazione "L'amore non è il protagonista della nostra storia. È la luce che permette di vederla."
+  - Dettagli biografici: nato Palermo 13 agosto 1989, fidanzati 14 agosto 2019 a Palermo
+  - Dati su 8 film condivisi, vita tra provincia messinese e Roma
+- Identificate 4 immagini della coppia usate sul sito Angelo Faraci:
+  - /photobook/ph05_2019.webp (1172x2048 portrait) — foto coppia 2019
+  - /photobook/FB_IMG_1782116917589.jpg (1440x1080) — foto Facebook coppia
+  - /photobook/ph08_2022.webp (960x821) — sul set 2022
+  - /photobook/ph17_2025.webp (1280x1088) — foto coppia 2025
+- Scaricate in /public/images/angelo/ con nomi descrittivi:
+  - coppia-2019.webp, coppia-fb.jpg, coppia-2022.webp, coppia-2025.webp
+  - angelo-taormina.jpg (hero Angelo Faraci, opzionale per uso futuro)
+- Aggiornato ANGELO_FARACI in src/lib/data.ts:
+  - relationshipStory riscritta con testi copiati dal sito Angelo (4 paragrafi con citazioni stampa)
+  - Aggiunto relationshipTimeline: 4 tappe (L'incontro, Il fidanzamento 14 ago 2019, Insieme sul red carpet 2022-2024, Una coppia una squadra una Sicilia)
+  - Aggiunto relationshipPhotos: 4 foto con caption + year
+  - Aggiunto bio: 3 paragrafi autoriali copiati dal sito Angelo Faraci
+- Aggiornata pagina /collaborazioni (src/app/collaborazioni/page.tsx) con 3 sezioni:
+  1. Sezione "Maria Antonina & Angelo Faraci" con:
+     - Header con icona Heart + tagline "Una coppia, una squadra, una Sicilia"
+     - 3 badge dati (fidanzamento, luogo, film condivisi)
+     - Galleria 4 foto in grid 2x2 / 4x1 con frame-gold e caption
+     - Timeline a tappe (4 card glass-card con anno + titolo + body)
+     - Citazione finale in blockquote
+  2. Sezione "Enciclopedia digitale — Angelo Faraci" con:
+     - Bio estesa di Angelo (3 paragrafi)
+     - Card profilo laterale con: nome, ruolo, data nascita, incontro, film condivisi
+     - 3 CTA: sito ufficiale (Enciclopedia digitale), IMDb, pagina interna /angelo-faraci
+  3. Sezione "Altre collaborazioni" con grid 2 colonne delle collaborazioni non-Angelo (Rai Cinema, Ancora, festival)
+- Tutti i testi copiati fedelmente dal sito Angelo Faraci (relazione, bio, citazione, dati)
+- Icone lucide-react: Heart, Calendar, MapPin, Film, Clapperboard, BookOpen, Users, ExternalLink
+- Layout responsive: mobile 1 colonna, desktop 2 colonne per bio+profilo e 4 colonne per galleria foto
+
+Stage Summary:
+- File modificati: src/lib/data.ts (ANGELO_FARACI esteso con relationshipTimeline, relationshipPhotos, bio), src/app/collaborazioni/page.tsx (rewrite completo con 3 sezioni)
+- 4 nuove immagini coppia in /public/images/angelo/: coppia-2019.webp, coppia-fb.jpg, coppia-2022.webp, coppia-2025.webp
+- Build status: SUCCESS — bunx tsc --noEmit 0 errori, 76 pagine generate
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 46s)
+- Contenuti copiati dal sito Angelo Faraci: 4 tappe relazione, 3 paragrafi bio Angelo, citazione, 4 foto coppia — il tutto ora vive anche nel sito Maria Antonina
+
