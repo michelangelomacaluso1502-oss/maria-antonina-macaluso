@@ -215,3 +215,31 @@ Stage Summary:
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production deployment Ready in 35s)
 - Struttura biografia: 7 capitoli cronologici con foto + anno + didascalia, perfettamente allineata alla richiesta utente (debutto, primo volto, incontro con Angy)
 
+
+---
+Task ID: HERO-FOTO-VISIBILE
+Agent: Full-stack developer
+Task: Renderizzare la foto hero visibile su schermo intero (era oscurata da overlay troppo scuri)
+
+Work Log:
+- Analizzato il componente Hero.tsx: 3 layer di overlay scuri si combinavano e nascondevano la foto su schermo intero:
+  1. hero-vignette (radial 95% opacità ai bordi + linear 85% in basso)
+  2. bg-gradient-to-b from-noir/30 via-transparent to-noir/70
+  3. bg-gradient-to-r from-noir/40 via-transparent to-noir/40 (peggiore su widescreen)
+- Più 2 letterbox bars opachi (top 6vh nero solido + bottom 6vh)
+- Su schermo intero/desktop la foto verticale 797x1280 veniva croppata ai lati da object-cover, e i 3 overlay oscuravano quasi tutto
+- Fix applicato:
+  - Rimosso layer hero-vignette dal Hero (vignette troppo aggressiva su widescreen)
+  - Ridotto gradient verticale: from-noir/40 via-transparent to-noir/85 (era /30→/70, più contrasto per leggibilità testo ma meno copertura totale)
+  - Ridotto gradient orizzontale: from-noir/20 via-transparent to-noir/20 (era /40→/40, -50% scurimento laterale)
+  - Cambiato object-position: object-[50%_20%] invece di object-top (mantiene il volto inquadrate meglio nei vari aspect ratio)
+  - Rimosso letterbox bar superiore opaco (era nero solido 6vh, ora non c'è più — la foto è visibile fino in alto)
+  - Letterbox bar inferiore aumentato a 8vh ma con gradient (from-noir via-noir/70 to-transparent) per ancorare il testo CTA
+  - Aggiornata anche la classe CSS .hero-vignette in globals.css (più leggera: 50% opacità bordi invece di 95%, 60% bottom invece di 85%) per consistenza futura
+
+Stage Summary:
+- File modificati: src/components/sections/Hero.tsx (overlay ridotti, letterbox top rimosso, object-position 50%_20%), src/styles/globals.css (.hero-vignette alleggerita)
+- Build status: SUCCESS — bunx tsc --noEmit 0 errori, 76 pagine generate
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 37s)
+- Risultato: la foto hero è ora chiaramente visibile su tutti gli schermi (mobile, desktop, ultrawide) mantenendo leggibilità del testo grazie al gradient inferiore che ancorà le CTA
+
