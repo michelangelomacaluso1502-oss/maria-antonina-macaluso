@@ -349,3 +349,61 @@ Stage Summary:
 - Vercel project link corretto: my-project → maria-antonina-macaluso (era linkato al progetto sbagliato)
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 56s)
 
+
+---
+Task ID: HERO-SPLIT-SCREEN-INTRO-MM
+Agent: Full-stack developer
+Task: Trasformare Hero in split-screen cinematografico + aggiungere intro animation con sigla MM
+
+Work Log:
+- Creato nuovo componente IntroLoader (src/components/cinematic/IntroLoader.tsx):
+  - Splash screen full-screen nero con radial gradient
+  - Sigla "MM" con lettere animate: M (delay 0.2s), · (delay 0.45s), M (delay 0.7s)
+  - Ogni lettera: opacity 0→1, translateY 40→0, scale 0.9→1, blur 14px→0
+  - Gradient text gold su lettere: linear-gradient(180deg, #f5efe4 0%, #c9a96a 60%, #8a6f3f 100%)
+  - Punto centrale · in colore rose (#d4a5a5) per distinguere le due M
+  - Linea gold che si disegna sotto: width 0→clamp(180px, 30vw, 320px), delay 0.9s
+  - Sottotitolo "Maria Antonina Macaluso" fade-in con letter-spacing 0.4em, delay 1.1s
+  - Vignette radiale per profondità
+  - Auto-dismiss: t1=2000ms (exit trigger), t2=2700ms (unmount)
+  - Exit animation: opacity→0, translateY -30px, pointer-events none
+  - sessionStorage 'mam-intro-played' per mostrare solo una volta per sessione
+  - body overflow hidden durante il playback
+  - prefers-reduced-motion: skip entirely (display none via CSS)
+  - SSR safe (typeof window check)
+- Aggiunti 4 nuovi keyframes in globals.css:
+  - intro-letter-reveal (1.1s cubic-bezier expo-out)
+  - intro-dot-reveal (0.9s)
+  - intro-line-draw (1.4s, delay 0.9s)
+  - intro-subtitle-reveal (1s, delay 1.1s)
+  - Tutti GPU-accelerated (opacity, transform, filter, width)
+  - @media prefers-reduced-motion: .intro-loader display none
+- Aggiunto IntroLoader al layout (src/app/layout.tsx), primo figlio dentro ErrorBoundary, sopra ScrollProgress
+- Hero ristrutturato in split-screen cinematografico:
+  - DESKTOP (md+): foto a destra (right 0, left 45%), object-cover object-[50%_15%] per mostrare il volto
+    - Cornice gold decorativa: linea verticale gradient + 2 linee orizzontali angolari
+    - Gradient left→noir via-noir/85 to-transparent solo sulla sinistra (zona testo)
+    - Testo justify-center items-start, max-w-55% per lasciare spazio alla foto
+    - Parallax foto: y 0→12%, scale 1→1.05 (più sottile del vecchio bgY 18%)
+  - MOBILE: foto come backdrop full-screen object-contain object-top
+    - Gradient verticale from-noir via-noir/70 to-noir/40 per leggibilità
+    - Testo justify-end pb-24
+  - Animazioni Framer Motion preservate: containerStagger, itemUp, itemClipRight, H1 split-line
+  - Scroll indicator riposizionato: md:left-1/4 invece di left-1/2 per non sovrapporsi alla foto
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto (aggiunte solo: 1 nuovo componente, 1 layout edit, Hero rewrite)
+  - Animazioni GPU-only (transform, opacity, filter, clip-path, width)
+  - prefers-reduced-motion rispettato (intro skip + reveal statici)
+  - sessionStorage per una sola volta per sessione (non rompe navigazione interna)
+  - ErrorBoundary preserva intro da errori
+  - Hero photo mostra il volto su desktop (object-position 50% 15%) e intera su mobile (object-contain)
+
+Stage Summary:
+- File creati/modificati:
+  - NEW src/components/cinematic/IntroLoader.tsx (95 righe)
+  - MODIFIED src/styles/globals.css (+140 righe stili intro loader + keyframes)
+  - MODIFIED src/app/layout.tsx (+ import IntroLoader, + <IntroLoader /> nel body)
+  - MODIFIED src/components/sections/Hero.tsx (rewrite split-screen: foto destra desktop, backdrop mobile)
+- Build status: SUCCESS — bunx tsc --noEmit 0 errori su src/ (1 preesistente use-toast.ts), 80 pagine generate
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 40s)
+

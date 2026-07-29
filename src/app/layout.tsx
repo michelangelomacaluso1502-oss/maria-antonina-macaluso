@@ -5,6 +5,7 @@ import ScrollProgress from "@/components/cinematic/ScrollProgress";
 import FilmGrain from "@/components/cinematic/FilmGrain";
 import PWARegister from "@/components/cinematic/PWARegister";
 import BackToTop from "@/components/cinematic/BackToTop";
+import IntroLoader from "@/components/cinematic/IntroLoader";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { SITE } from "@/lib/data";
@@ -101,6 +102,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-noir text-cream antialiased">
         <a href="#main" className="skip-link">Vai al contenuto</a>
         <ErrorBoundary>
+          <IntroLoader />
           <ScrollProgress />
           <FilmGrain />
           <Header />

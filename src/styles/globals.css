@@ -566,6 +566,151 @@ body {
 }
 
 /* ============================================
+   INTRO LOADER — sigla MM cinematografica
+   ============================================ */
+.intro-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, #15131a 0%, #08070a 70%);
+  overflow: hidden;
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.intro-loader-exit {
+  opacity: 0;
+  transform: translateY(-30px);
+  pointer-events: none;
+}
+
+.intro-loader-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  z-index: 2;
+}
+
+/* Sigla MM */
+.intro-mm-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.1em;
+  font-family: "Italiana", "Cormorant Garamond", serif;
+  font-size: clamp(5rem, 18vw, 11rem);
+  line-height: 1;
+  color: #c9a96a;
+  letter-spacing: 0.05em;
+}
+
+.intro-mm-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(40px) scale(0.9);
+  filter: blur(14px);
+  animation: intro-letter-reveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  background: linear-gradient(180deg, #f5efe4 0%, #c9a96a 60%, #8a6f3f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 60px rgba(201, 169, 106, 0.3);
+}
+
+.intro-mm-dot {
+  font-size: 0.55em;
+  color: #d4a5a5;
+  -webkit-text-fill-color: #d4a5a5;
+  filter: blur(0);
+  transform: translateY(-0.15em) scale(0.6);
+  animation: intro-dot-reveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes intro-letter-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+    filter: blur(14px);
+  }
+  60% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes intro-dot-reveal {
+  0% { opacity: 0; transform: translateY(-0.15em) scale(0.3); }
+  100% { opacity: 1; transform: translateY(-0.15em) scale(0.6); }
+}
+
+/* Linea gold che si disegna */
+.intro-line {
+  display: block;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #c9a96a 30%,
+    #f5efe4 50%,
+    #c9a96a 70%,
+    transparent
+  );
+  animation: intro-line-draw 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards;
+}
+
+@keyframes intro-line-draw {
+  0% { width: 0; opacity: 0; }
+  20% { opacity: 1; }
+  100% { width: clamp(180px, 30vw, 320px); opacity: 1; }
+}
+
+/* Sottotitolo fade */
+.intro-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #f5efe4;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: intro-subtitle-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes intro-subtitle-reveal {
+  0% { opacity: 0; transform: translateY(8px); filter: blur(4px); }
+  100% { opacity: 0.7; transform: translateY(0); filter: blur(0); }
+}
+
+/* Vignette radiale */
+.intro-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(8, 7, 10, 0.5) 80%,
+    rgba(8, 7, 10, 0.95) 100%
+  );
+}
+
+/* Reduced motion fallback */
+@media (prefers-reduced-motion: reduce) {
+  .intro-loader { display: none !important; }
+}
+
+/* ============================================
    HERO SPECIFICS
    ============================================ */
 .hero-parallax-bg {

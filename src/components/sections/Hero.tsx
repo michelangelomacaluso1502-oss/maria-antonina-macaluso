@@ -37,12 +37,11 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
-  // Multi-layer parallax: bg moves slowest, gradient mid, content fast.
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
-  const gradientY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
+  // Multi-layer parallax: photo moves slowest, content fast.
+  const photoY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
+  const photoScale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "32%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-  const titleScale = useTransform(scrollYProgress, [0, 1], [1, 0.94]);
 
   return (
     <section
@@ -51,41 +50,52 @@ export default function Hero() {
       className="relative min-h-[100svh] w-full overflow-hidden bg-noir"
       aria-label="Maria Antonina Macaluso — attrice siciliana"
     >
-      {/* Layer 1 — background image (parallax + kenburns) */}
+      {/* === SPLIT-SCREEN LAYOUT ===
+          Desktop: foto a destra con cornice gold, testo a sinistra
+          Mobile: foto come backdrop full-screen con overlay, testo sopra */}
+
+      {/* Layer 1 — Foto con cornice cinematografica */}
       <motion.div
-        style={{ y: bgY }}
-        className="hero-parallax-bg absolute inset-x-0 top-0 z-0 h-[60svh] md:h-[65svh]"
+        style={{ y: photoY, scale: photoScale }}
+        className="absolute inset-0 z-0 md:inset-y-0 md:right-0 md:left-[42%] lg md:left-[45%]"
       >
-        <div className="absolute inset-0 animate-slow-zoom">
+        {/* Backdrop mobile: foto cover con overlay */}
+        <div className="absolute inset-0 animate-slow-zoom md:animate-none">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/hero-maria-antonina.jpg"
             alt="Maria Antonina Macaluso"
-            className="h-full w-full object-contain object-top"
+            className="h-full w-full object-contain object-top md:object-cover md:object-[50%_15%]"
             fetchPriority="high"
           />
         </div>
+
+        {/* Cornice gold sottile su desktop (right side) */}
+        <div className="pointer-events-none absolute inset-0 hidden md:block">
+          <div className="absolute left-0 top-[8%] bottom-[8%] w-px bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
+          <div className="absolute left-6 top-[8%] h-px w-16 bg-gradient-to-r from-gold/40 to-transparent" />
+          <div className="absolute left-6 bottom-[8%] h-px w-16 bg-gradient-to-r from-gold/40 to-transparent" />
+        </div>
       </motion.div>
 
-      {/* Layer 2 — gradient overlays (legibility) */}
-      <motion.div
-        style={{ y: gradientY }}
-        className="hero-vignette pointer-events-none absolute inset-x-0 top-0 z-[1] h-[60svh] md:h-[65svh]"
-      />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-1/2 bg-gradient-to-t from-noir via-noir/80 to-transparent" />
+      {/* Layer 2 — Overlay leggibilità */}
+      {/* Mobile: gradient full che oscura la foto per leggibilità testo */}
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-noir via-noir/70 to-noir/40 md:hidden" />
+      {/* Desktop: gradient solo sul lato sinistro (zona testo) */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-[1] hidden w-[55%] bg-gradient-to-r from-noir via-noir/85 to-transparent md:block" />
       <div className="pointer-events-none absolute inset-x-0 top-0 z-[2] h-24 bg-gradient-to-b from-noir/70 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-32 bg-gradient-to-t from-noir via-noir/60 to-transparent" />
 
-      {/* Layer 3 — content (parallax + fade) */}
+      {/* Layer 3 — Content (parallax + fade) */}
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
-        className="relative z-10 flex min-h-[100svh] flex-col justify-end"
+        className="relative z-10 flex min-h-[100svh] flex-col justify-end md:justify-center md:items-start"
       >
         <motion.div
           variants={containerStagger}
           initial="hidden"
           animate="visible"
-          style={{ scale: titleScale }}
-          className="cinematic-container w-full pb-20 pt-28 md:pb-24"
+          className="cinematic-container w-full pb-24 pt-28 md:pb-16 md:max-w-[55%]"
         >
           {/* Overline pill — clip-path reveal */}
           <motion.span
@@ -185,7 +195,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2.4, duration: 0.9, ease: EASE }}
-        className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-gold/70 transition-colors hover:text-gold"
+        className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-gold/70 transition-colors hover:text-gold md:left-1/4"
       >
         <span className="text-[10px] uppercase tracking-cinema">Scorri per scoprire</span>
         <span className="relative flex h-9 w-5 items-start justify-center rounded-full border border-gold/40 pt-1.5">
