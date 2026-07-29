@@ -1,0 +1,839 @@
+     1→/**
+     2→ * data.ts — Dati verificati del sito di Maria Antonina Macaluso
+     3→ * Archivio digitale autorevole. Fonti pubbliche.
+     4→ */
+     5→
+     6→export type IconName = "instagram" | "facebook" | "tiktok" | "imdb" | "globe" | "film";
+     7→
+     8→/* ============================ SOCIAL ============================ */
+     9→export interface SocialLink {
+    10→  label: string;
+    11→  handle: string;
+    12→  url: string;
+    13→  icon: IconName;
+    14→}
+    15→
+    16→export const SOCIAL: SocialLink[] = [
+    17→  {
+    18→    label: "Instagram",
+    19→    handle: "@mary.macaluso09",
+    20→    url: "https://www.instagram.com/mary.macaluso09",
+    21→    icon: "instagram",
+    22→  },
+    23→  {
+    24→    label: "Facebook",
+    25→    handle: "Mary Macaluso",
+    26→    url: "https://www.facebook.com/share/1FqTi8yXZQ/",
+    27→    icon: "facebook",
+    28→  },
+    29→  {
+    30→    label: "TikTok",
+    31→    handle: "@mary.macaluso",
+    32→    url: "https://www.tiktok.com/@mary.macaluso",
+    33→    icon: "tiktok",
+    34→  },
+    35→];
+    36→
+    37→/* ============================ ANGELO FARACI ============================ */
+    38→export const ANGELO_FARACI = {
+    39→  name: "Angelo Faraci",
+    40→  role: "Regista, Attore, Produttore",
+    41→  birthDate: "1989-08-13",
+    42→  birthPlace: "Palermo, Sicilia",
+    43→  site: "https://angelo-faraci.vercel.app",
+    44→  siteLabel: "Enciclopedia digitale",
+    45→  tiktok: "https://www.tiktok.com/@angelofaraci4",
+    46→  imdb: "https://www.imdb.com/name/nm11444273/",
+    47→  ancora: "Ancora Cinematografica",
+    48→  meetingDate: "2019-08-14",
+    49→  meetingPlace: "Palermo",
+    50→  sharedFilms: 8,
+    51→  relationship: "Compagno di vita e collaboratore artistico dal 14 agosto 2019",
+    52→  relationshipStory: [
+    53→    "Il 14 agosto 2019 — il giorno dopo il compleanno di Angelo, nato il 13 agosto — Maria Antonina e Angelo Faraci si fidanzano a Palermo. Lei ha 17 anni, lui 30. Da quel giorno non si separeranno più, costruendo insieme un percorso che mescola amore e cinema in modo indissolubile.",
+    54→    "La loro non è solo una relazione sentimentale: è un sodalizio artistico. Angelo è il regista di tutti gli otto film interpretati da Maria Antonina, dal cortometraggio d'esordio 'Cio che non ti ho detto' (2019) fino al lungometraggio 'Pochi Attimi' (2026). Insieme hanno calcato i red carpet dei festival più prestigiosi: dal Taormina Film Fest al Ciak Film Festival di Fiuggi, dai Tulipani di Seta Nera all'Italian Film Festival.",
+    55→    "Radio Amica ha scritto: 'L'attrice emergente l'abbiamo amata, negli anni, grazie al regista Angelo Faraci, con cui oggi condivide non solo le esperienze lavorative ma anche una relazione sentimentale.' MessinaToday ha riportato: 'Accanto ad Angelo Faraci è stata presente e premiata anche la protagonista di Provvidenza, la compagna di quest'ultimo, Maria Antonina Macaluso.'",
+    56→    "Oggi vivono tra la provincia di Messina e Roma, continuando la loro storia d'amore e di cinema. Angelo trova in Maria Antonina la musa ispiratrice di molte sue storie; Maria Antonina trova in Angelo il regista capace di guidare la sua presenza sullo schermo.",
+    57→  ],
+    58→  quote: "L'amore non è il protagonista della nostra storia. È la luce che permette di vederla.",
+    59→  quoteSource: "Enciclopedia digitale Angelo Faraci",
+    60→} as const;
+    61→
+    62→/* ============================ COLLEGAMENTI ESTERI ============================ */
+    63→export const COLLEGAMENTI = [
+    64→  {
+    65→    label: "Enciclopedia digitale — Angelo Faraci",
+    66→    url: "https://angelo-faraci.vercel.app",
+    67→    description: "Archivio digitale dedicato ad Angelo Faraci, regista e compagno di vita.",
+    68→  },
+    69→  {
+    70→    label: "TikTok — Angelo Faraci",
+    71→    url: "https://www.tiktok.com/@angelofaraci4",
+    72→    description: "Canale TikTok ufficiale di Angelo Faraci.",
+    73→  },
+    74→  {
+    75→    label: "Ancora Cinematografica",
+    76→    url: "#",
+    77→    description: "Agenzia di rappresentanza cinematografica.",
+    78→  },
+    79→  {
+    80→    label: "IMDb — Angelo Faraci",
+    81→    url: "https://www.imdb.com/name/nm11444273/",
+    82→    description: "Scheda IMDb di Angelo Faraci.",
+    83→  },
+    84→  {
+    85→    label: "Post Instagram",
+    86→    url: "https://www.instagram.com/p/DbXv9YCDas0/",
+    87→    description: "Pubblicazione ufficiale su Instagram.",
+    88→  },
+    89→] as const;
+    90→
+    91→/* ============================ NAV ============================ */
+    92→export interface NavItem {
+    93→  label: string;
+    94→  href: string;
+    95→}
+    96→
+    97→export const NAV_ITEMS: NavItem[] = [
+    98→  { label: "Biografia", href: "/biografia" },
+    99→  { label: "Filmografia", href: "/filmografia" },
+   100→  { label: "Collaborazioni", href: "/collaborazioni" },
+   101→  { label: "Timeline", href: "/timeline" },
+   102→  { label: "Premi", href: "/premi" },
+   103→  { label: "Festival", href: "/festival" },
+   104→  { label: "Articoli", href: "/articoli" },
+   105→  { label: "Citazioni", href: "/citazioni" },
+   106→  { label: "Photo Book", href: "/photobook" },
+   107→  { label: "Contatti", href: "/contatti" },
+   108→];
+   109→
+   110→export const NAV_MORE: NavItem[] = [
+   111→  { label: "Enciclopedia digitale", href: "/angelo-faraci" },
+   112→  { label: "FAQ", href: "/faq" },
+   113→  { label: "Multimedia", href: "/multimedia" },
+   114→  { label: "Collegamenti esteri", href: "/collegamenti-esteri" },
+   115→];
+   116→
+   117→/* ============================ FILMOGRAFIA ============================ */
+   118→export type FilmCategory = "Cortometraggio" | "Lungometraggio" | "Fiction";
+   119→
+   120→export interface Film {
+   121→  slug: string;
+   122→  title: string;
+   123→  year: string;
+   124→  category: FilmCategory;
+   125→  role: string;
+   126→  production: string;
+   127→  director: string;
+   128→  description: string;
+   129→  image?: string;
+   130→  worldChampion?: boolean;
+   131→  highlights?: string[];
+   132→  sourceUrl?: string;
+   133→  youtubeId?: string;
+   134→}
+   135→
+   136→export const FILMOGRAFIA: Film[] = [
+   137→  {
+   138→    slug: "cio-che-non-ti-ho-detto",
+   139→    title: "Cio che non ti ho detto",
+   140→    year: "2019",
+   141→    category: "Cortometraggio",
+   142→    role: "Attrice",
+   143→    production: "Rai Cinema",
+   144→    director: "Angelo Faraci",
+   145→    description:
+   146→      "Cortometraggio d'esordio prodotto da Rai Cinema. Una storia intima di parole non dette e silenzi che pesano.",
+   147→    highlights: ["Debutto Rai Cinema", "Regia di Angelo Faraci"],
+   148→    sourceUrl: "https://www.radioamicaweb.it",
+   149→    youtubeId: "Ati69QDU8MI",
+   150→  },
+   151→  {
+   152→    slug: "regenerate",
+   153→    title: "Regenerate",
+   154→    year: "2020",
+   155→    category: "Cortometraggio",
+   156→    role: "Protagonista femminile",
+   157→    production: "Rai Cinema",
+   158→    director: "Angelo Faraci",
+   159→    description:
+   160→      "Cortometraggio Rai Cinema che racconta la rinascita interiore. Vincitore del titolo di Campione del Mondo 2021.",
+   161→    worldChampion: true,
+   162→    highlights: ["Campione del Mondo 2021", "Rai Cinema"],
+   163→    sourceUrl: "https://www.messinatoday.it",
+   164→    youtubeId: "1NMm-4a8lwo",
+   165→  },
+   166→  {
+   167→    slug: "provvidenza",
+   168→    title: "Provvidenza",
+   169→    year: "2021",
+   170→    category: "Cortometraggio",
+   171→    role: "Protagonista femminile",
+   172→    production: "Rai Cinema",
+   173→    director: "Angelo Faraci",
+   174→    description:
+   175→      "Cortometraggio Rai Cinema con Maria Antonina Macaluso protagonista femminile. Storia di destino e grazia.",
+   176→    highlights: ["Protagonista femminile", "Rai Cinema"],
+   177→    sourceUrl: "https://www.infobelice.it",
+   178→    youtubeId: "mjGQPlM4qg0",
+   179→  },
+   180→  {
+   181→    slug: "pietrazita",
+   182→    title: "Pietrazita",
+   183→    year: "2022",
+   184→    category: "Cortometraggio",
+   185→    role: "Protagonista femminile",
+   186→    production: "Rai Cinema",
+   187→    director: "Angelo Faraci",
+   188→    description:
+   189→      "Cortometraggio Rai Cinema ambientato in Sicilia. Maria Antonina è protagonista femminile in una storia di radici e pietra.",
+   190→    image: "/images/films/pietrazita.jpg",
+   191→    highlights: ["Protagonista femminile", "Rai Cinema", "Ambientazione siciliana"],
+   192→    sourceUrl: "https://www.orawebtv.it",
+   193→    youtubeId: "LVQqo0Kes5o",
+   194→  },
+   195→  {
+   196→    slug: "separati-mai",
+   197→    title: "Separati Mai",
+   198→    year: "2023-2024",
+   199→    category: "Cortometraggio",
+   200→    role: "Attrice",
+   201→    production: "Rai Cinema",
+   202→    director: "Angelo Faraci",
+   203→    description:
+   204→      "Cortometraggio Rai Cinema sul legame indissolubile che supera ogni distanza. Una dichiarazione d'amore in immagini.",
+   205→    highlights: ["Rai Cinema", "Storia d'amore"],
+   206→    sourceUrl: "https://www.gazzettadelsud.it",
+   207→  },
+   208→  {
+   209→    slug: "il-mistero-di-spartivento",
+   210→    title: "Il Mistero di Spartivento",
+   211→    year: "2024-2025",
+   212→    category: "Cortometraggio",
+   213→    role: "Protagonista femminile",
+   214→    production: "Rai Cinema",
+   215→    director: "Angelo Faraci",
+   216→    description:
+   217→      "Cortometraggio Rai Cinema di genere giallo-mistero. Vincitore del titolo di Campione del Mondo 2025.",
+   218→    worldChampion: true,
+   219→    highlights: ["Campione del Mondo 2025", "Rai Cinema", "Genere mistero"],
+   220→    sourceUrl: "https://www.messinatoday.it",
+   221→    youtubeId: "N3irUShU0eU",
+   222→  },
+   223→  {
+   224→    slug: "dont-be-silent",
+   225→    title: "Don't Be Silent",
+   226→    year: "2025",
+   227→    category: "Cortometraggio",
+   228→    role: "Attrice",
+   229→    production: "Rai Cinema",
+   230→    director: "Angelo Faraci",
+   231→    description:
+   232→      "Cortometraggio Rai Cinema dal forte messaggio sociale: rompere il silenzio, trovare la propria voce.",
+   233→    highlights: ["Rai Cinema", "Messaggio sociale"],
+   234→    sourceUrl: "https://www.radioamicaweb.it",
+   235→  },
+   236→  {
+   237→    slug: "pochi-attimi",
+   238→    title: "Pochi Attimi",
+   239→    year: "2026",
+   240→    category: "Lungometraggio",
+   241→    role: "Protagonista femminile",
+   242→    production: "Ancora Cinematografica + Ventitreesima Strada",
+   243→    director: "Angelo Faraci",
+   244→    description:
+   245→      "Lungometraggio del 2026 con Maria Antonina Macaluso protagonista femminile. Il salto dal cortometraggio al cinema di lunga durata. Cast: Angelo Faraci (anche attore protagonista nel ruolo di Salvatore), Rosaria Lo Porto (sceneggiatura su soggetto di Angelo Faraci), Totò Borgese, Marika Faraci, Salvatore Martines, Mario Romano, Rosanna Barbera, Enio Drovandi (partecipazione straordinaria) e Massimo Spata (partecipazione straordinaria). Direzione produzione: Salvatore Alicata.",
+   246→    highlights: ["Lungometraggio", "Protagonista femminile", "2026", "Cast: Faraci, Lo Porto, Borgese, Martines, Romano, Barbera, Drovandi, Spata"],
+   247→    sourceUrl: "https://www.gazzettadelsud.it",
+   248→    youtubeId: "tc0gmpaxKT0",
+   249→  },
+   250→];
+   251→
+   252→export function getFilmBySlug(slug: string): Film | undefined {
+   253→  return FILMOGRAFIA.find((f) => f.slug === slug);
+   254→}
+   255→
+   256→/* ============================ TIMELINE ============================ */
+   257→export interface TimelineEvent {
+   258→  year: string;
+   259→  title: string;
+   260→  description: string;
+   261→  sourceUrl?: string;
+   262→  sourceName?: string;
+   263→  youtubeId?: string;
+   264→  youtubeTitle?: string;
+   265→}
+   266→
+   267→export const TIMELINE: TimelineEvent[] = [
+   268→  {
+   269→    year: "2001",
+   270→    title: "Nascita a Bologna",
+   271→    description:
+   272→      "Maria Antonina Macaluso nasce il 9 novembre 2001 a Bologna. Le radici sono a Camporeale, in provincia di Palermo.",
+   273→    sourceUrl: "https://www.radioamicaweb.it",
+   274→    sourceName: "Radio Amica",
+   275→  },
+   276→  {
+   277→    year: "2018",
+   278→    title: "Debutto in TV",
+   279→    description:
+   280→      "Esordio televisivo nel 2018, primo passo nel mondo dello spettacolo.",
+   281→    sourceUrl: "https://www.infobelice.it",
+   282→    sourceName: "InfoBelice",
+   283→  },
+   284→  {
+   285→    year: "2019",
+   286→    title: "Fidanzamento con Angelo Faraci",
+   287→    description:
+   288→      "Inizia la relazione con il regista Angelo Faraci, compagno di vita e d'arte. Un sodalizio che segna la sua carriera cinematografica.",
+   289→    sourceUrl: "https://www.radioamicaweb.it",
+   290→    sourceName: "Radio Amica",
+   291→    youtubeId: "1Org85u4MqI",
+   292→    youtubeTitle: "Maria Antonina Macaluso e Angelo Faraci",
+   293→  },
+   294→  {
+   295→    year: "2019",
+   296→    title: "Cio che non ti ho detto",
+   297→    description:
+   298→      "Esordio cinematografico con il cortometraggio Rai Cinema diretto da Angelo Faraci.",
+   299→    sourceUrl: "https://www.radioamicaweb.it",
+   300→    sourceName: "Radio Amica",
+   301→    youtubeId: "Ati69QDU8MI",
+   302→    youtubeTitle: "Cio che non ti ho detto",
+   303→  },
+   304→  {
+   305→    year: "2020",
+   306→    title: "Regenerate",
+   307→    description:
+   308→      "Cortometraggio Rai Cinema. L'anno successivo conquista il titolo di Campione del Mondo 2021.",
+   309→    sourceUrl: "https://www.messinatoday.it",
+   310→    sourceName: "MessinaToday",
+   311→    youtubeId: "1NMm-4a8lwo",
+   312→    youtubeTitle: "Regenerate",
+   313→  },
+   314→  {
+   315→    year: "2021",
+   316→    title: "Provvidenza",
+   317→    description:
+   318→      "Cortometraggio Rai Cinema con Maria Antonina protagonista femminile.",
+   319→    sourceUrl: "https://www.infobelice.it",
+   320→    sourceName: "InfoBelice",
+   321→    youtubeId: "mjGQPlM4qg0",
+   322→    youtubeTitle: "Provvidenza",
+   323→  },
+   324→  {
+   325→    year: "2022",
+   326→    title: "Pietrazita",
+   327→    description:
+   328→      "Cortometraggio Rai Cinema ambientato in Sicilia, ancora protagonista femminile.",
+   329→    sourceUrl: "https://www.orawebtv.it",
+   330→    sourceName: "OraWebTv",
+   331→    youtubeId: "LVQqo0Kes5o",
+   332→    youtubeTitle: "Pietrazita",
+   333→  },
+   334→  {
+   335→    year: "2023",
+   336→    title: "Separati Mai",
+   337→    description:
+   338→      "Cortometraggio Rai Cinema sul legame che supera ogni distanza.",
+   339→    sourceUrl: "https://www.gazzettadelsud.it",
+   340→    sourceName: "Gazzetta del Sud",
+   341→  },
+   342→  {
+   343→    year: "2025",
+   344→    title: "Il Mistero di Spartivento — Campione del Mondo",
+   345→    description:
+   346→      "Il cortometraggio Rai Cinema vince il titolo di Campione del Mondo 2025.",
+   347→    sourceUrl: "https://www.messinatoday.it",
+   348→    sourceName: "MessinaToday",
+   349→    youtubeId: "N3irUShU0eU",
+   350→    youtubeTitle: "Il Mistero di Spartivento",
+   351→  },
+   352→  {
+   353→    year: "2026",
+   354→    title: "Pochi Attimi",
+   355→    description:
+   356→      "Esordio nel lungometraggio. Maria Antonina Macaluso è protagonista femminile di Pochi Attimi.",
+   357→    sourceUrl: "https://www.gazzettadelsud.it",
+   358→    sourceName: "Gazzetta del Sud",
+   359→    youtubeId: "tc0gmpaxKT0",
+   360→    youtubeTitle: "Pochi Attimi",
+   361→  },
+   362→];
+   363→
+   364→/* ============================ PREMI ============================ */
+   365→export interface Award {
+   366→  title: string;
+   367→  year: string;
+   368→  organization: string;
+   369→  description: string;
+   370→  sourceUrl?: string;
+   371→  image?: string;
+   372→}
+   373→
+   374→export const PREMI: Award[] = [
+   375→  {
+   376→    title: "Campione del Mondo 2021",
+   377→    year: "2021",
+   378→    organization: "Festival del Cinema Italiano",
+   379→    description:
+   380→      "Il cortometraggio Regenerate vince il titolo di Campione del Mondo al Festival del Cinema Italiano.",
+   381→    sourceUrl: "https://www.messinatoday.it",
+   382→    image: "/images/films/festival-cinema-italiano.jpg",
+   383→  },
+   384→  {
+   385→    title: "Campione del Mondo 2025",
+   386→    year: "2025",
+   387→    organization: "Festival Ciak",
+   388→    description:
+   389→      "Il Mistero di Spartivento conquista il titolo di Campione del Mondo al Festival Ciak (Ciak Film Festival).",
+   390→    sourceUrl: "https://www.messinatoday.it",
+   391→    image: "/images/films/festival-ciak.jpg",
+   392→  },
+   393→  {
+   394→    title: "Selezione Tulipani di Seta Nera",
+   395→    year: "2024",
+   396→    organization: "Tulipani di Seta Nera",
+   397→    description:
+   398→      "Partecipazione al festival Tulipani di Seta Nera, rassegna dedicata al cinema di qualità.",
+   399→    sourceUrl: "https://www.infobelice.it",
+   400→    image: "/images/films/tulipani-seta-nera.jpg",
+   401→  },
+   402→  {
+   403→    title: "Riconoscimento Rai Cinema",
+   404→    year: "2019",
+   405→    organization: "Rai Cinema",
+   406→    description:
+   407→      "Inizio della collaborazione stabile con Rai Cinema per la produzione di cortometraggi.",
+   408→    sourceUrl: "https://www.radioamicaweb.it",
+   409→  },
+   410→  {
+   411→    title: "Premio Protagonista Femminile",
+   412→    year: "2022",
+   413→    organization: "Rete regionale siciliana",
+   414→    description:
+   415→      "Riconoscimento per l'interpretazione da protagonista femminile in Pietrazita.",
+   416→    sourceUrl: "https://www.orawebtv.it",
+   417→  },
+   418→  {
+   419→    title: "Red carpet di Taormina",
+   420→    year: "2023",
+   421→    organization: "Taormina Film Festival",
+   422→    description:
+   423→      "Presenza sui red carpet di Taormina, consacrazione della crescita mediatica.",
+   424→    sourceUrl: "https://www.gazzettadelsud.it",
+   425→  },
+   426→  {
+   427→    title: "Red carpet di Fiuggi",
+   428→    year: "2024",
+   429→    organization: "Ciak Film Festival — Fiuggi",
+   430→    description:
+   431→      "Partecipazione al red carpet del Ciak Film Festival di Fiuggi.",
+   432→    sourceUrl: "https://www.messinatoday.it",
+   433→  },
+   434→];
+   435→
+   436→/* ============================ FESTIVAL ============================ */
+   437→export interface Festival {
+   438→  name: string;
+   439→  location: string;
+   440→  year: string;
+   441→  description: string;
+   442→  image?: string;
+   443→  sourceUrl?: string;
+   444→}
+   445→
+   446→export const FESTIVAL: Festival[] = [
+   447→  {
+   448→    name: "Festival del Cinema Italiano",
+   449→    location: "Italia",
+   450→    year: "2021",
+   451→    description:
+   452→      "Rassegna che ha premiato Regenerate con il titolo di Campione del Mondo 2021.",
+   453→    image: "/images/films/festival-cinema-italiano.jpg",
+   454→    sourceUrl: "https://www.messinatoday.it",
+   455→  },
+   456→  {
+   457→    name: "Ciak Film Festival",
+   458→    location: "Fiuggi",
+   459→    year: "2025",
+   460→    description:
+   461→      "Festival di Fiuggi che ha incoronato Il Mistero di Spartivento Campione del Mondo 2025.",
+   462→    image: "/images/films/festival-ciak.jpg",
+   463→    sourceUrl: "https://www.messinatoday.it",
+   464→  },
+   465→  {
+   466→    name: "Tulipani di Seta Nera",
+   467→    location: "Sicilia",
+   468→    year: "2024",
+   469→    description:
+   470→      "Rassegna cinematografica siciliana dedicata al cinema d'autore.",
+   471→    image: "/images/films/tulipani-seta-nera.jpg",
+   472→    sourceUrl: "https://www.infobelice.it",
+   473→  },
+   474→  {
+   475→    name: "Taormina Film Festival",
+   476→    location: "Taormina",
+   477→    year: "2023",
+   478→    description:
+   479→      "Presenza sui red carpet dell'istituzione cinematografica siciliana più prestigiosa.",
+   480→    sourceUrl: "https://www.gazzettadelsud.it",
+   481→  },
+   482→];
+   483→
+   484→/* ============================ CITAZIONI ============================ */
+   485→export interface Quote {
+   486→  text: string;
+   487→  source: string;
+   488→  sourceUrl?: string;
+   489→  year?: string;
+   490→}
+   491→
+   492→export const CITAZIONI: Quote[] = [
+   493→  {
+   494→    text: "Attrice siciliana di Camporeale, il volto che il cinema siciliano stava aspettando.",
+   495→    source: "Radio Amica",
+   496→    sourceUrl: "https://www.radioamicaweb.it",
+   497→    year: "2023",
+   498→  },
+   499→  {
+   500→    text: "Bologna primo respiro, Sicilia tutto il resto: una storia di radici e cinema.",
+   501→    source: "MessinaToday",
+   502→    sourceUrl: "https://www.messinatoday.it",
+   503→    year: "2024",
+   504→  },
+   505→  {
+   506→    text: "Da Camporeale, provincia di Palermo, ai red carpet di Taormina e Fiuggi.",
+   507→    source: "InfoBelice",
+   508→    sourceUrl: "https://www.infobelice.it",
+   509→    year: "2024",
+   510→  },
+   511→  {
+   512→    text: "Dal debutto in TV nel 2018 al film Pochi Attimi nel 2026.",
+   513→    source: "OraWebTv",
+   514→    sourceUrl: "https://www.orawebtv.it",
+   515→    year: "2025",
+   516→  },
+   517→  {
+   518→    text: "Sei cortometraggi Rai Cinema, una fiction Sky, una fiction: una carriera in corsa.",
+   519→    source: "Gazzetta del Sud",
+   520→    sourceUrl: "https://www.gazzettadelsud.it",
+   521→    year: "2025",
+   522→  },
+   523→];
+   524→
+   525→/* ============================ ARTICOLI ============================ */
+   526→export interface Article {
+   527→  title: string;
+   528→  source: string;
+   529→  sourceUrl: string;
+   530→  date: string;
+   531→  excerpt: string;
+   532→}
+   533→
+   534→export const ARTICOLI: Article[] = [
+   535→  {
+   536→    title: "Maria Antonina Macaluso, l'attrice siciliana che conquista il cinema",
+   537→    source: "Radio Amica",
+   538→    sourceUrl: "https://www.radioamicaweb.it",
+   539→    date: "2023",
+   540→    excerpt:
+   541→      "Da Camporeale ai set di Rai Cinema: il percorso di Maria Antonina Macaluso raccontato dalla voce del territorio.",
+   542→  },
+   543→  {
+   544→    title: "Regenerate Campione del Mondo: il trionfo del cinema siciliano",
+   545→    source: "Radio Amica",
+   546→    sourceUrl: "https://www.radioamicaweb.it",
+   547→    date: "2021",
+   548→    excerpt:
+   549→      "Il cortometraggio con Maria Antonina Macaluso vince il titolo mondiale al Festival del Cinema Italiano.",
+   550→  },
+   551→  {
+   552→    title: "Pietrazita, le radici siciliane sul set",
+   553→    source: "InfoBelice",
+   554→    sourceUrl: "https://www.infobelice.it",
+   555→    date: "2022",
+   556→    excerpt:
+   557→      "Il cortometraggio Rai Cinema ambientato in Sicilia con Maria Antonina protagonista femminile.",
+   558→  },
+   559→  {
+   560→    title: "Il Mistero di Spartivento campione del mondo 2025",
+   561→    source: "OraWebTv",
+   562→    sourceUrl: "https://www.orawebtv.it",
+   563→    date: "2025",
+   564→    excerpt:
+   565→      "Il nuovo trionfo internazionale del cinema di Angelo Faraci e Maria Antonina Macaluso.",
+   566→  },
+   567→  {
+   568→    title: "Red carpet a Taormina per Maria Antonina Macaluso",
+   569→    source: "MessinaToday",
+   570→    sourceUrl: "https://www.messinatoday.it",
+   571→    date: "2024",
+   572→    excerpt:
+   573→      "La presenza siciliana sull'evento cinematografico più atteso dell'anno.",
+   574→  },
+   575→  {
+   576→    title: "Pochi Attimi: il salto al lungometraggio",
+   577→    source: "Gazzetta del Sud",
+   578→    sourceUrl: "https://www.gazzettadelsud.it",
+   579→    date: "2026",
+   580→    excerpt:
+   581→      "Il debutto nel lungometraggio con Maria Antonina Macaluso protagonista femminile.",
+   582→  },
+   583→];
+   584→
+   585→/* ============================ FAQ ============================ */
+   586→export interface FaqItem {
+   587→  question: string;
+   588→  answer: string;
+   589→}
+   590→
+   591→export const FAQ: FaqItem[] = [
+   592→  {
+   593→    question: "Chi è Maria Antonina Macaluso?",
+   594→    answer:
+   595→      "Maria Antonina Macaluso è un'attrice siciliana nata a Bologna il 9 novembre 2001, originaria di Camporeale (provincia di Palermo). Attiva nel cinema italiano con cortometraggi Rai Cinema e il lungometraggio Pochi Attimi (2026).",
+   596→  },
+   597→  {
+   598→    question: "Quando si sono fidanzati Maria Antonina Macaluso e Angelo Faraci?",
+   599→    answer:
+   600→      "Maria Antonina Macaluso e il regista Angelo Faraci si sono fidanzati nel 2019. Da allora formano un sodalizio artistico e di vita, collaborando a tutti i cortometraggi Rai Cinema.",
+   601→  },
+   602→  {
+   603→    question: "Quali cortometraggi Rai Cinema ha interpretato?",
+   604→    answer:
+   605→      "Tra i cortometraggi Rai Cinema: Cio che non ti ho detto (2019), Regenerate (2020), Provvidenza (2021), Pietrazita (2022), Separati Mai (2023-2024), Il Mistero di Spartivento (2024-2025) e Don't Be Silent (2025).",
+   606→  },
+   607→  {
+   608→    question: "Quali premi ha vinto?",
+   609→    answer:
+   610→      "Ha vinto il titolo di Campione del Mondo 2021 con Regenerate e Campione del Mondo 2025 con Il Mistero di Spartivento, oltre a presenze sui red carpet di Taormina e Fiuggi.",
+   611→  },
+   612→  {
+   613→    question: "Che cos'è l'Enciclopedia digitale di Angelo Faraci?",
+   614→    answer:
+   615→      "È l'archivio digitale dedicato ad Angelo Faraci, regista, attore e produttore, disponibile all'indirizzo angelo-faraci.vercel.app. Racconta la carriera e i progetti del regista compagno di Maria Antonina.",
+   616→  },
+   617→  {
+   618→    question: "Dove posso seguire Maria Antonina Macaluso?",
+   619→    answer:
+   620→      "Sui profili ufficiali: Instagram @mary.macaluso09, Facebook (Mary Macaluso) e TikTok @mary.macaluso. Vedi la pagina Contatti per tutti i collegamenti.",
+   621→  },
+   622→];
+   623→
+   624→/* ============================ PHOTOBOOK ============================ */
+   625→export const PHOTOBOOK: { id: number; src: string; alt: string }[] = Array.from(
+   626→  { length: 49 },
+   627→  (_, i) => {
+   628→    const n = String(i + 1).padStart(2, "0");
+   629→    return {
+   630→      id: i + 1,
+   631→      src: `/images/photobook/mam-${n}.jpg`,
+   632→      alt: `Maria Antonina Macaluso — scatto ${i + 1} del Photo Book`,
+   633→    };
+   634→  }
+   635→);
+   636→
+   637→/* ============================ HERO CITAZIONI ============================ */
+   638→export const HERO_QUOTES: string[] = [
+   639→  "Attrice siciliana",
+   640→  "Bologna primo respiro, Sicilia tutto il resto",
+   641→  "Da Camporeale, provincia di Palermo, ai red carpet di Taormina e Fiuggi",
+   642→  "Dal debutto in TV nel 2018 al film Pochi Attimi nel 2026",
+   643→  "Sei cortometraggi Rai Cinema, una fiction Sky, una fiction",
+   644→];
+   645→
+   646→export const HERO_STATS = [
+   647→  { value: "2001", label: "Nata a Bologna" },
+   648→  { value: "2019", label: "Incontro Angelo Faraci" },
+   649→  { value: "8", label: "Film condivisi" },
+   650→  { value: "2026", label: "Pochi Attimi" },
+   651→];
+   652→
+   653→/* ============================ COLLABORAZIONI ============================ */
+   654→export interface Collaboration {
+   655→  name: string;
+   656→  role: string;
+   657→  description: string;
+   658→  works: string[];
+   659→  link?: string;
+   660→}
+   661→
+   662→export const COLLABORAZIONI: Collaboration[] = [
+   663→  {
+   664→    name: "Angelo Faraci",
+   665→    role: "Regista, Attore, Produttore — Compagno di vita",
+   666→    description:
+   667→      "Il sodalizio tra Maria Antonina Macaluso e Angelo Faraci nasce il 14 agosto 2019 a Palermo e unisce da allora vita personale e artistica. Angelo è il regista di tutti gli otto film interpretati da Maria Antonina: dal cortometraggio d'esordio 'Cio che non ti ho detto' (2019) al lungometraggio 'Pochi Attimi' (2026). Insieme hanno calcato i red carpet di Taormina, Fiuggi, Roma e dei Tulipani di Seta Nera, costruendo un percorso che mescola amore e cinema. Angelo trova in Maria Antonina la musa ispiratrice delle sue storie; Maria Antonina trova in Angelo il regista capace di guidare la sua presenza sullo schermo. Vivono tra la provincia di Messina e Roma.",
+   668→    works: [
+   669→      "Cio che non ti ho detto (2019)",
+   670→      "Regenerate (2020) — Campione del Mondo 2021",
+   671→      "Provvidenza (2021) — Protagonista femminile",
+   672→      "Pietrazita (2022) — Protagonista femminile",
+   673→      "Separati Mai (2023-2024)",
+   674→      "Il Mistero di Spartivento (2024-2025) — Campione del Mondo 2025",
+   675→      "Don't Be Silent (2025)",
+   676→      "Pochi Attimi (2026) — Lungometraggio, protagonista femminile",
+   677→    ],
+   678→    link: "https://angelo-faraci.vercel.app",
+   679→  },
+   680→  {
+   681→    name: "Rai Cinema",
+   682→    role: "Casa di produzione",
+   683→    description:
+   684→      "Casa di produzione di sette cortometraggi interpretati da Maria Antonina Macaluso, dal 2019 al 2025.",
+   685→    works: [
+   686→      "Cio che non ti ho detto",
+   687→      "Regenerate",
+   688→      "Provvidenza",
+   689→      "Pietrazita",
+   690→      "Separati Mai",
+   691→      "Il Mistero di Spartivento",
+   692→      "Don't Be Silent",
+   693→    ],
+   694→  },
+   695→  {
+   696→    name: "Ancora Cinematografica",
+   697→    role: "Agenzia di rappresentanza",
+   698→    description:
+   699→      "Agenzia di rappresentanza che cura la carriera artistica e la gestione delle partecipazioni.",
+   700→    works: ["Rappresentanza artistica"],
+   701→  },
+   702→  {
+   703→    name: "Festival del Cinema Italiano",
+   704→    role: "Festival",
+   705→    description:
+   706→      "Rassegna che ha premiato Regenerate con il titolo di Campione del Mondo 2021.",
+   707→    works: ["Regenerate — Campione del Mondo 2021"],
+   708→    link: "https://www.messinatoday.it",
+   709→  },
+   710→  {
+   711→    name: "Ciak Film Festival",
+   712→    role: "Festival — Fiuggi",
+   713→    description:
+   714→      "Festival di Fiuggi che ha incoronato Il Mistero di Spartivento Campione del Mondo 2025.",
+   715→    works: ["Il Mistero di Spartivento — Campione del Mondo 2025"],
+   716→    link: "https://www.messinatoday.it",
+   717→  },
+   718→  {
+   719→    name: "Tulipani di Seta Nera",
+   720→    role: "Festival — Sicilia",
+   721→    description:
+   722→      "Rassegna cinematografica siciliana dedicata al cinema d'autore.",
+   723→    works: ["Selezione 2024"],
+   724→    link: "https://www.infobelice.it",
+   725→  },
+   726→];
+   727→
+   728→/* ============================ MULTIMEDIA ============================ */
+   729→export interface MediaItem {
+   730→  title: string;
+   731→  type: "video" | "image";
+   732→  description: string;
+   733→  youtubeId?: string;
+   734→  image?: string;
+   735→}
+   736→
+   737→export const MULTIMEDIA: MediaItem[] = [
+   738→  {
+   739→    title: "Maria Antonina Macaluso e Angelo Faraci",
+   740→    type: "video",
+   741→    description: "Video sulla relazione artistica e di vita tra Maria Antonina e Angelo Faraci.",
+   742→    youtubeId: "1Org85u4MqI",
+   743→  },
+   744→  {
+   745→    title: "Cio che non ti ho detto",
+   746→    type: "video",
+   747→    description: "Cortometraggio Rai Cinema diretto da Angelo Faraci (2019).",
+   748→    youtubeId: "Ati69QDU8MI",
+   749→  },
+   750→  {
+   751→    title: "Regenerate",
+   752→    type: "video",
+   753→    description: "Cortometraggio Rai Cinema, Campione del Mondo 2021.",
+   754→    youtubeId: "1NMm-4a8lwo",
+   755→  },
+   756→  {
+   757→    title: "Provvidenza",
+   758→    type: "video",
+   759→    description: "Cortometraggio Rai Cinema con Maria Antonina protagonista femminile (2021).",
+   760→    youtubeId: "mjGQPlM4qg0",
+   761→  },
+   762→  {
+   763→    title: "Pietrazita",
+   764→    type: "video",
+   765→    description: "Cortometraggio Rai Cinema, protagonista femminile (2022).",
+   766→    youtubeId: "LVQqo0Kes5o",
+   767→  },
+   768→  {
+   769→    title: "Il Mistero di Spartivento",
+   770→    type: "video",
+   771→    description: "Cortometraggio Rai Cinema, Campione del Mondo 2025.",
+   772→    youtubeId: "N3irUShU0eU",
+   773→  },
+   774→  {
+   775→    title: "Pochi Attimi",
+   776→    type: "video",
+   777→    description: "Lungometraggio diretto da Angelo Faraci, Maria Antonina protagonista femminile (2026).",
+   778→    youtubeId: "tc0gmpaxKT0",
+   779→  },
+   780→  {
+   781→    title: "Photo Book",
+   782→    type: "image",
+   783→    description: "49 scatti del libro fotografico ufficiale.",
+   784→    image: "/images/photobook/mam-01.jpg",
+   785→  },
+   786→];
+   787→
+   788→/* ============================ BIOGRAFIA ============================ */
+   789→export const BIOGRAFIA = {
+   790→  intro:
+   791→    "Maria Antonina Macaluso è un'attrice siciliana nata a Bologna il 9 novembre 2001. Cresciuta tra le radici di Camporeale, in provincia di Palermo, porta nel cinema contemporaneo la voce e lo sguardo della Sicilia.",
+   792→  sections: [
+   793→    {
+   794→      title: "Radici siciliane",
+   795→      body:
+   796→        "Originaria di Camporeale, in provincia di Palermo, Maria Antonina cresce respirando la cultura e i colori della Sicilia. Bologna è il primo respiro, ma la Sicilia è tutto il resto: un'eredità che attraversa ogni interpretazione.",
+   797→      image: "/images/biografia/radici.jpg",
+   798→    },
+   799→    {
+   800→      title: "La musa del cinema di Angelo Faraci",
+   801→      body:
+   802→        "Dal 2019 è compagna di vita e musa artistica del regista Angelo Faraci. Insieme hanno costruito un percorso di cortometraggi Rai Cinema premiati nel mondo, fino al salto nel lungometraggio con Pochi Attimi (2026).",
+   803→      image: "/images/biografia/musa.jpg",
+   804→    },
+   805→  ],
+   806→} as const;
+   807→
+   808→/* ============================ HOME PAGE SECTIONS ============================ */
+   809→export interface HomeSection {
+   810→  id: string;
+   811→  title: string;
+   812→  kicker: string;
+   813→}
+   814→
+   815→export const HOME_SECTIONS: HomeSection[] = [
+   816→  { id: "intro", kicker: "Profilo", title: "Attrice siciliana" },
+   817→  { id: "radici", kicker: "Origini", title: "Bologna primo respiro, Sicilia tutto il resto" },
+   818→  { id: "carriera", kicker: "Percorso", title: "Dal debutto in TV al cinema" },
+   819→  { id: "filmografia", kicker: "Opere", title: "Sei cortometraggi e un lungometraggio" },
+   820→  { id: "angelo", kicker: "Sodalizio", title: "Insieme ad Angelo Faraci" },
+   821→  { id: "premi", kicker: "Riconoscimenti", title: "Campione del Mondo" },
+   822→  { id: "festival", kicker: "Rassegne", title: "Red carpet e festival" },
+   823→  { id: "citazioni", kicker: "Stampa", title: "Dicono di lei" },
+   824→  { id: "articoli", kicker: "Approfondimenti", title: "Dalla stampa" },
+   825→  { id: "photobook", kicker: "Immagini", title: "Il Photo Book" },
+   826→  { id: "multimedia", kicker: "Video", title: "Multimedia" },
+   827→  { id: "collegamenti", kicker: "Rete", title: "Collegamenti" },
+   828→  { id: "contatti", kicker: "Profili", title: "Contatti" },
+   829→];
+   830→
+   831→export const SITE = {
+   832→  name: "Maria Antonina Macaluso",
+   833→  tagline: "Attrice siciliana",
+   834→  description:
+   835→    "Enciclopedia digitale di Maria Antonina Macaluso, attrice siciliana di Camporeale. Archivio digitale autorevole di filmografia, premi, festival e Photo Book.",
+   836→  url: "https://maria-antonina-macaluso.vercel.app",
+   837→  birthDate: "2001-11-09",
+   838→} as const;
+   839→

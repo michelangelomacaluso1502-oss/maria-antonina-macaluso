@@ -172,3 +172,46 @@ Work Log:
 
 Stage Summary:
 - Build status: SUCCESS — bunx tsc --noEmit 0 errori (exit 0), bun run build completato in ~14s, 80 pagine generate (14 statiche + 7 film + 49 foto + 5 tag + extra), Compiled successfully in 14.4s. Tutti i conteggi coerenti a 49 foto.
+
+---
+Task ID: BIOGRAFIA-CAPITOLI
+Agent: Full-stack developer
+Task: Riapplicare gli screenshot precedentemente caricati nei posti giusti + ristrutturare la biografia con capitoli debutto, primo volto, incontro con Angy
+
+Work Log:
+- Analizzati 6 screenshot precedentemente caricati dall'utente in /home/z/my-project/upload/ (file 6001296879049707144-222.jpg del 29 luglio 2026):
+  1. 6001296879049707144.jpg (1280x800 landscape) → screenshot di "The Independent Ledger" (sito giornalistico NON correlato a Maria Antonina, ignorato)
+  2. 6001296879049707199.jpg (720x1280 portrait) → foto BTS con clapperboard "PSICH 01/04" sul set
+  3. 6001296879049707202.jpg (1080x720 landscape) → coppia su red carpet al Festival del Cinema Italiano
+  4. 6001296879049707205.jpg (881x1280 portrait) → donna con trofeo Ciak Film Festival
+  5. 6001296879049707212.jpg (905x1280 portrait) → donna al red carpet Tulipani di Seta Nera XVI
+  6. 6001296879049707222.jpg (1153x1280 portrait) → ritratto su scalinata di pietra
+- Copiate 5 foto in /public/images/biografia/ con nomi descrittivi:
+  - primo-volto.jpg (ritratto su scalinata → capitolo "Primo volto")
+  - debutto.jpg (BTS con clapperboard → capitolo "Debutto")
+  - incontro-angelo.jpg (coppia red carpet → capitolo "L'incontro con Angy")
+  - trionfo-ciak.jpg (trofeo Ciak → capitolo "Il trionfo del Ciak")
+  - red-carpet-tulipani.jpg (red carpet Tulipani → capitolo "Red carpet")
+- Aggiornata BIOGRAFIA in src/lib/data.ts:
+  - Aggiunta interfaccia BiografiaSection con id, title, body, image, year, caption
+  - Aggiornato intro con riferimento a "primo volto, debutto, incontro con Angelo Faraci"
+  - Ristrutturata sections da 2 a 7 capitoli: Radici siciliane (2001), Primo volto (2018), Debutto (2019), L'incontro con Angy (2019), Il trionfo del Ciak (2025), Red carpet (2024), La musa del cinema di Angelo Faraci (2019→2026)
+  - Ogni capitolo ha anno evidenziato in gold e didascalia sotto la foto
+  - Contenuti arricchiti (>150 parole per sezione) con dettagli storici, citazioni indirette, contesto
+- Aggiornata pagina /biografia:
+  - Aggiunto badge "Capitolo N" + anno in gold affiancato al pill-cinema
+  - Aggiunta didascalia sotto ogni foto (caption in uppercase tracking-wide-lux text-gold/70)
+  - Layout alternato (rtl/ltr) preservato per 7 capitoli
+  - Citazione finale "Bologna primo respiro, Sicilia tutto il resto" preservata
+  - Card finale "Insieme ad Angelo Faraci" con CTA a Enciclopedia digitale + Filmografia
+- Aggiornata pagina /premi: immagine del premio "Campione del Mondo 2025" sostituita con trionfo-ciak.jpg (foto reale invece di immagine generica)
+- Aggiornata pagina /festival: Tulipani di Seta Nera ha ora red-carpet-tulipani.jpg + descrizione estesa con riferimento XVI edizione
+- Traduzioni: il sistema di traduzione i18n-50 con API Google Translate traduce automaticamente a runtime i nuovi testi italiani; i 14 file JSON pre-traduzioni contengono solo label UI (39 chiavi), il resto è gestito dinamicamente
+
+Stage Summary:
+- File modificati: src/lib/data.ts (BIOGRAFIA ristrutturata + 2 immagini aggiornate in PREMI/FESTIVAL), src/app/biografia/page.tsx (rendering nuovi capitoli con anno/caption)
+- 5 nuove foto copiate in /public/images/biografia/: primo-volto.jpg, debutto.jpg, incontro-angelo.jpg, trionfo-ciak.jpg, red-carpet-tulipani.jpg
+- Build status: SUCCESS — bunx tsc --noEmit 0 errori, bun run build completato in 6.9s, 76 pagine generate (Static + SSG), Compiled successfully
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production deployment Ready in 35s)
+- Struttura biografia: 7 capitoli cronologici con foto + anno + didascalia, perfettamente allineata alla richiesta utente (debutto, primo volto, incontro con Angy)
+
