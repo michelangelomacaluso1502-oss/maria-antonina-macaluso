@@ -2,18 +2,18 @@
 
 import { useEffect, useState } from "react";
 
-const STORAGE_KEY = "mam-intro-played";
-
 /**
  * IntroLoader — splash cinematografico con sigla "MM"
  * - Mostra la sigla MM con reveal letter-spacing + blur
  * - Linea gold che si disegna sotto
  * - Auto-dismiss dopo 2.2s
- * - Una sola volta per sessione (sessionStorage)
+ * - Si mostra a ogni caricamento completo della pagina (full page load)
+ *   In Next.js App Router il root layout persiste nelle navigazioni client-side,
+ *   quindi questo componente si monta solo al primo caricamento o al refresh.
  * - Skip se prefers-reduced-motion
  */
 export default function IntroLoader() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const [exiting, setExiting] = useState(false);
 
   useEffect(() => {
@@ -22,13 +22,11 @@ export default function IntroLoader() {
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
-    if (prefersReduced) return;
+    if (prefersReduced) {
+      setShow(false);
+      return;
+    }
 
-    // Only show once per session
-    if (sessionStorage.getItem(STORAGE_KEY)) return;
-
-    sessionStorage.setItem(STORAGE_KEY, "1");
-    setShow(true);
     document.body.style.overflow = "hidden";
 
     const t1 = window.setTimeout(() => setExiting(true), 2000);

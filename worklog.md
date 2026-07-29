@@ -407,3 +407,46 @@ Stage Summary:
 - Build status: SUCCESS — bunx tsc --noEmit 0 errori su src/ (1 preesistente use-toast.ts), 80 pagine generate
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 40s)
 
+
+---
+Task ID: HERO-CENTERED-INTRO-FIX
+Agent: Full-stack developer
+Task: Fix Hero troppo laterale (tornare a layout centrato professionale) + fix IntroLoader non funzionante (rimuovere sessionStorage)
+
+Work Log:
+- IntroLoader fix: rimosso sessionStorage 'mam-intro-played'
+  - In Next.js App Router il root layout persiste nelle navigazioni client-side
+  - Il componente si monta SOLO al caricamento completo della pagina (full page load) o al refresh
+  - Quindi useEffect con [] deps basta a garantire "una volta per caricamento"
+  - setShow(true) come stato iniziale (non false) per evitare flash
+  - prefers-reduced-motion: setShow(false) direttamente (skip totale)
+  - body overflow hidden durante il playback, ripristinato al cleanup
+- Hero ristrutturato in layout CENTRATO professionale (rimosso split-screen laterale):
+  - Foto come backdrop full-screen (object-contain object-top, visibile intera)
+  - Layer overlay:
+    - Gradient laterale simmetrico: from-noir via-transparent to-noir (fonde le bande nere ai lati con il bg)
+    - Gradient verticale inferiore: h-60% from-noir via-noir/70 to-transparent (ancora il testo)
+    - Gradient superiore: h-32 from-noir/80 via-noir/30 to-transparent (per header)
+  - Content: items-center justify-end text-center (testo centrato orizzontalmente, ancorato in basso)
+  - H1 centrato, quotes centrati con max-w-2xl mx-auto
+  - Stats: max-w-3xl mx-auto, grid 4 colonne con border-l gold (allineamento verticale left)
+  - CTA: justify-center gap-3 (pulsanti centrati)
+  - Scroll indicator: left-1/2 -translate-x-1/2 (centrato)
+  - Animazioni Framer Motion preservate: containerStagger, itemUp, itemClipRight, H1 split-line
+  - Parallax foto: y 0→12%, scale 1→1.05 (sottile, professionale)
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto (solo rewrite Hero + IntroLoader)
+  - Animazioni GPU-only (transform, opacity, filter, clip-path)
+  - prefers-reduced-motion: intro skip + reveal statici (preservato)
+  - ErrorBoundary + skipHydration preservati
+  - Hero object-contain object-top (foto visibile intera, come da ultima richiesta utente)
+  - BackToTop, ScrollProgress, FilmGrain preservati nel layout
+
+Stage Summary:
+- File modificati:
+  - src/components/cinematic/IntroLoader.tsx (rimosso sessionStorage, setShow(true) iniziale)
+  - src/components/sections/Hero.tsx (rewrite layout centrato professionale, rimosso split-screen laterale)
+- Build status: SUCCESS — bunx tsc --noEmit 0 errori su src/ (1 preesistente use-toast.ts), 80 pagine generate
+- Vercel project link corretto: my-project → maria-antonina-macaluso
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 44s)
+

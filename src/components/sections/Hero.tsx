@@ -50,52 +50,44 @@ export default function Hero() {
       className="relative min-h-[100svh] w-full overflow-hidden bg-noir"
       aria-label="Maria Antonina Macaluso — attrice siciliana"
     >
-      {/* === SPLIT-SCREEN LAYOUT ===
-          Desktop: foto a destra con cornice gold, testo a sinistra
-          Mobile: foto come backdrop full-screen con overlay, testo sopra */}
+      {/* === LAYOUT CENTRATO PROFESSIONALE ===
+          Foto come backdrop full-screen (object-contain object-top, visibile intera)
+          Testo centrato sopra con gradient elegante per leggibilità */}
 
-      {/* Layer 1 — Foto con cornice cinematografica */}
+      {/* Layer 1 — Foto backdrop full-screen */}
       <motion.div
         style={{ y: photoY, scale: photoScale }}
-        className="absolute inset-0 z-0 md:inset-y-0 md:right-0 md:left-[42%] lg md:left-[45%]"
+        className="absolute inset-0 z-0"
       >
-        {/* Backdrop mobile: foto cover con overlay */}
-        <div className="absolute inset-0 animate-slow-zoom md:animate-none">
+        <div className="absolute inset-0 animate-slow-zoom">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/hero-maria-antonina.jpg"
             alt="Maria Antonina Macaluso"
-            className="h-full w-full object-contain object-top md:object-cover md:object-[50%_15%]"
+            className="h-full w-full object-contain object-top"
             fetchPriority="high"
           />
         </div>
-
-        {/* Cornice gold sottile su desktop (right side) */}
-        <div className="pointer-events-none absolute inset-0 hidden md:block">
-          <div className="absolute left-0 top-[8%] bottom-[8%] w-px bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
-          <div className="absolute left-6 top-[8%] h-px w-16 bg-gradient-to-r from-gold/40 to-transparent" />
-          <div className="absolute left-6 bottom-[8%] h-px w-16 bg-gradient-to-r from-gold/40 to-transparent" />
-        </div>
       </motion.div>
 
-      {/* Layer 2 — Overlay leggibilità */}
-      {/* Mobile: gradient full che oscura la foto per leggibilità testo */}
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-noir via-noir/70 to-noir/40 md:hidden" />
-      {/* Desktop: gradient solo sul lato sinistro (zona testo) */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-[1] hidden w-[55%] bg-gradient-to-r from-noir via-noir/85 to-transparent md:block" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-[2] h-24 bg-gradient-to-b from-noir/70 to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-32 bg-gradient-to-t from-noir via-noir/60 to-transparent" />
+      {/* Layer 2 — Overlay leggibilità (gradient simmetrico professionale) */}
+      {/* Gradient laterale per fondere bande nere con il background */}
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-noir via-transparent to-noir" />
+      {/* Gradient verticale per ancorare il testo in basso */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-[60%] bg-gradient-to-t from-noir via-noir/70 to-transparent" />
+      {/* Gradient superiore per header */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-[2] h-32 bg-gradient-to-b from-noir/80 via-noir/30 to-transparent" />
 
-      {/* Layer 3 — Content (parallax + fade) */}
+      {/* Layer 3 — Content centrato */}
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
-        className="relative z-10 flex min-h-[100svh] flex-col justify-end md:justify-center md:items-start"
+        className="relative z-10 flex min-h-[100svh] flex-col items-center justify-end"
       >
         <motion.div
           variants={containerStagger}
           initial="hidden"
           animate="visible"
-          className="cinematic-container w-full pb-24 pt-28 md:pb-16 md:max-w-[55%]"
+          className="cinematic-container w-full pb-24 pt-28 text-center"
         >
           {/* Overline pill — clip-path reveal */}
           <motion.span
@@ -130,7 +122,7 @@ export default function Hero() {
           {/* 5 quotes — staggered fade-up with blur */}
           <motion.div
             variants={containerStagger}
-            className="mt-7 max-w-2xl space-y-2.5"
+            className="mt-7 mx-auto max-w-2xl space-y-2.5"
           >
             {HERO_QUOTES.slice(1).map((q, i) => (
               <motion.p
@@ -147,13 +139,13 @@ export default function Hero() {
           {/* Stats — counter roll with stagger */}
           <motion.div
             variants={containerStagger}
-            className="mt-9 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6"
+            className="mt-9 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6 max-w-3xl mx-auto"
           >
             {HERO_STATS.map((s) => (
               <motion.div
                 key={s.value}
                 variants={itemUp}
-                className="border-l border-gold/30 pl-3"
+                className="border-l border-gold/30 pl-3 text-left"
               >
                 <p className="font-display text-3xl text-gradient-gold sm:text-4xl">
                   {s.value}
@@ -168,7 +160,7 @@ export default function Hero() {
           {/* CTAs — premium magnetic + glow */}
           <motion.div
             variants={itemUp}
-            className="mt-9 flex flex-wrap items-center gap-3"
+            className="mt-9 flex flex-wrap items-center justify-center gap-3"
           >
             <a
               href="/#biografia"
@@ -195,7 +187,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2.4, duration: 0.9, ease: EASE }}
-        className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-gold/70 transition-colors hover:text-gold md:left-1/4"
+        className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-gold/70 transition-colors hover:text-gold"
       >
         <span className="text-[10px] uppercase tracking-cinema">Scorri per scoprire</span>
         <span className="relative flex h-9 w-5 items-start justify-center rounded-full border border-gold/40 pt-1.5">
