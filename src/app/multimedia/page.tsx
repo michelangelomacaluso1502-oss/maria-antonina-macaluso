@@ -29,7 +29,7 @@ export default function MultimediaPage() {
                   href={m.url}
                   target={m.url.startsWith("http") ? "_blank" : undefined}
                   rel={m.url.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="glass-card group flex h-full flex-col p-6 transition-all duration-500 hover:-translate-y-1 hover:border-gold/40"
+                  className="glass-card group card-lift-premium flex h-full flex-col p-6"
                 >
                   <span className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-gold/5 text-gold">
                     {m.type === "Video" ? <Play className="h-5 w-5" /> : <Images className="h-5 w-5" />}

@@ -123,7 +123,7 @@ export default async function FilmPage({
                   <Link
                     key={f.slug}
                     href={`/film/${f.slug}`}
-                    className="glass-card group p-5 transition-all duration-500 hover:-translate-y-1 hover:border-gold/40"
+                    className="glass-card group card-lift-premium p-5"
                   >
                     <span className="text-xs uppercase tracking-wide-sm text-gold/70">{f.year}</span>
                     <h3 className="mt-1 font-display text-xl text-cream group-hover:text-gold">{f.title}</h3>

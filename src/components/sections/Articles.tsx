@@ -20,7 +20,7 @@ export default function Articles({ compact = false }: { compact?: boolean }) {
                 href={a.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-card group flex h-full items-start gap-4 p-5 transition-all duration-500 hover:-translate-y-1 hover:border-gold/40"
+                className="glass-card group card-lift-premium flex h-full items-start gap-4 p-5"
               >
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-gold/40 bg-gold/5 text-gold">
                   <Newspaper className="h-5 w-5" />

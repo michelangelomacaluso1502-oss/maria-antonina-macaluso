@@ -16,7 +16,7 @@ export default function Awards({ compact = false }: { compact?: boolean }) {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((a, i) => (
             <Reveal key={a.title + a.year} delay={(i % 3) * 90}>
-              <article className="glass-card group h-full p-6 transition-all duration-500 hover:-translate-y-1">
+              <article className="glass-card group card-lift-premium h-full p-6">
                 <div className="flex items-center justify-between">
                   <span className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/40 bg-gold/5 text-gold">
                     <AwardIcon className="h-5 w-5" />

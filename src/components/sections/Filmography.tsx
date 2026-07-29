@@ -20,7 +20,7 @@ export default function Filmography({ compact = false }: { compact?: boolean }) 
             <Reveal key={f.slug} delay={(i % 3) * 100}>
               <Link
                 href={`/film/${f.slug}`}
-                className="glass-card group flex h-full flex-col overflow-hidden p-4 transition-all duration-500 hover:-translate-y-1 hover:shadow-cinema"
+                className="glass-card group card-lift-premium flex h-full flex-col overflow-hidden p-4"
               >
                 <div className="relative mb-4 flex aspect-[3/4] w-full max-w-[300px] items-center justify-center overflow-hidden bg-gradient-to-br from-smoke-light to-noir">
                   <FilmIcon className="h-16 w-16 text-gold/25 transition-transform duration-700 group-hover:scale-110" />

@@ -29,7 +29,7 @@ export default function CollegamentiEsteriPage() {
                   href={c.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="glass-card group flex h-full flex-col p-6 transition-all duration-500 hover:-translate-y-1 hover:border-gold/40"
+                  className="glass-card group card-lift-premium flex h-full flex-col p-6"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <h3 className="font-display text-xl leading-snug text-cream group-hover:text-gold">

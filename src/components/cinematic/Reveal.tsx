@@ -3,6 +3,17 @@
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/cn";
 
+type RevealVariant = "default" | "left" | "right" | "up-sm" | "scale" | "clip";
+
+const variantClass: Record<RevealVariant, string> = {
+  default: "reveal",
+  left: "reveal reveal-left",
+  right: "reveal reveal-right",
+  "up-sm": "reveal reveal-up-sm",
+  scale: "reveal reveal-scale",
+  clip: "reveal reveal-clip",
+};
+
 // Reveal: fades + slides up children when they enter the viewport.
 interface RevealProps {
   children: React.ReactNode;
@@ -10,6 +21,7 @@ interface RevealProps {
   delay?: number;
   as?: "div" | "section" | "article" | "li" | "header" | "figure" | "p" | "span";
   once?: boolean;
+  variant?: RevealVariant;
 }
 
 export function Reveal({
@@ -18,6 +30,7 @@ export function Reveal({
   delay = 0,
   as: Tag = "div",
   once = true,
+  variant = "default",
 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
@@ -46,7 +59,7 @@ export function Reveal({
   return (
     <Comp
       ref={ref}
-      className={cn("reveal", visible && "is-visible", className)}
+      className={cn(variantClass[variant], visible && "is-visible", className)}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}

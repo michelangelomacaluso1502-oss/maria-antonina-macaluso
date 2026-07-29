@@ -293,3 +293,59 @@ Stage Summary:
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 46s)
 - Contenuti copiati dal sito Angelo Faraci: 4 tappe relazione, 3 paragrafi bio Angelo, citazione, 4 foto coppia — il tutto ora vive anche nel sito Maria Antonina
 
+
+---
+Task ID: ANIMATIONS-PROFESSIONAL
+Agent: Full-stack developer
+Task: Aggiungere animazioni professionali al sito Maria Antonina Macaluso rispettando le regole (GPU-only, prefers-reduced-motion, no struttura rotta)
+
+Work Log:
+- Esteso globals.css con 12+ nuovi keyframes/classes professionali:
+  - reveal-clip-right/left/top/bottom (clip-path cinematic wipe-in)
+  - slide-in-right/left (translateX)
+  - scale-in-soft (subtle bounce)
+  - text-shimmer-gold (gradient sweep sul testo)
+  - tracking-reveal (letter-spacing da 0.6em a 0.1em con blur)
+  - tilt-3d (parallax 3D on hover)
+  - magnetic (magnetic button base)
+  - underline-draw (cinematic underline draw)
+  - card-lift-premium (translateY -6px + scale 1.012 + glow shadow)
+  - zoom-wrap (immagini zoom 1.06 on hover)
+  - pulse-ring (icone con pulse)
+  - counter-roll (stats con blur+translate)
+- 5 nuove varianti Reveal: reveal-left, reveal-right, reveal-up-sm, reveal-scale, reveal-clip
+  - Tutte GPU-accelerated (transform/opacity/clip-path)
+  - IntersectionObserver esistente riutilizzato
+  - transitionDelay preservato
+- Hero riscritto con Framer Motion variants:
+  - containerStagger (staggerChildren 0.12, delayChildren 0.3)
+  - itemUp (opacity + y 28→0 + blur 6px→0)
+  - itemClipRight (clip-path inset 100%→0)
+  - H1 split-line reveal: "Maria Antonina" e "Macaluso" animati separatamente con stagger 0.18
+  - Stats con stagger + scale parallax su scroll (titleScale 1→0.94)
+  - CTA primary con animate-glow-pulse + magnetic
+  - Scroll indicator fade-in delay 2.4s
+  - Multi-layer parallax preservato (bgY, gradientY, contentY, contentOpacity)
+- Card hover upgrade premium:
+  - Filmography: glass-card card-lift-premium (era transition hover -translate-y-1)
+  - Awards, Festivals, Articles, Collegamenti, Multimedia, Film cast: card-lift-premium applicato
+  - Effetto: translateY(-6px) + scale(1.012) + box-shadow premium con gold glow
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto (aggiunte solo classi CSS + prop variant)
+  - Tutte le animazioni sono GPU-only (transform, opacity, clip-path, filter)
+  - prefers-reduced-motion esistente già disabilita animazioni (rimasto attivo)
+  - ErrorBoundary + skipHydration preservati
+  - Hero object-contain object-top preservato (ultima configurazione utente)
+  - BackToTop, ScrollProgress, FilmGrain preservati nel layout
+
+Stage Summary:
+- File modificati:
+  - src/styles/globals.css (+140 righe animazioni professionali, 0 righe rimosse)
+  - src/components/cinematic/Reveal.tsx (+ prop variant: default/left/right/up-sm/scale/clip)
+  - src/components/sections/Hero.tsx (rewrite con Framer Motion variants, containerStagger, itemUp, itemClipRight, scale parallax)
+  - src/components/sections/{Filmography,Awards,Festivals,Articles}.tsx (card-lift-premium)
+  - src/app/{collegamenti-esteri,multimedia,film/[slug]}/page.tsx (card-lift-premium)
+- Build status: SUCCESS — bunx tsc --noEmit 0 errori su src/ (1 errore preesistente su use-toast.ts non correlato), 80 pagine generate
+- Vercel project link corretto: my-project → maria-antonina-macaluso (era linkato al progetto sbagliato)
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 56s)
+

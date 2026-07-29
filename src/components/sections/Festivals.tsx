@@ -16,7 +16,7 @@ export default function Festivals({ compact = false }: { compact?: boolean }) {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((f, i) => (
             <Reveal key={f.name + f.year} delay={(i % 3) * 80}>
-              <article className="glass-card group h-full p-5 transition-all duration-500 hover:border-gold/40">
+              <article className="glass-card group card-lift-premium h-full p-5">
                 <div className="flex items-baseline justify-between gap-3">
                   <h3 className="font-display text-lg leading-tight text-cream group-hover:text-gold">
                     {f.name}
