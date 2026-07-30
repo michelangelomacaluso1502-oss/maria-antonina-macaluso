@@ -631,3 +631,34 @@ Stage Summary:
 - Build status: SUCCESS — 79 pagine generate
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 41s)
 
+
+---
+Task ID: FIX-URL-NORMALE-HERO
+Agent: Full-stack developer
+Task: Cambiare il logo dell'header per puntare a "/" invece di "/#top" — l'URL deve restare pulito quando l'utente torna alla hero
+
+Work Log:
+- Diagnosi: il logo dell'header aveva href="/#top" che aggiungeva "#top" all'URL quando l'utente cliccava per tornare alla home
+  - URL visualizzato: https://maria-antonina-macaluso.vercel.app/#top
+  - URL desiderato: https://maria-antonina-macaluso.vercel.app/ (pulito)
+- Fix applicato in src/components/layout/Header.tsx:
+  - Cambiato href da "/#top" a "/"
+  - Aggiunto onClick handler: se siamo già sulla home (pathname === "/"), preventDefault + window.scrollTo({ top: 0, behavior: "smooth" })
+  - Se siamo in una pagina interna, il Link porta alla home "/" con URL pulito, e Next.js gestisce il rendering
+- Verificato altri link:
+  - BackToTop: usa già window.scrollTo (non cambia URL) ✓
+  - Hero CTA "Scopri la biografia": href="/#biografia" — anchor per scroll interno, OK ✓
+  - NAV_ITEMS: "/#biografia", "/#filmografia" ecc. — anchor per scroll interno, OK ✓
+  - Footer: usa NAV_ITEMS e ALL_PAGES, OK ✓
+- Verifica produzione: curl https://maria-antonina-macaluso.vercel.app/ → HTTP 200, carica homepage con hero id="top" come prima sezione
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto (solo edit del logo link in Header.tsx)
+  - Animazioni professionali, hero centrato, intro MM, "Enciclopedia digitale" — tutti preservati
+  - BackToTop, ScrollProgress, FilmGrain, ErrorBoundary preservati
+
+Stage Summary:
+- File modificati: src/components/layout/Header.tsx (logo Link href="/#top" → href="/" + onClick scroll-to-top)
+- Build status: SUCCESS — 79 pagine generate
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 35s)
+- Risultato: l'URL principale del sito è pulito "https://maria-antonina-macaluso.vercel.app/" e porta alla hero
+

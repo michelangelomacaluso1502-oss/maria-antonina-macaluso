@@ -39,7 +39,17 @@ export default function Header() {
       )}
     >
       <div className="cinematic-container flex items-center justify-between gap-4">
-        <Link href="/#top" className="group flex flex-col leading-none no-tap-highlight">
+        <Link
+          href="/"
+          onClick={(e) => {
+            // Se siamo già sulla home, previeni il cambio URL e scrolla in cima
+            if (window.location.pathname === "/") {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+          className="group flex flex-col leading-none no-tap-highlight"
+        >
           <span className="font-display text-lg tracking-wide-sm text-cream transition-colors group-hover:text-gold sm:text-xl">
             {SITE.name}
           </span>
