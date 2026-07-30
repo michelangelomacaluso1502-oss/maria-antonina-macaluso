@@ -547,3 +547,50 @@ Stage Summary:
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 46s)
 - Verifica HTML produzione: intro-loader + intro-lifecycle + intro-active tutti presenti
 
+
+---
+Task ID: RIMUOVI-REGENERATE
+Agent: Full-stack developer
+Task: Rimuovere completamente "Regenerate" dal sito (Maria Antonina non ha mai partecipato)
+
+Work Log:
+- Verificate tutte le occorrenze con grep: trovati 10 riferimenti in src/lib/data.ts + 4 in src/app + 1 in src/components
+- File modificati per rimuovere Regenerate:
+  1. src/lib/data.ts:
+     - BIO_CHAPTERS: rimosso capitolo IV "Regenerate — Il primo film (2020)", capitoli V→IV, VI→V, VII→VI, VIII→VII, IX→VIII (renumbering)
+     - FILMS array: rimosso oggetto { slug: "regenerate", year: "2020", title: "Regenerate", ... }
+     - TIMELINE: rimosso evento { year: "2020", title: "Regenerate", ... }
+     - FESTIVALS: rimosso { year: "2020", name: "Taormina Film Fest", note: "Presentazione di Regenerate" }
+     - FAQS: aggiornata risposta "Quali film ha interpretato?" — da "Sette film... Regenerate (2020), Provvidenza..." a "Sei film: Provvidenza (2021)..."
+     - FAQS: aggiornata risposta "Chi è Angelo Faraci?" — "regista di tutti i sette film" → "regista di tutti i sei film"
+     - ANGELO_FARACI.bio: "Dal 2020 dirige... in sette film" → "Dal 2021 dirige... in sei film"
+     - BIO_CHAPTERS III body: "sette film insieme" → "sei film insieme"
+     - HERO_STATS: { value: "7", label: "Film condivisi" } → { value: "6", label: "Film condivisi" }
+     - ALL_PAGES: { label: "Biografia", desc: "9 capitoli" } → "8 capitoli"; { label: "Filmografia", desc: "7 film" } → "6 film"; { label: "Festival", desc: "9 presenze" } → "8 presenze"
+  2. src/app/filmografia/page.tsx:
+     - metadata.description: "sette film... da Regenerate (2020)" → "sei film... da Provvidenza (2021)"
+     - PageHero title: "Sette film, una visione" → "Sei film, una visione"
+     - PageHero subtitle: "Dal debutto Regenerate (2020)" → "Dal debutto Provvidenza (2021)"
+  3. src/components/sections/Filmography.tsx:
+     - SectionHeading title: "Sette film, una visione" → "Sei film, una visione"
+     - SectionHeading subtitle: "Dal debutto Regenerate (2020)" → "Dal debutto Provvidenza (2021)"
+  4. src/components/sections/AngeloFaraci.tsx:
+     - SectionHeading subtitle: "ha generato sette film" → "ha generato sei film"
+  5. src/app/angelo-faraci/page.tsx:
+     - metadata.description: "Regista di sette film con Maria Antonina" → "Regista di sei film con Maria Antonina"
+  6. src/app/collaborazioni/page.tsx:
+     - metadata.description: "sette film condivisi dal 2020 al 2026" → "sei film condivisi dal 2021 al 2026"
+- Verifica finale con grep: 0 occorrenze di "Regenerate", "regenerate", "sette film", "7 film" in src/ e public/
+- generateStaticParams verifica: la pagina /film/regenerate non viene più generata (build mostra solo /film/provvidenza, /film/pietrazita, /film/separati-mai, etc.)
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto (solo edit mirati su dati e testi)
+  - Tutti i conteggi coinvolti sono stati aggiornati coerentemente (6 film, 8 capitoli biografia, 8 festival, 6 film condivisi)
+  - prefers-reduced-motion, ErrorBoundary, IntroLoader CSS-only preservati
+  - Animazioni professionali, hero centrato, enciclopedia digitale — tutti preservati
+
+Stage Summary:
+- File modificati: 6 (data.ts, filmografia/page.tsx, Filmography.tsx, AngeloFaraci.tsx, angelo-faraci/page.tsx, collaborazioni/page.tsx)
+- Build status: SUCCESS — 79 pagine generate (era 80, -1 per /film/regenerate rimossa)
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 56s)
+- Verifica: grep "Regenerate" su src/ e public/ → 0 risultati
+

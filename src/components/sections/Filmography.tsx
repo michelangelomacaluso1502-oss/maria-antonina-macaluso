@@ -11,8 +11,8 @@ export default function Filmography({ compact = false }: { compact?: boolean }) 
       <div className="cinematic-container">
         <SectionHeading
           eyebrow="Filmografia"
-          title="Sette film, una visione"
-          subtitle="Dal debutto Regenerate (2020) a Pochi Attimi (2026) — tutti diretti da Angelo Faraci"
+          title="Sei film, una visione"
+          subtitle="Dal debutto Provvidenza (2021) a Pochi Attimi (2026) — tutti diretti da Angelo Faraci"
         />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

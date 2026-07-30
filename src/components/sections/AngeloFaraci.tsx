@@ -16,7 +16,7 @@ export default function AngeloFaraci() {
         <SectionHeading
           eyebrow="Angelo Faraci"
           title="Regista, Attore, Produttore"
-          subtitle="Il sodalizio artistico e di vita che ha generato sette film"
+          subtitle="Il sodalizio artistico e di vita che ha generato sei film"
         />
 
         <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-[1.2fr_1fr] md:items-start">

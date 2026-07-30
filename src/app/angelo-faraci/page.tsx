@@ -6,7 +6,7 @@ import { ANGELO_FARACI } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Angelo Faraci",
   description:
-    "Angelo Faraci — regista, attore, produttore nato a Palermo il 13 agosto 1989. Regista di sette film con Maria Antonina Macaluso.",
+    "Angelo Faraci — regista, attore, produttore nato a Palermo il 13 agosto 1989. Regista di sei film con Maria Antonina Macaluso.",
   alternates: { canonical: "/angelo-faraci" },
 };
 

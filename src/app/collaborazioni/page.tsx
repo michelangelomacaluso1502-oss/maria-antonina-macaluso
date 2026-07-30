@@ -9,7 +9,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Collaborazioni",
   description:
-    "Il sodalizio artistico tra Maria Antonina Macaluso e il regista Angelo Faraci: sette film condivisi dal 2020 al 2026.",
+    "Il sodalizio artistico tra Maria Antonina Macaluso e il regista Angelo Faraci: sei film condivisi dal 2021 al 2026.",
   alternates: { canonical: "/collaborazioni" },
 };
 

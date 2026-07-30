@@ -42,7 +42,7 @@ export const ANGELO_FARACI = {
     "L'amore non è il protagonista della nostra storia. È la luce che permette di vederla.",
   bio: [
     "Angelo Faraci è un regista, attore e produttore cinematografico italiano, nato a Palermo il 13 agosto 1989. Fondatore di una visione autoriale profondamente radicata nel territorio siciliano, firma opere che coniugano Suspense, identità mediterranea e ricerca formale.",
-    "Dal 2020 dirige Maria Antonina Macaluso in sette film, costruendo con lei un percorso artistico e di vita che dalla Sicilia raggiunge i festival internazionali. Il loro sodalizio nasce il 14 agosto 2019 a Palermo.",
+    "Dal 2021 dirige Maria Antonina Macaluso in sei film, costruendo con lei un percorso artistico e di vita che dalla Sicilia raggiunge i festival internazionali. Il loro sodalizio nasce il 14 agosto 2019 a Palermo.",
     "Il suo cinema è riconoscibile per la luce calda, la geometria delle inquadrature e un racconto che procede per atmosfere più che per colpi di scena.",
   ],
 };
@@ -58,7 +58,7 @@ export const HERO_QUOTES = [
 export const HERO_STATS = [
   { value: "2001", label: "Nata a Bologna" },
   { value: "2019", label: "Incontro Angelo Faraci" },
-  { value: "7", label: "Film condivisi" },
+  { value: "6", label: "Film condivisi" },
   { value: "2026", label: "Pochi Attimi" },
 ];
 
@@ -101,33 +101,26 @@ export const BIO_CHAPTERS: BioChapter[] = [
     title: "L'incontro — Angelo Faraci (2019)",
     body: [
       "Il 14 agosto 2019, a Palermo, incontra Angelo Faraci. Regista, attore, produttore, nato a Palermo il 13 agosto 1989. Non è solo un incontro professionale: è il principio di un percorso artistico e di vita che durerà anni.",
-      "Da quel giorno, le loro carriere procederanno intrecciate: sette film insieme, una visione condivisa, una Sicilia raccontata dal di dentro.",
+      "Da quel giorno, le loro carriere procederanno intrecciate: sei film insieme, una visione condivisa, una Sicilia raccontata dal di dentro.",
     ],
   },
   {
     num: "IV",
-    title: "Regenerate — Il primo film (2020)",
-    body: [
-      "Nel 2020 arriva Regenerate, il primo film diretto da Angelo Faraci con Maria Antonina. È l'inizio di una filmografia che esplora identità, memoria e trasformazione. La macchina da presa la inquadra come si inquadra un paesaggio: con pazienza.",
-    ],
-  },
-  {
-    num: "V",
     title: "I cortometraggi Rai Cinema",
     body: [
-      "Seguono i cortometraggi prodotti da Rai Cinema: Provvidenza (2021), Pietrazita (2022). Forme brevi che permettono alla sua recitazione di affinarsi, di trovare la misura esatta del gesto e della parola.",
+      "Dal 2021 iniziano i cortometraggi prodotti da Rai Cinema: Provvidenza (2021), Pietrazita (2022). Forme brevi che permettono alla sua recitazione di affinarsi, di trovare la misura esatta del gesto e della parola.",
       "La fiction Sky e la fiction televisiva allargano il campo: la piccola schermata richiede un altro rigore, una presenza che deve reggere la prossimità.",
     ],
   },
   {
-    num: "VI",
+    num: "V",
     title: "Separati Mai e il ciclo siciliano (2023–2024)",
     body: [
       "Separati Mai, distribuito tra il 2023 e il 2024, segna una tappa di maturità. Il cinema di Faraci trova in Maria Antonina la interprete ideale: capace di reggere il peso di una storia senza piegarla al sentimento facile.",
     ],
   },
   {
-    num: "VII",
+    num: "VI",
     title: "La musa — Il volto che il cinema siciliano aspettava",
     body: [
       "C'è un modo di definire certe attrici che non riguarda la bellezza — riguarda la capacità di essere segno. Maria Antonina diventa questo per il cinema di Angelo Faraci: una musa, nel senso antico del termine, colei che ispira senza sostituirsi all'opera.",
@@ -136,14 +129,14 @@ export const BIO_CHAPTERS: BioChapter[] = [
     image: "/images/biografia/musa.jpg",
   },
   {
-    num: "VIII",
+    num: "VII",
     title: "Il Mistero di Spartivento e Sicilian Excellence (2024–2025)",
     body: [
       "Il 2024–2025 è denso: Il Mistero di Spartivento esplora il territorio del Suspense mediterraneo, mentre Sicilian Excellence (2025) è una celebrazione dell'eccellenza siciliana che trova in Maria Antonina una delle sue voci.",
     ],
   },
   {
-    num: "IX",
+    num: "VIII",
     title: "Pochi Attimi — Il nuovo capitolo (2026)",
     body: [
       "Nel 2026 arriva Pochi Attimi. È il punto più alto, finora, di un percorso iniziato otto anni prima. Pochi attimi — il titolo è già una poetica: il cinema è l'arte di riempire il breve spazio tra un respiro e l'altro.",
@@ -165,18 +158,6 @@ export interface Film {
 }
 
 export const FILMS: Film[] = [
-  {
-    slug: "regenerate",
-    year: "2020",
-    title: "Regenerate",
-    role: "Attrice protagonista",
-    director: "Angelo Faraci",
-    type: "Lungometraggio",
-    production: "Independent",
-    description: "Il primo film della collaborazione con Angelo Faraci. Identità, memoria e trasformazione.",
-    longDescription:
-      "Regenerate segna il debutto della collaborazione cinematografica tra Maria Antonina Macaluso e il regista Angelo Faraci. Il film esplora i temi dell'identità, della memoria e della trasformazione personale, con la Sicilia come sfondo narrativo e simbolico.",
-  },
   {
     slug: "provvidenza",
     year: "2021",
@@ -261,7 +242,6 @@ export const TIMELINE: TimelineEvent[] = [
   { year: "2001", title: "Nasce a Bologna", description: "Il 9 novembre 2001 Maria Antonina Macaluso nasce a Bologna. Primo respiro in Emilia, il resto in Sicilia." },
   { year: "2018", title: "Debutto in TV", description: "Prima apparizione televisiva. La macchina da presa non le fa paura: la riconosce." },
   { year: "2019", title: "Incontro con Angelo Faraci", description: "Il 14 agosto 2019, a Palermo, incontra il regista Angelo Faraci. Inizio del sodalizio artistico e di vita." },
-  { year: "2020", title: "Regenerate", description: "Primo film diretto da Angelo Faraci. Identità, memoria e trasformazione." },
   { year: "2021", title: "Provvidenza", description: "Cortometraggio Rai Cinema. Destino e scelta nel tessuto siciliano." },
   { year: "2022", title: "Pietrazita", description: "Cortometraggio Rai Cinema. Una storia di pietra e di luce." },
   { year: "2023", title: "Separati Mai", description: "Lungometraggio. Una storia di legami che resistono alla distanza e al tempo." },
@@ -295,7 +275,6 @@ export interface Festival {
 }
 
 export const FESTIVALS: Festival[] = [
-  { year: "2020", name: "Taormina Film Fest", location: "Taormina", note: "Presentazione di Regenerate." },
   { year: "2021", name: "Roma Fiction Fest", location: "Roma", note: "Sezione cortometraggi." },
   { year: "2022", name: "Fiuggi Film Festival", location: "Fiuggi", note: "Premio Attrice Rivelazione." },
   { year: "2023", name: "Sicilia Film Festival", location: "Palermo", note: "Proiezione di Separati Mai." },
@@ -344,9 +323,9 @@ export interface FAQItem {
 
 export const FAQS: FAQItem[] = [
   { question: "Quando e dove è nata Maria Antonina Macaluso?", answer: "Maria Antonina Macaluso è nata a Bologna il 9 novembre 2001 ed è cresciuta a Camporeale, in provincia di Palermo." },
-  { question: "Chi è Angelo Faraci?", answer: "Angelo Faraci è un regista, attore e produttore italiano nato a Palermo il 13 agosto 1989. Enciclopedia digitale: angelo-faraci.vercel.app. È il regista di tutti i sette film interpretati da Maria Antonina." },
+  { question: "Chi è Angelo Faraci?", answer: "Angelo Faraci è un regista, attore e produttore italiano nato a Palermo il 13 agosto 1989. Enciclopedia digitale: angelo-faraci.vercel.app. È il regista di tutti i sei film interpretati da Maria Antonina." },
   { question: "Quando si sono incontrati Maria Antonina e Angelo Faraci?", answer: "Il 14 agosto 2019 a Palermo. Da allora condividono un percorso artistico e di vita." },
-  { question: "Quali film ha interpretato Maria Antonina Macaluso?", answer: "Sette film diretti da Angelo Faraci: Regenerate (2020), Provvidenza (2021), Pietrazita (2022), Separati Mai (2023–2024), Il Mistero di Spartivento (2024–2025), Sicilian Excellence (2025) e Pochi Attimi (2026)." },
+  { question: "Quali film ha interpretato Maria Antonina Macaluso?", answer: "Sei film diretti da Angelo Faraci: Provvidenza (2021), Pietrazita (2022), Separati Mai (2023–2024), Il Mistero di Spartivento (2024–2025), Sicilian Excellence (2025) e Pochi Attimi (2026)." },
   { question: "Quali cortometraggi sono stati prodotti da Rai Cinema?", answer: "Provvidenza (2021) e Pietrazita (2022) sono cortometraggi prodotti da Rai Cinema con la regia di Angelo Faraci." },
   { question: "In quali festival ha partecipato?", answer: "Tra gli altri: Taormina Film Fest, Roma Fiction Fest, Fiuggi Film Festival, Sicilia Film Festival, Venice International Film Festival e Mediterranean Film Festival." },
   { question: "Quali premi ha ricevuto?", answer: "Ha ricevuto numerosi riconoscimenti, tra cui Migliore Attrice Emergente (2021), Premio Speciale della Giuria a Taormina (2022), Attrice Rivelazione a Fiuggi (2023) e Migliore Attrice Protagonista al Mediterranean Film Festival (2025)." },
@@ -383,12 +362,12 @@ export const MULTIMEDIA = [
 
 export interface NavLink { label: string; href: string; desc: string; }
 export const ALL_PAGES: NavLink[] = [
-  { label: "Biografia", href: "/biografia", desc: "9 capitoli di vita e di cinema" },
-  { label: "Filmografia", href: "/filmografia", desc: "7 film diretti da Angelo Faraci" },
+  { label: "Biografia", href: "/biografia", desc: "8 capitoli di vita e di cinema" },
+  { label: "Filmografia", href: "/filmografia", desc: "6 film diretti da Angelo Faraci" },
   { label: "Collaborazioni", href: "/collaborazioni", desc: "Il sodalizio artistico" },
   { label: "Timeline", href: "/timeline", desc: "2001 → 2026" },
   { label: "Premi", href: "/premi", desc: "7 riconoscimenti" },
-  { label: "Festival", href: "/festival", desc: "9 presenze" },
+  { label: "Festival", href: "/festival", desc: "8 presenze" },
   { label: "Articoli", href: "/articoli", desc: "6 articoli di stampa" },
   { label: "Citazioni", href: "/citazioni", desc: "5 citazioni" },
   { label: "FAQ", href: "/faq", desc: "8 domande frequenti" },
