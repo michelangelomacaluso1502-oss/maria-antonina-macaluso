@@ -594,3 +594,40 @@ Stage Summary:
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 56s)
 - Verifica: grep "Regenerate" su src/ e public/ → 0 risultati
 
+
+---
+Task ID: RIMUOVI-CAPITOLO-CHIAMATA-DEBUTTO-TV
+Agent: Full-stack developer
+Task: Ripristinare AngeloFaraci nella homepage (NON rimuovere) + rimuovere il capitolo biografia "La chiamata — Il debutto in TV (2018)"
+
+Work Log:
+- Annullata modifica precedente: ripristinato <AngeloFaraci /> in src/app/page.tsx (dopo <Biography />, prima di <Filmography />)
+- Rimosso capitolo II "La chiamata — Il debutto in TV (2018)" da BIO_CHAPTERS in src/lib/data.ts:
+  - Era: I (Origini) → II (La chiamata/Debutto in TV) → III (Incontro Angelo) → IV (Cortometraggi Rai) → V (Separati Mai) → VI (Musa) → VII (Spartivento) → VIII (Pochi Attimi)
+  - Ora: I (Origini) → II (Incontro Angelo Faraci 2019) → III (Cortometraggi Rai) → IV (Separati Mai) → V (Musa) → VI (Spartivento) → VII (Pochi Attimi)
+  - Rinumerati tutti i capitoli successivi al II (III→II, IV→III, V→IV, VI→V, VII→VI, VIII→VII)
+- Aggiornati conteggi "Otto capitoli" → "Sette capitoli" in:
+  - src/components/sections/Biography.tsx (SectionHeading title + subtitle)
+  - src/app/biografia/page.tsx (metadata description + PageHero title + subtitle)
+  - src/lib/data.ts ALL_PAGES (descrizione biografia)
+- Rimosso evento "Debutto in TV" 2018 dalla TIMELINE in src/lib/data.ts
+- Aggiornate citazioni HERO_QUOTES: "Dal debutto in TV nel 2018 al film Pochi Attimi nel 2026" → "Dal primo incontro con Angelo Faraci nel 2019 al film Pochi Attimi nel 2026"
+- Aggiornato SITE.description: stesso cambio di frase (2018 debutto TV → 2019 incontro Angelo)
+- Aggiornati i sottotitoli biografia: "dal debutto in TV a Pochi Attimi" → "dall'incontro con Angelo Faraci a Pochi Attimi"
+- Verifica finale: grep "chiamata|debutto in TV|Debutto in TV" su src/ → 0 risultati
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto (solo edit mirati)
+  - AngeloFaraci MANTENUTO nella homepage come richiesto
+  - Numerazione capitoli coerente (I-VII, 7 capitoli)
+  - Tutti i conteggi coinvolti aggiornati (7 capitoli, non più 8 o 9)
+  - Animazioni professionali, hero centrato, intro MM, "Enciclopedia digitale" — tutti preservati
+
+Stage Summary:
+- File modificati:
+  - src/app/page.tsx (ripristino import AngeloFaraci + JSX)
+  - src/lib/data.ts (rimozione capitolo II + rinumerazione + timeline + hero quotes + site description + ALL_PAGES)
+  - src/components/sections/Biography.tsx (title "Sette capitoli" + subtitle)
+  - src/app/biografia/page.tsx (metadata + PageHero)
+- Build status: SUCCESS — 79 pagine generate
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 41s)
+

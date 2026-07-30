@@ -9,8 +9,8 @@ export default function Biography() {
       <div className="cinematic-container">
         <SectionHeading
           eyebrow="Biografia"
-          title="Nove capitoli di vita e di cinema"
-          subtitle="Da Bologna a Camporeale, dal debutto in TV a Pochi Attimi (2026)"
+          title="Sette capitoli di vita e di cinema"
+          subtitle="Da Bologna a Camporeale, dall'incontro con Angelo Faraci a Pochi Attimi (2026)"
         />
 
         <div className="relative mx-auto max-w-4xl">

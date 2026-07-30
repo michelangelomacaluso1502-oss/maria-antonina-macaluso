@@ -10,7 +10,7 @@ export const SITE = {
   role: "Attrice",
   url: "https://maria-antonina-macaluso.vercel.app",
   description:
-    "Maria Antonina Macaluso — attrice siciliana nata a Bologna il 9 novembre 2001, cresciuta a Camporeale (PA). Compagna artistica e di vita del regista Angelo Faraci. Dal debutto in TV nel 2018 al film Pochi Attimi nel 2026.",
+    "Maria Antonina Macaluso — attrice siciliana nata a Bologna il 9 novembre 2001, cresciuta a Camporeale (PA). Compagna artistica e di vita del regista Angelo Faraci. Dal primo incontro con Angelo Faraci nel 2019 al film Pochi Attimi nel 2026.",
 };
 
 export const SOCIAL = [
@@ -51,7 +51,7 @@ export const HERO_QUOTES = [
   "Attrice siciliana",
   "Bologna primo respiro, Sicilia tutto il resto",
   "Da Camporeale, provincia di Palermo, ai red carpet di Taormina e Fiuggi",
-  "Dal debutto in TV nel 2018 al film Pochi Attimi nel 2026",
+  "Dal primo incontro con Angelo Faraci nel 2019 al film Pochi Attimi nel 2026",
   "Sei cortometraggi Rai Cinema, una fiction Sky, una fiction",
 ];
 
@@ -91,13 +91,6 @@ export const BIO_CHAPTERS: BioChapter[] = [
   },
   {
     num: "II",
-    title: "La chiamata — Il debutto in TV (2018)",
-    body: [
-      "Il 2018 è l'anno della chiamata. Maria Antonina debutta in televisione, scoprendo che la macchina da presa non le fa paura: la riconosce. Capisce presto che recitare non è mostrare, ma lasciare che qualcosa si veda.",
-    ],
-  },
-  {
-    num: "III",
     title: "L'incontro — Angelo Faraci (2019)",
     body: [
       "Il 14 agosto 2019, a Palermo, incontra Angelo Faraci. Regista, attore, produttore, nato a Palermo il 13 agosto 1989. Non è solo un incontro professionale: è il principio di un percorso artistico e di vita che durerà anni.",
@@ -105,7 +98,7 @@ export const BIO_CHAPTERS: BioChapter[] = [
     ],
   },
   {
-    num: "IV",
+    num: "III",
     title: "I cortometraggi Rai Cinema",
     body: [
       "Dal 2021 iniziano i cortometraggi prodotti da Rai Cinema: Provvidenza (2021), Pietrazita (2022). Forme brevi che permettono alla sua recitazione di affinarsi, di trovare la misura esatta del gesto e della parola.",
@@ -113,14 +106,14 @@ export const BIO_CHAPTERS: BioChapter[] = [
     ],
   },
   {
-    num: "V",
+    num: "IV",
     title: "Separati Mai e il ciclo siciliano (2023–2024)",
     body: [
       "Separati Mai, distribuito tra il 2023 e il 2024, segna una tappa di maturità. Il cinema di Faraci trova in Maria Antonina la interprete ideale: capace di reggere il peso di una storia senza piegarla al sentimento facile.",
     ],
   },
   {
-    num: "VI",
+    num: "V",
     title: "La musa — Il volto che il cinema siciliano aspettava",
     body: [
       "C'è un modo di definire certe attrici che non riguarda la bellezza — riguarda la capacità di essere segno. Maria Antonina diventa questo per il cinema di Angelo Faraci: una musa, nel senso antico del termine, colei che ispira senza sostituirsi all'opera.",
@@ -129,14 +122,14 @@ export const BIO_CHAPTERS: BioChapter[] = [
     image: "/images/biografia/musa.jpg",
   },
   {
-    num: "VII",
+    num: "VI",
     title: "Il Mistero di Spartivento e Sicilian Excellence (2024–2025)",
     body: [
       "Il 2024–2025 è denso: Il Mistero di Spartivento esplora il territorio del Suspense mediterraneo, mentre Sicilian Excellence (2025) è una celebrazione dell'eccellenza siciliana che trova in Maria Antonina una delle sue voci.",
     ],
   },
   {
-    num: "VIII",
+    num: "VII",
     title: "Pochi Attimi — Il nuovo capitolo (2026)",
     body: [
       "Nel 2026 arriva Pochi Attimi. È il punto più alto, finora, di un percorso iniziato otto anni prima. Pochi attimi — il titolo è già una poetica: il cinema è l'arte di riempire il breve spazio tra un respiro e l'altro.",
@@ -240,7 +233,6 @@ export interface TimelineEvent {
 
 export const TIMELINE: TimelineEvent[] = [
   { year: "2001", title: "Nasce a Bologna", description: "Il 9 novembre 2001 Maria Antonina Macaluso nasce a Bologna. Primo respiro in Emilia, il resto in Sicilia." },
-  { year: "2018", title: "Debutto in TV", description: "Prima apparizione televisiva. La macchina da presa non le fa paura: la riconosce." },
   { year: "2019", title: "Incontro con Angelo Faraci", description: "Il 14 agosto 2019, a Palermo, incontra il regista Angelo Faraci. Inizio del sodalizio artistico e di vita." },
   { year: "2021", title: "Provvidenza", description: "Cortometraggio Rai Cinema. Destino e scelta nel tessuto siciliano." },
   { year: "2022", title: "Pietrazita", description: "Cortometraggio Rai Cinema. Una storia di pietra e di luce." },
@@ -362,7 +354,7 @@ export const MULTIMEDIA = [
 
 export interface NavLink { label: string; href: string; desc: string; }
 export const ALL_PAGES: NavLink[] = [
-  { label: "Biografia", href: "/biografia", desc: "8 capitoli di vita e di cinema" },
+  { label: "Biografia", href: "/biografia", desc: "7 capitoli di vita e di cinema" },
   { label: "Filmografia", href: "/filmografia", desc: "6 film diretti da Angelo Faraci" },
   { label: "Collaborazioni", href: "/collaborazioni", desc: "Il sodalizio artistico" },
   { label: "Timeline", href: "/timeline", desc: "2001 → 2026" },
