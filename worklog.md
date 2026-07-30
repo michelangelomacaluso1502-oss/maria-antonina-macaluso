@@ -662,3 +662,43 @@ Stage Summary:
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 35s)
 - Risultato: l'URL principale del sito è pulito "https://maria-antonina-macaluso.vercel.app/" e porta alla hero
 
+
+---
+Task ID: ESPANSIONE-LINGUE-105
+Agent: Full-stack developer
+Task: Espandere il sistema traduzioni del sito Maria Antonina Macaluso da 50 a 105+ lingue
+
+Work Log:
+- Analizzato lo stato attuale: src/lib/i18n-50.ts conteneva 50 lingue (it, en, es, fr, de, pt, ru, zh, ja, ar, hi, ko, tr, pl, nl + 35 europee/asiatiche)
+- Verificati i componenti che dipendono da LANGUAGES_50:
+  - src/components/site/language-switcher.tsx: usa LANGUAGES_50.filter() per la ricerca → automaticamente compatibile con più lingue
+  - src/app/api/translate/route.ts: usa Google Translate edge runtime → supporta tutte le lingue di Google Translate
+  - 14 file JSON statici in /public/translations/ per le lingue prioritarie
+- Aggiunte 57 nuove lingue a LANGUAGES_50 (totale 107):
+  - Asia & Pacific (20): fil (Filipino), ne (Nepali), si (Sinhala), my (Burmese), km (Khmer), lo (Lao), mn (Mongolian), ps (Pashto), ku (Kurdish), az (Azerbaijani), uz (Uzbek), kk (Kazakh), ky (Kyrgyz), tg (Tajik), tk (Turkmen), yi (Yiddish), haw (Hawaiian), mi (Maori), sm (Samoan), to (Tongan)
+  - Africa (20): yo (Yoruba), ig (Igbo), ha (Hausa), am (Amharic), zu (Zulu), xh (Xhosa), af (Afrikaans), st (Sesotho), sn (Shona), so (Somali), rw (Kinyarwanda), ln (Lingala), lg (Luganda), mg (Malagasy), ny (Chichewa), ti (Tigrinya), wo (Wolof), ff (Fulani), bm (Bambara), tn (Tswana), ts (Tsonga)
+  - Americas + Europe minority + Constructed (15): gn (Guarani), qu (Quechua), ay (Aymara), ht (Haitian Creole), ty (Tahitian), fj (Fijian), co (Corsican), br (Breton), oc (Occitan), sc (Sardinian), rm (Romansh), la (Latin), eo (Esperanto), jw (Javanese), su (Sundanese)
+- Aggiunto alias `export const LANGUAGES = LANGUAGES_50` per chiarezza futura
+- Aggiunto `SOURCE_LANG = "it"` costante esplicita
+- Mantenuto il nome `LANGUAGES_50` per non rompere la struttura (regola: NON intaccare struttura)
+- Mantenute le 14 lingue con file JSON statici (PRELOADED_LANGS) — le altre 93 usano runtime Google Translate via /api/translate
+- Test API produzione (curl su https://maria-antonina-macaluso.vercel.app/api/translate):
+  - Filipino (fil): "Maria Antonina Macaluso" → tradotto, 2.3s, edge=true ✓
+  - Hawaiian (haw): "Ciao mondo" → "Aloha Honua", 978ms ✓
+  - Latin (la): "Biografia/Filmografia/Premi" → "Biographia/Filmography/Press", 1.4s ✓
+  - Esperanto (eo): → "Biografio/Filmografio/Premu", 1.2s ✓
+  - Maori (mi): → "Haurongo/Whakaata kiriata/Perehi", 1.2s ✓
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto (mantenuto nome LANGUAGES_50, stessa interfaccia, stessi export)
+  - 14 lingue con JSON statico preservate
+  - API edge Google Translate preservata (race tra 2 host)
+  - LanguageSwitcher50 component funziona senza modifiche (usa filter automatico)
+  - Animazioni professionali, hero centrato, intro MM, "Enciclopedia digitale" — tutti preservati
+
+Stage Summary:
+- File modificato: src/lib/i18n-50.ts (da 84 righe a 154 righe, +57 nuove lingue)
+- Totale lingue supportate: 50 → 107 (più di 100 come richiesto)
+- Build status: SUCCESS — 79 pagine generate
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 37s)
+- Verifica API: 5 lingue nuove testate con successo (fil, haw, la, eo, mi)
+
