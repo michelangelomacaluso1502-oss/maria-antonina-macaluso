@@ -39,7 +39,7 @@ export default function Biography() {
 
                       {/* Se ci sono sottosezioni, renderizza quelle; altrimenti i paragrafi normali */}
                       {ch.sections && ch.sections.length > 0 ? (
-                        <div className="mt-4 space-y-5">
+                        <div className="mt-4 space-y-8">
                           {ch.sections.map((sec, k) => (
                             <div key={k}>
                               <h4 className="font-display text-base font-semibold uppercase tracking-wide-sm text-gold/80 sm:text-lg">
@@ -52,6 +52,21 @@ export default function Biography() {
                                   </p>
                                 ))}
                               </div>
+                              {/* Foto per-sottosezione (mobile + tablet) */}
+                              {sec.image && (
+                                <figure className="glass-card group mt-4 overflow-hidden p-2 md:hidden">
+                                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                                  <img
+                                    src={sec.image}
+                                    alt={sec.imageAlt ?? sec.heading}
+                                    className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    loading="lazy"
+                                  />
+                                  <figcaption className="px-2 py-2 text-center text-[11px] uppercase tracking-wide-sm text-cream/50">
+                                    {sec.heading}
+                                  </figcaption>
+                                </figure>
+                              )}
                             </div>
                           ))}
                         </div>
@@ -66,7 +81,8 @@ export default function Biography() {
                       )}
                     </div>
 
-                    {ch.image && (
+                    {/* Colonna immagini: chapter.image OPPURE griglia di immagini per-sottosezione (desktop) */}
+                    {ch.image ? (
                       <div className={cn("mt-6 md:mt-0 md:[direction:ltr]", flip ? "md:order-1" : "")}>
                         <figure className="glass-card group mx-auto max-w-[400px] overflow-hidden p-2">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -81,7 +97,28 @@ export default function Biography() {
                           </figcaption>
                         </figure>
                       </div>
-                    )}
+                    ) : ch.sections && ch.sections.some((s) => s.image) ? (
+                      <div className={cn("mt-6 md:mt-0 md:[direction:ltr]", flip ? "md:order-1" : "")}>
+                        <div className="mx-auto grid max-w-[400px] gap-4">
+                          {ch.sections
+                            .filter((s) => s.image)
+                            .map((sec, k) => (
+                              <figure key={k} className="glass-card group overflow-hidden p-2">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                  src={sec.image}
+                                  alt={sec.imageAlt ?? sec.heading}
+                                  className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                  loading="lazy"
+                                />
+                                <figcaption className="px-2 py-2 text-center text-[11px] uppercase tracking-wide-sm text-cream/50">
+                                  {sec.heading}
+                                </figcaption>
+                              </figure>
+                            ))}
+                        </div>
+                      </div>
+                    ) : null}
                   </div>
                 </Reveal>
               );

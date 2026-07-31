@@ -75,6 +75,9 @@ export const PROLOGUE = {
 export interface BioSection {
   heading: string;
   body: string[];
+  /** Foto opzionale per la sottosezione */
+  image?: string;
+  imageAlt?: string;
 }
 
 export interface BioChapter {
@@ -101,8 +104,6 @@ export const BIO_CHAPTERS: BioChapter[] = [
     num: "II",
     title: "L'incontro — Angelo Faraci (2019)",
     body: [],
-    image: "/images/biografia/incontro-angelo.jpg",
-    imageAlt: "Angelo Faraci e Maria Antonina Macaluso insieme",
     sections: [
       {
         heading: "Nel 2019 — L'incontro",
@@ -110,12 +111,16 @@ export const BIO_CHAPTERS: BioChapter[] = [
           "Angelo, già regista affermato, chiama Maria Antonina Macaluso — giovane attrice di 17 anni, nata a Bologna il 9 novembre 2001 (segno zodiacale Scorpione). Il dato anagrafico, però, non esaurisce la sua identità: la sua è un'identità profondamente siciliana, cresciuta in Sicilia, formata in Sicilia, radicata in Sicilia. Le radici non si misurano con il luogo di nascita ma con dove si è vissuto e appartenuto. Bologna è stato il suo primo respiro; la Sicilia è tutto il resto.",
           "Dopo quella chiamata conoscitiva ci fu l'incontro di persona. Il talento, la presenza scenica e la bellezza della ragazza convinsero Angelo a farla debuttare nel cinema. Da quella chiamata professionale nacque qualcosa di più profondo.",
         ],
+        image: "/images/biografia/incontro-angelo.jpg",
+        imageAlt: "Angelo Faraci e Maria Antonina Macaluso — l'incontro",
       },
       {
         heading: "14 agosto 2019 — Il fidanzamento ufficiale",
         body: [
           "Il 14 agosto 2019 — l'indomani del compleanno di Angelo, nato il 13 agosto — Angelo e Maria Antonina si mettono insieme. Da quel giorno condividono non solo la vita sentimentale ma anche le esperienze cinematografiche: lei recita accanto a lui in numerosi progetti, da Provvidenza a Pietrazita, da Separati Mai al recente Pochi Attimi (2026).",
         ],
+        image: "/images/biografia/fidanzamento-angelo.jpg",
+        imageAlt: "Angelo Faraci e Maria Antonina Macaluso — il fidanzamento",
       },
     ],
   },

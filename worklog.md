@@ -756,3 +756,60 @@ Stage Summary:
 - Vercel project link corretto: my-project → maria-antonina-macaluso
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 41s)
 
+
+---
+Task ID: BIOGRAFIA-FOTO-INCONTRO-FIDANZAMENTO-4K
+Agent: Full-stack developer
+Task: Sostituire le foto del capitolo II: incontro (110.3 KB landscape) + fidanzamento (26.8 KB portrait), ottimizzate a qualità 4K
+
+Work Log:
+- Verificate le 2 nuove foto caricate:
+  - 6008229007805058862.jpg: 1080x796 landscape, 110.3 KB — coppia selfie in centro storico → per sottosezione "L'incontro"
+  - 6008229007805058866.jpg: 688x1080 portrait, 26.8 KB — coppia abbraccio notturno → per sottosezione "Il fidanzamento"
+- Create script /home/z/my-project/scripts/optimize-biografia-photos.js con sharp:
+  - Target max 1600px longest side (retina-ready)
+  - Max upscale 1.5x (per evitare blur eccessivo)
+  - Kernel lanczos3 (high-quality resampling)
+  - JPEG quality 92, mozjpeg true
+  - chromaSubsampling 4:4:4 (best chroma)
+  - trellisQuantisation + overshootDeringing + optimizeScans
+  - Interpretato "4K quality" come: alta qualità visiva + dimensioni retina-ready (non upscale oltre 1.5x per evitare pixelazione)
+- Eseguito script, risultati:
+  - incontro-angelo.jpg: 1080x796 (110.3KB) → 1600x1179 (264.1KB) — landscape retina-ready
+  - fidanzamento-angelo.jpg: 688x1080 (26.8KB) → 1019x1600 (91.6KB) — portrait retina-ready (upscale 1.48x, sotto soglia 1.5x)
+- Estesa interfaccia BioSection in src/lib/data.ts:
+  - Aggiunti campi opzionali: image, imageAlt
+  - Mantenuta retrocompatibilità
+- Aggiornato capitolo II "L'incontro — Angelo Faraci (2019)":
+  - RIMOSSA foto chapter-level (image e imageAlt rimossi dal chapter)
+  - Aggiunta foto per-sottosezione 1 (incontro): /images/biografia/incontro-angelo.jpg + imageAlt
+  - Aggiunta foto per-sottosezione 2 (fidanzamento): /images/biografia/fidanzamento-angelo.jpg + imageAlt
+- Aggiornato src/components/sections/Biography.tsx:
+  - Mobile/tablet: foto inline con ogni sottosezione (aspect-[4/3], max-width naturale)
+  - Desktop: colonna laterale con griglia verticale delle foto per-sottosezione (aspect-[4/5], max-w-400px)
+  - Render condizionale: se ch.image presente → usa quella; else se sections hanno immagini → griglia; else nessuna foto
+  - Mantenuto layout flip alternato per capitoli senza sections
+- Verifica produzione:
+  - Foto incontro-angelo.jpg → HTTP 200 ✓
+  - Foto fidanzamento-angelo.jpg → HTTP 200 ✓
+  - Entrambe referenziate nella pagina /biografia ✓
+  - "Prime Video" → 0 occorrenze ✓ (regola rispettata)
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto (aggiunte solo campi opzionali a BioSection)
+  - NESSUNA menzione di "Prime Video"
+  - Animazioni professionali, hero centrato, intro MM, "Enciclopedia digitale" — tutti preservati
+  - 107 lingue supportate preservate
+  - Foto ottimizzate con sharp (no upscale eccessivo, qualità mozjpeg q92)
+
+Stage Summary:
+- File modificati:
+  - src/lib/data.ts (BioSection estesa con image/imageAlt + capitolo II aggiornato con foto per-sottosezione)
+  - src/components/sections/Biography.tsx (render foto per-sottosezione mobile + desktop grid)
+- File creati:
+  - scripts/optimize-biografia-photos.js (script sharp riutilizzabile)
+- 2 nuove foto ottimizzate in /public/images/biografia/:
+  - incontro-angelo.jpg (1600x1179, 264 KB, retina-ready landscape)
+  - fidanzamento-angelo.jpg (1019x1600, 91.6 KB, retina-ready portrait)
+- Build status: SUCCESS — 79 pagine generate
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 40s)
+
