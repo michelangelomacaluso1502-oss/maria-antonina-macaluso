@@ -36,13 +36,34 @@ export default function Biography() {
                     <div className={cn("md:[direction:ltr]", flip ? "md:order-2 md:pl-10" : "md:pr-10 md:text-right")}>
                       <span className="font-display text-5xl text-gold/30">{ch.num}</span>
                       <h3 className="mt-1 font-display text-2xl text-cream sm:text-3xl">{ch.title}</h3>
-                      <div className="mt-4 space-y-3">
-                        {ch.body.map((para, j) => (
-                          <p key={j} className="text-pretty text-sm leading-relaxed text-cream/70 sm:text-base">
-                            {para}
-                          </p>
-                        ))}
-                      </div>
+
+                      {/* Se ci sono sottosezioni, renderizza quelle; altrimenti i paragrafi normali */}
+                      {ch.sections && ch.sections.length > 0 ? (
+                        <div className="mt-4 space-y-5">
+                          {ch.sections.map((sec, k) => (
+                            <div key={k}>
+                              <h4 className="font-display text-base font-semibold uppercase tracking-wide-sm text-gold/80 sm:text-lg">
+                                {sec.heading}
+                              </h4>
+                              <div className="mt-2 space-y-3">
+                                {sec.body.map((para, j) => (
+                                  <p key={j} className="text-pretty text-sm leading-relaxed text-cream/70 sm:text-base">
+                                    {para}
+                                  </p>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="mt-4 space-y-3">
+                          {ch.body.map((para, j) => (
+                            <p key={j} className="text-pretty text-sm leading-relaxed text-cream/70 sm:text-base">
+                              {para}
+                            </p>
+                          ))}
+                        </div>
+                      )}
                     </div>
 
                     {ch.image && (
@@ -51,7 +72,7 @@ export default function Biography() {
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={ch.image}
-                            alt={`Maria Antonina Macaluso — ${ch.title}`}
+                            alt={ch.imageAlt ?? `Maria Antonina Macaluso — ${ch.title}`}
                             className="aspect-[3/4] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                             loading="lazy"
                           />

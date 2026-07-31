@@ -72,11 +72,19 @@ export const PROLOGUE = {
   ],
 };
 
+export interface BioSection {
+  heading: string;
+  body: string[];
+}
+
 export interface BioChapter {
   num: string;
   title: string;
   body: string[];
   image?: string;
+  imageAlt?: string;
+  /** Sottosezioni opzionali con titolo + paragrafi (per capitoli articolati) */
+  sections?: BioSection[];
 }
 
 export const BIO_CHAPTERS: BioChapter[] = [
@@ -92,9 +100,23 @@ export const BIO_CHAPTERS: BioChapter[] = [
   {
     num: "II",
     title: "L'incontro — Angelo Faraci (2019)",
-    body: [
-      "Il 14 agosto 2019, a Palermo, incontra Angelo Faraci. Regista, attore, produttore, nato a Palermo il 13 agosto 1989. Non è solo un incontro professionale: è il principio di un percorso artistico e di vita che durerà anni.",
-      "Da quel giorno, le loro carriere procederanno intrecciate: sei film insieme, una visione condivisa, una Sicilia raccontata dal di dentro.",
+    body: [],
+    image: "/images/biografia/incontro-angelo.jpg",
+    imageAlt: "Angelo Faraci e Maria Antonina Macaluso insieme",
+    sections: [
+      {
+        heading: "Nel 2019 — L'incontro",
+        body: [
+          "Angelo, già regista affermato, chiama Maria Antonina Macaluso — giovane attrice di 17 anni, nata a Bologna il 9 novembre 2001 (segno zodiacale Scorpione). Il dato anagrafico, però, non esaurisce la sua identità: la sua è un'identità profondamente siciliana, cresciuta in Sicilia, formata in Sicilia, radicata in Sicilia. Le radici non si misurano con il luogo di nascita ma con dove si è vissuto e appartenuto. Bologna è stato il suo primo respiro; la Sicilia è tutto il resto.",
+          "Dopo quella chiamata conoscitiva ci fu l'incontro di persona. Il talento, la presenza scenica e la bellezza della ragazza convinsero Angelo a farla debuttare nel cinema. Da quella chiamata professionale nacque qualcosa di più profondo.",
+        ],
+      },
+      {
+        heading: "14 agosto 2019 — Il fidanzamento ufficiale",
+        body: [
+          "Il 14 agosto 2019 — l'indomani del compleanno di Angelo, nato il 13 agosto — Angelo e Maria Antonina si mettono insieme. Da quel giorno condividono non solo la vita sentimentale ma anche le esperienze cinematografiche: lei recita accanto a lui in numerosi progetti, da Provvidenza a Pietrazita, da Separati Mai al recente Pochi Attimi (2026).",
+        ],
+      },
     ],
   },
   {
@@ -135,6 +157,8 @@ export const BIO_CHAPTERS: BioChapter[] = [
       "Nel 2026 arriva Pochi Attimi. È il punto più alto, finora, di un percorso iniziato otto anni prima. Pochi attimi — il titolo è già una poetica: il cinema è l'arte di riempire il breve spazio tra un respiro e l'altro.",
       "Maria Antonina Macaluso, attrice siciliana, continua il suo viaggio: dalla Sicilia al mondo, senza lasciare la Sicilia.",
     ],
+    image: "/images/biografia/pochi-attimi.jpg",
+    imageAlt: "Maria Antonina Macaluso sul set di Pochi Attimi (2026)",
   },
 ];
 

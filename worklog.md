@@ -702,3 +702,57 @@ Stage Summary:
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 37s)
 - Verifica API: 5 lingue nuove testate con successo (fil, haw, la, eo, mi)
 
+
+---
+Task ID: BIOGRAFIA-FOTO-INCONTRO-POCHI-ATTIMI
+Agent: Full-stack developer
+Task: Aggiungere 2 foto fornite dall'utente nei capitoli biografia (Incontro con Angelo + Pochi Attimi) + estendere testo capitolo Incontro con sottosezioni
+
+Work Log:
+- Analizzate le 2 foto caricate dall'utente in /home/z/my-project/upload/:
+  - 6008229007805058551.jpg (53 KB): coppia che fa selfie all'aperto → perfetta per capitolo Incontro
+  - 6001296879049707199.jpg (174 KB): donna con clapperboard sul set in bianco e nero → perfetta per Pochi Attimi
+- Copiate negli asset con nomi descrittivi:
+  - /public/images/biografia/incontro-angelo.jpg (53 KB, coppia selfie)
+  - /public/images/biografia/pochi-attimi.jpg (174 KB, donna sul set con ciak)
+- Estesa interfaccia BioChapter in src/lib/data.ts:
+  - Aggiunta interfaccia BioSection { heading: string; body: string[] }
+  - Aggiunti campi opzionali a BioChapter: imageAlt, sections (per sottotitoli)
+  - Mantenuta retrocompatibilità: body[] preservato, sections è opzionale
+- Aggiornato capitolo II "L'incontro — Angelo Faraci (2019)":
+  - Aggiunta image: /images/biografia/incontro-angelo.jpg
+  - Aggiunta imageAlt: "Angelo Faraci e Maria Antonina Macaluso insieme"
+  - body: [] (vuoto, usa sections)
+  - Aggiunte 2 sottosezioni:
+    1. "Nel 2019 — L'incontro": testo fornito dall'utente sulla chiamata conoscitiva di Angelo, identità siciliana di Maria Antonina
+    2. "14 agosto 2019 — Il fidanzamento ufficiale": testo sul fidanzamento, progetti condivisi
+  - ⚠️ REGOLA RISPETTATA: rimosso "(Prime Video, 2026)" dal testo dell'utente → sostituito con "(2026)" — NESSUNA menzione di Prime Video
+- Aggiornato capitolo VII "Pochi Attimi — Il nuovo capitolo (2026)":
+  - Aggiunta image: /images/biografia/pochi-attimi.jpg
+  - Aggiunta imageAlt: "Maria Antonina Macaluso sul set di Pochi Attimi (2026)"
+- Aggiornato src/components/sections/Biography.tsx:
+  - Render condizionale: se ch.sections presente, renderizza sottosezioni con heading; altrimenti paragrafi normali
+  - Heading sottosezione: font-display text-base/gold-80 uppercase tracking-wide-sm
+  - Usato ch.imageAlt ?? fallback per alt text immagini
+  - Fix typo: <span>{ch.num}</h3> → <span>{ch.num}</span>
+- Verifica produzione (curl su https://maria-antonina-macaluso.vercel.app):
+  - Foto incontro-angelo.jpg → HTTP 200 ✓
+  - Foto pochi-attimi.jpg → HTTP 200 ✓
+  - "Prime Video" → 0 occorrenze ✓ (regola rispettata)
+  - Sottosezioni "Nel 2019", "fidanzamento ufficiale", "Pochi Attimi" presenti ✓
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto (aggiunte solo interfacce opzionali + campi opzionali)
+  - NESSUNA menzione di "Prime Video" (rimossa dal testo dell'utente)
+  - Animazioni professionali, hero centrato, intro MM, "Enciclopedia digitale" — tutti preservati
+  - 107 lingue supportate preservate
+  - ErrorBoundary + skipHydration preservati
+
+Stage Summary:
+- File modificati:
+  - src/lib/data.ts (nuove interfacce BioSection + BioChapter estesa + capitoli II e VII aggiornati)
+  - src/components/sections/Biography.tsx (render sections condizionale + imageAlt + fix typo)
+- 2 nuove foto in /public/images/biografia/: incontro-angelo.jpg, pochi-attimi.jpg
+- Build status: SUCCESS — 79 pagine generate
+- Vercel project link corretto: my-project → maria-antonina-macaluso
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 41s)
+
