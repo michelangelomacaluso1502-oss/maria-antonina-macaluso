@@ -906,3 +906,40 @@ Stage Summary:
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 43s)
 - Verifica pixel: produzione contiene la foto 110.3 KB ottimizzata a 4K, NON la 51.8 KB
 
+
+---
+Task ID: FIX-FOTO-INCONTRO-VISIBILE-DESKTOP
+Agent: Full-stack developer
+Task: La foto dell'incontro non compariva su desktop perché aveva classe md:hidden — fix rendering
+
+Work Log:
+- DIAGNOSI ROOT CAUSE: la foto per-sottosezione aveva classe `md:hidden` (visibile solo su mobile)
+  - Su desktop la foto doveva apparire in una griglia separata nella colonna di destra
+  - Ma questa griglia era lontana dal testo della sottosezione "L'incontro" → l'utente non la vedeva nel punto giusto
+  - 4 occorrenze di incontro-angelo.jpg nell'HTML: 3 con md:hidden, 1 nella griglia desktop
+- Fix applicato in src/components/sections/Biography.tsx:
+  - RIMOSSA la classe `md:hidden` dalla foto inline per-sottosezione → ora visibile su TUTTI i device
+  - RIMOSSA la griglia desktop separata per le foto per-sottosezione (era ridondante)
+  - Mantenuto il rendering della foto chapter-level (ch.image) nella colonna laterale (per capitoli senza sections)
+  - Cambiato md:items-center → md:items-start (allineamento in alto, migliore con foto inline lunghe)
+  - Cambiato mt-4 → mt-5 sulla figura (più respiro tra testo e foto)
+- Verifica produzione:
+  - Prima del fix: 4 occorrenze di incontro-angelo.jpg (3 con md:hidden + 1 in griglia desktop)
+  - Dopo il fix: 1 sola occorrenza, senza md:hidden, visibile subito sotto il testo "Nel 2019 — L'incontro"
+  - Foto: 3840x2830, 1.37 MB, Ultra HD 4K ✓
+  - HTML: width="1600" height="1200" aspect-[4/3] (landscape, no stretching) ✓
+  - "Prime Video" → 0 occorrenze ✓ (regola rispettata)
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto (solo refactor del rendering immagini)
+  - NESSUNA menzione di "Prime Video"
+  - Foto Ultra HD 4K preservata
+  - Layout fissato con width/height intrinseci + aspect-ratio corretto (no stretching, no CLS)
+  - Animazioni professionali, hero centrato, intro MM, "Enciclopedia digitale" — tutti preservati
+  - 107 lingue supportate preservate
+
+Stage Summary:
+- File modificato: src/components/sections/Biography.tsx (rimosso md:hidden + griglia desktop ridondante, foto inline ora visibile ovunque)
+- Build status: SUCCESS — 79 pagine generate
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 38s)
+- Verifica: 1 occorrenza di incontro-angelo.jpg senza md:hidden — visibile su desktop e mobile
+

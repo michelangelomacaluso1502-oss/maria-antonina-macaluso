@@ -47,7 +47,7 @@ export default function Biography() {
 
                   <div
                     className={cn(
-                      "md:grid md:grid-cols-2 md:items-center md:gap-10",
+                      "md:grid md:grid-cols-2 md:items-start md:gap-10",
                       flip && "md:[direction:rtl]",
                     )}
                   >
@@ -70,9 +70,9 @@ export default function Biography() {
                                   </p>
                                 ))}
                               </div>
-                              {/* Foto per-sottosezione (mobile + tablet) */}
+                              {/* Foto per-sottosezione: visibile su TUTTI i device, subito sotto il testo */}
                               {sec.image && (
-                                <figure className="glass-card group mt-4 overflow-hidden p-2 md:hidden">
+                                <figure className="glass-card group mt-5 overflow-hidden p-2">
                                   {/* eslint-disable-next-line @next/next/no-img-element */}
                                   <img
                                     src={sec.image}
@@ -104,8 +104,8 @@ export default function Biography() {
                       )}
                     </div>
 
-                    {/* Colonna immagini: chapter.image OPPURE griglia di immagini per-sottosezione (desktop) */}
-                    {ch.image ? (
+                    {/* Colonna immagini: solo se chapter.image (foto chapter-level, NON per-sottosezione) */}
+                    {ch.image && (
                       <div className={cn("mt-6 md:mt-0 md:[direction:ltr]", flip ? "md:order-1" : "")}>
                         <figure className="glass-card group mx-auto max-w-[400px] overflow-hidden p-2">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -120,33 +120,7 @@ export default function Biography() {
                           </figcaption>
                         </figure>
                       </div>
-                    ) : ch.sections && ch.sections.some((s) => s.image) ? (
-                      <div className={cn("mt-6 md:mt-0 md:[direction:ltr]", flip ? "md:order-1" : "")}>
-                        <div className="mx-auto grid max-w-[400px] gap-4">
-                          {ch.sections
-                            .filter((s) => s.image)
-                            .map((sec, k) => (
-                              <figure key={k} className="glass-card group overflow-hidden p-2">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                  src={sec.image}
-                                  alt={sec.imageAlt ?? sec.heading}
-                                  width={ASPECT_DIMS[sec.aspect ?? "4/5"].w}
-                                  height={ASPECT_DIMS[sec.aspect ?? "4/5"].h}
-                                  className={cn(
-                                    "w-full object-cover transition-transform duration-700 group-hover:scale-105",
-                                    ASPECT_CLASS[sec.aspect ?? "4/5"],
-                                  )}
-                                  loading="lazy"
-                                />
-                                <figcaption className="px-2 py-2 text-center text-[11px] uppercase tracking-wide-sm text-cream/50">
-                                  {sec.heading}
-                                </figcaption>
-                              </figure>
-                            ))}
-                        </div>
-                      </div>
-                    ) : null}
+                    )}
                   </div>
                 </Reveal>
               );
