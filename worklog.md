@@ -869,3 +869,40 @@ Stage Summary:
 - Build status: SUCCESS — 79 pagine generate
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 43s)
 
+
+---
+Task ID: FIX-FOTO-INCONTRO-CORRETTA
+Agent: Full-stack developer
+Task: Sostituire la foto sbagliata (51.8 KB, coppia in natura) con quella corretta (110.3 KB, coppia in centro storico) nel capitolo Incontro
+
+Work Log:
+- UTENTE HA CHIARITO: la foto che voleva era 6008229007805058862.jpg (110.3 KB, 1080x796, coppia selfie in centro storico con archi)
+- NON 6008229007805058551.jpg (51.8 KB, 683x607, coppia in natura/montagna) che avevo messo precedentemente per sbaglio
+- Verifica contenuti con VLM:
+  - 51.8 KB: coppia in natura, vegetazione, colline, cielo azzurro — SBAGLIATA
+  - 110.3 KB: coppia in centro storico con edifici con archi a tutto sesto — CORRETTA
+- Lo script optimize-incontro-4k.js aveva già INPUT=/home/z/my-project/upload/6008229007805058862.jpg (path corretto)
+- Eseguito script sharp:
+  - Input: 1080x796, 110.3 KB
+  - Output: 3840x2830, 1336.2 KB (Ultra HD 4K)
+  - Kernel: lanczos3, sharpen sigma 0.8, mozjpeg q95, chroma 4:4:4
+- Build + deploy su Vercel production
+- VERIFICA PRODUZIONE (importante — questa volta verificato il contenuto pixel):
+  - Foto in produzione: 3840x2830, 1.37 MB ✓
+  - Diff vs 51.8 KB photo: 74.96 → foto completamente diversa ✓
+  - Diff vs 110.3 KB photo: 1.91 → STESSA FOTO (solo ottimizzata a 4K) ✓
+  - Conclusione: produzione ha la foto CORRETTA (110.3 KB → 4K)
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto
+  - NESSUNA menzione di "Prime Video"
+  - Foto Ultra HD 4K (3840px) con mozjpeg q95
+  - Layout fissato con width/height intrinseci + aspect-ratio 4/3 (landscape corretto)
+  - Animazioni professionali, hero centrato, intro MM, "Enciclopedia digitale" — tutti preservati
+  - 107 lingue supportate preservate
+
+Stage Summary:
+- File modificato: /public/images/biografia/incontro-angelo.jpg (sostituita foto: da 51.8 KB coppia-natura a 110.3 KB coppia-centro-storico, ottimizzata a 4K)
+- Build status: SUCCESS — 79 pagine generate
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 43s)
+- Verifica pixel: produzione contiene la foto 110.3 KB ottimizzata a 4K, NON la 51.8 KB
+
