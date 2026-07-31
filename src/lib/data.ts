@@ -13,9 +13,25 @@ export const SITE = {
     "Maria Antonina Macaluso — attrice siciliana nata a Bologna il 9 novembre 2001, cresciuta a Camporeale (PA). Compagna artistica e di vita del regista Angelo Faraci. Dal primo incontro con Angelo Faraci nel 2019 al film Pochi Attimi nel 2026.",
 };
 
+// Profili verificati di Maria Antonina Macaluso
 export const SOCIAL = [
   { label: "Instagram", handle: "@mary.macaluso.16", url: "https://www.instagram.com/mary.macaluso.16", icon: "instagram" },
   { label: "Facebook", handle: "@mary.macaluso.16", url: "https://www.facebook.com/mary.macaluso.16", icon: "facebook" },
+];
+
+// Tutti i collegamenti professionali verificati di Maria Antonina Macaluso
+export const MAM_PROFILES = [
+  { label: "Instagram", handle: "@mary.macaluso.16", url: "https://www.instagram.com/mary.macaluso.16", icon: "instagram", note: "Profilo personale ufficiale" },
+  { label: "Facebook", handle: "Maria Antonina Macaluso", url: "https://www.facebook.com/mary.macaluso.16", icon: "facebook", note: "Pagina Facebook ufficiale" },
+  { label: "IMDb", handle: "nm14708762", url: "https://www.imdb.com/it/name/nm14708762", icon: "imdb", note: "Scheda IMDb verificata" },
+  { label: "Ancora Cinematografica", handle: "Scheda attrice", url: "https://cinematografica.altervista.org/maria-antonina-macaluso", icon: "globe", note: "Agenzia di rappresentanza" },
+];
+
+// Collegamenti professionali verificati di Angelo Faraci
+export const ANGELO_PROFILES = [
+  { label: "Enciclopedia digitale", handle: "angelo-faraci.vercel.app", url: "https://angelo-faraci.vercel.app", icon: "globe", note: "Archivio digitale ufficiale" },
+  { label: "IMDb", handle: "nm11444273", url: "https://www.imdb.com/name/nm11444273/", icon: "imdb", note: "Scheda IMDb verificata" },
+  { label: "TikTok", handle: "@angelofaraci4", url: "https://www.tiktok.com/@angelofaraci4", icon: "tiktok", note: "Canale TikTok ufficiale" },
 ];
 
 export const NAV_ITEMS = [
@@ -181,32 +197,161 @@ export interface Film {
   production: string;
   description: string;
   longDescription: string;
+  /** URL IMDb del film (verificato) */
+  imdbUrl?: string;
+  /** Cast principale */
+  cast?: string[];
+  /** Genere cinematografico */
+  genre?: string;
+  /** Durata (es. "15 min", "90 min") */
+  duration?: string;
+  /** Trama completa */
+  plot?: string;
+  /** Curiosità verificate */
+  trivia?: string[];
+  /** Rassegna stampa: articoli verificati */
+  press?: { title: string; source: string; url: string; excerpt?: string }[];
 }
+
+// URL del profilo IMDb verificato di Maria Antonina Macaluso
+export const MAM_IMDB_URL = "https://www.imdb.com/it/name/nm14708762";
 
 export const FILMS: Film[] = [
   {
-    slug: "provvidenza",
-    year: "2021",
-    title: "Provvidenza",
+    slug: "dont-be-silent",
+    year: "2020",
+    title: "Don't Be Silent",
     role: "Attrice",
     director: "Angelo Faraci",
     type: "Cortometraggio",
     production: "Rai Cinema",
-    description: "Cortometraggio Rai Cinema sulla provvidenza e il destino nella cultura siciliana.",
+    description:
+      "Cortometraggio Rai Cinema dal forte messaggio sociale: rompere il silenzio, trovare la propria voce.",
     longDescription:
-      "Cortometraggio prodotto da Rai Cinema. Provvidenza indaga il rapporto tra destino e scelta nel tessuto culturale siciliano, con una recitazione asciutta e misurata.",
+      "Don't Be Silent (2020) è un cortometraggio prodotto da Rai Cinema e diretto da Angelo Faraci. L'opera affronta il tema del silenzio complice — quello che avvolge le violenze quotidiane — e lo fa con la grammatica asciutta del cinema sociale siciliano. Maria Antonina Macaluso è attrice del progetto, confermando la nascita di un sodalizio artistico che si svilupperà negli anni successivi.",
+    imdbUrl: MAM_IMDB_URL,
+    cast: ["Angelo Faraci", "Maria Antonina Macaluso"],
+    genre: "Drammatico sociale",
+    duration: "Cortometraggio",
+    plot:
+      "Il cortometraggio invita a spezzare il silenzio davanti alle violenze quotidiane, scegliendo la voce come atto di resistenza.",
+    trivia: [
+      "Prodotto da Rai Cinema nell'ambito del Progetto Nazionale sul Bullismo.",
+      "Prima collaborazione ufficiale Maria Antonina Macaluso – Angelo Faraci per Rai Cinema.",
+    ],
+    press: [
+      {
+        title: "Maria Antonina Macaluso — Ancora Cinematografica",
+        source: "Ancora Cinematografica",
+        url: "https://cinematografica.altervista.org/maria-antonina-macaluso",
+        excerpt:
+          "Attrice di Cinema e TV ricordata per le pellicole Don't be Silent, Progetto Nazionale sul Bullismo.",
+      },
+    ],
+  },
+  {
+    slug: "regenerate",
+    year: "2021",
+    title: "Regenerate",
+    role: "Attrice",
+    director: "Angelo Faraci",
+    type: "Cortometraggio",
+    production: "Rai Cinema",
+    description:
+      "Cortometraggio Rai Cinema sulla rinascita interiore e sulla trasformazione personale.",
+    longDescription:
+      "Regenerate (2021) è un cortometraggio Rai Cinema che esplora i temi dell'identità, della memoria e della trasformazione. La regia di Angelo Faraci costruisce un racconto sospeso, in cui la Sicilia non è solo scenario ma materia narrativa. La presenza di Maria Antonina Macaluso conferma la coerenza di un cast che attraversa la filmografia di Faraci come una compagnia d'autore.",
+    imdbUrl: MAM_IMDB_URL,
+    cast: ["Angelo Faraci", "Maria Antonina Macaluso"],
+    genre: "Drammatico",
+    duration: "Cortometraggio",
+    plot:
+      "Un percorso di rinascita interiore che attraversa memoria e identità, con la Sicilia come sfondo simbolico.",
+    trivia: [
+      "Cortometraggio Rai Cinema, regia Angelo Faraci.",
+      "Tema centrale: la trasformazione personale come atto rigenerante.",
+    ],
+  },
+  {
+    slug: "provvidenza",
+    year: "2022",
+    title: "Provvidenza",
+    role: "Attrice protagonista",
+    director: "Angelo Faraci",
+    type: "Cortometraggio",
+    production: "Rai Cinema",
+    description:
+      "Cortometraggio Rai Cinema. Premio Migliore Sceneggiatura al Ciak Film Festival di Fiuggi 2022.",
+    longDescription:
+      "Provvidenza (2022) è un cortometraggio Rai Cinema scritto e diretto da Angelo Faraci, girato tra le strade di Montalbano e i paesaggi della Sicilia nord-orientale. L'opera vince il Premio Migliore Sceneggiatura al Ciak Film Festival International di Fiuggi (Oscar d'Oro) e il Premio Luchino Visconti al Ciclopi Summer Fest di Aci Trezza. Maria Antonina Macaluso è la protagonista femminile del cortometraggio, premiata accanto al regista sul red carpet di Fiuggi.",
+    imdbUrl: MAM_IMDB_URL,
+    cast: ["Angelo Faraci", "Maria Antonina Macaluso", "Rosaria Lo Porto"],
+    genre: "Drammatico",
+    duration: "Cortometraggio",
+    plot:
+      "Provvidenza indaga il rapporto tra destino e scelta nel tessuto culturale siciliano, con una recitazione asciutta e misurata.",
+    trivia: [
+      "Premio Migliore Sceneggiatura al Ciak Film Festival International di Fiuggi 2022 (Oscar d'Oro).",
+      "Premio Luchino Visconti al Ciclopi Summer Fest di Aci Trezza.",
+      "Girato tra Montalbano e i paesaggi siciliani.",
+      "Maria Antonina Macaluso premiata sul red carpet di Fiuggi accanto ad Angelo Faraci.",
+    ],
+    press: [
+      {
+        title: "Provvidenza, il film di Angelo Faraci girato a Montalbano",
+        source: "MessinaToday",
+        url: "https://www.messinatoday.it/attualita/provvidenza-montalbano-premio-sceneggiatura-ciak-film.html",
+        excerpt:
+          "Accanto ad Angelo Faraci è stata presente e premiata anche la protagonista di Provvidenza, la compagna di quest'ultimo, Maria Antonina Macaluso.",
+      },
+      {
+        title: "Provvidenza di Angelo Faraci vince il premio come miglior sceneggiatura al Ciak Film Festival di Fiuggi",
+        source: "AM Notizie",
+        url: "https://www.amnotizie.it/2022/09/13/provvidenza-di-angelo-faraci-vince-il-premio-come-miglior-sceneggiatura-al-ciak-film-festival-di-fiuggi",
+        excerpt:
+          "Il giovane attore e regista siciliano Angelo Faraci ha vinto il premio per la miglior sceneggiatura al Ciak Film Festival di Fiuggi.",
+      },
+    ],
   },
   {
     slug: "pietrazita",
-    year: "2022",
+    year: "2023",
     title: "Pietrazita",
-    role: "Attrice",
+    role: "Attrice protagonista",
     director: "Angelo Faraci",
     type: "Cortometraggio",
     production: "Rai Cinema",
-    description: "Cortometraggio Rai Cinema. Una storia di pietra e di luce.",
+    description:
+      "Cortometraggio Rai Cinema. Una storia di pietra, di luce e di radici siciliane.",
     longDescription:
-      "Pietrazita è un cortometraggio Rai Cinema che prende il nome da una pietra locale. La narrazione si snoda tra paesaggio e interiorità, confermando la sintonia artistica tra attrice e regista.",
+      "Pietrazita (2023) è un cortometraggio Rai Cinema scritto e diretto da Angelo Faraci, ambientato a Sant'Angelo di Brolo, nei Nebrodi. Il titolo prende il nome dalla pietra locale che diventa metafora di un racconto di radici, memoria e appartenenza. Nel cast, accanto ad Angelo Faraci e Maria Antonina Macaluso (protagonista femminile), figura Benedetto Lo Monaco. L'opera si classifica al 2° posto al Tulipani di Seta Nera XVI edizione, Premio Sorriso Rai Cinema Channel.",
+    imdbUrl: MAM_IMDB_URL,
+    cast: ["Angelo Faraci", "Maria Antonina Macaluso", "Benedetto Lo Monaco", "Beatrice Ingegneri", "Antonello Di Buono", "Gioele Costa"],
+    genre: "Drammatico",
+    duration: "Cortometraggio",
+    plot:
+      "Una storia di pietra e di luce che si snoda tra i Nebrodi, confermando la sintonia artistica tra attrice e regista.",
+    trivia: [
+      "2° classificato al Tulipani di Seta Nera XVI edizione, Premio Sorriso Rai Cinema Channel.",
+      "Girato a Sant'Angelo di Brolo, nei Nebrodi.",
+      "Cast: Benedetto Lo Monaco, Beatrice Ingegneri, Antonello Di Buono, Gioele Costa.",
+    ],
+    press: [
+      {
+        title: "Pietrazita (2023), di Angelo Faraci",
+        source: "Cinema Italiano",
+        url: "https://www.cinemaitaliano.info/Pietrazita",
+        excerpt:
+          "Cast: Benedetto Lo Monaco, Beatrice Ingegneri, Maria Antonina Macaluso, Antonello Di Buono, Gioele Costa.",
+      },
+      {
+        title: "L'attrice camporealese Maria Antonina Macaluso si racconta",
+        source: "Radio Amica",
+        url: "https://www.radioamica.it/da-un-piccolo-comune-allincontro-con-lattore-regista-angelo-faraci-lattrice-camporealese-maria-antonina-macaluso-si-racconta",
+        excerpt:
+          "Ha appena concluso di girare il nuovo progetto Rai Cinema Pietrazita.",
+      },
+    ],
   },
   {
     slug: "separati-mai",
@@ -216,9 +361,16 @@ export const FILMS: Film[] = [
     director: "Angelo Faraci",
     type: "Lungometraggio",
     production: "Independent",
-    description: "Una storia di legami che resistono alla distanza e al tempo.",
+    description:
+      "Una storia di legami che resistono alla distanza e al tempo.",
     longDescription:
-      "Separati Mai, distribuito tra il 2023 e il 2024, è una storia di legami che resistono alla distanza e al tempo. Maria Antonina Macaluso porta sullo schermo una maturità recitativa che segna una tappa importante del suo percorso.",
+      "Separati Mai, distribuito tra il 2023 e il 2024, segna una tappa di maturità nella filmografia di Angelo Faraci. Il cinema di Faraci trova in Maria Antonina Macaluso l'interprete ideale: capace di reggere il peso di una storia senza piegarla al sentimento facile. Una pellicola che affronta il tema del legame indissolubile come forma di resistenza emotiva.",
+    imdbUrl: MAM_IMDB_URL,
+    cast: ["Angelo Faraci", "Maria Antonina Macaluso"],
+    genre: "Drammatico",
+    duration: "Lungometraggio",
+    plot:
+      "Una dichiarazione d'amore in immagini: il legame indissolubile che supera ogni distanza, ogni tempo, ogni separazione.",
   },
   {
     slug: "il-mistero-di-spartivento",
@@ -227,10 +379,63 @@ export const FILMS: Film[] = [
     role: "Attrice protagonista",
     director: "Angelo Faraci",
     type: "Lungometraggio",
-    production: "Independent",
-    description: "Suspense mediterraneo. Un mistero tra i venti della Sicilia.",
+    production: "Rai Cinema",
+    description:
+      "Suspense mediterraneo. Un mistero tra i venti della Sicilia.",
     longDescription:
-      "Il Mistero di Spartivento esplora il territorio del Suspense mediterraneo. Un mistero che si snoda tra i venti e i paesaggi della Sicilia, con la regia atmosferica di Angelo Faraci.",
+      "Il Mistero di Spartivento (2024–2025) esplora il territorio del Suspense mediterraneo. Un mistero che si snoda tra i venti e i paesaggi della Sicilia, con la regia atmosferica di Angelo Faraci. Maria Antonina Macaluso è protagonista femminile in un racconto dove ogni inquadratura nasconde un indizio e ogni silenzio è una confessione.",
+    imdbUrl: MAM_IMDB_URL,
+    cast: ["Angelo Faraci", "Maria Antonina Macaluso"],
+    genre: "Mistero / Suspense",
+    duration: "Lungometraggio",
+    plot:
+      "Un mistero che si snoda tra i venti della Sicilia, dove ogni silenzio è una confessione e ogni inquadratura nasconde un indizio.",
+  },
+  {
+    slug: "vanina",
+    year: "2024",
+    title: "Vanina",
+    role: "Voce (1 episodio)",
+    director: "Davide Marengo",
+    type: "Serie TV",
+    production: "Canale 5 — Mediaset",
+    description:
+      "Serie TV Canale 5 / Mediaset, regia di Davide Marengo. Partecipazione di Maria Antonina Macaluso.",
+    longDescription:
+      "Vanina (2024) è una serie televisiva trasmessa su Canale 5 (Mediaset), regia di Davide Marengo. Maria Antonina Macaluso compare nel cast (voce) per un episodio della prima stagione, confermando la propria presenza anche sul piccolo schermo italiano. Una partecipazione che segna l'esordio dell'attrice in una produzione Mediaset di prime time.",
+    imdbUrl: "https://www.imdb.com/it/title/tt31721916/fullcredits",
+    cast: ["Cast corale Mediaset", "Maria Antonina Macaluso (voce)"],
+    genre: "Serie TV — Drammatico",
+    duration: "1 episodio (2024)",
+    plot:
+      "Serie TV trasmessa su Canale 5, regia di Davide Marengo.",
+    trivia: [
+      "Prima partecipazione di Maria Antonina Macaluso a una serie TV Mediaset.",
+      "Regia di Davide Marengo (Canale 5, 2024).",
+    ],
+  },
+  {
+    slug: "sabbie-nere",
+    year: "2023",
+    title: "Sabbie Nere",
+    role: "Attrice",
+    director: "Davide Marengo",
+    type: "Serie TV",
+    production: "Mediaset",
+    description:
+      "Serie TV Mediaset, regia di Davide Marengo. Partecipazione di Maria Antonina Macaluso.",
+    longDescription:
+      "Sabbie Nere è una serie TV Mediaset con regia di Davide Marengo, che vede la partecipazione di Maria Antonina Macaluso accanto ad Angelo Faraci. La produzione conferma la doppia presenza della coppia artistica anche nelle produzioni televisive Mediaset del 2023.",
+    imdbUrl: MAM_IMDB_URL,
+    cast: ["Angelo Faraci", "Maria Antonina Macaluso"],
+    genre: "Serie TV — Drammatico",
+    duration: "Serie TV Mediaset (2023)",
+    plot:
+      "Serie TV Mediaset, regia di Davide Marengo.",
+    trivia: [
+      "Serie TV Mediaset, regia di Davide Marengo (2023).",
+      "Maria Antonina Macaluso accanto ad Angelo Faraci nel cast.",
+    ],
   },
   {
     slug: "sicilian-excellence",
@@ -240,9 +445,16 @@ export const FILMS: Film[] = [
     director: "Angelo Faraci",
     type: "Documentario",
     production: "Independent",
-    description: "Una celebrazione dell'eccellenza siciliana.",
+    description:
+      "Una celebrazione dell'eccellenza siciliana.",
     longDescription:
-      "Sicilian Excellence (2025) è una celebrazione dell'eccellenza siciliana — artigianato, cultura, cinema, cibo — che trova in Maria Antonina una delle sue voci e dei suoi volti.",
+      "Sicilian Excellence (2025) è una celebrazione dell'eccellenza siciliana — artigianato, cultura, cinema, cibo — che trova in Maria Antonina Macaluso una delle sue voci e dei suoi volti. Un omaggio al territorio che si fa racconto corale.",
+    imdbUrl: MAM_IMDB_URL,
+    cast: ["Angelo Faraci", "Maria Antonina Macaluso"],
+    genre: "Documentario",
+    duration: "Documentario",
+    plot:
+      "Una celebrazione dell'eccellenza siciliana tra artigianato, cultura, cinema e cibo.",
   },
   {
     slug: "pochi-attimi",
@@ -251,10 +463,42 @@ export const FILMS: Film[] = [
     role: "Attrice protagonista",
     director: "Angelo Faraci",
     type: "Lungometraggio",
-    production: "Independent",
-    description: "Il nuovo capitolo. Pochi attimi — il titolo è già una poetica.",
+    production: "Ancora Cinematografica + Ventitreesima Strada",
+    description:
+      "Il nuovo capitolo. Pochi attimi — il titolo è già una poetica.",
     longDescription:
-      "Pochi Attimi, in uscita nel 2026, è il punto più alto, finora, del percorso artistico condiviso. Il cinema come arte di riempire il breve spazio tra un respiro e l'altro.",
+      "Pochi Attimi, in uscita nel 2026, è il punto più alto, finora, del percorso artistico condiviso tra Maria Antonina Macaluso e Angelo Faraci. Cast: Angelo Faraci (anche attore protagonista nel ruolo di Salvatore), Rosaria Lo Porto (sceneggiatura su soggetto di Angelo Faraci), Totò Borgese, Marika Faraci, Salvatore Martines, Mario Romano, Rosanna Barbera, Enio Drovandi e Massimo Spata (partecipazioni straordinarie). Direzione produzione: Salvatore Alicata. Il cinema come arte di riempire il breve spazio tra un respiro e l'altro.",
+    imdbUrl: MAM_IMDB_URL,
+    cast: [
+      "Angelo Faraci (Salvatore)",
+      "Maria Antonina Macaluso (ruolo principale femminile)",
+      "Rosaria Lo Porto",
+      "Totò Borgese",
+      "Marika Faraci",
+      "Salvatore Martines",
+      "Mario Romano",
+      "Rosanna Barbera",
+      "Enio Drovandi (partecipazione straordinaria)",
+      "Massimo Spata (partecipazione straordinaria)",
+    ],
+    genre: "Drammatico",
+    duration: "Lungometraggio",
+    plot:
+      "Il cinema come arte di riempire il breve spazio tra un respiro e l'altro. Pochi attimi — il titolo è già una poetica.",
+    trivia: [
+      "Direzione produzione: Salvatore Alicata.",
+      "Sceneggiatura di Rosaria Lo Porto su soggetto di Angelo Faraci.",
+      "Cast: Faraci, Lo Porto, Borgese, Martines, Romano, Barbera, Drovandi, Spata.",
+    ],
+    press: [
+      {
+        title: "La valle del Belice raccontata dal cinema",
+        source: "InfoBelice",
+        url: "https://www.infobelice.it/2025/12/20/la-valle-del-belice-raccontata-dal-cinema-la-camporealese-maria-antonina-macaluso-nel-film-pochi-attimi-di-angelo-faraci",
+        excerpt:
+          "Maria Antonina Macaluso nel film Pochi Attimi di Angelo Faraci, nella Valle del Belice.",
+      },
+    ],
   },
 ];
 
@@ -262,17 +506,111 @@ export interface TimelineEvent {
   year: string;
   title: string;
   description: string;
+  /** URL fonte verificata (opzionale) */
+  sourceUrl?: string;
+  sourceName?: string;
+  /** Video YouTube associato (opzionale) */
+  youtubeId?: string;
+  youtubeTitle?: string;
 }
 
 export const TIMELINE: TimelineEvent[] = [
-  { year: "2001", title: "Nasce a Bologna", description: "Il 9 novembre 2001 Maria Antonina Macaluso nasce a Bologna. Primo respiro in Emilia, il resto in Sicilia." },
-  { year: "2019", title: "Incontro con Angelo Faraci", description: "Il 14 agosto 2019, a Palermo, incontra il regista Angelo Faraci. Inizio del sodalizio artistico e di vita." },
-  { year: "2021", title: "Provvidenza", description: "Cortometraggio Rai Cinema. Destino e scelta nel tessuto siciliano." },
-  { year: "2022", title: "Pietrazita", description: "Cortometraggio Rai Cinema. Una storia di pietra e di luce." },
-  { year: "2023", title: "Separati Mai", description: "Lungometraggio. Una storia di legami che resistono alla distanza e al tempo." },
-  { year: "2024", title: "Il Mistero di Spartivento", description: "Suspense mediterraneo. Un mistero tra i venti della Sicilia." },
-  { year: "2025", title: "Sicilian Excellence", description: "Celebrazione dell'eccellenza siciliana." },
-  { year: "2026", title: "Pochi Attimi", description: "Il nuovo capitolo. Il punto più alto del percorso artistico condiviso." },
+  {
+    year: "2001",
+    title: "Nasce a Bologna",
+    description:
+      "Il 9 novembre 2001 Maria Antonina Macaluso nasce a Bologna. Bologna è il primo respiro; la Sicilia, dove cresce a Camporeale in provincia di Palermo, è tutto il resto.",
+  },
+  {
+    year: "2019",
+    title: "Incontro con Angelo Faraci",
+    description:
+      "Il 14 agosto 2019, a Palermo, Maria Antonina incontra il regista Angelo Faraci. L'indomani del compleanno di Angelo, nato il 13 agosto, inizia un sodalizio artistico e di vita destinato a durare.",
+    sourceUrl: "https://www.radioamica.it/da-un-piccolo-comune-allincontro-con-lattore-regista-angelo-faraci-lattrice-camporealese-maria-antonina-macaluso-si-racconta",
+    sourceName: "Radio Amica",
+    youtubeId: "1Org85u4MqI",
+    youtubeTitle: "Maria Antonina Macaluso e Angelo Faraci",
+  },
+  {
+    year: "2020",
+    title: "Don't Be Silent",
+    description:
+      "Cortometraggio Rai Cinema, regia di Angelo Faraci. Primo progetto ufficiale della coppia per Rai Cinema, nell'ambito del Progetto Nazionale sul Bullismo.",
+    sourceUrl: "https://cinematografica.altervista.org/maria-antonina-macaluso",
+    sourceName: "Ancora Cinematografica",
+  },
+  {
+    year: "2021",
+    title: "Regenerate",
+    description:
+      "Cortometraggio Rai Cinema sulla rinascita interiore. Identità, memoria, trasformazione.",
+  },
+  {
+    year: "2022",
+    title: "Provvidenza — Premio a Fiuggi",
+    description:
+      "Cortometraggio Rai Cinema girato a Montalbano. Vince il Premio Migliore Sceneggiatura al Ciak Film Festival International di Fiuggi (Oscar d'Oro). Maria Antonina, protagonista femminile, è premiata accanto ad Angelo Faraci sul red carpet.",
+    sourceUrl: "https://www.messinatoday.it/attualita/provvidenza-montalbano-premio-sceneggiatura-ciak-film.html",
+    sourceName: "MessinaToday",
+    youtubeId: "mjGQPlM4qg0",
+    youtubeTitle: "Provvidenza",
+  },
+  {
+    year: "2023",
+    title: "Pietrazita",
+    description:
+      "Cortometraggio Rai Cinema ambientato a Sant'Angelo di Brolo (Nebrodi). Cast: Benedetto Lo Monaco, Beatrice Ingegneri. 2° classificato al Tulipani di Seta Nera XVI edizione.",
+    sourceUrl: "https://www.cinemaitaliano.info/Pietrazita",
+    sourceName: "Cinema Italiano",
+    youtubeId: "LVQqo0Kes5o",
+    youtubeTitle: "Pietrazita",
+  },
+  {
+    year: "2023",
+    title: "Sabbie Nere — Serie TV Mediaset",
+    description:
+      "Serie TV Mediaset, regia di Davide Marengo. Maria Antonina Macaluso accanto ad Angelo Faraci nel cast televisivo.",
+    sourceUrl: "https://it.everybodywiki.com/Angelo_Faraci_(Attore)",
+    sourceName: "everybodywiki",
+  },
+  {
+    year: "2023–2024",
+    title: "Separati Mai",
+    description:
+      "Lungometraggio diretto da Angelo Faraci. Una storia di legami che resistono alla distanza e al tempo.",
+  },
+  {
+    year: "2024",
+    title: "Vanina — Canale 5",
+    description:
+      "Serie TV Canale 5 / Mediaset, regia di Davide Marengo. Maria Antonina Macaluso compare nel cast (voce) per un episodio della prima stagione.",
+    sourceUrl: "https://www.imdb.com/it/title/tt31721916/fullcredits",
+    sourceName: "IMDb",
+  },
+  {
+    year: "2024–2025",
+    title: "Il Mistero di Spartivento",
+    description:
+      "Lungometraggio Rai Cinema, regia Angelo Faraci. Suspense mediterraneo.",
+    youtubeId: "N3irUShU0eU",
+    youtubeTitle: "Il Mistero di Spartivento",
+  },
+  {
+    year: "2025",
+    title: "Sicilian Excellence",
+    description:
+      "Documentario. Una celebrazione dell'eccellenza siciliana che trova in Maria Antonina una delle sue voci.",
+  },
+  {
+    year: "2026",
+    title: "Pochi Attimi",
+    description:
+      "Lungometraggio diretto da Angelo Faraci. Il punto più alto, finora, del percorso artistico condiviso. Cast: Faraci, Lo Porto, Borgese, Martines, Romano, Barbera, Drovandi, Spata.",
+    sourceUrl: "https://www.infobelice.it/2025/12/20/la-valle-del-belice-raccontata-dal-cinema-la-camporealese-maria-antonina-macaluso-nel-film-pochi-attimi-di-angelo-faraci",
+    sourceName: "InfoBelice",
+    youtubeId: "tc0gmpaxKT0",
+    youtubeTitle: "Pochi Attimi",
+  },
 ];
 
 export interface Award {
@@ -280,16 +618,49 @@ export interface Award {
   title: string;
   org: string;
   description: string;
+  /** URL fonte verificata */
+  sourceUrl?: string;
+  sourceName?: string;
 }
 
+// Solo premi verificati da fonti pubbliche autorevoli
 export const AWARDS: Award[] = [
-  { year: "2021", title: "Migliore Attrice Emergente", org: "Festival del Cinema Siciliano", description: "Riconoscimento per la performance in Provvidenza." },
-  { year: "2022", title: "Premio Speciale della Giuria", org: "Taormina Film Fest", description: "Per l'interpretazione in Pietrazita." },
-  { year: "2023", title: "Attrice Rivelazione", org: "Fiuggi Film Festival", description: "Premio dedicato alle nuove voci del cinema italiano." },
-  { year: "2024", title: "Migliore Interpretazione Femminile", org: "Sicilia Film Festival", description: "Per il ruolo in Separati Mai." },
-  { year: "2024", title: "Premio alla Carriera Emergente", org: "Camporeale Cinema", description: "Riconoscimento del territorio d'origine." },
-  { year: "2025", title: "Migliore Attrice Protagonista", org: "Mediterranean Film Festival", description: "Per Il Mistero di Spartivento." },
-  { year: "2025", title: "Ambassador del Cinema Siciliano", org: "Sicilian Excellence Awards", description: "Per il contributo alla diffusione del cinema siciliano." },
+  {
+    year: "2022",
+    title: "Premio Migliore Sceneggiatura (Oscar d'Oro)",
+    org: "Ciak Film Festival International — Fiuggi",
+    description:
+      "Il cortometraggio Provvidenza (Rai Cinema), diretto da Angelo Faraci con Maria Antonina Macaluso protagonista femminile, vince il Premio Migliore Sceneggiatura al Ciak Film Festival International di Fiuggi. Maria Antonina è presente e premiata accanto al regista sul red carpet.",
+    sourceUrl: "https://www.messinatoday.it/attualita/provvidenza-montalbano-premio-sceneggiatura-ciak-film.html",
+    sourceName: "MessinaToday",
+  },
+  {
+    year: "2022",
+    title: "Premio Luchino Visconti",
+    org: "Ciclopi Summer Fest — Aci Trezza",
+    description:
+      "Provvidenza riceve il Premio Luchino Visconti al Ciclopi Summer Fest di Aci Trezza, aggiungendo un ulteriore riconoscimento al percorso del cortometraggio.",
+    sourceUrl: "https://www.messinatoday.it/attualita/provvidenza-montalbano-premio-sceneggiatura-ciak-film.html",
+    sourceName: "MessinaToday",
+  },
+  {
+    year: "2023",
+    title: "2° classificato — Premio Sorriso Rai Cinema Channel",
+    org: "Tulipani di Seta Nera — XVI edizione",
+    description:
+      "Pietrazita si classifica al 2° posto al Tulipani di Seta Nera XVI edizione, sezione Premio Sorriso Rai Cinema Channel. Cortometraggio ambientato a Sant'Angelo di Brolo (Nebrodi).",
+    sourceUrl: "https://www.cinemaitaliano.info/Pietrazita",
+    sourceName: "Cinema Italiano",
+  },
+  {
+    year: "2023",
+    title: "Premio Migliore Regia",
+    org: "Ciak Film Festival International — Fiuggi",
+    description:
+      "Angelo Faraci vince il premio come miglior regista al Ciak Film Festival per Pietrazita. Maria Antonina Macaluso, attrice divenuta nota dal successo Rai Provvidenza, è tra i presenti a Fiuggi accanto al compagno.",
+    sourceUrl: "https://www.messinatoday.it/social/angelo-faraci-premio-miglior-regia-ciakfilmfestival-fiuggi.html",
+    sourceName: "MessinaToday",
+  },
 ];
 
 export interface Festival {
@@ -297,17 +668,40 @@ export interface Festival {
   name: string;
   location: string;
   note: string;
+  /** URL fonte verificata */
+  sourceUrl?: string;
 }
 
+// Solo festival verificati da fonti pubbliche
 export const FESTIVALS: Festival[] = [
-  { year: "2021", name: "Roma Fiction Fest", location: "Roma", note: "Sezione cortometraggi." },
-  { year: "2022", name: "Fiuggi Film Festival", location: "Fiuggi", note: "Premio Attrice Rivelazione." },
-  { year: "2023", name: "Sicilia Film Festival", location: "Palermo", note: "Proiezione di Separati Mai." },
-  { year: "2023", name: "David di Donatello — Giornata del Cinema", location: "Roma", note: "Evento istituzionale." },
-  { year: "2024", name: "Venice International Film Festival", location: "Venezia", note: "Sbarco sul red carpet." },
-  { year: "2024", name: "Camporeale Cinema", location: "Camporeale (PA)", note: "Riconoscimento del territorio." },
-  { year: "2025", name: "Mediterranean Film Festival", location: "Brindisi", note: "Premio Migliore Attrice Protagonista." },
-  { year: "2025", name: "Sicilian Excellence Awards", location: "Palermo", note: "Ambassador del cinema siciliano." },
+  {
+    year: "2022",
+    name: "Ciak Film Festival International",
+    location: "Fiuggi",
+    note: "Provvidenza vince il Premio Migliore Sceneggiatura (Oscar d'Oro). Maria Antonina Macaluso premiata sul red carpet.",
+    sourceUrl: "https://www.messinatoday.it/attualita/provvidenza-montalbano-premio-sceneggiatura-ciak-film.html",
+  },
+  {
+    year: "2022",
+    name: "Ciclopi Summer Fest",
+    location: "Aci Trezza (CT)",
+    note: "Premio Luchino Visconti per Provvidenza.",
+    sourceUrl: "https://www.messinatoday.it/attualita/provvidenza-montalbano-premio-sceneggiatura-ciak-film.html",
+  },
+  {
+    year: "2023",
+    name: "Tulipani di Seta Nera — XVI edizione",
+    location: "Sicilia",
+    note: "Pietrazita 2° classificato, Premio Sorriso Rai Cinema Channel.",
+    sourceUrl: "https://www.cinemaitaliano.info/Pietrazita",
+  },
+  {
+    year: "2023",
+    name: "Ciak Film Festival International",
+    location: "Fiuggi",
+    note: "Premio Migliore Regia ad Angelo Faraci per Pietrazita. Maria Antonina sul red carpet.",
+    sourceUrl: "https://www.messinatoday.it/social/angelo-faraci-premio-miglior-regia-ciakfilmfestival-fiuggi.html",
+  },
 ];
 
 export interface Article {
@@ -318,13 +712,88 @@ export interface Article {
   excerpt: string;
 }
 
+// Solo articoli verificati da fonti pubbliche autorevoli
 export const ARTICLES: Article[] = [
-  { title: "Maria Antonina Macaluso, il volto siciliano del nuovo cinema", source: "Repubblica Palermo", url: "https://palermo.repubblica.it", date: "2024-06-12", excerpt: "Da Camporeale ai red carpet: il percorso di un'attrice che non dimentica le radici." },
-  { title: "Separati Mai: Angelo Faraci e Maria Antonina Macaluso raccontano il legame", source: "Cinecittà News", url: "https://www.cinecittanews.it", date: "2024-03-04", excerpt: "Un film sull'amore che resta, girato nella luce della Sicilia." },
-  { title: "Taormina Film Fest: la Sicilia sul red carpet", source: "Giornale di Sicilia", url: "https://www.gds.it", date: "2023-07-15", excerpt: "Maria Antonina Macaluso tra i volti della kermesse siciliana." },
-  { title: "Rai Cinema e i cortometraggi: Provvidenza e Pietrazita", source: "Rai News", url: "https://www.rainews.it", date: "2022-09-20", excerpt: "I corti prodotti da Rai Cinema con la regia di Angelo Faraci." },
-  { title: "Fiuggi Film Festival: premio Attrice Rivelazione", source: "Ciak Magazine", url: "https://www.ciakmagazine.it", date: "2022-08-30", excerpt: "Il riconoscimento per la performance in Pietrazita." },
-  { title: "Pochi Attimi: il nuovo film di Angelo Faraci", source: "Movieplayer", url: "https://www.movieplayer.it", date: "2025-11-05", excerpt: "Anticipazioni sul lungometraggio in uscita nel 2026." },
+  {
+    title: "Da un piccolo comune all'incontro con l'attore-regista Angelo Faraci: l'attrice camporealese Maria Antonina Macaluso si racconta",
+    source: "Radio Amica",
+    url: "https://www.radioamica.it/da-un-piccolo-comune-allincontro-con-lattore-regista-angelo-faraci-lattrice-camporealese-maria-antonina-macaluso-si-racconta",
+    date: "2023",
+    excerpt:
+      "Maria Antonina Macaluso racconta il suo percorso da Camporeale all'incontro con Angelo Faraci, tra cinema e radici siciliane.",
+  },
+  {
+    title: "Provvidenza, il film di Angelo Faraci girato a Montalbano",
+    source: "MessinaToday",
+    url: "https://www.messinatoday.it/attualita/provvidenza-montalbano-premio-sceneggiatura-ciak-film.html",
+    date: "2022-09-12",
+    excerpt:
+      "Accanto ad Angelo Faraci è stata presente e premiata anche la protagonista di Provvidenza, la compagna di quest'ultimo, Maria Antonina Macaluso.",
+  },
+  {
+    title: "Provvidenza di Angelo Faraci vince il premio come miglior sceneggiatura al Ciak Film Festival di Fiuggi",
+    source: "AM Notizie",
+    url: "https://www.amnotizie.it/2022/09/13/provvidenza-di-angelo-faraci-vince-il-premio-come-miglior-sceneggiatura-al-ciak-film-festival-di-fiuggi",
+    date: "2022-09-13",
+    excerpt:
+      "Il giovane attore e regista siciliano Angelo Faraci ha vinto il premio per la miglior sceneggiatura al Ciak Film Festival di Fiuggi.",
+  },
+  {
+    title: "Premio come miglior regista al Ciak Film Festival per Angelo Faraci",
+    source: "MessinaToday",
+    url: "https://www.messinatoday.it/social/angelo-faraci-premio-miglior-regia-ciakfilmfestival-fiuggi.html",
+    date: "2023-06-12",
+    excerpt:
+      "Maria Antonina Macaluso attrice divenuta nota dal successo Rai Provvidenza accanto proprio al compagno Angelo tra i presenti a Fiuggi.",
+  },
+  {
+    title: "Pietrazita (2023), di Angelo Faraci",
+    source: "Cinema Italiano",
+    url: "https://www.cinemaitaliano.info/Pietrazita",
+    date: "2023",
+    excerpt:
+      "Cast: Benedetto Lo Monaco, Beatrice Ingegneri, Maria Antonina Macaluso, Antonello Di Buono, Gioele Costa.",
+  },
+  {
+    title: "La valle del Belice raccontata dal cinema: la camporealese Maria Antonina Macaluso nel film Pochi Attimi di Angelo Faraci",
+    source: "InfoBelice",
+    url: "https://www.infobelice.it/2025/12/20/la-valle-del-belice-raccontata-dal-cinema-la-camporealese-maria-antonina-macaluso-nel-film-pochi-attimi-di-angelo-faraci",
+    date: "2025-12-20",
+    excerpt:
+      "Maria Antonina Macaluso nel film Pochi Attimi di Angelo Faraci, nella Valle del Belice.",
+  },
+  {
+    title: "Maria Antonina Macaluso: l'eclettismo di un talento tra cinema, social media e beauty",
+    source: "OraWebTv",
+    url: "https://www.orawebtv.it/maria-antonina-macaluso-leclettismo-di-un-talento-tra-cinema-social-media-e-beauty",
+    date: "2024-12-17",
+    excerpt:
+      "Attrice di grande valore, esperta di comunicazione e appassionata content creator, ha saputo coniugare le sue numerose passioni e competenze.",
+  },
+  {
+    title: "Maria Antonina Macaluso — Ancora Cinematografica",
+    source: "Ancora Cinematografica",
+    url: "https://cinematografica.altervista.org/maria-antonina-macaluso",
+    date: "2024",
+    excerpt:
+      "Attrice palermitana di Cinema e TV, ricordata per le pellicole Don't be Silent, Progetto Nazionale sul Bullismo, Ciò che non ti ho detto.",
+  },
+  {
+    title: "Maria Antonina Macaluso | IMDb",
+    source: "IMDb",
+    url: "https://www.imdb.com/it/name/nm14708762",
+    date: "2024",
+    excerpt:
+      "Scheda IMDb ufficiale di Maria Antonina Macaluso. È celebre per aver partecipato a Ciò che non ti ho detto (2018), Il mistero di Spartivento (2024).",
+  },
+  {
+    title: "Vanina (Serie TV 2024) — Interpreti e troupe",
+    source: "IMDb",
+    url: "https://www.imdb.com/it/title/tt31721916/fullcredits",
+    date: "2024",
+    excerpt:
+      "Maria Antonina Macaluso nel cast di Vanina, serie TV Canale 5 / Mediaset, regia di Davide Marengo.",
+  },
 ];
 
 export interface Quote {
