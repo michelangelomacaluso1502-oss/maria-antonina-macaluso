@@ -813,3 +813,59 @@ Stage Summary:
 - Build status: SUCCESS — 79 pagine generate
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 40s)
 
+
+---
+Task ID: FOTO-INCONTRO-ULTRA-HD-4K
+Agent: Full-stack developer
+Task: Ri-ottimizzare foto "incontro-angelo.jpg" a Ultra HD 4K + fissare layout con aspect-ratio corretto per evitare stretching
+
+Work Log:
+- Verificata la foto caricata: /home/z/my-project/upload/6008229007805058862.jpg (1080x796, 110.3 KB, landscape, coppia selfie centro storico)
+- Creato script /home/z/my-project/scripts/optimize-incontro-4k.js con sharp:
+  - Target: 3840px longest side (Ultra HD 4K)
+  - Upscale consentito (withoutEnlargement: false) — la foto originale è 1080x796, viene upscaled 3.56x
+  - Kernel lanczos3 (high-quality resampling)
+  - modulate brightness 1.02 + saturation 1.05 (leggero boost per compensare upscale)
+  - sharpen sigma 0.8, m1 1.5, m2 0.5 (compensazione softness da upscale)
+  - JPEG quality 95 (near-lossless)
+  - mozjpeg true, chromaSubsampling 4:4:4, trellisQuantisation, overshootDeringing, optimizeScans
+- Risultato ottimizzazione:
+  - incontro-angelo.jpg: 1080x796 (110.3KB) → 3840x2830 (1336.2KB) [Ultra HD 4K]
+- Estesa interfaccia BioSection in src/lib/data.ts:
+  - Aggiunto campo opzionale `aspect?: "3/4" | "4/5" | "4/3" | "16/9" | "1/1"`
+  - Permette di specificare l'aspect-ratio corretto per ogni foto (no stretching)
+- Aggiornate sottosezioni con aspect corretto:
+  - Sottosezione "L'incontro": aspect: "4/3" (landscape, corrisponde a 1080x796)
+  - Sottosezione "Il fidanzamento": aspect: "4/5" (portrait, corrisponde a 688x1080)
+- Aggiornato src/components/sections/Biography.tsx:
+  - Aggiunta mappa ASPECT_DIMS: dimensioni intrinseche per ogni aspect-ratio (per width/height HTML)
+  - Aggiunta mappa ASPECT_CLASS: classi Tailwind statiche (no purge con string interpolation)
+  - Entrambi gli <img> (mobile + desktop) ora hanno:
+    - width e height intrinseci (no layout shift, CLS = 0)
+    - className con aspect-ratio corretto (no stretching)
+    - object-cover (riempie il box senza distorcere)
+    - group-hover:scale-105 (zoom on hover preservato)
+  - Eliminato il problema precedente: aspect-[4/5] forzato su foto landscape → ora aspect-[4/3] per landscape
+- Verifica produzione:
+  - Foto incontro-angelo.jpg → HTTP 200, content-length 1368276 (1.37 MB Ultra HD 4K) ✓
+  - HTML contiene width="1600" height="1200" per incontro (aspect 4/3) ✓
+  - HTML contiene aspect-[4/3] per incontro + aspect-[4/5] per fidanzamento ✓
+  - "Prime Video" → 0 occorrenze ✓ (regola rispettata)
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto (aggiunte solo campi opzionali a BioSection + costanti mappa)
+  - NESSUNA menzione di "Prime Video"
+  - Foto Ultra HD 4K (3840px) con mozjpeg q95 + chroma 4:4:4
+  - Layout fissato con width/height intrinseci (no CLS) + aspect-ratio corretto (no stretching)
+  - Animazioni professionali, hero centrato, intro MM, "Enciclopedia digitale" — tutti preservati
+  - 107 lingue supportate preservate
+
+Stage Summary:
+- File modificati:
+  - src/lib/data.ts (BioSection estesa con campo aspect + sottosezioni aggiornate)
+  - src/components/sections/Biography.tsx (ASPECT_DIMS + ASPECT_CLASS mappe, width/height intrinseci, aspect dinamico)
+- File creati:
+  - scripts/optimize-incontro-4k.js (script sharp riutilizzabile per 4K)
+- Foto ottimizzata in /public/images/biografia/incontro-angelo.jpg: 3840x2830, 1.37 MB (Ultra HD 4K)
+- Build status: SUCCESS — 79 pagine generate
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 43s)
+

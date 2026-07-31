@@ -78,6 +78,8 @@ export interface BioSection {
   /** Foto opzionale per la sottosezione */
   image?: string;
   imageAlt?: string;
+  /** Aspect ratio per il rendering della foto (default "4/5" portrait) */
+  aspect?: "3/4" | "4/5" | "4/3" | "16/9" | "1/1";
 }
 
 export interface BioChapter {
@@ -113,6 +115,7 @@ export const BIO_CHAPTERS: BioChapter[] = [
         ],
         image: "/images/biografia/incontro-angelo.jpg",
         imageAlt: "Angelo Faraci e Maria Antonina Macaluso — l'incontro",
+        aspect: "4/3",
       },
       {
         heading: "14 agosto 2019 — Il fidanzamento ufficiale",
@@ -121,6 +124,7 @@ export const BIO_CHAPTERS: BioChapter[] = [
         ],
         image: "/images/biografia/fidanzamento-angelo.jpg",
         imageAlt: "Angelo Faraci e Maria Antonina Macaluso — il fidanzamento",
+        aspect: "4/5",
       },
     ],
   },

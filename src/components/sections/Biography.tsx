@@ -3,6 +3,24 @@ import { Reveal } from "@/components/cinematic/Reveal";
 import SectionHeading from "./SectionHeading";
 import { cn } from "@/lib/cn";
 
+// Mappa aspect-ratio → dimensioni intrinseche (per evitare layout shift)
+const ASPECT_DIMS: Record<string, { w: number; h: number }> = {
+  "3/4": { w: 1200, h: 1600 },
+  "4/5": { w: 1200, h: 1500 },
+  "4/3": { w: 1600, h: 1200 },
+  "16/9": { w: 1920, h: 1080 },
+  "1/1": { w: 1200, h: 1200 },
+};
+
+// Classi Tailwind statiche (per evitare purge) per ogni aspect-ratio
+const ASPECT_CLASS: Record<string, string> = {
+  "3/4": "aspect-[3/4]",
+  "4/5": "aspect-[4/5]",
+  "4/3": "aspect-[4/3]",
+  "16/9": "aspect-[16/9]",
+  "1/1": "aspect-square",
+};
+
 export default function Biography() {
   return (
     <section id="biografia" className="bg-section-alt py-24 md:py-32">
@@ -59,7 +77,12 @@ export default function Biography() {
                                   <img
                                     src={sec.image}
                                     alt={sec.imageAlt ?? sec.heading}
-                                    className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    width={ASPECT_DIMS[sec.aspect ?? "4/5"].w}
+                                    height={ASPECT_DIMS[sec.aspect ?? "4/5"].h}
+                                    className={cn(
+                                      "w-full object-cover transition-transform duration-700 group-hover:scale-105",
+                                      ASPECT_CLASS[sec.aspect ?? "4/5"],
+                                    )}
                                     loading="lazy"
                                   />
                                   <figcaption className="px-2 py-2 text-center text-[11px] uppercase tracking-wide-sm text-cream/50">
@@ -108,7 +131,12 @@ export default function Biography() {
                                 <img
                                   src={sec.image}
                                   alt={sec.imageAlt ?? sec.heading}
-                                  className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                  width={ASPECT_DIMS[sec.aspect ?? "4/5"].w}
+                                  height={ASPECT_DIMS[sec.aspect ?? "4/5"].h}
+                                  className={cn(
+                                    "w-full object-cover transition-transform duration-700 group-hover:scale-105",
+                                    ASPECT_CLASS[sec.aspect ?? "4/5"],
+                                  )}
                                   loading="lazy"
                                 />
                                 <figcaption className="px-2 py-2 text-center text-[11px] uppercase tracking-wide-sm text-cream/50">
