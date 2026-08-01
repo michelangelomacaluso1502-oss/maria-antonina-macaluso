@@ -3,7 +3,7 @@ import { Reveal } from "@/components/cinematic/Reveal";
 import SectionHeading from "./SectionHeading";
 import { Heart, Calendar, MapPin, Film, ExternalLink } from "lucide-react";
 
-// 10 foto della relazione Angelo & Maria Antonina
+// 20 foto della relazione Angelo & Maria Antonina
 const RELATION_PHOTOS = [
   { src: "/images/relation/rel-01.jpg", alt: "Angelo e Maria Antonina insieme", span: "tall" },
   { src: "/images/relation/rel-02.jpg", alt: "Angelo e Maria Antonina — momento together", span: "normal" },
@@ -15,6 +15,16 @@ const RELATION_PHOTOS = [
   { src: "/images/relation/rel-08.jpg", alt: "Angelo e Maria Antonina — insieme", span: "tall" },
   { src: "/images/relation/rel-09.jpg", alt: "Angelo e Maria Antonina — panorama", span: "wide" },
   { src: "/images/relation/rel-10.jpg", alt: "Angelo e Maria Antonina — momento intimo", span: "tall" },
+  { src: "/images/relation/rel-11.jpg", alt: "Angelo e Maria Antonina — insieme", span: "normal" },
+  { src: "/images/relation/rel-12.jpg", alt: "Angelo e Maria Antonina — ritratto", span: "normal" },
+  { src: "/images/relation/rel-13.jpg", alt: "Angelo e Maria Antonina — sorriso", span: "normal" },
+  { src: "/images/relation/rel-14.jpg", alt: "Angelo e Maria Antonina — momento speciale", span: "tall" },
+  { src: "/images/relation/rel-15.jpg", alt: "Angelo e Maria Antonina — vicinanza", span: "wide" },
+  { src: "/images/relation/rel-16.jpg", alt: "Angelo e Maria Antonina — insieme", span: "normal" },
+  { src: "/images/relation/rel-17.jpg", alt: "Angelo e Maria Antonina — momento", span: "normal" },
+  { src: "/images/relation/rel-18.jpg", alt: "Angelo e Maria Antonina — ritratto di coppia", span: "normal" },
+  { src: "/images/relation/rel-19.jpg", alt: "Angelo e Maria Antonina — sorrisi", span: "normal" },
+  { src: "/images/relation/rel-20.jpg", alt: "Angelo e Maria Antonina — insieme", span: "normal" },
 ];
 
 // Tappe principali della relazione
@@ -92,7 +102,7 @@ export default function LoveStory() {
           <div className="mb-6 flex items-center gap-3">
             <Heart className="h-6 w-6 text-rose" />
             <h3 className="font-display text-xl text-gold/90 uppercase tracking-wide-sm">
-              Galleria — 10 scatti della relazione
+              Galleria — 20 scatti della relazione
             </h3>
           </div>
         </Reveal>
