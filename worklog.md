@@ -2104,3 +2104,53 @@ Stage Summary:
 - Build status: SUCCESS
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 43s)
 
+
+---
+Task ID: INTRO-PRE-ENTRY-STILE-ANGELO-FARACI
+Agent: Full-stack developer
+Task: Riscrivere IntroLoader replicando esattamente l'approccio del sito Angelo Faraci
+
+Work Log:
+- Analizzato il sito Angelo Faraci (angelo-faraci.vercel.app):
+  - Pre-entry overlay: <div class="fixed inset-0 z-[200] bg-[var(--sicily-wine)] flex items-center justify-center">
+  - Letterbox bars: barre nere in alto/basso (10vh)
+  - Icona film dorata (lucide-film h-12 w-12)
+  - "Una produzione siciliana" (text-[10px] uppercase tracking-[0.4em])
+  - "Angelo Faraci" con "Faraci" in italico dorato
+  - Barra di caricamento oro (w-48 h-px, barra che scorre)
+  - JavaScript-driven con opacity/transform transitions
+  - Phase sequence: icona → sottotitolo → nome → progress → fadeout
+- Riscritto IntroLoader come client component (src/components/cinematic/IntroLoader.tsx):
+  - "use client" per interattività JavaScript
+  - Phase state machine: 0=icon, 1=subtitle, 2=name, 3=progress, 4=fadeout
+  - Timers: 200ms (subtitle), 600ms (name), 1000ms (progress), 2200ms (fadeout), 2800ms (unmount)
+  - body overflow hidden durante il playback
+  - prefers-reduced-motion: skip completo
+  - Elementi:
+    - Overlay fisso z-[200] con sfondo bg-noir
+    - Letterbox bars 8vh (alto + basso)
+    - Icona Film dorata con scale(0.8)→scale(1) transition
+    - "Una produzione siciliana" con translateY fade-up
+    - "Maria Antonina Macaluso" con "Macaluso" in italico dorato
+    - Barra caricamento: w-48 h-px con barra oro che scorre translateX(-100%)→translateX(100%)
+  - Dissolvenza: opacity 1→0 con duration-700 transition
+- Rimosso script inline dal layout (non più necessario — il componente è client-side)
+- Verifica produzione:
+  - z-[200] overlay presente ✓
+  - "Una produzione siciliana" presente ✓
+  - "Prime Video" → 0 occorrenze ✓
+- Regole rispettate:
+  - NON ho intancato la struttura del progetto
+  - NESSUNA menzione di "Prime Video"
+  - Stile identico al sito Angelo Faraci (z-[200], letterbox, icona film, barra caricamento)
+  - prefers-reduced-motion rispettato
+  - Animazioni GPU-only (transform, opacity)
+  - 107 lingue supportate preservate
+
+Stage Summary:
+- File modificati:
+  - src/components/cinematic/IntroLoader.tsx (rewrite completo: client component con phase state machine)
+  - src/app/layout.tsx (rimosso script inline — non più necessario)
+- Build status: SUCCESS
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 45s)
+
