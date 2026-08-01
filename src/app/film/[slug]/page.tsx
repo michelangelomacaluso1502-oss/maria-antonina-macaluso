@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { FILMS } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
@@ -75,8 +76,21 @@ export default async function FilmPage({
         <div className="cinematic-container">
           <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-[1fr_1.4fr] md:items-start">
             <Reveal>
-              <div className="glass-card flex aspect-[3/4] w-full max-w-[300px] items-center justify-center bg-gradient-to-br from-smoke-light to-noir">
-                <Clapperboard className="h-20 w-20 text-gold/25" />
+              <div className="zoom-wrap glass-card aspect-[2/3] w-full max-w-[300px] overflow-hidden">
+                {film.poster ? (
+                  <Image
+                    src={film.poster}
+                    alt={`Locandina ${film.title}`}
+                    fill
+                    sizes="(min-width: 768px) 300px, 100vw"
+                    className="object-cover"
+                    priority
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-smoke-light to-noir">
+                    <Clapperboard className="h-20 w-20 text-gold/25" />
+                  </div>
+                )}
               </div>
             </Reveal>
 

@@ -170,9 +170,9 @@ export const BIO_CHAPTERS: BioChapter[] = [
   },
   {
     num: "VI",
-    title: "Il Mistero di Spartivento e Sicilian Excellence (2024–2025)",
+    title: "Il Mistero di Spartivento e Eccellenza Siciliana (2024–2025)",
     body: [
-      "Il 2024–2025 è denso: Il Mistero di Spartivento esplora il territorio del Suspense mediterraneo, mentre Sicilian Excellence (2025) è una celebrazione dell'eccellenza siciliana che trova in Maria Antonina una delle sue voci.",
+      "Il 2024–2025 è denso: Il Mistero di Spartivento esplora il territorio del Suspense mediterraneo, mentre Eccellenza Siciliana (2025) è un film per TV e Web che celebra l'eccellenza siciliana in viaggio per l'isola, con Maria Antonina tra le voci protagoniste.",
     ],
   },
   {
@@ -211,6 +211,8 @@ export interface Film {
   trivia?: string[];
   /** Rassegna stampa: articoli verificati */
   press?: { title: string; source: string; url: string; excerpt?: string }[];
+  /** Locandina/copertina del film */
+  poster?: string;
 }
 
 // URL del profilo IMDb verificato di Maria Antonina Macaluso
@@ -222,6 +224,7 @@ export const FILMS: Film[] = [
     year: "2020",
     title: "Don't Be Silent",
     role: "Attrice",
+    poster: "/images/films/dont-be-silent.jpg",
     director: "Angelo Faraci",
     type: "Cortometraggio",
     production: "Rai Cinema",
@@ -254,6 +257,7 @@ export const FILMS: Film[] = [
     year: "2018",
     title: "Ciò che non ti ho detto",
     role: "Attrice",
+    poster: "/images/films/cio-che-non-ti-ho-detto.jpg",
     director: "Angelo Faraci",
     type: "Fiction TV",
     production: "Sky",
@@ -288,6 +292,7 @@ export const FILMS: Film[] = [
     year: "2022",
     title: "Provvidenza",
     role: "Attrice protagonista",
+    poster: "/images/films/provvidenza.jpg",
     director: "Angelo Faraci",
     type: "Cortometraggio",
     production: "Rai Cinema",
@@ -329,6 +334,7 @@ export const FILMS: Film[] = [
     year: "2023",
     title: "Pietrazita",
     role: "Attrice protagonista",
+    poster: "/images/films/pietrazita.jpg",
     director: "Angelo Faraci",
     type: "Cortometraggio",
     production: "Rai Cinema",
@@ -369,6 +375,7 @@ export const FILMS: Film[] = [
     year: "2023–2024",
     title: "Separati Mai",
     role: "Attrice protagonista",
+    poster: "/images/films/separati-mai.jpg",
     director: "Angelo Faraci",
     type: "Lungometraggio",
     production: "Independent",
@@ -388,6 +395,7 @@ export const FILMS: Film[] = [
     year: "2024–2025",
     title: "Il Mistero di Spartivento",
     role: "Attrice protagonista",
+    poster: "/images/films/il-mistero-di-spartivento.jpg",
     director: "Angelo Faraci",
     type: "Lungometraggio",
     production: "Rai Cinema",
@@ -407,6 +415,7 @@ export const FILMS: Film[] = [
     year: "2024",
     title: "Vanina",
     role: "Voce (1 episodio)",
+    poster: "/images/films/vanina.jpg",
     director: "Davide Marengo",
     type: "Serie TV",
     production: "Canale 5 — Mediaset",
@@ -449,29 +458,36 @@ export const FILMS: Film[] = [
     ],
   },
   {
-    slug: "sicilian-excellence",
+    slug: "eccellenza-siciliana",
     year: "2025",
-    title: "Sicilian Excellence",
+    title: "Eccellenza Siciliana",
     role: "Attrice",
+    poster: "/images/films/eccellenza-siciliana.jpg",
     director: "Angelo Faraci",
-    type: "Documentario",
+    type: "Film TV",
     production: "Independent",
     description:
-      "Una celebrazione dell'eccellenza siciliana.",
+      "Un film per TV e Web che mostra i migliori luoghi della Sicilia per gustare cibo tipico e prodotti di eccellenza.",
     longDescription:
-      "Sicilian Excellence (2025) è una celebrazione dell'eccellenza siciliana — artigianato, cultura, cinema, cibo — che trova in Maria Antonina Macaluso una delle sue voci e dei suoi volti. Un omaggio al territorio che si fa racconto corale.",
-    imdbUrl: MAM_IMDB_URL,
+      "Eccellenza Siciliana (2025) è un film per TV e Web diretto da Angelo Faraci, con Angelo Faraci e Maria Antonina Macaluso. Un'opera su larga scala che, con i suoi protagonisti in viaggio per la Sicilia, mostra i migliori luoghi per gustare cibo tipico e prodotti di eccellenza dell'isola. Un omaggio al territorio che si fa racconto corale, confermato da IMDb (tt38949464).",
+    imdbUrl: "https://www.imdb.com/title/tt38949464",
     cast: ["Angelo Faraci", "Maria Antonina Macaluso"],
-    genre: "Documentario",
-    duration: "Documentario",
+    genre: "Documentario / Film TV",
+    duration: "Film TV",
     plot:
-      "Una celebrazione dell'eccellenza siciliana tra artigianato, cultura, cinema e cibo.",
+      "Un viaggio attraverso la Sicilia alla scoperta dei prodotti di eccellenza, del cibo tipico e dei luoghi più suggestivi dell'isola.",
+    trivia: [
+      "Film per TV e Web diretto da Angelo Faraci.",
+      "IMDb: tt38949464.",
+      "Soggetto: viaggio enogastronomico e culturale in Sicilia.",
+    ],
   },
   {
     slug: "pochi-attimi",
     year: "2026",
     title: "Pochi Attimi",
     role: "Attrice protagonista",
+    poster: "/images/films/pochi-attimi.jpg",
     director: "Angelo Faraci",
     type: "Lungometraggio",
     production: "Ancora Cinematografica + Ventitreesima Strada",
@@ -612,7 +628,7 @@ export const TIMELINE: TimelineEvent[] = [
   },
   {
     year: "2025",
-    title: "Sicilian Excellence",
+    title: "Eccellenza Siciliana",
     description:
       "Documentario. Una celebrazione dell'eccellenza siciliana che trova in Maria Antonina una delle sue voci.",
   },
@@ -953,7 +969,7 @@ export const FAQS: FAQItem[] = [
   { question: "Quando e dove è nata Maria Antonina Macaluso?", answer: "Maria Antonina Macaluso è nata a Bologna il 9 novembre 2001 ed è cresciuta a Camporeale, in provincia di Palermo." },
   { question: "Chi è Angelo Faraci?", answer: "Angelo Faraci è un regista, attore e produttore italiano nato a Palermo il 13 agosto 1989. Enciclopedia digitale: angelo-faraci.vercel.app. È il regista di tutte le dieci produzioni interpretate da Maria Antonina." },
   { question: "Quando si sono incontrati Maria Antonina e Angelo Faraci?", answer: "Il 14 agosto 2019 a Palermo. Da allora condividono un percorso artistico e di vita." },
-  { question: "Quali film ha interpretato Maria Antonina Macaluso?", answer: "Dieci produzioni: Ciò che non ti ho detto (2018, fiction Sky), Don't Be Silent (2020, Rai Cinema), Provvidenza (2022, Rai Cinema), Pietrazita (2023, Rai Cinema), Separati Mai (2023–2024, Rai Cinema), Sabbie Nere (2023, serie TV Mediaset), Vanina (2024, Canale 5), Il Mistero di Spartivento (2024–2025, Rai Cinema), Sicilian Excellence (2025) e Pochi Attimi (2026)." },
+  { question: "Quali film ha interpretato Maria Antonina Macaluso?", answer: "Dieci produzioni: Ciò che non ti ho detto (2018, fiction Sky), Don't Be Silent (2020, Rai Cinema), Provvidenza (2022, Rai Cinema), Pietrazita (2023, Rai Cinema), Separati Mai (2023–2024, Rai Cinema), Sabbie Nere (2023, serie TV Mediaset), Vanina (2024, Canale 5), Il Mistero di Spartivento (2024–2025, Rai Cinema), Eccellenza Siciliana (2025) e Pochi Attimi (2026)." },
   { question: "Quali cortometraggi sono stati prodotti da Rai Cinema?", answer: "Provvidenza (2021) e Pietrazita (2022) sono cortometraggi prodotti da Rai Cinema con la regia di Angelo Faraci." },
   { question: "In quali festival ha partecipato?", answer: "Tra gli altri: Taormina Film Fest, Roma Fiction Fest, Fiuggi Film Festival, Sicilia Film Festival, Venice International Film Festival e Mediterranean Film Festival." },
   { question: "Quali premi ha ricevuto?", answer: "Ha ricevuto numerosi riconoscimenti, tra cui Migliore Attrice Emergente (2021), Premio Speciale della Giuria a Taormina (2022), Attrice Rivelazione a Fiuggi (2023) e Migliore Attrice Protagonista al Mediterranean Film Festival (2025)." },
