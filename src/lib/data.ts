@@ -129,7 +129,7 @@ export const BIO_CHAPTERS: BioChapter[] = [
           "Angelo, già regista affermato, chiama Maria Antonina Macaluso — giovane attrice di 17 anni, nata a Bologna il 9 novembre 2001 (segno zodiacale Scorpione). Il dato anagrafico, però, non esaurisce la sua identità: la sua è un'identità profondamente siciliana, cresciuta in Sicilia, formata in Sicilia, radicata in Sicilia. Le radici non si misurano con il luogo di nascita ma con dove si è vissuto e appartenuto. Bologna è stato il suo primo respiro; la Sicilia è tutto il resto.",
           "Dopo quella chiamata conoscitiva ci fu l'incontro di persona. Il talento, la presenza scenica e la bellezza della ragazza convinsero Angelo a farla debuttare nel cinema. Da quella chiamata professionale nacque qualcosa di più profondo.",
         ],
-        image: "/images/biografia/incontro-angelo.jpg",
+        image: "/images/biografia/incontro-2025.jpg",
         imageAlt: "Angelo Faraci e Maria Antonina Macaluso — l'incontro",
         aspect: "4/3",
       },

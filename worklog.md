@@ -1010,3 +1010,40 @@ Stage Summary:
 - Build status: SUCCESS — 74 pagine generate
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 41s)
 
+
+---
+Task ID: FIX-CACHE-BUSTING-FOTO-INCONTRO
+Agent: Full-stack developer
+Task: L'utente vedeva ancora la vecchia foto (montagna) nel capitolo Incontro a causa di cache CDN/browser
+
+Work Log:
+- Verificato tramite screenshot dell'utente (Screenshot 2026-08-01 182240.png) che vedeva la foto in montagna (51.8 KB), NON quella in centro storico (110.3 KB)
+- Verificato che sul server era tutto corretto:
+  - /public/images/biografia/incontro-angelo.jpg = 3840x2830, 1.37 MB, MD5 322b4a5b... (centro storico 4K)
+  - Ma il browser dell'utente continuava a caricare la cache vecchia del file "incontro-angelo.jpg"
+- Fix applicato: CACHE BUSTING con rename del file
+  - Copiato incontro-angelo.jpg → incontro-2025.jpg (stesso contenuto, nome nuovo)
+  - Aggiornato riferimento in src/lib/data.ts: "incontro-angelo.jpg" → "incontro-2025.jpg"
+  - Il browser non avendo mai visto "incontro-2025.jpg" non può usare la cache → carica la foto nuova
+- Primo deploy è andato sul progetto sbagliato (my-project invece di maria-antonina-macaluso)
+- Ricollegato progetto: vercel link --project=maria-antonina-macaluso
+- Secondo deploy: successo
+- Verifica produzione:
+  - Foto incontro-2025.jpg → HTTP 200, content-length 1368276 (1.37 MB) ✓
+  - HTML: <img src="/images/biografia/incontro-2025.jpg" ...> ✓
+  - Diff pixel vs 110.3 KB centro storico: 1.91 → stessa foto ✓
+  - "Prime Video" → 0 occorrenze ✓
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto
+  - NESSUNA menzione di "Prime Video"
+  - Foto Ultra HD 4K preservata (solo rename per cache busting)
+  - Animazioni professionali, hero centrato, intro MM, "Enciclopedia digitale" — tutti preservati
+  - 107 lingue supportate preservate
+
+Stage Summary:
+- File modificati:
+  - src/lib/data.ts (rename riferimento foto: incontro-angelo.jpg → incontro-2025.jpg)
+- File creato: /public/images/biografia/incontro-2025.jpg (copia di incontro-angelo.jpg per cache busting)
+- Build status: SUCCESS — 79 pagine generate
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 44s)
+
