@@ -145,7 +145,7 @@ export default function ContentCreator() {
                 <figure className="glass-card card-lift-premium group overflow-hidden p-2">
                   <div className="zoom-wrap relative aspect-[3/5] w-full max-w-[240px] mx-auto overflow-hidden bg-noir">
                     <Image
-                      src="/images/content-creator/beauty-creator.jpg"
+                      src="/images/content-creator/beauty-v2.jpg"
                       alt="Maria Antonina Macaluso — Beauty Content Creator"
                       fill
                       sizes="(min-width: 640px) 240px, 100vw"
@@ -160,7 +160,7 @@ export default function ContentCreator() {
                 <figure className="glass-card card-lift-premium group overflow-hidden p-2">
                   <div className="zoom-wrap relative aspect-[3/5] w-full max-w-[240px] mx-auto overflow-hidden bg-noir">
                     <Image
-                      src="/images/content-creator/lifestyle-creator.jpg"
+                      src="/images/content-creator/lifestyle-v2.jpg"
                       alt="Maria Antonina Macaluso — Lifestyle Content Creator"
                       fill
                       sizes="(min-width: 640px) 240px, 100vw"
