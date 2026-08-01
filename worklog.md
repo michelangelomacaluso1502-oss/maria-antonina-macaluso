@@ -1796,3 +1796,45 @@ Stage Summary:
 - Build status: SUCCESS — 87 pagine generate (era 79, +8 nuove foto /photo/[id])
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 46s)
 
+
+---
+Task ID: CONTENT-CREATOR-FOTO-NUOVE-2-ADATTATE
+Agent: Full-stack developer
+Task: Sostituire 2 foto Content Creator con nuove foto utente + adattare dimensioni (object-contain per far entrare tutta la foto)
+
+Work Log:
+- 2 nuove foto caricate dall'utente:
+  - photo_6012603350391655924_w.jpg: 1080x1795 portrait (Beauty — Flamingo Vibes, prodotti Soap & Glory)
+  - photo_6012603350391655925_w.jpg: 1078x1771 portrait (Lifestyle — Content Creator)
+- Verifica VLM: entrambe ritraggono Maria Antonina in attività content creator beauty
+- Ottimizzazione Ultra HD 4K con sharp:
+  - beauty-creator.jpg: 1080x1795 → 1600x2659 (765KB)
+  - lifestyle-creator.jpg: 1078x1771 → 1600x2629 (732KB)
+  - Kernel lanczos3, sharpen sigma 0.6, mozjpeg q95, chroma 4:4:4
+- Aggiornato ContentCreator.tsx per far entrare TUTTA la foto:
+  - object-cover → object-contain (foto intera visibile, no ritaglio)
+  - aspect-[3/4] → aspect-[3/5] (più stretto, adatto alle foto portrait 1600x2659 ratio 0.60)
+  - max-w-[260px] → max-w-[240px] (leggermente più piccolo per bilanciare)
+  - Aggiunto bg-noir al container (sfondo nero dietro foto per uniformità con object-contain)
+  - Didascalie: "Beauty Content Creator" + "Lifestyle Content Creator"
+- Verifica produzione:
+  - beauty-creator.jpg: HTTP 200 ✓
+  - lifestyle-creator.jpg: HTTP 200 ✓
+  - object-contain, aspect-[3/5], max-w-[240px] presenti ✓
+  - "Prime Video" → 0 occorrenze ✓
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto
+  - NESSUNA menzione di "Prime Video"
+  - Foto Ultra HD 4K (mozjpeg q95, chroma 4:4:4)
+  - object-contain per far entrare tutta la foto senza ritaglio
+  - Animazioni professionali preservate
+  - 107 lingue supportate preservate
+
+Stage Summary:
+- File modificati:
+  - /public/images/content-creator/beauty-creator.jpg (sostituita con nuova foto utente)
+  - /public/images/content-creator/lifestyle-creator.jpg (sostituita con nuova foto utente)
+  - src/components/sections/ContentCreator.tsx (object-contain + aspect-[3/5] + max-w-[240px] + bg-noir)
+- Build status: SUCCESS
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 45s)
+

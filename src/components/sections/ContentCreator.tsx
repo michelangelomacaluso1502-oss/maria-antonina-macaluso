@@ -143,33 +143,33 @@ export default function ContentCreator() {
               </div>
               <div className="mx-auto grid max-w-2xl gap-5 sm:grid-cols-2">
                 <figure className="glass-card card-lift-premium group overflow-hidden p-2">
-                  <div className="zoom-wrap relative aspect-[3/4] w-full max-w-[260px] mx-auto overflow-hidden">
+                  <div className="zoom-wrap relative aspect-[3/5] w-full max-w-[240px] mx-auto overflow-hidden bg-noir">
                     <Image
                       src="/images/content-creator/beauty-creator.jpg"
+                      alt="Maria Antonina Macaluso — Beauty Content Creator"
+                      fill
+                      sizes="(min-width: 640px) 240px, 100vw"
+                      className="object-contain object-center transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption className="px-3 py-2 text-center text-[11px] uppercase tracking-wide-sm text-cream/50">
+                    Beauty Content Creator
+                  </figcaption>
+                </figure>
+                <figure className="glass-card card-lift-premium group overflow-hidden p-2">
+                  <div className="zoom-wrap relative aspect-[3/5] w-full max-w-[240px] mx-auto overflow-hidden bg-noir">
+                    <Image
+                      src="/images/content-creator/lifestyle-creator.jpg"
                       alt="Maria Antonina Macaluso — Lifestyle Content Creator"
                       fill
-                      sizes="(min-width: 640px) 260px, 100vw"
-                      className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                      sizes="(min-width: 640px) 240px, 100vw"
+                      className="object-contain object-center transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
                   </div>
                   <figcaption className="px-3 py-2 text-center text-[11px] uppercase tracking-wide-sm text-cream/50">
                     Lifestyle Content Creator
-                  </figcaption>
-                </figure>
-                <figure className="glass-card card-lift-premium group overflow-hidden p-2">
-                  <div className="zoom-wrap relative aspect-[3/4] w-full max-w-[260px] mx-auto overflow-hidden">
-                    <Image
-                      src="/images/content-creator/lifestyle-creator.jpg"
-                      alt="Maria Antonina Macaluso — Studio TV Radio"
-                      fill
-                      sizes="(min-width: 640px) 260px, 100vw"
-                      className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-                  <figcaption className="px-3 py-2 text-center text-[11px] uppercase tracking-wide-sm text-cream/50">
-                    Studio TV & Radio
                   </figcaption>
                 </figure>
               </div>
