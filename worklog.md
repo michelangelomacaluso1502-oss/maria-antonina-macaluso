@@ -2053,3 +2053,54 @@ Stage Summary:
 - Build status: SUCCESS
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 42s)
 
+
+---
+Task ID: INTRO-CINEMATOGRAFICO-5-ATTI
+Agent: Full-stack developer
+Task: Trasformare l'IntroLoader in un'animazione pre-entry ultra-cinematografica a 5 atti
+
+Work Log:
+- Riscritto IntroLoader.tsx con sequenza cinematografica a 5 atti:
+  1. **Tende cinematografiche** (0.2s → 1.6s): due pannelli neri che si aprono lateralmente (translateX -101% e +101%) — effetto sipario che si apre
+  2. **Glow dorato pulsante** (0.3s → 3.3s): cerchio radiale dorato dietro il monogramma che pulsa (scale 0.5 → 1.2, opacity 0 → 1 → 0.3)
+  3. **Particelle d'oro fluttuanti** (0.4s → 3.9s): 8 particelle dorate 2x2px con box-shadow glow che fluttuano dal basso verso l'alto (bottom -10px → 110vh)
+  4. **Monogramma M·M** (0.4s → 2.3s): lettere con blur 20px → 0, translateY 60px → 0, scale 0.85 → 1, gradient gold cream→gold→dark gold, text-shadow 80px glow
+  5. **Linea oro + Sottotitolo + Tagline** (1.4s → 3.3s): linea che si disegna (width 0 → 380px), sottotitolo "Maria Antonina Macaluso", tagline "Attrice siciliana" in italico dorato
+  6. **Dissolvenza finale** (3.8s → 4.5s): opacity 1 → 0, translateY 0 → -40px, visibility hidden
+
+- Riscritto CSS globals con tutte le nuove animazioni:
+  - intro-lifecycle: 4.5s totali (era 3.2s)
+  - intro-curtain-left/right: tende che si aprono
+  - intro-glow-pulse: glow pulsante
+  - intro-particle-float: 8 particelle fluttuanti
+  - intro-letter-reveal: M·M con blur e scale più drammatici (blur 20px, translateY 60px)
+  - intro-line-draw: linea più lunga (380px) con box-shadow glow
+  - intro-subtitle-reveal: blur 6px → 0
+  - intro-tagline-reveal: nuovo elemento "Attrice siciliana" in italico dorato
+  - intro-vignette: z-index 5 (sopra tutto)
+
+- Aggiornato script inline in layout.tsx: timeout 3200ms → 4500ms
+
+- Verifica produzione:
+  - Elementi HTML: intro-curtain, intro-glow, intro-particles, intro-particle, intro-tagline, intro-mm-letter ✓
+  - CSS keyframes: intro-curtain-left, intro-glow-pulse, intro-lifecycle, intro-particle-float, intro-tagline-reveal ✓
+  - Timeout: 4500ms ✓
+  - "Prime Video" → 0 occorrenze ✓
+
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto
+  - NESSUNA menzione di "Prime Video"
+  - CSS-only (no JS per animazioni)
+  - prefers-reduced-motion rispettato (skip completo)
+  - Server Component (HTML statico dal primo byte)
+  - Animazioni GPU-only (transform, opacity, filter, blur)
+  - 107 lingue supportate preservate
+
+Stage Summary:
+- File modificati:
+  - src/components/cinematic/IntroLoader.tsx (5 strati: tende, glow, particelle, contenuto, vignette)
+  - src/styles/globals.css (rewrite completo intro CSS con 10 keyframes)
+  - src/app/layout.tsx (timeout 3200ms → 4500ms)
+- Build status: SUCCESS
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 43s)
+

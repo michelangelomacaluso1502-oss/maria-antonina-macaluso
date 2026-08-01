@@ -589,9 +589,12 @@ body {
 }
 
 /* ============================================
-   INTRO LOADER — sigla MM cinematografica
+   INTRO LOADER — Pre-entry cinematografica
+   5 atti: tende → glow → MAM → linea → tagline
    BULLETPROOF: CSS-only, no JS required
    ============================================ */
+
+/* Container principale */
 .intro-loader {
   position: fixed;
   inset: 0;
@@ -599,32 +602,106 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(ellipse at center, #15131a 0%, #08070a 70%);
+  background: #08070a;
   overflow: hidden;
   visibility: visible;
   opacity: 1;
-  /* Lifecycle: show for 2.4s, fade out by 3.2s, hide after */
-  animation: intro-lifecycle 3.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  /* Lifecycle: 4.5s totali — visibile fino a 3.8s, fade-out 3.8s→4.5s */
+  animation: intro-lifecycle 4.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   will-change: opacity, transform, visibility;
 }
 
 @keyframes intro-lifecycle {
   0% { opacity: 1; visibility: visible; transform: translateY(0); }
-  75% { opacity: 1; visibility: visible; transform: translateY(0); }
-  99% { opacity: 0; visibility: visible; transform: translateY(-30px); pointer-events: none; }
-  100% { opacity: 0; visibility: hidden; transform: translateY(-30px); pointer-events: none; }
+  84% { opacity: 1; visibility: visible; transform: translateY(0); }
+  98% { opacity: 0; visibility: visible; transform: translateY(-40px); pointer-events: none; }
+  100% { opacity: 0; visibility: hidden; transform: translateY(-40px); pointer-events: none; }
 }
 
+/* === ATTO 1: Tende cinematografiche === */
+.intro-curtain {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50.5%;
+  background: linear-gradient(to right, #08070a, #0d0b10);
+  z-index: 3;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.8);
+}
+.intro-curtain-left {
+  left: 0;
+  animation: intro-curtain-left 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.2s forwards;
+}
+.intro-curtain-right {
+  right: 0;
+  animation: intro-curtain-right 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.2s forwards;
+}
+@keyframes intro-curtain-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-101%); }
+}
+@keyframes intro-curtain-right {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(101%); }
+}
+
+/* === ATTO 2: Glow dorato pulsante dietro il monogramma === */
+.intro-glow {
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  max-width: 500px;
+  max-height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 169, 106, 0.15) 0%, rgba(201, 169, 106, 0.05) 40%, transparent 70%);
+  z-index: 1;
+  opacity: 0;
+  animation: intro-glow-pulse 3s ease-in-out 0.3s forwards;
+}
+@keyframes intro-glow-pulse {
+  0% { opacity: 0; transform: scale(0.5); }
+  30% { opacity: 1; transform: scale(1); }
+  60% { opacity: 0.6; transform: scale(1.1); }
+  100% { opacity: 0.3; transform: scale(1.2); }
+}
+
+/* === ATTO 3: Particelle d'oro fluttuanti === */
+.intro-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+.intro-particle {
+  position: absolute;
+  bottom: -10px;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #c9a96a;
+  box-shadow: 0 0 6px rgba(201, 169, 106, 0.8);
+  opacity: 0;
+  animation: intro-particle-float 3.5s ease-out 0.4s forwards;
+}
+@keyframes intro-particle-float {
+  0% { opacity: 0; bottom: -10px; transform: translateX(0); }
+  10% { opacity: 0.8; }
+  80% { opacity: 0.4; }
+  100% { opacity: 0; bottom: 110vh; transform: translateX(20px); }
+}
+
+/* === Contenuto centrale === */
 .intro-loader-inner {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.25rem;
-  z-index: 2;
+  z-index: 4;
 }
 
-/* Sigla MM */
+/* Monogramma MM */
 .intro-mm-wrap {
   display: flex;
   align-items: center;
@@ -632,39 +709,37 @@ body {
   font-family: "Italiana", "Cormorant Garamond", serif;
   font-size: clamp(5rem, 18vw, 11rem);
   line-height: 1;
-  color: #c9a96a;
   letter-spacing: 0.05em;
 }
 
 .intro-mm-letter {
   display: inline-block;
   opacity: 0;
-  transform: translateY(40px) scale(0.9);
-  filter: blur(14px);
-  animation: intro-letter-reveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  background: linear-gradient(180deg, #f5efe4 0%, #c9a96a 60%, #8a6f3f 100%);
+  transform: translateY(60px) scale(0.85);
+  filter: blur(20px);
+  animation: intro-letter-reveal 1.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  background: linear-gradient(180deg, #f5efe4 0%, #c9a96a 50%, #8a6f3f 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 60px rgba(201, 169, 106, 0.3);
+  text-shadow: 0 0 80px rgba(201, 169, 106, 0.4);
 }
 
 .intro-mm-dot {
   font-size: 0.55em;
-  color: #d4a5a5;
   -webkit-text-fill-color: #d4a5a5;
   filter: blur(0);
-  transform: translateY(-0.15em) scale(0.6);
-  animation: intro-dot-reveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform: translateY(-0.15em) scale(0.3);
+  animation: intro-dot-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @keyframes intro-letter-reveal {
   0% {
     opacity: 0;
-    transform: translateY(40px) scale(0.9);
-    filter: blur(14px);
+    transform: translateY(60px) scale(0.85);
+    filter: blur(20px);
   }
-  60% {
+  50% {
     opacity: 1;
     filter: blur(0);
   }
@@ -676,11 +751,12 @@ body {
 }
 
 @keyframes intro-dot-reveal {
-  0% { opacity: 0; transform: translateY(-0.15em) scale(0.3); }
+  0% { opacity: 0; transform: translateY(-0.15em) scale(0.2); }
+  60% { opacity: 0.8; transform: translateY(-0.15em) scale(0.7); }
   100% { opacity: 1; transform: translateY(-0.15em) scale(0.6); }
 }
 
-/* Linea gold che si disegna */
+/* === ATTO 4: Linea oro che si disegna === */
 .intro-line {
   display: block;
   width: 0;
@@ -688,21 +764,22 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    #c9a96a 30%,
+    #c9a96a 20%,
     #f5efe4 50%,
-    #c9a96a 70%,
+    #c9a96a 80%,
     transparent
   );
-  animation: intro-line-draw 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards;
+  box-shadow: 0 0 10px rgba(201, 169, 106, 0.5);
+  animation: intro-line-draw 1.6s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards;
 }
 
 @keyframes intro-line-draw {
   0% { width: 0; opacity: 0; }
-  20% { opacity: 1; }
-  100% { width: clamp(180px, 30vw, 320px); opacity: 1; }
+  15% { opacity: 1; }
+  100% { width: clamp(200px, 35vw, 380px); opacity: 1; }
 }
 
-/* Sottotitolo fade */
+/* === Sottotitolo === */
 .intro-subtitle {
   font-family: "Inter", sans-serif;
   font-size: 0.7rem;
@@ -711,36 +788,61 @@ body {
   text-transform: uppercase;
   color: #f5efe4;
   opacity: 0;
-  transform: translateY(8px);
-  animation: intro-subtitle-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform: translateY(10px);
+  animation: intro-subtitle-reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) 2.0s forwards;
 }
 
 @keyframes intro-subtitle-reveal {
-  0% { opacity: 0; transform: translateY(8px); filter: blur(4px); }
-  100% { opacity: 0.7; transform: translateY(0); filter: blur(0); }
+  0% { opacity: 0; transform: translateY(10px); filter: blur(6px); }
+  100% { opacity: 0.8; transform: translateY(0); filter: blur(0); }
 }
 
-/* Vignette radiale */
+/* === Tagline === */
+.intro-tagline {
+  font-family: "Italiana", "Cormorant Garamond", serif;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #c9a96a;
+  opacity: 0;
+  letter-spacing: 0.15em;
+  transform: translateY(8px);
+  animation: intro-tagline-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) 2.3s forwards;
+}
+
+@keyframes intro-tagline-reveal {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 0.6; transform: translateY(0); }
+}
+
+/* === Vignette radiale === */
 .intro-vignette {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  z-index: 5;
   background: radial-gradient(
     ellipse at center,
-    transparent 40%,
-    rgba(8, 7, 10, 0.5) 80%,
-    rgba(8, 7, 10, 0.95) 100%
+    transparent 30%,
+    rgba(8, 7, 10, 0.4) 70%,
+    rgba(8, 7, 10, 0.9) 100%
   );
 }
 
-/* Body scroll lock mentre l'intro è attivo (gestito da script inline nel <head>) */
+/* === Body scroll lock === */
 html.intro-active body {
   overflow: hidden !important;
 }
 
-/* Reduced motion fallback — disabilita completamente l'intro */
+/* === Reduced motion === */
 @media (prefers-reduced-motion: reduce) {
-  .intro-loader {
+  .intro-loader,
+  .intro-curtain,
+  .intro-glow,
+  .intro-particle,
+  .intro-mm-letter,
+  .intro-line,
+  .intro-subtitle,
+  .intro-tagline {
     display: none !important;
     animation: none !important;
   }
