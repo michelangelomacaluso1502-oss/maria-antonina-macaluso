@@ -779,14 +779,11 @@ body {
   100% { transform: translateX(100%); }
 }
 
-/* Body scroll lock */
-html:has(.intro-pre-entry) body {
-  overflow: hidden !important;
-}
+/* Body scroll lock gestito da IntroLoader (inline script) */
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .intro-pre-entry { display: none !important; }
+  #intro-overlay { display: none !important; }
 }
 
 /* ============================================
