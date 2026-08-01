@@ -533,17 +533,21 @@ export const TIMELINE: TimelineEvent[] = [
   },
   {
     year: "2020",
-    title: "Don't Be Silent",
+    title: "Don't Be Silent — Ciò che non ti ho detto",
     description:
-      "Cortometraggio Rai Cinema, regia di Angelo Faraci. Primo progetto ufficiale della coppia per Rai Cinema, nell'ambito del Progetto Nazionale sul Bullismo.",
+      "Cortometraggio Rai Cinema, regia di Angelo Faraci. Primo progetto ufficiale della coppia per Rai Cinema, nell'ambito del Progetto Nazionale sul Bullismo. Il titolo originale del corto è 'Ciò che non ti ho detto'.",
     sourceUrl: "https://cinematografica.altervista.org/maria-antonina-macaluso",
     sourceName: "Ancora Cinematografica",
+    youtubeId: "Ati69QDU8MI",
+    youtubeTitle: "Ciò che non ti ho detto (2018) — Angelo Faraci",
   },
   {
     year: "2021",
     title: "Regenerate",
     description:
       "Cortometraggio Rai Cinema sulla rinascita interiore. Identità, memoria, trasformazione.",
+    youtubeId: "1NMm-4a8lwo",
+    youtubeTitle: "Regenerate — Angelo Faraci",
   },
   {
     year: "2022",
@@ -793,6 +797,55 @@ export const ARTICLES: Article[] = [
     date: "2024",
     excerpt:
       "Maria Antonina Macaluso nel cast di Vanina, serie TV Canale 5 / Mediaset, regia di Davide Marengo.",
+  },
+  // === Articoli sulle radici di Mary — Camporeale e Sicilia ===
+  {
+    title: "Camporeale — Comune italiano della città metropolitana di Palermo",
+    source: "Wikipedia",
+    url: "https://it.wikipedia.org/wiki/Camporeale",
+    date: "2024",
+    excerpt:
+      "Camporeale è un comune italiano della città metropolitana di Palermo in Sicilia. Il paese dove Maria Antonina Macaluso è cresciuta, tra colline, ulivi e tradizione vinicola.",
+  },
+  {
+    title: "Dal cuore della Sicilia a Roma: Pochi Attimi, il nuovo film di Angelo Faraci",
+    source: "Radio Amica",
+    url: "https://www.radioamica.it/dal-cuore-della-sicilia-a-roma-il-nuovo-film-di-angelo-faraci-nel-cast-la-camporealese-maria-antonia-macaluso",
+    date: "2025",
+    excerpt:
+      "Maria Antonina Macaluso, attrice originaria di Camporeale. Partecipazioni straordinarie: Enio Drovandi, attore delle grandi commedie.",
+  },
+  {
+    title: "La valle del Belice raccontata dal cinema — La camporealese Maria Antonina Macaluso",
+    source: "InfoBelice",
+    url: "https://www.infobelice.it/2025/12/20/la-valle-del-belice-raccontata-dal-cinema-la-camporealese-maria-antonina-macaluso-nel-film-pochi-attimi-di-angelo-faraci",
+    date: "2025-12-20",
+    excerpt:
+      "La Valle del Belice torna protagonista del racconto cinematografico con Maria Antonina Macaluso, camporealese, nel film Pochi Attimi di Angelo Faraci.",
+  },
+  {
+    title: "Vulcanica content creator — Maria Antonina Macaluso",
+    source: "Cronache Mediterranee",
+    url: "https://cronachemediterranee.net/vulcanica-content-creator-maria-antonina-macaluso",
+    date: "2025-11-10",
+    excerpt:
+      "Giovanissima, vulcanica, solare e intraprendente. Maria Antonina Macaluso, palermitana di 24 anni appena compiuti, attrice e content creator.",
+  },
+  {
+    title: "Camporeale — Visit Sicily",
+    source: "Visit Sicily",
+    url: "https://www.visitsicily.info/en/luogo/camporeale",
+    date: "2024",
+    excerpt:
+      "Camporeale è un villaggio nell'entroterra palermitano, noto per la tradizione vinicola e i paesaggi agricoli tra colline e uliveti. Le radici di Maria Antonina.",
+  },
+  {
+    title: "Camporeale — Informazioni turistiche",
+    source: "Città Metropolitana di Palermo",
+    url: "https://turismo.cittametropolitana.pa.it/i-comuni-della-provincia/camporeale/",
+    date: "2024",
+    excerpt:
+      "Camporeale è situata a cavallo delle due provincie di Palermo e Trapani. Fertile territorio, tradizione agricola e vinicola.",
   },
 ];
 

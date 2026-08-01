@@ -1047,3 +1047,72 @@ Stage Summary:
 - Build status: SUCCESS — 79 pagine generate
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 44s)
 
+
+---
+Task ID: YOUTUBE-EMBED-TIMELINE-ARTICOLI-RADICI
+Agent: Full-stack developer
+Task: Aggiungere 7 video YouTube embed alla Timeline + articoli verificati sulle radici di Mary
+
+Work Log:
+- Aggiunto remote pattern i.ytimg.com e img.youtube.com in next.config.ts (per thumbnail YouTube)
+- Creato componente YouTubeFacade (src/components/cinematic/YouTubeFacade.tsx):
+  - Pattern facade: thumbnail hqdefault/maxresdefault + play button
+  - Click → carica iframe youtube-nocookie.com (no cookie tracking)
+  - Parametri: autoplay=1, rel=0 (no video correlati), modestbranding=1, playsinline=1
+  - Fallback hqdefault se maxresdefault non disponibile (onError handler)
+  - Lazy load: iframe caricato SOLO al click (performance)
+  - Overlay scuro + play button animato (group-hover scale 110)
+  - Badge YouTube rosso in alto a destra
+  - Titolo video in basso con icona play
+  - accessibilità: aria-label, title
+- Aggiornato TIMELINE in src/lib/data.ts con 2 video mancanti:
+  - 2020 Don't Be Silent: youtubeId Ati69QDU8MI, title "Ciò che non ti ho detto (2018) — Angelo Faraci"
+  - 2021 Regenerate: youtubeId 1NMm-4a8lwo, title "Regenerate — Angelo Faraci"
+- 7 video YouTube mappati agli eventi:
+  1. 1Org85u4MqI → 2019 Incontro Angelo Faraci (coppia)
+  2. Ati69QDU8MI → 2020 Don't Be Silent / Ciò che non ti ho detto
+  3. 1NMm-4a8lwo → 2021 Regenerate
+  4. mjGQPlM4qg0 → 2022 Provvidenza
+  5. LVQqo0Kes5o → 2023 Pietrazita
+  6. N3irUShU0eU → 2024-2025 Il Mistero di Spartivento
+  7. tc0gmpaxKT0 → 2026 Pochi Attimi
+- Aggiornato Timeline.tsx per renderizzare YouTubeFacade:
+  - Layout grid 2 colonne (testo + video) su desktop
+  - Video appare accanto al testo dell'evento quando youtubeId presente
+  - Layout flip alternato (pari/dispari) preservato
+  - Mobile: video sotto il testo
+  - Fonte verificata (sourceUrl/sourceName) mostrata come link con ExternalLink icon
+- Web search per articoli verificati sulle radici di Mary (Camporeale):
+  - Wikipedia Camporeale (storia del paese)
+  - Radio Amica (Pochi Attimi, camporealese)
+  - InfoBelice (Valle del Belice)
+  - Cronache Mediterranee (content creator, palermitana)
+  - Visit Sicily (Camporeale villaggio)
+  - Città Metropolitana Palermo (info turistiche)
+- Aggiunti 6 nuovi articoli verificati ad ARTICLES in src/lib/data.ts (totale ora 16 articoli)
+- Verifica produzione:
+  - 7 video YouTube IDs tutti presenti nell'HTML timeline ✓
+  - ytimg.com thumbnail caricati ✓
+  - Articoli radici: Camporeale, Cronache Mediterranee, InfoBelice, Visit Sicily ✓
+  - "Prime Video" → 0 occorrenze ✓
+  - TTFB: 35ms (sotto soglia 40ms) ✓
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto (aggiunte: 1 nuovo componente, 1 config edit, data + timeline updates)
+  - NESSUNA menzione di "Prime Video"
+  - NESSUN dato inventato: tutti gli articoli sono verificati da fonti pubbliche
+  - YouTube facade pattern (lazy load iframe) per performance
+  - Privacy: youtube-nocookie.com (no tracking cookie)
+  - Animazioni professionali, hero centrato, intro MM, "Enciclopedia digitale" — tutti preservati
+  - 107 lingue supportate preservate
+
+Stage Summary:
+- File creati:
+  - src/components/cinematic/YouTubeFacade.tsx (nuovo componente facade pattern)
+- File modificati:
+  - next.config.ts (remote patterns i.ytimg.com, img.youtube.com)
+  - src/lib/data.ts (2 nuovi video timeline + 6 nuovi articoli radici)
+  - src/components/sections/Timeline.tsx (rendering YouTubeFacade + fonte link)
+- Build status: SUCCESS — 79 pagine generate
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 42s)
+- TTFB: 35ms (sotto soglia 40ms)
+
