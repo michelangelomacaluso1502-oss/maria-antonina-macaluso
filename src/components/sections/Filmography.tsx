@@ -30,7 +30,7 @@ export default function Filmography({ compact = false }: { compact?: boolean }) 
                       alt={`Locandina ${f.title}`}
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-contain object-center transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
                   ) : (

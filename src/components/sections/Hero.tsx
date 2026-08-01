@@ -94,7 +94,7 @@ export default function Hero() {
             variants={itemClipRight}
             className="pill-cinema mb-5 inline-block"
           >
-            {HERO_QUOTES[0]}
+            <span>{HERO_QUOTES[0]}</span>
           </motion.span>
 
           {/* H1 — split-line reveal with blur */}
@@ -109,13 +109,13 @@ export default function Hero() {
               variants={itemUp}
               className="block text-gradient-gold"
             >
-              Maria Antonina
+              <span>Maria Antonina</span>
             </motion.span>
             <motion.span
               variants={itemUp}
               className="block"
             >
-              Macaluso
+              <span>Macaluso</span>
             </motion.span>
           </motion.h1>
 
@@ -131,7 +131,7 @@ export default function Hero() {
                 className="text-pretty text-sm leading-relaxed text-cream/85 sm:text-base"
               >
                 <span className="mr-2 text-gold/60">—</span>
-                {q}
+                <span>{q}</span>
               </motion.p>
             ))}
           </motion.div>
@@ -148,10 +148,10 @@ export default function Hero() {
                 className="border-l border-gold/30 pl-3 text-left"
               >
                 <p className="font-display text-3xl text-gradient-gold sm:text-4xl">
-                  {s.value}
+                  <span>{s.value}</span>
                 </p>
                 <p className="mt-1 text-[11px] uppercase tracking-wide-sm text-cream/60">
-                  {s.label}
+                  <span>{s.label}</span>
                 </p>
               </motion.div>
             ))}
@@ -167,14 +167,14 @@ export default function Hero() {
               className="btn-cinema btn-cinema-solid magnetic animate-glow-pulse"
             >
               <BookOpen className="h-4 w-4" />
-              Scopri la biografia
+              <span>Scopri la biografia</span>
             </a>
             <a
               href="/#photobook"
               className="btn-cinema magnetic"
             >
               <Camera className="h-4 w-4" />
-              Guarda il Photo Book
+              <span>Guarda il Photo Book</span>
             </a>
           </motion.div>
         </motion.div>
@@ -189,7 +189,7 @@ export default function Hero() {
         transition={{ delay: 2.4, duration: 0.9, ease: EASE }}
         className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-gold/70 transition-colors hover:text-gold"
       >
-        <span className="text-[10px] uppercase tracking-cinema">Scorri per scoprire</span>
+        <span className="text-[10px] uppercase tracking-cinema"><span>Scorri per scoprire</span></span>
         <span className="relative flex h-9 w-5 items-start justify-center rounded-full border border-gold/40 pt-1.5">
           <span className="animate-scroll-indicator h-1.5 w-1 rounded-full bg-gold" />
         </span>

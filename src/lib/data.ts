@@ -234,7 +234,7 @@ export const FILMS: Film[] = [
     year: "2020",
     title: "Don't Be Silent",
     role: "Attrice",
-    poster: "/images/films/dont-be-silent.jpg",
+    poster: "/images/films/dont-be-silent-v2.jpg",
     director: "Angelo Faraci",
     type: "Cortometraggio",
     production: "Rai Cinema",

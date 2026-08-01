@@ -1942,3 +1942,59 @@ Stage Summary:
 - Build status: SUCCESS
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 44s)
 
+
+---
+Task ID: HERO-TRADUZIONE-DONT-BE-SILENT-POSTER
+Agent: Full-stack developer
+Task: 1) Far tradurre la Hero dal sistema di traduzione 2) Ridimensionare copertina Don't Be Silent
+
+Work Log:
+- PROBLEMA 1: Hero non tradotta
+  - Causa: isTranslatable() salta elementi con children (el.children.length > 0)
+  - La Hero aveva testo direttamente dentro <motion.p>, <motion.span>, <a> che contenevano anche icone o span figli
+  - Fix: avvolto tutti i testi traducibili in <span> foglia (leaf elements senza children)
+  - Elementi aggiornati:
+    - HERO_QUOTES[0] → <span>{HERO_QUOTES[0]}</span>
+    - "Maria Antonina" → <span>Maria Antonina</span>
+    - "Macaluso" → <span>Macaluso</span>
+    - HERO_QUOTES.slice(1) → <span>{q}</span> (separato dal <span>—</span>)
+    - HERO_STATS values → <span>{s.value}</span>
+    - HERO_STATS labels → <span>{s.label}</span>
+    - "Scopri la biografia" → <span>Scopri la biografia</span>
+    - "Guarda il Photo Book" → <span>Guarda il Photo Book</span>
+    - "Scorri per scoprire" → <span>Scorri per scoprire</span>
+  - Ora tutti i testi della Hero sono in elementi <span> foglia → traducibili dal sistema
+
+- PROBLEMA 2: Don't Be Silent copertina non entrava nel riquadro
+  - Causa: poster era stato croppato da landscape (720x508) a portrait (1600x2400) con cover crop (center) → tagliava parte dell'immagine
+  - Fix 1: riottimizzato con CONTAIN fit invece di COVER
+    - Immagine intera visibile in frame 2:3 con sfondo noir (#08070a)
+    - 720x508 → 1600x2400 (489KB) — full image visible, no cropping
+  - Fix 2: cambiato object-cover → object-contain in Filmography.tsx per TUTTI i poster
+    - Ora tutte le locandine si adattano al frame senza tagli
+    - Background gradient visibile dietro eventuali bordi neri
+  - Salvato come dont-be-silent-v2.jpg (cache busting)
+  - Aggiornato riferimento in data.ts
+
+- Verifica produzione:
+  - dont-be-silent-v2.jpg: HTTP 200 ✓
+  - Filmografia usa object-contain ✓
+  - Hero text in leaf spans: <span>Maria Antonina</span>, <span>Macaluso</span>, <span>Scopri la biografia</span>, <span>Guarda il Photo Book</span> ✓
+  - "Prime Video" → 0 occorrenze ✓
+- Regole rispettate:
+  - NON ho intancato la struttura del progetto
+  - NESSUNA menzione di "Prime Video"
+  - Hero testi traducibili (leaf spans per translation system)
+  - Don't Be Silent: immagine intera visibile (contain fit)
+  - Animazioni professionali preservate
+  - 107 lingue supportate preservate
+
+Stage Summary:
+- File creati: scripts/fix-dont-be-silent-contain.js, /public/images/films/dont-be-silent-v2.jpg
+- File modificati:
+  - src/components/sections/Hero.tsx (testi avvolti in <span> foglia per traduzione)
+  - src/lib/data.ts (riferimento poster dont-be-silent-v2.jpg)
+  - src/components/sections/Filmography.tsx (object-cover → object-contain)
+- Build status: SUCCESS
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 45s)
+
