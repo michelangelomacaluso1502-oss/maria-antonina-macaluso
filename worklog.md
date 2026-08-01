@@ -1192,3 +1192,56 @@ Stage Summary:
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 40s)
 - TTFB: 32-44ms
 
+
+---
+Task ID: TIMELINE-LINKS-FIX-VIDEO-GALLERY-SEZIONE
+Agent: Full-stack developer
+Task: Sistemare link YouTube nella timeline + creare sezione dedicata Video con tutti i 7 video
+
+Work Log:
+- TIMELINE modifiche:
+  1. "Ciò che non ti ho detto" (2018): sostituito youtubeId mjGQPlM4qg0 → N3irUShU0eU, title "Ciò che non ti ho detto — Revolution"
+  2. "Il Mistero di Spartivento" (2024-2025): RIMOSSO youtubeId e youtubeTitle
+  3. "Pochi Attimi" (2026): RIMOSSO youtubeId e youtubeTitle
+- Creato array VIDEO_GALLERY in src/lib/data.ts con tutti i 7 video YouTube forniti:
+  - Interfaccia VideoItem: id, youtubeId, title, category, year, relatedFilm
+  - 7 video con categoria (cortometraggio, fiction, lungometraggio), anno, film associato
+  - Mapping corretto basato sui titoli reali YouTube (oEmbed):
+    1. 1Org85u4MqI → Separati Mai (2023, lungometraggio)
+    2. Ati69QDU8MI → Pietrazita (2023, cortometraggio)
+    3. 1NMm-4a8lwo → Don't Be Silent (2020, cortometraggio)
+    4. mjGQPlM4qg0 → Ciò Che Non Ti Ho Detto 3 (2018, fiction)
+    5. LVQqo0Kes5o → Provvidenza (2022, cortometraggio)
+    6. N3irUShU0eU → Ciò che non ti ho detto Revolution (2024, fiction)
+    7. tc0gmpaxKT0 → Ciò che non ti ho detto Revolution 2 (2026, fiction)
+- Creato componente VideoGallery (src/components/sections/VideoGallery.tsx):
+  - Grid responsive: sm:grid-cols-2 lg:grid-cols-3
+  - Ogni video in glass-card card-lift-premium con padding
+  - YouTubeFacade component (facade pattern: thumbnail + play → iframe lazy load)
+  - Mostra: anno, categoria, titolo, film associato
+  - Animazioni Reveal con stagger
+- Aggiunto <VideoGallery /> alla homepage (src/app/page.tsx) tra Filmography e Timeline
+- Verifica produzione:
+  - Sezione "Galleria multimediale" con id="video" presente ✓
+  - 7 YouTube IDs tutti presenti nella video gallery ✓
+  - Timeline "Il Mistero di Spartivento" → 0 youtubeId ✓
+  - Timeline "Pochi Attimi" → 0 youtubeId ✓
+  - "Prime Video" → 0 occorrenze ✓
+  - TTFB: 32ms (sotto soglia 40ms) ✓
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto (aggiunte: 1 nuovo componente, 1 nuovo array data, 1 page edit)
+  - NESSUNA menzione di "Prime Video"
+  - YouTube facade pattern preservato (lazy load iframe)
+  - Animazioni professionali, hero centrato, intro MM, "Enciclopedia digitale" — tutti preservati
+  - 107 lingue supportate preservate
+
+Stage Summary:
+- File creati:
+  - src/components/sections/VideoGallery.tsx (nuova sezione dedicata)
+- File modificati:
+  - src/lib/data.ts (VIDEO_GALLERY array + TIMELINE: sostituito 1 link, rimossi 2 link)
+  - src/app/page.tsx (aggiunto <VideoGallery /> tra Filmography e Timeline)
+- Build status: SUCCESS
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 44s)
+- TTFB: 32ms
+

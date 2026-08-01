@@ -3,6 +3,7 @@ import Prologue from "@/components/sections/Prologue";
 import Biography from "@/components/sections/Biography";
 import AngeloFaraci from "@/components/sections/AngeloFaraci";
 import Filmography from "@/components/sections/Filmography";
+import VideoGallery from "@/components/sections/VideoGallery";
 import Timeline from "@/components/sections/Timeline";
 import Awards from "@/components/sections/Awards";
 import Festivals from "@/components/sections/Festivals";
@@ -21,6 +22,7 @@ export default function HomePage() {
       <Biography />
       <AngeloFaraci />
       <Filmography />
+      <VideoGallery />
       <Timeline />
       <Awards />
       <Festivals />

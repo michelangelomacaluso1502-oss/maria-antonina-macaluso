@@ -539,8 +539,8 @@ export const TIMELINE: TimelineEvent[] = [
       "Fiction TV ideata da Angelo Faraci per Sky. Angelo è attore protagonista nel ruolo di Gaetano Scalici per cinque anni. L'unica serie tv italiana di soli siciliani e volti isolani noti. Maria Antonina partecipa alla fiction, confermata da IMDb.",
     sourceUrl: "https://www.imdb.com/it/name/nm14708762",
     sourceName: "IMDb",
-    youtubeId: "mjGQPlM4qg0",
-    youtubeTitle: "Ciò Che Non Ti Ho Detto 3",
+    youtubeId: "N3irUShU0eU",
+    youtubeTitle: "Ciò che non ti ho detto — Revolution",
   },
   {
     year: "2019",
@@ -609,8 +609,6 @@ export const TIMELINE: TimelineEvent[] = [
     title: "Il Mistero di Spartivento",
     description:
       "Lungometraggio Rai Cinema, regia Angelo Faraci. Suspense mediterraneo. Un mistero che si snoda tra i venti della Sicilia.",
-    youtubeId: "N3irUShU0eU",
-    youtubeTitle: "Ciò che non ti ho detto — Revolution",
   },
   {
     year: "2025",
@@ -625,8 +623,6 @@ export const TIMELINE: TimelineEvent[] = [
       "Lungometraggio diretto da Angelo Faraci. Il punto più alto, finora, del percorso artistico condiviso. Cast: Faraci, Lo Porto, Borgese, Martines, Romano, Barbera, Drovandi, Spata.",
     sourceUrl: "https://www.infobelice.it/2025/12/20/la-valle-del-belice-raccontata-dal-cinema-la-camporealese-maria-antonina-macaluso-nel-film-pochi-attimi-di-angelo-faraci",
     sourceName: "InfoBelice",
-    youtubeId: "tc0gmpaxKT0",
-    youtubeTitle: "Ciò che non ti ho detto — Revolution 2",
   },
 ];
 
@@ -880,6 +876,78 @@ export interface FAQItem {
   question: string;
   answer: string;
 }
+
+// === VIDEO GALLERY — tutti i video YouTube forniti ===
+export interface VideoItem {
+  id: string;
+  youtubeId: string;
+  title: string;
+  /** Categoria per filtraggio */
+  category: "cortometraggio" | "fiction" | "lungometraggio" | "relazione";
+  /** Anno di riferimento */
+  year: string;
+  /** Film/opera associata */
+  relatedFilm?: string;
+}
+
+export const VIDEO_GALLERY: VideoItem[] = [
+  {
+    id: "v1",
+    youtubeId: "1Org85u4MqI",
+    title: "Separati Mai — Rai Cinema",
+    category: "lungometraggio",
+    year: "2023",
+    relatedFilm: "Separati Mai",
+  },
+  {
+    id: "v2",
+    youtubeId: "Ati69QDU8MI",
+    title: "Pietrazita — Sottotitoli definitivo",
+    category: "cortometraggio",
+    year: "2023",
+    relatedFilm: "Pietrazita",
+  },
+  {
+    id: "v3",
+    youtubeId: "1NMm-4a8lwo",
+    title: "Don't be silent — Cortometraggio di Angelo Faraci",
+    category: "cortometraggio",
+    year: "2020",
+    relatedFilm: "Don't Be Silent",
+  },
+  {
+    id: "v4",
+    youtubeId: "mjGQPlM4qg0",
+    title: "Ciò Che Non Ti Ho Detto 3",
+    category: "fiction",
+    year: "2018",
+    relatedFilm: "Ciò che non ti ho detto",
+  },
+  {
+    id: "v5",
+    youtubeId: "LVQqo0Kes5o",
+    title: "Provvidenza — Rai Cinema di Angelo Faraci",
+    category: "cortometraggio",
+    year: "2022",
+    relatedFilm: "Provvidenza",
+  },
+  {
+    id: "v6",
+    youtubeId: "N3irUShU0eU",
+    title: "Ciò che non ti ho detto — Revolution",
+    category: "fiction",
+    year: "2024",
+    relatedFilm: "Ciò che non ti ho detto",
+  },
+  {
+    id: "v7",
+    youtubeId: "tc0gmpaxKT0",
+    title: "Ciò che non ti ho detto — Revolution 2",
+    category: "fiction",
+    year: "2026",
+    relatedFilm: "Pochi Attimi",
+  },
+];
 
 export const FAQS: FAQItem[] = [
   { question: "Quando e dove è nata Maria Antonina Macaluso?", answer: "Maria Antonina Macaluso è nata a Bologna il 9 novembre 2001 ed è cresciuta a Camporeale, in provincia di Palermo." },
