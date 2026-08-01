@@ -33,17 +33,17 @@ export default function IntroLoader() {
     document.body.style.overflow = "hidden";
 
     const timers: ReturnType<typeof setTimeout>[] = [];
-    timers.push(setTimeout(() => setPhase(1), 300));   // icona
-    timers.push(setTimeout(() => setPhase(2), 800));   // sottotitolo
-    timers.push(setTimeout(() => setPhase(3), 1500));  // MAM monogramma
-    timers.push(setTimeout(() => setPhase(4), 2800));  // nome completo
-    timers.push(setTimeout(() => setPhase(5), 3500));  // barra caricamento
-    timers.push(setTimeout(() => setPhase(6), 4800));  // fadeout
+    timers.push(setTimeout(() => setPhase(1), 400));   // icona
+    timers.push(setTimeout(() => setPhase(2), 1000));  // sottotitolo
+    timers.push(setTimeout(() => setPhase(3), 1800));  // MAM monogramma
+    timers.push(setTimeout(() => setPhase(4), 3400));  // nome completo
+    timers.push(setTimeout(() => setPhase(5), 4200));  // barra caricamento
+    timers.push(setTimeout(() => setPhase(6), 5800));  // fadeout
     timers.push(
       setTimeout(() => {
         setVisible(false);
         document.body.style.overflow = "";
-      }, 5500),
+      }, 6500),
     );
 
     return () => {
