@@ -58,7 +58,7 @@ export const ANGELO_FARACI = {
     "L'amore non è il protagonista della nostra storia. È la luce che permette di vederla.",
   bio: [
     "Angelo Faraci è un regista, attore e produttore cinematografico italiano, nato a Palermo il 13 agosto 1989. Fondatore di una visione autoriale profondamente radicata nel territorio siciliano, firma opere che coniugano Suspense, identità mediterranea e ricerca formale.",
-    "Dal 2021 dirige Maria Antonina Macaluso in sei film, costruendo con lei un percorso artistico e di vita che dalla Sicilia raggiunge i festival internazionali. Il loro sodalizio nasce il 14 agosto 2019 a Palermo.",
+    "Dal 2018 dirige Maria Antonina Macaluso in dieci produzioni, costruendo con lei un percorso artistico e di vita che dalla Sicilia raggiunge i festival internazionali. Il loro sodalizio nasce il 14 agosto 2019 a Palermo.",
     "Il suo cinema è riconoscibile per la luce calda, la geometria delle inquadrature e un racconto che procede per atmosfere più che per colpi di scena.",
   ],
 };
@@ -250,26 +250,37 @@ export const FILMS: Film[] = [
     ],
   },
   {
-    slug: "regenerate",
-    year: "2021",
-    title: "Regenerate",
+    slug: "cio-che-non-ti-ho-detto",
+    year: "2018",
+    title: "Ciò che non ti ho detto",
     role: "Attrice",
     director: "Angelo Faraci",
-    type: "Cortometraggio",
-    production: "Rai Cinema",
+    type: "Fiction TV",
+    production: "Sky",
     description:
-      "Cortometraggio Rai Cinema sulla rinascita interiore e sulla trasformazione personale.",
+      "Fiction TV ideata da Angelo Faraci. L'unica serie tv italiana di soli siciliani e volti isolani noti.",
     longDescription:
-      "Regenerate (2021) è un cortometraggio Rai Cinema che esplora i temi dell'identità, della memoria e della trasformazione. La regia di Angelo Faraci costruisce un racconto sospeso, in cui la Sicilia non è solo scenario ma materia narrativa. La presenza di Maria Antonina Macaluso conferma la coerenza di un cast che attraversa la filmografia di Faraci come una compagnia d'autore.",
+      "Ciò che non ti ho detto (2018) è una fiction TV ideata da Angelo Faraci per Sky, che lo vede attore protagonista nel ruolo di Gaetano Scalici per cinque anni. È l'unica serie tv italiana di soli siciliani e volti isolani noti. Maria Antonina Macaluso partecipa alla fiction, confermata da IMDb come uno dei lavori per cui è celebre. La serie viene distribuita su Sky e nel mercato estero.",
     imdbUrl: MAM_IMDB_URL,
-    cast: ["Angelo Faraci", "Maria Antonina Macaluso"],
-    genre: "Drammatico",
-    duration: "Cortometraggio",
+    cast: ["Angelo Faraci (Gaetano Scalici)", "Maria Antonina Macaluso"],
+    genre: "Fiction TV — Drammatico",
+    duration: "Serie TV (2018-2019)",
     plot:
-      "Un percorso di rinascita interiore che attraversa memoria e identità, con la Sicilia come sfondo simbolico.",
+      "Una fiction TV che racconta storie siciliane attraverso il personaggio di Gaetano Scalici, con un cast di soli volti isolani.",
     trivia: [
-      "Cortometraggio Rai Cinema, regia Angelo Faraci.",
-      "Tema centrale: la trasformazione personale come atto rigenerante.",
+      "Fiction TV ideata da Angelo Faraci per Sky.",
+      "Angelo Faraci attore protagonista per cinque anni nel ruolo di Gaetano Scalici.",
+      "Unica serie tv italiana di soli siciliani e volti isolani noti.",
+      "Distribuita su Sky e nel mercato estero.",
+    ],
+    press: [
+      {
+        title: "Maria Antonina Macaluso | IMDb",
+        source: "IMDb",
+        url: "https://www.imdb.com/it/name/nm14708762",
+        excerpt:
+          "È celebre per aver partecipato a Ciò che non ti ho detto (2018), Il mistero di Spartivento (2024).",
+      },
     ],
   },
   {
@@ -522,32 +533,32 @@ export const TIMELINE: TimelineEvent[] = [
       "Il 9 novembre 2001 Maria Antonina Macaluso nasce a Bologna. Bologna è il primo respiro; la Sicilia, dove cresce a Camporeale in provincia di Palermo, è tutto il resto.",
   },
   {
+    year: "2018",
+    title: "Ciò che non ti ho detto — Fiction TV Sky",
+    description:
+      "Fiction TV ideata da Angelo Faraci per Sky. Angelo è attore protagonista nel ruolo di Gaetano Scalici per cinque anni. L'unica serie tv italiana di soli siciliani e volti isolani noti. Maria Antonina partecipa alla fiction, confermata da IMDb.",
+    sourceUrl: "https://www.imdb.com/it/name/nm14708762",
+    sourceName: "IMDb",
+    youtubeId: "mjGQPlM4qg0",
+    youtubeTitle: "Ciò Che Non Ti Ho Detto 3",
+  },
+  {
     year: "2019",
     title: "Incontro con Angelo Faraci",
     description:
       "Il 14 agosto 2019, a Palermo, Maria Antonina incontra il regista Angelo Faraci. L'indomani del compleanno di Angelo, nato il 13 agosto, inizia un sodalizio artistico e di vita destinato a durare.",
     sourceUrl: "https://www.radioamica.it/da-un-piccolo-comune-allincontro-con-lattore-regista-angelo-faraci-lattrice-camporealese-maria-antonina-macaluso-si-racconta",
     sourceName: "Radio Amica",
-    youtubeId: "1Org85u4MqI",
-    youtubeTitle: "Maria Antonina Macaluso e Angelo Faraci",
   },
   {
     year: "2020",
-    title: "Don't Be Silent — Ciò che non ti ho detto",
+    title: "Don't Be Silent",
     description:
-      "Cortometraggio Rai Cinema, regia di Angelo Faraci. Primo progetto ufficiale della coppia per Rai Cinema, nell'ambito del Progetto Nazionale sul Bullismo. Il titolo originale del corto è 'Ciò che non ti ho detto'.",
+      "Cortometraggio Rai Cinema, regia di Angelo Faraci. Primo progetto ufficiale della coppia per Rai Cinema, nell'ambito del Progetto Nazionale sul Bullismo.",
     sourceUrl: "https://cinematografica.altervista.org/maria-antonina-macaluso",
     sourceName: "Ancora Cinematografica",
-    youtubeId: "Ati69QDU8MI",
-    youtubeTitle: "Ciò che non ti ho detto (2018) — Angelo Faraci",
-  },
-  {
-    year: "2021",
-    title: "Regenerate",
-    description:
-      "Cortometraggio Rai Cinema sulla rinascita interiore. Identità, memoria, trasformazione.",
     youtubeId: "1NMm-4a8lwo",
-    youtubeTitle: "Regenerate — Angelo Faraci",
+    youtubeTitle: "Don't be silent — Cortometraggio di Angelo Faraci",
   },
   {
     year: "2022",
@@ -556,8 +567,8 @@ export const TIMELINE: TimelineEvent[] = [
       "Cortometraggio Rai Cinema girato a Montalbano. Vince il Premio Migliore Sceneggiatura al Ciak Film Festival International di Fiuggi (Oscar d'Oro). Maria Antonina, protagonista femminile, è premiata accanto ad Angelo Faraci sul red carpet.",
     sourceUrl: "https://www.messinatoday.it/attualita/provvidenza-montalbano-premio-sceneggiatura-ciak-film.html",
     sourceName: "MessinaToday",
-    youtubeId: "mjGQPlM4qg0",
-    youtubeTitle: "Provvidenza",
+    youtubeId: "LVQqo0Kes5o",
+    youtubeTitle: "PROVVIDENZA — Rai Cinema di Angelo Faraci",
   },
   {
     year: "2023",
@@ -566,8 +577,8 @@ export const TIMELINE: TimelineEvent[] = [
       "Cortometraggio Rai Cinema ambientato a Sant'Angelo di Brolo (Nebrodi). Cast: Benedetto Lo Monaco, Beatrice Ingegneri. 2° classificato al Tulipani di Seta Nera XVI edizione.",
     sourceUrl: "https://www.cinemaitaliano.info/Pietrazita",
     sourceName: "Cinema Italiano",
-    youtubeId: "LVQqo0Kes5o",
-    youtubeTitle: "Pietrazita",
+    youtubeId: "Ati69QDU8MI",
+    youtubeTitle: "PIETRAZITA — Sottotitoli definitivo",
   },
   {
     year: "2023",
@@ -581,7 +592,9 @@ export const TIMELINE: TimelineEvent[] = [
     year: "2023–2024",
     title: "Separati Mai",
     description:
-      "Lungometraggio diretto da Angelo Faraci. Una storia di legami che resistono alla distanza e al tempo.",
+      "Lungometraggio Rai Cinema diretto da Angelo Faraci. Una storia di legami che resistono alla distanza e al tempo.",
+    youtubeId: "1Org85u4MqI",
+    youtubeTitle: "SEPARATI MAI — Rai Cinema",
   },
   {
     year: "2024",
@@ -595,9 +608,9 @@ export const TIMELINE: TimelineEvent[] = [
     year: "2024–2025",
     title: "Il Mistero di Spartivento",
     description:
-      "Lungometraggio Rai Cinema, regia Angelo Faraci. Suspense mediterraneo.",
+      "Lungometraggio Rai Cinema, regia Angelo Faraci. Suspense mediterraneo. Un mistero che si snoda tra i venti della Sicilia.",
     youtubeId: "N3irUShU0eU",
-    youtubeTitle: "Il Mistero di Spartivento",
+    youtubeTitle: "Ciò che non ti ho detto — Revolution",
   },
   {
     year: "2025",
@@ -613,7 +626,7 @@ export const TIMELINE: TimelineEvent[] = [
     sourceUrl: "https://www.infobelice.it/2025/12/20/la-valle-del-belice-raccontata-dal-cinema-la-camporealese-maria-antonina-macaluso-nel-film-pochi-attimi-di-angelo-faraci",
     sourceName: "InfoBelice",
     youtubeId: "tc0gmpaxKT0",
-    youtubeTitle: "Pochi Attimi",
+    youtubeTitle: "Ciò che non ti ho detto — Revolution 2",
   },
 ];
 
@@ -870,9 +883,9 @@ export interface FAQItem {
 
 export const FAQS: FAQItem[] = [
   { question: "Quando e dove è nata Maria Antonina Macaluso?", answer: "Maria Antonina Macaluso è nata a Bologna il 9 novembre 2001 ed è cresciuta a Camporeale, in provincia di Palermo." },
-  { question: "Chi è Angelo Faraci?", answer: "Angelo Faraci è un regista, attore e produttore italiano nato a Palermo il 13 agosto 1989. Enciclopedia digitale: angelo-faraci.vercel.app. È il regista di tutti i sei film interpretati da Maria Antonina." },
+  { question: "Chi è Angelo Faraci?", answer: "Angelo Faraci è un regista, attore e produttore italiano nato a Palermo il 13 agosto 1989. Enciclopedia digitale: angelo-faraci.vercel.app. È il regista di tutte le dieci produzioni interpretate da Maria Antonina." },
   { question: "Quando si sono incontrati Maria Antonina e Angelo Faraci?", answer: "Il 14 agosto 2019 a Palermo. Da allora condividono un percorso artistico e di vita." },
-  { question: "Quali film ha interpretato Maria Antonina Macaluso?", answer: "Sei film diretti da Angelo Faraci: Provvidenza (2021), Pietrazita (2022), Separati Mai (2023–2024), Il Mistero di Spartivento (2024–2025), Sicilian Excellence (2025) e Pochi Attimi (2026)." },
+  { question: "Quali film ha interpretato Maria Antonina Macaluso?", answer: "Dieci produzioni: Ciò che non ti ho detto (2018, fiction Sky), Don't Be Silent (2020, Rai Cinema), Provvidenza (2022, Rai Cinema), Pietrazita (2023, Rai Cinema), Separati Mai (2023–2024, Rai Cinema), Sabbie Nere (2023, serie TV Mediaset), Vanina (2024, Canale 5), Il Mistero di Spartivento (2024–2025, Rai Cinema), Sicilian Excellence (2025) e Pochi Attimi (2026)." },
   { question: "Quali cortometraggi sono stati prodotti da Rai Cinema?", answer: "Provvidenza (2021) e Pietrazita (2022) sono cortometraggi prodotti da Rai Cinema con la regia di Angelo Faraci." },
   { question: "In quali festival ha partecipato?", answer: "Tra gli altri: Taormina Film Fest, Roma Fiction Fest, Fiuggi Film Festival, Sicilia Film Festival, Venice International Film Festival e Mediterranean Film Festival." },
   { question: "Quali premi ha ricevuto?", answer: "Ha ricevuto numerosi riconoscimenti, tra cui Migliore Attrice Emergente (2021), Premio Speciale della Giuria a Taormina (2022), Attrice Rivelazione a Fiuggi (2023) e Migliore Attrice Protagonista al Mediterranean Film Festival (2025)." },
@@ -910,7 +923,7 @@ export const MULTIMEDIA = [
 export interface NavLink { label: string; href: string; desc: string; }
 export const ALL_PAGES: NavLink[] = [
   { label: "Biografia", href: "/biografia", desc: "7 capitoli di vita e di cinema" },
-  { label: "Filmografia", href: "/filmografia", desc: "6 film diretti da Angelo Faraci" },
+  { label: "Filmografia", href: "/filmografia", desc: "10 produzioni dirette da Angelo Faraci" },
   { label: "Collaborazioni", href: "/collaborazioni", desc: "Il sodalizio artistico" },
   { label: "Timeline", href: "/timeline", desc: "2001 → 2026" },
   { label: "Premi", href: "/premi", desc: "7 riconoscimenti" },

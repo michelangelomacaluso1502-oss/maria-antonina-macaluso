@@ -11,7 +11,7 @@ export default function Filmography({ compact = false }: { compact?: boolean }) 
       <div className="cinematic-container">
         <SectionHeading
           eyebrow="Filmografia"
-          title="Sei film, una visione"
+          title="Dieci produzioni, una visione"
           subtitle="Dal debutto Provvidenza (2021) a Pochi Attimi (2026) — tutti diretti da Angelo Faraci"
         />
 
