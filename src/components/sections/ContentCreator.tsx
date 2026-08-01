@@ -1,6 +1,7 @@
 import { SOCIAL, MAM_PROFILES } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
 import SectionHeading from "./SectionHeading";
+import Image from "next/image";
 import {
   Instagram,
   Facebook,
@@ -11,6 +12,7 @@ import {
   Sparkles,
   Mail,
   Newspaper,
+  Camera,
 } from "lucide-react";
 
 // Mappa icone → componenti lucide
@@ -126,6 +128,50 @@ export default function ContentCreator() {
                     mariantonina63@gmail.com
                   </a>
                 </div>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* === Galleria foto Content Creator === */}
+          <Reveal delay={80}>
+            <div>
+              <div className="mb-6 flex items-center gap-3">
+                <Camera className="h-6 w-6 text-gold" />
+                <h3 className="font-display text-xl text-gold/90 uppercase tracking-wide-sm">
+                  Galleria
+                </h3>
+              </div>
+              <div className="grid gap-6 sm:grid-cols-2">
+                <figure className="glass-card card-lift-premium group overflow-hidden p-2">
+                  <div className="zoom-wrap relative aspect-[4/5] w-full overflow-hidden">
+                    <Image
+                      src="/images/content-creator/beauty-creator.jpg"
+                      alt="Maria Antonina Macaluso — Beauty Content Creator"
+                      fill
+                      sizes="(min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption className="px-3 py-2 text-center text-[11px] uppercase tracking-wide-sm text-cream/50">
+                    Beauty Content Creator
+                  </figcaption>
+                </figure>
+                <figure className="glass-card card-lift-premium group overflow-hidden p-2">
+                  <div className="zoom-wrap relative aspect-[4/5] w-full overflow-hidden">
+                    <Image
+                      src="/images/content-creator/red-carpet-taormina.jpg"
+                      alt="Maria Antonina Macaluso — Red carpet Taormina Film Festival 2025"
+                      fill
+                      sizes="(min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption className="px-3 py-2 text-center text-[11px] uppercase tracking-wide-sm text-cream/50">
+                    Red carpet — Taormina Film Festival 2025
+                  </figcaption>
+                </figure>
               </div>
             </div>
           </Reveal>
