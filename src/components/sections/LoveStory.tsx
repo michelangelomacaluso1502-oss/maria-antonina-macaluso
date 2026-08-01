@@ -3,7 +3,7 @@ import { Reveal } from "@/components/cinematic/Reveal";
 import SectionHeading from "./SectionHeading";
 import { Heart, Calendar, MapPin, Film, ExternalLink } from "lucide-react";
 
-// 20 foto della relazione Angelo & Maria Antonina
+// 22 foto della relazione Angelo & Maria Antonina
 const RELATION_PHOTOS = [
   { src: "/images/relation/rel-01.jpg", alt: "Angelo e Maria Antonina insieme", span: "tall" },
   { src: "/images/relation/rel-02.jpg", alt: "Angelo e Maria Antonina — momento together", span: "normal" },
@@ -25,6 +25,8 @@ const RELATION_PHOTOS = [
   { src: "/images/relation/rel-18.jpg", alt: "Angelo e Maria Antonina — ritratto di coppia", span: "normal" },
   { src: "/images/relation/rel-19.jpg", alt: "Angelo e Maria Antonina — sorrisi", span: "normal" },
   { src: "/images/relation/rel-20.jpg", alt: "Angelo e Maria Antonina — insieme", span: "normal" },
+  { src: "/images/relation/rel-21.jpg", alt: "Angelo e Maria Antonina — insieme", span: "tall" },
+  { src: "/images/relation/rel-22.jpg", alt: "Angelo e Maria Antonina — centro storico", span: "wide" },
 ];
 
 // Tappe principali della relazione
@@ -102,7 +104,7 @@ export default function LoveStory() {
           <div className="mb-6 flex items-center gap-3">
             <Heart className="h-6 w-6 text-rose" />
             <h3 className="font-display text-xl text-gold/90 uppercase tracking-wide-sm">
-              Galleria — 20 scatti della relazione
+              Galleria — 22 scatti della relazione
             </h3>
           </div>
         </Reveal>
