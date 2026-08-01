@@ -2,6 +2,7 @@ import Hero from "@/components/sections/Hero";
 import Prologue from "@/components/sections/Prologue";
 import Biography from "@/components/sections/Biography";
 import AngeloFaraci from "@/components/sections/AngeloFaraci";
+import LoveStory from "@/components/sections/LoveStory";
 import Filmography from "@/components/sections/Filmography";
 import VideoGallery from "@/components/sections/VideoGallery";
 import Timeline from "@/components/sections/Timeline";
@@ -22,6 +23,7 @@ export default function HomePage() {
       <Prologue />
       <Biography />
       <AngeloFaraci />
+      <LoveStory />
       <Filmography />
       <VideoGallery />
       <Timeline />
