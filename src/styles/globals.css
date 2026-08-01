@@ -589,13 +589,12 @@ body {
 }
 
 /* ============================================
-   INTRO LOADER — Pre-entry cinematografica
-   5 atti: tende → glow → MAM → linea → tagline
-   BULLETPROOF: CSS-only, no JS required
+   INTRO PRE-ENTRY — Cinematografica CSS-only
+   Nessun JS richiesto — funziona dal primo byte HTML
    ============================================ */
 
 /* Container principale */
-.intro-loader {
+.intro-pre-entry {
   position: fixed;
   inset: 0;
   z-index: 99999;
@@ -606,246 +605,188 @@ body {
   overflow: hidden;
   visibility: visible;
   opacity: 1;
-  /* Lifecycle: 4.5s totali — visibile fino a 3.8s, fade-out 3.8s→4.5s */
-  animation: intro-lifecycle 4.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: intro-pre-lifecycle 6.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   will-change: opacity, transform, visibility;
 }
 
-@keyframes intro-lifecycle {
+@keyframes intro-pre-lifecycle {
   0% { opacity: 1; visibility: visible; transform: translateY(0); }
-  84% { opacity: 1; visibility: visible; transform: translateY(0); }
-  98% { opacity: 0; visibility: visible; transform: translateY(-40px); pointer-events: none; }
-  100% { opacity: 0; visibility: hidden; transform: translateY(-40px); pointer-events: none; }
+  89% { opacity: 1; visibility: visible; transform: translateY(0); }
+  98% { opacity: 0; visibility: visible; transform: translateY(-30px); pointer-events: none; }
+  100% { opacity: 0; visibility: hidden; transform: translateY(-30px); pointer-events: none; }
 }
 
-/* === ATTO 1: Tende cinematografiche === */
-.intro-curtain {
+/* Letterbox bars */
+.intro-bar {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50.5%;
-  background: linear-gradient(to right, #08070a, #0d0b10);
+  inset-inline: 0;
+  background: #000;
   z-index: 3;
-  box-shadow: 0 0 80px rgba(0, 0, 0, 0.8);
 }
-.intro-curtain-left {
-  left: 0;
-  animation: intro-curtain-left 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.2s forwards;
+.intro-bar-top {
+  top: 0;
+  height: 0;
+  animation: intro-bar-grow 0.7s ease-out forwards;
 }
-.intro-curtain-right {
-  right: 0;
-  animation: intro-curtain-right 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.2s forwards;
+.intro-bar-bottom {
+  bottom: 0;
+  height: 0;
+  animation: intro-bar-grow 0.7s ease-out forwards;
 }
-@keyframes intro-curtain-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-101%); }
-}
-@keyframes intro-curtain-right {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(101%); }
+@keyframes intro-bar-grow {
+  0% { height: 0; }
+  100% { height: 8vh; }
 }
 
-/* === ATTO 2: Glow dorato pulsante dietro il monogramma === */
-.intro-glow {
+/* Glow dorato */
+.intro-glow-orb {
   position: absolute;
   width: 60vw;
   height: 60vw;
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 400px;
+  max-height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(201, 169, 106, 0.15) 0%, rgba(201, 169, 106, 0.05) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(201,169,106,0.18) 0%, rgba(201,169,106,0.05) 40%, transparent 70%);
   z-index: 1;
   opacity: 0;
-  animation: intro-glow-pulse 3s ease-in-out 0.3s forwards;
+  transform: scale(0.5);
+  animation: intro-glow-reveal 1.5s ease-out 1.8s forwards;
 }
-@keyframes intro-glow-pulse {
+@keyframes intro-glow-reveal {
   0% { opacity: 0; transform: scale(0.5); }
-  30% { opacity: 1; transform: scale(1); }
-  60% { opacity: 0.6; transform: scale(1.1); }
-  100% { opacity: 0.3; transform: scale(1.2); }
+  40% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.4; transform: scale(1.15); }
 }
 
-/* === ATTO 3: Particelle d'oro fluttuanti === */
-.intro-particles {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  overflow: hidden;
-}
-.intro-particle {
-  position: absolute;
-  bottom: -10px;
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  background: #c9a96a;
-  box-shadow: 0 0 6px rgba(201, 169, 106, 0.8);
-  opacity: 0;
-  animation: intro-particle-float 3.5s ease-out 0.4s forwards;
-}
-@keyframes intro-particle-float {
-  0% { opacity: 0; bottom: -10px; transform: translateX(0); }
-  10% { opacity: 0.8; }
-  80% { opacity: 0.4; }
-  100% { opacity: 0; bottom: 110vh; transform: translateX(20px); }
-}
-
-/* === Contenuto centrale === */
-.intro-loader-inner {
+/* Contenuto centrale */
+.intro-content {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
   z-index: 4;
+  text-align: center;
+  padding: 0 1.5rem;
 }
 
-/* Monogramma MM */
-.intro-mm-wrap {
+/* Icona film */
+.intro-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: scale(0.7);
+  animation: intro-icon-reveal 0.8s ease-out 0.4s forwards;
+}
+@keyframes intro-icon-reveal {
+  0% { opacity: 0; transform: scale(0.7); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Sottotitolo */
+.intro-subtitle-text {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: rgba(201, 169, 106, 0.7);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: intro-subtitle-reveal-pre 0.8s ease-out 1.0s forwards;
+}
+@keyframes intro-subtitle-reveal-pre {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Monogramma M·M */
+.intro-monogram {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.1em;
-  font-family: "Italiana", "Cormorant Garamond", serif;
-  font-size: clamp(5rem, 18vw, 11rem);
-  line-height: 1;
-  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(30px) scale(0.9);
+  filter: blur(16px);
+  animation: intro-mono-reveal 1.2s ease-out 1.8s forwards;
+}
+@keyframes intro-mono-reveal {
+  0% { opacity: 0; transform: translateY(30px) scale(0.9); filter: blur(16px); }
+  50% { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
 }
 
-.intro-mm-letter {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(60px) scale(0.85);
-  filter: blur(20px);
-  animation: intro-letter-reveal 1.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+.intro-m-letter {
+  font-family: "Italiana", "Cormorant Garamond", serif;
+  font-size: clamp(3.5rem, 12vw, 6rem);
+  line-height: 1;
   background: linear-gradient(180deg, #f5efe4 0%, #c9a96a 50%, #8a6f3f 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 80px rgba(201, 169, 106, 0.4);
+  text-shadow: 0 0 60px rgba(201, 169, 106, 0.4);
 }
 
-.intro-mm-dot {
-  font-size: 0.55em;
-  -webkit-text-fill-color: #d4a5a5;
-  filter: blur(0);
-  transform: translateY(-0.15em) scale(0.3);
-  animation: intro-dot-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+.intro-m-dot {
+  font-family: "Italiana", "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: #d4a5a5;
+  transform: translateY(-0.1em);
 }
 
-@keyframes intro-letter-reveal {
-  0% {
-    opacity: 0;
-    transform: translateY(60px) scale(0.85);
-    filter: blur(20px);
-  }
-  50% {
-    opacity: 1;
-    filter: blur(0);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-  }
-}
-
-@keyframes intro-dot-reveal {
-  0% { opacity: 0; transform: translateY(-0.15em) scale(0.2); }
-  60% { opacity: 0.8; transform: translateY(-0.15em) scale(0.7); }
-  100% { opacity: 1; transform: translateY(-0.15em) scale(0.6); }
-}
-
-/* === ATTO 4: Linea oro che si disegna === */
-.intro-line {
-  display: block;
-  width: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #c9a96a 20%,
-    #f5efe4 50%,
-    #c9a96a 80%,
-    transparent
-  );
-  box-shadow: 0 0 10px rgba(201, 169, 106, 0.5);
-  animation: intro-line-draw 1.6s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards;
-}
-
-@keyframes intro-line-draw {
-  0% { width: 0; opacity: 0; }
-  15% { opacity: 1; }
-  100% { width: clamp(200px, 35vw, 380px); opacity: 1; }
-}
-
-/* === Sottotitolo === */
-.intro-subtitle {
-  font-family: "Inter", sans-serif;
-  font-size: 0.7rem;
-  font-weight: 300;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
+/* Nome completo */
+.intro-fullname {
+  font-family: "Italiana", "Cormorant Garamond", serif;
+  font-size: clamp(1.25rem, 4vw, 2rem);
   color: #f5efe4;
   opacity: 0;
-  transform: translateY(10px);
-  animation: intro-subtitle-reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) 2.0s forwards;
+  transform: translateY(20px);
+  animation: intro-name-reveal 0.8s ease-out 3.4s forwards;
+}
+@keyframes intro-name-reveal {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes intro-subtitle-reveal {
-  0% { opacity: 0; transform: translateY(10px); filter: blur(6px); }
-  100% { opacity: 0.8; transform: translateY(0); filter: blur(0); }
-}
-
-/* === Tagline === */
-.intro-tagline {
-  font-family: "Italiana", "Cormorant Garamond", serif;
-  font-size: 0.85rem;
-  font-style: italic;
+.intro-name-gold {
   color: #c9a96a;
+  font-style: italic;
+}
+
+/* Barra caricamento */
+.intro-progress-track {
+  margin: 2rem auto 0;
+  width: 12rem;
+  height: 1px;
+  background: rgba(245, 239, 228, 0.15);
+  overflow: hidden;
   opacity: 0;
-  letter-spacing: 0.15em;
-  transform: translateY(8px);
-  animation: intro-tagline-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) 2.3s forwards;
+  animation: intro-track-reveal 0.5s ease-out 4.2s forwards;
+}
+@keyframes intro-track-reveal {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-@keyframes intro-tagline-reveal {
-  0% { opacity: 0; transform: translateY(8px); }
-  100% { opacity: 0.6; transform: translateY(0); }
+.intro-progress-bar {
+  height: 100%;
+  width: 50%;
+  background: #c9a96a;
+  transform: translateX(-100%);
+  animation: intro-progress-sweep 1.5s ease-out 4.2s forwards;
+}
+@keyframes intro-progress-sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
-/* === Vignette radiale === */
-.intro-vignette {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 5;
-  background: radial-gradient(
-    ellipse at center,
-    transparent 30%,
-    rgba(8, 7, 10, 0.4) 70%,
-    rgba(8, 7, 10, 0.9) 100%
-  );
-}
-
-/* === Body scroll lock === */
-html.intro-active body {
+/* Body scroll lock */
+html:has(.intro-pre-entry) body {
   overflow: hidden !important;
 }
 
-/* === Reduced motion === */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .intro-loader,
-  .intro-curtain,
-  .intro-glow,
-  .intro-particle,
-  .intro-mm-letter,
-  .intro-line,
-  .intro-subtitle,
-  .intro-tagline {
-    display: none !important;
-    animation: none !important;
-  }
+  .intro-pre-entry { display: none !important; }
 }
 
 /* ============================================
