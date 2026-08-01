@@ -10,6 +10,7 @@ import Festivals from "@/components/sections/Festivals";
 import Articles from "@/components/sections/Articles";
 import Quotes from "@/components/sections/Quotes";
 import PhotoBook from "@/components/sections/PhotoBook";
+import ContentCreator from "@/components/sections/ContentCreator";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
 
@@ -29,6 +30,7 @@ export default function HomePage() {
       <Articles />
       <Quotes />
       <PhotoBook />
+      <ContentCreator />
       <FAQ />
       <Contact />
     </main>

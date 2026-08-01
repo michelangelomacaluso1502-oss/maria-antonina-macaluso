@@ -1461,3 +1461,56 @@ Stage Summary:
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 44s)
 - TTFB: 33ms
 
+
+---
+Task ID: CONTENT-CREATOR-SEZIONE-LINK-BLU
+Agent: Full-stack developer
+Task: Creare sezione dedicata Content Creator con link blu cliccabili alle fonti verificate
+
+Work Log:
+- Creato componente ContentCreator (src/components/sections/ContentCreator.tsx):
+  - Sezione dedicata con id="content-creator"
+  - 3 blocchi principali:
+    1. **Testo descrittivo con link blu cliccabili**: ogni riferimento a Instagram, TikTok, fonti è un <a> con classe link-source
+       - Instagram @mary.macaluso09 → link a https://www.instagram.com/mary.macaluso09
+       - TikTok @mary.macaluso → link a https://www.tiktok.com/@mary.macaluso
+       - "(Cronache Mediterranee, 2025)" → link all'articolo originale
+       - Email mariantonina63@gmail.com → mailto: link
+    2. **Profili social verificati**: grid di card cliccabili (Instagram, Facebook, TikTok, IMDb, Ancora Cinematografica)
+    3. **Fonti verificate**: 3 articoli cliccabili con testata, data, excerpt e link esterno
+       - Cronache Mediterranee (10 nov 2025)
+       - Radio Una Voce Vicina (13 nov 2025)
+       - OraWebTv (17 dic 2024)
+- Aggiunta classe CSS `.link-source` in globals.css:
+  - color: #60a5fa (blu)
+  - text-decoration: underline (sottolineato)
+  - hover: #93c5fd (blu chiaro)
+  - visited: #a78bfa (viola per link visitati)
+  - focus-visible: outline blu per accessibilità
+  - transition smooth
+- Aggiunto <ContentCreator /> alla homepage tra PhotoBook e FAQ
+- Verifica produzione:
+  - Sezione "Content Creator — Il volto digitale della Sicilia" presente (id="content-creator") ✓
+  - Classe link-source presente 5 volte (link blu) ✓
+  - Link cliccabili verificati: Instagram, TikTok, Cronache Mediterranee, email ✓
+  - Fonti: Cronache Mediterranee, Radio Una Voce Vicina, OraWebTv ✓
+  - "Prime Video" → 0 occorrenze ✓
+  - TTFB: 36ms ✓
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto (1 nuovo componente + 1 CSS class + 1 page edit)
+  - NESSUNA menzione di "Prime Video"
+  - Link blu cliccabili che reindirizzano alle fonti verificate
+  - Sezione a parte dedicata (non più solo capitolo biografia)
+  - Animazioni professionali, hero, intro MM, "Enciclopedia digitale" — tutti preservati
+  - 107 lingue supportate preservate
+
+Stage Summary:
+- File creati:
+  - src/components/sections/ContentCreator.tsx (nuova sezione dedicata con link blu)
+- File modificati:
+  - src/styles/globals.css (aggiunta classe .link-source per link blu cliccabili)
+  - src/app/page.tsx (aggiunto <ContentCreator /> tra PhotoBook e FAQ)
+- Build status: SUCCESS
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 41s)
+- TTFB: 36ms
+
