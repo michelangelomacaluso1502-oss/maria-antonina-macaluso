@@ -1336,3 +1336,57 @@ Stage Summary:
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 50s)
 - TTFB: 31ms
 
+
+---
+Task ID: FIX-DONT-BE-SILENT-SCHEDA-FILM-APPROFONDITA
+Agent: Full-stack developer
+Task: Fix dimensione Don't Be Silent (landscape → portrait 2:3) + schede film approfondite con fonti
+
+Work Log:
+- Don't Be Silent era l'unica locandina landscape (1080x762 ratio 1.42) mentre tutte le altre sono portrait 2:3 (~0.67)
+- Creato script fix-dont-be-silent-poster.js con sharp:
+  - Cover crop (center position) per estrarre la porzione centrale come portrait
+  - Target 1600x2400 (2:3 ratio, Ultra HD 4K)
+  - Kernel lanczos3
+  - Sharpen sigma 1.0, m1 2.0, m2 0.6 (più aggressivo per compensare upscale significativo)
+  - modulate brightness 1.03 + saturation 1.08
+  - JPEG quality 95, mozjpeg, chroma 4:4:4
+- Risultato: 720x508 (54KB) landscape → 1600x2400 (702KB) portrait 2:3 Ultra HD 4K ✓
+- Riscritta pagina film/[slug]/page.tsx con sezioni approfondite:
+  1. **Locandina + Dettagli**: locandina 2:3 con zoom-wrap + IMDb link button sotto
+  2. **L'opera**: longDescription (descrizione approfondita dell'opera)
+  3. **Trama**: plot separato (sintesi narrativa)
+  4. **Cast**: lista tag con ogni membro del cast (glass-card pill)
+  5. **Curiosità**: trivia numerate con badge gold
+  6. **Rassegna stampa**: articoli verificati con fonte, titolo, excerpt e link esterno
+     - Ogni articolo è una card cliccabile con ExternalLink icon
+     - Fonti visibili: MessinaToday, AM Notizie, Cinema Italiano, Radio Amica, InfoBelice, ecc.
+  7. **Altri film**: grid 3 colonne con locandine piccole dei film correlati
+- Aggiunti dettagli: Genere e Durata (se presenti nei dati)
+- Aggiunto MAM_IMDB_URL import per link diretto al profilo IMDb di Maria Antonina
+- OpenGraph image aggiunto (film.poster) per condivisione social
+- JSON-LD Movie aggiornato con genre e image
+- Verifica produzione:
+  - Don't Be Silent: 1600x2400 PORTRAIT ratio 0.67 (702KB) ✓
+  - Sezioni pagina: L'opera, Trama, Cast, Curiosità, Rassegna stampa, Scheda IMDb, Altri film ✓
+  - Fonti rassegna stampa visibili (MessinaToday, AM Notizie per Provvidenza) ✓
+  - "Prime Video" → 0 occorrenze ✓
+  - TTFB: 31ms ✓
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto
+  - NESSUNA menzione di "Prime Video"
+  - Locandina Don't Be Silent Ultra HD 4K portrait 2:3 (come tutte le altre)
+  - Schede film approfondite con informazioni reali e fonti verificate
+  - Animazioni professionali, hero, intro MM, "Enciclopedia digitale" — tutti preservati
+  - 107 lingue supportate preservate
+
+Stage Summary:
+- File creati:
+  - scripts/fix-dont-be-silent-poster.js (script sharp per crop+upscale)
+- File modificati:
+  - /public/images/films/dont-be-silent.jpg (ricreato: landscape → portrait 2:3, 4K)
+  - src/app/film/[slug]/page.tsx (rewrite completo con 7 sezioni approfondite)
+- Build status: SUCCESS
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 44s)
+- TTFB: 31ms
+
