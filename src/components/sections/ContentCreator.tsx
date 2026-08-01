@@ -143,7 +143,7 @@ export default function ContentCreator() {
               </div>
               <div className="grid gap-6 sm:grid-cols-2">
                 <figure className="glass-card card-lift-premium group overflow-hidden p-2">
-                  <div className="zoom-wrap relative aspect-[4/5] w-full overflow-hidden">
+                  <div className="zoom-wrap relative aspect-square w-full overflow-hidden">
                     <Image
                       src="/images/content-creator/beauty-creator.jpg"
                       alt="Maria Antonina Macaluso — Beauty Content Creator"
@@ -158,7 +158,7 @@ export default function ContentCreator() {
                   </figcaption>
                 </figure>
                 <figure className="glass-card card-lift-premium group overflow-hidden p-2">
-                  <div className="zoom-wrap relative aspect-[4/5] w-full overflow-hidden">
+                  <div className="zoom-wrap relative aspect-square w-full overflow-hidden">
                     <Image
                       src="/images/content-creator/lifestyle-creator.jpg"
                       alt="Maria Antonina Macaluso — Lifestyle Content Creator"
@@ -173,6 +173,17 @@ export default function ContentCreator() {
                   </figcaption>
                 </figure>
               </div>
+              <p className="mt-4 text-center text-[11px] text-cream/40">
+                Fonte:{" "}
+                <a
+                  href="https://cronachemediterranee.net/vulcanica-content-creator-maria-antonina-macaluso/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-source"
+                >
+                  Cronache Mediterranee — Vulcanica content creator
+                </a>
+              </p>
             </div>
           </Reveal>
 
