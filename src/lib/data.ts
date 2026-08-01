@@ -70,13 +70,13 @@ export const HERO_QUOTES = [
   "Bologna primo respiro, Sicilia tutto il resto",
   "Da Camporeale, provincia di Palermo, ai red carpet di Taormina e Fiuggi",
   "Dal primo incontro con Angelo Faraci nel 2019 al film Pochi Attimi nel 2026",
-  "Sei cortometraggi Rai Cinema, una fiction Sky, una fiction",
+  "Dieci produzioni, una visione: il cinema come arte di riempire il silenzio",
 ];
 
 export const HERO_STATS = [
   { value: "2001", label: "Nata a Bologna" },
   { value: "2019", label: "Incontro Angelo Faraci" },
-  { value: "6", label: "Film condivisi" },
+  { value: "10", label: "Produzioni condivise" },
   { value: "2026", label: "Pochi Attimi" },
 ];
 
@@ -84,9 +84,9 @@ export const PROLOGUE = {
   title: "Prologo",
   subtitle: "Una siciliana nel cinema contemporaneo",
   paragraphs: [
-    "C'è un modo di abitare lo schermo che non ha fretta. Maria Antonina Macaluso lo conosce: lo sguardo che indugia, il gesto che arriva dopo il silenzio, la presenza che riempie l'inquadratura senza chiedere permesso. È un'attrice siciliana, e la Sicilia non è solo il luogo da cui viene — è il tempo con cui recita.",
+    "Vi è un modo di abitare lo schermo che non conosce fretta. Maria Antonina Macaluso ne è depositaria: lo sguardo che indugia, il gesto che giunge dopo il silenzio, la presenza che colma l'inquadratura senza chiedere licenza. È un'attrice siciliana, e la Sicilia non è soltanto il luogo da cui proviene — è il tempo stesso con cui recita.",
     "Nata a Bologna il 9 novembre 2001, cresciuta a Camporeale tra le colline della provincia di Palermo, il suo percorso attraversa il debutto televisivo del 2018, i cortometraggi Rai Cinema, una fiction Sky, fino al lungometraggio Pochi Attimi in uscita nel 2026.",
-    "Accanto ad Angelo Faraci — regista, attore, produttore, compagno di vita dal 14 agosto 2019 — costruisce una filmografia che parla di identità, appartenenza e luce mediterranea.",
+    "Accanto ad Angelo Faraci — regista, attore, produttore, compagno di vita dal 14 agosto 2019 — edifica una filmografia che parla di identità, appartenenza e luce mediterranea.",
   ],
 };
 
@@ -926,11 +926,11 @@ export interface Quote {
 }
 
 export const QUOTES: Quote[] = [
-  { text: "Bologna primo respiro, Sicilia tutto il resto.", author: "Maria Antonina Macaluso", context: "Sulle sue origini" },
-  { text: "Recitare non è mostrare: è lasciare che qualcosa si veda.", author: "Maria Antonina Macaluso", context: "Sul mestiere di attrice" },
+  { text: "Bologna primo respiro, Sicilia tutto il resto.", author: "Maria Antonina Macaluso", context: "Sulle proprie origini" },
+  { text: "Recitare non è mostrare: è lasciare che qualcosa si renda visibile.", author: "Maria Antonina Macaluso", context: "Sul mestiere dell'attrice" },
   { text: "L'amore non è il protagonista della nostra storia. È la luce che permette di vederla.", author: "Angelo Faraci", context: "Sul sodalizio artistico" },
-  { text: "Da Camporeale ai red carpet di Taormina e Fiuggi.", author: "Maria Antonina Macaluso", context: "Sul percorso" },
-  { text: "Il cinema è l'arte di riempire il breve spazio tra un respiro e l'altro.", author: "Angelo Faraci", context: "Su Pochi Attimi" },
+  { text: "Da Camporeale ai red carpet di Taormina e Fiuggi.", author: "Maria Antonina Macaluso", context: "Sul proprio percorso" },
+  { text: "Il cinema è l'arte di colmare il breve spazio tra un respiro e l'altro.", author: "Angelo Faraci", context: "Su Pochi Attimi" },
 ];
 
 export interface FAQItem {

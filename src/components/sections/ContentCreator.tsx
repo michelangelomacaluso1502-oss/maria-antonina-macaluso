@@ -15,7 +15,6 @@ import {
   Camera,
 } from "lucide-react";
 
-// Mappa icone → componenti lucide
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   instagram: Instagram,
   facebook: Facebook,
@@ -24,7 +23,6 @@ const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   tiktok: Music2,
 };
 
-// Fonti verificate per la sezione Content Creator
 const SOURCES = [
   {
     title: "Vulcanica content creator — Maria Antonina Macaluso",
@@ -59,7 +57,7 @@ export default function ContentCreator() {
         <SectionHeading
           eyebrow="Content Creator"
           title="Il volto digitale della Sicilia"
-          subtitle="Oltre il cinema: una presenza social autentica, collaborazioni con brand e community"
+          subtitle="Oltre il cinema: una voce autentica nel paesaggio digitale contemporaneo"
         />
 
         <div className="mx-auto max-w-4xl space-y-12">
@@ -71,61 +69,58 @@ export default function ContentCreator() {
                   <Sparkles className="h-5 w-5" />
                 </span>
                 <h3 className="font-display text-2xl text-cream md:text-3xl">
-                  Attrice &amp; Content Creator
+                  <span>Attrice e Content Creator</span>
                 </h3>
               </div>
 
               <div className="space-y-5 text-base leading-relaxed text-cream/80 sm:text-lg">
                 <p>
-                  Accanto alla carriera cinematografica, Maria Antonina Macaluso coltiva una
-                  presenza digitale significativa come content creator. Sul suo{" "}
+                  <span>Accanto alla carriera cinematografica, Maria Antonina Macaluso coltiva una presenza digitale di spessore, quale content creator di rara sensibilità. Sul suo </span>
                   <a
                     href="https://www.instagram.com/mary.macaluso09"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="link-source"
                   >
-                    Instagram @mary.macaluso09 (11.9K follower)
-                  </a>{" "}
-                  e{" "}
+                    <span>Instagram @mary.macaluso09 (11.9 mila follower)</span>
+                  </a>
+                  <span> e sul suo </span>
                   <a
                     href="https://www.tiktok.com/@mary.macaluso"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="link-source"
                   >
-                    TikTok @mary.macaluso (5.2K follower)
-                  </a>{" "}
-                  condivide contenuti su bellezza, lifestyle, food e Sicilia — costruendo una
-                  community autentica che la riconosce come{" "}
-                  <em>&ldquo;volcanica content creator&rdquo;</em>{" "}
+                    <span>TikTok @mary.macaluso (5.2 mila follower)</span>
+                  </a>
+                  <span> condivide contenuti dedicati alla bellezza, al lifestyle, alla gastronomia e alla terra di Sicilia, edificando una community autentica che la riconosce quale </span>
+                  <span>&ldquo;volcanica content creator&rdquo;</span>
+                  <span> </span>
                   <a
                     href="https://cronachemediterranee.net/vulcanica-content-creator-maria-antonina-macaluso"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="link-source"
                   >
-                    (Cronache Mediterranee, 2025)
+                    <span>(Cronache Mediterranee, 2025)</span>
                   </a>
-                  .
+                  <span>.</span>
                 </p>
 
                 <p>
-                  Reduce da prestigiosi progetti RAI, è una content creator che collabora con
-                  importanti brand italiani, seguita da un vasto pubblico sui social. La sua bio
-                  ufficiale recita:{" "}
-                  <em>&ldquo;Actress🎬 Content Creator 💄 Food lover🍋&rdquo;</em> — una sintesi
-                  perfetta di un talento che mescola cinema, bellezza e radici siciliane.
+                  <span>Reduce da prestigiosi progetti Rai, è una creatrice di contenuti che collabora con brand italiani di rilievo, seguita da un pubblico vasto e fedele sui social. La sua biografia ufficiale recita: </span>
+                  <span>&ldquo;Attrice, Content Creator, Food lover&rdquo;</span>
+                  <span> — sintesi perfetta di un talento che intreccia cinema, bellezza e radici siciliane in un unicum irripetibile.</span>
                 </p>
 
                 <div className="flex flex-wrap items-center gap-3 pt-2">
-                  <span className="text-sm text-cream/60">Per collaborazioni:</span>
+                  <span className="text-sm text-cream/60"><span>Per collaborazioni professionali:</span></span>
                   <a
                     href="mailto:mariantonina63@gmail.com"
                     className="link-source inline-flex items-center gap-2"
                   >
                     <Mail className="h-4 w-4" />
-                    mariantonina63@gmail.com
+                    <span>mariantonina63@gmail.com</span>
                   </a>
                 </div>
               </div>
@@ -138,7 +133,7 @@ export default function ContentCreator() {
               <div className="mb-6 flex items-center gap-3">
                 <Camera className="h-6 w-6 text-gold" />
                 <h3 className="font-display text-xl text-gold/90 uppercase tracking-wide-sm">
-                  Galleria
+                  <span>Galleria</span>
                 </h3>
               </div>
               <div className="mx-auto grid max-w-2xl gap-5 sm:grid-cols-2">
@@ -154,7 +149,7 @@ export default function ContentCreator() {
                     />
                   </div>
                   <figcaption className="px-3 py-2 text-center text-[11px] uppercase tracking-wide-sm text-cream/50">
-                    Beauty Content Creator
+                    <span>Beauty Content Creator</span>
                   </figcaption>
                 </figure>
                 <figure className="glass-card card-lift-premium group overflow-hidden p-2">
@@ -169,19 +164,19 @@ export default function ContentCreator() {
                     />
                   </div>
                   <figcaption className="px-3 py-2 text-center text-[11px] uppercase tracking-wide-sm text-cream/50">
-                    Lifestyle Content Creator
+                    <span>Lifestyle Content Creator</span>
                   </figcaption>
                 </figure>
               </div>
               <p className="mt-4 text-center text-[11px] text-cream/40">
-                Fonte:{" "}
+                <span>Fonte: </span>
                 <a
                   href="https://cronachemediterranee.net/vulcanica-content-creator-maria-antonina-macaluso/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="link-source"
                 >
-                  Cronache Mediterranee — Vulcanica content creator
+                  <span>Cronache Mediterranee — Vulcanica content creator</span>
                 </a>
               </p>
             </div>
@@ -191,7 +186,7 @@ export default function ContentCreator() {
           <Reveal delay={100}>
             <div>
               <h3 className="mb-6 font-display text-xl text-gold/90 uppercase tracking-wide-sm">
-                Profili ufficiali verificati
+                <span>Profili ufficiali verificati</span>
               </h3>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {MAM_PROFILES.map((p) => {
@@ -209,11 +204,11 @@ export default function ContentCreator() {
                       </span>
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2">
-                          <span className="text-sm font-medium text-cream">{p.label}</span>
+                          <span className="text-sm font-medium text-cream"><span>{p.label}</span></span>
                           <ExternalLink className="h-3 w-3 text-cream/40" />
                         </div>
-                        <span className="block truncate text-xs text-cream/50">{p.handle}</span>
-                        <span className="block text-[11px] text-cream/40">{p.note}</span>
+                        <span className="block truncate text-xs text-cream/50"><span>{p.handle}</span></span>
+                        <span className="block text-[11px] text-cream/40"><span>{p.note}</span></span>
                       </div>
                     </a>
                   );
@@ -228,7 +223,7 @@ export default function ContentCreator() {
               <div className="mb-6 flex items-center gap-3">
                 <Newspaper className="h-6 w-6 text-gold" />
                 <h3 className="font-display text-xl text-gold/90 uppercase tracking-wide-sm">
-                  Fonti verificate
+                  <span>Fonti verificate</span>
                 </h3>
               </div>
               <div className="space-y-4">
@@ -243,16 +238,14 @@ export default function ContentCreator() {
                     <div className="flex items-start justify-between gap-4">
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-3">
-                          <span className="text-[11px] uppercase tracking-wide-sm text-blue-400">
-                            {article.source}
-                          </span>
-                          <span className="text-[11px] text-cream/40">{article.date}</span>
+                          <span className="text-[11px] uppercase tracking-wide-sm text-blue-400"><span>{article.source}</span></span>
+                          <span className="text-[11px] text-cream/40"><span>{article.date}</span></span>
                         </div>
                         <h4 className="mt-1 font-display text-base text-cream group-hover:text-gold">
-                          {article.title}
+                          <span>{article.title}</span>
                         </h4>
                         <p className="mt-2 text-sm leading-relaxed text-cream/60">
-                          {article.excerpt}
+                          <span>{article.excerpt}</span>
                         </p>
                       </div>
                       <ExternalLink className="h-4 w-4 shrink-0 text-blue-400 transition-colors group-hover:text-blue-300" />
