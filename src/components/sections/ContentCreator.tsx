@@ -160,8 +160,8 @@ export default function ContentCreator() {
                 <figure className="glass-card card-lift-premium group overflow-hidden p-2">
                   <div className="zoom-wrap relative aspect-[4/5] w-full overflow-hidden">
                     <Image
-                      src="/images/content-creator/red-carpet-taormina.jpg"
-                      alt="Maria Antonina Macaluso — Red carpet Taormina Film Festival 2025"
+                      src="/images/content-creator/lifestyle-creator.jpg"
+                      alt="Maria Antonina Macaluso — Lifestyle Content Creator"
                       fill
                       sizes="(min-width: 640px) 50vw, 100vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -169,7 +169,7 @@ export default function ContentCreator() {
                     />
                   </div>
                   <figcaption className="px-3 py-2 text-center text-[11px] uppercase tracking-wide-sm text-cream/50">
-                    Red carpet — Taormina Film Festival 2025
+                    Lifestyle Content Creator
                   </figcaption>
                 </figure>
               </div>
