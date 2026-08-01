@@ -1,7 +1,7 @@
 import { MAM_PROFILES, ANGELO_PROFILES, SITE } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
 import SectionHeading from "./SectionHeading";
-import { Instagram, Facebook, Globe, Film, ExternalLink, Heart } from "lucide-react";
+import { Instagram, Facebook, Globe, Film, ExternalLink, Heart, Music2 } from "lucide-react";
 
 // Mappa icone → componenti lucide
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -9,7 +9,7 @@ const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   facebook: Facebook,
   imdb: Film,
   globe: Globe,
-  tiktok: Globe, // fallback: TikTok non in lucide, uso Globe
+  tiktok: Music2, // Music2 come icona TikTok (note musicali)
 };
 
 export default function Contact() {

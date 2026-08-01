@@ -15,14 +15,16 @@ export const SITE = {
 
 // Profili verificati di Maria Antonina Macaluso
 export const SOCIAL = [
-  { label: "Instagram", handle: "@mary.macaluso.16", url: "https://www.instagram.com/mary.macaluso.16", icon: "instagram" },
+  { label: "Instagram", handle: "@mary.macaluso09", url: "https://www.instagram.com/mary.macaluso09", icon: "instagram" },
   { label: "Facebook", handle: "@mary.macaluso.16", url: "https://www.facebook.com/mary.macaluso.16", icon: "facebook" },
+  { label: "TikTok", handle: "@mary.macaluso", url: "https://www.tiktok.com/@mary.macaluso", icon: "tiktok" },
 ];
 
 // Tutti i collegamenti professionali verificati di Maria Antonina Macaluso
 export const MAM_PROFILES = [
-  { label: "Instagram", handle: "@mary.macaluso.16", url: "https://www.instagram.com/mary.macaluso.16", icon: "instagram", note: "Profilo personale ufficiale" },
-  { label: "Facebook", handle: "Maria Antonina Macaluso", url: "https://www.facebook.com/mary.macaluso.16", icon: "facebook", note: "Pagina Facebook ufficiale" },
+  { label: "Instagram", handle: "@mary.macaluso09", url: "https://www.instagram.com/mary.macaluso09", icon: "instagram", note: "11.9K followers — Actress & Content Creator" },
+  { label: "Facebook", handle: "@mary.macaluso.16", url: "https://www.facebook.com/mary.macaluso.16", icon: "facebook", note: "Pagina Facebook ufficiale" },
+  { label: "TikTok", handle: "@mary.macaluso", url: "https://www.tiktok.com/@mary.macaluso", icon: "tiktok", note: "5.2K follower — Content Creator" },
   { label: "IMDb", handle: "nm14708762", url: "https://www.imdb.com/it/name/nm14708762", icon: "imdb", note: "Scheda IMDb verificata" },
   { label: "Ancora Cinematografica", handle: "Scheda attrice", url: "https://cinematografica.altervista.org/maria-antonina-macaluso", icon: "globe", note: "Agenzia di rappresentanza" },
 ];
@@ -184,6 +186,14 @@ export const BIO_CHAPTERS: BioChapter[] = [
     ],
     image: "/images/biografia/pochi-attimi.jpg",
     imageAlt: "Maria Antonina Macaluso sul set di Pochi Attimi (2026)",
+  },
+  {
+    num: "VIII",
+    title: "Content Creator — Il volto digitale della Sicilia",
+    body: [
+      "Accanto alla carriera cinematografica, Maria Antonina Macaluso coltiva una presenza digitale significativa come content creator. Sul suo Instagram (@mary.macaluso09, 11.9K follower) e TikTok (@mary.macaluso, 5.2K follower) condivide contenuti su bellezza, lifestyle, food e Sicilia — costruendo una community autentica che la riconosce come 'volcanica content creator' (Cronache Mediterranee, 2025).",
+      "Reduce da prestigiosi progetti RAI, è una content creator che collabora con importanti brand italiani, seguita da un vasto pubblico sui social. La sua bio ufficiale recita: 'Actress🎬 Content Creator 💄 Food lover🍋' — una sintesi perfetta di un talento che mescola cinema, bellezza e radici siciliane. Per collaborazioni: mariantonina63@gmail.com.",
+    ],
   },
 ];
 
@@ -413,25 +423,43 @@ export const FILMS: Film[] = [
   {
     slug: "vanina",
     year: "2024",
-    title: "Vanina",
-    role: "Voce (1 episodio)",
+    title: "Vanina — Un vicequestore a Catania",
+    role: "Comparsa (voce) — 1 episodio",
     poster: "/images/films/vanina.jpg",
     director: "Davide Marengo",
     type: "Serie TV",
     production: "Canale 5 — Mediaset",
     description:
-      "Serie TV Canale 5 / Mediaset, regia di Davide Marengo. Partecipazione di Maria Antonina Macaluso.",
+      "Serie TV Canale 5 / Mediaset, regia di Davide Marengo. Maria Antonina Macaluso appare come comparsa (voce) in un episodio della prima stagione.",
     longDescription:
-      "Vanina (2024) è una serie televisiva trasmessa su Canale 5 (Mediaset), regia di Davide Marengo. Maria Antonina Macaluso compare nel cast (voce) per un episodio della prima stagione, confermando la propria presenza anche sul piccolo schermo italiano. Una partecipazione che segna l'esordio dell'attrice in una produzione Mediaset di prime time.",
+      "Vanina — Un vicequestore a Catania (2024) è una serie televisiva trasmessa su Canale 5 (Mediaset), regia di Davide Marengo, basata sui romanzi di Cristina Cassar Scalia. La serie segue le indagini di Vanina Guarrasi, vicequestore della sezione omicidi di Catania. Maria Antonina Macaluso appare come comparsa con ruolo di voce in un episodio della prima stagione (IMDb: credit 'voce', 1 episodio 2024). Una partecipazione breve ma significativa, che segna la presenza dell'attrice in una produzione Mediaset di prime time accanto a Giusy Buscemi (protagonista) e al cast corale della serie.",
     imdbUrl: "https://www.imdb.com/it/title/tt31721916/fullcredits",
-    cast: ["Cast corale Mediaset", "Maria Antonina Macaluso (voce)"],
-    genre: "Serie TV — Drammatico",
+    cast: ["Giusy Buscemi (Vanina Guarrasi)", "Claudio Castrogiovanni", "Carmelo Spanò", "Corrado Fortuna", "Manfredi Monterreale", "Dajana Roncione", "Maria Antonina Macaluso (voce, 1 episodio)"],
+    genre: "Serie TV — Poliziesco / Drammatico",
     duration: "1 episodio (2024)",
     plot:
-      "Serie TV trasmessa su Canale 5, regia di Davide Marengo.",
+      "Vanina Guarrasi, vicequestore della sezione omicidi di Catania, indaga su casi complessi tra i misteri della Sicilia orientale. Maria Antonina Macaluso appare come comparsa (voce) in un episodio della prima stagione.",
     trivia: [
-      "Prima partecipazione di Maria Antonina Macaluso a una serie TV Mediaset.",
-      "Regia di Davide Marengo (Canale 5, 2024).",
+      "Serie basata sui romanzi di Cristina Cassar Scalia.",
+      "Protagonista: Giusy Buscemi nel ruolo di Vanina Guarrasi.",
+      "Maria Antonina Macaluso: credit 'voce', 1 episodio 2024 (IMDb).",
+      "Regia di Davide Marengo per Canale 5 / Mediaset.",
+    ],
+    press: [
+      {
+        title: "Vanina (Serie TV 2024) — Interpreti e troupe",
+        source: "IMDb",
+        url: "https://www.imdb.com/it/title/tt31721916/fullcredits",
+        excerpt:
+          "Maria Antonina Macaluso. (voce). 1 episodio • 2024.",
+      },
+      {
+        title: "Vanina - Un vicequestore a Catania",
+        source: "Wikipedia",
+        url: "https://it.wikipedia.org/wiki/Vanina_-_Un_vicequestore_a_Catania",
+        excerpt:
+          "Giovanna 'Vanina' Guarrasi, interpretata da Giusy Buscemi. È la figlia di Marianna e Giovanni e nuovo vicequestore della sezione omicidi di Catania.",
+      },
     ],
   },
   {
@@ -807,8 +835,25 @@ export const ARTICLES: Article[] = [
     excerpt:
       "Attrice palermitana di Cinema e TV, ricordata per le pellicole Don't be Silent, Progetto Nazionale sul Bullismo, Ciò che non ti ho detto.",
   },
+  // === Articoli su Maria Antonina content creator ===
   {
-    title: "Maria Antonina Macaluso | IMDb",
+    title: "Vulcanica content creator — Maria Antonina Macaluso",
+    source: "Cronache Mediterranee",
+    url: "https://cronachemediterranee.net/vulcanica-content-creator-maria-antonina-macaluso",
+    date: "2025-11-10",
+    excerpt:
+      "Reduce da prestigiosi progetti RAI, è una content creator che collabora con importanti brand italiani, seguita da un vasto pubblico sui social.",
+  },
+  {
+    title: "Maria Antonina Macaluso e la gioventù intraprendente",
+    source: "Radio Una Voce Vicina",
+    url: "https://www.radiounavocevicina.it/main/very-common-important-people-maria-antonina-macaluso-e-la-gioventu-intraprendente",
+    date: "2025-11-13",
+    excerpt:
+      "Figlia della Città di Palermo, a 24 anni ha già collezionato una serie di esperienze: prestigiosi progetti RAI, diverse collaborazioni con brand.",
+  },
+  {
+    title: "Maria Antonina Macaluso — IMDb",
     source: "IMDb",
     url: "https://www.imdb.com/it/name/nm14708762",
     date: "2024",
@@ -973,7 +1018,7 @@ export const FAQS: FAQItem[] = [
   { question: "Quali cortometraggi sono stati prodotti da Rai Cinema?", answer: "Provvidenza (2021) e Pietrazita (2022) sono cortometraggi prodotti da Rai Cinema con la regia di Angelo Faraci." },
   { question: "In quali festival ha partecipato?", answer: "Tra gli altri: Taormina Film Fest, Roma Fiction Fest, Fiuggi Film Festival, Sicilia Film Festival, Venice International Film Festival e Mediterranean Film Festival." },
   { question: "Quali premi ha ricevuto?", answer: "Ha ricevuto numerosi riconoscimenti, tra cui Migliore Attrice Emergente (2021), Premio Speciale della Giuria a Taormina (2022), Attrice Rivelazione a Fiuggi (2023) e Migliore Attrice Protagonista al Mediterranean Film Festival (2025)." },
-  { question: "Dove posso seguire Maria Antonina Macaluso?", answer: "Su Instagram e Facebook con l'handle @mary.macaluso.16." },
+  { question: "Dove posso seguire Maria Antonina Macaluso?", answer: "Su Instagram (@mary.macaluso09, 11.9K follower), TikTok (@mary.macaluso, 5.2K follower) e Facebook (@mary.macaluso.16). È anche su IMDb (nm14708762) e nell'Archivio dell'Ancora Cinematografica. Per collaborazioni: mariantonina63@gmail.com." },
 ];
 
 export const PHOTOBOOK = Array.from({ length: 49 }, (_, i) => {
@@ -1006,7 +1051,7 @@ export const MULTIMEDIA = [
 
 export interface NavLink { label: string; href: string; desc: string; }
 export const ALL_PAGES: NavLink[] = [
-  { label: "Biografia", href: "/biografia", desc: "7 capitoli di vita e di cinema" },
+  { label: "Biografia", href: "/biografia", desc: "8 capitoli di vita e di cinema" },
   { label: "Filmografia", href: "/filmografia", desc: "10 produzioni dirette da Angelo Faraci" },
   { label: "Collaborazioni", href: "/collaborazioni", desc: "Il sodalizio artistico" },
   { label: "Timeline", href: "/timeline", desc: "2001 → 2026" },
