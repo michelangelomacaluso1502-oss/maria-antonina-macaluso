@@ -12,38 +12,99 @@ import { cn } from "@/lib/cn";
 const STORAGE_KEY = "mam-lang";
 const SOURCE_LANG = "it";
 const TRANSLATABLE_TAGS = ["H1", "H2", "H3", "H4", "H5", "H6", "P", "SPAN", "A", "BUTTON", "LI"];
+const TRANSLATABLE_SELECTOR = TRANSLATABLE_TAGS.join(",");
 const BATCH_SIZE = 10;
 
-// Module-level store: element -> original Italian text. Survives re-renders within session.
+// === Module-level stores ===
+
+// Map: element → original Italian text. Survives re-renders.
 const originalTexts = new Map<Element, string>();
-// Track elements currently being processed to avoid duplicate queueing.
+
+// In-memory translation cache per language: langCode → Map<originalText, translatedText>
+// This makes switching back to a previously-translated language INSTANT (no API calls).
+const langCache = new Map<string, Map<string, string>>();
+
+// Get or create the in-memory cache for a language
+function getLangCache(lang: string): Map<string, string> {
+  let cache = langCache.get(lang);
+  if (!cache) {
+    cache = new Map();
+    langCache.set(lang, cache);
+  }
+  return cache;
+}
 
 function isTranslatable(el: Element): boolean {
   if (!el || el.nodeType !== 1) return false;
   if (el.closest("[data-no-translate]")) return false;
   const tag = el.tagName;
   if (!TRANSLATABLE_TAGS.includes(tag)) return false;
-  // Leaf only (no element children) — safe to set textContent.
   if (el.children.length > 0) return false;
   const text = el.textContent;
   if (!text || text.trim().length < 2) return false;
-  // Skip if it looks like a URL, number-only, or placeholder.
   if (/^[\d\s.,/:%@#\-+()]+$/.test(text.trim())) return false;
   return true;
 }
 
-function collectTranslatable(root: Element | Document = document): Element[] {
+// Batch-collect translatable elements — optimized with single querySelectorAll
+function collectTranslatable(): Element[] {
   const out: Element[] = [];
-  const nodes = (root as Document).querySelectorAll
-    ? (root as Document).querySelectorAll(TRANSLATABLE_TAGS.join(","))
-    : [];
-  nodes.forEach((el) => {
+  const nodes = document.querySelectorAll(TRANSLATABLE_SELECTOR);
+  for (let i = 0; i < nodes.length; i++) {
+    const el = nodes[i];
     if (isTranslatable(el)) {
-      if (!originalTexts.has(el)) originalTexts.set(el, el.textContent as string);
+      if (!originalTexts.has(el)) {
+        originalTexts.set(el, el.textContent as string);
+      }
       out.push(el);
     }
-  });
+  }
   return out;
+}
+
+// === INSTANT restore to Italian ===
+// Uses direct textContent assignment — no async, no IndexedDB, no network.
+// This is the key optimization: switching back to IT is O(n) DOM writes, ~1ms for 200 elements.
+function restoreOriginalsInstant(): void {
+  // Use a single pass — batch all DOM writes
+  const entries: [Element, string][] = [];
+  originalTexts.forEach((text, el) => {
+    if (el.isConnected && el.textContent !== text) {
+      entries.push([el, text]);
+    }
+  });
+  // Apply all at once
+  for (let i = 0; i < entries.length; i++) {
+    entries[i][0].textContent = entries[i][1];
+  }
+}
+
+// === INSTANT apply from in-memory cache ===
+// If we've already translated to this language before, apply from cache — no API calls.
+function applyFromMemoryCache(lang: string): boolean {
+  const cache = langCache.get(lang);
+  if (!cache || cache.size === 0) return false;
+
+  const els = collectTranslatable();
+  let applied = 0;
+  const entries: [Element, string][] = [];
+
+  for (let i = 0; i < els.length; i++) {
+    const el = els[i];
+    const orig = originalTexts.get(el) ?? (el.textContent as string);
+    const cached = cache.get(orig);
+    if (cached !== undefined) {
+      entries.push([el, cached]);
+      applied++;
+    }
+  }
+
+  // Apply all at once
+  for (let i = 0; i < entries.length; i++) {
+    entries[i][0].textContent = entries[i][1];
+  }
+
+  return applied > 0;
 }
 
 export default function LanguageSwitcher50() {
@@ -55,8 +116,9 @@ export default function LanguageSwitcher50() {
   const containerRef = useRef<HTMLDivElement>(null);
   const processingRef = useRef(false);
   const currentLangRef = useRef(DEFAULT_LANG);
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Init: read localStorage or detect browser.
+  // Init
   useEffect(() => {
     let lang = DEFAULT_LANG;
     try {
@@ -72,14 +134,13 @@ export default function LanguageSwitcher50() {
     document.documentElement.lang = lang;
     document.documentElement.dir = def.dir;
     if (lang !== DEFAULT_LANG) {
-      // run translation pass after a tick
       const t = setTimeout(() => runTranslation(lang), 300);
       return () => clearTimeout(t);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Close on outside click / escape.
+  // Close on outside click / escape
   useEffect(() => {
     if (!open) return;
     const onDown = (e: MouseEvent) => {
@@ -98,7 +159,7 @@ export default function LanguageSwitcher50() {
     };
   }, [open]);
 
-  // MutationObserver: pick up dynamically added translatable nodes.
+  // MutationObserver with debounce — picks up dynamically added nodes
   useEffect(() => {
     if (typeof document === "undefined") return;
     const obs = new MutationObserver((mutations) => {
@@ -111,9 +172,8 @@ export default function LanguageSwitcher50() {
               if (!originalTexts.has(el)) originalTexts.set(el, el.textContent as string);
               added = true;
             }
-            // also check descendants
             if (el.querySelectorAll) {
-              el.querySelectorAll(TRANSLATABLE_TAGS.join(",")).forEach((c) => {
+              el.querySelectorAll(TRANSLATABLE_SELECTOR).forEach((c) => {
                 if (isTranslatable(c)) {
                   if (!originalTexts.has(c)) originalTexts.set(c, c.textContent as string);
                   added = true;
@@ -124,7 +184,11 @@ export default function LanguageSwitcher50() {
         });
       }
       if (added && currentLangRef.current !== SOURCE_LANG) {
-        scheduleTranslation(currentLangRef.current);
+        // Debounce: wait 150ms before translating new nodes
+        if (debounceRef.current) clearTimeout(debounceRef.current);
+        debounceRef.current = setTimeout(() => {
+          scheduleTranslation(currentLangRef.current);
+        }, 150);
       }
     });
     obs.observe(document.body, { childList: true, subtree: true });
@@ -142,10 +206,12 @@ export default function LanguageSwitcher50() {
     );
   }, [query]);
 
+  // === MAIN: language selection — INSTANT switch ===
   const selectLanguage = useCallback((lang: LanguageDef) => {
     setOpen(false);
     setQuery("");
     if (lang.code === currentLangRef.current) return;
+
     currentLangRef.current = lang.code;
     setCurrent(lang);
     try {
@@ -155,25 +221,34 @@ export default function LanguageSwitcher50() {
     }
     document.documentElement.lang = lang.code;
     document.documentElement.dir = lang.dir;
+
     if (lang.code === SOURCE_LANG) {
-      restoreOriginals();
+      // === SWITCH BACK TO ITALIAN — INSTANT ===
+      // No async, no API calls — direct DOM restore
+      restoreOriginalsInstant();
       setCount(0);
+      setTranslating(false);
     } else {
-      runTranslation(lang.code);
+      // === SWITCH TO FOREIGN LANGUAGE ===
+      // Step 1: Try in-memory cache first (instant if previously translated)
+      const memoryHit = applyFromMemoryCache(lang.code);
+      if (memoryHit) {
+        // Cache hit — apply remaining uncached texts in background
+        setTranslating(false);
+        // Still run full translation to catch any new/uncached elements
+        runTranslation(lang.code);
+      } else {
+        // No cache — full translation needed
+        runTranslation(lang.code);
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  function restoreOriginals() {
-    originalTexts.forEach((text, el) => {
-      if (el.isConnected) el.textContent = text;
-    });
-  }
-
-  const scheduleTranslation = useCallback((lang: string) => {
+  function scheduleTranslation(lang: string) {
     if (processingRef.current) return;
     requestAnimationFrame(() => runTranslation(lang));
-  }, []);
+  }
 
   async function runTranslation(lang: string) {
     if (processingRef.current) return;
@@ -185,7 +260,7 @@ export default function LanguageSwitcher50() {
       const els = collectTranslatable().filter((el) => el.isConnected);
       setCount(els.length);
 
-      // Group by unique original text.
+      // Group by unique original text
       const byText = new Map<string, Element[]>();
       els.forEach((el) => {
         const orig = originalTexts.get(el) ?? (el.textContent as string);
@@ -196,27 +271,43 @@ export default function LanguageSwitcher50() {
       });
 
       const uniqueTexts = Array.from(byText.keys());
+      const memCache = getLangCache(lang);
+
+      // Check in-memory cache first (synchronous, instant)
       const toTranslate: string[] = [];
       const cached = new Map<string, string>();
 
-      // Check cache for each unique text.
-      await Promise.all(
-        uniqueTexts.map(async (text) => {
-          const hit = await getCachedTranslation(SOURCE_LANG, lang, text);
-          if (hit !== null) cached.set(text, hit);
-          else toTranslate.push(text);
-        }),
-      );
+      for (const text of uniqueTexts) {
+        const memHit = memCache.get(text);
+        if (memHit !== undefined) {
+          cached.set(text, memHit);
+          continue;
+        }
+        // Check IndexedDB cache
+        const idbHit = await getCachedTranslation(SOURCE_LANG, lang, text);
+        if (idbHit !== null) {
+          cached.set(text, idbHit);
+          memCache.set(text, idbHit); // Promote to memory cache
+        } else {
+          toTranslate.push(text);
+        }
+      }
 
-      // Apply cached hits immediately.
+      // Apply cached hits immediately (batch DOM write)
+      const cachedEntries: [Element, string][] = [];
       cached.forEach((trans, text) => {
         const targets = byText.get(text) ?? [];
         targets.forEach((el) => {
-          if (el.isConnected) el.textContent = trans;
+          if (el.isConnected && el.textContent !== trans) {
+            cachedEntries.push([el, trans]);
+          }
         });
       });
+      for (let i = 0; i < cachedEntries.length; i++) {
+        cachedEntries[i][0].textContent = cachedEntries[i][1];
+      }
 
-      // Batch translate misses.
+      // Batch translate misses via API
       for (let i = 0; i < toTranslate.length; i += BATCH_SIZE) {
         const batch = toTranslate.slice(i, i + BATCH_SIZE);
         try {
@@ -231,16 +322,32 @@ export default function LanguageSwitcher50() {
           });
           const data = await res.json();
           const translations: string[] = data?.translations ?? batch;
-          const pairs = batch.map((text, idx) => ({ text, translation: translations[idx] ?? text }));
+          const pairs = batch.map((text, idx) => ({
+            text,
+            translation: translations[idx] ?? text,
+          }));
+
+          // Save to both IndexedDB and in-memory cache
           await batchSetCachedTranslations(SOURCE_LANG, lang, pairs);
+          pairs.forEach(({ text, translation }) => {
+            memCache.set(text, translation); // Store in memory for instant future switch
+          });
+
+          // Apply translations (batch DOM write)
+          const batchEntries: [Element, string][] = [];
           pairs.forEach(({ text, translation }) => {
             const targets = byText.get(text) ?? [];
             targets.forEach((el) => {
-              if (el.isConnected) el.textContent = translation;
+              if (el.isConnected) {
+                batchEntries.push([el, translation]);
+              }
             });
           });
+          for (let j = 0; j < batchEntries.length; j++) {
+            batchEntries[j][0].textContent = batchEntries[j][1];
+          }
         } catch {
-          // skip failed batch — originals remain
+          // skip failed batch
         }
       }
     } finally {
