@@ -1713,3 +1713,35 @@ Stage Summary:
 - Build status: SUCCESS
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 35s)
 
+
+---
+Task ID: CONTENT-CREATOR-FOTO-RIDIMENSIONATE-ADATTATE
+Agent: Full-stack developer
+Task: Ridimensionare e adattare le foto della sezione Content Creator (erano troppo grandi)
+
+Work Log:
+- Screenshot utente ha confermato: foto occupavano ~85-90% dell'altezza del blocco, troppo grandi rispetto al testo (~10-15%)
+- Modifiche applicate in ContentCreator.tsx:
+  1. Grid container: aggiunto max-w-2xl (max 672px) per limitare la larghezza totale
+  2. Ogni figura: aggiunto max-w-[260px] mx-auto per limitare la larghezza di ogni foto a 260px
+  3. Aspect ratio: aspect-[4/5] → aspect-[3/4] (più snello, meno ingombrante)
+  4. Gap: gap-6 → gap-5 (più compatto)
+  5. Sizes: aggiornati da "50vw" a "260px" per il srcset corretto
+- Risultato: le foto ora sono contenute (260px larghezza max ciascuna) e bilanciate con il testo
+- Verifica produzione:
+  - beauty-creator.jpg: HTTP 200 ✓
+  - lifestyle-creator.jpg: HTTP 200 ✓
+  - aspect-[3/4], max-w-2xl, max-w-[260px] presenti ✓
+  - "Prime Video" → 0 occorrenze ✓
+- Regole rispettate:
+  - NON ho intaccato la struttura del progetto
+  - NESSUNA menzione di "Prime Video"
+  - Foto Ultra HD 4K preservate (solo ridimensionamento display, non qualità)
+  - Animazioni professionali preservate
+  - 107 lingue supportate preservate
+
+Stage Summary:
+- File modificato: src/components/sections/ContentCreator.tsx (ridimensionamento foto: max-w-2xl, max-w-[260px], aspect-[3/4], gap-5)
+- Build status: SUCCESS
+- Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 43s)
+
