@@ -5,8 +5,8 @@ import ScrollProgress from "@/components/cinematic/ScrollProgress";
 import FilmGrain from "@/components/cinematic/FilmGrain";
 import PWARegister from "@/components/cinematic/PWARegister";
 import BackToTop from "@/components/cinematic/BackToTop";
-import IntroLoader from "@/components/cinematic/IntroLoader";
 import Header from "@/components/layout/Header";
+import IntroLoader from "@/components/cinematic/IntroLoader";
 import Footer from "@/components/layout/Footer";
 import { SITE } from "@/lib/data";
 
@@ -94,28 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Italiana&display=swap"
           rel="stylesheet"
         />
-        {/* Intro pre-entry: script nel <head> per bloccare lo scroll.
-            L'overlay HTML è nel <body> (Server Component IntroLoader).
-            Lo script rimuove l'overlay e ripristina lo scroll dopo 6.5s. */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){
-  try {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    document.documentElement.classList.add('intro-lock');
-    setTimeout(function(){
-      document.documentElement.classList.remove('intro-lock');
-      var ov = document.getElementById('intro-overlay');
-      if (ov) { ov.style.opacity = '0'; ov.style.pointerEvents = 'none'; }
-    }, 5500);
-    setTimeout(function(){
-      var ov = document.getElementById('intro-overlay');
-      if (ov) ov.remove();
-    }, 6300);
-  } catch(e) {}
-})();`,
-          }}
-        />
+        {/* L'overlay pre-entry è gestito dal <script> alla fine del <body> */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
