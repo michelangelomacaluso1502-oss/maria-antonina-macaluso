@@ -195,15 +195,28 @@ export const BIO_CHAPTERS: BioChapter[] = [
     body: [],
     sections: [
       {
-        heading: "Il volto digitale della Sicilia",
+        heading: "Beauty Content Creator",
         body: [
           "Accanto alla carriera cinematografica, Maria Antonina Macaluso coltiva una presenza digitale significativa come content creator. Sul suo Instagram (@mary.macaluso09, 11.9K follower) e TikTok (@mary.macaluso, 5.2K follower) condivide contenuti su bellezza, lifestyle, food e Sicilia — costruendo una community autentica che la riconosce come 'volcanica content creator' (Cronache Mediterranee, 2025).",
-          "Reduce da prestigiosi progetti RAI, è una content creator che collabora con importanti brand italiani, seguita da un vasto pubblico sui social. La sua bio ufficiale recita: 'Actress🎬 Content Creator 💄 Food lover🍋' — una sintesi perfetta di un talento che mescola cinema, bellezza e radici siciliane. Per collaborazioni: mariantonina63@gmail.com.",
         ],
+        image: "/images/content-creator/beauty-v2.jpg",
+        imageAlt: "Maria Antonina Macaluso — Beauty Content Creator",
+        aspect: "4/5",
         links: [
           { text: "Instagram (@mary.macaluso09, 11.9K follower)", url: "https://www.instagram.com/mary.macaluso09" },
           { text: "TikTok (@mary.macaluso, 5.2K follower)", url: "https://www.tiktok.com/@mary.macaluso" },
           { text: "(Cronache Mediterranee, 2025)", url: "https://cronachemediterranee.net/vulcanica-content-creator-maria-antonina-macaluso" },
+        ],
+      },
+      {
+        heading: "Lifestyle & Collaborazioni",
+        body: [
+          "Reduce da prestigiosi progetti RAI, è una content creator che collabora con importanti brand italiani, seguita da un vasto pubblico sui social. La sua bio ufficiale recita: 'Actress🎬 Content Creator 💄 Food lover🍋' — una sintesi perfetta di un talento che mescola cinema, bellezza e radici siciliane. Per collaborazioni: mariantonina63@gmail.com.",
+        ],
+        image: "/images/content-creator/lifestyle-v2.jpg",
+        imageAlt: "Maria Antonina Macaluso — Lifestyle Content Creator",
+        aspect: "4/5",
+        links: [
           { text: "mariantonina63@gmail.com", url: "mailto:mariantonina63@gmail.com" },
         ],
       },
