@@ -1,11 +1,11 @@
 /**
  * IntroLoader — Pre-entry cinematografica (stile Angelo Faraci)
  *
- * APPROCCIO: inline styles + script nel <head>
- * - Ogni elemento ha style="opacity:0" inline → invisibile dal primo byte HTML
- * - Script nel <head> cambia gli stili inline per far apparire gli elementi
- * - Dopo 6.5s, lo script rimuove l'overlay e ripristina lo scroll
- * - NESSUNA dipendenza da CSS esterno o idratazione React
+ * Tutti gli stili sono inline → visibili dal primo byte HTML.
+ * L'animazione è gestita da uno script nel <head> di layout.tsx
+ * che gira PRIMA dell'idratazione React.
+ *
+ * Server Component — nessun "use client".
  */
 export default function IntroLoader() {
   return (
@@ -175,73 +175,6 @@ export default function IntroLoader() {
           />
         </div>
       </div>
-
-      {/* Script che gestisce tutta l'animazione — inline, nel body */}
-      <script dangerouslySetInnerHTML={{ __html: `
-(function(){
-  try {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      var ov = document.getElementById('intro-overlay');
-      if (ov) ov.remove();
-      document.body.style.overflow = '';
-      return;
-    }
-
-    document.body.style.overflow = 'hidden';
-
-    var icon = document.getElementById('intro-icon');
-    var sub = document.getElementById('intro-subtitle');
-    var mono = document.getElementById('intro-monogram');
-    var glow = document.getElementById('intro-glow');
-    var name = document.getElementById('intro-name');
-    var prog = document.getElementById('intro-progress');
-    var pbar = document.getElementById('intro-progress-bar');
-    var overlay = document.getElementById('intro-overlay');
-
-    // Phase 1: icona (0.4s)
-    setTimeout(function(){
-      if(icon){ icon.style.opacity='1'; icon.style.transform='scale(1)'; }
-    }, 400);
-
-    // Phase 2: sottotitolo (1.0s)
-    setTimeout(function(){
-      if(sub){ sub.style.opacity='1'; sub.style.transform='translateY(0)'; }
-    }, 1000);
-
-    // Phase 3: monogramma + glow (1.8s)
-    setTimeout(function(){
-      if(mono){ mono.style.opacity='1'; mono.style.transform='translateY(0) scale(1)'; mono.style.filter='blur(0px)'; }
-      if(glow){ glow.style.opacity='1'; glow.style.transform='scale(1.15)'; }
-    }, 1800);
-
-    // Phase 4: nome (3.4s)
-    setTimeout(function(){
-      if(name){ name.style.opacity='1'; name.style.transform='translateY(0)'; }
-    }, 3400);
-
-    // Phase 5: barra caricamento (4.2s)
-    setTimeout(function(){
-      if(prog){ prog.style.opacity='1'; }
-      if(pbar){ pbar.style.transform='translateX(100%)'; }
-    }, 4200);
-
-    // Phase 6: dissolvenza (5.8s)
-    setTimeout(function(){
-      if(overlay){ overlay.style.opacity='0'; overlay.style.pointerEvents='none'; }
-    }, 5800);
-
-    // Phase 7: rimozione + ripristino scroll (6.5s)
-    setTimeout(function(){
-      if(overlay) overlay.remove();
-      document.body.style.overflow = '';
-    }, 6500);
-  } catch(e) {
-    var ov = document.getElementById('intro-overlay');
-    if(ov) ov.remove();
-    document.body.style.overflow = '';
-  }
-})();
-      ` }} />
     </div>
   );
 }
