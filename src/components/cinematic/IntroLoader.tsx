@@ -3,7 +3,9 @@
 import { useEffect } from "react";
 
 /**
- * IntroLoader — Pre-entry cinematografica con M·M
+ * IntroLoader v3 — Pre-entry cinematografica con M·M
+ * Cache-bust: versione con commento univoco per forzare nuovo bundle hash.
+ * Identico al sito Angelo Faraci: overlay fisso, letterbox, M·M, fade-out.
  * Versione ULTRA-VELOCE: 2.8s totali (era 5.6s)
  * Tempi ridotti del 70% per fluidità massima.
  * Stile Angelo Faraci: overlay fisso, letterbox, M·M, fade-out rapido.
