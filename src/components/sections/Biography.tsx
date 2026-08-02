@@ -2,6 +2,7 @@ import { BIO_CHAPTERS } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
 import SectionHeading from "./SectionHeading";
 import { cn } from "@/lib/cn";
+import React from "react";
 
 // Mappa aspect-ratio → dimensioni intrinseche (per evitare layout shift)
 const ASPECT_DIMS: Record<string, { w: number; h: number }> = {
@@ -20,6 +21,60 @@ const ASPECT_CLASS: Record<string, string> = {
   "16/9": "aspect-[16/9]",
   "1/1": "aspect-square",
 };
+
+// Renderizza testo con link blu cliccabili incorporati
+function renderTextWithLinks(text: string, links?: { text: string; url: string }[]): React.ReactNode {
+  if (!links || links.length === 0) return text;
+
+  const parts: React.ReactNode[] = [];
+  let remaining = text;
+  let keyCounter = 0;
+
+  // Ordina i link per lunghezza decrescente (per matchare prima i più lunghi)
+  const sortedLinks = [...links].sort((a, b) => b.text.length - a.text.length);
+
+  while (remaining.length > 0) {
+    let earliestIdx = -1;
+    let earliestLink: { text: string; url: string } | null = null;
+
+    for (const link of sortedLinks) {
+      const idx = remaining.indexOf(link.text);
+      if (idx > -1 && (earliestIdx === -1 || idx < earliestIdx)) {
+        earliestIdx = idx;
+        earliestLink = link;
+      }
+    }
+
+    if (earliestIdx === -1 || !earliestLink) {
+      parts.push(remaining);
+      break;
+    }
+
+    // Aggiungi testo prima del link
+    if (earliestIdx > 0) {
+      parts.push(remaining.substring(0, earliestIdx));
+    }
+
+    // Aggiungi il link
+    parts.push(
+      React.createElement(
+        "a",
+        {
+          key: `link-${keyCounter++}`,
+          href: earliestLink.url,
+          target: earliestLink.url.startsWith("mailto:") ? undefined : "_blank",
+          rel: earliestLink.url.startsWith("mailto:") ? undefined : "noopener noreferrer",
+          className: "link-source",
+        },
+        earliestLink.text,
+      ),
+    );
+
+    remaining = remaining.substring(earliestIdx + earliestLink.text.length);
+  }
+
+  return React.createElement(React.Fragment, null, ...parts);
+}
 
 export default function Biography() {
   return (
@@ -66,7 +121,7 @@ export default function Biography() {
                               <div className="mt-2 space-y-3">
                                 {sec.body.map((para, j) => (
                                   <p key={j} className="text-pretty text-sm leading-relaxed text-cream/70 sm:text-base">
-                                    {para}
+                                    {renderTextWithLinks(para, sec.links)}
                                   </p>
                                 ))}
                               </div>
