@@ -1,13 +1,87 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 /**
  * IntroLoader — Pre-entry cinematografica (stile Angelo Faraci)
  *
- * Tutti gli stili sono inline → visibili dal primo byte HTML.
- * L'animazione è gestita da uno script nel <head> di layout.tsx
- * che gira PRIMA dell'idratazione React.
+ * APPROCCIO: Client Component che inietta l'overlay nel <body> tramite useEffect.
+ * Questo garantisce che l'overlay sia nel <body> (non nel <head>) e sia visibile.
  *
- * Server Component — nessun "use client".
+ * L'animazione è gestita da setTimeout diretti sugli elementi DOM.
+ * Nessuna dipendenza da CSS esterno o idratazione React per gli stili.
  */
 export default function IntroLoader() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  return <IntroOverlay />;
+}
+
+function IntroOverlay() {
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (prefersReduced) return;
+
+    document.body.style.overflow = "hidden";
+
+    const icon = document.getElementById("intro-icon");
+    const sub = document.getElementById("intro-subtitle");
+    const mono = document.getElementById("intro-monogram");
+    const glow = document.getElementById("intro-glow");
+    const name = document.getElementById("intro-name");
+    const prog = document.getElementById("intro-progress");
+    const pbar = document.getElementById("intro-progress-bar");
+    const overlay = document.getElementById("intro-overlay");
+
+    const timers: ReturnType<typeof setTimeout>[] = [];
+
+    timers.push(setTimeout(() => {
+      if (icon) { icon.style.opacity = "1"; icon.style.transform = "scale(1)"; }
+    }, 200));
+
+    timers.push(setTimeout(() => {
+      if (sub) { sub.style.opacity = "1"; sub.style.transform = "translateY(0)"; }
+    }, 600));
+
+    timers.push(setTimeout(() => {
+      if (mono) { mono.style.opacity = "1"; mono.style.transform = "translateY(0) scale(1)"; mono.style.filter = "blur(0px)"; }
+      if (glow) { glow.style.opacity = "1"; glow.style.transform = "scale(1.15)"; }
+    }, 1200));
+
+    timers.push(setTimeout(() => {
+      if (name) { name.style.opacity = "1"; name.style.transform = "translateY(0)"; }
+    }, 2600));
+
+    timers.push(setTimeout(() => {
+      if (prog) { prog.style.opacity = "1"; }
+      if (pbar) { pbar.style.transform = "translateX(100%)"; }
+    }, 3400));
+
+    timers.push(setTimeout(() => {
+      if (overlay) { overlay.style.opacity = "0"; overlay.style.pointerEvents = "none"; }
+    }, 4800));
+
+    timers.push(setTimeout(() => {
+      if (overlay) overlay.remove();
+      document.body.style.overflow = "";
+    }, 5600));
+
+    return () => {
+      timers.forEach(clearTimeout);
+      document.body.style.overflow = "";
+    };
+  }, []);
+
   return (
     <div
       id="intro-overlay"

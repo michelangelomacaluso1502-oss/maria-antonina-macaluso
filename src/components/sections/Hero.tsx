@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown, BookOpen, Camera } from "lucide-react";
+import { BookOpen, Camera } from "lucide-react";
 import { HERO_QUOTES, HERO_STATS } from "@/lib/data";
 
 // Easing curve — premium "expo out"
@@ -187,13 +187,12 @@ export default function Hero() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2.4, duration: 0.9, ease: EASE }}
-        className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-gold/70 transition-colors hover:text-gold"
+        className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 rounded-full border border-gold/20 bg-noir/40 px-4 py-2 backdrop-blur-sm text-gold/70 transition-all hover:border-gold/40 hover:text-gold hover:bg-noir/60"
       >
         <span className="text-[10px] uppercase tracking-cinema"><span>Scorri per scoprire</span></span>
-        <span className="relative flex h-9 w-5 items-start justify-center rounded-full border border-gold/40 pt-1.5">
+        <span className="relative flex h-7 w-4 items-start justify-center rounded-full border border-gold/30 pt-1">
           <span className="animate-scroll-indicator h-1.5 w-1 rounded-full bg-gold" />
         </span>
-        <ArrowDown className="h-3 w-3 animate-bounce" />
       </motion.a>
     </section>
   );

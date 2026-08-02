@@ -1022,14 +1022,17 @@ export const FAQS: FAQItem[] = [
 ];
 
 export const PHOTOBOOK = Array.from({ length: 57 }, (_, i) => {
-  const id = String(i + 1).padStart(2, "0");
+  const num = i + 1;
+  // Salta lo scatto 49 (rimosso)
+  if (num === 49) return null;
+  const id = String(num).padStart(2, "0");
   return {
-    id: String(i + 1),
+    id: String(num),
     src: `/images/photobook/mam-${id}.jpg`,
-    alt: `Maria Antonina Macaluso — scatto ${i + 1} del Photo Book`,
-    title: `Scatto ${i + 1}`,
+    alt: `Maria Antonina Macaluso — scatto ${num} del Photo Book`,
+    title: `Scatto ${num}`,
   };
-});
+}).filter(Boolean) as { id: string; src: string; alt: string; title: string }[];
 
 export const COLLEGAMENTI_ESTERI = [
   { name: "Angelo Faraci — Enciclopedia digitale", url: "https://angelo-faraci.vercel.app", note: "Regista, attore, produttore. Compagno artistico e di vita." },
@@ -1045,7 +1048,7 @@ export const MULTIMEDIA = [
   { title: "Dietro le quinte — Separati Mai", type: "Video", url: "https://www.youtube.com", duration: "5:18" },
   { title: "Intervista Fiuggi 2023", type: "Video", url: "https://www.youtube.com", duration: "7:25" },
   { title: "Red carpet Venezia 2024", type: "Video", url: "https://www.youtube.com", duration: "2:50" },
-  { title: "Servizio fotografico — Mediterranean 2025", type: "Galleria", url: "/#photobook", duration: "57 foto" },
+  { title: "Servizio fotografico — Mediterranean 2025", type: "Galleria", url: "/#photobook", duration: "56 foto" },
   { title: "Teaser Pochi Attimi", type: "Video", url: "https://www.youtube.com", duration: "1:30" },
 ];
 
@@ -1061,7 +1064,7 @@ export const ALL_PAGES: NavLink[] = [
   { label: "Citazioni", href: "/citazioni", desc: "5 citazioni" },
   { label: "FAQ", href: "/faq", desc: "8 domande frequenti" },
   { label: "Contatti", href: "/contatti", desc: "Social e form" },
-  { label: "Photo Book", href: "/photobook", desc: "57 scatti" },
+  { label: "Photo Book", href: "/photobook", desc: "56 scatti" },
   { label: "Collegamenti esteri", href: "/collegamenti-esteri", desc: "Link verificati" },
   { label: "Multimedia", href: "/multimedia", desc: "Video e gallerie" },
   { label: "Angelo Faraci", href: "/angelo-faraci", desc: "Regista e compagno" },

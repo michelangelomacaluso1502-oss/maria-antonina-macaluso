@@ -94,71 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Italiana&display=swap"
           rel="stylesheet"
         />
-        {/* Script inline nel <head> che gestisce l'intro cinematografica.
-            Gira PRIMA dell'idratazione React.
-            Usa requestAnimationFrame per aspettare che il DOM sia pronto. */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){
-  try {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    function runIntro() {
-      var overlay = document.getElementById('intro-overlay');
-      if (!overlay) {
-        // Retry — React might not have rendered yet
-        requestAnimationFrame(runIntro);
-        return;
-      }
-
-      var icon = document.getElementById('intro-icon');
-      var sub = document.getElementById('intro-subtitle');
-      var mono = document.getElementById('intro-monogram');
-      var glow = document.getElementById('intro-glow');
-      var name = document.getElementById('intro-name');
-      var prog = document.getElementById('intro-progress');
-      var pbar = document.getElementById('intro-progress-bar');
-
-      if (!icon || !mono) {
-        requestAnimationFrame(runIntro);
-        return;
-      }
-
-      document.body.style.overflow = 'hidden';
-
-      setTimeout(function(){ if(icon){icon.style.opacity='1';icon.style.transform='scale(1)';} },400);
-      setTimeout(function(){ if(sub){sub.style.opacity='1';sub.style.transform='translateY(0)';} },1000);
-      setTimeout(function(){
-        if(mono){mono.style.opacity='1';mono.style.transform='translateY(0) scale(1)';mono.style.filter='blur(0px)';}
-        if(glow){glow.style.opacity='1';glow.style.transform='scale(1.15)';}
-      },1800);
-      setTimeout(function(){ if(name){name.style.opacity='1';name.style.transform='translateY(0)';} },3400);
-      setTimeout(function(){
-        if(prog){prog.style.opacity='1';}
-        if(pbar){pbar.style.transform='translateX(100%)';}
-      },4200);
-      setTimeout(function(){
-        if(overlay){overlay.style.opacity='0';overlay.style.pointerEvents='none';}
-      },5800);
-      setTimeout(function(){
-        if(overlay) overlay.remove();
-        document.body.style.overflow='';
-      },6500);
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', runIntro);
-    } else {
-      runIntro();
-    }
-  } catch(e) {
-    var ov = document.getElementById('intro-overlay');
-    if(ov) ov.remove();
-    document.body.style.overflow='';
-  }
-})();`,
-          }}
-        />
+        {/* Intro cinematografica gestita da IntroLoader (client component nel <body>) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
