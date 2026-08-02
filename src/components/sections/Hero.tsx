@@ -12,13 +12,13 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 const containerStagger = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.3 },
+    transition: { staggerChildren: 0.06, delayChildren: 0.1 },
   },
 };
 
 const itemUp = {
-  hidden: { opacity: 0, y: 28, filter: "blur(6px)" },
-  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.9, ease: EASE } },
+  hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
+  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.5, ease: EASE } },
 };
 
 const itemClipRight = {
@@ -26,7 +26,7 @@ const itemClipRight = {
   visible: {
     opacity: 1,
     clipPath: "inset(0 0 0 0)",
-    transition: { duration: 1.0, ease: EASE },
+    transition: { duration: 0.6, ease: EASE },
   },
 };
 
@@ -101,7 +101,7 @@ export default function Hero() {
           <motion.h1
             variants={{
               hidden: {},
-              visible: { transition: { staggerChildren: 0.18, delayChildren: 0.4 } },
+              visible: { transition: { staggerChildren: 0.08, delayChildren: 0.2 } },
             }}
             className="font-display text-5xl leading-[0.95] tracking-tight text-cream sm:text-6xl md:text-7xl lg:text-8xl"
           >
@@ -186,7 +186,7 @@ export default function Hero() {
         aria-label="Scorri per scoprire"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.4, duration: 0.9, ease: EASE }}
+        transition={{ delay: 1.2, duration: 0.5, ease: EASE }}
         className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 rounded-full border border-gold/20 bg-noir/40 px-4 py-2 backdrop-blur-sm text-gold/70 transition-all hover:border-gold/40 hover:text-gold hover:bg-noir/60"
       >
         <span className="text-[10px] uppercase tracking-cinema"><span>Scorri per scoprire</span></span>
