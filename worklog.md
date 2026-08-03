@@ -2154,3 +2154,50 @@ Stage Summary:
 - Build status: SUCCESS
 - Deploy: SUCCESS — https://maria-antonina-macaluso.vercel.app (Production Ready in 45s)
 
+
+---
+Task ID: INTRO-v6
+Agent: Super Z (main)
+Task: Reimplementare animazione intro cinematografica in stile sito Angelo Faraci, riadattata a Mary
+
+Work Log:
+- Analizzata immagine di riferimento (screenshot sito Angelo Faraci): confermata struttura con film strip icon + tagline "UNA PRODUZIONE SICILIANA" + nome split bianco/oro + progress bar + letterbox bars
+- Letto IntroLoader.tsx esistente (v5 con useState gating — non funzionava nell'utente)
+- Letta sezione INTRO PRE-ENTRY di globals.css (classi CSS già presenti ma markup IntroLoader non le usava)
+- Riscritta completamente la sezione CSS in globals.css:
+  * Rimossa monogramma M·M (non presente nel riferimento Angelo)
+  * Aggiunta .intro-name-big con split .intro-name-white (cream-white) + .intro-name-gold (gradient oro)
+  * Aggiunta .intro-bg-vignette per profondità cinematografica
+  * Aggiunta .intro-tagline con letter-spacing 0.55em (matching Angelo)
+  * Aggiunta .intro-profession per sottotitolo
+  * Aggiunta body:has(.intro-pre-entry) per scroll lock automatico senza JS
+  * Aggiunta .is-hidden state class per fade-out controllato
+  * Timing più rapido: 3.2s totali (vs 5s precedente) — fade a 3.2s, rimozione DOM a 3.9s
+- Riscritto IntroLoader.tsx (v6):
+  * "use client" mantenuto per non intaccare struttura progetto / import layout.tsx
+  * RIMOSSO useState gating — ora il markup completo viene renderizzato nell'SSR
+  * Tutte le animazioni sono CSS @keyframes (partono automaticamente al parse HTML, no JS trigger)
+  * useEffect gestisce SOLO: add .is-hidden a 3.2s, remove DOM a 3.9s, skip click/tap, prefers-reduced-motion
+  * Aggiunto SVG inline film strip icon (64x64): frame + 14 perforazioni + play triangle, tutto in #c9a96a gold
+  * Struttura markup: vignette → letterbox top/bottom → glow → content(icon → tagline → name-big → profession → progress)
+- Build Next.js: ✓ Compiled successfully
+- Test locale (localhost:3939) con agent-browser:
+  * T=400ms: screenshot mostra film icon + "UNA PRODUZIONE SICILIANA" + letterbox — VLM conferma ✓
+  * T=1.5s: eval JS conferma overlay exists, opacity 1, z-index 99999, bg rgb(8,7,10), nameWhite="Maria Antonina", nameGold="Macaluso", profession="Attrice · Cinema Siciliano", bodyOverflow="hidden" ✓
+  * T=3.5s: eval conferma classes="intro-pre-entry is-hidden", opacity=0.345 (transizione fade-out in corso) ✓
+  * Screenshot peak (1.5s): VLM conferma icona pellicola + tagline + nome bianco/oro + letterbox + sfondo nero
+- Rilinkato progetto Vercel corretto: my-project → maria-antonina-macaluso (prj_Por7AM0qHKdkdgWpcd5Psq1446eu)
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app (alias corretto)
+- Verifica produzione: curl HTML contiene tutti gli elementi intro (intro-overlay, intro-tagline, intro-name-white "Maria Antonina", intro-name-gold "Macaluso", intro-profession, intro-progress-bar, SVG film strip completo)
+
+Stage Summary:
+- Animazione intro cinematografica Hollywood-style implementata e deployata
+- Stesso stile del sito Angelo Faraci: film strip icon (gold) → "UNA PRODUZIONE SICILIANA" → nome grande split bianco/oro → professione → progress bar sweep
+- Adattata a Mary: palette noir #08070a + oro #c9a96a (coerente col resto del sito)
+- Architettura bullet-proof: markup SSR completo + CSS @keyframes (no JS per avvio) + useEffect solo per cleanup
+- body:has() per scroll lock automatico (no JS, no flash)
+- Skip click/tap, prefers-reduced-motion rispettato
+- Durata totale: 3.9s (più rapido della v5 che era 5s)
+- Verificato funzionante in locale a tutti gli stage temporali (400ms, 1.5s, 3.5s)
+- Verificato markup completo in HTML produzione via curl
+- Regole rispettate: 0 menzioni "Prime Video", Angelo Faraci non toccato (progetto separato), struttura progetto intatta (solo 2 file modificati: IntroLoader.tsx + globals.css)

@@ -589,8 +589,9 @@ body {
 }
 
 /* ============================================
-   INTRO PRE-ENTRY — Cinematografica CSS-only
-   Server Component nel <body> con CSS @keyframes
+   INTRO PRE-ENTRY — Cinematografica Hollywood
+   Stesso stile del sito Angelo Faraci, riadattato a Mary
+   Markup SSR completo — animazioni CSS @keyframes
    ============================================ */
 
 /* Container — z-index 99999 per coprire tutto */
@@ -605,16 +606,30 @@ body {
   overflow: hidden !important;
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+  transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
   will-change: opacity;
+  cursor: pointer;
 }
 
-/* Body scroll lock — gestito da classe sul <html> */
+/* Body scroll lock automatico quando l'overlay esiste nel DOM — no JS */
+body:has(.intro-pre-entry) {
+  overflow: hidden !important;
+}
 html.intro-lock body {
   overflow: hidden !important;
 }
 
-/* Letterbox bars */
+/* Vignettatura cinematografica di fondo */
+.intro-bg-vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, transparent 0%, rgba(8, 7, 10, 0.6) 70%, rgba(8, 7, 10, 1) 100%),
+    linear-gradient(180deg, #0a0810 0%, #08070a 50%, #0a0810 100%);
+  z-index: 0;
+}
+
+/* Letterbox bars — entrano da sopra/sotto */
 .intro-bar {
   position: absolute;
   left: 0;
@@ -622,33 +637,36 @@ html.intro-lock body {
   background: #000;
   z-index: 3;
   height: 0;
-  animation: intro-bar-grow 0.7s ease-out forwards;
+  animation: intro-bar-grow 0.6s cubic-bezier(0.7, 0, 0.3, 1) forwards;
 }
 .intro-bar-top { top: 0; }
-.intro-bar-bottom { bottom: 0; }
+.intro-bar-bottom {
+  bottom: 0;
+  animation-delay: 0.05s;
+}
 @keyframes intro-bar-grow {
   0% { height: 0; }
-  100% { height: 8vh; }
+  100% { height: 9vh; }
 }
 
-/* Glow dorato */
+/* Glow dorato centrale */
 .intro-glow-orb {
   position: absolute;
-  width: 60vw;
-  height: 60vw;
-  max-width: 400px;
-  max-height: 400px;
+  width: 70vw;
+  height: 70vw;
+  max-width: 520px;
+  max-height: 520px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(201,169,106,0.18) 0%, rgba(201,169,106,0.05) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(201,169,106,0.22) 0%, rgba(201,169,106,0.06) 40%, transparent 70%);
   z-index: 1;
   opacity: 0;
-  transform: scale(0.5);
-  animation: intro-glow-reveal 1.5s ease-out 1.2s forwards;
+  transform: scale(0.4);
+  animation: intro-glow-reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
 }
 @keyframes intro-glow-reveal {
-  0% { opacity: 0; transform: scale(0.5); }
-  40% { opacity: 1; transform: scale(1); }
-  100% { opacity: 0.4; transform: scale(1.15); }
+  0% { opacity: 0; transform: scale(0.4); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 0.5; transform: scale(1.2); }
 }
 
 /* Contenuto centrale */
@@ -657,103 +675,110 @@ html.intro-lock body {
   z-index: 4;
   text-align: center;
   padding: 0 1.5rem;
+  max-width: 92vw;
 }
 
-/* Icona film */
+/* Icona pellicola cinematografica (SVG inline) */
 .intro-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
-  opacity: 0;
-  transform: scale(0.7);
-  animation: intro-icon-reveal 0.8s ease-out 0.3s forwards;
-}
-@keyframes intro-icon-reveal {
-  0% { opacity: 0; transform: scale(0.7); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-/* Sottotitolo */
-.intro-subtitle-text {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.4em;
-  color: rgba(201, 169, 106, 0.7);
   margin-bottom: 1.5rem;
   opacity: 0;
-  transform: translateY(10px);
-  animation: intro-sub-reveal 0.8s ease-out 0.8s forwards;
+  transform: scale(0.6) translateY(10px);
+  filter: drop-shadow(0 0 12px rgba(201, 169, 106, 0.5));
+  animation: intro-icon-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
 }
-@keyframes intro-sub-reveal {
+.intro-icon svg {
+  width: clamp(44px, 9vw, 64px);
+  height: auto;
+  display: block;
+}
+@keyframes intro-icon-reveal {
+  0% { opacity: 0; transform: scale(0.6) translateY(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Tagline "UNA PRODUZIONE SICILIANA" */
+.intro-tagline {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(9px, 1.6vw, 11px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.55em;
+  color: rgba(201, 169, 106, 0.85);
+  margin-bottom: 1.8rem;
+  padding-left: 0.55em; /* compensazione letter-spacing */
+  opacity: 0;
+  transform: translateY(8px);
+  animation: intro-tagline-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+}
+@keyframes intro-tagline-reveal {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Nome grande — split bianco + oro come sito Angelo */
+.intro-name-big {
+  font-family: "Italiana", "Cormorant Garamond", serif;
+  font-size: clamp(2.5rem, 9vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.5rem;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  filter: blur(14px);
+  animation: intro-name-big-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards;
+}
+@keyframes intro-name-big-reveal {
+  0% { opacity: 0; transform: translateY(20px) scale(0.95); filter: blur(14px); }
+  60% { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+.intro-name-white {
+  color: #f5efe4;
+  text-shadow: 0 0 60px rgba(245, 239, 228, 0.25);
+  display: block;
+}
+
+.intro-name-gold {
+  display: block;
+  background: linear-gradient(180deg, #f5d99a 0%, #c9a96a 45%, #8a6f3f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 80px rgba(201, 169, 106, 0.5);
+  font-style: italic;
+}
+
+/* Sottotitolo — professione */
+.intro-profession {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(0.8rem, 2.2vw, 1rem);
+  font-style: italic;
+  color: rgba(245, 239, 228, 0.55);
+  letter-spacing: 0.15em;
+  margin-top: 0.5rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: intro-profession-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) 1.5s forwards;
+}
+@keyframes intro-profession-reveal {
   0% { opacity: 0; transform: translateY(10px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Monogramma M·M */
-.intro-monogram {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.1em;
-  margin-bottom: 2rem;
-  opacity: 0;
-  transform: translateY(30px) scale(0.9);
-  filter: blur(16px);
-  animation: intro-mono-reveal 1.2s ease-out 1.2s forwards;
-}
-@keyframes intro-mono-reveal {
-  0% { opacity: 0; transform: translateY(30px) scale(0.9); filter: blur(16px); }
-  50% { opacity: 1; filter: blur(0); }
-  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
-}
-
-.intro-m-letter {
-  font-family: "Italiana", "Cormorant Garamond", serif;
-  font-size: clamp(3.5rem, 12vw, 6rem);
-  line-height: 1;
-  background: linear-gradient(180deg, #f5efe4 0%, #c9a96a 50%, #8a6f3f 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 60px rgba(201, 169, 106, 0.4);
-}
-
-.intro-m-dot {
-  font-family: "Italiana", "Cormorant Garamond", serif;
-  font-size: clamp(2rem, 6vw, 3rem);
-  color: #d4a5a5;
-  transform: translateY(-0.1em);
-}
-
-/* Nome completo */
-.intro-fullname {
-  font-family: "Italiana", "Cormorant Garamond", serif;
-  font-size: clamp(1.25rem, 4vw, 2rem);
-  color: #f5efe4;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: intro-name-reveal 0.8s ease-out 2.6s forwards;
-}
-@keyframes intro-name-reveal {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-.intro-name-gold {
-  color: #c9a96a;
-  font-style: italic;
-}
-
-/* Barra caricamento */
+/* Barra caricamento — sweep dorato */
 .intro-progress-track {
   margin: 2rem auto 0;
-  width: 12rem;
+  width: clamp(8rem, 22vw, 14rem);
   height: 1px;
   background: rgba(245, 239, 228, 0.15);
   overflow: hidden;
   opacity: 0;
-  animation: intro-track-show 0.5s ease-out 3.4s forwards;
+  animation: intro-track-show 0.4s ease-out 1.8s forwards;
+  position: relative;
 }
 @keyframes intro-track-show {
   0% { opacity: 0; }
@@ -761,21 +786,29 @@ html.intro-lock body {
 }
 
 .intro-progress-bar {
-  height: 100%;
-  width: 50%;
-  background: #c9a96a;
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent 0%, #c9a96a 50%, transparent 100%);
   transform: translateX(-100%);
-  animation: intro-progress-sweep 1.5s ease-out 3.4s forwards;
+  animation: intro-progress-sweep 1.4s cubic-bezier(0.4, 0, 0.6, 1) 1.8s forwards;
 }
 @keyframes intro-progress-sweep {
   0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  100% { transform: translateX(350%); }
+}
+
+/* Stato finale — quando si aggiunge la classe .is-hidden l'overlay svanisce */
+.intro-pre-entry.is-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .intro-pre-entry { display: none !important; }
-  html.intro-lock body { overflow: auto !important; }
+  body:has(.intro-pre-entry) { overflow: auto !important; }
 }
 
 /* ============================================
