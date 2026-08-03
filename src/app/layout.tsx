@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
+import IntroLoaderMarkup from "@/components/cinematic/IntroLoaderMarkup";
 import IntroLoader from "@/components/cinematic/IntroLoader";
 import ErrorBoundary from "@/components/cinematic/ErrorBoundary";
 import ScrollProgress from "@/components/cinematic/ScrollProgress";
@@ -94,7 +95,37 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Italiana&display=swap"
           rel="stylesheet"
         />
-        {/* Intro pre-entry gestito da IntroLoader (client component) */}
+        {/* CSS critico inline per l'intro overlay — visibile dal primo byte,
+            indipendentemente dal caricamento del CSS esterno */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            #intro-overlay.intro-pre-entry {
+              position: fixed !important;
+              inset: 0 !important;
+              z-index: 99999 !important;
+              display: flex !important;
+              align-items: center !important;
+              justify-content: center !important;
+              background: #08070a !important;
+              overflow: hidden !important;
+              opacity: 1;
+              visibility: visible;
+              transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
+              cursor: pointer;
+            }
+            #intro-overlay.intro-pre-entry.is-hidden {
+              opacity: 0 !important;
+              visibility: hidden !important;
+              pointer-events: none !important;
+            }
+            body:has(#intro-overlay) { overflow: hidden !important; }
+            @media (prefers-reduced-motion: reduce) {
+              #intro-overlay.intro-pre-entry { display: none !important; }
+              body:has(#intro-overlay) { overflow: auto !important; }
+            }
+          `
+        }} />
+        {/* Intro pre-entry gestito da IntroLoaderMarkup (server component) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
@@ -103,6 +134,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-noir text-cream antialiased" suppressHydrationWarning>
         <a href="#main" className="skip-link">Vai al contenuto</a>
         <ErrorBoundary>
+          <IntroLoaderMarkup />
           <IntroLoader />
           <ScrollProgress />
           <FilmGrain />
