@@ -3,22 +3,25 @@
 import { useEffect } from "react";
 
 /**
- * IntroLoader v6 — Cinematografica Hollywood style
+ * IntroLoader v6.1 — Cinematografica Hollywood style + monogramma M·M
  *
- * Stesso stile del sito Angelo Faraci, riadattato a Mary:
- *   1. Letterbox bars (entrate da sopra/sotto)
- *   2. Glow dorato centrale
- *   3. Film strip icon (SVG inline)
- *   4. Tagline "UNA PRODUZIONE SICILIANA"
- *   5. Nome grande "Maria Antonina" + "Macaluso" (bianco + oro)
- *   6. Sottotitolo professione
- *   7. Progress bar sweep dorato
+ * Sequenza animata (CSS @keyframes, 4.7s totali):
+ *   0.0s → Letterbox bars (entrano da sopra/sotto)
+ *   0.2s → Glow dorato centrale
+ *   0.3s → Film strip icon (SVG inline, oro)
+ *   0.6s → Tagline "UNA PRODUZIONE SICILIANA"
+ *   0.9s → Monogramma M·M (blur reveal, gradient oro)
+ *   1.7s → Nome grande "Maria Antonina" (bianco) + "Macaluso" (oro)
+ *   2.3s → Sottotitolo professione
+ *   2.6s → Progress bar sweep dorato
+ *   4.0s → Fade-out via .is-hidden
+ *   4.7s → Rimozione dal DOM
  *
  * Architettura:
  *   - Il markup completo viene renderizzato nell'SSR (primo byte HTML)
  *   - Le animazioni sono CSS @keyframes definite in globals.css
  *   - Le animazioni partono automaticamente quando il browser parsa l'HTML
- *   - useEffect (lato client) gestisce solo la rimozione dopo 3.2s
+ *   - useEffect (lato client) gestisce solo la rimozione dopo 4.7s
  *   - body:has(.intro-pre-entry) locka lo scroll senza JS
  *   - Click/tap per skip
  *   - prefers-reduced-motion disabilita tutto
@@ -42,19 +45,19 @@ export default function IntroLoader() {
 
     const timers: ReturnType<typeof setTimeout>[] = [];
 
-    // 3.2s → fade-out via classe .is-hidden (la transizione CSS gestisce l'opacità)
+    // 4.0s → fade-out via classe .is-hidden (la transizione CSS gestisce l'opacità)
     timers.push(
       setTimeout(() => {
         ov.classList.add("is-hidden");
-      }, 3200)
+      }, 4000)
     );
 
-    // 3.9s → rimozione dal DOM + ripristino scroll
+    // 4.7s → rimozione dal DOM + ripristino scroll
     timers.push(
       setTimeout(() => {
         if (ov.parentNode) ov.remove();
         document.documentElement.classList.remove("intro-lock");
-      }, 3900)
+      }, 4700)
     );
 
     // Skip on click/tap
@@ -144,6 +147,13 @@ export default function IntroLoader() {
 
         {/* Tagline */}
         <div className="intro-tagline">Una Produzione Siciliana</div>
+
+        {/* Monogramma M·M — identità di Mary */}
+        <div className="intro-monogram" aria-label="Monogramma M M">
+          <span className="intro-m-letter">M</span>
+          <span className="intro-m-dot" aria-hidden="true">·</span>
+          <span className="intro-m-letter">M</span>
+        </div>
 
         {/* Nome grande — split bianco/oro */}
         <h1 className="intro-name-big">

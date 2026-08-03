@@ -2201,3 +2201,44 @@ Stage Summary:
 - Verificato funzionante in locale a tutti gli stage temporali (400ms, 1.5s, 3.5s)
 - Verificato markup completo in HTML produzione via curl
 - Regole rispettate: 0 menzioni "Prime Video", Angelo Faraci non toccato (progetto separato), struttura progetto intatta (solo 2 file modificati: IntroLoader.tsx + globals.css)
+
+---
+Task ID: INTRO-v6.1 + VANINA-FIX
+Agent: Super Z (main)
+Task: Reintegrare monogramma M·M nell'intro cinematografica + correggere voce Vanina (rimuovere "comparsa")
+
+Work Log:
+- Cercato "comparsa" in tutto il codice: trovato in data.ts (voce Vanina filmografia + voce timeline 2024)
+- Aggiornato data.ts voce Vanina (filmografia):
+  * role: "Comparsa (voce) — 1 episodio" → "Partecipazione — 1 episodio"
+  * description/longDescription: rimosse menzioni "comparsa (voce)", sostituite con "ha partecipato"
+  * cast: "Maria Antonina Macaluso (voce, 1 episodio)" → "Maria Antonina Macaluso (1 episodio)"
+  * plot: rimosso "compare come comparsa (voce)", sostituito con "ha partecipato"
+  * trivia: "credit 'voce'" → "partecipazione"
+- Aggiornato data.ts voce timeline 2024 (Vanina):
+  * description: rimosso "compare nel cast (voce)", sostituito con "ha partecipato"
+- Verificato: grep "comparsa" in /home/z/my-project/src → 0 risultati
+- Aggiornato IntroLoader.tsx (v6 → v6.1):
+  * Reinserito blocco markup M·M tra tagline e nome completo
+  * Aggiornato JSDoc con nuova sequenza timing
+  * Aggiornati timer cleanup: fade-out a 4.0s (era 3.2s), rimozione DOM a 4.7s (era 3.9s)
+- Aggiornato globals.css:
+  * Aggiunte classi .intro-monogram, .intro-m-letter, .intro-m-dot con animation blur-reveal a 0.9s
+  * Riadattato timing sequenza: name-big a 1.7s (era 0.9s), profession a 2.3s (era 1.5s), progress-bar a 2.6s (era 1.8s)
+  * Durata totale animazione: 4.7s (era 3.9s) per accogliere monogramma
+- Build Next.js: ✓ Compiled successfully
+- Test locale (localhost:3940) con agent-browser:
+  * curl HTML: tutti gli elementi presenti (intro-monogram, intro-m-letter, intro-m-dot, intro-name-big, ecc.)
+  * eval a 1.5s: overlay exists, opacity 1, monoExists true, monoOpacity 1, monoFilter "blur(0px)" (reveal completo), mLetters ["M","M"], mDot "·", nameWhite "Maria Antonina", nameGold "Macaluso", tagline "Una Produzione Siciliana" ✓
+  * VLM screenshot a 1.5s: conferma visiva di monogramma M·M centrale + tagline + icona pellicola + sfondo nero + tonalità oro
+  * eval a 4.8s: overlayExists false (rimosso correttamente dal DOM a 4.7s) ✓
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+- Verifica produzione via curl:
+  * Markup contiene intro-monogram, intro-m-letter, intro-m-dot ✓
+  * Pagina /film/vanina: 0 occorrenze "comparsa", presenti "Partecipazione" e "ha partecipato" ✓
+
+Stage Summary:
+- Monogramma M·M reintegrato nell'intro cinematografica, posizionato tra tagline "UNA PRODUZIONE SICILIANA" e nome grande "Maria Antonina Macaluso"
+- Sequenza animata completa (4.7s): letterbox → glow → film icon → tagline → M·M (blur reveal) → nome split bianco/oro → professione → progress bar → fade-out
+- Voce Vanina corretta in tutte le sezioni (filmografia, timeline, pagina film dedicata): rimosso "comparsa (voce)", sostituito con "Partecipazione" / "ha partecipato"
+- Regole rispettate: 0 menzioni "Prime Video", progetto Angelo non toccato, struttura progetto intatta (modificati solo 3 file: IntroLoader.tsx, globals.css, data.ts)

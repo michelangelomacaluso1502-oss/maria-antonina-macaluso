@@ -728,7 +728,7 @@ html.intro-lock body {
   opacity: 0;
   transform: translateY(20px) scale(0.95);
   filter: blur(14px);
-  animation: intro-name-big-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards;
+  animation: intro-name-big-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) 1.7s forwards;
 }
 @keyframes intro-name-big-reveal {
   0% { opacity: 0; transform: translateY(20px) scale(0.95); filter: blur(14px); }
@@ -752,6 +752,42 @@ html.intro-lock body {
   font-style: italic;
 }
 
+/* Monogramma M·M — identità di Mary, blur reveal cinematografico */
+.intro-monogram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1em;
+  margin: 0 0 1.5rem;
+  opacity: 0;
+  transform: translateY(30px) scale(0.9);
+  filter: blur(16px);
+  animation: intro-mono-reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards;
+}
+@keyframes intro-mono-reveal {
+  0% { opacity: 0; transform: translateY(30px) scale(0.9); filter: blur(16px); }
+  50% { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+.intro-m-letter {
+  font-family: "Italiana", "Cormorant Garamond", serif;
+  font-size: clamp(3rem, 10vw, 5rem);
+  line-height: 1;
+  background: linear-gradient(180deg, #f5efe4 0%, #c9a96a 50%, #8a6f3f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 60px rgba(201, 169, 106, 0.4);
+}
+
+.intro-m-dot {
+  font-family: "Italiana", "Cormorant Garamond", serif;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  color: #d4a5a5;
+  transform: translateY(-0.15em);
+}
+
 /* Sottotitolo — professione */
 .intro-profession {
   font-family: "Cormorant Garamond", serif;
@@ -762,7 +798,7 @@ html.intro-lock body {
   margin-top: 0.5rem;
   opacity: 0;
   transform: translateY(10px);
-  animation: intro-profession-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) 1.5s forwards;
+  animation: intro-profession-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) 2.3s forwards;
 }
 @keyframes intro-profession-reveal {
   0% { opacity: 0; transform: translateY(10px); }
@@ -777,7 +813,7 @@ html.intro-lock body {
   background: rgba(245, 239, 228, 0.15);
   overflow: hidden;
   opacity: 0;
-  animation: intro-track-show 0.4s ease-out 1.8s forwards;
+  animation: intro-track-show 0.4s ease-out 2.6s forwards;
   position: relative;
 }
 @keyframes intro-track-show {
@@ -791,7 +827,7 @@ html.intro-lock body {
   width: 40%;
   background: linear-gradient(90deg, transparent 0%, #c9a96a 50%, transparent 100%);
   transform: translateX(-100%);
-  animation: intro-progress-sweep 1.4s cubic-bezier(0.4, 0, 0.6, 1) 1.8s forwards;
+  animation: intro-progress-sweep 1.4s cubic-bezier(0.4, 0, 0.6, 1) 2.6s forwards;
 }
 @keyframes intro-progress-sweep {
   0% { transform: translateX(-100%); }

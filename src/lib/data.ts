@@ -451,25 +451,25 @@ export const FILMS: Film[] = [
     slug: "vanina",
     year: "2024",
     title: "Vanina — Un vicequestore a Catania",
-    role: "Comparsa (voce) — 1 episodio",
+    role: "Partecipazione — 1 episodio",
     poster: "/images/films/vanina.jpg",
     director: "Davide Marengo",
     type: "Serie TV",
     production: "Canale 5 — Mediaset",
     description:
-      "Serie TV Canale 5 / Mediaset, regia di Davide Marengo. Maria Antonina Macaluso appare come comparsa (voce) in un episodio della prima stagione.",
+      "Serie TV Canale 5 / Mediaset, regia di Davide Marengo. Maria Antonina Macaluso ha partecipato a un episodio della prima stagione.",
     longDescription:
-      "Vanina — Un vicequestore a Catania (2024) è una serie televisiva trasmessa su Canale 5 (Mediaset), regia di Davide Marengo, basata sui romanzi di Cristina Cassar Scalia. La serie segue le indagini di Vanina Guarrasi, vicequestore della sezione omicidi di Catania. Maria Antonina Macaluso appare come comparsa con ruolo di voce in un episodio della prima stagione (IMDb: credit 'voce', 1 episodio 2024). Una partecipazione breve ma significativa, che segna la presenza dell'attrice in una produzione Mediaset di prime time accanto a Giusy Buscemi (protagonista) e al cast corale della serie.",
+      "Vanina — Un vicequestore a Catania (2024) è una serie televisiva trasmessa su Canale 5 (Mediaset), regia di Davide Marengo, basata sui romanzi di Cristina Cassar Scalia. La serie segue le indagini di Vanina Guarrasi, vicequestore della sezione omicidi di Catania. Maria Antonina Macaluso ha partecipato a un episodio della prima stagione (IMDb, 2024). Una partecipazione che segna la presenza dell'attrice in una produzione Mediaset di prime time accanto a Giusy Buscemi (protagonista) e al cast corale della serie.",
     imdbUrl: "https://www.imdb.com/it/title/tt31721916/fullcredits",
-    cast: ["Giusy Buscemi (Vanina Guarrasi)", "Claudio Castrogiovanni", "Carmelo Spanò", "Corrado Fortuna", "Manfredi Monterreale", "Dajana Roncione", "Maria Antonina Macaluso (voce, 1 episodio)"],
+    cast: ["Giusy Buscemi (Vanina Guarrasi)", "Claudio Castrogiovanni", "Carmelo Spanò", "Corrado Fortuna", "Manfredi Monterreale", "Dajana Roncione", "Maria Antonina Macaluso (1 episodio)"],
     genre: "Serie TV — Poliziesco / Drammatico",
     duration: "1 episodio (2024)",
     plot:
-      "Vanina Guarrasi, vicequestore della sezione omicidi di Catania, indaga su casi complessi tra i misteri della Sicilia orientale. Maria Antonina Macaluso appare come comparsa (voce) in un episodio della prima stagione.",
+      "Vanina Guarrasi, vicequestore della sezione omicidi di Catania, indaga su casi complessi tra i misteri della Sicilia orientale. Maria Antonina Macaluso ha partecipato a un episodio della prima stagione.",
     trivia: [
       "Serie basata sui romanzi di Cristina Cassar Scalia.",
       "Protagonista: Giusy Buscemi nel ruolo di Vanina Guarrasi.",
-      "Maria Antonina Macaluso: credit 'voce', 1 episodio 2024 (IMDb).",
+      "Maria Antonina Macaluso: partecipazione 1 episodio 2024 (IMDb).",
       "Regia di Davide Marengo per Canale 5 / Mediaset.",
     ],
     press: [
@@ -671,7 +671,7 @@ export const TIMELINE: TimelineEvent[] = [
     year: "2024",
     title: "Vanina — Canale 5",
     description:
-      "Serie TV Canale 5 / Mediaset, regia di Davide Marengo. Maria Antonina Macaluso compare nel cast (voce) per un episodio della prima stagione.",
+      "Serie TV Canale 5 / Mediaset, regia di Davide Marengo. Maria Antonina Macaluso ha partecipato a un episodio della prima stagione.",
     sourceUrl: "https://www.imdb.com/it/title/tt31721916/fullcredits",
     sourceName: "IMDb",
   },
