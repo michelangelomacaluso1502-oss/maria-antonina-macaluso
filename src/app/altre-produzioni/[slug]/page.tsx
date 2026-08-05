@@ -247,6 +247,50 @@ export default async function AltraProduzionePage({
           </figure>
         </Reveal>
 
+        {/* Galleria aggiuntiva specifica per Creo Kitchens — servizio TGS nello showroom */}
+        {opera.slug === "creo-kitchens-cucine-italiane" && (
+          <Reveal className="mt-12">
+            <h2 className="font-display text-2xl text-gold mb-4">Showroom Creo — Servizio TGS</h2>
+            <p className="mb-6 text-sm text-cream/70 leading-relaxed">
+              Documentazione del servizio TGS (TeleGiornale di Sicilia) dedicato alla campagna pubblicitaria
+              Creo Kitchens nello showroom di Altomonte (Palermo), con Angelo Faraci, Marika Saveria Faraci e
+              Maria Antonina Macaluso.
+            </p>
+            <div className="grid gap-6 md:grid-cols-2">
+              <figure className="glass-card overflow-hidden p-3">
+                <div className="relative aspect-[9/16] w-full overflow-hidden bg-noir">
+                  <Image
+                    src="/images/films/creo-kitchens-showroom-tgs.jpg"
+                    alt="Servizio TGS Creo Kitchens — Angelo Faraci e Maria Antonina Macaluso nello showroom con logo TGS visibile"
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    quality={100}
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="px-2 py-3 text-center text-xs uppercase tracking-wide-sm text-cream/50">
+                  Showroom Creo — Servizio TGS (logo TGS visibile)
+                </figcaption>
+              </figure>
+              <figure className="glass-card overflow-hidden p-3">
+                <div className="relative aspect-[3/2] w-full overflow-hidden bg-noir">
+                  <Image
+                    src="/images/films/creo-kitchens-showroom-cucina.jpg"
+                    alt="Showroom Creo Kitchens — isola centrale con cucina moderna, Maria Antonina e Angelo Faraci"
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    quality={100}
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="px-2 py-3 text-center text-xs uppercase tracking-wide-sm text-cream/50">
+                  Showroom Creo — Cucina moderna esposta
+                </figcaption>
+              </figure>
+            </div>
+          </Reveal>
+        )}
+
         {/* IMDb link */}
         {opera.imdbUrl && (
           <Reveal className="mt-12 text-center">

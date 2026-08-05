@@ -725,7 +725,7 @@ export const ALTRE_PRODUZIONI: Film[] = [
     description:
       "Cortometraggio pubblicitario del 2021 per Creo Kitchens — Cucine Italiane (Viale del Fante, 61 - Altomonte, Palermo), trasmesso su Sky. Maria Antonina Macaluso partecipa con ruolo di voce, accanto ad Angelo Faraci (attore protagonista) e Marika Saveria Faraci (voce). Lo screenshot d'epoca mostra il set con i due presentatori nello showroom Creo con elettrodomestici e logo CREO esposto.",
     longDescription:
-      "Creo Kitchens — Cucine Italiane (2021) è un cortometraggio pubblicitario prodotto per Sky, girato integralmente in Sicilia presso lo showroom Creo di Viale del Fante, 61 ad Altomonte (Palermo). La regia e la sceneggiatura sono di Angelo Faraci, già attore protagonista della campagna nel 2020. Maria Antonina Macaluso partecipa con ruolo di voce, affiancando Marika Saveria Faraci (voce) nel cast vocale. Lo screenshot storico mostra i due presentatori nello showroom Creo: Angelo Faraci (uomo in giacca scura e camicia blu) e una presentatrice (donna in giacca rossa), circondati da elettrodomestici bianchi con fiocchi rossi e dal logo CREO con indirizzo 'Viale del Fante, 61 - Altomonte (Pa)'. La campagna pubblicitaria è stata trasmessa sui canali Sky e celebra l'eccellenza delle cucine italiane artigianali, con una narrazione che intreccia tradizione siciliana e design contemporaneo. L'opera rappresenta una delle prime collaborazioni professionali di Maria Antonina Macaluso nel campo della pubblicità televisiva, sotto la direzione di Angelo Faraci.",
+      "Creo Kitchens — Cucine Italiane (2021) è un cortometraggio pubblicitario prodotto per Sky, girato integralmente in Sicilia presso lo showroom Creo di Viale del Fante, 61 ad Altomonte (Palermo). La regia e la sceneggiatura sono di Angelo Faraci, già attore protagonista della campagna nel 2020. Maria Antonina Macaluso partecipa con ruolo di voce, affiancando Marika Saveria Faraci (voce) nel cast vocale. Lo screenshot storico mostra i due presentatori nello showroom Creo: Angelo Faraci (uomo in giacca scura e camicia blu) e una presentatrice (donna in giacca rossa), circondati da elettrodomestici bianchi con fiocchi rossi e dal logo CREO con indirizzo 'Viale del Fante, 61 - Altomonte (Pa)'. La campagna pubblicitaria è stata trasmessa sui canali Sky e celebra l'eccellenza delle cucine italiane artigianali, con una narrazione che intreccia tradizione siciliana e design contemporaneo. L'opera rappresenta una delle prime collaborazioni professionali di Maria Antonina Macaluso nel campo della pubblicità televisiva, sotto la direzione di Angelo Faraci. La produzione è stata documentata dal TGS (TeleGiornale di Sicilia) con un servizio dedicato alla campagna pubblicitaria nello showroom Creo, che ha visto coinvolti Angelo Faraci, Marika Saveria Faraci e Maria Antonina Macaluso.",
     imdbUrl: "https://www.imdb.com/it/name/nm11444273",
     cast: [
       "Angelo Faraci (attore protagonista, sceneggiatore)",
@@ -745,6 +745,7 @@ export const ALTRE_PRODUZIONI: Film[] = [
       "Showroom Creo: Viale del Fante, 61 - Altomonte (Palermo).",
       "Girato integralmente in Sicilia.",
       "Sceneggiatura di Angelo Faraci e Rosaria Lo Porto.",
+      "Servizio TGS (TeleGiornale di Sicilia) dedicato alla campagna pubblicitaria nello showroom Creo.",
     ],
     press: [
       {
@@ -795,6 +796,20 @@ export const ALTRE_PRODUZIONI: Film[] = [
         url: "https://www.messinatoday.it/social/storia-angelo-faraci-programma-tv-2000.html",
         excerpt:
           "Da Sky al cinema, la storia di Angelo Faraci raccontata in tv: 'Ho mostrato al pubblico la Sicilia più bella'.",
+      },
+      {
+        title: "Creo Kitchens Sicilia, Calabria e Basilicata — Pagina Facebook ufficiale",
+        source: "Facebook (Creo Kitchens Sicilia)",
+        url: "https://www.facebook.com/p/Creo-Kitchens-Sicilia-Calabria-e-Basilicata-100070919761794",
+        excerpt:
+          "Creo Kitchens, il nuovo brand del Gruppo LUBE destinato a rivoluzionare il mondo delle cucine. Design, qualità e convenienza si incontrano per creare cucine eccezionali.",
+      },
+      {
+        title: "TGS — TeleGiornale di Sicilia (servizio Creo Kitchens)",
+        source: "TGS (TeleGiornale di Sicilia)",
+        url: "https://www.dailymotion.com/video/xahuzu2",
+        excerpt:
+          "Servizio TGS dedicato alla campagna pubblicitaria Creo Kitchens nello showroom di Altomonte (Palermo) con Angelo Faraci, Marika Saveria Faraci e Maria Antonina Macaluso.",
       },
     ],
   },
@@ -1518,9 +1533,13 @@ const CIO_CHE_NON_TI_HO_DETTO_META: Record<string, { alt: string; title: string 
     alt: "Coppia cammina sorridente in vicolo di borgo mediterraneo — set di Ciò che non ti ho detto Revolution",
     title: "Revolution — Passeggiata",
   },
+  "84": {
+    alt: "Maria Antonina Macaluso con ciak sulla scogliera al tramonto — set di Ciò che non ti ho detto Revolution",
+    title: "Revolution — Il ciak sulla scogliera",
+  },
 };
 
-export const PHOTOBOOK = Array.from({ length: 83 }, (_, i) => {
+export const PHOTOBOOK = Array.from({ length: 84 }, (_, i) => {
   const num = i + 1;
   // Salta lo scatto 49 (rimosso)
   if (num === 49) return null;
@@ -1549,7 +1568,7 @@ export const MULTIMEDIA = [
   { title: "Dietro le quinte — Separati Mai", type: "Video", url: "https://www.youtube.com", duration: "5:18" },
   { title: "Intervista Fiuggi 2023", type: "Video", url: "https://www.youtube.com", duration: "7:25" },
   { title: "Red carpet Venezia 2024", type: "Video", url: "https://www.youtube.com", duration: "2:50" },
-  { title: "Servizio fotografico — Mediterranean 2025", type: "Galleria", url: "/#photobook", duration: "82 foto" },
+  { title: "Servizio fotografico — Mediterranean 2025", type: "Galleria", url: "/#photobook", duration: "83 foto" },
   { title: "Teaser Pochi Attimi", type: "Video", url: "https://www.youtube.com", duration: "1:30" },
 ];
 
@@ -1566,7 +1585,7 @@ export const ALL_PAGES: NavLink[] = [
   { label: "Citazioni", href: "/citazioni", desc: "5 citazioni" },
   { label: "FAQ", href: "/faq", desc: "8 domande frequenti" },
   { label: "Contatti", href: "/contatti", desc: "Social e form" },
-  { label: "Photo Book", href: "/photobook", desc: "82 scatti" },
+  { label: "Photo Book", href: "/photobook", desc: "83 scatti" },
   { label: "Collegamenti esteri", href: "/collegamenti-esteri", desc: "Link verificati" },
   { label: "Multimedia", href: "/multimedia", desc: "Video e gallerie" },
   { label: "Angelo Faraci", href: "/angelo-faraci", desc: "Regista e compagno" },

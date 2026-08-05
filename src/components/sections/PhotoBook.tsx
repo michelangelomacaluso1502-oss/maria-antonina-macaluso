@@ -12,7 +12,7 @@ export default function PhotoBook({ compact = false }: { compact?: boolean }) {
       <div className="cinematic-container">
         <SectionHeading
           eyebrow="Photo Book"
-          title="Ottantadue scatti"
+          title="Ottantatré scatti"
           subtitle="Un archivio visivo dell'attrice siciliana"
         />
         <div className="masonry-grid">
@@ -46,7 +46,7 @@ export default function PhotoBook({ compact = false }: { compact?: boolean }) {
         {compact && (
           <Reveal className="mt-10 text-center">
             <Link href="/photobook" className="btn-cinema">
-              Guarda tutti i 82 scatti <ArrowRight className="h-4 w-4" />
+              Guarda tutti i 83 scatti <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
         )}
