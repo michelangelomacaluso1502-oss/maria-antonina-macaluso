@@ -4,6 +4,7 @@ import Biography from "@/components/sections/Biography";
 import AngeloFaraci from "@/components/sections/AngeloFaraci";
 import LoveStory from "@/components/sections/LoveStory";
 import Filmography from "@/components/sections/Filmography";
+import AltreProduzioni from "@/components/sections/AltreProduzioni";
 import VideoGallery from "@/components/sections/VideoGallery";
 import Timeline from "@/components/sections/Timeline";
 import Awards from "@/components/sections/Awards";
@@ -25,6 +26,7 @@ export default function HomePage() {
       <AngeloFaraci />
       <LoveStory />
       <Filmography />
+      <AltreProduzioni />
       <VideoGallery />
       <Timeline />
       <Awards />

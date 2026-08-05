@@ -2986,3 +2986,57 @@ Stage Summary:
   * Idratazione React lenta
 - Il nome "Maria Antonina Macaluso" è SEMPRE visibile grazie al CSS !important
 - Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura intatta
+
+---
+Task ID: ALTRE-PRODUZIONI-CREO-RED-BULL-DI-TUTTO
+Agent: Super Z (main)
+Task: Aggiungere Creo Kitchens (Corto 2021), Red Bull Minas Riders, Di Tutto un pò in sezioni specifiche separate dalla filmografia
+
+Work Log:
+- Ricerche web verificate con z-ai web_search:
+  * IMDb nm14708762 (Maria Antonina Macaluso) conferma tutte le opere
+  * Creo Kitchens (2021): Corto, pubblicità Sky, Angelo Faraci attore/sceneggiatore, Maria Antonina Macaluso (voce), Marika Saveria Faraci (voce)
+  * Red Bull Minas Riders (2016-in corso): Serie TV documentario sportivo, Red Bull Media House, episodio "Bello Horizonte 2017" regia Ryan Meyers, Maria Antonina Macaluso (voce)
+  * Di Tutto un pò (2025): Speciale TV talk show, Sicilmedtv/Orawebtv, Maria Antonina Macaluso (Speaker), Angelo Faraci (Showman/Inviato), Melissa Venuto (Host)
+
+- Creato array ALTRE_PRODUZIONI in data.ts (separato da FILMS, distaccato dalla filmografia principale):
+  * 3 opere con dati completi: slug, year, title, role, director, type, production, description, longDescription, imdbUrl, cast, genre, duration, plot, trivia, press
+  * Ogni opera ha 4-5 fonti verificate (IMDb, MyMovies, EverybodyWiki, Sicilmedtv, Orawebtv, sito Angelo)
+
+- Generate 3 copertine SVG inline (no immagini esterne):
+  * creo-kitchens.svg: bordeaux + oro, icona pellicola, "CREO KITCHENS / Cucine Italiane / 2021 / SKY"
+  * red-bull-minas-riders.svg: blu notte + arancione, icona moto enduro, "RED BULL MINAS RIDERS / 2016-in corso / RED BULL MEDIA HOUSE"
+  * di-tutto-un-po.svg: bordeaux scuro + oro, icona microfono, "Di Tutto un pò / 2025 / SICILMEDTV·ORAWEBTV"
+
+- Creato componente AltreProduzioni.tsx:
+  * Grid responsive 1/2/3 colonne
+  * Card con poster, icona tipo (Film/Tv/Mic), anno, ruolo, link dettagli
+  * Hover effects, glass-luxury style
+
+- Creato pagine dinamiche /altre-produzioni/[slug]/page.tsx:
+  * generateStaticParams per 3 opere (SSG)
+  * generateMetadata con title/description/canonical/openGraph
+  * Layout: poster + info grid + longDescription + plot + cast + trivia + press + IMDb link
+  * BackToTop incluso
+
+- Aggiunto <AltreProduzioni /> in homepage dopo <Filmography />
+- Aggiunto "Altre Produzioni" in NAV_ITEMS e ALL_PAGES
+- Build: ✓ Compiled successfully, 88 pagine generate (3 nuove SSG)
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+- Verifica produzione:
+  * Homepage HTTP 200 ✓
+  * /altre-produzioni/creo-kitchens-cucine-italiane HTTP 200 ✓
+  * /altre-produzioni/red-bull-minas-riders HTTP 200 ✓
+  * /altre-produzioni/di-tutto-un-po HTTP 200 ✓
+  * 3 poster SVG accessibili HTTP 200 ✓
+
+Stage Summary:
+- 3 nuove opere aggiunte in sezione dedicata "Altre Produzioni" (distaccata dalla filmografia)
+- Creo Kitchens (Corto 2021): cortometraggio pubblicitario Sky
+- Red Bull Minas Riders (2016): serie TV documentario sportivo Red Bull Media House
+- Di Tutto un pò (2025): speciale TV talk show Sicilmedtv/Orawebtv
+- Tutte le informazioni verificate da fonti pubbliche (IMDb, MyMovies, EverybodyWiki, Sicilmedtv, Orawebtv, sito Angelo)
+- 3 copertine SVG inline generate (no immagini esterne pesanti)
+- 3 pagine dinamiche SSG con dettagli completi (cast, trivia, press, IMDb link)
+- Sezione aggiunta in homepage + menu navigation
+- Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta (aggiunte: 1 array data.ts, 1 componente, 3 pagine [slug], 3 SVG, 1 voce menu)

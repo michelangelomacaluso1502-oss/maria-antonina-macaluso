@@ -39,6 +39,7 @@ export const ANGELO_PROFILES = [
 export const NAV_ITEMS = [
   { label: "Biografia", href: "/#biografia" },
   { label: "Filmografia", href: "/#filmografia" },
+  { label: "Altre Produzioni", href: "/#altre-produzioni" },
   { label: "Angelo Faraci", href: "/#angelo-faraci" },
   { label: "Timeline", href: "/#timeline" },
   { label: "Photo Book", href: "/#photobook" },
@@ -584,6 +585,214 @@ export const FILMS: Film[] = [
   },
 ];
 
+// ============================================
+// ALTRE PRODUZIONI — Opere distinte dalla filmografia principale
+// Include: Cortometraggi, Pubblicità, Speciale TV, Serie TV internazionali
+// Fonti verificate: IMDb nm14708762, everybodywiki, mymovies.it, Sicilmedtv, Orawebtv
+// ============================================
+
+export const ALTRE_PRODUZIONI: Film[] = [
+  {
+    slug: "creo-kitchens-cucine-italiane",
+    year: "2021",
+    title: "Creo Kitchens — Cucine Italiane",
+    role: "Partecipazione (voce)",
+    poster: "/images/films/creo-kitchens.svg",
+    director: "Angelo Faraci",
+    type: "Cortometraggio — Pubblicità",
+    production: "Sky — Pubblicità italiana",
+    description:
+      "Cortometraggio pubblicitario del 2021 per Creo Kitchens — Cucine Italiane, trasmesso su Sky. Maria Antonina Macaluso partecipa con ruolo di voce, accanto ad Angelo Faraci (attore protagonista) e Marika Saveria Faraci (voce).",
+    longDescription:
+      "Creo Kitchens — Cucine Italiane (2021) è un cortometraggio pubblicitario prodotto per Sky, girato integralmente in Sicilia. La regia e la sceneggiatura sono di Angelo Faraci, già attore protagonista della campagna nel 2020. Maria Antonina Macaluso partecipa con ruolo di voce, affiancando Marika Saveria Faraci (voce) nel cast vocale. La campagna pubblicitaria è stata trasmessa sui canali Sky e celebra l'eccellenza delle cucine italiane artigianali, con una narrazione che intreccia tradizione siciliana e design contemporaneo. L'opera rappresenta una delle prime collaborazioni professionali di Maria Antonina Macaluso nel campo della pubblicità televisiva, sotto la direzione di Angelo Faraci.",
+    imdbUrl: "https://www.imdb.com/it/name/nm11444273",
+    cast: [
+      "Angelo Faraci (attore protagonista, sceneggiatore)",
+      "Marika Saveria Faraci (voce)",
+      "Maria Antonina Macaluso (voce)",
+      "Rosaria Lo Porto (sceneggiatura)",
+    ],
+    genre: "Cortometraggio — Pubblicità televisiva",
+    duration: "Cortometraggio (2021)",
+    plot:
+      "Una celebrazione delle cucine italiane artigianali, girata in Sicilia con la partecipazione di Angelo Faraci come attore protagonista. Maria Antonina Macaluso contribuisce con la propria voce alla narrazione della campagna pubblicitaria Sky.",
+    trivia: [
+      "Pubblicità italiana trasmessa su Sky nel 2020-2021.",
+      "Angelo Faraci è stato attore protagonista della campagna nel 2020.",
+      "Maria Antonina Macaluso partecipa con ruolo di voce nel 2021.",
+      "Girato integralmente in Sicilia.",
+      "Sceneggiatura di Angelo Faraci e Rosaria Lo Porto.",
+    ],
+    press: [
+      {
+        title: "Angelo Faraci — Biografia (MyMovies)",
+        source: "MyMovies",
+        url: "https://www.mymovies.it/persone/angelo-faraci/399862",
+        excerpt:
+          "Nel 2020 partecipa come attore alla pubblicità italiana Creo kitchens per Sky.",
+      },
+      {
+        title: "Angelo Faraci — Ancora Cinematografica",
+        source: "Ancora Cinematografica (Altervista)",
+        url: "https://cinematografica.altervista.org/angelo-faraci",
+        excerpt:
+          "Attore protagonista nel 2020 per la pubblicità italiana Creo kitchens per Sky.",
+      },
+      {
+        title: "Angelo Faraci — EverybodyWiki",
+        source: "EverybodyWiki",
+        url: "https://it.everybodywiki.com/Angelo_Faraci_(Attore)",
+        excerpt:
+          "Creo Kitchens - Cucine Italiane (2021) — Corto con sceneggiatura di Angelo Faraci.",
+      },
+      {
+        title: "Creo Kitchens — Cucine Italiane (2021) — Sito Angelo Faraci",
+        source: "angelo-faraci.vercel.app",
+        url: "https://angelo-faraci.vercel.app/film/creo-kitchens-cucine-italiane",
+        excerpt:
+          "Creo Kitchens – Cucine Italiane è un'opera del 2021 che vede la partecipazione di Angelo Faraci, attore, regista e produttore siciliano. Pubblicità italiana per Sky.",
+      },
+      {
+        title: "Marika Faraci — IMDb",
+        source: "IMDb",
+        url: "https://www.imdb.com/name/nm14708763",
+        excerpt:
+          "Creo Kitchens (2021) — Short — (voice, as Marika Saveria Faraci).",
+      },
+    ],
+  },
+  {
+    slug: "red-bull-minas-riders",
+    year: "2016",
+    title: "Red Bull Minas Riders",
+    role: "Partecipazione (voce) — Serie TV",
+    poster: "/images/films/red-bull-minas-riders.svg",
+    director: "Ryan Meyers",
+    type: "Serie TV — Documentario sportivo",
+    production: "Red Bull Media House",
+    description:
+      "Serie TV documentario-sportiva Red Bull Minas Riders (2016–in corso), prodotta da Red Bull Media House. Maria Antonina Macaluso partecipa con ruolo di voce nell'episodio 'Bello Horizonte, 2017' diretto da Ryan Meyers.",
+    longDescription:
+      "Red Bull Minas Riders è una serie TV documentario-sportiva prodotta da Red Bull Media House, dedicata alle competizioni di enduro estremo. La serie segue i piloti più talentuosi del mondo attraverso le prove più impegnative dei Red Bull Hard Endoro events. Maria Antonina Macaluso partecipa con ruolo di voce nell'episodio 'Bello Horizonte, 2017' (titolo originale: 'Red Bull Minas Riders: Bello Horizonte, 2017'), diretto da Ryan Meyers. L'episodio, ambientato a Bello Horizonte, vede anche la partecipazione di Angelo Faraci (voce), Marika Saveria Faraci (voce) e Troy Manering come narratore. La serie è stata distribuita internazionalmente dal 2016 ed è disponibile su Red Bull TV.",
+    imdbUrl: "https://www.imdb.com/title/tt10726880",
+    cast: [
+      "Graham Jarvis",
+      "Alfredo Gomez",
+      "Paul Bolton",
+      "Lars Enöckl",
+      "Bruno Crivilin",
+      "Angelo Faraci (voce)",
+      "Marika Saveria Faraci (voce)",
+      "Maria Antonina Macaluso (voce)",
+      "Troy Manering (narratore)",
+    ],
+    genre: "Serie TV — Documentario sportivo / Enduro",
+    duration: "Serie TV (2016–in corso) — 1 episodio (2017)",
+    plot:
+      "Red Bull Minas Riders è una serie documentario che segue le competizioni di enduro estremo più impegnative del mondo. Maria Antonina Macaluso partecipa come voce nell'episodio 'Bello Horizonte, 2017'.",
+    trivia: [
+      "Serie TV prodotta da Red Bull Media House, distribuita internazionalmente dal 2016.",
+      "Maria Antonina Macaluso partecipa con ruolo di voce nell'episodio 'Bello Horizonte, 2017'.",
+      "Episodio diretto da Ryan Meyers.",
+      "Cast include Angelo Faraci (voce), Marika Saveria Faraci (voce), Troy Manering (narratore).",
+      "Serie disponibile su Red Bull TV e IMDb (tt10726880).",
+      "Genere: enduro estremo / hard enduro.",
+    ],
+    press: [
+      {
+        title: "Red Bull Minas Riders — Serie TV (2016–) — IMDb",
+        source: "IMDb",
+        url: "https://www.imdb.com/title/tt10726880",
+        excerpt:
+          "Top Cast: Graham Jarvis, Alfredo Gomez, Paul Bolton, Lars Enöckl, Bruno Crivilin, Angelo Faraci, Marika Faraci, Maria Antonina Macaluso.",
+      },
+      {
+        title: "Red Bull Minas Riders: Bello Horizonte, 2017 (TV Episode) — IMDb",
+        source: "IMDb",
+        url: "https://www.imdb.com/title/tt10726932",
+        excerpt:
+          "Bello Horizonte, 2017: Directed by Ryan Meyers. With Angelo Faraci, Marika Faraci, Maria Antonina Macaluso, Troy Manering.",
+      },
+      {
+        title: "Red Bull Minas Riders: Bello Horizonte, 2017 — Full Credits",
+        source: "IMDb",
+        url: "https://www.imdb.com/title/tt10726932/fullcredits",
+        excerpt:
+          "Cast: Angelo Faraci (voice), Marika Faraci (voice, as Marika Saveria Faraci), Maria Antonina Macaluso (voice).",
+      },
+      {
+        title: "Red Bull Minas Riders (2016) — Kino · OceniTo",
+        source: "Kino · OceniTo",
+        url: "https://kino.oceniamy.to/serial/red-bull-minas-riders-3248543",
+        excerpt:
+          "Bruno Crivilin, Angelo Faraci, Marika Faraci, Troy Manering (Narrated by), Maria Antonina Macaluso.",
+      },
+    ],
+  },
+  {
+    slug: "di-tutto-un-po",
+    year: "2025",
+    title: "Di Tutto un pò",
+    role: "Speaker — Speciale TV",
+    poster: "/images/films/di-tutto-un-po.svg",
+    director: "Angelo Faraci",
+    type: "Speciale TV — Talk show",
+    production: "Sicilmedtv / Orawebtv",
+    description:
+      "Speciale TV 'Di Tutto un pò' (2025) trasmesso su Sicilmedtv e Orawebtv. Maria Antonina Macaluso è Speaker del programma, affiancando Angelo Faraci (Showman/Inviato) e Melissa Venuto (Host).",
+    longDescription:
+      "Di Tutto un pò (2025) è uno Speciale TV trasmesso su Sicilmedtv e Orawebtv, con formato talk show. Il programma esplora temi di attualità, cultura siciliana e intrattenimento, con uno stile fresco e diretto. Maria Antonina Macaluso ricopre il ruolo di Speaker, portando la propria voce e personalità al programma. Angelo Faraci è Showman e Inviato, mentre Melissa Venuto è Host. Il programma rappresenta un'evoluzione nella carriera televisiva di Maria Antonina Macaluso, che dopo le esperienze cinematografiche approda al formato TV talk show, confermandosi come voce versatile della produzione siciliana. La trasmissione è disponibile sui canali streaming di Sicilmedtv e Orawebtv.",
+    imdbUrl: "https://www.imdb.com/it/title/tt39301887/fullcredits/?ref_=ttch_ov_ql_1",
+    cast: [
+      "Angelo Faraci (Showman / Inviato)",
+      "Maria Antonina Macaluso (Speaker)",
+      "Melissa Venuto (Host)",
+    ],
+    genre: "Speciale TV — Talk show / Intrattenimento",
+    duration: "Speciale TV (2025)",
+    plot:
+      "Speciale TV 'Di Tutto un pò' trasmesso su Sicilmedtv e Orawebtv. Talk show con Angelo Faraci (Showman/Inviato), Maria Antonina Macaluso (Speaker) e Melissa Venuto (Host).",
+    trivia: [
+      "Speciale TV del 2025 trasmesso su Sicilmedtv e Orawebtv.",
+      "Maria Antonina Macaluso ricopre il ruolo di Speaker.",
+      "Angelo Faraci è Showman e Inviato del programma.",
+      "Melissa Venuto è Host del programma.",
+      "Format: talk show con temi di attualità e cultura siciliana.",
+      "Disponibile su IMDb (tt39301887).",
+    ],
+    press: [
+      {
+        title: "Di Tutto un pò (Speciale TV 2025) — Interpreti e troupe",
+        source: "IMDb",
+        url: "https://www.imdb.com/it/title/tt39301887/fullcredits/?ref_=ttch_ov_ql_1",
+        excerpt:
+          "Cast: Angelo Faraci (Showman/Inviato), Maria Antonina Macaluso (Speaker), Melissa Venuto (Host).",
+      },
+      {
+        title: "Maria Antonina Macaluso — Orawebtv",
+        source: "Orawebtv",
+        url: "https://www.orawebtv.it/maria-antonina-macaluso-vulcanica-content-creator-e-nuova-voce-di-di-tutto-un-po",
+        excerpt:
+          "Maria Antonina Macaluso, vulcanica content creator e nuova voce di 'Di Tutto un pò'.",
+      },
+      {
+        title: "Sicilmedtv — Maria Antonina Macaluso content",
+        source: "Sicilmedtv",
+        url: "https://www.sicilmedtv.it/maria-antonina-macaluso-content",
+        excerpt:
+          "Maria Antonina Macaluso — content creator e Speaker per 'Di Tutto un pò' su Sicilmedtv.",
+      },
+      {
+        title: "Maria Antonina Macaluso (@mary.macaluso09) — Instagram",
+        source: "Instagram",
+        url: "https://www.instagram.com/mary.macaluso09",
+        excerpt:
+          "Riferimenti a 'Di Tutto un pò' su Sicilmedtv e Orawebtv — Maria Antonina Macaluso content creator e Speaker.",
+      },
+    ],
+  },
+];
+
 export interface TimelineEvent {
   year: string;
   title: string;
@@ -1083,6 +1292,7 @@ export interface NavLink { label: string; href: string; desc: string; }
 export const ALL_PAGES: NavLink[] = [
   { label: "Biografia", href: "/biografia", desc: "8 capitoli di vita e di cinema" },
   { label: "Filmografia", href: "/filmografia", desc: "10 produzioni dirette da Angelo Faraci" },
+  { label: "Altre Produzioni", href: "/#altre-produzioni", desc: "Cortometraggi, pubblicità, serie TV, speciali TV" },
   { label: "Collaborazioni", href: "/collaborazioni", desc: "Il sodalizio artistico" },
   { label: "Timeline", href: "/timeline", desc: "2001 → 2026" },
   { label: "Premi", href: "/premi", desc: "7 riconoscimenti" },
