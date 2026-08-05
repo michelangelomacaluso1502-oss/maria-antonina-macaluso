@@ -84,6 +84,58 @@ const personJsonLd = {
   },
 };
 
+// FAQ Schema per SEO (ricerche long-tail)
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Chi è Maria Antonina Macaluso?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Maria Antonina Macaluso è un'attrice siciliana nata a Bologna il 9 novembre 2001 e cresciuta a Camporeale (Palermo). Ha debuttato nel 2019 con la fiction Sky 'Ciò che non ti ho detto' diretta da Angelo Faraci.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Quali film ha interpretato Maria Antonina Macaluso?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Nove produzioni cinematografiche: Ciò che non ti ho detto (2019), Don't Be Silent (2020), Provvidenza (2022), Pietrazita (2023), Separati Mai (2023-2024), Sabbie Nere (2023), Vanina (2024), Il Mistero di Spartivento (2024-2025) e Pochi Attimi (2026).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Quando si sono fidanzati Maria Antonina Macaluso e Angelo Faraci?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Il 14 agosto 2019 a Palermo, l'indomani del compleanno di Angelo (nato il 13 agosto 1989).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Dove è nata Maria Antonina Macaluso?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Maria Antonina Macaluso è nata a Bologna il 9 novembre 2001 ed è cresciuta a Camporeale, in provincia di Palermo.",
+      },
+    },
+  ],
+};
+
+// Website Schema per SEO
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Maria Antonina Macaluso — Attrice Siciliana",
+  url: SITE.url,
+  description: SITE.description,
+  inLanguage: "it-IT",
+  author: { "@type": "Person", name: "Maria Antonina Macaluso" },
+  publisher: { "@type": "Person", name: "Maria Antonina Macaluso" },
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="it" dir="ltr" suppressHydrationWarning>
@@ -137,10 +189,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }
           `
         }} />
-        {/* Intro pre-entry gestito da IntroLoaderMarkup (server component) */}
+        {/* Structured Data JSON-LD per SEO (Person + FAQ + Website) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body className="min-h-screen bg-noir text-cream antialiased" suppressHydrationWarning>

@@ -4,6 +4,7 @@ import SectionHeading from "./SectionHeading";
 import { cn } from "@/lib/cn";
 import Image from "next/image";
 import React from "react";
+import FacebookEmbed from "@/components/cinematic/FacebookEmbed";
 
 // Mappa aspect-ratio → dimensioni intrinseche (per evitare layout shift)
 const ASPECT_DIMS: Record<string, { w: number; h: number }> = {
@@ -126,6 +127,13 @@ export default function Biography() {
                                   </p>
                                 ))}
                               </div>
+                              {/* Facebook embed per link facebook.com */}
+                              {sec.links?.some(l => l.url.includes("facebook.com")) && (
+                                <FacebookEmbed
+                                  url={sec.links.find(l => l.url.includes("facebook.com"))!.url}
+                                  fallbackText="Condivisione video Provvidenza su Facebook"
+                                />
+                              )}
                               {/* Foto per-sottosezione: visibile su TUTTI i device, subito sotto il testo */}
                               {sec.image && (
                                 <figure className="glass-card group mt-5 overflow-hidden p-2">

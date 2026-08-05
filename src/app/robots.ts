@@ -7,7 +7,49 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/"],
+        disallow: ["/api/", "/_next/"],
+      },
+      // Allow major search engine crawlers
+      {
+        userAgent: "Googlebot",
+        allow: "/",
+      },
+      {
+        userAgent: "Bingbot",
+        allow: "/",
+      },
+      {
+        userAgent: "Slurp",
+        allow: "/",
+      },
+      {
+        userAgent: "DuckDuckBot",
+        allow: "/",
+      },
+      {
+        userAgent: "Baiduspider",
+        allow: "/",
+      },
+      {
+        userAgent: "YandexBot",
+        allow: "/",
+      },
+      // Block bad bots / scrapers
+      {
+        userAgent: "SemrushBot",
+        disallow: "/",
+      },
+      {
+        userAgent: "AhrefsBot",
+        disallow: "/",
+      },
+      {
+        userAgent: "MJ12bot",
+        disallow: "/",
+      },
+      {
+        userAgent: "DotBot",
+        disallow: "/",
       },
     ],
     sitemap: `${SITE.url}/sitemap.xml`,

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ALTRE_PRODUZIONI } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
 import BackToTop from "@/components/cinematic/BackToTop";
+import FacebookEmbed from "@/components/cinematic/FacebookEmbed";
 import { ArrowLeft, ExternalLink, Film, Calendar, User, Clapperboard, Tag } from "lucide-react";
 
 export const dynamicParams = false;
@@ -249,46 +250,63 @@ export default async function AltraProduzionePage({
 
         {/* Galleria aggiuntiva specifica per Creo Kitchens — servizio TGS nello showroom */}
         {opera.slug === "creo-kitchens-cucine-italiane" && (
-          <Reveal className="mt-12">
-            <h2 className="font-display text-2xl text-gold mb-4">Showroom Creo — Servizio TGS</h2>
-            <p className="mb-6 text-sm text-cream/70 leading-relaxed">
-              Documentazione del servizio TGS (TeleGiornale di Sicilia) dedicato alla campagna pubblicitaria
-              Creo Kitchens nello showroom di Altomonte (Palermo), con Angelo Faraci, Marika Saveria Faraci e
-              Maria Antonina Macaluso.
-            </p>
-            <div className="grid gap-6 md:grid-cols-2">
-              <figure className="glass-card overflow-hidden p-3">
-                <div className="relative aspect-[9/16] w-full overflow-hidden bg-noir">
-                  <Image
-                    src="/images/films/creo-kitchens-showroom-tgs.jpg"
-                    alt="Servizio TGS Creo Kitchens — Angelo Faraci e Maria Antonina Macaluso nello showroom con logo TGS visibile"
-                    fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    quality={100}
-                    className="object-cover"
-                  />
-                </div>
-                <figcaption className="px-2 py-3 text-center text-xs uppercase tracking-wide-sm text-cream/50">
-                  Showroom Creo — Servizio TGS (logo TGS visibile)
-                </figcaption>
-              </figure>
-              <figure className="glass-card overflow-hidden p-3">
-                <div className="relative aspect-[3/2] w-full overflow-hidden bg-noir">
-                  <Image
-                    src="/images/films/creo-kitchens-showroom-cucina.jpg"
-                    alt="Showroom Creo Kitchens — isola centrale con cucina moderna, Maria Antonina e Angelo Faraci"
-                    fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    quality={100}
-                    className="object-cover"
-                  />
-                </div>
-                <figcaption className="px-2 py-3 text-center text-xs uppercase tracking-wide-sm text-cream/50">
-                  Showroom Creo — Cucina moderna esposta
-                </figcaption>
-              </figure>
-            </div>
-          </Reveal>
+          <>
+            <Reveal className="mt-12">
+              <h2 className="font-display text-2xl text-gold mb-4">Showroom Creo — Servizio TGS</h2>
+              <p className="mb-6 text-sm text-cream/70 leading-relaxed">
+                Documentazione del servizio TGS (TeleGiornale di Sicilia) dedicato alla campagna pubblicitaria
+                Creo Kitchens nello showroom di Altomonte (Palermo), con Angelo Faraci, Marika Saveria Faraci e
+                Maria Antonina Macaluso.
+              </p>
+              <div className="grid gap-6 md:grid-cols-2">
+                <figure className="glass-card overflow-hidden p-3">
+                  <div className="relative aspect-[9/16] w-full overflow-hidden bg-noir">
+                    <Image
+                      src="/images/films/creo-kitchens-showroom-tgs.jpg"
+                      alt="Servizio TGS Creo Kitchens — Angelo Faraci e Maria Antonina Macaluso nello showroom con logo TGS visibile"
+                      fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      quality={100}
+                      className="object-cover"
+                    />
+                  </div>
+                  <figcaption className="px-2 py-3 text-center text-xs uppercase tracking-wide-sm text-cream/50">
+                    Showroom Creo — Servizio TGS (logo TGS visibile)
+                  </figcaption>
+                </figure>
+                <figure className="glass-card overflow-hidden p-3">
+                  <div className="relative aspect-[3/2] w-full overflow-hidden bg-noir">
+                    <Image
+                      src="/images/films/creo-kitchens-showroom-cucina.jpg"
+                      alt="Showroom Creo Kitchens — isola centrale con cucina moderna, Maria Antonina e Angelo Faraci"
+                      fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      quality={100}
+                      className="object-cover"
+                    />
+                  </div>
+                  <figcaption className="px-2 py-3 text-center text-xs uppercase tracking-wide-sm text-cream/50">
+                    Showroom Creo — Cucina moderna esposta
+                  </figcaption>
+                </figure>
+              </div>
+            </Reveal>
+
+            {/* Facebook embed — servizio TGS Creo Kitchens con Angelo, Maria Antonina e Marika Faraci */}
+            <Reveal className="mt-12">
+              <h2 className="font-display text-2xl text-gold mb-4">Servizio TGS — Pubblicità Creo Kitchens</h2>
+              <p className="mb-6 text-sm text-cream/70 leading-relaxed">
+                Il servizio del TGS (TeleGiornale di Sicilia) ha documentato la campagna pubblicitaria Creo Kitchens
+                per Sky, con Angelo Faraci (attore protagonista e sceneggiatore), Maria Antonina Macaluso (voce) e
+                Marika Saveria Faraci (voce). Lo spot è stato girato integralmente in Sicilia presso lo showroom
+                Creo di Viale del Fante, 61 ad Altomonte (Palermo).
+              </p>
+              <FacebookEmbed
+                url="https://www.facebook.com/share/v/1TWXSdREKR/"
+                fallbackText="Servizio TGS Creo Kitchens — Angelo Faraci, Maria Antonina Macaluso e Marika Faraci"
+              />
+            </Reveal>
+          </>
         )}
 
         {/* IMDb link */}

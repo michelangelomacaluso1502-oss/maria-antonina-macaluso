@@ -53,13 +53,13 @@ const nextConfig: NextConfig = {
       headers: [
         {
           key: "Cache-Control",
-          value: "public, s-maxage=60, stale-while-revalidate=86400",
+          value: "public, s-maxage=300, stale-while-revalidate=86400",
         },
-        { key: "CDN-Cache-Control", value: "public, s-maxage=60, stale-while-revalidate=86400" },
-        { key: "Vercel-CDN-Cache-Control", value: "public, s-maxage=60, stale-while-revalidate=86400" },
+        { key: "CDN-Cache-Control", value: "public, s-maxage=300, stale-while-revalidate=86400" },
+        { key: "Vercel-CDN-Cache-Control", value: "public, s-maxage=300, stale-while-revalidate=86400" },
       ],
     },
-    // Tutte le pagine statiche: cache 1 anno
+    // Tutte le pagine statiche: cache 1 anno + stale-while-revalidate
     {
       source: "/((?!api|admin).*)",
       headers: [
@@ -81,8 +81,8 @@ const nextConfig: NextConfig = {
         { key: "X-DNS-Prefetch-Control", value: "on" },
         { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
         { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()" },
-        // CSP — Content Security Policy estrema
-        { key: "Content-Security-Policy", value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com https://i.ytimg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; media-src 'self' https:; connect-src 'self' https:; frame-src https://www.youtube.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content" },
+        // CSP — Content Security Policy estrema (con Facebook SDK)
+        { key: "Content-Security-Policy", value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com https://i.ytimg.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; media-src 'self' https:; connect-src 'self' https:; frame-src https://www.youtube.com https://www.facebook.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content" },
         // Prevenzione XSS reflection
         { key: "X-XSS-Protection", value: "1; mode=block" },
         // COEP/COOP CORP per isolamento cross-origin
