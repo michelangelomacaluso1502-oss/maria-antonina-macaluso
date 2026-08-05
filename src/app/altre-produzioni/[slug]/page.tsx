@@ -9,6 +9,18 @@ import { ArrowLeft, ExternalLink, Film, Calendar, User, Clapperboard, Tag } from
 
 export const dynamicParams = false;
 
+/**
+ * Mappa orientamento poster per ogni opera.
+ * Permette di adattare l'aspect-ratio del contenitore all'immagine reale,
+ * evitando tagli sgraditi (object-cover su aspect errato = immagine tagliata).
+ */
+const POSTER_ASPECT: Record<string, string> = {
+  "eccellenza-siciliana": "aspect-[3/4]",       // verticale
+  "creo-kitchens-cucine-italiane": "aspect-[16/10]", // orizzontale
+  "red-bull-minas-riders": "aspect-square",     // quadrato
+  "di-tutto-un-po": "aspect-[4/5]",             // verticale
+};
+
 export function generateStaticParams() {
   return ALTRE_PRODUZIONI.map((p) => ({ slug: p.slug }));
 }
@@ -54,16 +66,16 @@ export default async function AltraProduzionePage({
 
         {/* Header con poster + info */}
         <div className="grid gap-10 md:grid-cols-[400px_1fr]">
-          {/* Poster */}
+          {/* Poster adattivo — aspect ratio basato sull'orientamento reale */}
           <Reveal>
             <figure className="glass-card overflow-hidden p-3">
-              <div className="relative aspect-[2/3] overflow-hidden">
+              <div className={`relative ${POSTER_ASPECT[opera.slug] || "aspect-[2/3]"} w-full overflow-hidden bg-noir`}>
                 <Image
                   src={opera.poster || "/images/films/placeholder.svg"}
                   alt={opera.title}
                   fill
                   sizes="(min-width: 768px) 400px, 100vw"
-                  quality={95}
+                  quality={100}
                   priority
                   className="object-cover"
                 />
@@ -214,6 +226,26 @@ export default async function AltraProduzionePage({
             </div>
           </Reveal>
         )}
+
+        {/* Gallery full-width 8K — mostra il poster a tutta larghezza in qualità Ultra HD */}
+        <Reveal className="mt-12">
+          <h2 className="font-display text-2xl text-gold mb-4">Gallery Ultra HD</h2>
+          <figure className="glass-card overflow-hidden p-3">
+            <div className={`relative ${POSTER_ASPECT[opera.slug] || "aspect-[2/3]"} w-full overflow-hidden bg-noir`}>
+              <Image
+                src={opera.poster || "/images/films/placeholder.svg"}
+                alt={opera.title}
+                fill
+                sizes="100vw"
+                quality={100}
+                className="object-contain"
+              />
+            </div>
+            <figcaption className="px-2 py-3 text-center text-xs uppercase tracking-wide-sm text-cream/50">
+              {opera.title} — Copertina Ultra HD 8K
+            </figcaption>
+          </figure>
+        </Reveal>
 
         {/* IMDb link */}
         {opera.imdbUrl && (

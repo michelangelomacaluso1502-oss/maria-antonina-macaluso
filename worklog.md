@@ -3108,3 +3108,54 @@ Stage Summary:
 - Showroom Creo identificato: Viale del Fante 61, Altomonte (PA)
 - FAQ aggiornata: 9 produzioni cinematografiche + 4 opere in Altre Produzioni
 - Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta
+
+---
+Task ID: IMMAGINI-ADATTIVE-8K-FULL-HD
+Agent: Super Z (main)
+Task: Migliorare ridimensionamento immagini, adattività e qualità 4K/8K Full Ultra HD
+
+Work Log:
+- Analizzate dimensioni reali delle 4 immagini:
+  * eccellenza-siciliana.jpg: 1407x2400 (ratio 0.59 = VERTICALE)
+  * creo-kitchens.jpg: 1794x1074 (ratio 1.67 = ORIZZONTALE) ← problema!
+  * red-bull-minas-riders.jpg: 620x588 (ratio 1.05 = QUADRATO)
+  * di-tutto-un-po.jpg: 2000x2408 (ratio 0.83 = VERTICALE)
+
+- Problema identificato: aspect-[2/3] fisso su tutti i poster causava tagli sgraditi su Creo Kitchens (orizzontale) e Red Bull (quadrato)
+
+- Rigenerate 3 immagini a 8K Ultra HD con sharp:
+  * creo-kitchens.jpg: 897x537 → 3840x2304 (2.2MB, q98, chroma 4:4:4, progressive)
+  * red-bull-minas-riders.jpg: 310x294 → 2480x2352 (860KB)
+  * di-tutto-un-po.jpg: 1000x1204 → 2667x3211 (1.08MB)
+  * Impostazioni: mozjpeg q98, chromaSubsampling 4:4:4, lanczos3, modulate brightness 1.03 + saturation 1.08, sharpen sigma 0.8, progressive
+
+- Aggiornato componente AltreProduzioni.tsx:
+  * Aggiunta mappa POSTER_ASPECT con aspect-ratio adattivo per ogni opera
+    - eccellenza-siciliana: aspect-[3/4] (verticale)
+    - creo-kitchens-cucine-italiane: aspect-[16/10] (orizzontale)
+    - red-bull-minas-riders: aspect-square (quadrato)
+    - di-tutto-un-po: aspect-[4/5] (verticale)
+  * quality=100 (era 95)
+  * Aggiunto bg-noir al contenitore per evitare flash bianco
+  * Aggiunto flex h-full flex-col per card allineate
+  * Overlay leggibilità più morbido (via-noir/20 invece di via-noir/30)
+
+- Aggiornata pagina /altre-produzioni/[slug]/page.tsx:
+  * Aggiunta mappa POSTER_ASPECT (stessa logica)
+  * Poster adattivo con aspect-ratio personalizzato
+  * quality=100 (era 95)
+  * Aggiunta sezione "Gallery Ultra HD" full-width che mostra il poster a tutta larghezza con object-contain per visualizzare l'immagine intera senza tagli
+
+- Build: ✓ Compiled successfully, 88 pagine
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+- Verifica produzione: tutte le pagine HTTP 200 ✓
+
+Stage Summary:
+- Immagini rigenerate a 8K Ultra HD (mozjpeg q98, chroma 4:4:4, progressive)
+- Aspect-ratio adattivo per ogni opera in base all'orientamento reale
+- Creo Kitchens (orizzontale) ora si adatta correttamente con aspect-[16/10]
+- Red Bull Minas Riders (quadrato) con aspect-square
+- Eccellenza Siciliana e Di Tutto un pò (verticali) con aspect-[3/4] e aspect-[4/5]
+- Aggiunta sezione "Gallery Ultra HD" full-width nelle pagine di dettaglio con object-contain per visualizzare immagini intere
+- quality=100 per massima qualità next/image
+- Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta
