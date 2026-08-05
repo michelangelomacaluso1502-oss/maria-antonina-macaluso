@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
-import IntroAnimation from "@/components/site/intro-animation";
+import { IntroAnimation } from "@/components/site/intro-animation";
 import ErrorBoundary from "@/components/cinematic/ErrorBoundary";
 import ScrollProgress from "@/components/cinematic/ScrollProgress";
 import FilmGrain from "@/components/cinematic/FilmGrain";

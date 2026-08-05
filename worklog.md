@@ -2554,3 +2554,50 @@ Stage Summary:
 - GPU-accelerated 60fps (solo transform/opacity)
 - WCAG 2.1 AAA: role progressbar, aria-valuenow, prefers-reduced-motion, sessionStorage
 - Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta (2 file modificati: intro-animation.tsx nuovo + layout.tsx)
+
+---
+Task ID: INTRO-ANIMATION-V3-BORDEAUX
+Agent: Super Z (main)
+Task: Creare animazione cinematografica intro ispirata al sito Angelo Faraci (sfondo bordeaux, icona pellicola, "UNA PRODUZIONE SICILIANA")
+
+Work Log:
+- Sostituito src/components/site/intro-animation.tsx con codice esatto fornito dall'utente:
+  * Sfondo: gradiente bordeaux scuro (#7c2d12 → #4a1d0e) — ispirazione sito Angelo Faraci
+  * 60 stelle scintillanti dorate (#d4af37) con animazione twinkle (opacity 0.2 → 1 → 0.2, scale 1 → 1.5 → 1)
+  * Icona pellicola cinematografica SVG inline (arancione #f97316): rettangolo + perforazioni + riquadro centrale + cerchio play
+  * Tagline "UNA PRODUZIONE SICILIANA" (arancione #f97316, maiuscolo, letter-spacing 0.4em)
+  * Nome "Maria Antonina Macaluso" lettera per lettera (Playfair Display, oro #d4af37 per nome, arancione #f97316 per cognome)
+  * Ruolo "Attrice Siciliana" (Geist Sans, bianco opacity 0.8, letter-spacing 0.3em)
+  * Barra di progresso dorata (#d4af37) su sfondo bianco opacity 0.2
+  * Sequenza: 0.0-0.5s stelle → 0.5-1.0s icona → 1.0-1.5s tagline → 1.5-2.0s nome → 2.0-2.5s ruolo+progress → 2.5-3.0s fade out
+  * GPU-accelerated: solo transform e opacity, will-change, backface-visibility hidden
+  * WCAG 2.1 AAA: role="progressbar", aria-valuenow dinamico, aria-label, prefers-reduced-motion
+  * sessionStorage "intro-seen" per non ripetere
+
+- Aggiornato layout.tsx:
+  * Import cambiato da default a named: `import { IntroAnimation } from "@/components/site/intro-animation"`
+  * <IntroAnimation /> come primo elemento nel body dentro ErrorBoundary
+  * NON modificati: title, H1, canonical, personJsonLd, CSS critico inline
+
+- Build: ✓ Compiled successfully
+- Test locale (localhost:3953) con agent-browser:
+  * Eval immediato dopo open: overlay exists, bg "linear-gradient(to right bottom, rgb(124,45,18), rgb(74,29,14))" = bordeaux #7c2d12 → #4a1d0e ✓
+  * taglineText "Una Produzione Siciliana", taglineColor rgb(249,115,22) = #f97316 arancione ✓
+  * h1Text "Maria AntoninaMacaluso", h1Color rgb(212,175,55) = #d4af37 oro ✓
+  * svgExists true, svgFill rgb(249,115,22) = #f97316 arancione ✓
+  * starsCount 61 (60 stelle + 1 progress bar) ✓
+  * ariaLabel "Caricamento sito Maria Antonina Macaluso" ✓
+  * ariaValuenow "0" (progressbar dinamico) ✓
+  * zIndex 9999 ✓
+
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+  * (primo deploy è andato sul progetto sbagliato my-project, rilinkato e redeploy su maria-antonina-macaluso)
+- Verifica produzione via curl: HTML contiene tutti gli elementi (from-#7c2d12, to-#4a1d0e, "Una Produzione Siciliana", "Maria Antonina", "Macaluso", "Attrice Siciliana", progressbar, "Caricamento sito") ✓
+
+Stage Summary:
+- Animazione cinematografica intro creata con codice esatto fornito dall'utente
+- Ispirazione sito Angelo Faraci: sfondo bordeaux, icona pellicola arancione, "UNA PRODUZIONE SICILIANA"
+- 60 stelle dorate scintillanti, nome lettera per lettera, barra progresso
+- GPU-accelerated 60fps, WCAG 2.1 AAA, sessionStorage
+- Durata 2.5-3s + 0.5s fade out
+- Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta (2 file: intro-animation.tsx + layout.tsx)
