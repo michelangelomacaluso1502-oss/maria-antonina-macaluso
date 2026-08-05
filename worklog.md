@@ -3159,3 +3159,73 @@ Stage Summary:
 - Aggiunta sezione "Gallery Ultra HD" full-width nelle pagine di dettaglio con object-contain per visualizzare immagini intere
 - quality=100 per massima qualità next/image
 - Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta
+
+---
+Task ID: SPARTIVENTO-PHOTOS-8K
+Agent: Super Z (main)
+Task: Aggiungere foto del set "Il Mistero di Spartivento" al photobook + foto ciak in biografia
+
+Work Log:
+- Verificati 6 file uploadati con md5sum:
+  * 6026366873739398605.jpg e 6026366873739398605 (1).jpg = DOPPIONE IDENTICO (stesso md5 66319f2c...)
+  * 5 foto uniche rimanenti: 605, 606, 607, 608, 609
+
+- Verificato nessun doppione nel photobook esistente (md5 confrontati con /images/photobook/)
+- Verificato nessun doppione in /images/biografia/
+
+- Analizzate 5 foto con VLM (interpretate come set "Il Mistero di Spartivento" con Maria Antonina Macaluso):
+  * 605: Mary con ciak in mano, tramonto, belvedere siciliano → photobook + biografia
+  * 606: Foto di gruppo cast & crew al tramonto, borgo siciliano → photobook
+  * 607: Mary sorridente con uomo sul set, piazza borgo → photobook
+  * 608: Mary su sedia a dondolo in interno rustico, BTS con boom mic → photobook
+  * 609: Mary con ciak, belvedere, golden hour → photobook + biografia
+
+- Ottimizzate 5 foto a 8K Ultra HD con sharp:
+  * mam-58.jpg: 1001x1425 → 2697x3840 (3.19MB, q98, chroma 4:4:4, progressive)
+  * mam-59.jpg: 1153x2048 → 2162x3840 (3.60MB)
+  * mam-60.jpg: 1080x1341 → 3093x3840 (3.95MB)
+  * mam-61.jpg: 1477x2048 → 2769x3840 (3.65MB)
+  * mam-62.jpg: 2048x1536 → 3840x2880 (3.81MB)
+  * Impostazioni: mozjpeg q98, chromaSubsampling 4:4:4, lanczos3, modulate brightness 1.03 + saturation 1.08, sharpen sigma 0.8, progressive
+
+- Copiate 2 foto con ciak anche in biografia:
+  * spartivento-ciak.jpg (da 605) → 2697x3840 (3.19MB)
+  * spartivento-set.jpg (da 609) → 3840x2880 (3.81MB)
+
+- Aggiornato data.ts:
+  * PHOTOBOOK array: length 57 → 62 (5 nuove foto mam-58/59/60/61/62)
+  * Aggiunta mappa SPARTIVENTO_META con alt e title specifici per ogni foto del set
+    - 58: "Spartivento — Il ciak"
+    - 59: "Spartivento — Cast & Crew"
+    - 60: "Spartivento — Sul set"
+    - 61: "Spartivento — Dietro le quinte"
+    - 62: "Spartivento — Golden hour"
+  * Aggiornati tutti i riferimenti al count: "56 scatti" → "61 scatti" in:
+    - PhotoBook.tsx (title + link)
+    - photobook/page.tsx (metadata description + title)
+    - MULTIMEDIA duration "56 foto" → "61 foto"
+    - ALL_PAGES desc "56 scatti" → "61 scatti"
+
+- Aggiornato biografia (capitolo VI "Il Mistero di Spartivento"):
+  * Aggiunta image: /images/biografia/spartivento-ciak.jpg con imageAlt descrittivo
+  * Aggiunta sottosezione "Il Mistero di Spartivento — Dietro le quinte" con:
+    - 2 paragrafi poetici sul film
+    - image: /images/biografia/spartivento-set.jpg
+    - aspect: "4/3" (immagine orizzontale)
+
+- Build: ✓ Compiled successfully, 93 pagine (5 nuove /photo/58-62)
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+- Verifica produzione:
+  * Homepage HTTP 200 ✓
+  * 5 foto photobook (mam-58 to mam-62) HTTP 200 ✓
+  * 2 foto biografia (spartivento-ciak, spartivento-set) HTTP 200 ✓
+  * 5 pagine /photo/58-62 HTTP 200 ✓
+
+Stage Summary:
+- 5 foto del set "Il Mistero di Spartivento" aggiunte al photobook (mam-58 to mam-62)
+- Doppione identificato e scartato (605 e 605(1) erano identici)
+- 2 foto con ciak aggiunte anche in biografia (capitolo VI con sottosezione)
+- Tutte le foto ottimizzate a 8K Ultra HD (mozjpeg q98, chroma 4:4:4, progressive)
+- Metadati alt/title specifici per ogni foto del set
+- Count aggiornato ovunque: 56 → 61 scatti
+- Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta

@@ -5,7 +5,7 @@ import PhotoBook from "@/components/sections/PhotoBook";
 export const metadata: Metadata = {
   title: "Photo Book",
   description:
-    "Photo Book di Maria Antonina Macaluso: 56 scatti dell'attrice siciliana. Un archivio visivo del suo percorso.",
+    "Photo Book di Maria Antonina Macaluso: 61 scatti dell'attrice siciliana. Un archivio visivo del suo percorso.",
   alternates: { canonical: "/photobook" },
 };
 
@@ -14,7 +14,7 @@ export default function PhotoBookPage() {
     <main id="main">
       <PageHero
         eyebrow="Photo Book"
-        title="Cinquantasei scatti"
+        title="Sessantuno scatti"
         subtitle="Un archivio visivo dell'attrice siciliana"
         breadcrumb={[{ label: "Photo Book" }]}
       />

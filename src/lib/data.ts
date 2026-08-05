@@ -179,6 +179,20 @@ export const BIO_CHAPTERS: BioChapter[] = [
     body: [
       "Il 2024–2025 è denso: Il Mistero di Spartivento esplora il territorio del Suspense mediterraneo, mentre Eccellenza Siciliana (2025) è un film per TV e Web che celebra l'eccellenza siciliana in viaggio per l'isola, con Maria Antonina tra le voci protagoniste.",
     ],
+    image: "/images/biografia/spartivento-ciak.jpg",
+    imageAlt: "Maria Antonina Macaluso con il ciak in mano sul set de Il Mistero di Spartivento — tramonto sul belvedere siciliano",
+    sections: [
+      {
+        heading: "Il Mistero di Spartivento — Dietro le quinte",
+        body: [
+          "Un mistero che si snoda tra i venti della Sicilia, dove ogni silenzio è una confessione e ogni inquadratura nasconde un indizio. La regia atmosferica di Angelo Faraci trova in Maria Antonina Macaluso la interprete ideale: presenza che colma l'inquadratura senza chiedere licenza.",
+          "Le riprese attraversano i borghi siciliani e i belvedere sull'oro del tramonto: una Sicilia che diventa personaggio, non solo sfondo.",
+        ],
+        image: "/images/biografia/spartivento-set.jpg",
+        imageAlt: "Maria Antonina Macaluso con il ciak sul belvedere al tramonto — set de Il Mistero di Spartivento",
+        aspect: "4/3",
+      },
+    ],
   },
   {
     num: "VII",
@@ -1313,16 +1327,42 @@ export const FAQS: FAQItem[] = [
   { question: "Dove posso seguire Maria Antonina Macaluso?", answer: "Su Instagram (@mary.macaluso09, 11.9K follower), TikTok (@mary.macaluso, 5.2K follower) e Facebook (@mary.macaluso.16). È anche su IMDb (nm14708762) e nell'Archivio dell'Ancora Cinematografica. Per collaborazioni: mariantonina63@gmail.com." },
 ];
 
-export const PHOTOBOOK = Array.from({ length: 57 }, (_, i) => {
+// Metadati speciali per gli scatti del set "Il Mistero di Spartivento" (58-62)
+const SPARTIVENTO_META: Record<string, { alt: string; title: string }> = {
+  "58": {
+    alt: "Maria Antonina Macaluso con il ciak in mano sul set de Il Mistero di Spartivento — tramonto sul belvedere siciliano",
+    title: "Spartivento — Il ciak",
+  },
+  "59": {
+    alt: "Foto di gruppo cast & crew de Il Mistero di Spartivento al tramonto in un borgo siciliano",
+    title: "Spartivento — Cast & Crew",
+  },
+  "60": {
+    alt: "Maria Antonina Macaluso sorridente sul set de Il Mistero di Spartivento in una piazza di borgo siciliano",
+    title: "Spartivento — Sul set",
+  },
+  "61": {
+    alt: "Maria Antonina Macaluso su sedia a dondolo in interno rustico — dietro le quinte de Il Mistero di Spartivento",
+    title: "Spartivento — Dietro le quinte",
+  },
+  "62": {
+    alt: "Maria Antonina Macaluso con il ciak sul belvedere al tramonto — set de Il Mistero di Spartivento",
+    title: "Spartivento — Golden hour",
+  },
+};
+
+export const PHOTOBOOK = Array.from({ length: 62 }, (_, i) => {
   const num = i + 1;
   // Salta lo scatto 49 (rimosso)
   if (num === 49) return null;
   const id = String(num).padStart(2, "0");
+  const idStr = String(num);
+  const meta = SPARTIVENTO_META[idStr];
   return {
-    id: String(num),
+    id: idStr,
     src: `/images/photobook/mam-${id}.jpg`,
-    alt: `Maria Antonina Macaluso — scatto ${num} del Photo Book`,
-    title: `Scatto ${num}`,
+    alt: meta?.alt ?? `Maria Antonina Macaluso — scatto ${num} del Photo Book`,
+    title: meta?.title ?? `Scatto ${num}`,
   };
 }).filter(Boolean) as { id: string; src: string; alt: string; title: string }[];
 
@@ -1340,7 +1380,7 @@ export const MULTIMEDIA = [
   { title: "Dietro le quinte — Separati Mai", type: "Video", url: "https://www.youtube.com", duration: "5:18" },
   { title: "Intervista Fiuggi 2023", type: "Video", url: "https://www.youtube.com", duration: "7:25" },
   { title: "Red carpet Venezia 2024", type: "Video", url: "https://www.youtube.com", duration: "2:50" },
-  { title: "Servizio fotografico — Mediterranean 2025", type: "Galleria", url: "/#photobook", duration: "56 foto" },
+  { title: "Servizio fotografico — Mediterranean 2025", type: "Galleria", url: "/#photobook", duration: "61 foto" },
   { title: "Teaser Pochi Attimi", type: "Video", url: "https://www.youtube.com", duration: "1:30" },
 ];
 
@@ -1357,7 +1397,7 @@ export const ALL_PAGES: NavLink[] = [
   { label: "Citazioni", href: "/citazioni", desc: "5 citazioni" },
   { label: "FAQ", href: "/faq", desc: "8 domande frequenti" },
   { label: "Contatti", href: "/contatti", desc: "Social e form" },
-  { label: "Photo Book", href: "/photobook", desc: "56 scatti" },
+  { label: "Photo Book", href: "/photobook", desc: "61 scatti" },
   { label: "Collegamenti esteri", href: "/collegamenti-esteri", desc: "Link verificati" },
   { label: "Multimedia", href: "/multimedia", desc: "Video e gallerie" },
   { label: "Angelo Faraci", href: "/angelo-faraci", desc: "Regista e compagno" },
