@@ -163,6 +163,29 @@ export const BIO_CHAPTERS: BioChapter[] = [
     body: [
       "Separati Mai, distribuito tra il 2023 e il 2024, segna una tappa di maturità. Il cinema di Faraci trova in Maria Antonina la interprete ideale: capace di reggere il peso di una storia senza piegarla al sentimento facile.",
     ],
+    image: "/images/biografia/separati-mai-ritratto.jpg",
+    imageAlt: "Maria Antonina Macaluso in posa davanti a un antico portale in pietra — ritratto ponderato dal set di Separati Mai",
+    sections: [
+      {
+        heading: "Separati Mai — Sul set",
+        body: [
+          "Tra belvederi al tramonto, cavalli sellati e ville antiche, il set di Separati Mai attraversa la Sicilia dei borghi e delle colline. Il ciak accompagna ogni tappa: una produzione che fa del territorio il proprio personaggio principale.",
+          "Maria Antonina Macaluso è presenza che colma l'inquadratura: sorridente nei dietro le quinte, intensa nelle scene. Il cinema di Faraci si fa racconto corale, dove ogni volto — attori, comparse, tecnici — contribuisce alla memoria del film.",
+        ],
+        image: "/images/biografia/separati-mai-cavallo-ciak.jpg",
+        imageAlt: "Maria Antonina Macaluso sorridente accanto a un cavallo nero con il ciak — set di Separati Mai",
+        aspect: "3/4",
+      },
+      {
+        heading: "Separati Mai — Il ciak",
+        body: [
+          "Il ciak di Separati Mai reca i nomi della troupe e il titolo dell'opera: un oggetto simbolico che segna l'inizio di ogni scena. Per Maria Antonina tenerlo in mano significa firmare un capitolo del proprio percorso artistico.",
+        ],
+        image: "/images/biografia/separati-mai-ciak-villa.jpg",
+        imageAlt: "Maria Antonina Macaluso sorridente con il ciak di Separati Mai nel giardino di una villa antica",
+        aspect: "4/5",
+      },
+    ],
   },
   {
     num: "V",
@@ -1351,13 +1374,49 @@ const SPARTIVENTO_META: Record<string, { alt: string; title: string }> = {
   },
 };
 
-export const PHOTOBOOK = Array.from({ length: 62 }, (_, i) => {
+// Metadati speciali per gli scatti del set "Separati Mai" (63-70)
+const SEPARATI_MAI_META: Record<string, { alt: string; title: string }> = {
+  "63": {
+    alt: "Maria Antonina Macaluso sorridente accanto a un cavallo nero con il ciak — set di Separati Mai",
+    title: "Separati Mai — Il ciak col cavallo",
+  },
+  "64": {
+    alt: "Maria Antonina Macaluso appoggiata al cofano di un'auto su un belvedere al tramonto — set di Separati Mai",
+    title: "Separati Mai — Belvedere",
+  },
+  "65": {
+    alt: "Foto di gruppo del cast di Separati Mai su una ringhiera panoramica",
+    title: "Separati Mai — Cast",
+  },
+  "66": {
+    alt: "Coppia con il ciak di Separati Mai — dietro le quinte sul set",
+    title: "Separati Mai — Coppia col ciak",
+  },
+  "67": {
+    alt: "Coppia accanto a un cavallo nero in area rurale — set di Separati Mai",
+    title: "Separati Mai — Cavallo",
+  },
+  "68": {
+    alt: "Maria Antonina Macaluso sorridente con il ciak di Separati Mai nel giardino di una villa antica",
+    title: "Separati Mai — Ciak in villa",
+  },
+  "69": {
+    alt: "Coppia in selfie sorridente in ambiente naturale — set di Separati Mai",
+    title: "Separati Mai — Selfie",
+  },
+  "70": {
+    alt: "Maria Antonina Macaluso in posa davanti a un antico portale in pietra — ritratto ponderato dal set di Separati Mai",
+    title: "Separati Mai — Ritratto",
+  },
+};
+
+export const PHOTOBOOK = Array.from({ length: 70 }, (_, i) => {
   const num = i + 1;
   // Salta lo scatto 49 (rimosso)
   if (num === 49) return null;
   const id = String(num).padStart(2, "0");
   const idStr = String(num);
-  const meta = SPARTIVENTO_META[idStr];
+  const meta = SPARTIVENTO_META[idStr] || SEPARATI_MAI_META[idStr];
   return {
     id: idStr,
     src: `/images/photobook/mam-${id}.jpg`,
@@ -1380,7 +1439,7 @@ export const MULTIMEDIA = [
   { title: "Dietro le quinte — Separati Mai", type: "Video", url: "https://www.youtube.com", duration: "5:18" },
   { title: "Intervista Fiuggi 2023", type: "Video", url: "https://www.youtube.com", duration: "7:25" },
   { title: "Red carpet Venezia 2024", type: "Video", url: "https://www.youtube.com", duration: "2:50" },
-  { title: "Servizio fotografico — Mediterranean 2025", type: "Galleria", url: "/#photobook", duration: "61 foto" },
+  { title: "Servizio fotografico — Mediterranean 2025", type: "Galleria", url: "/#photobook", duration: "69 foto" },
   { title: "Teaser Pochi Attimi", type: "Video", url: "https://www.youtube.com", duration: "1:30" },
 ];
 
@@ -1397,7 +1456,7 @@ export const ALL_PAGES: NavLink[] = [
   { label: "Citazioni", href: "/citazioni", desc: "5 citazioni" },
   { label: "FAQ", href: "/faq", desc: "8 domande frequenti" },
   { label: "Contatti", href: "/contatti", desc: "Social e form" },
-  { label: "Photo Book", href: "/photobook", desc: "61 scatti" },
+  { label: "Photo Book", href: "/photobook", desc: "69 scatti" },
   { label: "Collegamenti esteri", href: "/collegamenti-esteri", desc: "Link verificati" },
   { label: "Multimedia", href: "/multimedia", desc: "Video e gallerie" },
   { label: "Angelo Faraci", href: "/angelo-faraci", desc: "Regista e compagno" },

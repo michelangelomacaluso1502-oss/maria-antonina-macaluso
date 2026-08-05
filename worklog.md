@@ -3229,3 +3229,77 @@ Stage Summary:
 - Metadati alt/title specifici per ogni foto del set
 - Count aggiornato ovunque: 56 → 61 scatti
 - Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta
+
+---
+Task ID: SEPARATI-MAI-PHOTOS-8K
+Agent: Super Z (main)
+Task: Aggiungere 8 foto del set "Separati Mai" al photobook + foto ciak/ritratto in biografia
+
+Work Log:
+- Verificati 8 file uploadati con md5sum:
+  * Nessun doppione tra gli 8 file (tutti md5 unici)
+  * Nessun doppione vs photobook esistente (61 foto) e biografia (8 foto)
+  * Tutte e 8 le foto UNICHE → tutte da aggiungere
+
+- Analizzate 8 foto con VLM (z-ai vision):
+  * 611: Mary sorridente con cavallo nero + ciak "SEPARATI MAI" → PB + BIO
+  * 612: Mary appoggiata a cofano auto, belvedere tramonto → PB
+  * 613: Gruppo cast con ringhiera panoramica → PB
+  * 614: Coppia con ciak "SEPARATI MAI" → PB
+  * 615: Coppia con cavallo, area rurale → PB
+  * 616: Mary sorridente con ciak "SEPARATI MAI", villa antica → PB + BIO
+  * 617: Coppia selfie, ambiente naturale → PB
+  * 618: Mary in posa, antico portale in pietra (RITRATTO PONDERATO) → PB + BIO
+
+- Ottimizzate 8 foto a 8K Ultra HD con sharp:
+  * mam-63.jpg: 1003x1404 → 2743x3840 (3.08MB, q98, chroma 4:4:4, progressive)
+  * mam-64.jpg: 1080x1414 → 2933x3840 (3.17MB)
+  * mam-65.jpg: 925x1440 → 2467x3840 (3.62MB)
+  * mam-66.jpg: 1029x1476 → 2677x3840 (3.65MB)
+  * mam-67.jpg: 1080x1383 → 2999x3840 (2.93MB)
+  * mam-68.jpg: 1200x1383 → 3332x3840 (3.93MB)
+  * mam-69.jpg: 1653x2048 → 3099x3840 (3.75MB)
+  * mam-70.jpg: 1200x1313 → 3510x3840 (3.84MB)
+
+- Copiate 3 foto anche in biografia:
+  * separati-mai-cavallo-ciak.jpg (da 611): 2743x3840 (3.08MB)
+  * separati-mai-ciak-villa.jpg (da 616): 3332x3840 (3.93MB)
+  * separati-mai-ritratto.jpg (da 618): 3510x3840 (3.84MB) ← ritratto ponderato
+
+- Aggiornato data.ts:
+  * Aggiunta mappa SEPARATI_MAI_META con alt e title specifici per ogni foto (63-70)
+  * PHOTOBOOK array: length 62 → 70 (8 nuove foto)
+  * Tutti i count aggiornati: "61 scatti" → "69 scatti" in:
+    - PhotoBook.tsx (title + link)
+    - photobook/page.tsx (metadata description + title)
+    - MULTIMEDIA duration "61 foto" → "69 foto"
+    - ALL_PAGES desc "61 scatti" → "69 scatti"
+
+- Aggiornato biografia (capitolo IV "Separati Mai"):
+  * Aggiunta image principale: /images/biografia/separati-mai-ritratto.jpg (ritratto ponderato)
+  * Aggiunta sottosezione "Separati Mai — Sul set" con:
+    - 2 paragrafi poetici sul set e il territorio siciliano
+    - image: /images/biografia/separati-mai-cavallo-ciak.jpg (aspect 3/4)
+  * Aggiunta sottosezione "Separati Mai — Il ciak" con:
+    - 1 paragrafo sul significato del ciak
+    - image: /images/biografia/separati-mai-ciak-villa.jpg (aspect 4/5)
+
+- Build: ✓ Compiled successfully, 101 pagine (8 nuove /photo/63-70)
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+- Verifica produzione:
+  * Homepage HTTP 200 ✓
+  * 8 foto photobook (mam-63 to mam-70) HTTP 200 ✓
+  * 3 foto biografia (separati-mai-*) HTTP 200 ✓
+  * 8 pagine /photo/63-70 HTTP 200 ✓
+
+Stage Summary:
+- 8 foto del set "Separati Mai" aggiunte al photobook (mam-63 to mam-70)
+- 0 doppioni trovati (tutte e 8 uniche vs upload + photobook + biografia)
+- 3 foto aggiunte in biografia capitolo IV:
+  * Ritratto ponderato di Mary (portale in pietra) come immagine principale
+  * Foto con cavallo + ciak in sottosezione "Sul set"
+  * Foto con ciak in villa in sottosezione "Il ciak"
+- Tutte le foto ottimizzate a 8K Ultra HD (mozjpeg q98, chroma 4:4:4, progressive)
+- Metadati alt/title specifici per ogni foto del set
+- Count aggiornato ovunque: 61 → 69 scatti
+- Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta
