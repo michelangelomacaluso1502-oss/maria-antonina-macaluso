@@ -61,7 +61,7 @@ export const ANGELO_FARACI = {
     "L'amore non è il protagonista della nostra storia. È la luce che permette di vederla.",
   bio: [
     "Angelo Faraci è un regista, attore e produttore cinematografico italiano, nato a Palermo il 13 agosto 1989. Fondatore di una visione autoriale profondamente radicata nel territorio siciliano, firma opere che coniugano Suspense, identità mediterranea e ricerca formale.",
-    "Dal 2018 dirige Maria Antonina Macaluso in dieci produzioni, costruendo con lei un percorso artistico e di vita che dalla Sicilia raggiunge i festival internazionali. Il loro sodalizio nasce il 14 agosto 2019 a Palermo.",
+    "Dal 2019 dirige Maria Antonina Macaluso in dieci produzioni, costruendo con lei un percorso artistico e di vita che dalla Sicilia raggiunge i festival internazionali. Il loro sodalizio nasce il 14 agosto 2019 a Palermo.",
     "Il suo cinema è riconoscibile per la luce calda, la geometria delle inquadrature e un racconto che procede per atmosfere più che per colpi di scena.",
   ],
 };
@@ -86,7 +86,7 @@ export const PROLOGUE = {
   subtitle: "Una siciliana nel cinema contemporaneo",
   paragraphs: [
     "Vi è un modo di abitare lo schermo che non conosce fretta. Maria Antonina Macaluso ne è depositaria: lo sguardo che indugia, il gesto che giunge dopo il silenzio, la presenza che colma l'inquadratura senza chiedere licenza. È un'attrice siciliana, e la Sicilia non è soltanto il luogo da cui proviene — è il tempo stesso con cui recita.",
-    "Nata a Bologna il 9 novembre 2001, cresciuta a Camporeale tra le colline della provincia di Palermo, il suo percorso attraversa il debutto televisivo del 2018, i cortometraggi Rai Cinema, una fiction Sky, fino al lungometraggio Pochi Attimi in uscita nel 2026.",
+    "Nata a Bologna il 9 novembre 2001, cresciuta a Camporeale tra le colline della provincia di Palermo, il suo percorso attraversa il debutto televisivo del 2019, i cortometraggi Rai Cinema, una fiction Sky, fino al lungometraggio Pochi Attimi in uscita nel 2026.",
     "Accanto ad Angelo Faraci — regista, attore, produttore, compagno di vita dal 14 agosto 2019 — edifica una filmografia che parla di identità, appartenenza e luce mediterranea.",
   ],
 };
@@ -148,13 +148,13 @@ export const BIO_CHAPTERS: BioChapter[] = [
         aspect: "4/5",
       },
       {
-        heading: "2018 — Il debutto: Ciò che non ti ho detto",
+        heading: "2019 — Il debutto: Ciò che non ti ho detto",
         body: [
-          "Prima ancora del fidanzamento, il debutto. Il 2018 segna la prima apparizione cinematografica di Maria Antonina Macaluso in 'Ciò che non ti ho detto', fiction TV ideata da Angelo Faraci per Sky, che lo vede attore protagonista nel ruolo di Gaetano Scalici per cinque anni. È l'unica serie tv italiana di soli siciliani e volti isolani noti.",
-          "Maria Antonina partecipa alla fiction confermata da IMDb come uno dei lavori per cui è celebre. Le scene girate tra i vicoli dei borghi siciliani e le scogliere sul mare diventano il primo capitolo di un percorso che dalla Sicilia raggiungerà i festival internazionali.",
+          "Il 2019 segna la prima apparizione cinematografica di Maria Antonina Macaluso in 'Ciò che non ti ho detto', fiction TV ideata da Angelo Faraci per Sky, che lo vede attore protagonista nel ruolo di Gaetano Scalici per cinque anni. È l'unica serie tv italiana di soli siciliani e volti isolani noti.",
+          "Maria Antonina partecipa alla fiction confermata da IMDb come uno dei lavori per cui è celebre. Le scene girate tra i vicoli dei borghi siciliani e le scogliere sul mare diventano il primo capitolo di un percorso che dalla Sicilia raggiungerà i festival internazionali. Nel 2021 la saga prosegue con 'Ciò che non ti ho detto Revolution', film tratto dalla fiction che consolidà il sodalizio artistico con Angelo Faraci.",
         ],
         image: "/images/biografia/cio-che-non-ti-ho-detto-ritratto.jpg",
-        imageAlt: "Maria Antonina Macaluso e Angelo Faraci in ritratto dal set di Ciò che non ti ho detto (2018) — belvedere sul mare",
+        imageAlt: "Maria Antonina Macaluso e Angelo Faraci in ritratto dal set di Ciò che non ti ho detto Revolution (2021) — belvedere sul mare",
         aspect: "16/9",
       },
     ],
@@ -360,7 +360,7 @@ export const FILMS: Film[] = [
   },
   {
     slug: "cio-che-non-ti-ho-detto",
-    year: "2018",
+    year: "2019",
     title: "Ciò che non ti ho detto",
     role: "Attrice",
     poster: "/images/films/cio-che-non-ti-ho-detto.jpg",
@@ -370,11 +370,11 @@ export const FILMS: Film[] = [
     description:
       "Fiction TV ideata da Angelo Faraci. L'unica serie tv italiana di soli siciliani e volti isolani noti.",
     longDescription:
-      "Ciò che non ti ho detto (2018) è una fiction TV ideata da Angelo Faraci per Sky, che lo vede attore protagonista nel ruolo di Gaetano Scalici per cinque anni. È l'unica serie tv italiana di soli siciliani e volti isolani noti. Maria Antonina Macaluso partecipa alla fiction, confermata da IMDb come uno dei lavori per cui è celebre. La serie viene distribuita su Sky e nel mercato estero.",
+      "Ciò che non ti ho detto (2019) è una fiction TV ideata da Angelo Faraci per Sky, che lo vede attore protagonista nel ruolo di Gaetano Scalici per cinque anni. È l'unica serie tv italiana di soli siciliani e volti isolani noti. Maria Antonina Macaluso partecipa alla fiction, confermata da IMDb come uno dei lavori per cui è celebre. La serie viene distribuita su Sky e nel mercato estero.",
     imdbUrl: MAM_IMDB_URL,
     cast: ["Angelo Faraci (Gaetano Scalici)", "Maria Antonina Macaluso"],
     genre: "Fiction TV — Drammatico",
-    duration: "Serie TV (2018-2019)",
+    duration: "Serie TV (2019)",
     plot:
       "Una fiction TV che racconta storie siciliane attraverso il personaggio di Gaetano Scalici, con un cast di soli volti isolani.",
     trivia: [
@@ -389,7 +389,7 @@ export const FILMS: Film[] = [
         source: "IMDb",
         url: "https://www.imdb.com/it/name/nm14708762",
         excerpt:
-          "È celebre per aver partecipato a Ciò che non ti ho detto (2018), Il mistero di Spartivento (2024).",
+          "È celebre per aver partecipato a Ciò che non ti ho detto (2019), Il mistero di Spartivento (2024).",
       },
     ],
   },
@@ -725,7 +725,7 @@ export const ALTRE_PRODUZIONI: Film[] = [
     description:
       "Cortometraggio pubblicitario del 2021 per Creo Kitchens — Cucine Italiane (Viale del Fante, 61 - Altomonte, Palermo), trasmesso su Sky. Maria Antonina Macaluso partecipa con ruolo di voce, accanto ad Angelo Faraci (attore protagonista) e Marika Saveria Faraci (voce). Lo screenshot d'epoca mostra il set con i due presentatori nello showroom Creo con elettrodomestici e logo CREO esposto.",
     longDescription:
-      "Creo Kitchens — Cucine Italiane (2021) è un cortometraggio pubblicitario prodotto per Sky, girato integralmente in Sicilia presso lo showroom Creo di Viale del Fante, 61 ad Altomonte (Palermo). La regia e la sceneggiatura sono di Angelo Faraci, già attore protagonista della campagna nel 2020. Maria Antonina Macaluso partecipa con ruolo di voce, affiancando Marika Saveria Faraci (voce) nel cast vocale. Lo screenshot storico mostra i due presentatori nello showroom Creo: Angelo Faraci (uomo in giacca scura e camicia blu) e una presentatrice (donna in giacca rossa), circondati da elettrodomestici bianchi con fiocchi rossi e dal logo CREO con indirizzo 'Viale del Fante, 61 - Altomonte (Pa)'. La campagna pubblicitaria è stata trasmessa sui canali Sky e celebra l'eccellenza delle cucine italiane artigianali, con una narrazione che intreccia tradizione siciliana e design contemporaneo. L'opera rappresenta una delle prime collaborazioni professionali di Maria Antonina Macaluso nel campo della pubblicità televisiva, sotto la direzione di Angelo Faraci. La produzione è stata documentata anche da Sicilia Multimedia e TGS, con servizi sulla campagna pubblicitaria che ha visto coinvolti Angelo Faraci, Marika Faraci e Maria Antonina Macaluso.",
+      "Creo Kitchens — Cucine Italiane (2021) è un cortometraggio pubblicitario prodotto per Sky, girato integralmente in Sicilia presso lo showroom Creo di Viale del Fante, 61 ad Altomonte (Palermo). La regia e la sceneggiatura sono di Angelo Faraci, già attore protagonista della campagna nel 2020. Maria Antonina Macaluso partecipa con ruolo di voce, affiancando Marika Saveria Faraci (voce) nel cast vocale. Lo screenshot storico mostra i due presentatori nello showroom Creo: Angelo Faraci (uomo in giacca scura e camicia blu) e una presentatrice (donna in giacca rossa), circondati da elettrodomestici bianchi con fiocchi rossi e dal logo CREO con indirizzo 'Viale del Fante, 61 - Altomonte (Pa)'. La campagna pubblicitaria è stata trasmessa sui canali Sky e celebra l'eccellenza delle cucine italiane artigianali, con una narrazione che intreccia tradizione siciliana e design contemporaneo. L'opera rappresenta una delle prime collaborazioni professionali di Maria Antonina Macaluso nel campo della pubblicità televisiva, sotto la direzione di Angelo Faraci.",
     imdbUrl: "https://www.imdb.com/it/name/nm11444273",
     cast: [
       "Angelo Faraci (attore protagonista, sceneggiatore)",
@@ -745,7 +745,6 @@ export const ALTRE_PRODUZIONI: Film[] = [
       "Showroom Creo: Viale del Fante, 61 - Altomonte (Palermo).",
       "Girato integralmente in Sicilia.",
       "Sceneggiatura di Angelo Faraci e Rosaria Lo Porto.",
-      "Spot documentato da Sicilia Multimedia e TGS.",
     ],
     press: [
       {
@@ -961,7 +960,7 @@ export const TIMELINE: TimelineEvent[] = [
       "Il 9 novembre 2001 Maria Antonina Macaluso nasce a Bologna. Bologna è il primo respiro; la Sicilia, dove cresce a Camporeale in provincia di Palermo, è tutto il resto.",
   },
   {
-    year: "2018",
+    year: "2019",
     title: "Ciò che non ti ho detto — Fiction TV Sky",
     description:
       "Fiction TV ideata da Angelo Faraci per Sky. Angelo è attore protagonista nel ruolo di Gaetano Scalici per cinque anni. L'unica serie tv italiana di soli siciliani e volti isolani noti. Maria Antonina partecipa alla fiction, confermata da IMDb.",
@@ -1242,7 +1241,7 @@ export const ARTICLES: Article[] = [
     url: "https://www.imdb.com/it/name/nm14708762",
     date: "2024",
     excerpt:
-      "Scheda IMDb ufficiale di Maria Antonina Macaluso. È celebre per aver partecipato a Ciò che non ti ho detto (2018), Il mistero di Spartivento (2024).",
+      "Scheda IMDb ufficiale di Maria Antonina Macaluso. È celebre per aver partecipato a Ciò che non ti ho detto (2019), Il mistero di Spartivento (2024).",
   },
   {
     title: "Vanina (Serie TV 2024) — Interpreti e troupe",
@@ -1365,7 +1364,7 @@ export const VIDEO_GALLERY: VideoItem[] = [
     youtubeId: "mjGQPlM4qg0",
     title: "Ciò Che Non Ti Ho Detto 3",
     category: "fiction",
-    year: "2018",
+    year: "2019",
     relatedFilm: "Ciò che non ti ho detto",
   },
   {
@@ -1398,7 +1397,7 @@ export const FAQS: FAQItem[] = [
   { question: "Quando e dove è nata Maria Antonina Macaluso?", answer: "Maria Antonina Macaluso è nata a Bologna il 9 novembre 2001 ed è cresciuta a Camporeale, in provincia di Palermo." },
   { question: "Chi è Angelo Faraci?", answer: "Angelo Faraci è un regista, attore e produttore italiano nato a Palermo il 13 agosto 1989. Enciclopedia digitale: angelo-faraci.vercel.app. È il regista di tutte le dieci produzioni interpretate da Maria Antonina." },
   { question: "Quando si sono incontrati Maria Antonina e Angelo Faraci?", answer: "Il 14 agosto 2019 a Palermo. Da allora condividono un percorso artistico e di vita." },
-  { question: "Quali film ha interpretato Maria Antonina Macaluso?", answer: "Nove produzioni cinematografiche: Ciò che non ti ho detto (2018, fiction Sky), Don't Be Silent (2020, Rai Cinema), Provvidenza (2022, Rai Cinema), Pietrazita (2023, Rai Cinema), Separati Mai (2023–2024, Rai Cinema), Sabbie Nere (2023, serie TV Mediaset), Vanina (2024, Canale 5), Il Mistero di Spartivento (2024–2025, Rai Cinema) e Pochi Attimi (2026). Inoltre, in 'Altre Produzioni': Eccellenza Siciliana (2025), Creo Kitchens (2021, corto Sky), Red Bull Minas Riders (2016, serie TV) e Di Tutto un pò (2025, speciale TV)." },
+  { question: "Quali film ha interpretato Maria Antonina Macaluso?", answer: "Nove produzioni cinematografiche: Ciò che non ti ho detto (2019, fiction Sky), Don't Be Silent (2020, Rai Cinema), Provvidenza (2022, Rai Cinema), Pietrazita (2023, Rai Cinema), Separati Mai (2023–2024, Rai Cinema), Sabbie Nere (2023, serie TV Mediaset), Vanina (2024, Canale 5), Il Mistero di Spartivento (2024–2025, Rai Cinema) e Pochi Attimi (2026). Inoltre, in 'Altre Produzioni': Eccellenza Siciliana (2025), Creo Kitchens (2021, corto Sky), Red Bull Minas Riders (2016, serie TV) e Di Tutto un pò (2025, speciale TV)." },
   { question: "Quali cortometraggi sono stati prodotti da Rai Cinema?", answer: "Provvidenza (2021) e Pietrazita (2022) sono cortometraggi prodotti da Rai Cinema con la regia di Angelo Faraci." },
   { question: "In quali festival ha partecipato?", answer: "Tra gli altri: Taormina Film Fest, Roma Fiction Fest, Fiuggi Film Festival, Sicilia Film Festival, Venice International Film Festival e Mediterranean Film Festival." },
   { question: "Quali premi ha ricevuto?", answer: "Ha ricevuto numerosi riconoscimenti, tra cui Migliore Attrice Emergente (2021), Premio Speciale della Giuria a Taormina (2022), Attrice Rivelazione a Fiuggi (2023) e Migliore Attrice Protagonista al Mediterranean Film Festival (2025)." },
@@ -1465,47 +1464,63 @@ const SEPARATI_MAI_META: Record<string, { alt: string; title: string }> = {
   },
 };
 
-// Metadati speciali per gli scatti del set "Ciò che non ti ho detto" (71-79)
+// Metadati speciali per gli scatti del set "Ciò che non ti ho detto Revolution" (71-83)
 const CIO_CHE_NON_TI_HO_DETTO_META: Record<string, { alt: string; title: string }> = {
   "71": {
-    alt: "Coppia sorridente in vicolo di borgo mediterraneo — set di Ciò che non ti ho detto",
-    title: "Ciò che non ti ho detto — Il vicolo",
+    alt: "Coppia sorridente in vicolo di borgo mediterraneo — set di Ciò che non ti ho detto Revolution",
+    title: "Revolution — Il vicolo",
   },
   "72": {
-    alt: "Coppia in abbraccio intimo in borgo storico — set di Ciò che non ti ho detto",
-    title: "Ciò che non ti ho detto — L'abbraccio",
+    alt: "Coppia in abbraccio intimo in borgo storico — set di Ciò che non ti ho detto Revolution",
+    title: "Revolution — L'abbraccio",
   },
   "73": {
-    alt: "Coppia, lui sussurra all'orecchio di lei in centro storico — set di Ciò che non ti ho detto",
-    title: "Ciò che non ti ho detto — Il sussurro",
+    alt: "Coppia, lui sussurra all'orecchio di lei in centro storico — set di Ciò che non ti ho detto Revolution",
+    title: "Revolution — Il sussurro",
   },
   "74": {
-    alt: "Coppia in abbraccio in vicolo storico — set di Ciò che non ti ho detto",
-    title: "Ciò che non ti ho detto — Vicolo storico",
+    alt: "Coppia in abbraccio in vicolo storico — set di Ciò che non ti ho detto Revolution",
+    title: "Revolution — Vicolo storico",
   },
   "75": {
-    alt: "Coppia in abbraccio in vicolo medievale — set di Ciò che non ti ho detto",
-    title: "Ciò che non ti ho detto — Vicolo medievale",
+    alt: "Coppia in abbraccio in vicolo medievale — set di Ciò che non ti ho detto Revolution",
+    title: "Revolution — Vicolo medievale",
   },
   "76": {
-    alt: "Coppia in momento di intimità su scogliera panoramica sul mare — set di Ciò che non ti ho detto",
-    title: "Ciò che non ti ho detto — La scogliera",
+    alt: "Coppia in momento di intimità su scogliera panoramica sul mare — set di Ciò che non ti ho detto Revolution",
+    title: "Revolution — La scogliera",
   },
   "77": {
-    alt: "Coppia, lei accarezza il viso di lui su belvedere sul mare — ritratto ponderato dal set di Ciò che non ti ho detto",
-    title: "Ciò che non ti ho detto — Ritratto",
+    alt: "Coppia, lei accarezza il viso di lui su belvedere sul mare — ritratto ponderato dal set di Ciò che non ti ho detto Revolution",
+    title: "Revolution — Ritratto",
   },
   "78": {
-    alt: "Coppia in momento di intimità su scogliera sul mare — set di Ciò che non ti ho detto",
-    title: "Ciò che non ti ho detto — Mare",
+    alt: "Coppia in momento di intimità su scogliera sul mare — set di Ciò che non ti ho detto Revolution",
+    title: "Revolution — Mare",
   },
   "79": {
-    alt: "Coppia innamorata su scogliera panoramica sul mare — set di Ciò che non ti ho detto",
-    title: "Ciò che non ti ho detto — Belvedere",
+    alt: "Coppia innamorata su scogliera panoramica sul mare — set di Ciò che non ti ho detto Revolution",
+    title: "Revolution — Belvedere",
+  },
+  "80": {
+    alt: "Coppia in intimo primo piano, lei accarezza il viso di lui con torre medievale sullo sfondo — set di Ciò che non ti ho detto Revolution",
+    title: "Revolution — Primo piano",
+  },
+  "81": {
+    alt: "Coppia in primo piano intimo con torre medievale sullo sfondo — set di Ciò che non ti ho detto Revolution",
+    title: "Revolution — Sguardo",
+  },
+  "82": {
+    alt: "Coppia cammina mano nella mano nel vicolo di un borgo storico siciliano — set di Ciò che non ti ho detto Revolution",
+    title: "Revolution — Mano nella mano",
+  },
+  "83": {
+    alt: "Coppia cammina sorridente in vicolo di borgo mediterraneo — set di Ciò che non ti ho detto Revolution",
+    title: "Revolution — Passeggiata",
   },
 };
 
-export const PHOTOBOOK = Array.from({ length: 79 }, (_, i) => {
+export const PHOTOBOOK = Array.from({ length: 83 }, (_, i) => {
   const num = i + 1;
   // Salta lo scatto 49 (rimosso)
   if (num === 49) return null;
@@ -1534,7 +1549,7 @@ export const MULTIMEDIA = [
   { title: "Dietro le quinte — Separati Mai", type: "Video", url: "https://www.youtube.com", duration: "5:18" },
   { title: "Intervista Fiuggi 2023", type: "Video", url: "https://www.youtube.com", duration: "7:25" },
   { title: "Red carpet Venezia 2024", type: "Video", url: "https://www.youtube.com", duration: "2:50" },
-  { title: "Servizio fotografico — Mediterranean 2025", type: "Galleria", url: "/#photobook", duration: "78 foto" },
+  { title: "Servizio fotografico — Mediterranean 2025", type: "Galleria", url: "/#photobook", duration: "82 foto" },
   { title: "Teaser Pochi Attimi", type: "Video", url: "https://www.youtube.com", duration: "1:30" },
 ];
 
@@ -1551,7 +1566,7 @@ export const ALL_PAGES: NavLink[] = [
   { label: "Citazioni", href: "/citazioni", desc: "5 citazioni" },
   { label: "FAQ", href: "/faq", desc: "8 domande frequenti" },
   { label: "Contatti", href: "/contatti", desc: "Social e form" },
-  { label: "Photo Book", href: "/photobook", desc: "78 scatti" },
+  { label: "Photo Book", href: "/photobook", desc: "82 scatti" },
   { label: "Collegamenti esteri", href: "/collegamenti-esteri", desc: "Link verificati" },
   { label: "Multimedia", href: "/multimedia", desc: "Video e gallerie" },
   { label: "Angelo Faraci", href: "/angelo-faraci", desc: "Regista e compagno" },
