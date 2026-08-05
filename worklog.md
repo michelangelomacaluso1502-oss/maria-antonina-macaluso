@@ -3040,3 +3040,71 @@ Stage Summary:
 - 3 pagine dinamiche SSG con dettagli completi (cast, trivia, press, IMDb link)
 - Sezione aggiunta in homepage + menu navigation
 - Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta (aggiunte: 1 array data.ts, 1 componente, 3 pagine [slug], 3 SVG, 1 voce menu)
+
+---
+Task ID: ALTRE-PRODUZIONI-ECCELLENZA-SPOSTATA + IMMAGINI-4K
+Agent: Super Z (main)
+Task: Spostare Eccellenza Siciliana da FILMS a ALTRE_PRODUZIONI + associare 3 immagini verificate (Creo Kitchens screenshot 637KB, Red Bull logo 19.3KB, Di Tutto un pò logo 37.5KB) + ricerca approfondita fonti
+
+Work Log:
+- Analizzati 3 file uploadati con VLM:
+  * Screenshot 637KB PNG → Creo Kitchens: showroom con 2 presentatori (Angelo Faraci + donna giacca rossa), logo CREO, indirizzo "Viale del Fante, 61 - Altomonte (Pa)", elettrodomestici con fiocchi rossi
+  * AVIF 19.3KB → Red Bull Minas Riders: logo ufficiale con due tori rossi Red Bull su sole giallo + scudo Minas Riders + manubri moto
+  * JPG 37.5KB → Di Tutto un pò: logo istituzionale "Di tutto UN PO'" scritta bianca su gradiente arancione/giallo ocra
+
+- Ricerche web verificate:
+  * IMDb nm14708762, tt10726880, tt10726932, tt39301887, tt38949464
+  * MyMovies Angelo Faraci (Creo Kitchens 2020 Sky)
+  * EverybodyWiki Angelo Faraci
+  * Marika Faraci Altervista (docente comunicazione/pubblicità Palermo, sorella Angelo)
+  * MessinaToday (Sky al cinema Angelo Faraci)
+  * Sicilmedtv + Orawebtv (Di Tutto un pò)
+  * Kino OceniTo + Kinorium (Red Bull Minas Riders cast)
+
+- Ottimizzate 3 immagini a 4K Ultra HD con sharp:
+  * creo-kitchens.jpg: 897x537 → 1794x1074 (369KB, mozjpeg q95, chroma 4:4:4, lanczos3)
+  * red-bull-minas-riders.jpg: 310x294 → 620x588 (85KB, upscale 2x)
+  * di-tutto-un-po.jpg: 1000x1204 → 2000x2408 (350KB, upscale 2x)
+
+- Spostato Eccellenza Siciliana da FILMS a ALTRE_PRODUZIONI:
+  * Rimossa voce da array FILMS (10→9 produzioni cinematografiche)
+  * Aggiunta come PRIMA voce di ALTRE_PRODUZIONI (ora 4 opere)
+  * Aggiornato tipo: "Film TV / Web — Documentario enogastronomico"
+  * Aggiunto cast, genre, trivia, press con 3 fonti verificate
+
+- Aggiornati poster delle 3 opere esistenti (da SVG a JPG 4K):
+  * creo-kitchens.svg → creo-kitchens.jpg (screenshot showroom reale)
+  * red-bull-minas-riders.svg → red-bull-minas-riders.jpg (logo ufficiale)
+  * di-tutto-un-po.svg → di-tutto-un-po.jpg (logo ufficiale)
+
+- Aggiunte informazioni verificate alle schede:
+  * Creo Kitchens: indirizzo showroom (Viale del Fante 61 Altomonte PA), dettagli screenshot, Marika Faraci sorella Angelo + docente comunicazione, 7 fonti press
+  * Red Bull Minas Riders: descrizione logo ufficiale, ambientazione Brasile Minas Gerais, 5 fonti press (aggiunto Kinorium)
+  * Di Tutto un pò: descrizione logo ufficiale, stile comunicativo, 4 fonti press
+  * Eccellenza Siciliana: 3 fonti press (IMDb, EverybodyWiki, MAM IMDb)
+
+- Aggiornata FAQ "Quali film ha interpretato":
+  * Da "Dieci produzioni" → "Nove produzioni cinematografiche + Altre Produzioni"
+  * Lista 9 film + 4 opere in Altre Produzioni
+
+- Build: ✓ Compiled successfully, 88 pagine (4 in /altre-produzioni/[slug])
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+- Verifica produzione:
+  * Homepage HTTP 200 ✓
+  * /altre-produzioni/eccellenza-siciliana HTTP 200 ✓
+  * /altre-produzioni/creo-kitchens-cucine-italiane HTTP 200 ✓
+  * /altre-produzioni/red-bull-minas-riders HTTP 200 ✓
+  * /altre-produzioni/di-tutto-un-po HTTP 200 ✓
+  * 4 poster JPG accessibili HTTP 200 ✓
+
+Stage Summary:
+- Eccellenza Siciliana spostata da filmografia principale ad "Altre Produzioni — Oltre il Cinema"
+- 3 immagini verificate associate alle opere corrispondenti:
+  * Creo Kitchens: screenshot showroom reale (637KB→369KB 4K)
+  * Red Bull Minas Riders: logo ufficiale Red Bull (19.3KB→85KB 4K)
+  * Di Tutto un pò: logo ufficiale programma (37.5KB→350KB 4K)
+- Informazioni verificate da fonti pubbliche (IMDb, MyMovies, EverybodyWiki, Sicilmedtv, Orawebtv, Altervista, MessinaToday, Kinorium)
+- Marika Faraci identificata come sorella di Angelo + docente comunicazione/pubblicità Palermo
+- Showroom Creo identificato: Viale del Fante 61, Altomonte (PA)
+- FAQ aggiornata: 9 produzioni cinematografiche + 4 opere in Altre Produzioni
+- Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta

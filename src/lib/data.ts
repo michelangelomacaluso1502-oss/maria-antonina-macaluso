@@ -514,31 +514,6 @@ export const FILMS: Film[] = [
     ],
   },
   {
-    slug: "eccellenza-siciliana",
-    year: "2025",
-    title: "Eccellenza Siciliana",
-    role: "Attrice",
-    poster: "/images/films/eccellenza-siciliana.jpg",
-    director: "Angelo Faraci",
-    type: "Film TV",
-    production: "Independent",
-    description:
-      "Un film per TV e Web che mostra i migliori luoghi della Sicilia per gustare cibo tipico e prodotti di eccellenza.",
-    longDescription:
-      "Eccellenza Siciliana (2025) è un film per TV e Web diretto da Angelo Faraci, con Angelo Faraci e Maria Antonina Macaluso. Un'opera su larga scala che, con i suoi protagonisti in viaggio per la Sicilia, mostra i migliori luoghi per gustare cibo tipico e prodotti di eccellenza dell'isola. Un omaggio al territorio che si fa racconto corale, confermato da IMDb (tt38949464).",
-    imdbUrl: "https://www.imdb.com/title/tt38949464",
-    cast: ["Angelo Faraci", "Maria Antonina Macaluso"],
-    genre: "Documentario / Film TV",
-    duration: "Film TV",
-    plot:
-      "Un viaggio attraverso la Sicilia alla scoperta dei prodotti di eccellenza, del cibo tipico e dei luoghi più suggestivi dell'isola.",
-    trivia: [
-      "Film per TV e Web diretto da Angelo Faraci.",
-      "IMDb: tt38949464.",
-      "Soggetto: viaggio enogastronomico e culturale in Sicilia.",
-    ],
-  },
-  {
     slug: "pochi-attimi",
     year: "2026",
     title: "Pochi Attimi",
@@ -593,18 +568,72 @@ export const FILMS: Film[] = [
 
 export const ALTRE_PRODUZIONI: Film[] = [
   {
+    slug: "eccellenza-siciliana",
+    year: "2025",
+    title: "Eccellenza Siciliana",
+    role: "Attrice",
+    poster: "/images/films/eccellenza-siciliana.jpg",
+    director: "Angelo Faraci",
+    type: "Film TV / Web — Documentario enogastronomico",
+    production: "Angelo Faraci — Produzione indipendente",
+    description:
+      "Film TV e Web (2025) diretto da Angelo Faraci. Un viaggio attraverso la Sicilia alla scoperta dei prodotti di eccellenza, del cibo tipico e dei luoghi più suggestivi dell'isola, con Angelo Faraci e Maria Antonina Macaluso come protagonisti in viaggio.",
+    longDescription:
+      "Eccellenza Siciliana (2025) è un film per TV e Web diretto da Angelo Faraci, con Angelo Faraci e Maria Antonina Macaluso come protagonisti. Un'opera su larga scala che, con i suoi protagonisti in viaggio per la Sicilia, mostra i migliori luoghi per gustare cibo tipico e prodotti di eccellenza dell'isola. Un omaggio al territorio che si fa racconto corale, confermato da IMDb (tt38949464). Il film celebra l'enogastronomia siciliana, le tradizioni artigianali e i paesaggi dell'isola, con Maria Antonina Macaluso che porta la propria voce e presenza in qualità di attrice. L'opera rappresenta uno dei capitoli più territoriali e identitari del sodalizio artistico tra Maria Antonina Macaluso e Angelo Faraci, confermando l'attenzione del regista verso le radici siciliane e i prodotti d'eccellenza dell'isola.",
+    imdbUrl: "https://www.imdb.com/title/tt38949464",
+    cast: [
+      "Angelo Faraci (regista e attore)",
+      "Maria Antonina Macaluso (attrice)",
+    ],
+    genre: "Documentario / Film TV — Enogastronomico",
+    duration: "Film TV / Web (2025)",
+    plot:
+      "Un viaggio attraverso la Sicilia alla scoperta dei prodotti di eccellenza, del cibo tipico e dei luoghi più suggestivi dell'isola. Angelo Faraci e Maria Antonina Macaluso protagonisti in un racconto corale dedicato al territorio siciliano.",
+    trivia: [
+      "Film per TV e Web diretto da Angelo Faraci (2025).",
+      "IMDb: tt38949464.",
+      "Soggetto: viaggio enogastronomico e culturale in Sicilia.",
+      "Angelo Faraci e Maria Antonina Macaluso protagonisti in viaggio per l'isola.",
+      "Celebrazione dei prodotti di eccellenza siciliani.",
+      "Opera confermata da IMDb e everybodywiki.",
+    ],
+    press: [
+      {
+        title: "Eccellenza Siciliana (2025) — IMDb",
+        source: "IMDb",
+        url: "https://www.imdb.com/title/tt38949464",
+        excerpt:
+          "Eccellenza Siciliana (2025) — Film TV/Web diretto da Angelo Faraci, con Angelo Faraci e Maria Antonina Macaluso.",
+      },
+      {
+        title: "Angelo Faraci — EverybodyWiki",
+        source: "EverybodyWiki",
+        url: "https://it.everybodywiki.com/Angelo_Faraci_(Attore)",
+        excerpt:
+          "Eccellenza Siciliana (2025) — Film TV/Web che celebra i prodotti di eccellenza siciliani, con Angelo Faraci e Maria Antonina Macaluso.",
+      },
+      {
+        title: "Maria Antonina Macaluso — IMDb",
+        source: "IMDb",
+        url: "https://www.imdb.com/it/name/nm14708762",
+        excerpt:
+          "Eccellenza Siciliana (2025) tra le opere di Maria Antonina Macaluso.",
+      },
+    ],
+  },
+  {
     slug: "creo-kitchens-cucine-italiane",
     year: "2021",
     title: "Creo Kitchens — Cucine Italiane",
     role: "Partecipazione (voce)",
-    poster: "/images/films/creo-kitchens.svg",
+    poster: "/images/films/creo-kitchens.jpg",
     director: "Angelo Faraci",
-    type: "Cortometraggio — Pubblicità",
-    production: "Sky — Pubblicità italiana",
+    type: "Cortometraggio — Pubblicità Sky",
+    production: "Creo Kitchens — Cucine Italiane (Sky)",
     description:
-      "Cortometraggio pubblicitario del 2021 per Creo Kitchens — Cucine Italiane, trasmesso su Sky. Maria Antonina Macaluso partecipa con ruolo di voce, accanto ad Angelo Faraci (attore protagonista) e Marika Saveria Faraci (voce).",
+      "Cortometraggio pubblicitario del 2021 per Creo Kitchens — Cucine Italiane (Viale del Fante, 61 - Altomonte, Palermo), trasmesso su Sky. Maria Antonina Macaluso partecipa con ruolo di voce, accanto ad Angelo Faraci (attore protagonista) e Marika Saveria Faraci (voce). Lo screenshot d'epoca mostra il set con i due presentatori nello showroom Creo con elettrodomestici e logo CREO esposto.",
     longDescription:
-      "Creo Kitchens — Cucine Italiane (2021) è un cortometraggio pubblicitario prodotto per Sky, girato integralmente in Sicilia. La regia e la sceneggiatura sono di Angelo Faraci, già attore protagonista della campagna nel 2020. Maria Antonina Macaluso partecipa con ruolo di voce, affiancando Marika Saveria Faraci (voce) nel cast vocale. La campagna pubblicitaria è stata trasmessa sui canali Sky e celebra l'eccellenza delle cucine italiane artigianali, con una narrazione che intreccia tradizione siciliana e design contemporaneo. L'opera rappresenta una delle prime collaborazioni professionali di Maria Antonina Macaluso nel campo della pubblicità televisiva, sotto la direzione di Angelo Faraci.",
+      "Creo Kitchens — Cucine Italiane (2021) è un cortometraggio pubblicitario prodotto per Sky, girato integralmente in Sicilia presso lo showroom Creo di Viale del Fante, 61 ad Altomonte (Palermo). La regia e la sceneggiatura sono di Angelo Faraci, già attore protagonista della campagna nel 2020. Maria Antonina Macaluso partecipa con ruolo di voce, affiancando Marika Saveria Faraci (voce) nel cast vocale. Lo screenshot storico mostra i due presentatori nello showroom Creo: Angelo Faraci (uomo in giacca scura e camicia blu) e una presentatrice (donna in giacca rossa), circondati da elettrodomestici bianchi con fiocchi rossi e dal logo CREO con indirizzo 'Viale del Fante, 61 - Altomonte (Pa)'. La campagna pubblicitaria è stata trasmessa sui canali Sky e celebra l'eccellenza delle cucine italiane artigianali, con una narrazione che intreccia tradizione siciliana e design contemporaneo. L'opera rappresenta una delle prime collaborazioni professionali di Maria Antonina Macaluso nel campo della pubblicità televisiva, sotto la direzione di Angelo Faraci. La produzione è stata documentata anche da Sicilia Multimedia e TGS, con servizi sulla campagna pubblicitaria che ha visto coinvolti Angelo Faraci, Marika Faraci e Maria Antonina Macaluso.",
     imdbUrl: "https://www.imdb.com/it/name/nm11444273",
     cast: [
       "Angelo Faraci (attore protagonista, sceneggiatore)",
@@ -612,16 +641,19 @@ export const ALTRE_PRODUZIONI: Film[] = [
       "Maria Antonina Macaluso (voce)",
       "Rosaria Lo Porto (sceneggiatura)",
     ],
-    genre: "Cortometraggio — Pubblicità televisiva",
+    genre: "Cortometraggio — Pubblicità televisiva Sky",
     duration: "Cortometraggio (2021)",
     plot:
-      "Una celebrazione delle cucine italiane artigianali, girata in Sicilia con la partecipazione di Angelo Faraci come attore protagonista. Maria Antonina Macaluso contribuisce con la propria voce alla narrazione della campagna pubblicitaria Sky.",
+      "Spot pubblicitario Sky per Creo Kitchens — Cucine Italiane (Viale del Fante, 61 - Altomonte, Palermo). Angelo Faraci è attore protagonista nello showroom Creo, con Maria Antonina Macaluso e Marika Saveria Faraci come voci narranti. La campagna celebra le cucine italiane artigianali con design contemporaneo.",
     trivia: [
       "Pubblicità italiana trasmessa su Sky nel 2020-2021.",
       "Angelo Faraci è stato attore protagonista della campagna nel 2020.",
       "Maria Antonina Macaluso partecipa con ruolo di voce nel 2021.",
+      "Marika Saveria Faraci (voce) — sorella di Angelo Faraci, docente di comunicazione e pubblicità a Palermo.",
+      "Showroom Creo: Viale del Fante, 61 - Altomonte (Palermo).",
       "Girato integralmente in Sicilia.",
       "Sceneggiatura di Angelo Faraci e Rosaria Lo Porto.",
+      "Spot documentato da Sicilia Multimedia e TGS.",
     ],
     press: [
       {
@@ -659,6 +691,20 @@ export const ALTRE_PRODUZIONI: Film[] = [
         excerpt:
           "Creo Kitchens (2021) — Short — (voice, as Marika Saveria Faraci).",
       },
+      {
+        title: "Marika Faraci — Docente Comunicazione Pubblicità (Altervista)",
+        source: "Marika Faraci (Altervista)",
+        url: "https://marikafaraci.altervista.org",
+        excerpt:
+          "Marika Faraci — Docente in Comunicazione pubblica, d'impresa, pubblicità, Marketing e Social Media. Palermo.",
+      },
+      {
+        title: "Da Sky al cinema, la storia di Angelo Faraci raccontata in tv (MessinaToday)",
+        source: "MessinaToday",
+        url: "https://www.messinatoday.it/social/storia-angelo-faraci-programma-tv-2000.html",
+        excerpt:
+          "Da Sky al cinema, la storia di Angelo Faraci raccontata in tv: 'Ho mostrato al pubblico la Sicilia più bella'.",
+      },
     ],
   },
   {
@@ -666,14 +712,14 @@ export const ALTRE_PRODUZIONI: Film[] = [
     year: "2016",
     title: "Red Bull Minas Riders",
     role: "Partecipazione (voce) — Serie TV",
-    poster: "/images/films/red-bull-minas-riders.svg",
+    poster: "/images/films/red-bull-minas-riders.jpg",
     director: "Ryan Meyers",
-    type: "Serie TV — Documentario sportivo",
+    type: "Serie TV — Documentario sportivo Enduro",
     production: "Red Bull Media House",
     description:
-      "Serie TV documentario-sportiva Red Bull Minas Riders (2016–in corso), prodotta da Red Bull Media House. Maria Antonina Macaluso partecipa con ruolo di voce nell'episodio 'Bello Horizonte, 2017' diretto da Ryan Meyers.",
+      "Serie TV documentario-sportiva Red Bull Minas Riders (2016–in corso), prodotta da Red Bull Media House. Maria Antonina Macaluso partecipa con ruolo di voce nell'episodio 'Bello Horizonte, 2017' diretto da Ryan Meyers. Il logo ufficiale della manifestazione — due tori rossi Red Bull su sfondo giallo sole con scudo Minas Riders — identifica la competizione di enduro estremo in Brasile.",
     longDescription:
-      "Red Bull Minas Riders è una serie TV documentario-sportiva prodotta da Red Bull Media House, dedicata alle competizioni di enduro estremo. La serie segue i piloti più talentuosi del mondo attraverso le prove più impegnative dei Red Bull Hard Endoro events. Maria Antonina Macaluso partecipa con ruolo di voce nell'episodio 'Bello Horizonte, 2017' (titolo originale: 'Red Bull Minas Riders: Bello Horizonte, 2017'), diretto da Ryan Meyers. L'episodio, ambientato a Bello Horizonte, vede anche la partecipazione di Angelo Faraci (voce), Marika Saveria Faraci (voce) e Troy Manering come narratore. La serie è stata distribuita internazionalmente dal 2016 ed è disponibile su Red Bull TV.",
+      "Red Bull Minas Riders è una serie TV documentario-sportiva prodotta da Red Bull Media House, dedicata alle competizioni di enduro estremo. La serie segue i piloti più talentuosi del mondo attraverso le prove più impegnative dei Red Bull Hard Enduro events in Brasile, nello stato di Minas Gerais. Maria Antonina Macaluso partecipa con ruolo di voce nell'episodio 'Bello Horizonte, 2017' (titolo originale: 'Red Bull Minas Riders: Bello Horizonte, 2017'), diretto da Ryan Meyers. L'episodio, ambientato a Bello Horizonte, vede anche la partecipazione di Angelo Faraci (voce), Marika Saveria Faraci (voce) e Troy Manering come narratore. Il logo ufficiale della manifestazione — due tori rossi Red Bull che si fronteggiano davanti a un sole giallo, sovrapposti a uno scudo con silhouette di montagne e manubri di moto — identifica la competizione brasiliana di enduro estremo. La serie è stata distribuita internazionalmente dal 2016 ed è disponibile su Red Bull TV.",
     imdbUrl: "https://www.imdb.com/title/tt10726880",
     cast: [
       "Graham Jarvis",
@@ -686,17 +732,19 @@ export const ALTRE_PRODUZIONI: Film[] = [
       "Maria Antonina Macaluso (voce)",
       "Troy Manering (narratore)",
     ],
-    genre: "Serie TV — Documentario sportivo / Enduro",
+    genre: "Serie TV — Documentario sportivo / Enduro estremo",
     duration: "Serie TV (2016–in corso) — 1 episodio (2017)",
     plot:
-      "Red Bull Minas Riders è una serie documentario che segue le competizioni di enduro estremo più impegnative del mondo. Maria Antonina Macaluso partecipa come voce nell'episodio 'Bello Horizonte, 2017'.",
+      "Red Bull Minas Riders è una serie documentario che segue le competizioni di enduro estremo più impegnative del mondo, in Brasile (Minas Gerais). Maria Antonina Macaluso partecipa come voce nell'episodio 'Bello Horizonte, 2017' diretto da Ryan Meyers.",
     trivia: [
       "Serie TV prodotta da Red Bull Media House, distribuita internazionalmente dal 2016.",
+      "Competizione di enduro estremo in Brasile (Minas Gerais).",
       "Maria Antonina Macaluso partecipa con ruolo di voce nell'episodio 'Bello Horizonte, 2017'.",
       "Episodio diretto da Ryan Meyers.",
       "Cast include Angelo Faraci (voce), Marika Saveria Faraci (voce), Troy Manering (narratore).",
       "Serie disponibile su Red Bull TV e IMDb (tt10726880).",
       "Genere: enduro estremo / hard enduro.",
+      "Logo ufficiale: due tori rossi Red Bull su sole giallo con scudo Minas Riders.",
     ],
     press: [
       {
@@ -727,6 +775,13 @@ export const ALTRE_PRODUZIONI: Film[] = [
         excerpt:
           "Bruno Crivilin, Angelo Faraci, Marika Faraci, Troy Manering (Narrated by), Maria Antonina Macaluso.",
       },
+      {
+        title: "Мария Антонина Макалузо — актриса (Kinorium)",
+        source: "Kinorium",
+        url: "https://ru.kinorium.com/name/7636464",
+        excerpt:
+          "Maria Antonina Macaluso — attrice. Red Bull Minas Riders (2016 – ...) tra le opere.",
+      },
     ],
   },
   {
@@ -734,14 +789,14 @@ export const ALTRE_PRODUZIONI: Film[] = [
     year: "2025",
     title: "Di Tutto un pò",
     role: "Speaker — Speciale TV",
-    poster: "/images/films/di-tutto-un-po.svg",
+    poster: "/images/films/di-tutto-un-po.jpg",
     director: "Angelo Faraci",
     type: "Speciale TV — Talk show",
     production: "Sicilmedtv / Orawebtv",
     description:
-      "Speciale TV 'Di Tutto un pò' (2025) trasmesso su Sicilmedtv e Orawebtv. Maria Antonina Macaluso è Speaker del programma, affiancando Angelo Faraci (Showman/Inviato) e Melissa Venuto (Host).",
+      "Speciale TV 'Di Tutto un pò' (2025) trasmesso su Sicilmedtv e Orawebtv. Maria Antonina Macaluso è Speaker del programma, affiancando Angelo Faraci (Showman/Inviato) e Melissa Venuto (Host). Il logo ufficiale del programma — scritta bianca 'Di tutto UN PO'' su gradiente arancione/giallo ocra — identifica il talk show siciliano.",
     longDescription:
-      "Di Tutto un pò (2025) è uno Speciale TV trasmesso su Sicilmedtv e Orawebtv, con formato talk show. Il programma esplora temi di attualità, cultura siciliana e intrattenimento, con uno stile fresco e diretto. Maria Antonina Macaluso ricopre il ruolo di Speaker, portando la propria voce e personalità al programma. Angelo Faraci è Showman e Inviato, mentre Melissa Venuto è Host. Il programma rappresenta un'evoluzione nella carriera televisiva di Maria Antonina Macaluso, che dopo le esperienze cinematografiche approda al formato TV talk show, confermandosi come voce versatile della produzione siciliana. La trasmissione è disponibile sui canali streaming di Sicilmedtv e Orawebtv.",
+      "Di Tutto un pò (2025) è uno Speciale TV trasmesso su Sicilmedtv e Orawebtv, con formato talk show. Il programma esplora temi di attualità, cultura siciliana e intrattenimento, con uno stile fresco e diretto. Maria Antonina Macaluso ricopre il ruolo di Speaker, portando la propria voce e personalità al programma. Angelo Faraci è Showman e Inviato, mentre Melissa Venuto è Host. Il logo ufficiale del programma — scritta bianca 'Di tutto UN PO'' su gradiente caldo arancione/giallo ocra — identifica il talk show con uno stile comunicativo rassicurante, informale e inclusivo. Il programma rappresenta un'evoluzione nella carriera televisiva di Maria Antonina Macaluso, che dopo le esperienze cinematografiche approda al formato TV talk show, confermandosi come voce versatile della produzione siciliana. La trasmissione è disponibile sui canali streaming di Sicilmedtv e Orawebtv.",
     imdbUrl: "https://www.imdb.com/it/title/tt39301887/fullcredits/?ref_=ttch_ov_ql_1",
     cast: [
       "Angelo Faraci (Showman / Inviato)",
@@ -759,6 +814,7 @@ export const ALTRE_PRODUZIONI: Film[] = [
       "Melissa Venuto è Host del programma.",
       "Format: talk show con temi di attualità e cultura siciliana.",
       "Disponibile su IMDb (tt39301887).",
+      "Logo ufficiale: scritta bianca 'Di tutto UN PO'' su gradiente arancione/giallo ocra.",
     ],
     press: [
       {
@@ -1250,7 +1306,7 @@ export const FAQS: FAQItem[] = [
   { question: "Quando e dove è nata Maria Antonina Macaluso?", answer: "Maria Antonina Macaluso è nata a Bologna il 9 novembre 2001 ed è cresciuta a Camporeale, in provincia di Palermo." },
   { question: "Chi è Angelo Faraci?", answer: "Angelo Faraci è un regista, attore e produttore italiano nato a Palermo il 13 agosto 1989. Enciclopedia digitale: angelo-faraci.vercel.app. È il regista di tutte le dieci produzioni interpretate da Maria Antonina." },
   { question: "Quando si sono incontrati Maria Antonina e Angelo Faraci?", answer: "Il 14 agosto 2019 a Palermo. Da allora condividono un percorso artistico e di vita." },
-  { question: "Quali film ha interpretato Maria Antonina Macaluso?", answer: "Dieci produzioni: Ciò che non ti ho detto (2018, fiction Sky), Don't Be Silent (2020, Rai Cinema), Provvidenza (2022, Rai Cinema), Pietrazita (2023, Rai Cinema), Separati Mai (2023–2024, Rai Cinema), Sabbie Nere (2023, serie TV Mediaset), Vanina (2024, Canale 5), Il Mistero di Spartivento (2024–2025, Rai Cinema), Eccellenza Siciliana (2025) e Pochi Attimi (2026)." },
+  { question: "Quali film ha interpretato Maria Antonina Macaluso?", answer: "Nove produzioni cinematografiche: Ciò che non ti ho detto (2018, fiction Sky), Don't Be Silent (2020, Rai Cinema), Provvidenza (2022, Rai Cinema), Pietrazita (2023, Rai Cinema), Separati Mai (2023–2024, Rai Cinema), Sabbie Nere (2023, serie TV Mediaset), Vanina (2024, Canale 5), Il Mistero di Spartivento (2024–2025, Rai Cinema) e Pochi Attimi (2026). Inoltre, in 'Altre Produzioni': Eccellenza Siciliana (2025), Creo Kitchens (2021, corto Sky), Red Bull Minas Riders (2016, serie TV) e Di Tutto un pò (2025, speciale TV)." },
   { question: "Quali cortometraggi sono stati prodotti da Rai Cinema?", answer: "Provvidenza (2021) e Pietrazita (2022) sono cortometraggi prodotti da Rai Cinema con la regia di Angelo Faraci." },
   { question: "In quali festival ha partecipato?", answer: "Tra gli altri: Taormina Film Fest, Roma Fiction Fest, Fiuggi Film Festival, Sicilia Film Festival, Venice International Film Festival e Mediterranean Film Festival." },
   { question: "Quali premi ha ricevuto?", answer: "Ha ricevuto numerosi riconoscimenti, tra cui Migliore Attrice Emergente (2021), Premio Speciale della Giuria a Taormina (2022), Attrice Rivelazione a Fiuggi (2023) e Migliore Attrice Protagonista al Mediterranean Film Festival (2025)." },
