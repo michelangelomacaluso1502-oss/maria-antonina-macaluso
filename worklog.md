@@ -2657,3 +2657,76 @@ Stage Summary:
 - Sequenza 4s totali (più cinematografica, non frustrante)
 - GPU-accelerated 60fps, WCAG 2.1 AAA, sessionStorage
 - Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura intatta
+
+---
+Task ID: INTRO-V5-GOLDEN-TIME
+Agent: Super Z (main)
+Task: Animazione cinematografica golden time (più lenta, fluidità estrema) seguendo reference intro-v4-peak.png
+
+Work Log:
+- Analizzata reference intro-v4-peak.png con VLM (analisi tecnica dettagliata):
+  * Sfondo: gradiente radiale terracotta #A0522D (centro) → cioccolato #5C2E1B (bordi)
+  * Letterbox bars: 12-14% altezza, nero puro
+  * Icona pellicola: arancione #FF8C00, line art sottile
+  * Tagline: "UNA PRODUZIONE SICILIANA" arancione, tracking 0.25-0.3em
+  * Nome "Maria Antonina": oro #DAA520, serif elegante, glow dorato
+  * Cognome "Macaluso": arancione corallo #FF6B35, corsivo italic
+  * Ruolo: beige sabbia #C4A77D, tracking 0.15-0.2em, opacità 70-80%
+  * Monogramma M·M: gradient oro, blur reveal
+  * 35 stelle/polvere dorata dispersa
+
+- Riscritto intro-animation.tsx (v5) con:
+  * Timing golden time (5.5s + 0.8s fade = 6.3s totali, più cinematografico)
+  * Easing expo out [0.22, 1, 0.36, 1] per fluidità estrema
+  * Sfondo: radial-gradient ellipse at 50% 40% (terracotta→bordeaux→cioccolato)
+  * Letterbox bars 13vh (entrate in 0.8s con easing cinematico)
+  * Glow dorato centrale (scale 0.3→1.2 in 1.5s)
+  * 35 stelle con colori #FFD700 (grandi) e #FFE4B5 (piccole), blur 0.5px sulle grandi
+  * Icona pellicola line art #FF8C00 con drop-shadow glow
+  * Tagline con letter-spacing animato 0.55em→0.4em + text-shadow glow
+  * Nome "Maria Antonina" #DAA520 con blur reveal 10px→0px + text-shadow doppio (glow + ombra direzionale)
+  * Cognome "Macaluso" #FF6B35 corsivo con blur reveal
+  * Ruolo "Attrice Siciliana" #C4A77D beige sabbia, opacity 0.75
+  * Monogramma M·M con gradient verticale #FFE4B5→#DAA520→#8B6914 + blur reveal estremo (18px→0px in 1.2s)
+  * Barra progresso gradient oro orizzontale
+
+- Sequenza golden time (6.3s totali):
+  * 0.0-0.8s: Letterbox bars entrano (ease cinematico)
+  * 0.3-1.2s: Glow dorato + stelle
+  * 0.8-1.6s: Icona pellicola
+  * 1.4-2.2s: "UNA PRODUZIONE SICILIANA"
+  * 2.0-3.0s: "Maria Antonina" lettera per lettera (blur reveal lento)
+  * 2.8-3.8s: "Macaluso" lettera per lettera (corsivo)
+  * 3.6-4.2s: "Attrice Siciliana"
+  * 4.0-5.0s: M·M monogramma (blur reveal estremo)
+  * 5.0-5.5s: Hold + progress bar
+  * 5.5-6.3s: Fade out fluido
+
+- Build: ✓ Compiled successfully
+- Test locale (localhost:3955) con agent-browser:
+  * Eval a 4.5s: bg radial-gradient rgb(160,82,45)→rgb(124,45,18)→rgb(92,46,27)→rgb(74,29,14) ✓
+  * taglineColor rgb(255,140,0) = #FF8C00 ✓
+  * roleColor rgb(196,167,125) = #C4A77D beige sabbia ✓
+  * svgColor rgb(255,140,0) ✓
+  * letterboxBars 2 ✓
+  * monoSpansCount 2, monoLetters ["M","M"] ✓
+  * ariaValuenow 78.4 (progress dinamico) ✓
+- VLM screenshot peak conferma corrispondenza esatta con reference:
+  * Gradiente radiale terracotta→cioccolato (Cinemascope 2.39:1) ✓
+  * Letterbox bars 12-15% ✓
+  * Icona pellicola arancione line art ✓
+  * "Maria Antonina" oro antico ✓
+  * "Macaluso" corallo corsivo ✓
+  * "Attrice Siciliana" grigio-beige ✓
+  * M·M monogramma gradient oro in basso ✓
+  * 35 stelle/polvere dorata ✓
+
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+- Verifica produzione: HTML contiene tutti i colori (FF8C00, DAA520, FF6B35, C4A77D, FFD700) e elementi ✓
+
+Stage Summary:
+- Animazione v5 "golden time" creata seguendo esattamente la reference intro-v4-peak.png
+- Timing più cinematografico (6.3s totali vs 4s precedente) con easing expo out per fluidità estrema
+- Palette colori esatta: terracotta #A0522D, bordeaux #7C2D12, cioccolato #5C2E1B, oro #DAA520, arancione #FF8C00/#FF6B35, beige #C4A77D
+- Tutti gli elementi della reference replicati: letterbox, glow, stelle, icona, tagline, nome, cognome, ruolo, M·M
+- Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura intatta
