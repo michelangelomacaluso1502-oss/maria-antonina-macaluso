@@ -147,6 +147,16 @@ export const BIO_CHAPTERS: BioChapter[] = [
         imageAlt: "Angelo Faraci e Maria Antonina Macaluso — il fidanzamento",
         aspect: "4/5",
       },
+      {
+        heading: "2018 — Il debutto: Ciò che non ti ho detto",
+        body: [
+          "Prima ancora del fidanzamento, il debutto. Il 2018 segna la prima apparizione cinematografica di Maria Antonina Macaluso in 'Ciò che non ti ho detto', fiction TV ideata da Angelo Faraci per Sky, che lo vede attore protagonista nel ruolo di Gaetano Scalici per cinque anni. È l'unica serie tv italiana di soli siciliani e volti isolani noti.",
+          "Maria Antonina partecipa alla fiction confermata da IMDb come uno dei lavori per cui è celebre. Le scene girate tra i vicoli dei borghi siciliani e le scogliere sul mare diventano il primo capitolo di un percorso che dalla Sicilia raggiungerà i festival internazionali.",
+        ],
+        image: "/images/biografia/cio-che-non-ti-ho-detto-ritratto.jpg",
+        imageAlt: "Maria Antonina Macaluso e Angelo Faraci in ritratto dal set di Ciò che non ti ho detto (2018) — belvedere sul mare",
+        aspect: "16/9",
+      },
     ],
   },
   {
@@ -1455,13 +1465,53 @@ const SEPARATI_MAI_META: Record<string, { alt: string; title: string }> = {
   },
 };
 
-export const PHOTOBOOK = Array.from({ length: 70 }, (_, i) => {
+// Metadati speciali per gli scatti del set "Ciò che non ti ho detto" (71-79)
+const CIO_CHE_NON_TI_HO_DETTO_META: Record<string, { alt: string; title: string }> = {
+  "71": {
+    alt: "Coppia sorridente in vicolo di borgo mediterraneo — set di Ciò che non ti ho detto",
+    title: "Ciò che non ti ho detto — Il vicolo",
+  },
+  "72": {
+    alt: "Coppia in abbraccio intimo in borgo storico — set di Ciò che non ti ho detto",
+    title: "Ciò che non ti ho detto — L'abbraccio",
+  },
+  "73": {
+    alt: "Coppia, lui sussurra all'orecchio di lei in centro storico — set di Ciò che non ti ho detto",
+    title: "Ciò che non ti ho detto — Il sussurro",
+  },
+  "74": {
+    alt: "Coppia in abbraccio in vicolo storico — set di Ciò che non ti ho detto",
+    title: "Ciò che non ti ho detto — Vicolo storico",
+  },
+  "75": {
+    alt: "Coppia in abbraccio in vicolo medievale — set di Ciò che non ti ho detto",
+    title: "Ciò che non ti ho detto — Vicolo medievale",
+  },
+  "76": {
+    alt: "Coppia in momento di intimità su scogliera panoramica sul mare — set di Ciò che non ti ho detto",
+    title: "Ciò che non ti ho detto — La scogliera",
+  },
+  "77": {
+    alt: "Coppia, lei accarezza il viso di lui su belvedere sul mare — ritratto ponderato dal set di Ciò che non ti ho detto",
+    title: "Ciò che non ti ho detto — Ritratto",
+  },
+  "78": {
+    alt: "Coppia in momento di intimità su scogliera sul mare — set di Ciò che non ti ho detto",
+    title: "Ciò che non ti ho detto — Mare",
+  },
+  "79": {
+    alt: "Coppia innamorata su scogliera panoramica sul mare — set di Ciò che non ti ho detto",
+    title: "Ciò che non ti ho detto — Belvedere",
+  },
+};
+
+export const PHOTOBOOK = Array.from({ length: 79 }, (_, i) => {
   const num = i + 1;
   // Salta lo scatto 49 (rimosso)
   if (num === 49) return null;
   const id = String(num).padStart(2, "0");
   const idStr = String(num);
-  const meta = SPARTIVENTO_META[idStr] || SEPARATI_MAI_META[idStr];
+  const meta = SPARTIVENTO_META[idStr] || SEPARATI_MAI_META[idStr] || CIO_CHE_NON_TI_HO_DETTO_META[idStr];
   return {
     id: idStr,
     src: `/images/photobook/mam-${id}.jpg`,
@@ -1484,7 +1534,7 @@ export const MULTIMEDIA = [
   { title: "Dietro le quinte — Separati Mai", type: "Video", url: "https://www.youtube.com", duration: "5:18" },
   { title: "Intervista Fiuggi 2023", type: "Video", url: "https://www.youtube.com", duration: "7:25" },
   { title: "Red carpet Venezia 2024", type: "Video", url: "https://www.youtube.com", duration: "2:50" },
-  { title: "Servizio fotografico — Mediterranean 2025", type: "Galleria", url: "/#photobook", duration: "69 foto" },
+  { title: "Servizio fotografico — Mediterranean 2025", type: "Galleria", url: "/#photobook", duration: "78 foto" },
   { title: "Teaser Pochi Attimi", type: "Video", url: "https://www.youtube.com", duration: "1:30" },
 ];
 
@@ -1501,7 +1551,7 @@ export const ALL_PAGES: NavLink[] = [
   { label: "Citazioni", href: "/citazioni", desc: "5 citazioni" },
   { label: "FAQ", href: "/faq", desc: "8 domande frequenti" },
   { label: "Contatti", href: "/contatti", desc: "Social e form" },
-  { label: "Photo Book", href: "/photobook", desc: "69 scatti" },
+  { label: "Photo Book", href: "/photobook", desc: "78 scatti" },
   { label: "Collegamenti esteri", href: "/collegamenti-esteri", desc: "Link verificati" },
   { label: "Multimedia", href: "/multimedia", desc: "Video e gallerie" },
   { label: "Angelo Faraci", href: "/angelo-faraci", desc: "Regista e compagno" },

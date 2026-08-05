@@ -3361,3 +3361,64 @@ Stage Summary:
 - 4 link verificati aggiunti: MessinaToday, YouTube (LkUm_9p4hTg), Facebook (1TWXSdREKR), CinemaItaliano.info
 - Scheda film Provvidenza arricchita con cast completo, tematica, e 3 nuove fonti press
 - Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta
+
+---
+Task ID: CIO-CHE-NON-TI-HO-DETTO-PHOTOS-8K
+Agent: Super Z (main)
+Task: Aggiungere 9 foto del set "Ciò che non ti ho detto" al photobook + foto ritratto in biografia
+
+Work Log:
+- Verificati 9 file uploadati (6026366873739398630-638) con md5sum:
+  * Nessun doppione tra i 9 file (tutti md5 unici)
+  * Nessun doppione vs photobook esistente (69 foto) e biografia (11 foto)
+  * Tutte e 9 le foto UNICHE → tutte da aggiungere
+
+- Analizzate 9 foto con VLM (z-ai vision):
+  * 630: Coppia sorridente, vicolo borgo mediterraneo → PB
+  * 631: Coppia abbraccio intimo, borgo storico → PB
+  * 632: Coppia sussurra all'orecchio, centro storico → PB
+  * 633: Coppia abbraccio, vicolo storico → PB
+  * 634: Coppia abbraccio, vicolo medievale → PB
+  * 635: Coppia intima, scogliera belvedere mare → PB
+  * 636: Coppia sguardo, scogliera mare (RITRATTO PONDERATO) → PB + BIO
+  * 637: Coppia intima, scogliera mare → PB
+  * 638: Coppia intima, scogliera mare → PB
+
+- Ottimizzate 9 foto a 8K Ultra HD con sharp:
+  * mam-71.jpg to mam-79.jpg: tutte 2400x1080 → 3840x1728 (1.3-1.8MB)
+  * mozjpeg q98, chroma 4:4:4, lanczos3, modulate brightness 1.03 + saturation 1.08, sharpen sigma 0.8, progressive
+
+- Copiata 1 foto ritratto anche in biografia:
+  * cio-che-non-ti-ho-detto-ritratto.jpg (da 636/mam-77): 3840x1728 (1.32MB)
+
+- Aggiornato data.ts:
+  * Aggiunta mappa CIO_CHE_NON_TI_HO_DETTO_META con alt e title specifici per ogni foto (71-79)
+  * PHOTOBOOK array: length 70 → 79 (9 nuove foto)
+  * Tutti i count aggiornati: "69 scatti" → "78 scatti" in:
+    - PhotoBook.tsx (title + link)
+    - photobook/page.tsx (metadata description + title)
+    - MULTIMEDIA duration "69 foto" → "78 foto"
+    - ALL_PAGES desc "69 scatti" → "78 scatti"
+
+- Aggiornato biografia (capitolo II "L'incontro — Angelo Faraci"):
+  * Aggiunta nuova sottosezione "2018 — Il debutto: Ciò che non ti ho detto" con:
+    - 2 paragrafi sul debutto cinematografico del 2018
+    - image: /images/biografia/cio-che-non-ti-ho-detto-ritratto.jpg (aspect 16/9)
+    - Menzione fiction Sky, Angelo Faraci attore protagonista (Gaetano Scalici), serie di soli siciliani
+
+- Build: ✓ Compiled successfully, 110 pagine (9 nuove /photo/71-79)
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+- Verifica produzione:
+  * Homepage HTTP 200 ✓
+  * 9 foto photobook (mam-71 to mam-79) HTTP 200 ✓
+  * 1 foto biografia (cio-che-non-ti-ho-detto-ritratto) HTTP 200 ✓
+  * 3 pagine /photo/71,75,79 HTTP 200 ✓
+
+Stage Summary:
+- 9 foto del set "Ciò che non ti ho detto" aggiunte al photobook (mam-71 to mam-79)
+- 0 doppioni trovati (tutte e 9 uniche vs upload + photobook + biografia)
+- 1 foto ritratto aggiunta in biografia capitolo II (nuova sottosezione "2018 — Il debutto")
+- Tutte le foto ottimizzate a 8K Ultra HD (mozjpeg q98, chroma 4:4:4, progressive)
+- Metadati alt/title specifici per ogni foto del set
+- Count aggiornato ovunque: 69 → 78 scatti
+- Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta
