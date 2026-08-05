@@ -2730,3 +2730,63 @@ Stage Summary:
 - Palette colori esatta: terracotta #A0522D, bordeaux #7C2D12, cioccolato #5C2E1B, oro #DAA520, arancione #FF8C00/#FF6B35, beige #C4A77D
 - Tutti gli elementi della reference replicati: letterbox, glow, stelle, icona, tagline, nome, cognome, ruolo, M·M
 - Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura intatta
+
+---
+Task ID: INTRO-V6-GOLDEN-TIME-SLOW
+Agent: Super Z (main)
+Task: Animazione troppo istantanea — rallentare per dare tempo alle lettere di comparire (golden time)
+
+Work Log:
+- Problema: animazione v5 era troppo veloce (6.3s), le lettere non davano tempo di essere lette
+- Riscritto intro-animation.tsx (v6) con timing MOLTO più lento e cinematografico:
+  * Durata totale: 9.5s (vs 6.3s precedente) — 50% più lento
+  * Lettere: stagger 0.08s (vs 0.05s), duration 0.9s (vs 0.7s) per lettera
+  * Blur reveal: 12px→0px (vs 10px) per effetto sfocatura più evidente
+  - Easing expo out [0.22, 1, 0.36, 1] mantenuto per fluidità
+
+- Nuova sequenza golden time (9.5s totali):
+  * 0.0-1.2s: Letterbox bars (1.2s, era 0.8s)
+  * 0.5-2.0s: Glow + stelle (2s, era 1.5s)
+  * 1.8-3.0s: Icona pellicola (1.2s, era 0.9s)
+  * 2.8-4.0s: "UNA PRODUZIONE SICILIANA" (1.2s, era 0.9s)
+  * 3.8-5.5s: "Maria Antonina" lettera per lettera (stagger 0.08s, duration 0.9s)
+  * 5.3-6.8s: "Macaluso" lettera per lettera (corsivo)
+  * 6.5-7.5s: "Attrice Siciliana" (1s, era 0.8s)
+  * 7.2-8.5s: M·M monogramma (1.5s blur reveal estremo, era 1.2s)
+  * 8.5-9.0s: Hold (tutto visibile come screenshot reference)
+  * 9.0-10.0s: Fade out (1s, era 0.8s)
+
+- Colori allineati esattamente alla reference VLM:
+  * Sfondo: radial-gradient #803322 → #7C2D12 → #5C2419 → #4A1C14
+  * Icona/tagline/cognome: #FF6B35 (arancione corallo)
+  * Nome "Maria Antonina": #D4AF37 (oro)
+  * Ruolo "Attrice Siciliana": #CFC4B8 (beige sabbia, opacity 82%)
+  * Monogramma M·M: gradient #FFF8DC → #D4AF37 → #8B6914
+  * Stelle: 28 particelle #FFF8DC/#FFE4B5
+
+- Build: ✓ Compiled successfully
+- Test locale (localhost:3956) con agent-browser:
+  * Eval a 8.5s: overlay exists ✓
+  * h1Text "Maria AntoninaMacaluso" ✓
+  * visibleLettersCount 22 (TUTTE le lettere visibili) ✓
+  * roleText presente, roleOpacity 0.82 ✓
+  * monoSpansCount 2, monoOpacity 0.998 (quasi completo) ✓
+  * progress 84% ✓
+- VLM screenshot peak conferma tutti gli elementi chiaramente leggibili:
+  * Letterbox bars ✓
+  * Icona pellicola arancione ✓
+  * "UNA PRODUZIONE SICILIANA" arancione ✓
+  * "Maria Antonina" oro ✓
+  * "Macaluso" corallo corsivo ✓
+  * "ATTRICE SICILIANA" grigio chiaro ✓
+  * M·M monogramma oro ✓
+  * 28 stelle/polvere ✓
+
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+
+Stage Summary:
+- Animazione v6 golden time creata con timing molto più lento (9.5s totali)
+- Ogni lettera ha 0.08s di stagger + 0.9s di duration per dare tempo di essere letta
+- Blur reveal 12px→0px per effetto sfocatura più cinematografico
+- Tutti gli elementi corrispondono esattamente alla reference intro-v4-peak.png
+- Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura intatta

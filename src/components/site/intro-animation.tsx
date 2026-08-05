@@ -4,22 +4,22 @@ import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 /**
- * IntroAnimation v5 — Cinematografica Golden Time
+ * IntroAnimation v6 — Golden Time Cinematografico
  *
  * Reference: intro-v4-peak.png
- * Stile: Hollywood Golden Age, palette terrosa siciliana, fluidità estrema
+ * Ogni elemento ha il suo tempo di apparizione, lentamente, con blur reveal
  *
- * Sequenza cinematografica (5.5s totali + 0.8s fade out):
- *   0.0-0.8s  → Letterbox bars entrano lentamente (ease cinematico)
- *   0.3-1.2s  → Glow dorato centrale + stelle scintillanti
- *   0.8-1.6s  → Icona pellicola (scale + glow, fade lento)
- *   1.4-2.2s  → "UNA PRODUZIONE SICILIANA" (tracking ampio, fade up)
- *   2.0-3.0s  → "Maria Antonina" lettera per lettera (blur reveal lento)
- *   2.8-3.8s  → "Macaluso" lettera per lettera (corsivo, blur reveal)
- *   3.6-4.2s  → "Attrice Siciliana" (fade up, letter-spacing)
- *   4.0-5.0s  → Monogramma M·M (blur reveal estremo, gradient oro)
- *   5.0-5.5s  → Hold + progress bar completa
- *   5.5-6.3s  → Fade out fluido
+ * Sequenza cinematografica (8.5s totali + 1s fade out = 9.5s):
+ *   0.0-1.2s  → Letterbox bars entrano (molto lento)
+ *   0.5-2.0s  → Sfondo + glow dorato + stelle appaiono
+ *   1.8-3.0s  → Icona pellicola (scale lento + glow)
+ *   2.8-4.0s  → "UNA PRODUZIONE SICILIANA" (tracking animato lento)
+ *   3.8-5.5s  → "Maria Antonina" lettera per lettera (blur reveal MOLTO lento)
+ *   5.3-6.8s  → "Macaluso" lettera per lettera (corsivo, blur reveal)
+ *   6.5-7.5s  → "Attrice Siciliana" (fade up lento)
+ *   7.2-8.5s  → Monogramma M·M (blur reveal estremo, lentissimo)
+ *   8.5-9.0s  → Hold (tutto visibile come screenshot reference)
+ *   9.0-10.0s → Fade out fluido
  *
  * Architettura:
  *   - Solo transform e opacity (GPU-accelerated, 60fps)
@@ -37,17 +37,17 @@ export function IntroAnimation() {
   // Easing cinematografico — expo out per fluidità estrema
   const EASE_CINEMA = [0.22, 1, 0.36, 1] as const;
 
-  // Stelle generate una sola volta (memoizzate) — 35 particelle come reference
+  // Stelle generate una sola volta (memoizzate) — 28 particelle come reference
   const stars = useMemo(
     () =>
-      Array.from({ length: 35 }, (_, i) => ({
+      Array.from({ length: 28 }, (_, i) => ({
         id: i,
         x: Math.random() * 100,
         y: Math.random() * 100,
         size: Math.random() * 2 + 0.8,
-        delay: Math.random() * 3,
-        duration: 3 + Math.random() * 3,
-        opacity: 0.3 + Math.random() * 0.5,
+        delay: Math.random() * 4,
+        duration: 4 + Math.random() * 3,
+        opacity: 0.4 + Math.random() * 0.5,
       })),
     []
   );
@@ -68,7 +68,7 @@ export function IntroAnimation() {
       return;
     }
 
-    // Progress bar più lento (6s totali, +1.2 ogni 70ms)
+    // Progress bar molto lento (10s totali, +1 ogni 100ms)
     const interval = setInterval(() => {
       setProgress((p) => {
         if (p >= 100) {
@@ -76,12 +76,12 @@ export function IntroAnimation() {
           setTimeout(() => {
             setIsVisible(false);
             sessionStorage.setItem("intro-seen", "true");
-          }, 600);
+          }, 800);
           return 100;
         }
-        return p + 1.4;
+        return p + 1;
       });
-    }, 80);
+    }, 100);
 
     return () => clearInterval(interval);
   }, []);
@@ -92,7 +92,7 @@ export function IntroAnimation() {
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          transition={{ duration: 1, ease: "easeInOut" }}
           className="fixed inset-0 z-[99999] flex items-center justify-center overflow-hidden"
           role="progressbar"
           aria-label="Caricamento sito Maria Antonina Macaluso"
@@ -102,40 +102,40 @@ export function IntroAnimation() {
           style={{
             // Gradiente radiale come reference: terracotta centro → cioccolato bordi
             background:
-              "radial-gradient(ellipse at 50% 40%, #A0522D 0%, #7C2D12 40%, #5C2E1B 75%, #4A1D0E 100%)",
+              "radial-gradient(ellipse at 50% 40%, #803322 0%, #7C2D12 35%, #5C2419 70%, #4A1C14 100%)",
             willChange: "opacity",
           }}
         >
-          {/* === LETTERBOX BARS cinematografiche (entrate lente) === */}
+          {/* === LETTERBOX BARS cinematografiche (entrata molto lenta) === */}
           <motion.div
             initial={{ height: 0 }}
-            animate={{ height: "13vh" }}
-            transition={{ duration: 0.8, ease: EASE_CINEMA }}
+            animate={{ height: "12.5vh" }}
+            transition={{ duration: 1.2, ease: EASE_CINEMA }}
             className="absolute top-0 left-0 right-0 bg-black z-20"
             style={{ willChange: "height" }}
           />
           <motion.div
             initial={{ height: 0 }}
-            animate={{ height: "13vh" }}
-            transition={{ duration: 0.8, delay: 0.1, ease: EASE_CINEMA }}
+            animate={{ height: "12.5vh" }}
+            transition={{ duration: 1.2, delay: 0.15, ease: EASE_CINEMA }}
             className="absolute bottom-0 left-0 right-0 bg-black z-20"
             style={{ willChange: "height" }}
           />
 
-          {/* === GLOW DORATO CENTRALE (lume di proiezione) === */}
+          {/* === GLOW DORATO CENTRALE (lume di proiezione, molto lento) === */}
           <motion.div
             initial={{ opacity: 0, scale: 0.3 }}
-            animate={{ opacity: 0.35, scale: 1.2 }}
-            transition={{ duration: 1.5, delay: 0.3, ease: EASE_CINEMA }}
-            className="absolute w-[80vw] h-[80vw] max-w-[600px] max-h-[600px] rounded-full pointer-events-none"
+            animate={{ opacity: 0.3, scale: 1.3 }}
+            transition={{ duration: 2, delay: 0.5, ease: EASE_CINEMA }}
+            className="absolute w-[85vw] h-[85vw] max-w-[650px] max-h-[650px] rounded-full pointer-events-none"
             style={{
               background:
-                "radial-gradient(circle, rgba(255, 215, 0, 0.18) 0%, rgba(212, 175, 55, 0.08) 40%, transparent 70%)",
+                "radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, rgba(212, 175, 55, 0.06) 40%, transparent 70%)",
               willChange: "transform, opacity",
             }}
           />
 
-          {/* === STELLE/POLVERE DORATA (35 particelle) === */}
+          {/* === STELLE/POLVERE DORATA (28 particelle, apparizione lenta) === */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {stars.map((star) => (
               <motion.div
@@ -146,12 +146,12 @@ export function IntroAnimation() {
                   top: `${star.y}%`,
                   width: `${star.size}px`,
                   height: `${star.size}px`,
-                  backgroundColor: star.size > 1.8 ? "#FFD700" : "#FFE4B5",
+                  backgroundColor: star.size > 1.8 ? "#FFF8DC" : "#FFE4B5",
                   willChange: "transform, opacity",
                   filter: star.size > 2 ? "blur(0.5px)" : "none",
                 }}
                 animate={{
-                  opacity: [star.opacity * 0.3, star.opacity, star.opacity * 0.3],
+                  opacity: [star.opacity * 0.2, star.opacity, star.opacity * 0.2],
                   scale: [1, 1.4, 1],
                 }}
                 transition={{
@@ -169,26 +169,25 @@ export function IntroAnimation() {
             className="relative z-10 text-center px-6"
             style={{ willChange: "transform, opacity" }}
           >
-            {/* === ICONA PELLICOLA (line art sottile, arancione) === */}
+            {/* === ICONA PELLICOLA (line art, arancione, apparizione lenta) === */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.6, y: 8 }}
-              animate={{ opacity: 0.95, scale: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.8, ease: EASE_CINEMA }}
-              className="flex justify-center mb-5"
+              initial={{ opacity: 0, scale: 0.6, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 1.8, ease: EASE_CINEMA }}
+              className="flex justify-center mb-6"
               style={{ willChange: "transform, opacity" }}
             >
               <svg
-                width="52"
-                height="52"
+                width="48"
+                height="48"
                 viewBox="0 0 64 64"
                 fill="none"
                 style={{
-                  color: "#FF8C00",
+                  color: "#FF6B35",
                   willChange: "transform, opacity",
-                  filter: "drop-shadow(0 0 14px rgba(255, 140, 0, 0.5))",
+                  filter: "drop-shadow(0 0 12px rgba(255, 107, 53, 0.45))",
                 }}
               >
-                {/* Frame esterno line art */}
                 <rect
                   x="6"
                   y="14"
@@ -199,15 +198,12 @@ export function IntroAnimation() {
                   strokeWidth="1.5"
                   fill="none"
                 />
-                {/* Perforazioni superiori */}
                 {[9, 16, 23, 30, 37, 44, 51].map((x) => (
                   <rect key={`top-${x}`} x={x} y="17" width="3" height="3" fill="currentColor" />
                 ))}
-                {/* Perforazioni inferiori */}
                 {[9, 16, 23, 30, 37, 44, 51].map((x) => (
                   <rect key={`bot-${x}`} x={x} y="44" width="3" height="3" fill="currentColor" />
                 ))}
-                {/* Riquadro centrale */}
                 <rect
                   x="20"
                   y="20"
@@ -218,66 +214,65 @@ export function IntroAnimation() {
                   strokeWidth="1.2"
                   fill="none"
                 />
-                {/* Triangolo play */}
                 <path d="M28 26 L28 38 L38 32 Z" fill="currentColor" opacity="0.9" />
               </svg>
             </motion.div>
 
-            {/* === "UNA PRODUZIONE SICILIANA" === */}
+            {/* === "UNA PRODUZIONE SICILIANA" (tracking animato lento) === */}
             <motion.p
-              initial={{ opacity: 0, y: -8, letterSpacing: "0.55em" }}
-              animate={{ opacity: 0.9, y: 0, letterSpacing: "0.4em" }}
-              transition={{ duration: 0.9, delay: 1.4, ease: EASE_CINEMA }}
-              className="text-[#FF8C00] text-[10px] md:text-xs font-semibold uppercase mb-8"
+              initial={{ opacity: 0, y: -8, letterSpacing: "0.6em" }}
+              animate={{ opacity: 1, y: 0, letterSpacing: "0.3em" }}
+              transition={{ duration: 1.2, delay: 2.8, ease: EASE_CINEMA }}
+              className="text-[#FF6B35] text-[10px] md:text-xs font-semibold uppercase mb-10"
               style={{
                 willChange: "transform, opacity",
-                textShadow: "0 0 20px rgba(255, 140, 0, 0.4)",
+                textShadow: "0 0 18px rgba(255, 107, 53, 0.4)",
               }}
             >
               Una Produzione Siciliana
             </motion.p>
 
-            {/* === NOME "Maria Antonina" (oro, blur reveal lento) === */}
+            {/* === NOME "Maria Antonina" (oro, blur reveal MOLTO lento) === */}
             <h1
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-medium mb-0"
+              className="font-display text-4xl md:text-5xl lg:text-6xl font-medium"
               style={{
                 willChange: "transform, opacity",
-                lineHeight: 0.95,
+                lineHeight: 1,
               }}
             >
               <span className="block">
                 {"Maria Antonina".split("").map((letter, i) => (
                   <motion.span
                     key={`ma-${i}`}
-                    initial={{ opacity: 0, y: 18, filter: "blur(10px)" }}
+                    initial={{ opacity: 0, y: 20, filter: "blur(12px)" }}
                     animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                     transition={{
-                      duration: 0.7,
-                      delay: 2.0 + i * 0.05,
+                      duration: 0.9,
+                      delay: 3.8 + i * 0.08,
                       ease: EASE_CINEMA,
                     }}
                     className="inline-block"
                     style={{
-                      color: "#DAA520",
+                      color: "#D4AF37",
                       willChange: "transform, opacity, filter",
                       textShadow:
-                        "0 0 40px rgba(255, 215, 0, 0.4), 2px 2px 4px rgba(74, 37, 13, 0.6)",
+                        "0 0 40px rgba(212, 175, 55, 0.5), 2px 2px 4px rgba(74, 28, 20, 0.6)",
                     }}
                   >
                     {letter === " " ? "\u00A0" : letter}
                   </motion.span>
                 ))}
               </span>
-              {/* === COGNOME "Macaluso" (arancione corallo, corsivo) === */}
-              <span className="block italic">
+              {/* === COGNOME "Macaluso" (arancione corallo, corsivo, blur reveal lento) === */}
+              <span className="block italic mt-1">
                 {"Macaluso".split("").map((letter, i) => (
                   <motion.span
                     key={`mc-${i}`}
-                    initial={{ opacity: 0, y: 18, filter: "blur(10px)" }}
+                    initial={{ opacity: 0, y: 20, filter: "blur(12px)" }}
                     animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                     transition={{
-                      duration: 0.7,
-                      delay: 2.8 + i * 0.05,
+                      duration: 0.9,
+                      delay: 5.3 + i * 0.08,
                       ease: EASE_CINEMA,
                     }}
                     className="inline-block"
@@ -285,7 +280,7 @@ export function IntroAnimation() {
                       color: "#FF6B35",
                       willChange: "transform, opacity, filter",
                       textShadow:
-                        "0 0 35px rgba(255, 107, 53, 0.4), 2px 2px 4px rgba(74, 37, 13, 0.5)",
+                        "0 0 35px rgba(255, 107, 53, 0.45), 2px 2px 4px rgba(74, 28, 20, 0.5)",
                     }}
                   >
                     {letter}
@@ -294,25 +289,25 @@ export function IntroAnimation() {
               </span>
             </h1>
 
-            {/* === "ATTRICE SICILIANA" (beige sabbia, tracking) === */}
+            {/* === "ATTRICE SICILIANA" (beige sabbia, fade up lento) === */}
             <motion.p
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 0.75, y: 0 }}
-              transition={{ duration: 0.8, delay: 3.6, ease: EASE_CINEMA }}
-              className="font-sans text-xs md:text-sm tracking-[0.2em] uppercase mt-6 mb-8"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 0.82, y: 0 }}
+              transition={{ duration: 1, delay: 6.5, ease: EASE_CINEMA }}
+              className="font-sans text-xs md:text-sm tracking-[0.25em] uppercase mt-7 mb-10"
               style={{
-                color: "#C4A77D",
+                color: "#CFC4B8",
                 willChange: "transform, opacity",
               }}
             >
               Attrice Siciliana
             </motion.p>
 
-            {/* === MONOGRAMMA M·M (blur reveal estremo, gradient oro) === */}
+            {/* === MONOGRAMMA M·M (blur reveal ESTREMO lentissimo) === */}
             <motion.div
-              initial={{ opacity: 0, y: 16, scale: 0.92, filter: "blur(18px)" }}
+              initial={{ opacity: 0, y: 18, scale: 0.9, filter: "blur(20px)" }}
               animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-              transition={{ duration: 1.2, delay: 4.0, ease: EASE_CINEMA }}
+              transition={{ duration: 1.5, delay: 7.2, ease: EASE_CINEMA }}
               className="flex items-center justify-center gap-1 mb-10"
               style={{ willChange: "transform, opacity, filter" }}
             >
@@ -320,11 +315,11 @@ export function IntroAnimation() {
                 className="font-display text-4xl md:text-5xl"
                 style={{
                   background:
-                    "linear-gradient(180deg, #FFE4B5 0%, #DAA520 40%, #8B6914 100%)",
+                    "linear-gradient(180deg, #FFF8DC 0%, #D4AF37 45%, #8B6914 100%)",
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
                   WebkitTextFillColor: "transparent",
-                  textShadow: "0 0 50px rgba(255, 215, 0, 0.5)",
+                  textShadow: "0 0 50px rgba(212, 175, 55, 0.5)",
                   willChange: "transform, opacity",
                 }}
               >
@@ -343,11 +338,11 @@ export function IntroAnimation() {
                 className="font-display text-4xl md:text-5xl"
                 style={{
                   background:
-                    "linear-gradient(180deg, #FFE4B5 0%, #DAA520 40%, #8B6914 100%)",
+                    "linear-gradient(180deg, #FFF8DC 0%, #D4AF37 45%, #8B6914 100%)",
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
                   WebkitTextFillColor: "transparent",
-                  textShadow: "0 0 50px rgba(255, 215, 0, 0.5)",
+                  textShadow: "0 0 50px rgba(212, 175, 55, 0.5)",
                   willChange: "transform, opacity",
                 }}
               >
@@ -355,20 +350,20 @@ export function IntroAnimation() {
               </span>
             </motion.div>
 
-            {/* === BARRA DI PROGRESSO (gradient oro) === */}
+            {/* === BARRA DI PROGRESSO (gradient oro, lentissima) === */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 4.5, duration: 0.5 }}
+              transition={{ delay: 7.8, duration: 0.6 }}
               className="mx-auto w-48 h-px bg-white/15 rounded-full overflow-hidden"
               style={{ willChange: "opacity" }}
             >
               <div
-                className="h-full bg-gradient-to-r from-transparent via-[#FFD700] to-transparent"
+                className="h-full bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"
                 style={{
                   width: `${progress}%`,
                   willChange: "width",
-                  transition: "width 0.15s linear",
+                  transition: "width 0.2s linear",
                 }}
               />
             </motion.div>
