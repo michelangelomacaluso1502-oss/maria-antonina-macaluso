@@ -2848,3 +2848,55 @@ Stage Summary:
 - Timing golden time 12s totali con hold finale di 1.5s
 - Tutti gli elementi chiaramente leggibili (verificato VLM)
 - Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura intatta
+
+---
+Task ID: INTRO-V8-REFERENCE-STATE
+Agent: Super Z (main)
+Task: Animazione non corrisponde alla reference — diagnosticato stato target (nome nitido + M·M sfocato)
+
+Work Log:
+- Analizzata reference intro-v4-peak.png con VLM (stato esatto):
+  * "Maria Antonina" e "Macaluso" COMPLETAMENTE visibili e nitidi
+  * Monogramma M·M SFACATO (blur) — in fase di apparizione
+  * Sfondo a gradiente radiale
+  * Questo è uno STATO INTERMEDIO dell'animazione, non quello finale
+
+- Problema diagnosticato: i timer precedenti (11s/12s) causavano rimozione anticipate
+  * AnimatePresence con isVisible=false faceva partire fade-out
+  * L'utente vedeva l'intro già in fase di rimozione
+
+- Riscritto intro-animation.tsx (v8) con timing che riproduce lo stato reference:
+  * Durata totale: 10s (più gestibile)
+  * Nome "Maria Antonina": delay 2.0s, stagger 0.08s, duration 0.8s → completo e nitido a ~4s
+  * Cognome "Macaluso": delay 3.5s, stagger 0.08s, duration 0.8s → completo a ~5s
+  * Monogramma M·M: delay 5.0s, duration 2.5s (blur reveal LENTO) → rimane sfocato a lungo
+  * A 6.5s: nome nitido + M·M sfocato (blur 17px) = STATO REFERENCE
+  * Hold 7.0-9.0s dove M·M finisce reveal
+  * Fade out 9.0-10.0s
+
+- Verifiche con agent-browser (locale):
+  * Eval a 6.5s: h1Text "Maria AntoninaMacaluso", allNameVisible true, letterCount 22, monoExists true, monoFilter "blur(17.14px)", monoOpacity 0.14, monoIsBlurred true ✓
+  * Ripetuto 2 volte: stesso risultato ✓
+  * Stato corrisponde ESATTAMENTE alla reference (nome nitido + M·M sfocato)
+
+- Sequenza v8 (10s totali):
+  * 0.0-1.0s: Letterbox bars
+  * 0.3-1.5s: Glow + stelle
+  * 1.0-2.0s: Icona pellicola
+  * 1.5-2.5s: "UNA PRODUZIONE SICILIANA"
+  * 2.0-4.0s: "Maria Antonina" lettera per lettera (nitido a 4s)
+  * 3.5-5.0s: "Macaluso" lettera per lettera (nitido a 5s)
+  * 4.5-5.5s: "Attrice Siciliana"
+  * 5.0-7.5s: M·M monogramma (blur reveal LENTO — sfocato fino a 7.5s)
+  * 7.5-9.0s: HOLD (tutto nitido)
+  * 9.0-10.0s: Fade out
+
+- Build: ✓ Compiled successfully
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+
+Stage Summary:
+- Animazione v8 creata per riprodurre lo stato reference (nome nitido + M·M sfocato)
+- Timing calibrato: a 6.5s lo stato corrisponde esattamente alla reference (verificato JS: blur 17px su M·M)
+- M·M ha blur reveal di 2.5s (molto lento) per rimanere sfocato a lungo come nella reference
+- Nome completo e nitido a 4s, M·M completamente nitido solo a 7.5s
+- Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura intatta

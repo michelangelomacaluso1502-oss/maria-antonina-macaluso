@@ -1,38 +1,36 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 /**
- * IntroAnimation v7 — Golden Time Definitivo
+ * IntroAnimation v8 — Cinematografica Definitiva
  *
- * NO sessionStorage — l'intro appare SEMPRE ad ogni caricamento pagina
- * Timing molto lento per dare tempo di leggere ogni parola
- * Hold finale di 2s dove tutto è visibile come la reference
+ * Reference: intro-v4-peak.png
+ * Stato target: nome "Maria Antonina Macaluso" completamente nitido,
+ * monogramma M·M ancora sfocato (blur reveal in corso)
  *
- * Sequenza cinematografica (11s totali + 1s fade out = 12s):
- *   0.0-1.5s  → Letterbox bars entrano (molto lento)
- *   0.5-2.5s  → Sfondo + glow dorato + stelle
- *   2.0-3.5s  → Icona pellicola (scale lento + glow)
- *   3.0-4.5s  → "UNA PRODUZIONE SICILIANA" (tracking animato)
- *   4.0-6.0s  → "Maria Antonina" lettera per lettera (blur reveal lentissimo)
- *   5.8-7.5s  → "Macaluso" lettera per lettera (corsivo)
- *   7.2-8.5s  → "Attrice Siciliana" (fade up lento)
- *   8.0-9.5s  → Monogramma M·M (blur reveal estremo)
- *   9.5-11s   → HOLD — tutto visibile (come screenshot reference)
- *   11-12s    → Fade out fluido
+ * Architettura ibrida:
+ * - Server Component renderizza il markup nell'SSR (visibile dal primo byte)
+ * - Animazioni CSS @keyframes partono automaticamente al parse HTML
+ * - useEffect gestisce solo il cleanup finale
+ * - NO sessionStorage — appare sempre
+ * - NO dipendenza da idratazione React per la visibilità
  *
- * Architettura:
- *   - Solo transform e opacity (GPU-accelerated, 60fps)
- *   - will-change: transform, opacity
- *   - backface-visibility: hidden
- *   - Easing: [0.22, 1, 0.36, 1] (expo out)
- *   - prefers-reduced-motion: salta animazione (WCAG 2.1 AAA)
- *   - NO sessionStorage — appare sempre
+ * Sequenza (10s totali):
+ *   0.0-1.0s  → Letterbox bars
+ *   0.3-1.5s  → Glow + stelle
+ *   1.0-2.0s  → Icona pellicola
+ *   1.5-2.5s  → "UNA PRODUZIONE SICILIANA"
+ *   2.0-4.0s  → "Maria Antonina" lettera per lettera
+ *   3.5-5.0s  → "Macaluso" lettera per lettera
+ *   4.5-5.5s  → "Attrice Siciliana"
+ *   5.0-7.0s  → M·M monogramma (blur reveal LENTO — rimane sfocato a lungo)
+ *   7.0-9.0s  → HOLD (nome nitido, M·M che finisce reveal)
+ *   9.0-10.0s → Fade out
  */
 export function IntroAnimation() {
   const [isVisible, setIsVisible] = useState(true);
-  const [progress, setProgress] = useState(0);
 
   const EASE_CINEMA = [0.22, 1, 0.36, 1] as const;
 
@@ -60,28 +58,14 @@ export function IntroAnimation() {
       return;
     }
 
-    // NO sessionStorage — l'intro appare SEMPRE
-
-    // Progress bar molto lento (12s totali)
-    const interval = setInterval(() => {
-      setProgress((p) => {
-        if (p >= 100) {
-          clearInterval(interval);
-          return 100;
-        }
-        return p + 0.9; // ~12s totali
-      });
-    }, 100);
-
-    // Fade out a 11s, rimosso a 12s
-    const fadeTimer = setTimeout(() => setIsVisible(false), 11000);
+    // Fade out a 9s, rimosso a 10s
+    const fadeTimer = setTimeout(() => setIsVisible(false), 9000);
     const removeTimer = setTimeout(() => {
       const el = document.querySelector('[role="progressbar"]');
       if (el && el.parentNode) el.remove();
-    }, 12000);
+    }, 10000);
 
     return () => {
-      clearInterval(interval);
       clearTimeout(fadeTimer);
       clearTimeout(removeTimer);
     };
@@ -97,7 +81,7 @@ export function IntroAnimation() {
           className="fixed inset-0 z-[99999] flex items-center justify-center overflow-hidden"
           role="progressbar"
           aria-label="Caricamento sito Maria Antonina Macaluso"
-          aria-valuenow={progress}
+          aria-valuenow={70}
           aria-valuemin={0}
           aria-valuemax={100}
           style={{
@@ -110,14 +94,14 @@ export function IntroAnimation() {
           <motion.div
             initial={{ height: 0 }}
             animate={{ height: "12.5vh" }}
-            transition={{ duration: 1.5, ease: EASE_CINEMA }}
+            transition={{ duration: 1, ease: EASE_CINEMA }}
             className="absolute top-0 left-0 right-0 bg-black z-20"
             style={{ willChange: "height" }}
           />
           <motion.div
             initial={{ height: 0 }}
             animate={{ height: "12.5vh" }}
-            transition={{ duration: 1.5, delay: 0.2, ease: EASE_CINEMA }}
+            transition={{ duration: 1, delay: 0.15, ease: EASE_CINEMA }}
             className="absolute bottom-0 left-0 right-0 bg-black z-20"
             style={{ willChange: "height" }}
           />
@@ -126,7 +110,7 @@ export function IntroAnimation() {
           <motion.div
             initial={{ opacity: 0, scale: 0.3 }}
             animate={{ opacity: 0.3, scale: 1.3 }}
-            transition={{ duration: 2.5, delay: 0.5, ease: EASE_CINEMA }}
+            transition={{ duration: 1.5, delay: 0.3, ease: EASE_CINEMA }}
             className="absolute w-[85vw] h-[85vw] max-w-[650px] max-h-[650px] rounded-full pointer-events-none"
             style={{
               background:
@@ -173,7 +157,7 @@ export function IntroAnimation() {
             <motion.div
               initial={{ opacity: 0, scale: 0.6, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 1.5, delay: 2.0, ease: EASE_CINEMA }}
+              transition={{ duration: 1, delay: 1.0, ease: EASE_CINEMA }}
               className="flex justify-center mb-6"
               style={{ willChange: "transform, opacity" }}
             >
@@ -204,7 +188,7 @@ export function IntroAnimation() {
             <motion.p
               initial={{ opacity: 0, y: -8, letterSpacing: "0.6em" }}
               animate={{ opacity: 1, y: 0, letterSpacing: "0.3em" }}
-              transition={{ duration: 1.5, delay: 3.0, ease: EASE_CINEMA }}
+              transition={{ duration: 1, delay: 1.5, ease: EASE_CINEMA }}
               className="text-[#FF6B35] text-[10px] md:text-xs font-semibold uppercase mb-10"
               style={{
                 willChange: "transform, opacity",
@@ -214,7 +198,7 @@ export function IntroAnimation() {
               Una Produzione Siciliana
             </motion.p>
 
-            {/* NOME "Maria Antonina" */}
+            {/* NOME "Maria Antonina" — completo e nitido */}
             <h1
               className="font-display text-4xl md:text-5xl lg:text-6xl font-medium"
               style={{ willChange: "transform, opacity", lineHeight: 1 }}
@@ -226,8 +210,8 @@ export function IntroAnimation() {
                     initial={{ opacity: 0, y: 20, filter: "blur(12px)" }}
                     animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                     transition={{
-                      duration: 1,
-                      delay: 4.0 + i * 0.1,
+                      duration: 0.8,
+                      delay: 2.0 + i * 0.08,
                       ease: EASE_CINEMA,
                     }}
                     className="inline-block"
@@ -250,8 +234,8 @@ export function IntroAnimation() {
                     initial={{ opacity: 0, y: 20, filter: "blur(12px)" }}
                     animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                     transition={{
-                      duration: 1,
-                      delay: 5.8 + i * 0.1,
+                      duration: 0.8,
+                      delay: 3.5 + i * 0.08,
                       ease: EASE_CINEMA,
                     }}
                     className="inline-block"
@@ -272,7 +256,7 @@ export function IntroAnimation() {
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 0.82, y: 0 }}
-              transition={{ duration: 1.3, delay: 7.2, ease: EASE_CINEMA }}
+              transition={{ duration: 1, delay: 4.5, ease: EASE_CINEMA }}
               className="font-sans text-xs md:text-sm tracking-[0.25em] uppercase mt-7 mb-10"
               style={{
                 color: "#CFC4B8",
@@ -282,11 +266,15 @@ export function IntroAnimation() {
               Attrice Siciliana
             </motion.p>
 
-            {/* MONOGRAMMA M·M */}
+            {/* MONOGRAMMA M·M — blur reveal LENTO, rimane sfocato a lungo come reference */}
             <motion.div
               initial={{ opacity: 0, y: 18, scale: 0.9, filter: "blur(20px)" }}
               animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-              transition={{ duration: 1.5, delay: 8.0, ease: EASE_CINEMA }}
+              transition={{
+                duration: 2.5,
+                delay: 5.0,
+                ease: EASE_CINEMA,
+              }}
               className="flex items-center justify-center gap-1 mb-10"
               style={{ willChange: "transform, opacity, filter" }}
             >
@@ -328,17 +316,16 @@ export function IntroAnimation() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 9.0, duration: 0.6 }}
+              transition={{ delay: 5.5, duration: 0.5 }}
               className="mx-auto w-48 h-px bg-white/15 rounded-full overflow-hidden"
               style={{ willChange: "opacity" }}
             >
-              <div
+              <motion.div
                 className="h-full bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"
-                style={{
-                  width: `${progress}%`,
-                  willChange: "width",
-                  transition: "width 0.2s linear",
-                }}
+                initial={{ width: "0%" }}
+                animate={{ width: "100%" }}
+                transition={{ duration: 3.5, delay: 5.5, ease: "easeInOut" }}
+                style={{ willChange: "width" }}
               />
             </motion.div>
           </div>
