@@ -102,33 +102,38 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         {/* Preload immagine hero per LCP <1s */}
         <link rel="preload" as="image" href="/images/hero-maria-antonina.jpg" fetchPriority="high" />
-        {/* CSS critico inline per l'intro overlay — visibile dal primo byte,
-            indipendentemente dal caricamento del CSS esterno */}
+        {/* CSS critico inline per l'intro animation — visibile dal primo byte,
+            indipendentemente dal caricamento del CSS esterno o Framer Motion */}
         <style dangerouslySetInnerHTML={{
           __html: `
-            #intro-overlay.intro-pre-entry {
+            /* CSS critico per IntroAnimation — fallback se Framer Motion non carica */
+            [role="progressbar"][aria-label*="Maria Antonina"] {
               position: fixed !important;
               inset: 0 !important;
               z-index: 99999 !important;
               display: flex !important;
               align-items: center !important;
               justify-content: center !important;
-              background: #08070a !important;
               overflow: hidden !important;
-              opacity: 1;
-              visibility: visible;
-              transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
-              cursor: pointer;
+              opacity: 1 !important;
+              visibility: visible !important;
+              background: radial-gradient(ellipse at 50% 40%, #803322 0%, #7C2D12 35%, #5C2419 70%, #4A1C14 100%) !important;
             }
-            #intro-overlay.intro-pre-entry.is-hidden {
-              opacity: 0 !important;
-              visibility: hidden !important;
-              pointer-events: none !important;
+            [role="progressbar"][aria-label*="Maria Antonina"] > div > div > div > h1 {
+              color: #D4AF37 !important;
+              opacity: 1 !important;
+              font-size: clamp(2rem, 7vw, 4rem) !important;
+              text-shadow: 0 0 40px rgba(212, 175, 55, 0.5) !important;
             }
-            body:has(#intro-overlay) { overflow: hidden !important; }
-            @media (prefers-reduced-motion: reduce) {
-              #intro-overlay.intro-pre-entry { display: none !important; }
-              body:has(#intro-overlay) { overflow: auto !important; }
+            [role="progressbar"][aria-label*="Maria Antonina"] p,
+            [role="progressbar"][aria-label*="Maria Antonina"] span,
+            [role="progressbar"][aria-label*="Maria Antonina"] h1 {
+              opacity: 1 !important;
+              filter: none !important;
+              transform: none !important;
+            }
+            body:has([role="progressbar"][aria-label*="Maria Antonina"]) {
+              overflow: hidden !important;
             }
           `
         }} />
