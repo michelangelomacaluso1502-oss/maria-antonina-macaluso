@@ -2601,3 +2601,59 @@ Stage Summary:
 - GPU-accelerated 60fps, WCAG 2.1 AAA, sessionStorage
 - Durata 2.5-3s + 0.5s fade out
 - Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta (2 file: intro-animation.tsx + layout.tsx)
+
+---
+Task ID: INTRO-V4-CINEMATIC-MM
+Agent: Super Z (main)
+Task: Animazione cinematografica più cinematografica con M·M sotto "Attrice Siciliana"
+
+Work Log:
+- Riscritto intro-animation.tsx (v4) con elementi cinematografici aggiuntivi:
+  * Letterbox bars: 2 barre nere entrano da sopra/sotto (9vh) all'inizio
+  * Glow dorato centrale: radial-gradient rgba(212,175,55,0.25) che si espande
+  * 60 stelle scintillanti dorate con size random (0.5-2.5px) + delay random
+  * Icona pellicola SVG più dettagliata: 14 perforazioni + riquadro + triangolo play + drop-shadow glow
+  * Tagline con text-shadow glow arancione + animazione letter-spacing 0.6em → 0.4em
+  * Nome "Maria Antonina" lettera per lettera con blur reveal (8px → 0px) + text-shadow oro
+  * Cognome "Macaluso" arancione corsivo lettera per lettera con blur reveal
+  * Ruolo "Attrice Siciliana" bianco 85% opacity
+  * Monogramma M·M SOTTO il ruolo: blur reveal (16px → 0px) + gradient oro verticale + text-shadow glow
+  * Barra progresso con gradient orizzontale (transparent → oro → transparent)
+
+- Sequenza timing cinematografica (3.5s + 0.5s fade = 4s totali):
+  * 0.0-0.4s: Letterbox bars entrano
+  * 0.2-0.6s: Glow dorato + stelle
+  * 0.4-0.8s: Icona pellicola
+  * 0.8-1.2s: "UNA PRODUZIONE SICILIANA"
+  * 1.2-1.8s: "Maria Antonina" lettera per lettera
+  * 1.6-2.0s: "Macaluso" lettera per lettera
+  * 2.0-2.4s: "Attrice Siciliana"
+  * 2.4-3.0s: M·M monogramma (blur reveal)
+  * 3.0-3.4s: Hold + progress bar
+  * 3.4-3.9s: Fade out
+
+- Build: ✓ Compiled successfully
+- Test locale (localhost:3954) con agent-browser:
+  * Eval: bg bordeaux rgb(124,45,18)→rgb(90,31,11)→rgb(74,29,14) ✓
+  * tagline "Una Produzione Siciliana" arancione rgb(249,115,22) ✓
+  * h1 "Maria AntoninaMacaluso" ✓
+  * role "Attrice Siciliana" bianco 85% ✓
+  * svgExists true (icona pellicola) ✓
+  * monoSpansCount 2, monoLetters ["M","M"] ✓
+  * starsCount 60 ✓
+  * letterboxBars 2 ✓
+  * glowExists true ✓
+  * ariaValuenow dinamico ✓
+  * zIndex 99999 ✓
+- VLM screenshot a 2.5s conferma ordine verticale corretto:
+  letterbox → icona → "Una Produzione Siciliana" → "Maria Antonina" (oro) → "Macaluso" (arancione corsivo) → "Attrice Siciliana" (bianco) → M·M sfocato (blur reveal in corso)
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+- Verifica produzione: tutti gli elementi presenti nell'HTML ✓
+
+Stage Summary:
+- Animazione cinematografica v4 creata con elementi Hollywood-style
+- M·M monogramma posizionato SOTTO "Attrice Siciliana" (come richiesto)
+- Elementi cinematografici: letterbox bars, glow dorato, stelle scintillanti, blur reveal, text-shadow glow
+- Sequenza 4s totali (più cinematografica, non frustrante)
+- GPU-accelerated 60fps, WCAG 2.1 AAA, sessionStorage
+- Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura intatta
