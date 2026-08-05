@@ -2790,3 +2790,61 @@ Stage Summary:
 - Blur reveal 12px→0px per effetto sfocatura più cinematografico
 - Tutti gli elementi corrispondono esattamente alla reference intro-v4-peak.png
 - Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura intatta
+
+---
+Task ID: INTRO-V7-NO-SESSIONSTORAGE
+Agent: Super Z (main)
+Task: L'animazione non compariva — diagnosticato sessionStorage che skippava l'intro dopo la prima visita
+
+Work Log:
+- Diagnosi produzione con agent-browser:
+  * sessionStorage.getItem('intro-seen') === 'true' → l'intro veniva SKIPPATO dopo la prima visita
+  * L'utente vedeva l'animazione solo la prima volta, poi non più
+- Soluzione radicale: rimosso completamente sessionStorage
+  * L'intro appare SEMPRE ad ogni caricamento pagina (come richiesto: "compare nello sfondo d'animazione")
+  * Mantenuto solo prefers-reduced-motion per accessibilità
+
+- Riscritto intro-animation.tsx (v7) con timing ancora più lento:
+  * Durata totale: 12s (vs 9.5s precedente)
+  * Hold finale di 1.5s dove tutto è visibile (9.5s-11s)
+  * Lettere: stagger 0.1s (vs 0.08s), duration 1s (vs 0.9s) per lettera
+  * Blur reveal 12px→0px mantenuto
+
+- Nuova sequenza golden time (12s totali):
+  * 0.0-1.5s: Letterbox bars (1.5s, era 1.2s)
+  * 0.5-2.5s: Glow + stelle (2.5s)
+  * 2.0-3.5s: Icona pellicola (1.5s, era 1.2s)
+  * 3.0-4.5s: "UNA PRODUZIONE SICILIANA" (1.5s)
+  * 4.0-6.0s: "Maria Antonina" lettera per lettera (stagger 0.1s, duration 1s)
+  * 5.8-7.5s: "Macaluso" lettera per lettera (stagger 0.1s)
+  * 7.2-8.5s: "Attrice Siciliana" (1.3s)
+  * 8.0-9.5s: M·M monogramma (1.5s blur reveal)
+  * 9.5-11s: HOLD — tutto visibile (come reference screenshot)
+  * 11-12s: Fade out (1s)
+
+- Build: ✓ Compiled successfully
+- Test locale (localhost:3957) con agent-browser:
+  * Eval a 9.5s: overlay exists ✓
+  * h1VisibleLetters "Maria AntoninaMacaluso" (TUTTE visibili) ✓
+  * h1AllLettersVisible true ✓
+  * roleText presente, roleOpacity 0.82 ✓
+  * monoExists true, monoOpacity 0.99997 ✓
+  * progress 84.6% ✓
+- VLM screenshot peak conferma tutti gli elementi chiaramente leggibili:
+  * Barre nere ✓
+  * Icona pellicola ✓
+  * "UNA PRODUZIONE SICILIANA" arancione ✓
+  * "Maria Antonina" oro ✓
+  * "Macaluso" rosso/arancione corsivo ✓
+  * "ATTRICE SICILIANA" grigio chiaro ✓
+  * M·M monogramma oro ✓
+  * Stelle sparse ✓
+
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+
+Stage Summary:
+- PROBLEMA RISOLTO: rimosso sessionStorage che skippava l'intro dopo la prima visita
+- L'animazione appare SEMPRE ad ogni caricamento pagina
+- Timing golden time 12s totali con hold finale di 1.5s
+- Tutti gli elementi chiaramente leggibili (verificato VLM)
+- Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura intatta
