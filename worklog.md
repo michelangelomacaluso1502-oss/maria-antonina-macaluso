@@ -2900,3 +2900,52 @@ Stage Summary:
 - M·M ha blur reveal di 2.5s (molto lento) per rimanere sfocato a lungo come nella reference
 - Nome completo e nitido a 4s, M·M completamente nitido solo a 7.5s
 - Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura intatta
+
+---
+Task ID: INTRO-V9-NOME-VISIBILE
+Agent: Super Z (main)
+Task: Il nome non si leggeva nell'animazione — risolto a tutti i costi
+
+Work Log:
+- Diagnosi con screenshot a 1s: VLM conferma "Nessun testo visibile"
+- Causa radice identificata:
+  1. initial={{ opacity: 0 }} nascondeva tutti gli elementi fino al delay
+  2. filter: blur(12px) sulle lettere le rendeva illeggibili finché non erano complete
+  3. L'utente vedeva solo sfondo + stelle + barre nere, MAI il nome
+
+- Riscritto intro-animation.tsx (v9) con approccio radicale:
+  * Nome "Maria Antonina" e "Macaluso": NO blur iniziale, NO lettera per lettera
+  * Fade-in semplice (opacity 0→1 in 0.6s) — leggibile SUBITO
+  * Testo renderizzato come span completo, non lettera per lettera
+  * Mantenuto blur reveal LENTO solo sul monogramma M·M (come reference)
+
+- Nuova sequenza v9 (8s totali):
+  * 0.0-0.8s: Letterbox bars + sfondo
+  * 0.3-0.9s: Icona pellicola (fade-in)
+  * 0.5-1.1s: "UNA PRODUZIONE SICILIANA" (fade-in)
+  * 0.8-1.4s: "Maria Antonina" (fade-in, NO blur, leggibile subito)
+  * 1.5-2.1s: "Macaluso" (fade-in, NO blur)
+  * 2.0-4.5s: M·M monogramma (blur reveal LENTO 2.5s — sfocato come reference)
+  * 4.5-7.0s: HOLD (tutto nitido)
+  * 7.0-8.0s: Fade out
+
+- Verifica VLM screenshot a ~1.5s: TUTTI gli elementi visibili e leggibili ✓
+  * "Maria Antonina" oro/ocra serif ✓
+  * "Macaluso" rosso-arancione corsivo ✓
+  * "UNA PRODUZIONE SICILIANA" arancione ✓
+  * "ATTRICE SICILIANA" grigio chiaro ✓
+  * M·M monogramma dorato ✓
+  * Icona pellicola ✓
+  * Letterbox bars ✓
+  * Stelle/polvere ✓
+
+- Build: ✓ Compiled successfully
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+
+Stage Summary:
+- PROBLEMA RISOLTO: il nome ora è visibile e leggibile dall'inizio
+- Rimosso blur iniziale sulle lettere del nome (causa principale illeggibilità)
+- Rimosso effetto lettera per lettera (rendering come span unico)
+- Fade-in semplice 0.6s per nome completo
+- M·M mantiene blur reveal lento 2.5s (come reference screenshot)
+- Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura intatta
