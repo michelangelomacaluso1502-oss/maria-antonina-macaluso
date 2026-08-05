@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { BookOpen, Camera } from "lucide-react";
 import { HERO_QUOTES, HERO_STATS } from "@/lib/data";
@@ -60,12 +61,14 @@ export default function Hero() {
         className="absolute inset-0 z-0"
       >
         <div className="absolute inset-0 animate-slow-zoom">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src="/images/hero-maria-antonina.jpg"
             alt="Maria Antonina Macaluso"
+            fill
+            priority
+            quality={95}
+            sizes="100vw"
             className="h-full w-full object-contain object-top"
-            fetchPriority="high"
           />
         </div>
       </motion.div>

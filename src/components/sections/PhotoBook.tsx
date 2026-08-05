@@ -2,6 +2,7 @@ import { PHOTOBOOK } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
 import SectionHeading from "./SectionHeading";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 export default function PhotoBook({ compact = false }: { compact?: boolean }) {
@@ -23,10 +24,13 @@ export default function PhotoBook({ compact = false }: { compact?: boolean }) {
                 aria-label={p.alt}
               >
                 <figure className="relative">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={p.src}
                     alt={p.alt}
+                    width={500}
+                    height={700}
+                    quality={95}
+                    sizes="(min-width: 1280px) 20vw, (min-width: 640px) 33vw, 50vw"
                     loading="lazy"
                     className="w-full max-w-[250px] object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
                   />

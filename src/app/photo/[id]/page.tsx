@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PHOTOBOOK } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
@@ -54,10 +55,14 @@ export default async function PhotoPage({
 
         <Reveal className="glass-card mx-auto max-w-3xl overflow-hidden p-3">
           <figure>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={photo.src}
               alt={photo.alt}
+              width={1600}
+              height={2000}
+              quality={95}
+              sizes="(min-width: 768px) 768px, 100vw"
+              priority
               className="mx-auto max-h-[75vh] w-auto object-contain"
             />
             <figcaption className="px-2 py-3 text-center text-sm text-cream/60">

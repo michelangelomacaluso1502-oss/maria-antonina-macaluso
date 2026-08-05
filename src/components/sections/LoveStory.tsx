@@ -124,6 +124,7 @@ export default function LoveStory() {
                     width={800}
                     height={photo.span === "wide" ? 500 : photo.span === "tall" ? 1200 : 800}
                     sizes="(min-width: 1280px) 25vw, (min-width: 640px) 33vw, 50vw"
+                    quality={95}
                     className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />

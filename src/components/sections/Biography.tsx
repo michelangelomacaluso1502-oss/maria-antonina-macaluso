@@ -2,6 +2,7 @@ import { BIO_CHAPTERS } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
 import SectionHeading from "./SectionHeading";
 import { cn } from "@/lib/cn";
+import Image from "next/image";
 import React from "react";
 
 // Mappa aspect-ratio → dimensioni intrinseche (per evitare layout shift)
@@ -128,12 +129,13 @@ export default function Biography() {
                               {/* Foto per-sottosezione: visibile su TUTTI i device, subito sotto il testo */}
                               {sec.image && (
                                 <figure className="glass-card group mt-5 overflow-hidden p-2">
-                                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                                  <img
+                                  <Image
                                     src={sec.image}
                                     alt={sec.imageAlt ?? sec.heading}
                                     width={ASPECT_DIMS[sec.aspect ?? "4/5"].w}
                                     height={ASPECT_DIMS[sec.aspect ?? "4/5"].h}
+                                    quality={95}
+                                    sizes="(min-width: 768px) 50vw, 100vw"
                                     className={cn(
                                       "w-full object-cover transition-transform duration-700 group-hover:scale-105",
                                       ASPECT_CLASS[sec.aspect ?? "4/5"],
@@ -163,10 +165,13 @@ export default function Biography() {
                     {ch.image && (
                       <div className={cn("mt-6 md:mt-0 md:[direction:ltr]", flip ? "md:order-1" : "")}>
                         <figure className="glass-card group mx-auto max-w-[400px] overflow-hidden p-2">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
+                          <Image
                             src={ch.image}
                             alt={ch.imageAlt ?? `Maria Antonina Macaluso — ${ch.title}`}
+                            width={1200}
+                            height={1600}
+                            quality={95}
+                            sizes="(min-width: 768px) 400px, 100vw"
                             className="aspect-[3/4] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                             loading="lazy"
                           />
