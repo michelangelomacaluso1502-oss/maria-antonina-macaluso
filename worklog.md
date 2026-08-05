@@ -2512,3 +2512,45 @@ Stage Summary:
 - Penetration test: 0 vulnerabilità XSS, path traversal bloccato, SQL injection non applicabile
 - Mobile responsive: srcset fino a 3840px, font loaded, no layout shift
 - Regole rispettate: 0 menzioni "Prime Video", 0 "comparsa", progetto Angelo non toccato, struttura progetto intatta (solo next.config.ts modificato per security headers)
+
+---
+Task ID: INTRO-ANIMATION-V2
+Agent: Super Z (main)
+Task: Creare e integrare nuova animazione cinematografica di intro/pre-entry (2.5s + 0.5s fade)
+
+Work Log:
+- Creato componente src/components/site/intro-animation.tsx (Client Component):
+  * Sequenza: 0.0-0.5s stelle scintillanti (80 stelle) → 0.5-1.0s nome lettera per lettera → 1.0-1.5s ruolo → 1.5-2.0s elementi siciliani (mandorlo SVG + sole + onde mare) → 2.0-2.5s hold → 2.5-3.0s fade out
+  * Sfondo: gradiente nero→blu notte (#0c0a09 → #1e1b4b)
+  * Nome: Playfair Display, oro #d4af37, textShadow glow
+  * Ruolo: Geist Sans/Inter, bianco opaco, letter-spacing 0.25em
+  * 3 SVG inline: mandorlo con 20 fiori bianchi, sole con 8 raggi, 3 onde mare sovrapposte
+  * GPU-accelerated: solo transform e opacity, will-change, backface-visibility hidden
+  * WCAG 2.1 AAA: role="progressbar", aria-valuenow dinamico, aria-label, prefers-reduced-motion
+  * sessionStorage "intro-played" per non ripetere in stessa sessione
+  * Click/tap per skip
+  * 80 stelle con @keyframes twinkle (delay/duration random)
+
+- Integrato in src/app/layout.tsx:
+  * Sostituiti import: IntroLoaderMarkup + IntroLoader → IntroAnimation
+  * Sostituito markup nel body: <IntroLoaderMarkup /> + <IntroLoader /> → <IntroAnimation />
+  * NON modificati: title, H1, canonical, personJsonLd, CSS critico inline nel head
+
+- Build: ✓ Compiled successfully (17.4s)
+- Test locale (localhost:3952) con agent-browser:
+  * Screenshot frame iniziale: sfondo nero→blu notte + stelle scintillanti + barra progresso ✓
+  * Eval a 1.5s: overlay exists, opacity 1, h1Text "Maria Antonina Macaluso", h1Color rgb(212,175,55) = #d4af37 oro, roleText presente, svgCount 3 (mandorlo+sole+onde) ✓
+  * Eval a 3.5s: overlay exists false (rimosso correttamente) ✓
+
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+- Verifica produzione via curl: HTML contiene intro-animation, twinkle, progressbar, "Maria Antonina Macaluso", "Attrice Siciliana" ✓
+
+Stage Summary:
+- Nuova animazione cinematografica di intro creata e integrata
+- Sequenza 2.5s + 0.5s fade out = 3s totali (no frustration)
+- Elementi siciliani: mandorlo in fiore SVG, sole stilizzato, onde del mare
+- 80 stelle scintillanti su gradiente nero→blu notte
+- Nome lettera per lettera in oro Playfair Display
+- GPU-accelerated 60fps (solo transform/opacity)
+- WCAG 2.1 AAA: role progressbar, aria-valuenow, prefers-reduced-motion, sessionStorage
+- Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta (2 file modificati: intro-animation.tsx nuovo + layout.tsx)

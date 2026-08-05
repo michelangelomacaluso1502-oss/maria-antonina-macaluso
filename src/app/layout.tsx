@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
-import IntroLoaderMarkup from "@/components/cinematic/IntroLoaderMarkup";
-import IntroLoader from "@/components/cinematic/IntroLoader";
+import IntroAnimation from "@/components/site/intro-animation";
 import ErrorBoundary from "@/components/cinematic/ErrorBoundary";
 import ScrollProgress from "@/components/cinematic/ScrollProgress";
 import FilmGrain from "@/components/cinematic/FilmGrain";
@@ -142,8 +141,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-noir text-cream antialiased" suppressHydrationWarning>
         <a href="#main" className="skip-link">Vai al contenuto</a>
         <ErrorBoundary>
-          <IntroLoaderMarkup />
-          <IntroLoader />
+          <IntroAnimation />
           <ScrollProgress />
           <FilmGrain />
           <Header />
