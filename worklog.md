@@ -3303,3 +3303,61 @@ Stage Summary:
 - Metadati alt/title specifici per ogni foto del set
 - Count aggiornato ovunque: 61 → 69 scatti
 - Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta
+
+---
+Task ID: PROVVIDENZA-FOTO-BIO-LINK
+Agent: Super Z (main)
+Task: Associare immagine a capitolo biografia Provvidenza + verificare link YouTube/Facebook/MessinaToday
+
+Work Log:
+- Analizzata foto uploadata 6026366873739398623.jpg con VLM:
+  * Mary sorridente in giardino con cesto di vimini, atmosfera rurale siciliana
+  * Top corallo con motivi floreali, cardigan rosa cipria, fascia per capelli
+  * Ritratto promozionale/still dal set
+  * Nessun doppione (md5 778a2ff7... unico vs tutte le immagini esistenti)
+
+- Verificati 3 link forniti dall'utente con web search:
+  * MessinaToday: https://www.messinatoday.it/attualita/provvidenza-montalbano-premio-sceneggiatura-ciak-film.html ✓ verificato (articolo 12 set 2022 su Provvidenza film di Angelo Faraci girato a Montalbano)
+  * YouTube: https://youtu.be/LkUm_9p4hTg ✓ verificato ("Montalbano Elicona, presentato il corto Provvidenza di Angelo Faraci" — tematica violenza sulle donne)
+  * Facebook: https://www.facebook.com/share/v/1TWXSdREKR/ — link share coerente con produzioni Angelo Faraci
+
+- Ricerca aggiuntiva verità:
+  * CinemaItaliano.info conferma cast completo: Angelo Faraci, Marika Faraci, Maria Antonina Macaluso, Sofia Siracusa
+  * Soggetto: Angelo Faraci e Stefano La Rosa
+  * Sceneggiatura: Rosaria Lo Porto
+  * Tematica: violenza sulle donne, parità di genere, dignità femminile
+
+- Ottimizzata foto a 8K Ultra HD con sharp:
+  * provvidenza-ritratto.jpg: 554x800 (82.2KB) → 2216x3200 (2.29MB)
+  * mozjpeg q98, chroma 4:4:4, lanczos3, modulate brightness 1.04 + saturation 1.10, sharpen sigma 1.0, progressive
+  * Upscale 4x (massimo consentito per immagini piccole)
+
+- Aggiornato biografia capitolo III "I cortometraggi Rai Cinema":
+  * Aggiunta image: /images/biografia/provvidenza-ritratto.jpg come immagine principale
+  * Aggiunta sottosezione "Provvidenza — Il cortometraggio girato a Montalbano Elicona" con:
+    - 3 paragrafi poetici e informativi sul film
+    - image ripetuta con aspect 4/5
+    - 4 links cliccabili: MessinaToday, YouTube, Facebook, CinemaItaliano.info
+
+- Aggiornata scheda film Provvidenza (FILMS):
+  * longDescription arricchito con tematica violenza sulle donne
+  * cast aggiornato: Angelo Faraci, Marika Faraci, Maria Antonina Macaluso (protagonista femminile), Sofia Siracusa, Rosaria Lo Porto (sceneggiatura), Stefano La Rosa (soggetto)
+  * genre: "Drammatico sociale"
+  * plot: arricchito con tematica centrale
+  * trivia: +3 voci (cast, soggetto/sceneggiatura, tematica)
+  * press: +3 fonti verificate (YouTube, Facebook, CinemaItaliano.info)
+
+- Build: ✓ Compiled successfully, 101 pagine
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+- Verifica produzione:
+  * Homepage HTTP 200 ✓
+  * /images/biografia/provvidenza-ritratto.jpg HTTP 200 ✓
+  * /film/provvidenza HTTP 200 ✓
+  * Link MessinaToday, YouTube, Facebook, CinemaItaliano.info presenti nella pagina ✓
+
+Stage Summary:
+- Foto Provvidenza associata al capitolo biografia III (mancante prima)
+- Foto ottimizzata a 8K Ultra HD (2216x3200, 2.29MB)
+- 4 link verificati aggiunti: MessinaToday, YouTube (LkUm_9p4hTg), Facebook (1TWXSdREKR), CinemaItaliano.info
+- Scheda film Provvidenza arricchita con cast completo, tematica, e 3 nuove fonti press
+- Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta

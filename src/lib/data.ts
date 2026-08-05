@@ -156,6 +156,27 @@ export const BIO_CHAPTERS: BioChapter[] = [
       "Dal 2021 iniziano i cortometraggi prodotti da Rai Cinema: Provvidenza (2021), Pietrazita (2022). Forme brevi che permettono alla sua recitazione di affinarsi, di trovare la misura esatta del gesto e della parola.",
       "La fiction Sky e la fiction televisiva allargano il campo: la piccola schermata richiede un altro rigore, una presenza che deve reggere la prossimità.",
     ],
+    image: "/images/biografia/provvidenza-ritratto.jpg",
+    imageAlt: "Maria Antonina Macaluso in ritratto dal set di Provvidenza — cesto di vimini, atmosfera rurale siciliana",
+    sections: [
+      {
+        heading: "Provvidenza — Il cortometraggio girato a Montalbano Elicona",
+        body: [
+          "Provvidenza (2021) è un cortometraggio Rai Cinema scritto e diretto da Angelo Faraci, girato tra le strade di Montalbano Elicona e i paesaggi della Sicilia nord-orientale. La tematica centrale è la violenza sulle donne — fisica e psicologica — in una Sicilia che marginalizza la donna a strumento domestico. Un racconto asciutto, misurato, che parla di parità di genere e dignità.",
+          "Il cast comprende Angelo Faraci, Marika Faraci, Maria Antonina Macaluso (protagonista femminile) e Sofia Siracusa, su soggetto di Angelo Faraci e Stefano La Rosa e sceneggiatura di Rosaria Lo Porto. L'opera vince il Premio Migliore Sceneggiatura al Ciak Film Festival International di Fiuggi (Oscar d'Oro) e il Premio Luchino Visconti al Ciclopi Summer Fest di Aci Trezza.",
+          "Maria Antonina Macaluso è presente e premiata accanto al regista sul red carpet di Fiuggi — il riconoscimento che consacra la sua interpretazione e l'avvia al successo Rai.",
+        ],
+        image: "/images/biografia/provvidenza-ritratto.jpg",
+        imageAlt: "Maria Antonina Macaluso — ritratto dal set di Provvidenza",
+        aspect: "4/5",
+        links: [
+          { text: "MessinaToday — Provvidenza, il film di Angelo Faraci girato a Montalbano", url: "https://www.messinatoday.it/attualita/provvidenza-montalbano-premio-sceneggiatura-ciak-film.html" },
+          { text: "YouTube — Montalbano Elicona, presentato il corto \"Provvidenza\"", url: "https://youtu.be/LkUm_9p4hTg" },
+          { text: "Facebook — Condivisione video Provvidenza", url: "https://www.facebook.com/share/v/1TWXSdREKR/" },
+          { text: "CinemaItaliano.info — Provvidenza (2021), di Angelo Faraci", url: "https://www.cinemaitaliano.info/provvidenza" },
+        ],
+      },
+    ],
   },
   {
     num: "IV",
@@ -374,18 +395,21 @@ export const FILMS: Film[] = [
     description:
       "Cortometraggio Rai Cinema. Premio Migliore Sceneggiatura al Ciak Film Festival di Fiuggi 2022.",
     longDescription:
-      "Provvidenza (2022) è un cortometraggio Rai Cinema scritto e diretto da Angelo Faraci, girato tra le strade di Montalbano e i paesaggi della Sicilia nord-orientale. L'opera vince il Premio Migliore Sceneggiatura al Ciak Film Festival International di Fiuggi (Oscar d'Oro) e il Premio Luchino Visconti al Ciclopi Summer Fest di Aci Trezza. Maria Antonina Macaluso è la protagonista femminile del cortometraggio, premiata accanto al regista sul red carpet di Fiuggi.",
+      "Provvidenza (2022) è un cortometraggio Rai Cinema scritto e diretto da Angelo Faraci, girato tra le strade di Montalbano Elicona e i paesaggi della Sicilia nord-orientale. La tematica centrale è la violenza sulle donne — fisica e psicologica — in una Sicilia che marginalizza la donna a strumento domestico. L'opera vince il Premio Migliore Sceneggiatura al Ciak Film Festival International di Fiuggi (Oscar d'Oro) e il Premio Luchino Visconti al Ciclopi Summer Fest di Aci Trezza. Maria Antonina Macaluso è la protagonista femminile del cortometraggio, premiata accanto al regista sul red carpet di Fiuggi.",
     imdbUrl: MAM_IMDB_URL,
-    cast: ["Angelo Faraci", "Maria Antonina Macaluso", "Rosaria Lo Porto"],
-    genre: "Drammatico",
-    duration: "Cortometraggio",
+    cast: ["Angelo Faraci", "Marika Faraci", "Maria Antonina Macaluso (protagonista femminile)", "Sofia Siracusa", "Rosaria Lo Porto (sceneggiatura)", "Stefano La Rosa (soggetto)"],
+    genre: "Drammatico sociale",
+    duration: "Cortometraggio (2021)",
     plot:
-      "Provvidenza indaga il rapporto tra destino e scelta nel tessuto culturale siciliano, con una recitazione asciutta e misurata.",
+      "Provvidenza indaga la violenza sulle donne — fisica e psicologica — in una Sicilia che marginalizza la donna a strumento domestico. Parità di genere e dignità al centro di un racconto asciutto, misurato, girato tra le strade di Montalbano Elicona.",
     trivia: [
       "Premio Migliore Sceneggiatura al Ciak Film Festival International di Fiuggi 2022 (Oscar d'Oro).",
       "Premio Luchino Visconti al Ciclopi Summer Fest di Aci Trezza.",
-      "Girato tra Montalbano e i paesaggi siciliani.",
+      "Girato a Montalbano Elicona (Messina) e paesaggi siciliani.",
       "Maria Antonina Macaluso premiata sul red carpet di Fiuggi accanto ad Angelo Faraci.",
+      "Cast: Angelo Faraci, Marika Faraci, Maria Antonina Macaluso, Sofia Siracusa.",
+      "Soggetto: Angelo Faraci e Stefano La Rosa. Sceneggiatura: Rosaria Lo Porto.",
+      "Tematica: violenza sulle donne, parità di genere, dignità femminile.",
     ],
     press: [
       {
@@ -401,6 +425,27 @@ export const FILMS: Film[] = [
         url: "https://www.amnotizie.it/2022/09/13/provvidenza-di-angelo-faraci-vince-il-premio-come-miglior-sceneggiatura-al-ciak-film-festival-di-fiuggi",
         excerpt:
           "Il giovane attore e regista siciliano Angelo Faraci ha vinto il premio per la miglior sceneggiatura al Ciak Film Festival di Fiuggi.",
+      },
+      {
+        title: "Montalbano Elicona, presentato il corto \"Provvidenza\" di Angelo Faraci",
+        source: "YouTube",
+        url: "https://youtu.be/LkUm_9p4hTg",
+        excerpt:
+          "La tematica del film è la violenza sulla donna, fisica e psicologica, in una Sicilia che marginalizza la donna a strumento domestico.",
+      },
+      {
+        title: "Provvidenza — Condivisione video",
+        source: "Facebook",
+        url: "https://www.facebook.com/share/v/1TWXSdREKR/",
+        excerpt:
+          "Condivisione del cortometraggio Provvidenza di Angelo Faraci con Maria Antonina Macaluso.",
+      },
+      {
+        title: "Provvidenza (2021), di Angelo Faraci",
+        source: "CinemaItaliano.info",
+        url: "https://www.cinemaitaliano.info/provvidenza",
+        excerpt:
+          "Cast: Angelo Faraci, Marika Faraci, Maria Antonina Macaluso, Sofia Siracusa. Soggetto: Angelo Faraci e Stefano La Rosa. Sceneggiatura: Rosaria Lo Porto.",
       },
     ],
   },
