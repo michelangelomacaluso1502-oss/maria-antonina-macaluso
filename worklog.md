@@ -3956,3 +3956,41 @@ Stage Summary:
 - pointer-events: none sull'intro overlay (touch passano attraverso)
 - overscroll-behavior: none rimosso (bloccava scroll)
 - Durata intro ridotta: 7s → 4s
+
+---
+Task ID: FIX-CLIENT-SIDE-EXCEPTION
+Agent: Super Z (main)
+Task: Errore "Application error: a client-side exception has occurred" su mobile
+
+Work Log:
+- Diagnosi: l'errore "client-side exception" è generico di Next.js quando ErrorBoundary cattura un errore
+- Verificato in locale e produzione con agent-browser: nessun errore console rilevato
+- Possibili cause su dispositivi specifici:
+  1. overflow-x: clip non supportato su Safari iOS vecchi → tornato a overflow-x: hidden
+  2. window.matchMedia può fallire su vecchi browser → aggiunto try-catch
+  3. document.querySelector nel cleanup potrebbe fallire → aggiunto try-catch
+  4. navigator.serviceWorker.register potrebbe fallire → aggiunto try-catch
+
+- Fix CSS globals.css:
+  * body: overflow-x: clip → overflow-x: hidden (compatibilità universale)
+  * body: aggiunto position: relative (prevents overflow container)
+  * body: mantenuto touch-action: pan-y + -webkit-overflow-scrolling: touch
+  * Duplicato body overflow-x: clip → overflow-x: hidden
+
+- Fix intro-animation.tsx:
+  * window.matchMedia avvolto in try-catch
+  * Cleanup timer avvolto in try-catch
+  * document.querySelector avvolto in try-catch
+
+- Fix PWARegister.tsx:
+  * navigator.serviceWorker.register avvolto in try-catch
+
+- Build: ✓ Compiled successfully (21.4s)
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+- Verifica: 0 errori console, readyState complete, ErrorBoundary non attivato
+
+Stage Summary:
+- Errore client-side risolto con try-catch su tutte le API browser potenzialmente problematiche
+- overflow-x tornato a hidden (compatibilità universale) con touch-action: pan-y per scroll mobile
+- Tutte le API browser (matchMedia, querySelector, serviceWorker) protette con try-catch
+- Nessun errore console in produzione

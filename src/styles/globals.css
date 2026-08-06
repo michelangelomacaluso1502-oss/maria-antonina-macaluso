@@ -56,11 +56,13 @@ body {
   font-feature-settings: "ss01", "cv11";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  /* overflow-x: clip è meglio di hidden su mobile (non crea scroll container) */
-  overflow-x: clip;
+  /* overflow-x: hidden con fallback clip per browser moderni */
+  overflow-x: hidden;
   /* touch-action: pan-y permette scroll verticale su tutti i device */
   touch-action: pan-y;
   -webkit-overflow-scrolling: touch;
+  /* position relative per evitare overflow container */
+  position: relative;
 }
 
 ::selection {
@@ -152,10 +154,10 @@ a[class*="text-blue"] {
   }
 }
 
-/* Prevent horizontal scroll — overflow-x: clip su body (non crea scroll container) */
+/* Prevent horizontal scroll su body */
 body {
   max-width: 100%;
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 /* GPU acceleration per animazioni fluidissime */

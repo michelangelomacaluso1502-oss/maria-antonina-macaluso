@@ -43,9 +43,15 @@ export function IntroAnimation() {
   );
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+    // Safe check per matchMedia (può non esistere su vecchi browser)
+    let prefersReducedMotion = false;
+    try {
+      prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+    } catch {
+      // matchMedia non supportato, ignora
+    }
 
     if (prefersReducedMotion) {
       setIsVisible(false);
@@ -54,11 +60,15 @@ export function IntroAnimation() {
 
     const fadeTimer = setTimeout(() => setIsVisible(false), 4000);
     const removeTimer = setTimeout(() => {
-      const el = document.querySelector('[role="progressbar"]');
-      if (el && el.parentNode) el.remove();
-      // Assicura che il body possa scorrere dopo la rimozione dell'overlay
-      document.body.style.overflow = "";
-      document.documentElement.style.overflow = "";
+      try {
+        const el = document.querySelector('[role="progressbar"]');
+        if (el && el.parentNode) el.remove();
+        // Assicura che il body possa scorrere dopo la rimozione dell'overlay
+        document.body.style.overflow = "";
+        document.documentElement.style.overflow = "";
+      } catch {
+        // Silently ignore
+      }
     }, 5000);
 
     return () => {

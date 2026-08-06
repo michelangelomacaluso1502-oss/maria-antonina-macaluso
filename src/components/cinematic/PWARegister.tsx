@@ -8,9 +8,13 @@ export default function PWARegister() {
     if (!("serviceWorker" in navigator)) return;
     if (process.env.NODE_ENV !== "production") return;
     const onLoad = () => {
-      navigator.serviceWorker.register("/sw.js").catch(() => {
-        // silently ignore — non-critical
-      });
+      try {
+        navigator.serviceWorker.register("/sw.js").catch(() => {
+          // silently ignore — non-critical
+        });
+      } catch {
+        // silently ignore
+      }
     };
     window.addEventListener("load", onLoad);
     return () => window.removeEventListener("load", onLoad);
