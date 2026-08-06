@@ -68,10 +68,33 @@ body {
    MOBILE OPTIMIZATION — Fluidità estrema
    ============================================ */
 
-/* No tap highlight su mobile (iOS/Android) */
+/* No tap highlight su mobile (iOS/Android) — NON blocca i link */
 .no-tap-highlight {
   -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
+}
+
+/* Assicura che i link siano sempre cliccabili su tutti i device */
+a {
+  -webkit-touch-callout: default;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  user-select: text;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(201, 169, 106, 0.2);
+}
+
+/* Link blu FAQ: assicura tap target e visibilità su iOS */
+a.faq-link,
+a.text-blue-400,
+a[class*="text-blue"] {
+  -webkit-tap-highlight-color: rgba(96, 165, 250, 0.4);
+  touch-action: manipulation;
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 /* Touch target minimo 44px (WCAG) su mobile */
@@ -101,14 +124,7 @@ body {
     overscroll-behavior: none;
   }
 
-  /* Disabilita hover su touch per evitare flicker */
-  @media (hover: none) {
-    *:hover {
-      transition-duration: 0ms !important;
-    }
-  }
-
-  /* Grid responsive: 1 colonna su mobile */
+  /* Grid responsive: 2 colonne su mobile */
   .masonry-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 0.75rem !important;
@@ -1049,6 +1065,4 @@ html.intro-lock body {
   background:
     linear-gradient(180deg, #08070a, #100e13 50%, #08070a);
 }
-.no-tap-highlight {
-  -webkit-tap-highlight-color: transparent;
-}
+/* .no-tap-highlight già definito sopra nella sezione MOBILE OPTIMIZATION */

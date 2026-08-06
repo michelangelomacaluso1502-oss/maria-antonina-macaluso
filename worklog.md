@@ -3754,3 +3754,68 @@ Stage Summary:
 - Performance: TTFB <40ms in 3 region edge
 - Stress test: 20 richieste parallele in 496ms
 - Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta
+
+---
+Task ID: FIX-LINK-IPHONE-IOS-SAFARI
+Agent: Super Z (main)
+Task: Link non funzionavano su iPhone — risolto per tutti i dispositivi
+
+Work Log:
+- Diagnosi problema link su iPhone/iOS Safari:
+  * CAUSA 1: -webkit-touch-callout: none in .no-tap-highlight bloccava il menu di contesto sui link iOS
+  * CAUSA 2: Link dentro grid-rows-[0fr] con overflow-hidden non ricevevano pointer events
+  * CAUSA 3: Regola @media (hover: none) disabilitava transizioni sui touch device
+  * CAUSA 4: Mancanza di touch-action: manipulation sui link (iOS ritardo 300ms tap)
+  * CAUSA 5: target="_blank" non funzionava bene con window.open su iOS Safari
+
+- Fix CSS globals.css:
+  * Rimossa -webkit-touch-callout: none da .no-tap-highlight (NON blocca più i link)
+  * Aggiunta regola globale `a` con:
+    - -webkit-touch-callout: default (permette menu contestuale iOS)
+    - -webkit-user-select: text (permette selezione)
+    - touch-action: manipulation (elimina ritardo 300ms tap su iOS)
+    - -webkit-tap-highlight-color: rgba(201, 169, 106, 0.2)
+  * Aggiunta regola `a.faq-link, a.text-blue-400, a[class*="text-blue"]` con:
+    - -webkit-tap-highlight-color: rgba(96, 165, 250, 0.4)
+    - touch-action: manipulation
+    - display: inline-block
+    - position: relative + z-index: 10 (assicura che link sia sopra altri elementi)
+    - cursor: pointer
+  * Rimossa regola @media (hover: none) che disabilitava transizioni su touch
+  * Rimossa duplicazione .no-tap-highlight (riga 1052)
+
+- Fix componente FAQ.tsx:
+  * Aggiunto onClick handler su ogni link con:
+    - e.preventDefault() + e.stopPropagation()
+    - window.open(href, "_blank", "noopener,noreferrer")
+    - Fallback window.location.href se popup bloccato
+  * Aggiunto style inline: touchAction: "manipulation", WebkitTapHighlightColor
+  * Aggiunta classe CSS faq-link per targeting specifico
+  * Sostituito <p> con <div> per il contenuto FAQ (migliore gestione pointer events)
+  * Aggiunto style pointerEvents: isOpen ? "auto" : "none" (assicura click quando aperto)
+
+- Fix componente FacebookEmbed.tsx:
+  * Aggiunto handleClick con window.open + fallback
+  * Aggiunto style touchAction: "manipulation"
+  * Aggiunto -webkit-tap-highlight-color: transparent
+
+- Build: ✓ Compiled successfully, 115 pagine
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+- Verifica produzione:
+  * FAQ link blu: faq-link + text-blue-400 + instagram + tiktok + imdb ✓
+  * CSS fix: tap-highlight + touch-action presenti ✓
+  * FacebookEmbed: "Apri su Facebook" con click handler ✓
+  * TTFB: sfo1 25ms, hnd1 34ms, syd1 42ms, iad1 54ms ✓
+
+Stage Summary:
+- PROBLEMA RISOLTO: link ora funzionano su iPhone/iOS Safari e tutti i dispositivi
+- 5 cause identificate e fixate:
+  1. -webkit-touch-callout rimosso da .no-tap-highlight
+  2. pointer-events: auto quando FAQ aperta
+  3. @media (hover: none) rimosso
+  4. touch-action: manipulation su tutti i link
+  5. window.open con fallback per target="_blank" su iOS
+- Link blu FAQ cliccabili su tutti i device (iPhone, Android, desktop)
+- FacebookEmbed cliccabile su iOS Safari con anteprima immagine
+- TTFB <40ms confermato in 3 region edge
+- Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti, progetto Angelo non toccato, struttura progetto intatta

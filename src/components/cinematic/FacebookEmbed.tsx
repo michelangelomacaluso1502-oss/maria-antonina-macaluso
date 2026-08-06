@@ -30,12 +30,28 @@ export default function FacebookEmbed({
 }: FacebookEmbedProps) {
   const [imageError, setImageError] = useState(false);
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    // iOS Safari: usa window.open con fallback
+    try {
+      const newWin = window.open(url, "_blank", "noopener,noreferrer");
+      if (!newWin) {
+        window.location.href = url;
+      }
+    } catch {
+      window.location.href = url;
+    }
+  };
+
   return (
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleClick}
       className="group my-6 block overflow-hidden rounded-xl border border-gold/20 bg-noir/60 transition-all duration-300 hover:border-blue-400/50 hover:bg-noir/80 no-tap-highlight"
+      style={{ touchAction: "manipulation", WebkitTapHighlightColor: "transparent" }}
     >
       <div className="flex flex-col sm:flex-row">
         {/* Thumbnail immagine */}
