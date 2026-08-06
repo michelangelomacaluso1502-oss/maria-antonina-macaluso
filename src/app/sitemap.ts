@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/festival", priority: 0.8, freq: "monthly" as const },
     { path: "/articoli", priority: 0.7, freq: "monthly" as const },
     { path: "/citazioni", priority: 0.7, freq: "monthly" as const },
-    { path: "/faq", priority: 0.7, freq: "monthly" as const },
+    { path: "/faq", priority: 0.8, freq: "weekly" as const },
     { path: "/contatti", priority: 0.7, freq: "monthly" as const },
     { path: "/photobook", priority: 0.9, freq: "weekly" as const },
     { path: "/collegamenti-esteri", priority: 0.6, freq: "yearly" as const },
@@ -53,8 +53,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  // Photo book pages (prime 20 per evitare sitemap troppo grande)
-  PHOTOBOOK.slice(0, 20).forEach((p) => {
+  // Photo book pages — TUTTI gli scatti (per raggiungere 122+ URL)
+  PHOTOBOOK.forEach((p) => {
     entries.push({
       url: `${base}/photo/${p.id}`,
       lastModified: now,

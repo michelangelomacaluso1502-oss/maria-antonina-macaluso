@@ -1,103 +1,95 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useState } from "react";
 
 /**
- * FacebookEmbed — Componente per incorporare post/video Facebook
+ * FacebookEmbed — Anteprima cliccabile con immagine (stile YouTube)
  *
- * Usa Facebook JS SDK per renderizzare il plugin fb-post in modo nativo.
- * Carica lo script solo quando il componente è visible (lazy).
+ * Mostra una card con:
+ * - Thumbnail immagine di anteprima
+ * - Titolo del post
+ * - Icona Facebook
+ * - Click → apre il post Facebook in nuova tab (immediato, come YouTube)
+ *
+ * Niente SDK esterno, niente iframe pesante: solo HTML/CSS ultra-leggero.
+ * Performance: 0ms impatto, no lag, fluido su tutti i device.
  */
-
-declare global {
-  interface Window {
-    fbAsyncInit?: () => void;
-    FB?: {
-      XFBML?: {
-        parse?: (el?: HTMLElement) => void;
-      };
-    };
-  }
-}
-
-let fbScriptLoaded = false;
-
-function loadFbScript() {
-  if (fbScriptLoaded || document.getElementById("facebook-jssdk")) {
-    fbScriptLoaded = true;
-    return;
-  }
-  fbScriptLoaded = true;
-  const script = document.createElement("script");
-  script.id = "facebook-jssdk";
-  script.src = "https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v18.0";
-  script.async = true;
-  script.defer = true;
-  script.crossOrigin = "anonymous";
-  script.onerror = () => {
-    fbScriptLoaded = false;
-  };
-  document.head.appendChild(script);
-}
-
 interface FacebookEmbedProps {
   url: string;
-  width?: number;
-  /** testo alternativo mostrato durante il caricamento o se FB è bloccato */
-  fallbackText?: string;
+  title?: string;
+  description?: string;
+  /** URL dell'immagine di anteprima (opzionale) */
+  thumbnail?: string;
 }
 
-export default function FacebookEmbed({ url, width = 500, fallbackText }: FacebookEmbedProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    loadFbScript();
-
-    // Re-parse quando il componente monta
-    const timer = setTimeout(() => {
-      if (window.FB && window.FB.XFBML && containerRef.current) {
-        window.FB.XFBML.parse(containerRef.current);
-      }
-    }, 800);
-
-    return () => clearTimeout(timer);
-  }, [url]);
+export default function FacebookEmbed({
+  url,
+  title = "Post Facebook",
+  description,
+  thumbnail,
+}: FacebookEmbedProps) {
+  const [imageError, setImageError] = useState(false);
 
   return (
-    <div
-      ref={containerRef}
-      className="fb-post-embed my-6 overflow-hidden rounded-lg border border-gold/20 bg-noir/50 p-4"
-      data-url={url}
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group my-6 block overflow-hidden rounded-xl border border-gold/20 bg-noir/60 transition-all duration-300 hover:border-blue-400/50 hover:bg-noir/80 no-tap-highlight"
     >
-      <div
-        className="fb-post"
-        data-href={url}
-        data-width={width}
-        data-show-text="true"
-      >
-        {/* Fallback visibile durante il caricamento o se Facebook è bloccato */}
-        <div className="flex flex-col items-center gap-3 py-4 text-center">
-          <svg
-            className="h-8 w-8 text-[#1877F2]"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-          </svg>
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-[#1877F2] hover:underline"
-          >
-            {fallbackText || "Vedi il post su Facebook"}
-          </a>
-          <p className="text-xs text-cream/50">
-            Caricamento embed Facebook… (se non visualizzi il contenuto, clicca sul link sopra)
-          </p>
+      <div className="flex flex-col sm:flex-row">
+        {/* Thumbnail immagine */}
+        <div className="relative aspect-video w-full overflow-hidden bg-noir sm:w-64 sm:shrink-0">
+          {thumbnail && !imageError ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={thumbnail}
+              alt={title}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              onError={() => setImageError(true)}
+              loading="lazy"
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#1877F2]/20 to-[#0c0a09]">
+              <svg
+                className="h-12 w-12 text-[#1877F2]"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </div>
+          )}
+          {/* Overlay play-style (come YouTube) */}
+          <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#1877F2] shadow-lg">
+              <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        {/* Contenuto testuale */}
+        <div className="flex flex-1 flex-col justify-center p-4 sm:p-5">
+          <div className="mb-2 flex items-center gap-2">
+            <svg className="h-4 w-4 text-[#1877F2]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            <span className="text-[10px] font-semibold uppercase tracking-wide-sm text-[#1877F2]">Facebook</span>
+          </div>
+          <h4 className="font-display text-base text-cream transition-colors group-hover:text-blue-300 sm:text-lg">
+            {title}
+          </h4>
+          {description && (
+            <p className="mt-1 text-xs leading-relaxed text-cream/60 sm:text-sm">{description}</p>
+          )}
+          <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-blue-400 group-hover:text-blue-300">
+            Apri su Facebook →
+          </span>
         </div>
       </div>
-    </div>
+    </a>
   );
 }

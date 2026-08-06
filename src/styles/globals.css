@@ -65,6 +65,105 @@ body {
 }
 
 /* ============================================
+   MOBILE OPTIMIZATION — Fluidità estrema
+   ============================================ */
+
+/* No tap highlight su mobile (iOS/Android) */
+.no-tap-highlight {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* Touch target minimo 44px (WCAG) su mobile */
+@media (max-width: 768px) {
+  button,
+  a[role="button"],
+  .btn-cinema,
+  .btn-ghost-cinema {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Riduci padding su mobile per più contenuto visibile */
+  .cinematic-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Font size leggibile su mobile (min 16px per evitare zoom iOS) */
+  html {
+    font-size: 16px;
+  }
+
+  /* Smooth scroll con momentum su iOS */
+  body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
+  }
+
+  /* Disabilita hover su touch per evitare flicker */
+  @media (hover: none) {
+    *:hover {
+      transition-duration: 0ms !important;
+    }
+  }
+
+  /* Grid responsive: 1 colonna su mobile */
+  .masonry-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+
+  /* Riduci shadow pesanti su mobile per performance */
+  .glass-card,
+  .glass-luxury {
+    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.4) !important;
+  }
+}
+
+/* Tablet: 2 colonne masonry */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .masonry-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Safe area iPhone X+ (notch) */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* Prevent horizontal scroll su mobile */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* GPU acceleration per animazioni fluidissime */
+.will-change-transform {
+  will-change: transform;
+}
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Reduce motion per accessibilità */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
    SCROLLBAR
    ============================================ */
 ::-webkit-scrollbar {

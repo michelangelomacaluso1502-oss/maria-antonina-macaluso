@@ -5,7 +5,6 @@ import { notFound } from "next/navigation";
 import { ALTRE_PRODUZIONI } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
 import BackToTop from "@/components/cinematic/BackToTop";
-import FacebookEmbed from "@/components/cinematic/FacebookEmbed";
 import { ArrowLeft, ExternalLink, Film, Calendar, User, Clapperboard, Tag } from "lucide-react";
 
 export const dynamicParams = false;
@@ -292,7 +291,7 @@ export default async function AltraProduzionePage({
               </div>
             </Reveal>
 
-            {/* Facebook embed — servizio TGS Creo Kitchens con Angelo, Maria Antonina e Marika Faraci */}
+            {/* Servizio TGS Creo Kitchens con Angelo, Maria Antonina e Marika Faraci */}
             <Reveal className="mt-12">
               <h2 className="font-display text-2xl text-gold mb-4">Servizio TGS — Pubblicità Creo Kitchens</h2>
               <p className="mb-6 text-sm text-cream/70 leading-relaxed">
@@ -301,10 +300,22 @@ export default async function AltraProduzionePage({
                 Marika Saveria Faraci (voce). Lo spot è stato girato integralmente in Sicilia presso lo showroom
                 Creo di Viale del Fante, 61 ad Altomonte (Palermo).
               </p>
-              <FacebookEmbed
-                url="https://www.facebook.com/share/v/1TWXSdREKR/"
-                fallbackText="Servizio TGS Creo Kitchens — Angelo Faraci, Maria Antonina Macaluso e Marika Faraci"
-              />
+              <div className="glass-card p-5">
+                <p className="text-xs uppercase tracking-wide-sm text-gold/70 mb-2">TGS — TeleGiornale di Sicilia</p>
+                <p className="text-sm text-cream/80 leading-relaxed">
+                  Servizio TGS dedicato alla campagna pubblicitaria Creo Kitchens nello showroom di Altomonte (Palermo)
+                  con Angelo Faraci, Marika Saveria Faraci e Maria Antonina Macaluso.
+                </p>
+                <a
+                  href="https://www.dailymotion.com/video/xahuzu2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-blue-300 underline decoration-blue-400/40 underline-offset-2 transition-colors"
+                >
+                  Vedi il servizio TGS completo
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              </div>
             </Reveal>
           </>
         )}

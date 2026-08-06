@@ -131,7 +131,9 @@ export default function Biography() {
                               {sec.links?.some(l => l.url.includes("facebook.com")) && (
                                 <FacebookEmbed
                                   url={sec.links.find(l => l.url.includes("facebook.com"))!.url}
-                                  fallbackText="Condivisione video Provvidenza su Facebook"
+                                  title="Condivisione video Provvidenza"
+                                  description="Video del cortometraggio Provvidenza di Angelo Faraci con Maria Antonina Macaluso"
+                                  thumbnail={sec.image || "/images/biografia/provvidenza-ritratto.jpg"}
                                 />
                               )}
                               {/* Foto per-sottosezione: visibile su TUTTI i device, subito sotto il testo */}

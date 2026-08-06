@@ -176,9 +176,6 @@ export const BIO_CHAPTERS: BioChapter[] = [
           "Il cast comprende Angelo Faraci, Marika Faraci, Maria Antonina Macaluso (protagonista femminile) e Sofia Siracusa, su soggetto di Angelo Faraci e Stefano La Rosa e sceneggiatura di Rosaria Lo Porto. L'opera vince il Premio Migliore Sceneggiatura al Ciak Film Festival International di Fiuggi (Oscar d'Oro) e il Premio Luchino Visconti al Ciclopi Summer Fest di Aci Trezza.",
           "Maria Antonina Macaluso è presente e premiata accanto al regista sul red carpet di Fiuggi — il riconoscimento che consacra la sua interpretazione e l'avvia al successo Rai.",
         ],
-        image: "/images/biografia/provvidenza-ritratto.jpg",
-        imageAlt: "Maria Antonina Macaluso — ritratto dal set di Provvidenza",
-        aspect: "4/5",
         links: [
           { text: "MessinaToday — Provvidenza, il film di Angelo Faraci girato a Montalbano", url: "https://www.messinatoday.it/attualita/provvidenza-montalbano-premio-sceneggiatura-ciak-film.html" },
           { text: "YouTube — Montalbano Elicona, presentato il corto \"Provvidenza\"", url: "https://youtu.be/LkUm_9p4hTg" },

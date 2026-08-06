@@ -1,21 +1,49 @@
 {
-  "name": "Maria Antonina Macaluso",
+  "name": "Maria Antonina Macaluso — Attrice Siciliana",
   "short_name": "M.A. Macaluso",
-  "description": "Maria Antonina Macaluso — attrice siciliana. Archivio digitale autorevole.",
+  "description": "Maria Antonina Macaluso — attrice siciliana. Archivio digitale autorevole con filmografia, photobook, biografia e collaborazioni.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
   "background_color": "#08070a",
   "theme_color": "#08070a",
   "orientation": "portrait-primary",
-  "lang": "it",
+  "lang": "it-IT",
   "dir": "ltr",
-  "categories": ["entertainment", "lifestyle"],
+  "categories": ["entertainment", "lifestyle", "news"],
   "icons": [
     {
       "src": "/icons/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Biografia",
+      "short_name": "Bio",
+      "url": "/biografia",
+      "description": "Il percorso di Maria Antonina Macaluso"
+    },
+    {
+      "name": "Filmografia",
+      "short_name": "Film",
+      "url": "/filmografia",
+      "description": "9 produzioni cinematografiche"
+    },
+    {
+      "name": "Photo Book",
+      "short_name": "Foto",
+      "url": "/photobook",
+      "description": "83 scatti dell'attrice siciliana"
+    },
+    {
+      "name": "Altre Produzioni",
+      "short_name": "Altro",
+      "url": "/altre-produzioni",
+      "description": "Oltre il cinema"
     }
   ]
 }
