@@ -154,8 +154,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         {/* Preload immagine hero per LCP <1s */}
         <link rel="preload" as="image" href="/images/hero-maria-antonina.jpg" fetchPriority="high" />
-        {/* CSS critico inline per l'intro animation — visibile dal primo byte,
-            indipendentemente dal caricamento del CSS esterno o Framer Motion */}
+        {/* CSS critico inline per l'intro animation — fallback se Framer Motion non carica
+            ATTENZIONE: NON bloccare mai overflow sul body — causa scroll bloccato su mobile */}
         <style dangerouslySetInnerHTML={{
           __html: `
             /* CSS critico per IntroAnimation — fallback se Framer Motion non carica */
@@ -183,9 +183,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               opacity: 1 !important;
               filter: none !important;
               transform: none !important;
-            }
-            body:has([role="progressbar"][aria-label*="Maria Antonina"]) {
-              overflow: hidden !important;
             }
           `
         }} />

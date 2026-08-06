@@ -56,6 +56,9 @@ export function IntroAnimation() {
     const removeTimer = setTimeout(() => {
       const el = document.querySelector('[role="progressbar"]');
       if (el && el.parentNode) el.remove();
+      // Assicura che il body possa scorrere dopo la rimozione dell'overlay
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     }, 8000);
 
     return () => {

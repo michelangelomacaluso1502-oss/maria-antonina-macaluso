@@ -8,6 +8,7 @@ import PageHero from "@/components/sections/PageHero";
 import {
   ArrowLeft,
   ArrowRight,
+  Camera,
   Clapperboard,
   User,
   Calendar,
@@ -186,6 +187,32 @@ export default async function FilmPage({
                   </span>
                 ))}
               </div>
+            </Reveal>
+          )}
+
+          {/* === Gallery foto dal set (solo per Don't Be Silent) === */}
+          {film.slug === "dont-be-silent" && (
+            <Reveal className="mx-auto mt-16 max-w-3xl">
+              <div className="flex items-center gap-3">
+                <Camera className="h-6 w-6 text-gold" />
+                <h2 className="font-display text-3xl text-cream sm:text-4xl">Dal set</h2>
+              </div>
+              <div className="divider-cinema mt-6 max-w-xs" />
+              <figure className="glass-card mt-8 overflow-hidden p-3">
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-noir">
+                  <Image
+                    src="/images/films/dont-be-silent-set.jpg"
+                    alt="Maria Antonina Macaluso con ciak DON'T BE SILENT sulla spiaggia al tramonto"
+                    fill
+                    sizes="(min-width: 768px) 768px, 100vw"
+                    quality={100}
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="px-2 py-3 text-center text-xs uppercase tracking-wide-sm text-cream/50">
+                  Maria Antonina Macaluso con il ciak "DON'T BE SILENT" — set sulla spiaggia al tramonto
+                </figcaption>
+              </figure>
             </Reveal>
           )}
 

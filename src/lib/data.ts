@@ -344,6 +344,7 @@ export const FILMS: Film[] = [
     trivia: [
       "Prodotto da Rai Cinema nell'ambito del Progetto Nazionale sul Bullismo.",
       "Prima collaborazione ufficiale Maria Antonina Macaluso – Angelo Faraci per Rai Cinema.",
+      "Foto dal set: Maria Antonina Macaluso con ciak 'DON'T BE SILENT' sulla spiaggia al tramonto.",
     ],
     press: [
       {

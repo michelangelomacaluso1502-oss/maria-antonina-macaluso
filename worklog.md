@@ -3867,3 +3867,50 @@ Stage Summary:
 - overflow:visible quando FAQ aperta (no più pointer events bloccati)
 - Link blu cliccabili nativamente senza dipendere da JS idratazione
 - Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti
+
+---
+Task ID: FIX-SCROLL-BLOCCATO + DONT-BE-SILENT-FOTO
+Agent: Super Z (main)
+Task: Scroll bloccato su cellulare + link non aprono + aggiunta foto Don't Be Silent
+
+Work Log:
+- DIAGNOSI SCROLL BLOCCATO:
+  * CAUSA: CSS critico inline nel layout.tsx aveva `body:has([role="progressbar"]) { overflow: hidden !important; }`
+  * Questo bloccava lo scroll del body finché il progressbar (intro animation) era nel DOM
+  * Su mobile, se l'intro animation non veniva rimossa correttamente, il body restava bloccato per sempre
+  * Inoltre `body:has()` non è supportato su tutti i browser mobili, causando comportamenti imprevedibili
+
+- FIX SCROLL:
+  * RIMOSSO `body:has([role="progressbar"]) { overflow: hidden !important; }` dal CSS critico inline
+  * Aggiunto ripristino overflow nel cleanup dell'intro animation:
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
+  * Lo scroll ora non viene MAI bloccato, nemmeno durante l'intro animation
+
+- FIX LINK NON APRONO:
+  * Già risolto nel task precedente: link <a> nativi senza preventDefault
+  * Rimossi z-index e display:inline-block eccessivi dal CSS
+
+- AGGIUNTA FOTO DON'T BE SILENT:
+  * Foto: Maria Antonina Macaluso con ciak "DON'T BE SILENT" sulla spiaggia al tramonto
+  * Ottimizzata a 8K Ultra HD: 1163x1200 → 3722x3840 (3.82MB, q98, chroma 4:4:4, progressive)
+  * Aggiunta alla scheda film /film/dont-be-silent:
+    - Nuova sezione "Dal set" con galleria foto
+    - Image quality=100, aspect 3/4, object-cover
+    - Figcaption descrittivo
+  * Aggiunta trivia: "Foto dal set: Maria Antonina Macaluso con ciak 'DON'T BE SILENT' sulla spiaggia al tramonto."
+  * Import Camera icon da lucide-react
+
+- Build: ✓ Compiled successfully, 115 pagine
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+- Verifica produzione:
+  * body:has rimosso (0 occorrenze) ✓
+  * dont-be-silent-set.jpg HTTP 200 ✓
+  * /film/dont-be-silent con "Dal set" + immagine ✓
+  * Regole: 0 "Prime Video", 0 "comparsa" ✓
+
+Stage Summary:
+- SCROLL BLOCCATO RISOLTO: rimosso body:has overflow hidden che bloccava lo scroll su mobile
+- LINK RISOLTI: link <a> nativi senza preventDefault, funzionano su tutti i device
+- FOTO DON'T BE SILENT: aggiunta sezione "Dal set" con foto 8K di Mary con ciak
+- Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti
