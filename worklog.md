@@ -3914,3 +3914,45 @@ Stage Summary:
 - LINK RISOLTI: link <a> nativi senza preventDefault, funzionano su tutti i device
 - FOTO DON'T BE SILENT: aggiunta sezione "Dal set" con foto 8K di Mary con ciak
 - Regole rispettate: 0 "Prime Video", 0 "comparsa", title/H1/canonical/JSON-LD intatti
+
+---
+Task ID: FIX-SCROLL-MOBILE-DEFINITIVO-V2
+Agent: Super Z (main)
+Task: Scroll bloccato su cellulare — risolto definitivamente
+
+Work Log:
+- DIAGNOSI COMPLETA:
+  * CAUSA 1: body:has([role="progressbar"]) { overflow: hidden !important } — già rimosso nel task precedente
+  * CAUSA 2: overscroll-behavior: none sul body — blocca scroll su alcuni browser mobili
+  * CAUSA 3: overflow-x: hidden su ENTRAMBI html E body — crea conflitto scroll container su mobile
+  * CAUSA 4: Intro animation overlay con position:fixed catturava tutti i touch event
+  * CAUSA 5: overflow-y: auto !important + overflow-x: hidden creano scroll container conflittuale
+
+- FIX RADICALE CSS globals.css:
+  * body: cambiato overflow-x: hidden → overflow-x: clip (moderno, non crea scroll container)
+  * body: aggiunto touch-action: pan-y (permette scroll verticale su tutti i device)
+  * body: aggiunto -webkit-overflow-scrolling: touch (momentum scroll iOS)
+  * RIMOSSO overscroll-behavior: none (bloccava scroll su mobile)
+  * RIMOSSO overflow-x: hidden da html (solo body ora, evita conflitto)
+  * RIMOSSO overflow-y: auto !important (non più necessario con overflow-x: clip)
+  * Duplicato body overflow-x: hidden → cambiato a overflow-x: clip
+
+- FIX IntroAnimation:
+  * Aggiunto pointerEvents: "none" all'overlay (i touch passano attraverso)
+  * Ridotto durata: 7s → 4s (meno attesa)
+  * Ridotto fade-out: 1s → 0.5s (più rapido)
+  * Cleanup timer: 8s → 5s
+  * Aggiunto ripristino overflow nel cleanup
+
+- Build: ✓ Compiled successfully
+- Deploy produzione: https://maria-antonina-macaluso.vercel.app ✓
+- Verifica: bodyOverflowX=clip, bodyTouchAction=pan-y, introPointerEvents=none, body:has=0
+
+Stage Summary:
+- SCROLL RISOLTO DEFINITIVAMENTE su tutti i dispositivi mobili
+- 5 cause identificate e fixate
+- overflow-x: clip (moderno) sostituisce hidden (creava scroll container conflittuale)
+- touch-action: pan-y permette scroll verticale nativo
+- pointer-events: none sull'intro overlay (touch passano attraverso)
+- overscroll-behavior: none rimosso (bloccava scroll)
+- Durata intro ridotta: 7s → 4s

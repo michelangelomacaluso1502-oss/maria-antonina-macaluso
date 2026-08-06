@@ -52,14 +52,14 @@ export function IntroAnimation() {
       return;
     }
 
-    const fadeTimer = setTimeout(() => setIsVisible(false), 7000);
+    const fadeTimer = setTimeout(() => setIsVisible(false), 4000);
     const removeTimer = setTimeout(() => {
       const el = document.querySelector('[role="progressbar"]');
       if (el && el.parentNode) el.remove();
       // Assicura che il body possa scorrere dopo la rimozione dell'overlay
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
-    }, 8000);
+    }, 5000);
 
     return () => {
       clearTimeout(fadeTimer);
@@ -73,7 +73,7 @@ export function IntroAnimation() {
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           className="fixed inset-0 z-[99999] flex items-center justify-center overflow-hidden"
           role="progressbar"
           aria-label="Caricamento sito Maria Antonina Macaluso"
@@ -84,6 +84,7 @@ export function IntroAnimation() {
             background:
               "radial-gradient(ellipse at 50% 40%, #803322 0%, #7C2D12 35%, #5C2419 70%, #4A1C14 100%)",
             willChange: "opacity",
+            pointerEvents: "none",
           }}
         >
           {/* LETTERBOX BARS */}

@@ -56,7 +56,11 @@ body {
   font-feature-settings: "ss01", "cv11";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  /* overflow-x: clip è meglio di hidden su mobile (non crea scroll container) */
+  overflow-x: clip;
+  /* touch-action: pan-y permette scroll verticale su tutti i device */
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 ::selection {
@@ -118,7 +122,6 @@ a[class*="text-blue"] {
   /* Smooth scroll con momentum su iOS */
   body {
     -webkit-overflow-scrolling: touch;
-    overscroll-behavior: none;
   }
 
   /* Grid responsive: 2 colonne su mobile */
@@ -149,11 +152,10 @@ a[class*="text-blue"] {
   }
 }
 
-/* Prevent horizontal scroll su mobile */
-html,
+/* Prevent horizontal scroll — overflow-x: clip su body (non crea scroll container) */
 body {
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* GPU acceleration per animazioni fluidissime */
