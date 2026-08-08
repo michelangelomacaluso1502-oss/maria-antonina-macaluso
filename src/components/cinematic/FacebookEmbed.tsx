@@ -36,7 +36,7 @@ export default function FacebookEmbed({
       {/* Layout: verticale su mobile, orizzontale su desktop */}
       <div className="flex flex-col sm:flex-row">
         {/* Thumbnail — rientra nel riquadro su tutti i device */}
-        <div className="relative w-full overflow-hidden bg-noir aspect-[16/9] sm:w-56 sm:shrink-0 sm:aspect-auto sm:h-auto">
+        <div className="relative w-full overflow-hidden bg-noir" style={{ aspectRatio: "16 / 9" }}>
           {thumbnail && !imageError ? (
             <Image
               src={thumbnail}
