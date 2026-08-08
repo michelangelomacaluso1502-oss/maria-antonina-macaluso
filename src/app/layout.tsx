@@ -73,12 +73,13 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Maria Antonina Macaluso",
-  alternateName: "Mary Macaluso",
+  alternateName: ["Mary Macaluso", "Maria Antonina", "Macaluso"],
   jobTitle: "Attrice",
-  description: "Maria Antonina Macaluso — attrice siciliana nata a Bologna il 9 novembre 2001, cresciuta a Camporeale (Palermo). Compagna artistica e di vita del regista Angelo Faraci. Filmografia: Ciò che non ti ho detto, Provvidenza, Separati Mai, Il Mistero di Spartivento, Pochi Attimi.",
+  description: "Maria Antonina Macaluso — attrice siciliana nata a Bologna il 9 novembre 2001, cresciuta a Camporeale (Palermo). Compagna artistica e di vita del regista Angelo Faraci dal 2019. Filmografia: Ciò che non ti ho detto (2019), Don't Be Silent (2020), Provvidenza (2021), Pietrazita (2023), Separati Mai (2023-2024), Sabbie Nere (2023), Vanina (2024), Il Mistero di Spartivento (2024-2025), Eccellenza Siciliana (2025), Pochi Attimi (2026). Photo Book 83 scatti 8K Ultra HD.",
   birthDate: "2001-11-09",
   birthPlace: { "@type": "Place", name: "Bologna, Italia" },
   nationality: { "@type": "Country", name: "Italia" },
+  gender: "Female",
   address: { "@type": "PostalAddress", addressLocality: "Camporeale", addressRegion: "Palermo", addressCountry: "IT" },
   url: SITE.url,
   image: `${SITE.url}/images/hero-maria-antonina.jpg`,
@@ -88,6 +89,8 @@ const personJsonLd = {
     "https://www.facebook.com/mary.macaluso.16",
     "https://www.tiktok.com/@mary.macaluso",
     "https://www.imdb.com/name/nm14708762/",
+    "https://maria-antonina-macaluso.vercel.app",
+    "https://angelo-faraci.vercel.app",
   ],
   knowsAbout: [
     "Cinema",
@@ -97,6 +100,8 @@ const personJsonLd = {
     "Content creation",
     "Rai Cinema",
     "Fiction Sky",
+    "Drammatico sociale",
+    "Beauty content creator",
   ],
   knowsLanguage: ["it", "scn"],
   award: [
@@ -105,6 +110,14 @@ const personJsonLd = {
     "Attrice Rivelazione — Fiuggi (2023)",
     "Migliore Attrice Protagonista — Mediterranean Film Festival (2025)",
   ],
+  alumniOf: {
+    "@type": "EducationalOrganization",
+    name: "Camporeale, Palermo",
+  },
+  worksFor: {
+    "@type": "Organization",
+    name: "Ancora Cinematografica",
+  },
   relatedTo: {
     "@type": "Person",
     name: "Angelo Faraci",
@@ -112,6 +125,33 @@ const personJsonLd = {
     url: "https://angelo-faraci.vercel.app",
     sameAs: "https://www.imdb.com/name/nm11444273/",
   },
+  performerIn: [
+    {
+      "@type": "Movie",
+      name: "Ciò che non ti ho detto",
+      datePublished: "2019",
+    },
+    {
+      "@type": "Movie",
+      name: "Provvidenza",
+      datePublished: "2021",
+    },
+    {
+      "@type": "Movie",
+      name: "Separati Mai",
+      datePublished: "2023",
+    },
+    {
+      "@type": "Movie",
+      name: "Il Mistero di Spartivento",
+      datePublished: "2024",
+    },
+    {
+      "@type": "Movie",
+      name: "Pochi Attimi",
+      datePublished: "2026",
+    },
+  ],
 };
 
 // FAQ Schema per SEO (ricerche long-tail)
