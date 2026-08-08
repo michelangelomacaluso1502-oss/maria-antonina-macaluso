@@ -45,12 +45,13 @@ export default function YouTubeFacade({
         className={`relative aspect-video w-full overflow-hidden bg-noir ${className}`}
       >
         <iframe
-          src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
+          src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1&preload=none`}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
           loading="lazy"
-          className="absolute inset-0 h-full w-full"
+          className="absolute inset-0 h-full w-full border-0"
+          style={{ touchAction: "manipulation" }}
         />
       </div>
     );
