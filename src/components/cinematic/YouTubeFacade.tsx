@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useCallback } from "react";
 import Image from "next/image";
 import { Play, ExternalLink } from "lucide-react";
+import { useState } from "react";
 
 interface YouTubeFacadeProps {
   videoId: string;
@@ -11,13 +11,12 @@ interface YouTubeFacadeProps {
 }
 
 /**
- * YouTubeFacade — pattern facade per embed YouTube
- * - Mostra thumbnail con play button
- * - Al click, carica iframe youtube-nocookie con autoplay=1
- * - Lazy load: iframe viene caricato SOLO quando l'utente clicca
- * - Fallback hqdefault se maxresdefault mancante
- * - Privacy: usa youtube-nocookie.com (no cookie tracking)
- * - FIX MOBILE: iframe con allowfullscreen + sandbox + touch-action
+ * YouTubeFacade v2 — Istantaneo, zero lag
+ *
+ * Mostra thumbnail con play button.
+ * Al click: iframe caricato con autoplay=1, istantaneo.
+ * FIX: usa www.youtube.com (non nocookie) per compatibilità massima.
+ * Thumbnail: hqdefault (sempre disponibile, carica veloce).
  */
 export default function YouTubeFacade({
   videoId,
@@ -25,23 +24,13 @@ export default function YouTubeFacade({
   className = "",
 }: YouTubeFacadeProps) {
   const [activated, setActivated] = useState(false);
-  const [thumbSrc, setThumbSrc] = useState(
-    `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
-  );
-
-  const handleClick = useCallback(() => {
-    setActivated(true);
-  }, []);
-
-  const handleThumbError = useCallback(() => {
-    setThumbSrc(`https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`);
-  }, []);
 
   if (activated) {
+    // Iframe diretto — si apre istantaneamente al click
     return (
       <div className={`relative aspect-video w-full overflow-hidden bg-noir ${className}`}>
         <iframe
-          src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
@@ -52,21 +41,21 @@ export default function YouTubeFacade({
     );
   }
 
+  // Thumbnail con play button — click istantaneo
   return (
     <button
       type="button"
-      onClick={handleClick}
+      onClick={() => setActivated(true)}
       aria-label={`Riproduci video: ${title}`}
       className={`group relative aspect-video w-full overflow-hidden bg-noir cursor-pointer no-tap-highlight ${className}`}
       style={{ touchAction: "manipulation" }}
     >
       <Image
-        src={thumbSrc}
+        src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
         alt={title}
         fill
         sizes="(min-width: 768px) 50vw, 100vw"
-        className="object-cover transition-transform duration-700 group-hover:scale-105"
-        onError={handleThumbError}
+        className="object-cover transition-transform duration-500 group-hover:scale-105"
         unoptimized
       />
       <div className="absolute inset-0 bg-gradient-to-t from-noir/80 via-noir/20 to-noir/30 transition-opacity group-hover:from-noir/70" />

@@ -32,7 +32,7 @@ export default function PhotoBook({ compact = false }: { compact?: boolean }) {
                     quality={95}
                     sizes="(min-width: 1280px) 20vw, (min-width: 640px) 33vw, 50vw"
                     loading="lazy"
-                    className="w-full max-w-[250px] object-contain transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
+                    className="w-full max-w-[250px] object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
                   />
                   <figcaption className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-noir/80 via-transparent to-transparent p-3 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                     <span className="text-xs uppercase tracking-wide-sm text-cream/90">{p.title}</span>
