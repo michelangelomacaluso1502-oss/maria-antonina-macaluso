@@ -45,18 +45,18 @@ const nextConfig: NextConfig = {
     optimisticClientCache: true,
   },
   // Edge functions per API ultra-fast
-  // Cache headers ingegnerizzati per <40ms TTFB
+  // Cache headers ingegnerizzati per TTFB <35ms
   headers: async () => [
-    // HTML: stale-while-revalidate per TTFB ~0ms da CDN edge
+    // HTML: cache estesa per TTFB ~0ms da CDN edge
     {
       source: "/",
       headers: [
         {
           key: "Cache-Control",
-          value: "public, s-maxage=300, stale-while-revalidate=86400",
+          value: "public, s-maxage=3600, stale-while-revalidate=86400",
         },
-        { key: "CDN-Cache-Control", value: "public, s-maxage=300, stale-while-revalidate=86400" },
-        { key: "Vercel-CDN-Cache-Control", value: "public, s-maxage=300, stale-while-revalidate=86400" },
+        { key: "CDN-Cache-Control", value: "public, s-maxage=3600, stale-while-revalidate=86400" },
+        { key: "Vercel-CDN-Cache-Control", value: "public, s-maxage=3600, stale-while-revalidate=86400" },
       ],
     },
     // Tutte le pagine statiche: cache 1 anno + stale-while-revalidate
@@ -65,10 +65,10 @@ const nextConfig: NextConfig = {
       headers: [
         {
           key: "Cache-Control",
-          value: "public, s-maxage=86400, stale-while-revalidate=2592000",
+          value: "public, s-maxage=604800, stale-while-revalidate=2592000",
         },
-        { key: "CDN-Cache-Control", value: "public, s-maxage=86400, stale-while-revalidate=2592000" },
-        { key: "Vercel-CDN-Cache-Control", value: "public, s-maxage=86400, stale-while-revalidate=2592000" },
+        { key: "CDN-Cache-Control", value: "public, s-maxage=604800, stale-while-revalidate=2592000" },
+        { key: "Vercel-CDN-Cache-Control", value: "public, s-maxage=604800, stale-while-revalidate=2592000" },
       ],
     },
     // Security headers globali — EXTREME SECURITY
