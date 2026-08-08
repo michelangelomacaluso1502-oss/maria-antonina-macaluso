@@ -35,15 +35,15 @@ export default function FacebookEmbed({
     >
       {/* Layout: verticale su mobile, orizzontale su desktop */}
       <div className="flex flex-col sm:flex-row">
-        {/* Thumbnail — rientra perfettamente su tutti i device */}
-        <div className="relative w-full overflow-hidden bg-noir sm:w-48 sm:shrink-0" style={{ aspectRatio: "16 / 9" }}>
+        {/* Thumbnail — visibile per intero su tutti i device */}
+        <div className="relative w-full overflow-hidden bg-noir sm:w-48 sm:shrink-0" style={{ aspectRatio: "4 / 3" }}>
           {thumbnail && !imageError ? (
             <Image
               src={thumbnail}
               alt={title}
               fill
               sizes="(min-width: 640px) 192px, 100vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-contain"
               onError={() => setImageError(true)}
               loading="lazy"
             />

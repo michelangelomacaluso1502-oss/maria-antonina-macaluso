@@ -263,7 +263,7 @@ export const BIO_CHAPTERS: BioChapter[] = [
       {
         heading: "Beauty Content Creator",
         body: [
-          "Accanto alla carriera cinematografica, Maria Antonina Macaluso coltiva una presenza digitale significativa come content creator. Sul suo Instagram (@mary.macaluso09, 11.9K follower) e TikTok (@mary.macaluso, 5.2K follower) condivide contenuti su bellezza, lifestyle, food e Sicilia — costruendo una community autentica che la riconosce come 'volcanica content creator' (Cronache Mediterranee, 2025).",
+          "Accanto alla carriera cinematografica, Maria Antonina Macaluso coltiva una presenza digitale significativa come content creator. Sul suo Instagram (@mary.macaluso09, 11.9K follower) e TikTok (@mary.macaluso, 5.2K follower) condivide contenuti su bellezza, lifestyle, food e Sicilia — costruendo una community autentica che la riconosce come 'vulcanica content creator' (Cronache Mediterranee, 2025).",
         ],
         image: "/images/content-creator/beauty-v2.jpg",
         imageAlt: "Maria Antonina Macaluso — Beauty Content Creator",

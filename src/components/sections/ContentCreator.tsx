@@ -94,7 +94,7 @@ export default function ContentCreator() {
                     <span>TikTok @mary.macaluso (5.2 mila follower)</span>
                   </a>
                   <span> condivide contenuti dedicati alla bellezza, al lifestyle, alla gastronomia e alla terra di Sicilia, edificando una community autentica che la riconosce quale </span>
-                  <span>&ldquo;volcanica content creator&rdquo;</span>
+                  <span>&ldquo;vulcanica content creator&rdquo;</span>
                   <span> </span>
                   <a
                     href="https://cronachemediterranee.net/vulcanica-content-creator-maria-antonina-macaluso"
