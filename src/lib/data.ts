@@ -118,7 +118,7 @@ export const BIO_CHAPTERS: BioChapter[] = [
     num: "I",
     title: "Origini — Bologna e Camporeale",
     body: [
-      "Maria Antonina Macaluso nasce a Bologna il 9 novembre 2001. Bologna è il primo respiro, ma la Sicilia è tutto il resto. Cresce a Camporeale, paesone della provincia di Palermo arroccato tra i monti, dove il tempo scorre al ritmo delle stagioni e della luce.",
+      "Maria Antonina Macaluso nasce a Bologna il 9 novembre 2001. Bologna è il primo respiro, ma la Sicilia è tutto il resto. Cresce a Camporeale, paesino della provincia di Palermo arroccato tra i monti, dove il tempo scorre al ritmo delle stagioni e della luce.",
       "È in questo paesaggio che si forma il suo sguardo: la capacità di abitare il silenzio, di far pesare un'assenza, di riempire un'inquadratura con la sola presenza.",
     ],
     image: "/images/biografia/radici.jpg",
