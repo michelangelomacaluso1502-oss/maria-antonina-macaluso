@@ -58,6 +58,18 @@ export function IntroAnimation() {
       return;
     }
 
+    // FIX iOS: Se Framer Motion non è caricato, salta l'animazione
+    try {
+      // Tenta un'operazione semplice per verificare che il DOM funzioni
+      if (!document || !document.body) {
+        setIsVisible(false);
+        return;
+      }
+    } catch {
+      setIsVisible(false);
+      return;
+    }
+
     const fadeTimer = setTimeout(() => setIsVisible(false), 4000);
     const removeTimer = setTimeout(() => {
       try {
