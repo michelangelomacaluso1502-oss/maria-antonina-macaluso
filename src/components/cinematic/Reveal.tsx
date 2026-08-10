@@ -14,7 +14,6 @@ const variantClass: Record<RevealVariant, string> = {
   clip: "reveal reveal-clip",
 };
 
-// Reveal: fades + slides up children when they enter the viewport.
 interface RevealProps {
   children: React.ReactNode;
   className?: string;
@@ -24,6 +23,12 @@ interface RevealProps {
   variant?: RevealVariant;
 }
 
+/**
+ * Reveal — FIX iOS Safari/Tablet:
+ * 1. IntersectionObserver con threshold basso (0.01)
+ * 2. Fallback: se dopo 1.5s l'elemento non è visibile, mostra comunque
+ * 3. Se IntersectionObserver non supportato, mostra subito tutto
+ */
 export function Reveal({
   children,
   className,
@@ -37,22 +42,45 @@ export function Reveal({
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el) {
+      setVisible(true);
+      return;
+    }
+
+    // Se IntersectionObserver non supportato, mostra subito
+    if (typeof IntersectionObserver === "undefined") {
+      setVisible(true);
+      return;
+    }
+
+    let fallbackTimer: ReturnType<typeof setTimeout> | null = null;
+
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setVisible(true);
             if (once) obs.unobserve(entry.target);
+            if (fallbackTimer) clearTimeout(fallbackTimer);
           } else if (!once) {
             setVisible(false);
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+      { threshold: 0.01, rootMargin: "0px 0px -5% 0px" },
     );
     obs.observe(el);
-    return () => obs.disconnect();
+
+    // Fallback: dopo 1.5s, mostra comunque (fix iOS Safari/tablet)
+    fallbackTimer = setTimeout(() => {
+      setVisible(true);
+      obs.disconnect();
+    }, 1500);
+
+    return () => {
+      obs.disconnect();
+      if (fallbackTimer) clearTimeout(fallbackTimer);
+    };
   }, [once]);
 
   const Comp = Tag as React.ElementType;
@@ -67,11 +95,10 @@ export function Reveal({
   );
 }
 
-// Stagger: orchestrates staggerItem children.
 interface StaggerProps {
   children: React.ReactNode;
   className?: string;
-  gap?: number; // ms between items
+  gap?: number;
   as?: "div" | "ul" | "section";
 }
 
@@ -81,20 +108,41 @@ export function Stagger({ children, className, gap = 90, as: Tag = "div" }: Stag
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el) {
+      setStart(true);
+      return;
+    }
+
+    if (typeof IntersectionObserver === "undefined") {
+      setStart(true);
+      return;
+    }
+
+    let fallbackTimer: ReturnType<typeof setTimeout> | null = null;
+
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setStart(true);
             obs.unobserve(entry.target);
+            if (fallbackTimer) clearTimeout(fallbackTimer);
           }
         });
       },
-      { threshold: 0.1 },
+      { threshold: 0.01 },
     );
     obs.observe(el);
-    return () => obs.disconnect();
+
+    fallbackTimer = setTimeout(() => {
+      setStart(true);
+      obs.disconnect();
+    }, 1500);
+
+    return () => {
+      obs.disconnect();
+      if (fallbackTimer) clearTimeout(fallbackTimer);
+    };
   }, []);
 
   const Comp = Tag as React.ElementType;
@@ -111,7 +159,6 @@ export function Stagger({ children, className, gap = 90, as: Tag = "div" }: Stag
   );
 }
 
-// staggerItem: animates in based on its DOM order once Stagger is triggered.
 export function staggerItem(children: React.ReactNode): React.ReactNode {
   return children;
 }

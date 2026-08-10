@@ -23,9 +23,9 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000, // 1 anno
-    deviceSizes: [360, 414, 640, 750, 828, 1080, 1200, 1440, 1920, 2048, 2560, 3840, 7680], // 4K + 8K
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512, 768, 1024, 1536, 2048],
-    qualities: [75, 85, 90, 95, 100], // 4K quality range
+    deviceSizes: [360, 414, 640, 750, 828, 1080, 1200, 1440, 1920], // Max 1920px per compatibilità tablet
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512, 768, 1024],
+    qualities: [75, 85, 90, 95],
     remotePatterns: [
       {
         protocol: "https",
