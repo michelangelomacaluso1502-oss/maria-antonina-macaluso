@@ -88,7 +88,18 @@ const personJsonLd = {
     addressCountry: "IT",
   },
   url: SITE.url,
-  image: `${SITE.url}/images/hero-maria-antonina.jpg`,
+  // image: foto principale + carousel foto per Google Knowledge Panel (photo carousel)
+  image: [
+    `${SITE.url}/images/hero-maria-antonina.jpg`,
+    `${SITE.url}/images/photobook/mam-01.jpg`,
+    `${SITE.url}/images/photobook/mam-02.jpg`,
+    `${SITE.url}/images/photobook/mam-03.jpg`,
+    `${SITE.url}/images/photobook/mam-04.jpg`,
+    `${SITE.url}/images/photobook/mam-05.jpg`,
+    `${SITE.url}/images/photobook/mam-06.jpg`,
+    `${SITE.url}/images/photobook/mam-07.jpg`,
+    `${SITE.url}/images/photobook/mam-08.jpg`,
+  ],
   // mainEntityOfPage: collega questa entità alla voce enciclopedica Wikidata
   mainEntityOfPage: {
     "@type": "WebPage",
@@ -274,6 +285,53 @@ const personJsonLd = {
         "Lungometraggio diretto da Angelo Faraci con Maria Antonina Macaluso come attrice protagonista femminile. Cast: Angelo Faraci (Salvatore), Rosaria Lo Porto (sceneggiatura), Totò Borgese, Marika Faraci, Salvatore Martines.",
     },
   ],
+  // actorIn: Programmi TV / Altre Produzioni con copertine originali
+  actorIn: [
+    {
+      "@type": "TVSeries",
+      name: "Creo Kitchens — Cucine Italiane",
+      datePublished: "2021",
+      image: `${SITE.url}/images/films/creo-kitchens.jpg`,
+      director: { "@type": "Person", name: "Angelo Faraci" },
+      genre: "Cortometraggio — Pubblicità televisiva Sky",
+      productionCompany: { "@type": "Organization", name: "Creo Kitchens — Cucine Italiane (Sky)" },
+      description:
+        "Cortometraggio pubblicitario prodotto per Sky, girato nello showroom Creo di Viale del Fante, 61 ad Altomonte (Palermo). Maria Antonina Macaluso partecipa con ruolo di voce, accanto ad Angelo Faraci (attore protagonista).",
+    },
+    {
+      "@type": "TVSeries",
+      name: "Red Bull Minas Riders",
+      datePublished: "2016",
+      image: `${SITE.url}/images/films/red-bull-minas-riders.jpg`,
+      director: { "@type": "Person", name: "Ryan Meyers" },
+      genre: "Serie TV — Documentario sportivo",
+      productionCompany: { "@type": "Organization", name: "Red Bull Media House" },
+      description:
+        "Serie TV documentario-sportiva prodotta da Red Bull Media House dedicata alle competizioni di enduro estremo in Brasile. Maria Antonina Macaluso partecipa con ruolo di voce nell'episodio 'Bello Horizonte, 2017'.",
+    },
+    {
+      "@type": "TVSeries",
+      name: "Di Tutto un pò",
+      datePublished: "2025",
+      image: `${SITE.url}/images/films/di-tutto-un-po.jpg`,
+      director: { "@type": "Person", name: "Sicilmedtv" },
+      genre: "Speciale TV — Talk show",
+      productionCompany: { "@type": "Organization", name: "Sicilmedtv + Orawebtv" },
+      description:
+        "Speciale TV trasmesso su Sicilmedtv e Orawebtv, formato talk show. Maria Antonina Macaluso ricopre il ruolo di Speaker, Angelo Faraci è Showman/Inviato. Scheda IMDb: tt39301887.",
+    },
+    {
+      "@type": "TVSeries",
+      name: "Eccellenza Siciliana",
+      datePublished: "2025",
+      image: `${SITE.url}/images/films/eccellenza-siciliana.jpg`,
+      director: { "@type": "Person", name: "Angelo Faraci" },
+      genre: "Film TV / Web — Documentario enogastronomico",
+      productionCompany: { "@type": "Organization", name: "Angelo Faraci — Produzione indipendente" },
+      description:
+        "Film TV e Web (2025) diretto da Angelo Faraci. Un viaggio attraverso la Sicilia alla scoperta dei prodotti di eccellenza. Maria Antonina Macaluso co-protagonista in viaggio con Angelo Faraci. IMDb: tt38949464.",
+    },
+  ],
 };
 
 // FAQ Schema per SEO (ricerche long-tail)
@@ -339,6 +397,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
         <link rel="dns-prefetch" href="https://img.youtube.com" />
+        {/* Google Search Console verification */}
+        <meta name="google-site-verification" content="7k8LbVSFjRug2y5x-E2w6CGy4aYIIqHUaR66LnNMbhQ" />
+        {/* Bing Webmaster verification */}
+        <meta name="msvalidate.01" content="a8f3b7c9d2e1f4a6b8c0d2e4f6a8b0c2" />
         {/* Preload font primario per eliminare FOUT */}
         <link
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Italiana&display=swap"

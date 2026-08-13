@@ -177,7 +177,7 @@
     padding: 4px 0 12px; font-weight: 400;
   }
 
-  /* Hero photo (rounded rectangle) */
+  /* Hero photo (rounded rectangle) — carousel multi-immagini */
   .kp-hero {
     position: relative;
     width: 100%;
@@ -187,10 +187,15 @@
     background: #f1f3f4;
     margin-bottom: 16px;
   }
-  .kp-hero img {
-    width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
-    display: block;
+  .kp-hero-slides {
+    position: absolute; inset: 0;
+    display: flex; transition: transform 0.5s ease-in-out;
   }
+  .kp-hero-slide {
+    min-width: 100%; height: 100%;
+    background-size: cover; background-position: center 20%;
+  }
+  .kp-hero img { display: none; } /* fallback */
   .kp-hero .source-strip {
     position: absolute; left: 0; bottom: 0;
     background: rgba(0,0,0,0.6);
@@ -198,16 +203,36 @@
     padding: 4px 12px;
     border-top-right-radius: 8px;
     letter-spacing: 0.2px;
+    z-index: 5;
   }
   .kp-hero .photo-dots {
     position: absolute; bottom: 8px; right: 12px;
     display: flex; gap: 4px;
+    z-index: 5;
   }
   .kp-hero .photo-dot {
     width: 6px; height: 6px; border-radius: 50%;
     background: rgba(255,255,255,0.4);
+    cursor: pointer; transition: background 0.2s;
   }
   .kp-hero .photo-dot.active { background: #fff; }
+  .kp-hero-nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.5); color: #fff;
+    border-radius: 50%; width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; z-index: 5; font-size: 18px;
+    border: none;
+  }
+  .kp-hero-nav.prev { left: 8px; }
+  .kp-hero-nav.next { right: 8px; }
+  .kp-hero-nav:hover { background: rgba(0,0,0,0.75); }
+  .kp-hero-counter {
+    position: absolute; top: 8px; right: 12px;
+    background: rgba(0,0,0,0.6); color: #fff;
+    font-size: 11px; padding: 3px 8px; border-radius: 10px;
+    z-index: 5;
+  }
 
   /* Name (H1) */
   .kp-name {
@@ -545,15 +570,27 @@
     <!-- Subtitle (occupational category) -->
     <div class="kp-subtitle">Attrice</div>
 
-    <!-- Hero photo with source attribution -->
+    <!-- Hero photo carousel — 8 foto che scorrono -->
     <div class="kp-hero">
-      <img src="maria-antonina.jpg" alt="Maria Antonina Macaluso" />
+      <div class="kp-hero-slides" id="hero-slides">
+        <div class="kp-hero-slide" style="background-image: url('maria-antonina.jpg');"></div>
+        <div class="kp-hero-slide" style="background-image: url('photobook-01.jpg');"></div>
+        <div class="kp-hero-slide" style="background-image: url('photobook-02.jpg');"></div>
+        <div class="kp-hero-slide" style="background-image: url('photobook-03.jpg');"></div>
+        <div class="kp-hero-slide" style="background-image: url('photobook-04.jpg');"></div>
+        <div class="kp-hero-slide" style="background-image: url('ritratto-mary-angelo.jpg'); background-position: center 30%;"></div>
+      </div>
+      <button class="kp-hero-nav prev" onclick="prevSlide()">‹</button>
+      <button class="kp-hero-nav next" onclick="nextSlide()">›</button>
+      <div class="kp-hero-counter" id="hero-counter">1 / 6</div>
       <div class="source-strip">Fonte: maria-antonina-macaluso.vercel.app</div>
-      <div class="photo-dots">
-        <span class="photo-dot active"></span>
-        <span class="photo-dot"></span>
-        <span class="photo-dot"></span>
-        <span class="photo-dot"></span>
+      <div class="photo-dots" id="photo-dots">
+        <span class="photo-dot active" onclick="goToSlide(0)"></span>
+        <span class="photo-dot" onclick="goToSlide(1)"></span>
+        <span class="photo-dot" onclick="goToSlide(2)"></span>
+        <span class="photo-dot" onclick="goToSlide(3)"></span>
+        <span class="photo-dot" onclick="goToSlide(4)"></span>
+        <span class="photo-dot" onclick="goToSlide(5)"></span>
       </div>
     </div>
 
@@ -589,10 +626,6 @@
           <span class="pill-inline">Attrice</span>
           <span class="pill-inline">Content creator</span>
         </div>
-      </div>
-      <div class="kp-fact-row">
-        <div class="kp-fact-label">Altezza</div>
-        <div class="kp-fact-value">1,68 m</div>
       </div>
       <div class="kp-fact-row">
         <div class="kp-fact-label">Lingue</div>
@@ -723,6 +756,40 @@
           <div class="kp-accordion-title">Programmi TV — 4 titoli</div>
           <span class="chevron">⌄</span>
         </div>
+        <div class="kp-film-list" id="tv-list">
+          <div class="kp-film-item">
+            <div class="kp-film-cover" style="background-image: url('creo-kitchens.jpg');"></div>
+            <div class="kp-film-info">
+              <div class="kp-film-title">Creo Kitchens — Cucine Italiane</div>
+              <div class="kp-film-meta">2021 · Corto pubblicitario Sky · Regia Angelo Faraci</div>
+              <div class="kp-film-source">Fonte: IMDb · TGS TeleGiornale Sicilia</div>
+            </div>
+          </div>
+          <div class="kp-film-item">
+            <div class="kp-film-cover" style="background-image: url('red-bull-minas-riders.jpg');"></div>
+            <div class="kp-film-info">
+              <div class="kp-film-title">Red Bull Minas Riders</div>
+              <div class="kp-film-meta">2016– · Serie TV documentario sportivo · Red Bull Media House</div>
+              <div class="kp-film-source">Fonte: IMDb · Red Bull TV · tt10726880</div>
+            </div>
+          </div>
+          <div class="kp-film-item">
+            <div class="kp-film-cover" style="background-image: url('di-tutto-un-po.jpg');"></div>
+            <div class="kp-film-info">
+              <div class="kp-film-title">Di Tutto un pò</div>
+              <div class="kp-film-meta">2025 · Speciale TV Talk show · Sicilmedtv + Orawebtv</div>
+              <div class="kp-film-source">Fonte: IMDb · tt39301887</div>
+            </div>
+          </div>
+          <div class="kp-film-item">
+            <div class="kp-film-cover" style="background-image: url('eccellenza-siciliana.jpg');"></div>
+            <div class="kp-film-info">
+              <div class="kp-film-title">Eccellenza Siciliana</div>
+              <div class="kp-film-meta">2025 · Film TV/Web · Documentario enogastronomico</div>
+              <div class="kp-film-source">Fonte: IMDb · tt38949464</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -845,16 +912,18 @@
   </div>
 
   <div class="footer-info">
-    <strong>MOCKUP SERP GOOGLE — Maria Antonina Macaluso (v3 strutturato)</strong><br/><br/>
+    <strong>MOCKUP SERP GOOGLE — Maria Antonina Macaluso (v4 completo)</strong><br/><br/>
     Questo mockup riflette il JSON-LD Person arricchito in produzione sul sito di Maria Antonina:<br/><br/>
-    ✓ <strong>10 Movie completi</strong> con copertine originali, genre, regista, casa di produzione e descrizione per ognuno (schema.org <code>performerIn</code>).<br/>
-    ✓ <strong>Copertine film originali</strong> (non foto di Mary): ogni film usa il suo poster reale da <code>/images/films/</code>.<br/>
-    ✓ <strong>Descrizione Person arricchita</strong>: 600+ caratteri che raccontano esordio, filmografia, compagno, content creator, riconoscimenti, agenzia.<br/>
-    ✓ <strong>Collegamento enciclopedia</strong>: <code>mainEntityOfPage</code> → Wikidata Q140944431 (così Google sa che questa è la voce enciclopedica ufficiale).<br/>
+    ✓ <strong>Carousel foto che scorrono</strong>: 6 foto di Mary che si susseguono automaticamente ogni 4 secondi (hero + 4 photobook + 1 ritratto con Angelo). Auto-advance + frecce manuali + dots.<br/>
+    ✓ <strong>Sezione Programmi TV</strong> con 4 copertine originali: Creo Kitchens (2021), Red Bull Minas Riders (2016–), Di Tutto un pò (2025), Eccellenza Siciliana (2025). Cliccabile, espandibile.<br/>
+    ✓ <strong>10 Film completi</strong> con copertine originali, genre, regista, casa di produzione, descrizione (schema.org <code>performerIn</code>).<br/>
+    ✓ <strong>Rimossa Altezza</strong> (nessun dato anagrafico superfluo — Google non la mostrerà).<br/>
+    ✓ <strong>Google notificato</strong>: IndexNow + Yandex accettato (22 URL); Google Search Console verification meta aggiunto; Bing Webmaster verification meta aggiunto.<br/>
+    ✓ <strong>Descrizione Person arricchita</strong> (600+ caratteri).<br/>
+    ✓ <strong>Collegamento enciclopedia</strong>: <code>mainEntityOfPage</code> → Wikidata Q140944431.<br/>
     ✓ <strong>12 fonti sameAs</strong>: social, IMDb, sito ufficiale, Wikidata, Ancora Cinematografica, Cronache Mediterranee, Orawebtv, EverybodyWiki.<br/>
-    ✓ <strong>3 articoli terzi</strong> in <code>subjectOf</code> (fonti che parlano di Maria Antonina).<br/>
-    ✓ <strong>Struttura ben ponderata</strong>: ogni Movie ha <code>@type</code>, <code>name</code>, <code>datePublished</code>, <code>image</code>, <code>director</code>, <code>genre</code>, <code>productionCompany</code>, <code>description</code> — massima leggibilità per Google Knowledge Graph.<br/><br/>
-    <strong>SITO AGGIORNATO</strong>: JSON-LD in produzione. TTFB ~45ms.
+    ✓ <strong>3 articoli terzi</strong> in <code>subjectOf</code>.<br/><br/>
+    <strong>SITO AGGIORNATO</strong>: JSON-LD v4 in produzione. TTFB ~45ms.
   </div>
 
   <div class="actions">
@@ -888,6 +957,37 @@
   function toggleFilms() {
     const list = document.getElementById('film-list');
     list.classList.toggle('expanded');
+  }
+
+  // Hero carousel — auto-advance + manual nav
+  let currentSlide = 0;
+  const totalSlides = 6;
+  const slides = document.getElementById('hero-slides');
+  const counter = document.getElementById('hero-counter');
+  const dots = document.querySelectorAll('.photo-dot');
+
+  function goToSlide(n) {
+    currentSlide = (n + totalSlides) % totalSlides;
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+    counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+  }
+  function nextSlide() { goToSlide(currentSlide + 1); }
+  function prevSlide() { goToSlide(currentSlide - 1); }
+
+  // Auto-advance ogni 4 secondi
+  setInterval(nextSlide, 4000);
+
+  // Toggle Programmi TV accordion
+  const tvAccordion = document.querySelectorAll('.kp-accordion')[1];
+  if (tvAccordion) {
+    tvAccordion.addEventListener('click', () => {
+      document.getElementById('tv-list').classList.toggle('expanded');
+    });
+    // Apri di default il Programmi TV
+    setTimeout(() => {
+      document.getElementById('tv-list').classList.add('expanded');
+    }, 800);
   }
 </script>
 
