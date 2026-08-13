@@ -73,21 +73,30 @@ export default function AngeloFaraci() {
 
               <div className="flex flex-col gap-2">
                 <a
-                  href={af.site}
+                  href={`https://www.imdb.com/name/${af.imdb}/`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-cinema btn-cinema-solid w-full justify-center"
                 >
-                  Enciclopedia digitale — Angelo Faraci
+                  Scheda IMDb — Angelo Faraci
                   <ExternalLink className="h-4 w-4" />
                 </a>
                 <a
-                  href={`https://www.imdb.com/name/${af.imdb}/`}
+                  href="https://it.everybodywiki.com/Angelo_Faraci_(Attore)"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-ghost-cinema w-full justify-center"
                 >
-                  IMDb — {af.imdb}
+                  Voce EverybodyWiki
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+                <a
+                  href="https://www.tiktok.com/@angelofaraci4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-ghost-cinema w-full justify-center"
+                >
+                  TikTok — @angelofaraci4
                   <ExternalLink className="h-3.5 w-3.5" />
                 </a>
               </div>

@@ -16,7 +16,7 @@ export default function AngeloFaraciPage() {
       <PageHero
         eyebrow="Angelo Faraci"
         title="Regista, Attore, Produttore"
-        subtitle={`Nato a Palermo il 13 agosto 1989 · Enciclopedia digitale: ${ANGELO_FARACI.site.replace("https://", "")}`}
+        subtitle={`Nato a Palermo il 13 agosto 1989 · Scheda IMDb: nm11444273`}
         breadcrumb={[{ label: "Angelo Faraci" }]}
       />
       <AngeloFaraci />
