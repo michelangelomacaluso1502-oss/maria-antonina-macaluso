@@ -91,6 +91,11 @@ const personJsonLd = {
     "https://www.imdb.com/name/nm14708762/",
     "https://maria-antonina-macaluso.vercel.app",
     "https://angelo-faraci.vercel.app",
+    "https://www.wikidata.org/wiki/Q140944431",
+    "https://cinematografica.altervista.org/maria-antonina-macaluso",
+    "https://cronachemediterranee.net/vulcanica-content-creator-maria-antonina-macaluso",
+    "https://www.orawebtv.it/maria-antonina-macaluso-leclettismo-di-un-talento-tra-cinema-social-media-e-beauty",
+    "https://it.everybodywiki.com/Maria_Antonina_Macaluso",
   ],
   knowsAbout: [
     "Cinema",
@@ -125,31 +130,61 @@ const personJsonLd = {
     url: "https://angelo-faraci.vercel.app",
     sameAs: "https://www.imdb.com/name/nm11444273/",
   },
+  subjectOf: [
+    {
+      "@type": "Article",
+      headline: "Maria Antonina Macaluso, vulcanica content creator",
+      url: "https://cronachemediterranee.net/vulcanica-content-creator-maria-antonina-macaluso",
+      publisher: { "@type": "Organization", name: "Cronache Mediterranee" },
+    },
+    {
+      "@type": "Article",
+      headline: "Maria Antonina Macaluso: leclettismo di un talento tra cinema, social media e beauty",
+      url: "https://www.orawebtv.it/maria-antonina-macaluso-leclettismo-di-un-talento-tra-cinema-social-media-e-beauty",
+      publisher: { "@type": "Organization", name: "Orawebtv" },
+    },
+    {
+      "@type": "NewsArticle",
+      headline: "Provvidenza, il film di Angelo Faraci girato a Montalbano",
+      url: "https://www.messinatoday.it/attualita/provvidenza-montalbano-premio-sceneggiatura-ciak-film.html",
+      publisher: { "@type": "Organization", name: "Messina Today" },
+    },
+  ],
   performerIn: [
     {
       "@type": "Movie",
       name: "Ciò che non ti ho detto",
       datePublished: "2019",
+      image: `${SITE.url}/images/films/cio-che-non-ti-ho-detto.jpg`,
+      director: { "@type": "Person", name: "Angelo Faraci" },
     },
     {
       "@type": "Movie",
       name: "Provvidenza",
       datePublished: "2021",
+      image: `${SITE.url}/images/films/provvidenza.jpg`,
+      director: { "@type": "Person", name: "Angelo Faraci" },
     },
     {
       "@type": "Movie",
       name: "Separati Mai",
       datePublished: "2023",
+      image: `${SITE.url}/images/films/separati-mai.jpg`,
+      director: { "@type": "Person", name: "Angelo Faraci" },
     },
     {
       "@type": "Movie",
       name: "Il Mistero di Spartivento",
       datePublished: "2024",
+      image: `${SITE.url}/images/films/il-mistero-di-spartivento.jpg`,
+      director: { "@type": "Person", name: "Angelo Faraci" },
     },
     {
       "@type": "Movie",
       name: "Pochi Attimi",
       datePublished: "2026",
+      image: `${SITE.url}/images/films/pochi-attimi.jpg`,
+      director: { "@type": "Person", name: "Angelo Faraci" },
     },
   ],
 };

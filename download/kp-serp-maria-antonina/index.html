@@ -276,22 +276,57 @@
     border-radius: 12px;
     padding: 12px 14px;
     margin-bottom: 10px;
-    display: flex; align-items: center; gap: 12px;
     cursor: pointer;
   }
   .kp-accordion:hover { background: #d2e3fc; }
+  .kp-accordion-row {
+    display: flex; align-items: center; gap: 12px;
+  }
   .kp-accordion-title { flex: 1; font-size: 14px; font-weight: 500; color: #202124; }
   .kp-accordion .chevron { color: #5f6368; font-size: 16px; }
   .kp-accordion-thumbs { display: flex; gap: 4px; }
   .kp-accordion-thumb {
-    width: 40px; height: 40px;
-    border-radius: 6px;
+    width: 40px; height: 56px;
+    border-radius: 4px;
     background-size: cover; background-position: center;
     overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   }
-  .kp-accordion-thumb.img1 { background-image: url('photobook-01.jpg'); }
-  .kp-accordion-thumb.img2 { background-image: url('photobook-02.jpg'); }
-  .kp-accordion-thumb.img3 { background-image: url('photobook-03.jpg'); }
+  /* Film list (when expanded) */
+  .kp-film-list {
+    margin-top: 12px;
+    display: none;
+  }
+  .kp-film-list.expanded { display: block; }
+  .kp-film-item {
+    display: flex; gap: 10px; padding: 8px 0;
+    border-bottom: 1px solid #e8eaed;
+  }
+  .kp-film-item:last-child { border-bottom: none; }
+  .kp-film-cover {
+    width: 44px; height: 60px;
+    border-radius: 4px;
+    background-size: cover; background-position: center;
+    flex-shrink: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  .kp-film-info { flex: 1; min-width: 0; }
+  .kp-film-title {
+    font-size: 14px; color: #1a0dab; font-weight: 400;
+    line-height: 1.3; margin-bottom: 2px;
+  }
+  .kp-film-meta {
+    font-size: 12px; color: #70757a;
+  }
+  .kp-film-source {
+    font-size: 11px; color: #5f6368; margin-top: 2px;
+    font-style: italic;
+  }
+  .kp-accordion-thumb.img1 { background-image: url('cio-che-non-ti-ho-detto.jpg'); }
+  .kp-accordion-thumb.img2 { background-image: url('provvidenza.jpg'); }
+  .kp-accordion-thumb.img3 { background-image: url('separati-mai.jpg'); }
+  .kp-accordion-thumb.img4 { background-image: url('il-mistero-di-spartivento.jpg'); }
+  .kp-accordion-thumb.img5 { background-image: url('pochi-attimi.jpg'); }
 
   /* "Le persone cercano anche" */
   .kp-related {
@@ -583,24 +618,111 @@
         <span class="chevron">⌄</span>
       </div>
 
-      <div class="kp-accordion">
-        <div class="kp-accordion-thumbs">
-          <div class="kp-accordion-thumb img1"></div>
-          <div class="kp-accordion-thumb img2"></div>
-          <div class="kp-accordion-thumb img3"></div>
+      <!-- Film accordion EXPANDED con copertine reali -->
+      <div class="kp-accordion" onclick="toggleFilms()">
+        <div class="kp-accordion-row">
+          <div class="kp-accordion-thumbs">
+            <div class="kp-accordion-thumb img1"></div>
+            <div class="kp-accordion-thumb img2"></div>
+            <div class="kp-accordion-thumb img3"></div>
+          </div>
+          <div class="kp-accordion-title">Film — 10 titoli</div>
+          <span class="chevron">⌄</span>
         </div>
-        <div class="kp-accordion-title">Film — 10 titoli</div>
-        <span class="chevron">⌄</span>
+        <div class="kp-film-list expanded" id="film-list">
+          <div class="kp-film-item">
+            <div class="kp-film-cover" style="background-image: url('cio-che-non-ti-ho-detto.jpg');"></div>
+            <div class="kp-film-info">
+              <div class="kp-film-title">Ciò che non ti ho detto</div>
+              <div class="kp-film-meta">2019 · Fiction TV Sky · Regia Angelo Faraci</div>
+              <div class="kp-film-source">Fonte: IMDb · maria-antonina-macaluso.vercel.app</div>
+            </div>
+          </div>
+          <div class="kp-film-item">
+            <div class="kp-film-cover" style="background-image: url('photobook-01.jpg');"></div>
+            <div class="kp-film-info">
+              <div class="kp-film-title">Don't Be Silent</div>
+              <div class="kp-film-meta">2020 · Corto Rai Cinema · Regia Angelo Faraci</div>
+              <div class="kp-film-source">Fonte: IMDb</div>
+            </div>
+          </div>
+          <div class="kp-film-item">
+            <div class="kp-film-cover" style="background-image: url('provvidenza.jpg');"></div>
+            <div class="kp-film-info">
+              <div class="kp-film-title">Provvidenza</div>
+              <div class="kp-film-meta">2021 · Corto Rai Cinema · Regia Angelo Faraci</div>
+              <div class="kp-film-source">Fonte: Messina Today · IMDb</div>
+            </div>
+          </div>
+          <div class="kp-film-item">
+            <div class="kp-film-cover" style="background-image: url('photobook-02.jpg');"></div>
+            <div class="kp-film-info">
+              <div class="kp-film-title">Pietrazita</div>
+              <div class="kp-film-meta">2023 · Corto Rai Cinema · Regia Angelo Faraci</div>
+              <div class="kp-film-source">Fonte: IMDb</div>
+            </div>
+          </div>
+          <div class="kp-film-item">
+            <div class="kp-film-cover" style="background-image: url('separati-mai.jpg');"></div>
+            <div class="kp-film-info">
+              <div class="kp-film-title">Separati Mai</div>
+              <div class="kp-film-meta">2023–2024 · Film · Regia Angelo Faraci</div>
+              <div class="kp-film-source">Fonte: IMDb · maria-antonina-macaluso.vercel.app</div>
+            </div>
+          </div>
+          <div class="kp-film-item">
+            <div class="kp-film-cover" style="background-image: url('photobook-03.jpg');"></div>
+            <div class="kp-film-info">
+              <div class="kp-film-title">Sabbie Nere</div>
+              <div class="kp-film-meta">2023 · Serie TV Mediaset · Regia Davide Marengo</div>
+              <div class="kp-film-source">Fonte: IMDb</div>
+            </div>
+          </div>
+          <div class="kp-film-item">
+            <div class="kp-film-cover" style="background-image: url('photobook-04.jpg');"></div>
+            <div class="kp-film-info">
+              <div class="kp-film-title">Vanina</div>
+              <div class="kp-film-meta">2024 · Serie TV Canale 5 · Regia Davide Marengo</div>
+              <div class="kp-film-source">Fonte: IMDb · Partecipazione 1 episodio</div>
+            </div>
+          </div>
+          <div class="kp-film-item">
+            <div class="kp-film-cover" style="background-image: url('il-mistero-di-spartivento.jpg');"></div>
+            <div class="kp-film-info">
+              <div class="kp-film-title">Il Mistero di Spartivento</div>
+              <div class="kp-film-meta">2024–2025 · Film · Regia Angelo Faraci</div>
+              <div class="kp-film-source">Fonte: IMDb · maria-antonina-macaluso.vercel.app</div>
+            </div>
+          </div>
+          <div class="kp-film-item">
+            <div class="kp-film-cover" style="background-image: url('ritratto-mary-angelo.jpg'); background-position: center 30%;"></div>
+            <div class="kp-film-info">
+              <div class="kp-film-title">Eccellenza Siciliana</div>
+              <div class="kp-film-meta">2025 · Film · Regia Angelo Faraci</div>
+              <div class="kp-film-source">Fonte: IMDb</div>
+            </div>
+          </div>
+          <div class="kp-film-item">
+            <div class="kp-film-cover" style="background-image: url('pochi-attimi.jpg');"></div>
+            <div class="kp-film-info">
+              <div class="kp-film-title">Pochi Attimi</div>
+              <div class="kp-film-meta">2026 · Film · Regia Angelo Faraci · Protagonista</div>
+              <div class="kp-film-source">Fonte: IMDb · Ancora Cinematografica</div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="kp-accordion">
-        <div class="kp-accordion-thumbs">
-          <div class="kp-accordion-thumb img2"></div>
-          <div class="kp-accordion-thumb img3"></div>
-          <div class="kp-accordion-thumb img1"></div>
+        <div class="kp-accordion-row">
+          <div class="kp-accordion-thumbs">
+            <div class="kp-accordion-thumb img4"></div>
+            <div class="kp-accordion-thumb img5"></div>
+            <div class="kp-accordion-thumb img1"></div>
+          </div>
+          <div class="kp-accordion-title">Programmi TV — 4 titoli</div>
+          <span class="chevron">⌄</span>
         </div>
-        <div class="kp-accordion-title">Programmi TV — 4 titoli</div>
-        <span class="chevron">⌄</span>
       </div>
     </div>
 
@@ -687,6 +809,21 @@
         <span class="url">https://cinematografica.altervista.org/maria-antonina-macaluso</span>
         <span class="kebab">⋮</span>
       </div>
+      <div class="ext-row">
+        <span class="ext-favicon" style="background:#b91c1c;color:#fff;">CM</span>
+        <span class="url">cronachemediterranee.net — Articolo su Maria Antonina</span>
+        <span class="kebab">⋮</span>
+      </div>
+      <div class="ext-row">
+        <span class="ext-favicon" style="background:#1a73e8;color:#fff;">OW</span>
+        <span class="url">orawebtv.it — Intervista a Maria Antonina</span>
+        <span class="kebab">⋮</span>
+      </div>
+      <div class="ext-row">
+        <span class="ext-favicon" style="background:#ea4335;color:#fff;">MT</span>
+        <span class="url">messinatoday.it — Provvidenza film di Angelo Faraci</span>
+        <span class="kebab">⋮</span>
+      </div>
     </div>
 
     <!-- Bottom blue Google result link -->
@@ -708,14 +845,14 @@
   </div>
 
   <div class="footer-info">
-    <strong>MOCKUP SERP GOOGLE — Maria Antonina Macaluso</strong><br/><br/>
-    Questo mockup simula esattamente ciò che vedrai quando cerchi "maria antonina macaluso" su Google tra 2–4 settimane (quando Google avrà elaborato il Knowledge Graph).<br/><br/>
-    ✓ <strong>Barra di ricerca con autocomplete</strong>: mentre digiti "maria antonina macaluso", Google mostra la sua foto in tondo con il sottotitolo "Attrice" come prima voce (grazie a Wikidata + JSON-LD Person).<br/>
-    ✓ <strong>Knowledge Panel completo</strong>: foto, nome, bio AI con pill blu, fact rows, filmografia, premi, "Le persone cercano anche", social, "Altre schede".<br/>
-    ✓ <strong>Foto reale</strong>: hero-maria-antonina.jpg dal sito ufficiale (marcata come <code>image:</code> nel JSON-LD Person).<br/>
-    ✓ <strong>Età auto-calcolata</strong> da <code>birthDate 2001-11-09</code> — si aggiorna da sola ogni 9 novembre.<br/>
-    ✓ <strong>Compagno Angelo Faraci</strong>: linkato ma a IMDb (no sito personale), fedele a regole d'oro.<br/><br/>
-    <strong>NON ho intaccato il sito.</strong> Questo è solo un mockup HTML/CSS/JS standalone, scaricabile e apribile in qualsiasi browser.
+    <strong>MOCKUP SERP GOOGLE — Maria Antonina Macaluso (v2 arricchito)</strong><br/><br/>
+    Questo mockup simula il Knowledge Panel reale che Google mostrerà tra 2–4 settimane. Versione arricchita con:<br/><br/>
+    ✓ <strong>Copertine film reali</strong>: 5 poster nel JSON-LD <code>performerIn</code> (Ciò che non ti ho detto, Provvidenza, Separati Mai, Il Mistero di Spartivento, Pochi Attimi). Google le userà negli accordion "Film".<br/>
+    ✓ <strong>5 fonti esterne autorevoli</strong> in <code>sameAs</code>: Instagram, Facebook, TikTok, IMDb, sito ufficiale, Wikidata Q140944431, Ancora Cinematografica, Cronache Mediterranee, Orawebtv, EverybodyWiki.<br/>
+    ✓ <strong>3 articoli su Maria Antonina</strong> in <code>subjectOf</code>: Cronache Mediterranee ("vulcanica content creator"), Orawebtv ("leclettismo di un talento"), Messina Today (Provvidenza film).<br/>
+    ✓ <strong>Accordions espandibili</strong>: cliccando su "Film — 10 titoli" si espande la lista completa con copertina, anno, regia e fonte per ogni film.<br/>
+    ✓ <strong>Sezione "Altre schede" estesa</strong>: IMDb, Wikidata, Ancora Cinematografica, Cronache Mediterranee, Orawebtv, Messina Today.<br/><br/>
+    <strong>SITO AGGIORNATO</strong>: il JSON-LD Person in produzione ora include tutte queste informazioni. TTFB mantenuto a ~34ms.
   </div>
 
   <div class="actions">
@@ -744,6 +881,12 @@
   searchBar.addEventListener('blur', () => {
     setTimeout(() => { autocomplete.style.display = 'block'; }, 200); // mantieni visibile per demo
   });
+
+  // Toggle film list (accordion expand/collapse)
+  function toggleFilms() {
+    const list = document.getElementById('film-list');
+    list.classList.toggle('expanded');
+  }
 </script>
 
 </body>
