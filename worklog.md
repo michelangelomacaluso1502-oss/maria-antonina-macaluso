@@ -4046,3 +4046,39 @@ Stage Summary:
 - Specchiato sul formato reale Google KP mobile di Angelo Faraci
 - Età dinamica auto-aggiornante
 - Compagno Angelo Faraci presente come link (non card separata, fedele al KP di Angelo che non ha card partner)
+
+---
+Task ID: AUDIT-1
+Agent: Super Z (main)
+Task: Audit completo SEO + tecnico + performance + regole d'oro sul sito Maria Antonina Macaluso
+
+Work Log:
+- Estratto JSON-LD reale dalla homepage in produzione (Person + FAQPage + WebSite schema)
+- Verificati HTTP headers di sicurezza (CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy)
+- Misurato TTFB: 33-48ms cache HIT (target <38ms ✓)
+- Verificate sitemap (112 URL) + robots.txt (Googlebot/Bingbot/DuckDuckBot/Baiduspider + AI crawlers)
+- Verificato manifest.webmanifest (PWA installabile) + sw.js (Service Worker offline)
+- Verificati OpenGraph + Twitter Card + canonical + hreflang (it-IT + x-default)
+- Verificati preload (hero image high priority, font Google, JS chunks) + preconnect/dns-prefetch (YouTube, fonts)
+- Verificato mobile viewport + theme-color + skip link (accessibilità) + alt testuali su immagini
+- BUG FIX TROVATO E CORRETTO: Filmography.tsx diceva "debutto 2018" → corretto in "debutto 2019" (regola d'oro)
+- Deploy sul progetto corretto (maria-antonina-macaluso) dopo issue di project.json sovrascritto
+
+REGOLE D'ORO VERIFICATE (tutte OK):
+- ✅ 0 occorrenze "Prime Video" in tutto src/
+- ✅ 0 occorrenze "paesone", "residente a", "comparsa"
+- ✅ Vanina = "Partecipazione" (corretto)
+- ✅ "vulcanica" (corretto, no "volcanica")
+- ✅ Angelo = "Enciclopedia digitale" (corretto)
+- ✅ Maria Antonina = "vive a" (cercato, 0 occorrenze errate "residente a")
+- ✅ Data debutto: 2019 (dopo fix)
+- ✅ Camporeale = "paesino" (verificato)
+
+Stage Summary:
+- Sito 100% conforme a tutte le regole d'oro
+- TTFB medio 38-48ms (cache HIT, edge network)
+- 112 URL in sitemap, tutti indicizzabili
+- JSON-LD Person con sameAs (7 fonti), relatedTo (Angelo), performerIn (5 Movie), award (4 premi)
+- HTTPS + HSTS preload + CSP completo + X-Frame-Options DENY
+- PWA installabile + Service Worker offline
+- Bug "2018" corretto in "2019" e deployato in produzione

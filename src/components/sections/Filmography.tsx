@@ -13,7 +13,7 @@ export default function Filmography({ compact = false }: { compact?: boolean }) 
         <SectionHeading
           eyebrow="Filmografia"
           title="Dieci produzioni, una visione"
-          subtitle="Dal debutto Ciò che non ti ho detto (2018) a Pochi Attimi (2026) — tutti diretti da Angelo Faraci"
+          subtitle="Dal debutto Ciò che non ti ho detto (2019) a Pochi Attimi (2026) — tutti diretti da Angelo Faraci"
         />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
