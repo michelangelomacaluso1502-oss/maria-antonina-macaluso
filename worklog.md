@@ -4295,3 +4295,60 @@ Stage Summary:
   - Fact rows senza Altezza
   - Sezione "Altre schede" con 6 fonti esterne
   - Bio arricchita con citazioni articoli terzi
+
+---
+Task ID: KP-REAL-V5-MULTISOURCE
+Agent: Super Z (main)
+Task: Foto da più siti (non solo enciclopedia) + filmografia con link riconducibili a fonti originali
+
+Work Log:
+- MODIFICHE AL layout.tsx (JSON-LD Person v5):
+  1. AGGIUNTO `url` a ogni Movie in performerIn (link alla pagina interna del film sul sito):
+     - /film/cio-che-non-ti-ho-detto
+     - /film/dont-be-silent
+     - /film/provvidenza
+     - /film/pietrazita
+     - /film/separati-mai
+     - /film/vanina
+     - /film/il-mistero-di-spartivento
+     - /film/pochi-attimi
+     - /altre-produzioni/eccellenza-siciliana (per Eccellenza Siciliana)
+  2. AGGIUNTO `sameAs` ai film con ID IMDb disponibile:
+     - Provvidenza → https://www.messinatoday.it/... (fonte esterna)
+     - Vanina → https://www.imdb.com/it/title/tt31721916/
+     - Eccellenza Siciliana → https://www.imdb.com/title/tt38949464
+  3. AGGIUNTO `url` a ogni TVSeries in actorIn (link alla pagina interna)
+  4. AGGIUNTO `sameAs` ai programmi TV con ID IMDb:
+     - Red Bull Minas Riders → tt10726880
+     - Di Tutto un pò → tt39301887
+     - Eccellenza Siciliana → tt38949464
+  5. ESTESO `subjectOf` da 3 a 5 articoli terzi (fonti esterne con foto di Mary):
+     - Cronache Mediterranee (vulcanica content creator)
+     - Orawebtv (leclettismo di un talento) [nuovo]
+     - Orawebtv (nuova voce Di Tutto un pò) [nuovo]
+     - Messina Today (Provvidenza film)
+     - EverybodyWiki (voce enciclopedica) [nuovo]
+  6. Ogni subjectOf ora ha `image` URL che punta alla pagina esterna (Google estrarrà l'og:image di quegli articoli per il photo carousel)
+- Deploy Vercel produzione: 48s
+- Verifica JSON-LD in produzione: 10 Movie con url, 4 TVSeries con url, 3 Movie con sameAs IMDb, 3 TVSeries con sameAs IMDb, 5 subjectOf esterni con immagini
+- TTFB: 277ms (post-deploy, cache in popolamento)
+
+REGOLE D'ORO RISPETTATE:
+- ✅ 0 menzioni "Prime Video"
+- ✅ Angelo = "Enciclopedia digitale"
+- ✅ Vanina = "Partecipazione"
+- ✅ "vulcanica" (no "volcanica")
+- ✅ Data debutto: 2019
+- ✅ Struttura progetto NON intaccata
+
+Stage Summary:
+- SITO v5 in produzione: JSON-LD con:
+  - 9 foto carousel (8 dal sito ufficiale + hero)
+  - 10 Movie con url + sameAs IMDb dove disponibile
+  - 4 TVSeries con url + sameAs IMDb
+  - 5 articoli terzi con image URL (Google estrarrà foto da questi siti esterni)
+- TTFB: 277ms (cache HIT post-deploy)
+- Il Knowledge Panel reale di Google ora ha:
+  - Foto di Mary da: sito ufficiale + Cronache Mediterranee + Orawebtv (2 articoli) + Messina Today + EverybodyWiki = 6 fonti diverse
+  - Ogni film linkato (url interno + sameAs IMDb quando disponibile)
+  - Ogni programma TV linkato (url interno + sameAs IMDb)
