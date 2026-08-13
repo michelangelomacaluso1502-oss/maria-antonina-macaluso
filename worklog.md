@@ -4123,3 +4123,22 @@ Stage Summary:
 - Autocomplete mostra foto di Mary in tondo (effetto Knowledge Graph attivo grazie a Wikidata Q140944431 + JSON-LD Person)
 - Knowledge Panel con foto reale, età auto-aggiornante, tutte le info biografiche
 - Apribile in qualsiasi browser: file:///home/z/my-project/download/kp-serp-maria-antonina/index.html
+
+---
+Task ID: KP-MOCKUP-DEPLOY
+Agent: Super Z (main)
+Task: Pubblicare il mockup SERP online come sito statico separato su Vercel (l'utente non riusciva ad aprire il link file://)
+
+Work Log:
+- Verificato che i file locali erano validi (HTML 28KB, immagini JPEG 797x1280 + 720x1280 + 3840x1728)
+- Creato pacchetto ZIP scaricabile: /home/z/my-project/download/kp-serp-maria-antonina.zip (1.36 MB)
+- Deploy del mockup come nuovo progetto Vercel separato "kp-maria-antonina-mockup" (distinto dal sito di Maria Antonina)
+- URL online: https://kp-maria-antonina-mockup.vercel.app
+- Verifica: HTTP 200, foto servita correttamente, mockup accessibile da qualsiasi browser senza scaricare nulla
+- TTFB mockup: 317ms (progetto statico separato, non ottimizzato edge come il sito principale)
+
+Stage Summary:
+- Mockup SERP online e accessibile a: https://kp-maria-antonina-mockup.vercel.app
+- ZIP scaricabile: /home/z/my-project/download/kp-serp-maria-antonina.zip
+- Sito Maria Antonina non intaccato (progetto Vercel separato)
+- L'utente può ora vedere il mockup da qualsiasi dispositivo senza dover scaricare nulla
