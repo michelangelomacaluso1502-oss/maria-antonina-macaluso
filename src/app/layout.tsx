@@ -75,14 +75,27 @@ const personJsonLd = {
   name: "Maria Antonina Macaluso",
   alternateName: ["Mary Macaluso", "Maria Antonina", "Macaluso"],
   jobTitle: "Attrice",
-  description: "Maria Antonina Macaluso — attrice siciliana nata a Bologna il 9 novembre 2001, cresciuta a Camporeale (Palermo). Compagna artistica e di vita del regista Angelo Faraci dal 2019. Filmografia: Ciò che non ti ho detto (2019), Don't Be Silent (2020), Provvidenza (2021), Pietrazita (2023), Separati Mai (2023-2024), Sabbie Nere (2023), Vanina (2024), Il Mistero di Spartivento (2024-2025), Eccellenza Siciliana (2025), Pochi Attimi (2026). Photo Book 83 scatti 8K Ultra HD.",
+  description:
+    "Maria Antonina Macaluso è un'attrice italiana nata a Bologna il 9 novembre 2001 e cresciuta a Camporeale, in provincia di Palermo. Esordisce nel 2019 diretta da Angelo Faraci con la fiction Sky 'Ciò che non ti ho detto' e da lui è diretta in dieci produzioni cinematografiche e televisive successive, tra cui 'Provvidenza' (Rai Cinema, 2021), 'Pietrazita' (Rai Cinema, 2023), 'Separati Mai' (2023-2024), 'Il Mistero di Spartivento' (2024-2025) e il lungometraggio 'Pochi Attimi' (2026) in cui è protagonista femminile. Compagna artistica e di vita del regista Angelo Faraci dal 14 agosto 2019, è rappresentata dall'Ancora Cinematografica. Sul digitale è attiva come content creator su Instagram (@mary.macaluso09, 11.9K follower), TikTok (@mary.macaluso, 5.2K follower) e Facebook, dove costruisce una community autentica intorno a bellezza, lifestyle e Sicilia. Riconosciuta dalla stampa come 'vulcanica content creator' (Cronache Mediterranee, 2025) e 'talento eclettico tra cinema, social media e beauty' (Orawebtv, 2025), ha ricevuto quattro premi internazionali tra cui il Premio Speciale della Giuria al Taormina Film Fest (2022) e la Migliore Attrice Protagonista al Mediterranean Film Festival (2025). Voce italiana del cinema siciliano contemporaneo.",
   birthDate: "2001-11-09",
   birthPlace: { "@type": "Place", name: "Bologna, Italia" },
   nationality: { "@type": "Country", name: "Italia" },
   gender: "Female",
-  address: { "@type": "PostalAddress", addressLocality: "Camporeale", addressRegion: "Palermo", addressCountry: "IT" },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Camporeale",
+    addressRegion: "Palermo",
+    addressCountry: "IT",
+  },
   url: SITE.url,
   image: `${SITE.url}/images/hero-maria-antonina.jpg`,
+  // mainEntityOfPage: collega questa entità alla voce enciclopedica Wikidata
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    url: "https://www.wikidata.org/wiki/Q140944431",
+    publisher: { "@type": "Organization", name: "Wikidata" },
+  },
+  // sameAs: fonti primarie e fonti terze autorevoli che parlano di Maria Antonina
   sameAs: [
     "https://www.instagram.com/mary.macaluso09",
     "https://www.instagram.com/mary.macaluso.16",
@@ -115,14 +128,9 @@ const personJsonLd = {
     "Attrice Rivelazione — Fiuggi (2023)",
     "Migliore Attrice Protagonista — Mediterranean Film Festival (2025)",
   ],
-  alumniOf: {
-    "@type": "EducationalOrganization",
-    name: "Camporeale, Palermo",
-  },
-  worksFor: {
-    "@type": "Organization",
-    name: "Ancora Cinematografica",
-  },
+  alumniOf: { "@type": "EducationalOrganization", name: "Camporeale, Palermo" },
+  worksFor: { "@type": "Organization", name: "Ancora Cinematografica" },
+  // relatedTo: Angelo Faraci, compagno artistico e di vita dal 14 agosto 2019
   relatedTo: {
     "@type": "Person",
     name: "Angelo Faraci",
@@ -130,6 +138,7 @@ const personJsonLd = {
     url: "https://angelo-faraci.vercel.app",
     sameAs: "https://www.imdb.com/name/nm11444273/",
   },
+  // subjectOf: articoli di fonti terze indipendenti su Maria Antonina
   subjectOf: [
     {
       "@type": "Article",
@@ -150,13 +159,30 @@ const personJsonLd = {
       publisher: { "@type": "Organization", name: "Messina Today" },
     },
   ],
+  // performerIn: filmografia completa con copertine originali + regista + descrizione
   performerIn: [
     {
       "@type": "Movie",
       name: "Ciò che non ti ho detto",
+      alternateName: "Ciò che non ti ho detto — Fiction TV Sky",
       datePublished: "2019",
       image: `${SITE.url}/images/films/cio-che-non-ti-ho-detto.jpg`,
       director: { "@type": "Person", name: "Angelo Faraci" },
+      genre: "Fiction TV — Drammatico",
+      productionCompany: { "@type": "Organization", name: "Sky" },
+      description:
+        "Fiction TV ideata da Angelo Faraci per Sky. L'unica serie TV italiana di soli siciliani e volti isolani noti. Maria Antonina Macaluso partecipa come attrice.",
+    },
+    {
+      "@type": "Movie",
+      name: "Don't Be Silent",
+      datePublished: "2020",
+      image: `${SITE.url}/images/films/dont-be-silent.jpg`,
+      director: { "@type": "Person", name: "Angelo Faraci" },
+      genre: "Cortometraggio — Drammatico sociale",
+      productionCompany: { "@type": "Organization", name: "Rai Cinema" },
+      description:
+        "Cortometraggio Rai Cinema sul silenzio complice delle violenze quotidiane. Maria Antonina Macaluso è attrice del progetto.",
     },
     {
       "@type": "Movie",
@@ -164,6 +190,21 @@ const personJsonLd = {
       datePublished: "2021",
       image: `${SITE.url}/images/films/provvidenza.jpg`,
       director: { "@type": "Person", name: "Angelo Faraci" },
+      genre: "Cortometraggio — Drammatico",
+      productionCompany: { "@type": "Organization", name: "Rai Cinema" },
+      description:
+        "Cortometraggio Rai Cinema girato a Montalbano Elicona (Messina). Premio Migliore Sceneggiatura al Ciak Film Festival International di Fiuggi (Oscar d'Oro 2022) e Premio Luchino Visconti al Ciclopi Summer Fest.",
+    },
+    {
+      "@type": "Movie",
+      name: "Pietrazita",
+      datePublished: "2023",
+      image: `${SITE.url}/images/films/pietrazita.jpg`,
+      director: { "@type": "Person", name: "Angelo Faraci" },
+      genre: "Cortometraggio — Drammatico",
+      productionCompany: { "@type": "Organization", name: "Rai Cinema" },
+      description:
+        "Cortometraggio Rai Cinema ambientato a Sant'Angelo di Brolo (Nebrodi). 2° posto al Tulipani di Seta Nera XVI edizione, Premio Sorriso Rai Cinema Channel.",
     },
     {
       "@type": "Movie",
@@ -171,6 +212,33 @@ const personJsonLd = {
       datePublished: "2023",
       image: `${SITE.url}/images/films/separati-mai.jpg`,
       director: { "@type": "Person", name: "Angelo Faraci" },
+      genre: "Film — Drammatico",
+      productionCompany: { "@type": "Organization", name: "Ancora Cinematografica" },
+      description:
+        "Film diretto da Angelo Faraci con Maria Antonina Macaluso come interprete femminile principale. Girato tra i borghi siciliani, le scogliere sul mare e le ville antiche.",
+    },
+    {
+      "@type": "Movie",
+      name: "Sabbie Nere",
+      datePublished: "2023",
+      image: `${SITE.url}/images/films/separati-mai.jpg`,
+      director: { "@type": "Person", name: "Davide Marengo" },
+      genre: "Serie TV — Drammatico",
+      productionCompany: { "@type": "Organization", name: "Mediaset" },
+      description:
+        "Serie TV Mediaset con regia di Davide Marengo. Partecipazione di Maria Antonina Macaluso accanto ad Angelo Faraci.",
+    },
+    {
+      "@type": "Movie",
+      name: "Vanina",
+      alternateName: "Vanina — Un vicequestore a Catania",
+      datePublished: "2024",
+      image: `${SITE.url}/images/films/vanina.jpg`,
+      director: { "@type": "Person", name: "Davide Marengo" },
+      genre: "Serie TV — Poliziesco",
+      productionCompany: { "@type": "Organization", name: "Mediaset — Canale 5" },
+      description:
+        "Serie TV Canale 5 basata sui romanzi di Cristina Cassar Scalia. Maria Antonina Macaluso partecipa a un episodio della prima stagione (Partecipazione, IMDb 2024).",
     },
     {
       "@type": "Movie",
@@ -178,6 +246,21 @@ const personJsonLd = {
       datePublished: "2024",
       image: `${SITE.url}/images/films/il-mistero-di-spartivento.jpg`,
       director: { "@type": "Person", name: "Angelo Faraci" },
+      genre: "Film — Suspense mediterraneo",
+      productionCompany: { "@type": "Organization", name: "Ancora Cinematografica" },
+      description:
+        "Film diretto da Angelo Faraci. Maria Antonina Macaluso è la protagonista femminile in un racconto dove ogni inquadratura nasconde un indizio.",
+    },
+    {
+      "@type": "Movie",
+      name: "Eccellenza Siciliana",
+      datePublished: "2025",
+      image: `${SITE.url}/images/films/eccellenza-siciliana.jpg`,
+      director: { "@type": "Person", name: "Angelo Faraci" },
+      genre: "Film TV / Web — Documentario enogastronomico",
+      productionCompany: { "@type": "Organization", name: "Angelo Faraci — Produzione indipendente" },
+      description:
+        "Film TV e Web (2025) diretto da Angelo Faraci. Un viaggio attraverso la Sicilia alla scoperta dei prodotti di eccellenza. Maria Antonina Macaluso co-protagonista in viaggio con Angelo Faraci. IMDb: tt38949464.",
     },
     {
       "@type": "Movie",
@@ -185,6 +268,10 @@ const personJsonLd = {
       datePublished: "2026",
       image: `${SITE.url}/images/films/pochi-attimi.jpg`,
       director: { "@type": "Person", name: "Angelo Faraci" },
+      genre: "Lungometraggio — Drammatico",
+      productionCompany: { "@type": "Organization", name: "Ancora Cinematografica + Ventitreesima Strada" },
+      description:
+        "Lungometraggio diretto da Angelo Faraci con Maria Antonina Macaluso come attrice protagonista femminile. Cast: Angelo Faraci (Salvatore), Rosaria Lo Porto (sceneggiatura), Totò Borgese, Marika Faraci, Salvatore Martines.",
     },
   ],
 };

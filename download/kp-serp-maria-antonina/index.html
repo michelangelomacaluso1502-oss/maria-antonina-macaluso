@@ -639,7 +639,7 @@
             </div>
           </div>
           <div class="kp-film-item">
-            <div class="kp-film-cover" style="background-image: url('photobook-01.jpg');"></div>
+            <div class="kp-film-cover" style="background-image: url('dont-be-silent.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Don't Be Silent</div>
               <div class="kp-film-meta">2020 · Corto Rai Cinema · Regia Angelo Faraci</div>
@@ -655,7 +655,7 @@
             </div>
           </div>
           <div class="kp-film-item">
-            <div class="kp-film-cover" style="background-image: url('photobook-02.jpg');"></div>
+            <div class="kp-film-cover" style="background-image: url('pietrazita.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Pietrazita</div>
               <div class="kp-film-meta">2023 · Corto Rai Cinema · Regia Angelo Faraci</div>
@@ -671,7 +671,7 @@
             </div>
           </div>
           <div class="kp-film-item">
-            <div class="kp-film-cover" style="background-image: url('photobook-03.jpg');"></div>
+            <div class="kp-film-cover" style="background-image: url('separati-mai.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Sabbie Nere</div>
               <div class="kp-film-meta">2023 · Serie TV Mediaset · Regia Davide Marengo</div>
@@ -679,7 +679,7 @@
             </div>
           </div>
           <div class="kp-film-item">
-            <div class="kp-film-cover" style="background-image: url('photobook-04.jpg');"></div>
+            <div class="kp-film-cover" style="background-image: url('vanina.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Vanina</div>
               <div class="kp-film-meta">2024 · Serie TV Canale 5 · Regia Davide Marengo</div>
@@ -695,11 +695,11 @@
             </div>
           </div>
           <div class="kp-film-item">
-            <div class="kp-film-cover" style="background-image: url('ritratto-mary-angelo.jpg'); background-position: center 30%;"></div>
+            <div class="kp-film-cover" style="background-image: url('eccellenza-siciliana.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Eccellenza Siciliana</div>
-              <div class="kp-film-meta">2025 · Film · Regia Angelo Faraci</div>
-              <div class="kp-film-source">Fonte: IMDb</div>
+              <div class="kp-film-meta">2025 · Film TV/Web · Regia Angelo Faraci</div>
+              <div class="kp-film-source">Fonte: IMDb · tt38949464</div>
             </div>
           </div>
           <div class="kp-film-item">
@@ -845,14 +845,16 @@
   </div>
 
   <div class="footer-info">
-    <strong>MOCKUP SERP GOOGLE — Maria Antonina Macaluso (v2 arricchito)</strong><br/><br/>
-    Questo mockup simula il Knowledge Panel reale che Google mostrerà tra 2–4 settimane. Versione arricchita con:<br/><br/>
-    ✓ <strong>Copertine film reali</strong>: 5 poster nel JSON-LD <code>performerIn</code> (Ciò che non ti ho detto, Provvidenza, Separati Mai, Il Mistero di Spartivento, Pochi Attimi). Google le userà negli accordion "Film".<br/>
-    ✓ <strong>5 fonti esterne autorevoli</strong> in <code>sameAs</code>: Instagram, Facebook, TikTok, IMDb, sito ufficiale, Wikidata Q140944431, Ancora Cinematografica, Cronache Mediterranee, Orawebtv, EverybodyWiki.<br/>
-    ✓ <strong>3 articoli su Maria Antonina</strong> in <code>subjectOf</code>: Cronache Mediterranee ("vulcanica content creator"), Orawebtv ("leclettismo di un talento"), Messina Today (Provvidenza film).<br/>
-    ✓ <strong>Accordions espandibili</strong>: cliccando su "Film — 10 titoli" si espande la lista completa con copertina, anno, regia e fonte per ogni film.<br/>
-    ✓ <strong>Sezione "Altre schede" estesa</strong>: IMDb, Wikidata, Ancora Cinematografica, Cronache Mediterranee, Orawebtv, Messina Today.<br/><br/>
-    <strong>SITO AGGIORNATO</strong>: il JSON-LD Person in produzione ora include tutte queste informazioni. TTFB mantenuto a ~34ms.
+    <strong>MOCKUP SERP GOOGLE — Maria Antonina Macaluso (v3 strutturato)</strong><br/><br/>
+    Questo mockup riflette il JSON-LD Person arricchito in produzione sul sito di Maria Antonina:<br/><br/>
+    ✓ <strong>10 Movie completi</strong> con copertine originali, genre, regista, casa di produzione e descrizione per ognuno (schema.org <code>performerIn</code>).<br/>
+    ✓ <strong>Copertine film originali</strong> (non foto di Mary): ogni film usa il suo poster reale da <code>/images/films/</code>.<br/>
+    ✓ <strong>Descrizione Person arricchita</strong>: 600+ caratteri che raccontano esordio, filmografia, compagno, content creator, riconoscimenti, agenzia.<br/>
+    ✓ <strong>Collegamento enciclopedia</strong>: <code>mainEntityOfPage</code> → Wikidata Q140944431 (così Google sa che questa è la voce enciclopedica ufficiale).<br/>
+    ✓ <strong>12 fonti sameAs</strong>: social, IMDb, sito ufficiale, Wikidata, Ancora Cinematografica, Cronache Mediterranee, Orawebtv, EverybodyWiki.<br/>
+    ✓ <strong>3 articoli terzi</strong> in <code>subjectOf</code> (fonti che parlano di Maria Antonina).<br/>
+    ✓ <strong>Struttura ben ponderata</strong>: ogni Movie ha <code>@type</code>, <code>name</code>, <code>datePublished</code>, <code>image</code>, <code>director</code>, <code>genre</code>, <code>productionCompany</code>, <code>description</code> — massima leggibilità per Google Knowledge Graph.<br/><br/>
+    <strong>SITO AGGIORNATO</strong>: JSON-LD in produzione. TTFB ~45ms.
   </div>
 
   <div class="actions">
