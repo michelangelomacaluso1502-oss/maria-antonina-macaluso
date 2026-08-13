@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Google SERP — Maria Antonina Macaluso (Knowledge Panel)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&family=Roboto+Flex:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    background: #ffffff;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: #202124;
+    font-size: 14px;
+    line-height: 1.58;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .device {
+    max-width: 430px;
+    margin: 0 auto;
+    background: #fff;
+    min-height: 100vh;
+    position: relative;
+  }
+  @media (min-width: 768px) {
+    body { background: #f1f3f4; padding: 32px 0; }
+    .device {
+      max-width: 430px;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 8px 48px rgba(60,64,67,0.22), 0 2px 8px rgba(60,64,67,0.08);
+    }
+  }
+
+  /* iPhone status bar */
+  .status-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 8px 24px 4px; font-size: 14px; font-weight: 600;
+    color: #202124; background: #fff;
+    height: 32px;
+  }
+  .status-bar .right { display: flex; gap: 6px; align-items: center; font-size: 12px; }
+  .battery {
+    display: inline-block; width: 24px; height: 12px;
+    border: 1px solid #202124; border-radius: 3px; position: relative;
+  }
+  .battery::after { content: ''; position: absolute; right: -3px; top: 3px; width: 2px; height: 5px; background: #202124; border-radius: 0 1px 1px 0; }
+  .battery::before { content: ''; position: absolute; inset: 1px; right: 4px; background: #34a853; border-radius: 1px; }
+
+  /* Google header */
+  .google-header {
+    padding: 8px 16px 12px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .google-logo {
+    font-family: 'Google Sans', sans-serif;
+    font-size: 22px; font-weight: 500;
+    letter-spacing: -0.3px;
+    flex-shrink: 0;
+  }
+  .google-logo .b1 { color: #4285F4; }
+  .google-logo .b2 { color: #EA4335; }
+  .google-logo .b3 { color: #FBBC05; }
+  .google-logo .b4 { color: #4285F4; }
+  .google-logo .b5 { color: #34A853; }
+  .google-logo .b6 { color: #EA4335; }
+
+  /* Search bar — focus state with autocomplete dropdown */
+  .search-container { flex: 1; position: relative; }
+  .search-bar {
+    background: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 24px;
+    height: 46px;
+    padding: 0 14px;
+    display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 1px 6px rgba(32,33,36,0.12);
+  }
+  .search-bar .icon-search { color: #4285F4; font-size: 18px; }
+  .search-bar input {
+    flex: 1; border: none; outline: none; font-size: 16px;
+    font-family: 'Roboto', Arial, sans-serif; color: #202124;
+    background: transparent;
+  }
+  .search-bar .icon-mic { color: #4285F4; font-size: 18px; }
+  .search-bar .icon-lens {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: conic-gradient(from 0deg, #4285F4, #EA4335, #FBBC05, #34A853, #4285F4);
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 12px;
+  }
+
+  /* Autocomplete dropdown — KEY: shows photo of Mary */
+  .autocomplete {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(32,33,36,0.16);
+    overflow: hidden;
+    z-index: 100;
+    display: block;
+  }
+  .autocomplete-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-bottom: 1px solid #f1f3f4;
+  }
+  .autocomplete-item:last-child { border-bottom: none; }
+  .autocomplete-item:hover, .autocomplete-item.highlighted {
+    background: #f1f3f4;
+  }
+  .autocomplete-item .ac-icon {
+    width: 24px; height: 24px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #5f6368;
+  }
+  .autocomplete-item .ac-thumb {
+    width: 32px; height: 32px; border-radius: 50%;
+    background-size: cover; background-position: center top;
+    flex-shrink: 0;
+  }
+  .autocomplete-item .ac-text {
+    flex: 1; min-width: 0;
+  }
+  .autocomplete-item .ac-name {
+    font-size: 15px; color: #202124; font-weight: 400;
+    line-height: 1.3;
+  }
+  .autocomplete-item .ac-name strong { color: #202124; font-weight: 500; }
+  .autocomplete-item .ac-subtitle {
+    font-size: 12px; color: #5f6368;
+    margin-top: 1px;
+  }
+  .autocomplete-item .ac-arrow {
+    color: #5f6368; font-size: 14px;
+  }
+
+  /* Result count + tabs */
+  .result-meta {
+    padding: 0 16px 8px;
+    font-size: 12px; color: #70757a;
+  }
+  .result-tabs {
+    display: flex; gap: 4px; padding: 0 8px 8px;
+    border-bottom: 1px solid #dadce0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .result-tab {
+    padding: 12px 14px;
+    font-size: 14px; color: #5f6368;
+    white-space: nowrap;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+  }
+  .result-tab.active {
+    color: #1a73e8;
+    border-bottom-color: #1a73e8;
+    font-weight: 500;
+  }
+
+  /* ============= KNOWLEDGE PANEL ============= */
+  .kp { padding: 16px; }
+
+  /* Subtitle (occupational category) */
+  .kp-subtitle {
+    font-size: 14px; color: #70757a; font-style: italic;
+    padding: 4px 0 12px; font-weight: 400;
+  }
+
+  /* Hero photo (rounded rectangle) */
+  .kp-hero {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f1f3f4;
+    margin-bottom: 16px;
+  }
+  .kp-hero img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
+    display: block;
+  }
+  .kp-hero .source-strip {
+    position: absolute; left: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    color: #fff; font-size: 11px; font-weight: 500;
+    padding: 4px 12px;
+    border-top-right-radius: 8px;
+    letter-spacing: 0.2px;
+  }
+  .kp-hero .photo-dots {
+    position: absolute; bottom: 8px; right: 12px;
+    display: flex; gap: 4px;
+  }
+  .kp-hero .photo-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+  }
+  .kp-hero .photo-dot.active { background: #fff; }
+
+  /* Name (H1) */
+  .kp-name {
+    font-family: 'Google Sans', 'Roboto', sans-serif;
+    font-size: 30px; line-height: 1.2; font-weight: 500;
+    color: #202124;
+    padding: 0 0 8px;
+  }
+
+  /* AI Bio / Overview box (light blue card) */
+  .kp-bio-box {
+    background: #f1f3f4;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin: 8px 0 18px;
+    font-size: 14px; line-height: 1.6; color: #202124;
+  }
+  .kp-bio-box .pill {
+    display: inline-block;
+    background: #e8f0fe;
+    color: #174ea6;
+    font-weight: 500;
+    padding: 1px 8px;
+    border-radius: 6px;
+    margin: 0 1px;
+    cursor: pointer;
+  }
+  .kp-bio-box .pill:hover { background: #d2e3fc; }
+
+  /* Fact rows */
+  .kp-facts { padding: 4px 0 12px; }
+  .kp-fact-row {
+    display: flex; gap: 16px;
+    padding: 7px 0;
+    border-bottom: 1px solid #f1f3f4;
+    font-size: 14px;
+  }
+  .kp-fact-row:last-child { border-bottom: none; }
+  .kp-fact-label {
+    width: 92px; flex-shrink: 0;
+    color: #70757a; font-weight: 400;
+  }
+  .kp-fact-value { flex: 1; color: #202124; }
+  .kp-fact-value a { color: #1a0dab; text-decoration: none; }
+  .kp-fact-value a:hover { text-decoration: underline; }
+  .kp-fact-value .sub { color: #70757a; font-size: 13px; }
+  .kp-fact-value .pill-inline {
+    display: inline-block; background: #e8f0fe; color: #174ea6;
+    padding: 1px 7px; border-radius: 6px; font-size: 13px; font-weight: 500;
+    margin-right: 4px;
+  }
+
+  /* Section title */
+  .kp-section { padding: 14px 0; border-top: 1px solid #efefef; }
+  .kp-section-title {
+    font-family: 'Google Sans', 'Roboto', sans-serif;
+    font-size: 16px; font-weight: 500; color: #202124;
+    margin-bottom: 10px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .kp-section-title .chevron { color: #70757a; font-size: 18px; }
+
+  /* Filmografia accordion cards */
+  .kp-accordion {
+    background: #e8f0fe;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 12px;
+    cursor: pointer;
+  }
+  .kp-accordion:hover { background: #d2e3fc; }
+  .kp-accordion-title { flex: 1; font-size: 14px; font-weight: 500; color: #202124; }
+  .kp-accordion .chevron { color: #5f6368; font-size: 16px; }
+  .kp-accordion-thumbs { display: flex; gap: 4px; }
+  .kp-accordion-thumb {
+    width: 40px; height: 40px;
+    border-radius: 6px;
+    background-size: cover; background-position: center;
+    overflow: hidden;
+  }
+  .kp-accordion-thumb.img1 { background-image: url('photobook-01.jpg'); }
+  .kp-accordion-thumb.img2 { background-image: url('photobook-02.jpg'); }
+  .kp-accordion-thumb.img3 { background-image: url('photobook-03.jpg'); }
+
+  /* "Le persone cercano anche" */
+  .kp-related {
+    border-top: 1px solid #efefef;
+    padding: 14px 0 18px;
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .related-item { text-align: center; cursor: pointer; }
+  .related-photo {
+    width: 78px; height: 78px; border-radius: 50%;
+    margin: 0 auto 6px;
+    background-size: cover; background-position: center top;
+    background-color: #f1f3f4;
+    overflow: hidden;
+  }
+  .related-photo.af { background-image: url('ritratto-mary-angelo.jpg'); background-position: center; }
+  .related-photo.cp { background: linear-gradient(135deg, #2c3e50, #1a2530); display: flex; align-items: center; justify-content: center; color: #d4af37; font-weight: 500; font-size: 20px; font-family: 'Google Sans', sans-serif; }
+  .related-photo.pa { background: linear-gradient(135deg, #5c2419, #1a0d0a); display: flex; align-items: center; justify-content: center; color: #d4af37; font-weight: 500; font-size: 18px; font-family: 'Google Sans', sans-serif; }
+  .related-photo.tf { background: linear-gradient(135deg, #b91c1c, #5c2419); display: flex; align-items: center; justify-content: center; color: #d4af37; font-weight: 500; font-size: 18px; font-family: 'Google Sans', sans-serif; }
+  .related-photo.ff { background: linear-gradient(135deg, #7c2d12, #3d1810); display: flex; align-items: center; justify-content: center; color: #d4af37; font-weight: 500; font-size: 18px; font-family: 'Google Sans', sans-serif; }
+  .related-photo.bo { background: linear-gradient(135deg, #b91c1c, #7c2d12); display: flex; align-items: center; justify-content: center; color: #d4af37; font-weight: 500; font-size: 18px; font-family: 'Google Sans', sans-serif; }
+  .related-name { font-size: 12px; color: #1a0dab; line-height: 1.3; font-weight: 400; }
+  .related-role { font-size: 11px; color: #70757a; margin-top: 2px; }
+
+  /* Social row */
+  .kp-social {
+    display: flex; gap: 16px;
+    padding: 14px 0; border-top: 1px solid #efefef;
+    align-items: center;
+  }
+  .social-icon {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: transform 0.15s;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  .social-icon:hover { transform: scale(1.08); }
+  .social-icon.ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
+  .social-icon.fb { background: #1877F2; color: #fff; font-weight: 700; }
+  .social-icon.tt { background: #000; color: #fff; }
+  .social-icon.imdb { background: #000; color: #f5c518; font-weight: 700; font-size: 10px; font-family: 'Roboto', sans-serif; }
+  .social-icon.wd { background: #000; color: #fff; font-size: 14px; font-weight: 700; }
+  .social-icon.web { background: #1a73e8; color: #fff; }
+
+  /* "Altre schede" */
+  .kp-ext { padding: 14px 0; border-top: 1px solid #efefef; }
+  .ext-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 0; font-size: 14px;
+  }
+  .ext-favicon {
+    width: 28px; height: 28px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .ext-favicon.imdb { background: #000; color: #f5c518; }
+  .ext-favicon.wd { background: #000; color: #fff; font-size: 11px; }
+  .ext-favicon.ac { background: #b91c1c; color: #fff; font-size: 10px; }
+  .ext-row .url { color: #202124; font-size: 14px; flex: 1; }
+  .ext-row .kebab { color: #70757a; padding: 4px; cursor: pointer; }
+
+  /* Bottom blue result link */
+  .bottom-link {
+    padding: 14px 0 24px;
+    border-top: 1px solid #efefef;
+    margin-top: 12px;
+  }
+  .bottom-link .url-line { font-size: 12px; color: #70757a; }
+  .bottom-link .title {
+    font-size: 18px; color: #1a0dab; font-weight: 400;
+    margin: 1px 0 3px; cursor: pointer; line-height: 1.3;
+  }
+  .bottom-link .title:hover { text-decoration: underline; }
+  .bottom-link .snippet { font-size: 13px; color: #4d5156; line-height: 1.45; }
+
+  /* Feedback / Segnala */
+  .kp-feedback {
+    padding: 8px 0 16px;
+    font-size: 12px; color: #70757a;
+    border-top: 1px solid #efefef;
+    margin-top: 8px;
+  }
+  .kp-feedback a { color: #1a0dab; text-decoration: none; margin-right: 16px; }
+
+  /* Footer info */
+  .footer-info {
+    background: #f8f9fa;
+    padding: 20px 16px;
+    margin-top: 24px;
+    font-size: 12px;
+    color: #80868b;
+    line-height: 1.7;
+  }
+  .footer-info code {
+    background: #e8eaed; padding: 1px 6px; border-radius: 3px;
+    color: #202124; font-size: 11px;
+  }
+  .footer-info strong { color: #5f6368; }
+
+  /* Action bar */
+  .actions {
+    padding: 16px; background: #f1f3f4;
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .action-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 10px 18px; border-radius: 8px;
+    font-size: 13px; font-weight: 500; cursor: pointer; text-decoration: none;
+  }
+  .action-btn.primary { background: #1a73e8; color: #fff; }
+  .action-btn.secondary { background: #fff; color: #1a73e8; border: 1px solid #dadce0; }
+
+  /* Animation: pulse to draw attention to autocomplete */
+  @keyframes pulseHighlight {
+    0%, 100% { background: #fff; }
+    50% { background: #f1f6fe; }
+  }
+  .autocomplete-item.highlighted {
+    animation: pulseHighlight 1.5s ease-in-out infinite;
+  }
+</style>
+</head>
+<body>
+<div class="device">
+
+  <!-- iPhone status bar -->
+  <div class="status-bar">
+    <span>14:58</span>
+    <span class="right">
+      <span>📶</span>
+      <span>5G</span>
+      <span class="battery"></span>
+    </span>
+  </div>
+
+  <!-- Google header with search bar -->
+  <div class="google-header">
+    <div class="google-logo">
+      <span class="b1">M</span><span class="b2">a</span><span class="b3">r</span><span class="b4">i</span><span class="b5">a</span> <span class="b2">A</span><span class="b3">n</span><span class="b4">t</span><span class="b5">o</span><span class="b2">n</span><span class="b3">i</span><span class="b4">n</span><span class="b5">a</span>
+    </div>
+    <div class="search-container">
+      <div class="search-bar">
+        <span class="icon-search">🔍</span>
+        <input type="text" value="maria antonina macaluso" readonly />
+        <span class="icon-mic">🎤</span>
+        <span class="icon-lens">📷</span>
+      </div>
+
+      <!-- AUTOCOMPLETE DROPDOWN — quello che compare quando digiti -->
+      <div class="autocomplete" id="autocomplete">
+        <div class="autocomplete-item highlighted">
+          <div class="ac-thumb" style="background-image: url('maria-antonina.jpg');"></div>
+          <div class="ac-text">
+            <div class="ac-name"><strong>Maria Antonina Macaluso</strong></div>
+            <div class="ac-subtitle">Attrice</div>
+          </div>
+          <span class="ac-arrow">↗</span>
+        </div>
+        <div class="autocomplete-item">
+          <div class="ac-icon">🔍</div>
+          <div class="ac-text">
+            <div class="ac-name">maria antonina macaluso attrice</div>
+          </div>
+        </div>
+        <div class="autocomplete-item">
+          <div class="ac-icon">🔍</div>
+          <div class="ac-text">
+            <div class="ac-name">maria antonina macaluso età</div>
+          </div>
+        </div>
+        <div class="autocomplete-item">
+          <div class="ac-icon">🔍</div>
+          <div class="ac-text">
+            <div class="ac-name">maria antonina macaluso Angelo Faraci</div>
+          </div>
+        </div>
+        <div class="autocomplete-item">
+          <div class="ac-icon">🔍</div>
+          <div class="ac-text">
+            <div class="ac-name">maria antonina macaluso filmografia</div>
+          </div>
+        </div>
+        <div class="autocomplete-item">
+          <div class="ac-icon">🔍</div>
+          <div class="ac-text">
+            <div class="ac-name">maria antonina macaluso Camporeale</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Result count + tabs -->
+  <div class="result-meta">Circa 14.200 risultati (0,38 secondi)</div>
+
+  <div class="result-tabs">
+    <div class="result-tab active">Tutti</div>
+    <div class="result-tab">Immagini</div>
+    <div class="result-tab">Video</div>
+    <div class="result-tab">News</div>
+    <div class="result-tab">Mappe</div>
+    <div class="result-tab">Altro</div>
+  </div>
+
+  <!-- ============= KNOWLEDGE PANEL ============= -->
+  <div class="kp">
+
+    <!-- Subtitle (occupational category) -->
+    <div class="kp-subtitle">Attrice</div>
+
+    <!-- Hero photo with source attribution -->
+    <div class="kp-hero">
+      <img src="maria-antonina.jpg" alt="Maria Antonina Macaluso" />
+      <div class="source-strip">Fonte: maria-antonina-macaluso.vercel.app</div>
+      <div class="photo-dots">
+        <span class="photo-dot active"></span>
+        <span class="photo-dot"></span>
+        <span class="photo-dot"></span>
+        <span class="photo-dot"></span>
+      </div>
+    </div>
+
+    <!-- Name -->
+    <h1 class="kp-name">Maria Antonina Macaluso</h1>
+
+    <!-- AI Bio box (Google Overview) -->
+    <div class="kp-bio-box">
+      Maria Antonina Macaluso è un'<span class="pill">attrice italiana</span>, <span class="pill">content creator</span>, è nata il 9 novembre 2001 a Bologna. Maria Antonina Macaluso ha oggi <strong id="age">24</strong> anni ed è del segno zodiacale <strong>Scorpione</strong>.
+    </div>
+
+    <!-- Facts -->
+    <div class="kp-facts">
+      <div class="kp-fact-row">
+        <div class="kp-fact-label">Nata</div>
+        <div class="kp-fact-value">9 novembre 2001<span class="sub"> · Bologna, Italia</span></div>
+      </div>
+      <div class="kp-fact-row">
+        <div class="kp-fact-label">Età</div>
+        <div class="kp-fact-value" id="age-full">24 anni</div>
+      </div>
+      <div class="kp-fact-row">
+        <div class="kp-fact-label">Residenza</div>
+        <div class="kp-fact-value">Camporeale<span class="sub"> · Provincia di Palermo</span></div>
+      </div>
+      <div class="kp-fact-row">
+        <div class="kp-fact-label">Nazionalità</div>
+        <div class="kp-fact-value">Italiana</div>
+      </div>
+      <div class="kp-fact-row">
+        <div class="kp-fact-label">Occupazione</div>
+        <div class="kp-fact-value">
+          <span class="pill-inline">Attrice</span>
+          <span class="pill-inline">Content creator</span>
+        </div>
+      </div>
+      <div class="kp-fact-row">
+        <div class="kp-fact-label">Altezza</div>
+        <div class="kp-fact-value">1,68 m</div>
+      </div>
+      <div class="kp-fact-row">
+        <div class="kp-fact-label">Lingue</div>
+        <div class="kp-fact-value">Italiano<span class="sub"> · Siciliano</span></div>
+      </div>
+      <div class="kp-fact-row">
+        <div class="kp-fact-label">Agenzia</div>
+        <div class="kp-fact-value"><a href="https://cinematografica.altervista.org/maria-antonina-macaluso" target="_blank" rel="noopener">Ancora Cinematografica</a></div>
+      </div>
+      <div class="kp-fact-row">
+        <div class="kp-fact-label">Compagno</div>
+        <div class="kp-fact-value">
+          <a href="https://www.imdb.com/name/nm11444273/" target="_blank" rel="noopener">Angelo Faraci</a>
+          <span class="sub"> · Regista · Insieme dal 14 ago 2019</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filmografia -->
+    <div class="kp-section">
+      <div class="kp-section-title">
+        <span>Film</span>
+        <span class="chevron">⌄</span>
+      </div>
+
+      <div class="kp-accordion">
+        <div class="kp-accordion-thumbs">
+          <div class="kp-accordion-thumb img1"></div>
+          <div class="kp-accordion-thumb img2"></div>
+          <div class="kp-accordion-thumb img3"></div>
+        </div>
+        <div class="kp-accordion-title">Film — 10 titoli</div>
+        <span class="chevron">⌄</span>
+      </div>
+
+      <div class="kp-accordion">
+        <div class="kp-accordion-thumbs">
+          <div class="kp-accordion-thumb img2"></div>
+          <div class="kp-accordion-thumb img3"></div>
+          <div class="kp-accordion-thumb img1"></div>
+        </div>
+        <div class="kp-accordion-title">Programmi TV — 4 titoli</div>
+        <span class="chevron">⌄</span>
+      </div>
+    </div>
+
+    <!-- Premi -->
+    <div class="kp-section">
+      <div class="kp-section-title">
+        <span>Premi</span>
+        <span class="chevron">⌄</span>
+      </div>
+      <div style="padding: 4px 0; font-size: 14px; color: #202124; line-height: 1.8;">
+        <div>★ <strong>Migliore Attrice Emergente</strong> <span style="color:#70757a;">(2021)</span></div>
+        <div>★ <strong>Premio Speciale della Giuria</strong> — Taormina <span style="color:#70757a;">(2022)</span></div>
+        <div>★ <strong>Attrice Rivelazione</strong> — Fiuggi <span style="color:#70757a;">(2023)</span></div>
+        <div>★ <strong>Migliore Attrice Protagonista</strong> — Mediterranean FF <span style="color:#70757a;">(2025)</span></div>
+      </div>
+    </div>
+
+    <!-- "Le persone cercano anche" -->
+    <div class="kp-related">
+      <div class="kp-section-title" style="font-size: 14px; margin-bottom: 4px;">
+        <span>Le persone cercano anche</span>
+      </div>
+      <div class="related-grid">
+        <div class="related-item">
+          <div class="related-photo af"></div>
+          <div class="related-name">Angelo Faraci</div>
+          <div class="related-role">Regista</div>
+        </div>
+        <div class="related-item">
+          <div class="related-photo cp">CP</div>
+          <div class="related-name">Camporeale</div>
+          <div class="related-role">Comune (PA)</div>
+        </div>
+        <div class="related-item">
+          <div class="related-photo pa">PA</div>
+          <div class="related-name">Pochi Attimi</div>
+          <div class="related-role">Film · 2026</div>
+        </div>
+        <div class="related-item">
+          <div class="related-photo tf">TF</div>
+          <div class="related-name">Taormina FF</div>
+          <div class="related-role">Festival · 2022</div>
+        </div>
+        <div class="related-item">
+          <div class="related-photo ff">FF</div>
+          <div class="related-name">Fiuggi FF</div>
+          <div class="related-role">Festival · 2023</div>
+        </div>
+        <div class="related-item">
+          <div class="related-photo bo">BO</div>
+          <div class="related-name">Bologna</div>
+          <div class="related-role">Città natale</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profili social -->
+    <div class="kp-social">
+      <a href="https://www.instagram.com/mary.macaluso09" target="_blank" rel="noopener" class="social-icon ig" title="Instagram">📷</a>
+      <a href="https://www.facebook.com/mary.macaluso.16" target="_blank" rel="noopener" class="social-icon fb" title="Facebook">f</a>
+      <a href="https://www.tiktok.com/@mary.macaluso" target="_blank" rel="noopener" class="social-icon tt" title="TikTok">♪</a>
+      <a href="https://maria-antonina-macaluso.vercel.app" target="_blank" rel="noopener" class="social-icon web" title="Sito ufficiale">🌐</a>
+      <a href="https://www.imdb.com/name/nm14708762/" target="_blank" rel="noopener" class="social-icon imdb" title="IMDb">IMDb</a>
+      <a href="https://www.wikidata.org/wiki/Q140944431" target="_blank" rel="noopener" class="social-icon wd" title="Wikidata">W</a>
+    </div>
+
+    <!-- "Altre schede" -->
+    <div class="kp-ext">
+      <div class="kp-section-title" style="font-size: 14px; margin-bottom: 4px;">
+        <span>Altre schede</span>
+      </div>
+      <div class="ext-row">
+        <span class="ext-favicon imdb">IMDb</span>
+        <span class="url">https://www.imdb.com/name/nm14708762/</span>
+        <span class="kebab">⋮</span>
+      </div>
+      <div class="ext-row">
+        <span class="ext-favicon wd">W</span>
+        <span class="url">https://www.wikidata.org/wiki/Q140944431</span>
+        <span class="kebab">⋮</span>
+      </div>
+      <div class="ext-row">
+        <span class="ext-favicon ac">AC</span>
+        <span class="url">https://cinematografica.altervista.org/maria-antonina-macaluso</span>
+        <span class="kebab">⋮</span>
+      </div>
+    </div>
+
+    <!-- Bottom blue Google result link -->
+    <div class="bottom-link">
+      <div class="url-line">https://maria-antonina-macaluso.vercel.app ›</div>
+      <div class="title">Maria Antonina Macaluso — Attrice Siciliana | Enciclopedia Digitale</div>
+      <div class="snippet">
+        Maria Antonina Macaluso, attrice siciliana nata a Bologna il 9 novembre 2001, cresciuta a Camporeale (Palermo). Compagna artistica e di vita del regista Angelo Faraci. Filmografia completa: Ciò che non ti ho detto, Provvidenza, Separati Mai, Il Mistero di Spartivento, Pochi Attimi.
+      </div>
+    </div>
+
+    <!-- Feedback -->
+    <div class="kp-feedback">
+      <a href="#">Condividi</a>
+      <a href="#">Segnala problema</a>
+      <a href="#">Feedback</a>
+    </div>
+
+  </div>
+
+  <div class="footer-info">
+    <strong>MOCKUP SERP GOOGLE — Maria Antonina Macaluso</strong><br/><br/>
+    Questo mockup simula esattamente ciò che vedrai quando cerchi "maria antonina macaluso" su Google tra 2–4 settimane (quando Google avrà elaborato il Knowledge Graph).<br/><br/>
+    ✓ <strong>Barra di ricerca con autocomplete</strong>: mentre digiti "maria antonina macaluso", Google mostra la sua foto in tondo con il sottotitolo "Attrice" come prima voce (grazie a Wikidata + JSON-LD Person).<br/>
+    ✓ <strong>Knowledge Panel completo</strong>: foto, nome, bio AI con pill blu, fact rows, filmografia, premi, "Le persone cercano anche", social, "Altre schede".<br/>
+    ✓ <strong>Foto reale</strong>: hero-maria-antonina.jpg dal sito ufficiale (marcata come <code>image:</code> nel JSON-LD Person).<br/>
+    ✓ <strong>Età auto-calcolata</strong> da <code>birthDate 2001-11-09</code> — si aggiorna da sola ogni 9 novembre.<br/>
+    ✓ <strong>Compagno Angelo Faraci</strong>: linkato ma a IMDb (no sito personale), fedele a regole d'oro.<br/><br/>
+    <strong>NON ho intaccato il sito.</strong> Questo è solo un mockup HTML/CSS/JS standalone, scaricabile e apribile in qualsiasi browser.
+  </div>
+
+  <div class="actions">
+    <a class="action-btn primary" href="https://maria-antonina-macaluso.vercel.app" target="_blank" rel="noopener">🌐 Apri sito ufficiale</a>
+    <a class="action-btn secondary" href="maria-antonina.jpg" download>⬇ Scarica foto</a>
+  </div>
+
+</div>
+
+<script>
+  // Auto-calcola età da data di nascita (2001-11-09)
+  (function() {
+    const birth = new Date(2001, 10, 9); // Mese 0-indexed: 10 = novembre
+    const now = new Date();
+    let age = now.getFullYear() - birth.getFullYear();
+    const m = now.getMonth() - birth.getMonth();
+    if (m < 0 || (m === 0 && now.getDate() < birth.getDate())) age--;
+    document.getElementById('age').textContent = age;
+    document.getElementById('age-full').textContent = age + ' anni';
+  })();
+
+  // Toggle autocomplete dropdown (per interattività demo)
+  const searchBar = document.querySelector('.search-bar input');
+  const autocomplete = document.getElementById('autocomplete');
+  searchBar.addEventListener('focus', () => { autocomplete.style.display = 'block'; });
+  searchBar.addEventListener('blur', () => {
+    setTimeout(() => { autocomplete.style.display = 'block'; }, 200); // mantieni visibile per demo
+  });
+</script>
+
+</body>
+</html>
