@@ -90,8 +90,7 @@ const personJsonLd = {
     "https://www.tiktok.com/@mary.macaluso",
     "https://www.imdb.com/name/nm14708762/",
     "https://maria-antonina-macaluso.vercel.app",
-    "https://www.wikidata.org/wiki/Q140944431",
-    "https://cinematografica.altervista.org/maria-antonina-macaluso",
+    "https://angelo-faraci.vercel.app",
   ],
   knowsAbout: [
     "Cinema",
@@ -123,13 +122,8 @@ const personJsonLd = {
     "@type": "Person",
     name: "Angelo Faraci",
     jobTitle: "Regista, Attore, Produttore",
-    birthDate: "1989-08-13",
-    birthPlace: { "@type": "Place", name: "Palermo, Italia" },
-    sameAs: [
-      "https://www.imdb.com/name/nm11444273/",
-      "https://www.tiktok.com/@angelofaraci4",
-      "https://it.everybodywiki.com/Angelo_Faraci_(Attore)",
-    ],
+    url: "https://angelo-faraci.vercel.app",
+    sameAs: "https://www.imdb.com/name/nm11444273/",
   },
   performerIn: [
     {

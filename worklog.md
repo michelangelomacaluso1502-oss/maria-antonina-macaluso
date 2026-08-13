@@ -4016,3 +4016,33 @@ Stage Summary:
 - Angelo Faraci presente nel pannello come partner (con tutte le info: nascita, data incontro, 10 film condivisi) MA con link solo a fonti terze
 - Zero menzioni di angelo-faraci.vercel.app in tutto il mockup
 - Pronto per eventuale applicazione reale sul JSON-LD del sito (fase successiva su richiesta utente)
+
+---
+Task ID: KP-MAM-1
+Agent: Super Z (main)
+Task: Ripristinare sito Maria Antonina dopo modifiche errate + creare Knowledge Panel mockup specchiato su quello reale di Angelo Faraci (mobile, foto, età auto-aggiornata, bio box, filmografia, premi, social, "Le persone cercano anche", "Altre schede")
+
+Work Log:
+- Analizzate 2 immagini caricate dall'utente (6048660077582945977.jpg = KP reale Angelo Faraci mobile; 6048660077582945978.jpg = autocomplete dropdown)
+- RIPRISTINO COMPLETO di 5 file del sito di Maria Antonina allo stato originale:
+  1. src/app/layout.tsx: sameAs con angelo-faraci.vercel.app + relatedTo con url + sameAs singoli
+  2. src/lib/data.ts: ANGELO_PROFILES con Enciclopedia digitale, ANGELO_FARACI.site, FAQ Angelo, COLLEGAMENTI_ESTERI, articolo Creo Kitchens
+  3. src/components/sections/AngeloFaraci.tsx: 2 pulsanti (Enciclopedia digitale + IMDb)
+  4. src/app/collaborazioni/page.tsx: CTA Enciclopedia digitale
+  5. src/app/angelo-faraci/page.tsx: subtitle con Enciclopedia digitale
+- Build + deploy Vercel produzione: 47s, 115 pagine
+- Verifica TTFB cache hit: 37-41ms (sotto target 38ms medio)
+- Verifica JSON-LD: sameAs e relatedTo ripristinati correttamente
+- Creato Knowledge Panel mockup standalone in /home/z/my-project/download/kp-maria-antonina/
+- Mockup specchiato 1:1 sul KP reale di Angelo Faraci (mobile view): search bar pill, subtitle "Attrice", hero photo rounded rect con "Fonte:" overlay, AI bio box con pill blu, fact rows (Nata/Età/Residenza/Nazionalità/Occupazione/Altezza/Lingue/Agenzia/Compagno), accordion Film/Programmi TV, sezione Premi, "Le persone cercano anche" con 6 entità, social icons (IG/FB/TT/Web/IMDb/Wikidata), "Altre schede" con IMDb/Wikidata/Ancora Cinematografica, bottom blue link con snippet
+- Età auto-calcolata via JavaScript da 2001-11-09 (si aggiornerà da sola ogni 9 novembre)
+- Foto: hero-maria-antonina.jpg copiata dal sito ufficiale (797x1280 verticale)
+- Rimosso vecchio mockup knowledge-panel-mockup.html (obsoleto)
+
+Stage Summary:
+- SITO RIPRISTINATO AL 100% — 0 modifiche residue, TTFB 37-41ms (cache HIT)
+- KNOWLEDGE PANEL MOCKUP creato in /home/z/my-project/download/kp-maria-antonina/index.html
+- Mockup è standalone HTML+CSS+JS, scaricabile, apre con doppio click
+- Specchiato sul formato reale Google KP mobile di Angelo Faraci
+- Età dinamica auto-aggiornante
+- Compagno Angelo Faraci presente come link (non card separata, fedele al KP di Angelo che non ha card partner)
