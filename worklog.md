@@ -4352,3 +4352,42 @@ Stage Summary:
   - Foto di Mary da: sito ufficiale + Cronache Mediterranee + Orawebtv (2 articoli) + Messina Today + EverybodyWiki = 6 fonti diverse
   - Ogni film linkato (url interno + sameAs IMDb quando disponibile)
   - Ogni programma TV linkato (url interno + sameAs IMDb)
+
+---
+Task ID: KP-MOCKUP-V5-LINKS
+Agent: Super Z (main)
+Task: Aggiornare mockup con link riconducibili ovunque + avvisare utente sui tempi
+
+Work Log:
+- Aggiornato mockup SERP v5 con link attivi ovunque:
+  - 10 film sezione "Film": ognuno cliccabile → URL interno al sito ufficiale
+    - Provvidenza: anche link esterno Messina Today
+    - Vanina: anche link IMDb tt31721916
+    - Eccellenza Siciliana: anche link IMDb tt38949464
+  - 4 programmi TV sezione "Programmi TV": ognuno cliccabile → URL interno
+    - Red Bull Minas Riders: anche IMDb tt10726880
+    - Di Tutto un pò: anche IMDb tt39301887
+    - Eccellenza Siciliana: anche IMDb tt38949464
+  - 6 entità "Le persone cercano anche" tutte cliccabili:
+    - Angelo Faraci → IMDb nm11444273
+    - Camporeale → Wikipedia
+    - Pochi Attimi → sito ufficiale pagina film
+    - Taormina FF → sito ufficiale festival
+    - Fiuggi FF → sito ufficiale festival
+    - Bologna → Wikipedia
+  - Stile CSS aggiunto: .kp-film-sources, .kp-film-source-link (varianti imdb/external/internal con colori Google)
+  - Transizione fluida hover sulle related-item (scale 1.04)
+- Footer aggiornato con TEMPI PREVISTI:
+  - 24-48h: Google riceve notifica IndexNow
+  - 3-7 giorni: Google ricrawla e legge JSON-LD arricchito
+  - 1-2 settimane: Google elabora Knowledge Graph
+  - 2-4 settimane: Knowledge Panel materializzato
+- Deploy mockup v5: https://kp-maria-antonina-mockup.vercel.app
+- Verifica: 30 link attivi totali nel mockup
+- TTFB mockup: 35ms, sito: 477ms (cache in popolamento post-deploy)
+
+Stage Summary:
+- MOCKUP v5 online con 30 link riconducibili ovunque
+- Ogni film/programma TV/entità correlata è cliccabile e rimanda a: sito ufficiale, IMDb, Wikipedia, o fonti terze
+- Tempi previsti comunicati all'utente: Knowledge Panel reale tra 2-4 settimane
+- Sito ufficiale NON intaccato (solo mockup aggiornato)

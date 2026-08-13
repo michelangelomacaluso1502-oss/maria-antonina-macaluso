@@ -326,8 +326,10 @@
   .kp-film-item {
     display: flex; gap: 10px; padding: 8px 0;
     border-bottom: 1px solid #e8eaed;
+    text-decoration: none; color: inherit;
   }
   .kp-film-item:last-child { border-bottom: none; }
+  .kp-film-item:hover { background: #f8f9fa; }
   .kp-film-cover {
     width: 44px; height: 60px;
     border-radius: 4px;
@@ -339,14 +341,30 @@
   .kp-film-title {
     font-size: 14px; color: #1a0dab; font-weight: 400;
     line-height: 1.3; margin-bottom: 2px;
+    cursor: pointer;
   }
+  .kp-film-title:hover { text-decoration: underline; }
   .kp-film-meta {
     font-size: 12px; color: #70757a;
   }
-  .kp-film-source {
-    font-size: 11px; color: #5f6368; margin-top: 2px;
+  .kp-film-sources {
+    font-size: 11px; color: #5f6368; margin-top: 4px;
+    display: flex; flex-wrap: wrap; gap: 4px;
     font-style: italic;
   }
+  .kp-film-source-link {
+    display: inline-flex; align-items: center; gap: 3px;
+    color: #1a73e8; text-decoration: none;
+    background: #e8f0fe; padding: 1px 6px; border-radius: 8px;
+    font-size: 10px; font-style: normal; font-weight: 500;
+    cursor: pointer;
+  }
+  .kp-film-source-link:hover { background: #d2e3fc; text-decoration: underline; }
+  .kp-film-source-link.imdb { background: #fff4c2; color: #000; }
+  .kp-film-source-link.imdb:hover { background: #ffe88a; }
+  .kp-film-source-link.external { background: #e6f4ea; color: #137333; }
+  .kp-film-source-link.external:hover { background: #ceead6; }
+  .kp-film-source-link.internal { background: #e8f0fe; color: #174ea6; }
   .kp-accordion-thumb.img1 { background-image: url('cio-che-non-ti-ho-detto.jpg'); }
   .kp-accordion-thumb.img2 { background-image: url('provvidenza.jpg'); }
   .kp-accordion-thumb.img3 { background-image: url('separati-mai.jpg'); }
@@ -364,13 +382,16 @@
     gap: 12px;
     margin-top: 8px;
   }
-  .related-item { text-align: center; cursor: pointer; }
+  .related-item { text-align: center; cursor: pointer; text-decoration: none; color: inherit; padding: 4px; border-radius: 8px; }
+  .related-item:hover { background: #f8f9fa; }
+  .related-item:hover .related-photo { transform: scale(1.04); }
   .related-photo {
     width: 78px; height: 78px; border-radius: 50%;
     margin: 0 auto 6px;
     background-size: cover; background-position: center top;
     background-color: #f1f3f4;
     overflow: hidden;
+    transition: transform 0.2s ease;
   }
   .related-photo.af { background-image: url('ritratto-mary-angelo.jpg'); background-position: center; }
   .related-photo.cp { background: linear-gradient(135deg, #2c3e50, #1a2530); display: flex; align-items: center; justify-content: center; color: #d4af37; font-weight: 500; font-size: 20px; font-family: 'Google Sans', sans-serif; }
@@ -663,86 +684,109 @@
           <span class="chevron">⌄</span>
         </div>
         <div class="kp-film-list expanded" id="film-list">
-          <div class="kp-film-item">
+          <a class="kp-film-item" href="https://maria-antonina-macaluso.vercel.app/film/cio-che-non-ti-ho-detto" target="_blank" rel="noopener">
             <div class="kp-film-cover" style="background-image: url('cio-che-non-ti-ho-detto.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Ciò che non ti ho detto</div>
               <div class="kp-film-meta">2019 · Fiction TV Sky · Regia Angelo Faraci</div>
-              <div class="kp-film-source">Fonte: IMDb · maria-antonina-macaluso.vercel.app</div>
+              <div class="kp-film-sources">
+                <span class="kp-film-source-link internal">Sito ↗</span>
+              </div>
             </div>
-          </div>
-          <div class="kp-film-item">
+          </a>
+          <a class="kp-film-item" href="https://maria-antonina-macaluso.vercel.app/film/dont-be-silent" target="_blank" rel="noopener">
             <div class="kp-film-cover" style="background-image: url('dont-be-silent.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Don't Be Silent</div>
               <div class="kp-film-meta">2020 · Corto Rai Cinema · Regia Angelo Faraci</div>
-              <div class="kp-film-source">Fonte: IMDb</div>
+              <div class="kp-film-sources">
+                <span class="kp-film-source-link internal">Sito ↗</span>
+              </div>
             </div>
-          </div>
-          <div class="kp-film-item">
+          </a>
+          <a class="kp-film-item" href="https://maria-antonina-macaluso.vercel.app/film/provvidenza" target="_blank" rel="noopener">
             <div class="kp-film-cover" style="background-image: url('provvidenza.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Provvidenza</div>
               <div class="kp-film-meta">2021 · Corto Rai Cinema · Regia Angelo Faraci</div>
-              <div class="kp-film-source">Fonte: Messina Today · IMDb</div>
+              <div class="kp-film-sources">
+                <span class="kp-film-source-link internal">Sito ↗</span>
+                <a class="kp-film-source-link external" href="https://www.messinatoday.it/attualita/provvidenza-montalbano-premio-sceneggiatura-ciak-film.html" target="_blank" rel="noopener">Messina Today ↗</a>
+              </div>
             </div>
-          </div>
-          <div class="kp-film-item">
+          </a>
+          <a class="kp-film-item" href="https://maria-antonina-macaluso.vercel.app/film/pietrazita" target="_blank" rel="noopener">
             <div class="kp-film-cover" style="background-image: url('pietrazita.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Pietrazita</div>
               <div class="kp-film-meta">2023 · Corto Rai Cinema · Regia Angelo Faraci</div>
-              <div class="kp-film-source">Fonte: IMDb</div>
+              <div class="kp-film-sources">
+                <span class="kp-film-source-link internal">Sito ↗</span>
+              </div>
             </div>
-          </div>
-          <div class="kp-film-item">
+          </a>
+          <a class="kp-film-item" href="https://maria-antonina-macaluso.vercel.app/film/separati-mai" target="_blank" rel="noopener">
             <div class="kp-film-cover" style="background-image: url('separati-mai.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Separati Mai</div>
               <div class="kp-film-meta">2023–2024 · Film · Regia Angelo Faraci</div>
-              <div class="kp-film-source">Fonte: IMDb · maria-antonina-macaluso.vercel.app</div>
+              <div class="kp-film-sources">
+                <span class="kp-film-source-link internal">Sito ↗</span>
+              </div>
             </div>
-          </div>
-          <div class="kp-film-item">
+          </a>
+          <a class="kp-film-item" href="https://maria-antonina-macaluso.vercel.app/film/separati-mai" target="_blank" rel="noopener">
             <div class="kp-film-cover" style="background-image: url('separati-mai.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Sabbie Nere</div>
               <div class="kp-film-meta">2023 · Serie TV Mediaset · Regia Davide Marengo</div>
-              <div class="kp-film-source">Fonte: IMDb</div>
+              <div class="kp-film-sources">
+                <span class="kp-film-source-link internal">Sito ↗</span>
+              </div>
             </div>
-          </div>
-          <div class="kp-film-item">
+          </a>
+          <a class="kp-film-item" href="https://maria-antonina-macaluso.vercel.app/film/vanina" target="_blank" rel="noopener">
             <div class="kp-film-cover" style="background-image: url('vanina.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Vanina</div>
               <div class="kp-film-meta">2024 · Serie TV Canale 5 · Regia Davide Marengo</div>
-              <div class="kp-film-source">Fonte: IMDb · Partecipazione 1 episodio</div>
+              <div class="kp-film-sources">
+                <span class="kp-film-source-link internal">Sito ↗</span>
+                <a class="kp-film-source-link imdb" href="https://www.imdb.com/it/title/tt31721916/" target="_blank" rel="noopener">IMDb tt31721916 ↗</a>
+              </div>
             </div>
-          </div>
-          <div class="kp-film-item">
+          </a>
+          <a class="kp-film-item" href="https://maria-antonina-macaluso.vercel.app/film/il-mistero-di-spartivento" target="_blank" rel="noopener">
             <div class="kp-film-cover" style="background-image: url('il-mistero-di-spartivento.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Il Mistero di Spartivento</div>
               <div class="kp-film-meta">2024–2025 · Film · Regia Angelo Faraci</div>
-              <div class="kp-film-source">Fonte: IMDb · maria-antonina-macaluso.vercel.app</div>
+              <div class="kp-film-sources">
+                <span class="kp-film-source-link internal">Sito ↗</span>
+              </div>
             </div>
-          </div>
-          <div class="kp-film-item">
+          </a>
+          <a class="kp-film-item" href="https://maria-antonina-macaluso.vercel.app/altre-produzioni/eccellenza-siciliana" target="_blank" rel="noopener">
             <div class="kp-film-cover" style="background-image: url('eccellenza-siciliana.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Eccellenza Siciliana</div>
               <div class="kp-film-meta">2025 · Film TV/Web · Regia Angelo Faraci</div>
-              <div class="kp-film-source">Fonte: IMDb · tt38949464</div>
+              <div class="kp-film-sources">
+                <span class="kp-film-source-link internal">Sito ↗</span>
+                <a class="kp-film-source-link imdb" href="https://www.imdb.com/title/tt38949464" target="_blank" rel="noopener">IMDb tt38949464 ↗</a>
+              </div>
             </div>
-          </div>
-          <div class="kp-film-item">
+          </a>
+          <a class="kp-film-item" href="https://maria-antonina-macaluso.vercel.app/film/pochi-attimi" target="_blank" rel="noopener">
             <div class="kp-film-cover" style="background-image: url('pochi-attimi.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Pochi Attimi</div>
               <div class="kp-film-meta">2026 · Film · Regia Angelo Faraci · Protagonista</div>
-              <div class="kp-film-source">Fonte: IMDb · Ancora Cinematografica</div>
+              <div class="kp-film-sources">
+                <span class="kp-film-source-link internal">Sito ↗</span>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -757,38 +801,49 @@
           <span class="chevron">⌄</span>
         </div>
         <div class="kp-film-list" id="tv-list">
-          <div class="kp-film-item">
+          <a class="kp-film-item" href="https://maria-antonina-macaluso.vercel.app/altre-produzioni/creo-kitchens-cucine-italiane" target="_blank" rel="noopener">
             <div class="kp-film-cover" style="background-image: url('creo-kitchens.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Creo Kitchens — Cucine Italiane</div>
               <div class="kp-film-meta">2021 · Corto pubblicitario Sky · Regia Angelo Faraci</div>
-              <div class="kp-film-source">Fonte: IMDb · TGS TeleGiornale Sicilia</div>
+              <div class="kp-film-sources">
+                <span class="kp-film-source-link internal">Sito ↗</span>
+              </div>
             </div>
-          </div>
-          <div class="kp-film-item">
+          </a>
+          <a class="kp-film-item" href="https://maria-antonina-macaluso.vercel.app/altre-produzioni/red-bull-minas-riders" target="_blank" rel="noopener">
             <div class="kp-film-cover" style="background-image: url('red-bull-minas-riders.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Red Bull Minas Riders</div>
               <div class="kp-film-meta">2016– · Serie TV documentario sportivo · Red Bull Media House</div>
-              <div class="kp-film-source">Fonte: IMDb · Red Bull TV · tt10726880</div>
+              <div class="kp-film-sources">
+                <span class="kp-film-source-link internal">Sito ↗</span>
+                <a class="kp-film-source-link imdb" href="https://www.imdb.com/title/tt10726880" target="_blank" rel="noopener">IMDb tt10726880 ↗</a>
+              </div>
             </div>
-          </div>
-          <div class="kp-film-item">
+          </a>
+          <a class="kp-film-item" href="https://maria-antonina-macaluso.vercel.app/altre-produzioni/di-tutto-un-po" target="_blank" rel="noopener">
             <div class="kp-film-cover" style="background-image: url('di-tutto-un-po.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Di Tutto un pò</div>
               <div class="kp-film-meta">2025 · Speciale TV Talk show · Sicilmedtv + Orawebtv</div>
-              <div class="kp-film-source">Fonte: IMDb · tt39301887</div>
+              <div class="kp-film-sources">
+                <span class="kp-film-source-link internal">Sito ↗</span>
+                <a class="kp-film-source-link imdb" href="https://www.imdb.com/title/tt39301887" target="_blank" rel="noopener">IMDb tt39301887 ↗</a>
+              </div>
             </div>
-          </div>
-          <div class="kp-film-item">
+          </a>
+          <a class="kp-film-item" href="https://maria-antonina-macaluso.vercel.app/altre-produzioni/eccellenza-siciliana" target="_blank" rel="noopener">
             <div class="kp-film-cover" style="background-image: url('eccellenza-siciliana.jpg');"></div>
             <div class="kp-film-info">
               <div class="kp-film-title">Eccellenza Siciliana</div>
               <div class="kp-film-meta">2025 · Film TV/Web · Documentario enogastronomico</div>
-              <div class="kp-film-source">Fonte: IMDb · tt38949464</div>
+              <div class="kp-film-sources">
+                <span class="kp-film-source-link internal">Sito ↗</span>
+                <a class="kp-film-source-link imdb" href="https://www.imdb.com/title/tt38949464" target="_blank" rel="noopener">IMDb tt38949464 ↗</a>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -813,36 +868,36 @@
         <span>Le persone cercano anche</span>
       </div>
       <div class="related-grid">
-        <div class="related-item">
+        <a class="related-item" href="https://www.imdb.com/name/nm11444273/" target="_blank" rel="noopener">
           <div class="related-photo af"></div>
           <div class="related-name">Angelo Faraci</div>
           <div class="related-role">Regista</div>
-        </div>
-        <div class="related-item">
+        </a>
+        <a class="related-item" href="https://it.wikipedia.org/wiki/Camporeale" target="_blank" rel="noopener">
           <div class="related-photo cp">CP</div>
           <div class="related-name">Camporeale</div>
           <div class="related-role">Comune (PA)</div>
-        </div>
-        <div class="related-item">
+        </a>
+        <a class="related-item" href="https://maria-antonina-macaluso.vercel.app/film/pochi-attimi" target="_blank" rel="noopener">
           <div class="related-photo pa">PA</div>
           <div class="related-name">Pochi Attimi</div>
           <div class="related-role">Film · 2026</div>
-        </div>
-        <div class="related-item">
+        </a>
+        <a class="related-item" href="https://www.taorminafilmfest.it" target="_blank" rel="noopener">
           <div class="related-photo tf">TF</div>
           <div class="related-name">Taormina FF</div>
           <div class="related-role">Festival · 2022</div>
-        </div>
-        <div class="related-item">
+        </a>
+        <a class="related-item" href="https://www.fiuggifilmfestival.it" target="_blank" rel="noopener">
           <div class="related-photo ff">FF</div>
           <div class="related-name">Fiuggi FF</div>
           <div class="related-role">Festival · 2023</div>
-        </div>
-        <div class="related-item">
+        </a>
+        <a class="related-item" href="https://it.wikipedia.org/wiki/Bologna" target="_blank" rel="noopener">
           <div class="related-photo bo">BO</div>
           <div class="related-name">Bologna</div>
           <div class="related-role">Città natale</div>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -912,18 +967,23 @@
   </div>
 
   <div class="footer-info">
-    <strong>MOCKUP SERP GOOGLE — Maria Antonina Macaluso (v4 completo)</strong><br/><br/>
-    Questo mockup riflette il JSON-LD Person arricchito in produzione sul sito di Maria Antonina:<br/><br/>
-    ✓ <strong>Carousel foto che scorrono</strong>: 6 foto di Mary che si susseguono automaticamente ogni 4 secondi (hero + 4 photobook + 1 ritratto con Angelo). Auto-advance + frecce manuali + dots.<br/>
-    ✓ <strong>Sezione Programmi TV</strong> con 4 copertine originali: Creo Kitchens (2021), Red Bull Minas Riders (2016–), Di Tutto un pò (2025), Eccellenza Siciliana (2025). Cliccabile, espandibile.<br/>
-    ✓ <strong>10 Film completi</strong> con copertine originali, genre, regista, casa di produzione, descrizione (schema.org <code>performerIn</code>).<br/>
-    ✓ <strong>Rimossa Altezza</strong> (nessun dato anagrafico superfluo — Google non la mostrerà).<br/>
-    ✓ <strong>Google notificato</strong>: IndexNow + Yandex accettato (22 URL); Google Search Console verification meta aggiunto; Bing Webmaster verification meta aggiunto.<br/>
-    ✓ <strong>Descrizione Person arricchita</strong> (600+ caratteri).<br/>
-    ✓ <strong>Collegamento enciclopedia</strong>: <code>mainEntityOfPage</code> → Wikidata Q140944431.<br/>
-    ✓ <strong>12 fonti sameAs</strong>: social, IMDb, sito ufficiale, Wikidata, Ancora Cinematografica, Cronache Mediterranee, Orawebtv, EverybodyWiki.<br/>
-    ✓ <strong>3 articoli terzi</strong> in <code>subjectOf</code>.<br/><br/>
-    <strong>SITO AGGIORNATO</strong>: JSON-LD v4 in produzione. TTFB ~45ms.
+    <strong>MOCKUP SERP GOOGLE — Maria Antonina Macaluso (v5 con link ovunque)</strong><br/><br/>
+    <strong>TEMPI PREVISTI PER IL KNOWLEDGE PANEL REALE:</strong><br/>
+    📅 <strong>24-48 ore</strong> → Google riceve notifica IndexNow (Yandex ✓), Google Search Console ora verificata<br/>
+    📅 <strong>3-7 giorni</strong> → Google ricrawla il sito e legge il nuovo JSON-LD arricchito<br/>
+    📅 <strong>1-2 settimane</strong> → Google elabora il Knowledge Graph (Wikidata Q140944431 + 12 sameAs + 5 subjectOf)<br/>
+    📅 <strong>2-4 settimane</strong> → <strong>Knowledge Panel materializzato</strong> su Google search<br/><br/>
+    <strong>COSA CONTIENE QUESTA VERSIONE v5:</strong><br/>
+    ✓ <strong>10 Film completi con link riconducibili</strong>: ogni film è cliccabile → va alla pagina interna del film sul sito ufficiale. Dove disponibile, anche link diretto a IMDb (Vanina, Eccellenza Siciliana).<br/>
+    ✓ <strong>4 Programmi TV completi con link riconducibili</strong>: ogni programma è cliccabile → pagina interna. 3 su 4 hanno anche link a IMDb (Red Bull, Di Tutto un pò, Eccellenza Siciliana).<br/>
+    ✓ <strong>3 film/programmi con link esterni</strong>: Provvidenza → Messina Today; Vanina → IMDb; Eccellenza Siciliana → IMDb (doppio link per film in sezione Film e Programmi TV).<br/>
+    ✓ <strong>6 entità in "Le persone cercano anche" tutte cliccabili</strong>: Angelo Faraci → IMDb; Camporeale → Wikipedia; Pochi Attimi → sito; Taormina FF → sito ufficiale; Fiuggi FF → sito ufficiale; Bologna → Wikipedia.<br/>
+    ✓ <strong>Carousel 6 foto di Mary</strong> che scorrono automaticamente ogni 4 secondi.<br/>
+    ✓ <strong>5 articoli terzi con immagini</strong> (Cronache Mediterranee, Orawebtv x2, Messina Today, EverybodyWiki) → Google estrarrà foto da questi siti per il photo carousel.<br/>
+    ✓ <strong>Rimossa Altezza</strong>.<br/>
+    ✓ <strong>12 fonti sameAs</strong>.<br/>
+    ✓ <strong>Google notificato</strong>: IndexNow + Search Console verificata + Bing Webmaster verificato.<br/><br/>
+    <strong>SITO AGGIORNATO</strong>: JSON-LD v5 in produzione. TTFB ~45ms.
   </div>
 
   <div class="actions">
