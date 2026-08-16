@@ -4474,3 +4474,41 @@ Stage Summary:
 - TTFB 35ms (cache HIT, sotto target)
 - Build: 115 pagine statiche, 0 errori
 - UTENTE DEVE ANCORA: completare il claim flow (caricare selfie+documento + cliccare Invia)
+
+---
+Task ID: GUIDA-INDICIZZAZIONE-MANUALE
+Agent: Super Z (main)
+Task: Creare guida PDF per forzare indicizzazione manuale su Google Search Console (10 URL principali)
+
+Work Log:
+- Creato script Python ReportLab: /home/z/my-project/scripts/guida-indicizzazione-manuale.py
+- PDF generato: /home/z/my-project/download/guida-indicizzazione-manuale.pdf (108.2 KB)
+- Contenuto guida:
+  - Cover cinematografica (noir + oro, monogramma M·A·M)
+  - TOC navigabile
+  - 8 sezioni: Introduzione, Prerequisiti, Accesso Search Console, Ispezione URL, Lista 10 URL completi, Post-richiesta (tempi + monitoraggio + troubleshooting), Invio sitemap, Checklist finale
+  - Tabelle: 10 URL con descrizione, 3 scenari ispezione, 5 fasi temporali, 6 problemi comuni
+  - Lista completa 10 URL con path, descrizione e istruzioni specifiche
+  - Checklist stampabile con 16 voci
+- Tutti i 10 URL da ispezionare:
+  1. Homepage (/)
+  2. Biografia (/biografia)
+  3. Filmografia (/filmografia)
+  4. Collaborazioni (/collaborazioni)
+  5. Angelo Faraci (/angelo-faraci)
+  6. Contatti (/contatti)
+  7. FAQ (/faq)
+  8. Photo Book (/photobook)
+  9. Timeline (/timeline)
+  10. Premi (/premi)
+- Procedura step-by-step per ognuno: ispezione → verifica stato → richiesta indicizzazione
+- Tempo totale stimato: 30-40 minuti per 10 URL
+- Tempo indicizzazione Google: 24-48 ore per ogni URL richiesto
+- PDF salvato in /home/z/my-project/download/
+
+Stage Summary:
+- Guida PDF operativa creata e pronta per l'utente
+- Procedura completa per forzare indicizzazione 10 URL principali
+- Tempi ridotti da 3-7 giorni (crawl naturale) a 24-48 ore (richiesta manuale)
+- Include anche invio sitemap a Search Console per coprire 112 URL totali
+- Checklist stampabile con 16 voci
