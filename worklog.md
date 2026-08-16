@@ -4391,3 +4391,31 @@ Stage Summary:
 - Ogni film/programma TV/entità correlata è cliccabile e rimanda a: sito ufficiale, IMDb, Wikipedia, o fonti terze
 - Tempi previsti comunicati all'utente: Knowledge Panel reale tra 2-4 settimane
 - Sito ufficiale NON intaccato (solo mockup aggiornato)
+
+---
+Task ID: KP-RIVENDICA-GUIDA
+Agent: Super Z (main)
+Task: Creare guida PDF operativa per rivendicare il Knowledge Panel Google di Maria Antonina Macaluso
+
+Work Log:
+- Letto screenshots utente (4 immagini: 3 desktop + 1 mobile) → confermato Knowledge Panel base già attivo
+- Identificata opzione "Rivendica scheda informativa" nello screenshot 2 → pannello rivendicabile
+- Creato script Python ReportLab: /home/z/my-project/scripts/guida-rivendica-kp.py (780+ righe)
+- PDF generato: /home/z/my-project/download/guida-rivendica-knowledge-panel.pdf (94.6 KB, 32 pagine)
+- Contenuto guida:
+  - Cover cinematografica (noir + oro, monogramma M·A·M)
+  - TOC navigabile
+  - 9 sezioni: Introduzione, Step 1 prerequisiti, Step 2 ricerca Google, Step 3 compilazione, Step 4 verifica avanzata, Step 5 post-verifica, Risoluzione problemi, Tempi, Checklist
+  - Tabelle: prerequisiti social, menu opzioni, campi anagrafici, metodi di verifica, timeline 14 fasi
+  - Checklist finale stampabile con 21 voci
+  - Contatti utili Google Search Console Help
+- Verifica PDF: 32 pagine, font embedded, metadata corretti, cover full-bleed
+- PDF salvato in /home/z/my-project/download/ (scaricabile)
+
+Stage Summary:
+- Guida operativa completa creata e pronta per l'utente
+- Procedura step-by-step con tempi precisi per ogni fase
+- Tabella timeline 14 fasi con stato (✓ completato / ⏳ in attesa)
+- Checklist stampabile 21 voci
+- Prerequisiti verificati (Search Console già configurato, dominio verificato)
+- Tempi previsti: 30 minuti lavoro + 1-7 giorni verifica Google + 24-48h propagazione = 2 settimane totale
