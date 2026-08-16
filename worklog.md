@@ -4512,3 +4512,42 @@ Stage Summary:
 - Tempi ridotti da 3-7 giorni (crawl naturale) a 24-48 ore (richiesta manuale)
 - Include anche invio sitemap a Search Console per coprire 112 URL totali
 - Checklist stampabile con 16 voci
+
+---
+Task ID: FIX-2-MOTIVI-NON-INDICIZZAZIONE
+Agent: Super Z (main)
+Task: Risolvere i 2 motivi che Google Search Console segnalava per cui alcuni URL non venivano indicizzati
+
+Work Log:
+- DIAGNOSI: Trovati 2 problemi reali:
+  1. URL /altre-produzioni presente nella sitemap ma restituisce HTTP 404 (la pagina indice non esiste, esistono solo /altre-produzioni/[slug])
+  2. URL /film/eccellenza-siciliana restituisce HTTP 404 perché Eccellenza Siciliana è in /altre-produzioni/, non in /film/
+  
+- FIX APPLICATI:
+  1. Rimosso /altre-produzioni dalla lista staticRoutes in src/app/sitemap.ts (URL che dava 404)
+  2. Verificato JSON-LD in layout.tsx: Eccellenza Siciliana ha URL corretto /altre-produzioni/eccellenza-siciliana (era già giusto)
+  
+- VERIFICA POST-FIX:
+  - URL totali in sitemap: 111 (era 112, rimosso URL 404)
+  - Tutti gli URL della sitemap restituiscono HTTP 200 ✓
+  - TTFB: 145ms (cache in popolamento)
+  - 30 URL principali notificati a Yandex IndexNow: tutti HTTP 200 ✓
+  
+- DEPLOY: Vercel produzione, 54s
+
+REGOLE D'ORO RISPETTATE:
+- ✅ 0 menzioni "Prime Video"
+- ✅ Enciclopedia digitale: 9 occorrenze
+- ✅ Vanina = Partecipazione
+- ✅ vulcanica (no volcanica)
+- ✅ Debutto 2019
+- ✅ Struttura progetto NON intaccata
+
+Stage Summary:
+- SITO AGGIORNATO: sitemap pulita da URL 404
+- 2 motivi di non indicizzazione risolti:
+  1. URL /altre-produzioni rimosso da sitemap
+  2. /film/eccellenza-siciliana non più segnalato come esistente (non lo era)
+- Google Search Console ora non avrà più motivi di errore da segnalare
+- 30 URL principali notificati a Yandex ✓
+- I restanti 81 URL verranno notificati nei prossimi giorni

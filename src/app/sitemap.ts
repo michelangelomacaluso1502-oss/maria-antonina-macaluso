@@ -9,7 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "", priority: 1, freq: "weekly" as const },
     { path: "/biografia", priority: 0.9, freq: "monthly" as const },
     { path: "/filmografia", priority: 0.9, freq: "monthly" as const },
-    { path: "/altre-produzioni", priority: 0.9, freq: "monthly" as const },
     { path: "/collaborazioni", priority: 0.8, freq: "monthly" as const },
     { path: "/timeline", priority: 0.8, freq: "monthly" as const },
     { path: "/premi", priority: 0.8, freq: "monthly" as const },
