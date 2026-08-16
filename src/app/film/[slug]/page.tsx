@@ -21,6 +21,7 @@ import {
   Users,
   Newspaper,
 } from "lucide-react";
+import SeoBoost from "@/components/site/SeoBoost";
 
 export const dynamicParams = false;
 
@@ -84,6 +85,13 @@ export default async function FilmPage({
 
   return (
     <main id="main">
+      <SeoBoost
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Filmografia", path: "/filmografia" },
+          { label: film.title },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(movieJsonLd) }}

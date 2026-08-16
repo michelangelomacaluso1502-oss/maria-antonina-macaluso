@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
 import AngeloFaraci from "@/components/sections/AngeloFaraci";
 import { ANGELO_FARACI } from "@/lib/data";
+import SeoBoost from "@/components/site/SeoBoost";
 
 export const metadata: Metadata = {
   title: "Angelo Faraci",
@@ -13,6 +14,12 @@ export const metadata: Metadata = {
 export default function AngeloFaraciPage() {
   return (
     <main id="main">
+      <SeoBoost
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Angelo Faraci" },
+        ]}
+      />
       <PageHero
         eyebrow="Angelo Faraci"
         title="Regista, Attore, Produttore"

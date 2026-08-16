@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
 import Filmography from "@/components/sections/Filmography";
+import SeoBoost from "@/components/site/SeoBoost";
 
 export const metadata: Metadata = {
   title: "Filmografia",
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
 export default function FilmografiaPage() {
   return (
     <main id="main">
+      <SeoBoost
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Filmografia" },
+        ]}
+      />
       <PageHero
         eyebrow="Filmografia"
         title="Dieci produzioni, una visione"

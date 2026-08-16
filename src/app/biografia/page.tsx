@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
 import Biography from "@/components/sections/Biography";
+import SeoBoost from "@/components/site/SeoBoost";
 
 export const metadata: Metadata = {
   title: "Biografia",
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
 export default function BiografiaPage() {
   return (
     <main id="main">
+      <SeoBoost
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Biografia" },
+        ]}
+      />
       <PageHero
         eyebrow="Biografia"
         title="Otto capitoli di vita e di cinema"

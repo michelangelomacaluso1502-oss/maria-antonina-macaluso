@@ -5,6 +5,7 @@ import { Reveal } from "@/components/cinematic/Reveal";
 import { FILMS, ANGELO_FARACI } from "@/lib/data";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import SeoBoost from "@/components/site/SeoBoost";
 
 export const metadata: Metadata = {
   title: "Collaborazioni",
@@ -16,6 +17,12 @@ export const metadata: Metadata = {
 export default function CollaborazioniPage() {
   return (
     <main id="main">
+      <SeoBoost
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Collaborazioni" },
+        ]}
+      />
       <PageHero
         eyebrow="Collaborazioni"
         title="Il sodalizio artistico"

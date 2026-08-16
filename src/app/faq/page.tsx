@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
 import FAQ from "@/components/sections/FAQ";
+import SeoBoost from "@/components/site/SeoBoost";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
 export default function FAQPage() {
   return (
     <main id="main">
+      <SeoBoost
+        items={[
+          { label: "Home", path: "/" },
+          { label: "FAQ" },
+        ]}
+      />
       <PageHero
         eyebrow="FAQ"
         title="Domande frequenti"

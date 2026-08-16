@@ -3,6 +3,7 @@ import PageHero from "@/components/sections/PageHero";
 import { MULTIMEDIA } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
 import { Play, Images, ExternalLink } from "lucide-react";
+import SeoBoost from "@/components/site/SeoBoost";
 
 export const metadata: Metadata = {
   title: "Multimedia",
@@ -14,6 +15,12 @@ export const metadata: Metadata = {
 export default function MultimediaPage() {
   return (
     <main id="main">
+      <SeoBoost
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Multimedia" },
+        ]}
+      />
       <PageHero
         eyebrow="Multimedia"
         title="Video e gallerie"

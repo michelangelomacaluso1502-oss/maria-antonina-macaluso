@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
 import Contact from "@/components/sections/Contact";
+import SeoBoost from "@/components/site/SeoBoost";
 
 export const metadata: Metadata = {
   title: "Contatti",
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
 export default function ContattiPage() {
   return (
     <main id="main">
+      <SeoBoost
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Contatti" },
+        ]}
+      />
       <PageHero
         eyebrow="Contatti"
         title="Resta in contatto"

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
 import Timeline from "@/components/sections/Timeline";
+import SeoBoost from "@/components/site/SeoBoost";
 
 export const metadata: Metadata = {
   title: "Timeline",
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
 export default function TimelinePage() {
   return (
     <main id="main">
+      <SeoBoost
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Timeline" },
+        ]}
+      />
       <PageHero
         eyebrow="Timeline"
         title="2001 → 2026"

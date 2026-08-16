@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
 import Quotes from "@/components/sections/Quotes";
+import SeoBoost from "@/components/site/SeoBoost";
 
 export const metadata: Metadata = {
   title: "Citazioni",
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
 export default function CitazioniPage() {
   return (
     <main id="main">
+      <SeoBoost
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Citazioni" },
+        ]}
+      />
       <PageHero
         eyebrow="Citazioni"
         title="Parole che restano"

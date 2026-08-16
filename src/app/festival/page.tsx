@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
 import Festivals from "@/components/sections/Festivals";
+import SeoBoost from "@/components/site/SeoBoost";
 
 export const metadata: Metadata = {
   title: "Festival",
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
 export default function FestivalPage() {
   return (
     <main id="main">
+      <SeoBoost
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Festival" },
+        ]}
+      />
       <PageHero
         eyebrow="Festival"
         title="Nove presenze nei festival"

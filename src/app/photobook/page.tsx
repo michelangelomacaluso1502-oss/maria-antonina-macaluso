@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
 import PhotoBook from "@/components/sections/PhotoBook";
+import SeoBoost from "@/components/site/SeoBoost";
 
 export const metadata: Metadata = {
   title: "Photo Book",
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
 export default function PhotoBookPage() {
   return (
     <main id="main">
+      <SeoBoost
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Photo Book" },
+        ]}
+      />
       <PageHero
         eyebrow="Photo Book"
         title="Ottantatré scatti"

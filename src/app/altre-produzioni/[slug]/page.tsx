@@ -6,6 +6,7 @@ import { ALTRE_PRODUZIONI } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
 import BackToTop from "@/components/cinematic/BackToTop";
 import { ArrowLeft, ExternalLink, Film, Calendar, User, Clapperboard, Tag } from "lucide-react";
+import SeoBoost from "@/components/site/SeoBoost";
 
 export const dynamicParams = false;
 
@@ -56,6 +57,13 @@ export default async function AltraProduzionePage({
 
   return (
     <main id="main" className="bg-noire min-h-screen pt-28">
+      <SeoBoost
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Altre Produzioni", path: "/#altre-produzioni" },
+          { label: opera.title },
+        ]}
+      />
       <div className="cinematic-container">
         {/* Breadcrumb */}
         <Reveal className="mb-6">

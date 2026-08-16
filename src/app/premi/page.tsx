@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
 import Awards from "@/components/sections/Awards";
+import SeoBoost from "@/components/site/SeoBoost";
 
 export const metadata: Metadata = {
   title: "Premi",
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
 export default function PremiPage() {
   return (
     <main id="main">
+      <SeoBoost
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Premi" },
+        ]}
+      />
       <PageHero
         eyebrow="Premi"
         title="Sette riconoscimenti"

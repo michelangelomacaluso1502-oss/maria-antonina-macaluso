@@ -3,6 +3,7 @@ import PageHero from "@/components/sections/PageHero";
 import { COLLEGAMENTI_ESTERI } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
 import { ExternalLink } from "lucide-react";
+import SeoBoost from "@/components/site/SeoBoost";
 
 export const metadata: Metadata = {
   title: "Collegamenti esteri",
@@ -14,6 +15,12 @@ export const metadata: Metadata = {
 export default function CollegamentiEsteriPage() {
   return (
     <main id="main">
+      <SeoBoost
+        items={[
+          { label: "Home", path: "/" },
+          { label: "Collegamenti Esteri" },
+        ]}
+      />
       <PageHero
         eyebrow="Collegamenti esteri"
         title="Link verificati"
