@@ -1064,6 +1064,14 @@ export const TIMELINE: TimelineEvent[] = [
     sourceUrl: "https://www.infobelice.it/2025/12/20/la-valle-del-belice-raccontata-dal-cinema-la-camporealese-maria-antonina-macaluso-nel-film-pochi-attimi-di-angelo-faraci",
     sourceName: "InfoBelice",
   },
+  {
+    year: "2026",
+    title: "VENEZIA 83 — Premio Leone Lungo a Pochi Attimi",
+    description:
+      "Il 6 settembre 2026 il film Pochi Attimi, diretto da Angelo Faraci con Maria Antonina Macaluso protagonista femminile, riceve il Premio Speciale 'Leone Lungo' nell'ambito degli eventi collaterali della 83ª Mostra del Cinema di Venezia. La presentazione nazionale di esclusiva si è tenuta presso l'Area Hospitality Maxafilm, Hotel Excelsior, Lido di Venezia. Il premio, ideato da Donato Pugliese (Presidente Maxa Film srl) con l'associazione di terzo settore Le Stelle del Sud, mette in risalto il lungometraggio italiano che più si è distinto come progetto storico-culturale. Il film è dedicato alle Catastrofi ambientali Italiane e al valore reale della vita.",
+    sourceUrl: "https://www.cinemaitaliano.info/news/92951/venezia-83-a-pochi-attimi-il-premio-leone.html",
+    sourceName: "Cinema Italiano",
+  },
 ];
 
 export interface Award {
@@ -1114,6 +1122,15 @@ export const AWARDS: Award[] = [
     sourceUrl: "https://www.messinatoday.it/social/angelo-faraci-premio-miglior-regia-ciakfilmfestival-fiuggi.html",
     sourceName: "MessinaToday",
   },
+  {
+    year: "2026",
+    title: "Premio Speciale Leone Lungo",
+    org: "83ª Mostra del Cinema di Venezia — Evento collaterale Maxa Film",
+    description:
+      "Il film Pochi Attimi, diretto da Angelo Faraci con Maria Antonina Macaluso come attrice protagonista femminile, riceve il Premio Speciale 'Leone Lungo' nell'ambito degli eventi collaterali della 83ª Mostra Internazionale d'Arte Cinematografica di Venezia. La presentazione nazionale di esclusiva si è tenuta il 6 settembre 2026 presso l'Area Hospitality Maxafilm, Hotel Excelsior, Lido di Venezia. Il premio, ideato da Donato Pugliese (Presidente Maxa Film srl) con l'associazione di terzo settore Le Stelle del Sud, mette in risalto il lungometraggio italiano che più si è distinto come progetto storico-culturale. Il film è dedicato alle Catastrofi ambientali Italiane e al valore reale della vita.",
+    sourceUrl: "https://www.cinemaitaliano.info/news/92951/venezia-83-a-pochi-attimi-il-premio-leone.html",
+    sourceName: "Cinema Italiano",
+  },
 ];
 
 export interface Festival {
@@ -1154,6 +1171,13 @@ export const FESTIVALS: Festival[] = [
     location: "Fiuggi",
     note: "Premio Migliore Regia ad Angelo Faraci per Pietrazita. Maria Antonina sul red carpet.",
     sourceUrl: "https://www.messinatoday.it/social/angelo-faraci-premio-miglior-regia-ciakfilmfestival-fiuggi.html",
+  },
+  {
+    year: "2026",
+    name: "83ª Mostra Internazionale d'Arte Cinematografica di Venezia",
+    location: "Lido di Venezia — Hotel Excelsior",
+    note: "Pochi Attimi riceve il Premio Speciale 'Leone Lungo' nell'ambito degli eventi collaterali. Presentazione nazionale di esclusiva il 6 settembre 2026, Area Hospitality Maxafilm. Maria Antonina Macaluso protagonista femminile del film diretto da Angelo Faraci.",
+    sourceUrl: "https://www.cinemaitaliano.info/news/92951/venezia-83-a-pochi-attimi-il-premio-leone.html",
   },
 ];
 
@@ -1198,6 +1222,14 @@ export const ARTICLES: Article[] = [
     date: "2023-06-12",
     excerpt:
       "Maria Antonina Macaluso attrice divenuta nota dal successo Rai Provvidenza accanto proprio al compagno Angelo tra i presenti a Fiuggi.",
+  },
+  {
+    title: "VENEZIA 83 — A 'Pochi Attimi' il Premio Leone Lungo",
+    source: "Cinema Italiano",
+    url: "https://www.cinemaitaliano.info/news/92951/venezia-83-a-pochi-attimi-il-premio-leone.html",
+    date: "2026-08-16",
+    excerpt:
+      "Il film Pochi Attimi per la regia di Angelo Faraci, con Maria Antonina Macaluso protagonista femminile, è il progetto prescelto e premiato il 6 settembre 2026 nell'ambito degli eventi collaterali della 83ª Mostra del Cinema di Venezia. Presentazione nazionale di esclusiva all'Hotel Excelsior, Lido di Venezia.",
   },
   {
     title: "Pietrazita (2023), di Angelo Faraci",
