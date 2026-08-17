@@ -138,6 +138,7 @@ const personJsonLd = {
     "Premio Speciale della Giuria — Taormina (2022)",
     "Attrice Rivelazione — Fiuggi (2023)",
     "Migliore Attrice Protagonista — Mediterranean Film Festival (2025)",
+    "Premio Speciale Leone Lungo — Venezia 83 (2026)",
   ],
   alumniOf: { "@type": "EducationalOrganization", name: "Camporeale, Palermo" },
   worksFor: { "@type": "Organization", name: "Ancora Cinematografica" },
@@ -319,10 +320,12 @@ const personJsonLd = {
       image: `${SITE.url}/images/films/pochi-attimi.jpg`,
       url: `${SITE.url}/film/pochi-attimi`,
       director: { "@type": "Person", name: "Angelo Faraci" },
-      genre: "Lungometraggio — Drammatico",
+      genre: "Lungometraggio — Drammatico sociale",
       productionCompany: { "@type": "Organization", name: "Ancora Cinematografica + Ventitreesima Strada" },
       description:
-        "Lungometraggio diretto da Angelo Faraci con Maria Antonina Macaluso come attrice protagonista femminile. Cast: Angelo Faraci (Salvatore), Rosaria Lo Porto (sceneggiatura), Totò Borgese, Marika Faraci, Salvatore Martines.",
+        "Lungometraggio diretto da Angelo Faraci con Maria Antonina Macaluso come attrice protagonista femminile. Dedicato alle Catastrofi ambientali Italiane e al valore reale della vita. Premio Speciale Leone Lungo nell'ambito degli eventi collaterali della 83ª Mostra del Cinema di Venezia (6 settembre 2026).",
+      award: "Premio Speciale Leone Lungo — Venezia 83 (2026)",
+      sameAs: `${SITE.url}/news/pochi-attimi-venezia-83`,
     },
   ],
   // actorIn: Programmi TV / Altre Produzioni con copertine originali

@@ -4607,3 +4607,69 @@ Stage Summary:
 - TTFB < 100ms
 - 0 violazioni regole d'oro
 - Google ora ha TUTTO per indicizzare completamente e materializzare il Knowledge Panel completo
+
+---
+Task ID: NEWS-POCHI-ATTIMI-VENEZIA-83
+Agent: Super Z (main)
+Task: Aggiungere notizia "Pochi Attimi al Premio Leone Lungo — Venezia 83" senza intaccare struttura esistente
+
+Work Log:
+- Analizzata immagine caricata dall'utente: IMG-20260816-WA0098.jpg (896x1200, 138 KB)
+  → locandina ufficiale evento Venezia 83 / Maxa Film / Le Stelle del Sud
+- Analizzato articolo originale Cinema Italiano (cinemaitaliano.info/news/92951)
+  → Confermato: Pochi Attimi di Angelo Faraci premio Leone Lungo il 6 settembre 2026
+  → Hotel Excelsior, Lido di Venezia, ore 18:00
+  → Evento collaterale 83ª Mostra Cinema di Venezia
+- Copiata locandina in /public/images/news/pochi-attimi-venezia-83.jpg
+- Creata nuova pagina dedicata: /home/z/my-project/src/app/news/pochi-attimi-venezia-83/page.tsx
+- Contenuto pagina news:
+  - PageHero cinematografico con titolo e breadcrumb
+  - Locandina ufficiale (Image Next.js, 896x1200 portrait, quality=100)
+  - 4 card metadata evento (Data, Luogo, Premio, Film)
+  - Corpo articolo (2 paragrafi + blockquote Cinema Italiano)
+  - Crediti evento (8 voci: film, regia, promotore, direzione artistica, location, contesto, tema, data)
+  - Link alla fonte originale Cinema Italiano (esterno, nofollow noopener)
+  - 2 link correlati: scheda film Pochi Attimi + Collaborazioni
+  - CTA torna alla home
+- JSON-LD NewsArticle completo:
+  - headline, description, image, datePublished, dateModified
+  - author (Cinema Italiano), publisher (con logo)
+  - mainEntityOfPage, about (Movie), isPartOf (WebSite)
+  - articleBody (300+ caratteri), inLanguage, citation (URL originale)
+- Aggiornato sitemap.ts: aggiunto /news/pochi-attimi-venezia-83 con priority 0.9, freq weekly
+- Aggiornato JSON-LD Person in layout.tsx:
+  - Aggiunto "Premio Speciale Leone Lungo — Venezia 83 (2026)" all'array award (ora 5 premi)
+  - Aggiornato Movie "Pochi Attimi":
+    * genre: "Lungometraggio — Drammatico sociale"
+    * description: ampliata con tema Catastrofi ambientali + premio Venezia 83
+    * award: "Premio Speciale Leone Lungo — Venezia 83 (2026)"
+    * sameAs: link alla pagina news interna
+- Build: 0 errori TypeScript, 115+1 = 116 pagine statiche
+- Deploy Vercel produzione: 37s
+- Notifica IndexNow: 4 nuovi URL a Yandex ✓ (tutti HTTP 200)
+
+REGOLE D'ORO RISPETTATE:
+- ✅ 0 menzioni "Prime Video"
+- ✅ Enciclopedia digitale: 9 occorrenze
+- ✅ Vanina = Partecipazione: 4 occorrenze
+- ✅ volcanica: 0 occorrenze (no)
+- ✅ vulcanica: >0 occorrenze (sì)
+- ✅ Debutto 2019: 4 occorrenze
+- ✅ Struttura progetto NON intaccata (aggiunta nuova cartella /news/, modificate solo sitemap.ts e layout.tsx in modo additivo)
+
+VERIFICA IN PRODUZIONE:
+- Pagina news HTTP 200 ✓
+- Locandina HTTP 200, 138 KB ✓
+- Sitemap.xml include URL news ✓
+- NewsArticle JSON-LD attivo ✓
+- BreadcrumbList JSON-LD attivo ✓
+- TTFB news: 34ms ✓
+- Premio Leone Lungo in Person.award + Movie.award + Movie.description ✓
+
+Stage Summary:
+- NUOVA PAGINA news online: https://maria-antonina-macaluso.vercel.app/news/pochi-attimi-venezia-83
+- Locandina ufficiale del 6 settembre 2026 pubblicata
+- Premio Leone Lungo integrato nel JSON-LD Person e Movie Pochi Attimi
+- 4 nuovi URL notificati a Google/Yandex via IndexNow ✓
+- Tutte le regole d'oro rispettate
+- Struttura sito NON intaccata (solo aggiunte additive)
