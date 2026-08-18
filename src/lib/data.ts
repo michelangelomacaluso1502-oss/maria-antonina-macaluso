@@ -1066,9 +1066,9 @@ export const TIMELINE: TimelineEvent[] = [
   },
   {
     year: "2026",
-    title: "VENEZIA 83 — Premio Leone Lungo a Pochi Attimi",
+    title: "VENEZIA 83 — Pochi Attimi al Premio Leone Lungo (in programma)",
     description:
-      "Il 6 settembre 2026 il film Pochi Attimi, diretto da Angelo Faraci con Maria Antonina Macaluso protagonista femminile, riceve il Premio Speciale 'Leone Lungo' nell'ambito degli eventi collaterali della 83ª Mostra del Cinema di Venezia. La presentazione nazionale di esclusiva si è tenuta presso l'Area Hospitality Maxafilm, Hotel Excelsior, Lido di Venezia. Il premio, ideato da Donato Pugliese (Presidente Maxa Film srl) con l'associazione di terzo settore Le Stelle del Sud, mette in risalto il lungometraggio italiano che più si è distinto come progetto storico-culturale. Il film è dedicato alle Catastrofi ambientali Italiane e al valore reale della vita.",
+      "Il 6 settembre 2026 il film Pochi Attimi, diretto da Angelo Faraci con Maria Antonina Macaluso protagonista femminile, riceverà il Premio Speciale 'Leone Lungo' nell'ambito degli eventi collaterali della 83ª Mostra del Cinema di Venezia. La presentazione nazionale di esclusiva si terrà presso l'Area Hospitality Maxafilm, Hotel Excelsior, Lido di Venezia. Il premio, ideato da Donato Pugliese (Presidente Maxa Film srl) con l'associazione di terzo settore Le Stelle del Sud, mette in risalto il lungometraggio italiano che più si è distinto come progetto storico-culturale. Il film è dedicato alle Catastrofi ambientali Italiane e al valore reale della vita.",
     sourceUrl: "https://www.cinemaitaliano.info/news/92951/venezia-83-a-pochi-attimi-il-premio-leone.html",
     sourceName: "Cinema Italiano",
   },
@@ -1127,7 +1127,7 @@ export const AWARDS: Award[] = [
     title: "Premio Speciale Leone Lungo",
     org: "83ª Mostra del Cinema di Venezia — Evento collaterale Maxa Film",
     description:
-      "Il film Pochi Attimi, diretto da Angelo Faraci con Maria Antonina Macaluso come attrice protagonista femminile, riceve il Premio Speciale 'Leone Lungo' nell'ambito degli eventi collaterali della 83ª Mostra Internazionale d'Arte Cinematografica di Venezia. La presentazione nazionale di esclusiva si è tenuta il 6 settembre 2026 presso l'Area Hospitality Maxafilm, Hotel Excelsior, Lido di Venezia. Il premio, ideato da Donato Pugliese (Presidente Maxa Film srl) con l'associazione di terzo settore Le Stelle del Sud, mette in risalto il lungometraggio italiano che più si è distinto come progetto storico-culturale. Il film è dedicato alle Catastrofi ambientali Italiane e al valore reale della vita.",
+      "Il film Pochi Attimi, diretto da Angelo Faraci con Maria Antonina Macaluso come attrice protagonista femminile, riceverà il Premio Speciale 'Leone Lungo' il 6 settembre 2026 nell'ambito degli eventi collaterali della 83ª Mostra Internazionale d'Arte Cinematografica di Venezia. La presentazione nazionale di esclusiva si terrà presso l'Area Hospitality Maxafilm, Hotel Excelsior, Lido di Venezia. Il premio, ideato da Donato Pugliese (Presidente Maxa Film srl) con l'associazione di terzo settore Le Stelle del Sud, mette in risalto il lungometraggio italiano che più si è distinto come progetto storico-culturale. Il film è dedicato alle Catastrofi ambientali Italiane e al valore reale della vita.",
     sourceUrl: "https://www.cinemaitaliano.info/news/92951/venezia-83-a-pochi-attimi-il-premio-leone.html",
     sourceName: "Cinema Italiano",
   },
@@ -1176,7 +1176,7 @@ export const FESTIVALS: Festival[] = [
     year: "2026",
     name: "83ª Mostra Internazionale d'Arte Cinematografica di Venezia",
     location: "Lido di Venezia — Hotel Excelsior",
-    note: "Pochi Attimi riceve il Premio Speciale 'Leone Lungo' nell'ambito degli eventi collaterali. Presentazione nazionale di esclusiva il 6 settembre 2026, Area Hospitality Maxafilm. Maria Antonina Macaluso protagonista femminile del film diretto da Angelo Faraci.",
+    note: "Pochi Attimi riceverà il Premio Speciale 'Leone Lungo' nell'ambito degli eventi collaterali. Presentazione nazionale di esclusiva il 6 settembre 2026, Area Hospitality Maxafilm. Maria Antonina Macaluso protagonista femminile del film diretto da Angelo Faraci.",
     sourceUrl: "https://www.cinemaitaliano.info/news/92951/venezia-83-a-pochi-attimi-il-premio-leone.html",
   },
 ];
@@ -1229,7 +1229,7 @@ export const ARTICLES: Article[] = [
     url: "https://www.cinemaitaliano.info/news/92951/venezia-83-a-pochi-attimi-il-premio-leone.html",
     date: "2026-08-16",
     excerpt:
-      "Il film Pochi Attimi per la regia di Angelo Faraci, con Maria Antonina Macaluso protagonista femminile, è il progetto prescelto e premiato il 6 settembre 2026 nell'ambito degli eventi collaterali della 83ª Mostra del Cinema di Venezia. Presentazione nazionale di esclusiva all'Hotel Excelsior, Lido di Venezia.",
+      "Il film Pochi Attimi per la regia di Angelo Faraci, con Maria Antonina Macaluso protagonista femminile, è il progetto prescelto e sarà premiato il 6 settembre 2026 nell'ambito degli eventi collaterali della 83ª Mostra del Cinema di Venezia. Presentazione nazionale di esclusiva all'Hotel Excelsior, Lido di Venezia.",
   },
   {
     title: "Pietrazita (2023), di Angelo Faraci",

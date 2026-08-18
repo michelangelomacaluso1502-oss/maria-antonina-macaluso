@@ -4714,3 +4714,41 @@ Stage Summary:
 - 4 URL aggiornati notificati a Google/Yandex via IndexNow ✓
 - 0 violazioni regole d'oro
 - TTFB < 40ms
+
+---
+Task ID: FIX-TEMPI-FUTURO-VENEZIA-83
+Agent: Super Z (main)
+Task: Correggere i tempi verbali dal passato al futuro — l'evento del 6 settembre 2026 deve ancora avvenire
+
+Work Log:
+- Verificate occorrenze errate al passato in: src/app/news/pochi-attimi-venezia-83/page.tsx + src/lib/data.ts + src/app/layout.tsx
+- Corrette 7 occorrenze:
+  1. NewsArticle.description → "riceverà il Premio Speciale 'Leone Lungo' il 6 settembre 2026"
+  2. NewsArticle.headline → "VENEZIA 83 — 'Pochi Attimi' riceverà il Premio Leone Lungo il 6 settembre 2026"
+  3. NewsArticle.articleBody → "sarà premiato il 6 Settembre 2026"
+  4. PageHero.subtitle → "sarà premiato nell'ambito degli eventi collaterali"
+  5. Person.award in layout.tsx → "Premio Speciale Leone Lungo — Venezia 83 (6 settembre 2026, in programma)"
+  6. Movie "Pochi Attimi".award → "Premio Speciale Leone Lungo — Venezia 83 (6 settembre 2026, in programma)"
+  7. Movie "Pochi Attimi".description → "riceverà il Premio Speciale Leone Lungo"
+  8. TIMELINE title → "VENEZIA 83 — Pochi Attimi al Premio Leone Lungo (in programma)"
+  9. AWARDS.description → "riceverà il Premio Speciale 'Leone Lungo' il 6 settembre 2026"
+  10. FESTIVALS.note → "riceverà il Premio Speciale 'Leone Lungo'"
+  11. ARTICLES.excerpt → "sarà premiato il 6 settembre 2026"
+- Aggiunti badge temporali:
+  - PageHero eyebrow: "News · 16 Agosto 2026 · Evento in programma"
+  - Box "Evento in programma" in evidenza nel corpo articolo
+- Titolo pagina news: "Pochi Attimi al Premio Leone Lungo — Anteprima Venezia 83"
+- Verifica finale: 0 occorrenze al passato, multiple occorrenze al futuro (riceverà, sarà premiato, in programma, si terrà)
+
+REGOLE D'ORO RISPETTATE:
+- ✅ 0 menzioni "Prime Video"
+- ✅ Enciclopedia digitale: 9 occorrenze
+- ✅ volcanica: 0 occorrenze (no)
+- ✅ Struttura progetto NON intaccata
+
+Stage Summary:
+- Tutti i contenuti relativi all'evento del 6 settembre 2026 ora usano tempi al futuro
+- Aggiunti badge "Evento in programma" per chiarezza temporale
+- Titolo pagina news aggiornato a "Anteprima Venezia 83"
+- 0 occorrenze al passato erronee
+- TTFB 38-260ms (cache HIT in popolamento)

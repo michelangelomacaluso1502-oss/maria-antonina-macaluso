@@ -8,14 +8,14 @@ import { ArrowLeft, ExternalLink, Calendar, MapPin, Award, Film } from "lucide-r
 import { SITE } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Pochi Attimi al Premio Leone Lungo — Venezia 83",
+  title: "Pochi Attimi al Premio Leone Lungo — Anteprima Venezia 83",
   description:
-    "Il film 'Pochi Attimi' di Angelo Faraci riceve il Premio Speciale 'Leone Lungo' nell'ambito degli eventi collaterali della 83ª Mostra del Cinema di Venezia. Presentazione nazionale di esclusiva il 6 settembre 2026 ore 18:00, Area Hospitality Maxafilm – Hotel Excelsior, Lido di Venezia.",
+    "Il film 'Pochi Attimi' di Angelo Faraci riceverà il Premio Speciale 'Leone Lungo' il 6 settembre 2026 nell'ambito degli eventi collaterali della 83ª Mostra del Cinema di Venezia. Presentazione nazionale di esclusiva ore 18:00, Area Hospitality Maxafilm – Hotel Excelsior, Lido di Venezia.",
   alternates: { canonical: "/news/pochi-attimi-venezia-83" },
   openGraph: {
-    title: "Pochi Attimi al Premio Leone Lungo — Venezia 83",
+    title: "Pochi Attimi al Premio Leone Lungo — Anteprima Venezia 83",
     description:
-      "Il film 'Pochi Attimi' di Angelo Faraci riceve il Premio Speciale 'Leone Lungo' alla 83ª Mostra del Cinema di Venezia.",
+      "Il film 'Pochi Attimi' di Angelo Faraci riceverà il Premio Speciale 'Leone Lungo' il 6 settembre 2026 alla 83ª Mostra del Cinema di Venezia.",
     images: [{ url: "/images/news/pochi-attimi-venezia-83.jpg", width: 896, height: 1200, alt: "Pochi Attimi — Premio Leone Lungo Venezia 83" }],
     type: "article",
     publishedTime: "2026-08-16T15:08:00Z",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
 const newsArticleJsonLd = {
   "@context": "https://schema.org",
   "@type": "NewsArticle",
-  headline: "VENEZIA 83 — A 'Pochi Attimi' il Premio Leone Lungo",
+  headline: "VENEZIA 83 — 'Pochi Attimi' riceverà il Premio Leone Lungo il 6 settembre 2026",
   description:
-    "Il film 'Pochi Attimi' di Angelo Faraci riceve il Premio Speciale 'Leone Lungo' nell'ambito degli eventi collaterali della 83ª Mostra del Cinema di Venezia.",
+    "Il film 'Pochi Attimi' di Angelo Faraci riceverà il Premio Speciale 'Leone Lungo' il 6 settembre 2026 nell'ambito degli eventi collaterali della 83ª Mostra del Cinema di Venezia.",
   image: `${SITE.url}/images/news/pochi-attimi-venezia-83.jpg`,
   datePublished: "2026-08-16T15:08:00Z",
   dateModified: "2026-08-16T15:08:00Z",
@@ -58,7 +58,7 @@ const newsArticleJsonLd = {
     datePublished: "2026",
   },
   articleBody:
-    "Il film 'Pochi Attimi' per la regia di Angelo Faraci è il progetto prescelto e premiato il 6 Settembre 2026 nell'ambito degli eventi collaterali della 83ª Mostra del Cinema di Venezia. La presentazione nazionale di esclusiva si terrà presso l'Area Hospitality Maxafilm, Hotel Excelsior, Lido di Venezia, alle ore 18:00. Il film, dedicato alle Catastrofi ambientali Italiane e al valore reale della vita, è stato selezionato per il Premio Speciale 'Leone Lungo', evento collaterale di prestigio ideato da Donato Pugliese (Presidente Maxa Film srl) con l'associazione di terzo settore Le Stelle del Sud.",
+    "Il film 'Pochi Attimi' per la regia di Angelo Faraci è il progetto prescelto e sarà premiato il 6 Settembre 2026 nell'ambito degli eventi collaterali della 83ª Mostra del Cinema di Venezia. La presentazione nazionale di esclusiva si terrà presso l'Area Hospitality Maxafilm, Hotel Excelsior, Lido di Venezia, alle ore 18:00. Il film, dedicato alle Catastrofi ambientali Italiane e al valore reale della vita, è stato selezionato per il Premio Speciale 'Leone Lungo', evento collaterale di prestigio ideato da Donato Pugliese (Presidente Maxa Film srl) con l'associazione di terzo settore Le Stelle del Sud.",
   isPartOf: {
     "@type": "WebSite",
     name: "Maria Antonina Macaluso — Enciclopedia Digitale",
@@ -85,9 +85,9 @@ export default function NewsPochiAttimiVenezia83() {
       />
 
       <PageHero
-        eyebrow="News · 16 Agosto 2026"
-        title="VENEZIA 83 — A 'Pochi Attimi' il Premio Leone Lungo"
-        subtitle="Il film diretto da Angelo Faraci riceve il Premio Speciale nell'ambito degli eventi collaterali della 83ª Mostra del Cinema di Venezia"
+        eyebrow="News · 16 Agosto 2026 · Evento in programma"
+        title="VENEZIA 83 — 'Pochi Attimi' riceverà il Premio Leone Lungo"
+        subtitle="Il 6 settembre 2026 il film diretto da Angelo Faraci sarà premiato nell'ambito degli eventi collaterali della 83ª Mostra del Cinema di Venezia"
         breadcrumb={[{ label: "News", href: "/news" }, { label: "Pochi Attimi — Venezia 83" }]}
       />
 
@@ -144,6 +144,23 @@ export default function NewsPochiAttimiVenezia83() {
               </div>
             </Reveal>
 
+            {/* Avviso evento in programma */}
+            <Reveal className="mb-12">
+              <div className="rounded-lg border border-gold/40 bg-gold/5 p-5">
+                <div className="flex items-start gap-3">
+                  <Calendar className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
+                  <div>
+                    <p className="font-display text-base text-gold">Evento in programma</p>
+                    <p className="mt-1 text-sm text-cream/80">
+                      La cerimonia di consegna del Premio Speciale &ldquo;Leone Lungo&rdquo; al film
+                      Pochi Attimi si terrà il <strong className="text-cream">6 settembre 2026 alle ore 18:00</strong>{" "}
+                      presso l'Area Hospitality Maxafilm, Hotel Excelsior, Lido di Venezia.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+
             {/* Corpo articolo */}
             <Reveal className="mb-12">
               <h2 className="font-display text-3xl text-gradient-gold sm:text-4xl">L'evento</h2>
@@ -151,7 +168,7 @@ export default function NewsPochiAttimiVenezia83() {
 
               <p className="mt-6 text-pretty text-lg leading-relaxed text-cream/80">
                 Il film <strong className="text-cream">Pochi Attimi</strong>, per la regia di{" "}
-                <strong className="text-cream">Angelo Faraci</strong>, è il progetto prescelto e premiato il{" "}
+                <strong className="text-cream">Angelo Faraci</strong>, è il progetto prescelto e sarà premiato il{" "}
                 <strong className="text-gold">6 Settembre 2026</strong> nell'ambito degli eventi
                 collaterali della <strong className="text-cream">83ª Mostra del Cinema di Venezia</strong>.
                 La presentazione nazionale di esclusiva si terrà presso l'Area Hospitality Maxa Film,
