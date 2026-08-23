@@ -71,11 +71,11 @@ export function Reveal({
     );
     obs.observe(el);
 
-    // Fallback: dopo 1.5s, mostra comunque (fix iOS Safari/tablet)
+    // Fallback: dopo 800ms, mostra comunque (fix iOS Safari/tablet + evita blocchi)
     fallbackTimer = setTimeout(() => {
       setVisible(true);
       obs.disconnect();
-    }, 1500);
+    }, 800);
 
     return () => {
       obs.disconnect();
@@ -137,7 +137,7 @@ export function Stagger({ children, className, gap = 90, as: Tag = "div" }: Stag
     fallbackTimer = setTimeout(() => {
       setStart(true);
       obs.disconnect();
-    }, 1500);
+    }, 800);
 
     return () => {
       obs.disconnect();

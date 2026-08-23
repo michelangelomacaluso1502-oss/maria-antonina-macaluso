@@ -4752,3 +4752,72 @@ Stage Summary:
 - Titolo pagina news aggiornato a "Anteprima Venezia 83"
 - 0 occorrenze al passato erronee
 - TTFB 38-260ms (cache HIT in popolamento)
+
+---
+Task ID: TEMPI-PASSATO + PERFORMANCE-ESTREME
+Agent: Super Z (main)
+Task: Cambiare tempi Pochi Attimi Venezia al passato (premio già ricevuto) + ottimizzare sito per essere reattivo all'ennesima potenza da qualsiasi dispositivo
+
+Work Log:
+- TUTTI i tempi verbali relativi all'evento Pochi Attimi Venezia 83 sono stati cambiati al passato:
+  - "riceverà il Premio" → "ha ricevuto il Premio"
+  - "sarà premiato" → "è stato premiato"
+  - "si terrà" → "si è tenuta"
+  - "in programma" → rimosso
+  - Eyebrow PageHero: "6 Settembre 2026 · Premio ricevuto"
+  - Box evento: "Evento concluso" (era "Evento in programma")
+  - JSON-LD Event: eventStatus cambiato da EventScheduled a EventCompleted
+  - Person.award: "(6 settembre 2026, in programma)" → "(6 settembre 2026)"
+  - Movie Pochi Attimi.award: stesso cambiamento
+  - 0 occorrenze al futuro rimaste ✓
+
+- OTTIMIZZAZIONE NEXT.CONFIG.TS per performance estreme:
+  - productionBrowserSourceMaps: false (no sorgenti mappe in produzione)
+  - compiler.removeConsole: rimuove console.log tranne error
+  - compiler.reactRemoveProperties: true
+  - Link header preload per hero image + main-app.js (fetchpriority=high)
+  - Cache headers aggressivi: s-maxage=604800, stale-while-revalidate=2592000
+  - X-DNS-Prefetch-Control: on (doppio per fallback)
+
+- OTTIMIZZAZIONE REVEAL COMPONENT (anti-blocco):
+  - Fallback timer ridotto da 1500ms a 800ms
+  - Meno attesa = meno blocchi su mobile/tablet
+  - IntersectionObserver più reattivo
+
+- Ricostruito componente PochiAttimiVenezia.tsx (era stato perso):
+  - Header con eyebrow "Venezia 83 · 6 Settembre 2026 · Premio ricevuto"
+  - Tutti gli excerpts citano Maria Antonina Macaluso come attrice protagonista femminile
+  - Approfondimento Leone Lungo con paragrafo dedicato a Maria Antonina
+  - JSON-LD Event con eventStatus EventCompleted
+  - 6 fonti terze verificate
+
+- Aggiunta sezione PochiAttimiVenezia alla homepage (tra Articles e Quotes)
+
+- Build: 0 errori TypeScript ✓
+- Deploy Vercel produzione: 42s
+
+REGOLE D'ORO RISPETTATE (tutte):
+- ✅ Prime Video: 0
+- ✅ Enciclopedia digitale: 9
+- ✅ volcanica: 0
+- ✅ Struttura progetto NON intaccata
+
+VERIFICA PERFORMANCE:
+- TTFB cache HIT: 47ms (target <50ms ✓)
+- TTFB cache MISS: 1.1s (primo accesso, normale)
+- Homepage dimensione: 1MB (HTML statico + JSON-LD + immagini inline)
+- Link preload header attivo ✓
+- Cache headers aggressivi ✓
+- 0 occorrenze al futuro ✓
+- 3 occorrenze "ha ricevuto" al passato ✓
+
+Stage Summary:
+- SITO AGGIORNATO: tutti i tempi al passato (premio già ricevuto)
+- PERFORMANCE OTTIMIZZATE:
+  - Reveal fallback 800ms (era 1500ms) = meno blocchi
+  - Link preload per hero image + main-app.js
+  - Cache headers aggressivi
+  - removeConsole in production
+  - productionBrowserSourceMaps disabilitato
+- TTFB cache HIT: 47ms (sotto target 50ms)
+- Sito reattivo all'ennesima potenza da qualsiasi dispositivo
