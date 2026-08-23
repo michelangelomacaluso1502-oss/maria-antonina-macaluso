@@ -440,24 +440,34 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="it" dir="ltr" suppressHydrationWarning>
       <head>
-        {/* Resource hints per TTFB <40ms */}
+        {/* Resource hints per TTFB <25ms + LCP <1s */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
         <link rel="dns-prefetch" href="https://img.youtube.com" />
+        {/* Preload font CSS con font-display swap */}
+        <link
+          rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Italiana&display=swap"
+        />
         {/* Google Search Console verification */}
         <meta name="google-site-verification" content="7k8LbVSFjRug2y5x-E2w6CGy4aYIIqHUaR66LnNMbhQ" />
         {/* Bing Webmaster verification */}
         <meta name="msvalidate.01" content="a8f3b7c9d2e1f4a6b8c0d2e4f6a8b0c2" />
-        {/* Preload font primario per eliminare FOUT */}
+        {/* Font CSS con font-display swap per eliminare FOUT */}
         <link
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Italiana&display=swap"
           rel="stylesheet"
         />
         {/* Preload immagine hero per LCP <1s */}
         <link rel="preload" as="image" href="/images/hero-maria-antonina.jpg" fetchPriority="high" />
+        {/* Preload CSS critico */}
+        <link rel="preload" as="style" href="/_next/static/chunks/main-app.css" />
+        {/* Module preload per JS critico */}
+        <link rel="modulepreload" href="/_next/static/chunks/main-app.js" />
         {/* CSS critico inline per l'intro animation — fallback se Framer Motion non carica
             ATTENZIONE: NON bloccare mai overflow sul body — causa scroll bloccato su mobile */}
         <style dangerouslySetInnerHTML={{
