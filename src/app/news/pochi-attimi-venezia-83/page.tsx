@@ -8,12 +8,12 @@ import { ArrowLeft, ExternalLink, Calendar, MapPin, Award, Film } from "lucide-r
 import { SITE } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Pochi Attimi al Premio Leone Lungo — Anteprima Venezia 83",
+  title: "Pochi Attimi al Premio Leone Lungo — Venezia 83",
   description:
     "Il film 'Pochi Attimi' di Angelo Faraci ha ricevuto il Premio Speciale 'Leone Lungo' il 6 settembre 2026 nell'ambito degli eventi collaterali della 83ª Mostra del Cinema di Venezia. Presentazione nazionale di esclusiva ore 18:00, Area Hospitality Maxafilm – Hotel Excelsior, Lido di Venezia.",
   alternates: { canonical: "/news/pochi-attimi-venezia-83" },
   openGraph: {
-    title: "Pochi Attimi al Premio Leone Lungo — Anteprima Venezia 83",
+    title: "Pochi Attimi al Premio Leone Lungo — Venezia 83",
     description:
       "Il film 'Pochi Attimi' di Angelo Faraci ha ricevuto il Premio Speciale 'Leone Lungo' il 6 settembre 2026 alla 83ª Mostra del Cinema di Venezia.",
     images: [{ url: "/images/news/pochi-attimi-venezia-83.jpg", width: 896, height: 1200, alt: "Pochi Attimi — Premio Leone Lungo Venezia 83" }],
