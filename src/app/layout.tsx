@@ -99,6 +99,14 @@ const personJsonLd = {
     `${SITE.url}/images/photobook/mam-06.jpg`,
     `${SITE.url}/images/photobook/mam-07.jpg`,
     `${SITE.url}/images/photobook/mam-08.jpg`,
+    // === 7 scatti evento Venezia 83 — Premio Leone Lungo ===
+    `${SITE.url}/images/venezia/venezia-01.jpg`,
+    `${SITE.url}/images/venezia/venezia-02.jpg`,
+    `${SITE.url}/images/venezia/venezia-03.jpg`,
+    `${SITE.url}/images/venezia/venezia-04.jpg`,
+    `${SITE.url}/images/venezia/venezia-05.jpg`,
+    `${SITE.url}/images/venezia/venezia-06.jpg`,
+    `${SITE.url}/images/venezia/venezia-07.jpg`,
   ],
   // mainEntityOfPage: collega questa entità alla voce enciclopedica Wikidata
   mainEntityOfPage: {
