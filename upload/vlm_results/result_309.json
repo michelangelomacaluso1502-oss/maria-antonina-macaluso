@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"source_website\": \"Not visible\",\n  \"article_title\": \"Not visible\",\n  \"visible_url\": \"Not visible\",\n  \"mentions_maria_antonina_macaluso\": false,\n  \"mentions_angelo_faraci\": false,\n  \"mentions_pochi_attimi\": false,\n  \"mentions_venezia_83_or_leone_lungo\": false,\n  \"article_summary\": {\n    \"italian\": \"L'immagine mostra una donna in un abito rosso su una barca a Venezia, probabilmente in occasione di un evento cinematografico. Non è presente alcun testo visibile nell'immagine che fornisca dettagli specifici sull'articolo o sul film menzionato.\",\n    \"english\": \"The image shows a woman in a red dress on a boat in Venice, likely during a film event. There is no visible text in the image providing specific details about the article or the mentioned film.\"\n  },\n  \"publication_date\": \"Not visible\",\n  \"author\": \"Not visible\"\n}\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1789251086,
+  "id": "202609130611217a6e05534eed4a9c",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "202609130611217a6e05534eed4a9c",
+  "usage": {
+    "completion_tokens": 227,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1907,
+    "prompt_tokens_details": {
+      "cached_tokens": 6
+    },
+    "total_tokens": 2134
+  }
+}

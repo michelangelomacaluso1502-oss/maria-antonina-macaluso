@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"source_website\": \"Not visible\",\n  \"article_title\": \"Not visible\",\n  \"visible_url\": \"LABIENNALE.C\",\n  \"mentions_maria_antonina_macaluso\": false,\n  \"mentions_angelo_faraci\": false,\n  \"mentions_pochi_attimi\": false,\n  \"mentions_venezia_83_or_leone_lungo\": true,\n  \"article_summary\": {\n    \"italian\": \"L'immagine mostra una donna in un abito rosso che tiene una targa o un premio davanti al backdrop ufficiale della 83ª Mostra Internazionale d'Arte Cinematografica di Venezia (La Biennale di Venezia), che si svolge dal 2 settembre 2026. Non sono visibili testi aggiuntivi che forniscano dettagli su film specifici, registi o vincitori.\",\n    \"english\": \"The image shows a woman in a red dress holding a plaque or award in front of the official backdrop of the 83rd Venice International Film Festival (La Biennale di Venezia), taking place on September 2, 2026. No additional text is visible providing details about specific films, directors, or winners.\"\n  },\n  \"publication_date\": \"2.09 — 2026\",\n  \"author\": \"Not visible\"\n}\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1789251081,
+  "id": "2026091306111482179c51a4734389",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "2026091306111482179c51a4734389",
+  "usage": {
+    "completion_tokens": 291,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 3859,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 4150
+  }
+}

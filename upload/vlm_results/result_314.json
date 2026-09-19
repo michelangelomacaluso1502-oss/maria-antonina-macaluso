@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"source_website\": \"Not visible\",\n  \"article_title\": \"Not visible (Image is of a certificate/plaque)\",\n  \"visible_url\": \"Not visible\",\n  \"mentions_maria_antonina_macaluso\": true,\n  \"mentions_angelo_faraci\": true,\n  \"mentions_pochi_attimi\": true,\n  \"mentions_venezia_83_or_leone_lungo\": false,\n  \"article_summary\": {\n    \"it\": \"L'immagine mostra un riconoscimento ufficiale del Festival del Cinema Internazionale di Venezia 2026. Il premio è stato assegnato all'attrice Maria Antonina Macaluso per il suo prezioso contributo artistico e professionale nel film 'Pochi attimi', diretto da Angelo Faraci.\",\n    \"en\": \"The image shows an official recognition from the Venice International Film Festival 2026. The award was granted to actress Maria Antonina Macaluso for her precious artistic and professional contribution to the film 'Pochi attimi', directed by Angelo Faraci.\"\n  },\n  \"publication_date\": \"Venezia 06 Settembre 26\",\n  \"author\": \"Il Presidente Donato Pugliese\"\n}\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1789251102,
+  "id": "202609130611370248c62033d84041",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "202609130611370248c62033d84041",
+  "usage": {
+    "completion_tokens": 267,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 3859,
+    "prompt_tokens_details": {
+      "cached_tokens": 319
+    },
+    "total_tokens": 4126
+  }
+}

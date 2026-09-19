@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"source_website\": \"Not visible\",\n  \"article_title\": \"Not visible\",\n  \"visible_url\": \"Not visible\",\n  \"mentions_maria_antonina_macaluso\": false,\n  \"mentions_angelo_faraci\": false,\n  \"mentions_pochi_attimi\": false,\n  \"mentions_venezia_83_or_leone_lungo\": true,\n  \"article_summary\": {\n    \"it\": \"L'immagine mostra due persone che posano sul red carpet della 83ª Mostra Internazionale d'Arte Cinematografica di Venezia (2026). Entrambi tengono in mano dei riconoscimenti ufficiali del 'Premio del Leone Intemperie'. L'evento è chiaramente collegato al festival cinematografico veneziano.\",\n    \"en\": \"The image shows two people posing on the red carpet of the 83rd Venice International Film Festival (2026). Both are holding official awards from the 'Leone Intemperie Prize'. The event is clearly linked to the Venice film festival.\"\n  },\n  \"publication_date\": \"2026 (inferred from background text)\",\n  \"author\": \"Not visible\"\n}\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1789251073,
+  "id": "20260913061106efec72ec03774917",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "20260913061106efec72ec03774917",
+  "usage": {
+    "completion_tokens": 258,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 3859,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 4117
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"source_website\": \"Not visible\",\n  \"article_title\": \"Not visible\",\n  \"visible_url\": \"Not visible\",\n  \"mentions_maria_antonina_macaluso\": false,\n  \"mentions_angelo_faraci\": false,\n  \"mentions_pochi_attimi\": false,\n  \"mentions_venezia_83_or_leone_lungo\": false,\n  \"article_summary\": {\n    \"italian\": \"L'immagine mostra una donna in un abito rosso seduta all'interno di un taxi acqueo a Venezia, con il Campanile di San Marco e Palazzo Ducale visibili sullo sfondo. Non è presente alcun testo visibile nell'immagine fornita.\",\n    \"english\": \"The image shows a woman in a red dress sitting inside a water taxi in Venice, with the St. Mark's Campanile and Doge's Palace visible in the background. There is no visible text in the provided image.\"\n  },\n  \"publication_date\": \"Not visible\",\n  \"author\": \"Not visible\"\n}\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1789251097,
+  "id": "202609130611333ae066f294c94919",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "202609130611333ae066f294c94919",
+  "usage": {
+    "completion_tokens": 232,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1907,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2139
+  }
+}

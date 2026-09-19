@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n{\n  \"source_website\": \"Not visible\",\n  \"article_title\": \"Not visible\",\n  \"visible_url\": \"Not visible\",\n  \"mentions_maria_antonina_macaluso\": false,\n  \"mentions_angelo_faraci\": false,\n  \"mentions_pochi_attimi\": false,\n  \"mentions_venezia_83_or_leone_lungo\": true,\n  \"article_summary\": {\n    \"it\": \"L'immagine mostra due persone che posano sul red carpet della 83ª Mostra Internazionale d'Arte Cinematografica di Venezia (2026), tenendo in mano dei premi o riconoscimenti ufficiali. Sullo sfondo è visibile il logo ufficiale del festival e la scritta 'Mostra Internazionale d'Arte Cinematografica La Biennale di Venezia 2026'. I certificati sembrano essere legati a un premio letterario o cinematografico assegnato durante l'evento.\",\n    \"en\": \"The image shows two people posing on the red carpet of the 83rd Venice International Film Festival (2026), holding official awards or certificates. The official festival logo and the text 'Mostra Internazionale d'Arte Cinematografica La Biennale di Venezia 2026' are visible in the background. The certificates appear to be related to a literary or film award presented during the event.\"\n  },\n  \"publication_date\": \"2026 (from background text)\",\n  \"author\": \"Not visible\"\n}\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1789251066,
+  "id": "20260913061057df3021a833df4017",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "20260913061057df3021a833df4017",
+  "usage": {
+    "completion_tokens": 333,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 3859,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 4192
+  }
+}
