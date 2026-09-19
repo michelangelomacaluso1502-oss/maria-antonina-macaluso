@@ -120,6 +120,10 @@ const personJsonLd = {
     "https://cronachemediterranee.net/vulcanica-content-creator-maria-antonina-macaluso",
     "https://www.orawebtv.it/maria-antonina-macaluso-leclettismo-di-un-talento-tra-cinema-social-media-e-beauty",
     "https://it.everybodywiki.com/Maria_Antonina_Macaluso",
+    // === Fonti giornalistiche verificate — Premio Leone Lungo Venezia 83 ===
+    "https://www.cinemaitaliano.info/news/92951/venezia-83-a-pochi-attimi-il-premio-leone.html",
+    "https://www.lasicilia.it/news/santa-margherita-di-belice-trionfa-a-venezia",
+    "https://www.ilmoderatore.it/venezia-83-leone-lungo-a-pochi-attimi",
   ],
   knowsAbout: [
     "Cinema",
@@ -197,6 +201,34 @@ const personJsonLd = {
       publisher: { "@type": "Organization", name: "EverybodyWiki" },
       description:
         "Voce enciclopedica indipendente con biografia e filmografia completa di Maria Antonina Macaluso.",
+    },
+    // === Articoli giornalistici Premio Leone Lungo — Venezia 83 ===
+    {
+      "@type": "NewsArticle",
+      headline: "VENEZIA 83 — A 'Pochi Attimi' il Premio Leone Lungo",
+      url: "https://www.cinemaitaliano.info/news/92951/venezia-83-a-pochi-attimi-il-premio-leone.html",
+      image: `${SITE.url}/images/venezia/venezia-01.jpg`,
+      publisher: { "@type": "Organization", name: "Cinema Italiano" },
+      description:
+        "Articolo con foto del film Pochi Attimi di Angelo Faraci, con Maria Antonina Macaluso protagonista femminile, premiato alla 83ª Mostra del Cinema di Venezia.",
+    },
+    {
+      "@type": "NewsArticle",
+      headline: "Santa Margherita di Belìce trionfa a Venezia",
+      url: "https://www.lasicilia.it/news/santa-margherita-di-belice-trionfa-a-venezia",
+      image: `${SITE.url}/images/venezia/venezia-05.jpg`,
+      publisher: { "@type": "Organization", name: "La Sicilia" },
+      description:
+        "Articolo con foto dell'evento Venezia 83 — Pochi Attimi di Angelo Faraci con Maria Antonina Macaluso.",
+    },
+    {
+      "@type": "NewsArticle",
+      headline: "Venezia 83, Leone Lungo a Pochi Attimi",
+      url: "https://www.ilmoderatore.it/venezia-83-leone-lungo-a-pochi-attimi",
+      image: `${SITE.url}/images/venezia/venezia-02.jpg`,
+      publisher: { "@type": "Organization", name: "Il Moderatore" },
+      description:
+        "Articolo con foto del conferimento del Premio Leone Lungo al film Pochi Attimi con Maria Antonina Macaluso.",
     },
   ],
   // performerIn: filmografia completa con copertine originali + regista + descrizione
