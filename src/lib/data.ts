@@ -1191,6 +1191,15 @@ export interface Article {
 
 // Solo articoli verificati da fonti pubbliche autorevoli
 export const ARTICLES: Article[] = [
+  // === Top: articolo più recente su Venezia 83 (Radio Amica, 19 settembre 2026) ===
+  {
+    title: "«Pochi Attimi» trionfa a Venezia: la camporealese Macaluso e la partinicese Quatrosi portano la Sicilia sul podio del cinema",
+    source: "Radio Amica",
+    url: "https://www.radioamica.it/pochi-attimi-trionfa-a-venezia-la-camporealese-macaluso-e-la-partinicese-quatrosi-portano-la-sicilia-sul-podio-del-cinema/",
+    date: "2026-09-19",
+    excerpt:
+      "Alla 83ª Mostra Internazionale d'Arte Cinematografica di Venezia conquista il pubblico con una delle opere più intense e applaudite della kermesse: «Pochi Attimi», il nuovo film del regista siciliano Angelo Faraci, accolto al Lido con commozione e sincero entusiasmo. La pellicola, dedicata alle grandi catastrofi ambientali italiane, ha come protagonista femminile Maria Antonina Macaluso.",
+  },
   {
     title: "Da un piccolo comune all'incontro con l'attore-regista Angelo Faraci: l'attrice camporealese Maria Antonina Macaluso si racconta",
     source: "Radio Amica",

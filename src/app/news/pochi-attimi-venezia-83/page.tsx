@@ -256,6 +256,92 @@ export default function NewsPochiAttimiVenezia83() {
               </a>
             </Reveal>
 
+            {/* Altre fonti giornalistiche verificate */}
+            <Reveal className="mb-12">
+              <h2 className="font-display text-2xl text-cream sm:text-3xl">Altre fonti giornalistiche verificate</h2>
+              <div className="divider-cinema mt-4 max-w-xs" />
+              <p className="mt-6 text-pretty text-base leading-relaxed text-cream/70">
+                La notizia del Premio Leone Lungo a Pochi Attimi è riportata da molteplici
+                fonti giornalistiche indipendenti siciliane e nazionali. Di seguito
+                l'elenco aggiornato delle fonti verificabili.
+              </p>
+              <div className="mt-8 space-y-4">
+                <a
+                  href="https://www.radioamica.it/pochi-attimi-trionfa-a-venezia-la-camporealese-macaluso-e-la-partinicese-quatrosi-portano-la-sicilia-sul-podio-del-cinema/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-card card-lift-premium group flex items-center justify-between gap-4 p-5"
+                >
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[11px] uppercase tracking-wide-sm text-gold/70">Radio Amica</p>
+                    <h3 className="mt-1 font-display text-lg text-cream group-hover:text-gold">
+                      &laquo;Pochi Attimi&raquo; trionfa a Venezia: la camporealese Macaluso e la partinicese Quatrosi portano la Sicilia sul podio del cinema
+                    </h3>
+                    <p className="mt-2 text-sm text-cream/60">
+                      19 Settembre 2026 · radioamica.it
+                    </p>
+                    <p className="mt-3 text-sm leading-relaxed text-cream/70">
+                      Articolo dettagliato sul trionfo di Pochi Attimi alla 83ª Mostra del Cinema di Venezia.
+                      Racconta il film di Angelo Faraci accolto al Lido con commozione, con Maria Antonina
+                      Macaluso protagonista femminile.
+                    </p>
+                  </div>
+                  <ExternalLink className="h-5 w-5 shrink-0 text-gold/50 transition-colors group-hover:text-gold" />
+                </a>
+                <a
+                  href="https://www.radiounavocevicina.it/main/venezia-pochi-attimi-di-angelo-faraci-il-premio-leone-lungo-al-festival"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-card card-lift-premium group flex items-center justify-between gap-4 p-5"
+                >
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[11px] uppercase tracking-wide-sm text-gold/70">Radio Una Voce Vicina</p>
+                    <h3 className="mt-1 font-display text-lg text-cream group-hover:text-gold">
+                      Venezia: Pochi Attimi di Angelo Faraci al Premio Leone Lungo al Festival
+                    </h3>
+                    <p className="mt-2 text-sm text-cream/60">
+                      17 Agosto 2026 · radiounavocevicina.it
+                    </p>
+                  </div>
+                  <ExternalLink className="h-5 w-5 shrink-0 text-gold/50 transition-colors group-hover:text-gold" />
+                </a>
+                <a
+                  href="https://www.lasicilia.it/news/santa-margherita-di-belice-trionfa-a-venezia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-card card-lift-premium group flex items-center justify-between gap-4 p-5"
+                >
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[11px] uppercase tracking-wide-sm text-gold/70">La Sicilia</p>
+                    <h3 className="mt-1 font-display text-lg text-cream group-hover:text-gold">
+                      Santa Margherita di Belìce trionfa a Venezia
+                    </h3>
+                    <p className="mt-2 text-sm text-cream/60">
+                      Settembre 2026 · lasicilia.it
+                    </p>
+                  </div>
+                  <ExternalLink className="h-5 w-5 shrink-0 text-gold/50 transition-colors group-hover:text-gold" />
+                </a>
+                <a
+                  href="https://www.ilmoderatore.it/venezia-83-leone-lungo-a-pochi-attimi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-card card-lift-premium group flex items-center justify-between gap-4 p-5"
+                >
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[11px] uppercase tracking-wide-sm text-gold/70">Il Moderatore</p>
+                    <h3 className="mt-1 font-display text-lg text-cream group-hover:text-gold">
+                      Venezia 83, Leone Lungo a Pochi Attimi
+                    </h3>
+                    <p className="mt-2 text-sm text-cream/60">
+                      Settembre 2026 · ilmoderatore.it
+                    </p>
+                  </div>
+                  <ExternalLink className="h-5 w-5 shrink-0 text-gold/50 transition-colors group-hover:text-gold" />
+                </a>
+              </div>
+            </Reveal>
+
             {/* Link correlati */}
             <Reveal className="mb-12">
               <h2 className="font-display text-2xl text-cream sm:text-3xl">Approfondimenti</h2>

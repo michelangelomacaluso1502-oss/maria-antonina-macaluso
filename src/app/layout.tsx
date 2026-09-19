@@ -132,6 +132,7 @@ const personJsonLd = {
     "https://www.cinemaitaliano.info/news/92951/venezia-83-a-pochi-attimi-il-premio-leone.html",
     "https://www.lasicilia.it/news/santa-margherita-di-belice-trionfa-a-venezia",
     "https://www.ilmoderatore.it/venezia-83-leone-lungo-a-pochi-attimi",
+    "https://www.radioamica.it/pochi-attimi-trionfa-a-venezia-la-camporealese-macaluso-e-la-partinicese-quatrosi-portano-la-sicilia-sul-podio-del-cinema/",
   ],
   knowsAbout: [
     "Cinema",
@@ -237,6 +238,15 @@ const personJsonLd = {
       publisher: { "@type": "Organization", name: "Il Moderatore" },
       description:
         "Articolo con foto del conferimento del Premio Leone Lungo al film Pochi Attimi con Maria Antonina Macaluso.",
+    },
+    {
+      "@type": "NewsArticle",
+      headline: "«Pochi Attimi» trionfa a Venezia: la camporealese Macaluso e la partinicese Quatrosi portano la Sicilia sul podio del cinema",
+      url: "https://www.radioamica.it/pochi-attimi-trionfa-a-venezia-la-camporealese-macaluso-e-la-partinicese-quatrosi-portano-la-sicilia-sul-podio-del-cinema/",
+      image: `${SITE.url}/images/venezia/venezia-03.jpg`,
+      publisher: { "@type": "Organization", name: "Radio Amica" },
+      description:
+        "Articolo dettagliato del 19 settembre 2026 sul trionfo di Pochi Attimi alla 83ª Mostra del Cinema di Venezia, con Maria Antonina Macaluso come protagonista femminile. Fonte autorevole siciliana.",
     },
   ],
   // performerIn: filmografia completa con copertine originali + regista + descrizione
