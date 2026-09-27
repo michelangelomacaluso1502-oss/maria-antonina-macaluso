@@ -1,4 +1,4 @@
-import { PHOTOBOOK } from "@/lib/data";
+import { PHOTOBOOK_FULL } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
 import SectionHeading from "./SectionHeading";
 import Link from "next/link";
@@ -11,7 +11,7 @@ import { ArrowRight } from "lucide-react";
  * Foto object-cover, tutte uniformi, nessuna spezzatura
  */
 export default function PhotoBook({ compact = false }: { compact?: boolean }) {
-  const list = compact ? PHOTOBOOK.slice(0, 12) : PHOTOBOOK;
+  const list = compact ? PHOTOBOOK_FULL.slice(0, 12) : PHOTOBOOK_FULL;
 
   // Dividi le foto in 2 colonne
   const leftCol = list.filter((_, i) => i % 2 === 0);
@@ -22,7 +22,7 @@ export default function PhotoBook({ compact = false }: { compact?: boolean }) {
       <div className="cinematic-container">
         <SectionHeading
           eyebrow="Photo Book"
-          title="Ottantatré scatti"
+          title="Novanta scatti"
           subtitle="Un archivio visivo dell'attrice siciliana"
         />
         {/* Griglia asimmetrica a 2 colonne */}
@@ -86,7 +86,7 @@ export default function PhotoBook({ compact = false }: { compact?: boolean }) {
         {compact && (
           <Reveal className="mt-10 text-center">
             <Link href="/photobook" className="btn-cinema">
-              Guarda tutti i 83 scatti <ArrowRight className="h-4 w-4" />
+              Guarda tutti i 90 scatti <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
         )}

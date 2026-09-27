@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { PHOTOBOOK } from "@/lib/data";
+import { PHOTOBOOK_FULL } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
 import { ArrowLeft, ArrowRight, Grid3x3 } from "lucide-react";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return PHOTOBOOK.map((p) => ({ id: p.id }));
+  return PHOTOBOOK_FULL.map((p) => ({ id: p.id }));
 }
 
 export async function generateMetadata({
@@ -18,7 +18,7 @@ export async function generateMetadata({
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
-  const photo = PHOTOBOOK.find((p) => p.id === id);
+  const photo = PHOTOBOOK_FULL.find((p) => p.id === id);
   if (!photo) return { title: "Foto non trovata" };
   return {
     title: `Photo Book — Scatto ${photo.id}`,
@@ -34,12 +34,12 @@ export default async function PhotoPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const idx = PHOTOBOOK.findIndex((p) => p.id === id);
+  const idx = PHOTOBOOK_FULL.findIndex((p) => p.id === id);
   if (idx === -1) notFound();
 
-  const photo = PHOTOBOOK[idx];
-  const prev = idx > 0 ? PHOTOBOOK[idx - 1] : null;
-  const next = idx < PHOTOBOOK.length - 1 ? PHOTOBOOK[idx + 1] : null;
+  const photo = PHOTOBOOK_FULL[idx];
+  const prev = idx > 0 ? PHOTOBOOK_FULL[idx - 1] : null;
+  const next = idx < PHOTOBOOK_FULL.length - 1 ? PHOTOBOOK_FULL[idx + 1] : null;
 
   return (
     <main id="main" className="bg-noire min-h-screen pt-28">
@@ -49,7 +49,7 @@ export default async function PhotoPage({
             <Grid3x3 className="h-4 w-4" /> Photo Book
           </Link>
           <span className="text-xs uppercase tracking-cinema text-gold/70">
-            Scatto {photo.id} / {PHOTOBOOK.length}
+            Scatto {photo.id} / {PHOTOBOOK_FULL.length}
           </span>
         </Reveal>
 

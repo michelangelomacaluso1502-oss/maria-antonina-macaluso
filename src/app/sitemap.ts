@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { SITE, ALL_PAGES, FILMS, PHOTOBOOK, ALTRE_PRODUZIONI } from "@/lib/data";
+import { SITE, ALL_PAGES, FILMS, PHOTOBOOK_FULL, ALTRE_PRODUZIONI } from "@/lib/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url;
@@ -55,7 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   // Photo book pages — TUTTI gli scatti (per raggiungere 122+ URL)
-  PHOTOBOOK.forEach((p) => {
+  PHOTOBOOK_FULL.forEach((p) => {
     entries.push({
       url: `${base}/photo/${p.id}`,
       lastModified: now,

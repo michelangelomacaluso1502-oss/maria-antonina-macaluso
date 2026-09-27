@@ -1606,6 +1606,33 @@ export const PHOTOBOOK = Array.from({ length: 84 }, (_, i) => {
   };
 }).filter(Boolean) as { id: string; src: string; alt: string; title: string }[];
 
+// === 7 scatti evento Venezia 83 — Premio Leone Lungo ===
+const VENEZIA_META: Record<string, { alt: string; title: string }> = {
+  "85": { alt: "Locandina ufficiale Pochi Attimi — Premio Leone Lungo Venezia 83", title: "Venezia 83 · Locandina" },
+  "86": { alt: "Maria Antonina Macaluso all'Hotel Excelsior Lido di Venezia", title: "Venezia 83 · Hotel Excelsior" },
+  "87": { alt: "Angelo Faraci e Maria Antonina Macaluso all'evento Venezia 83", title: "Venezia 83 · Angelo e Maria" },
+  "88": { alt: "Maria Antonina Macaluso sul red carpet Venezia 83", title: "Venezia 83 · Red carpet" },
+  "89": { alt: "Premio Leone Lungo a Pochi Attimi alla 83ª Mostra del Cinema di Venezia", title: "Venezia 83 · Premio Leone Lungo" },
+  "90": { alt: "Cast di Pochi Attimi all'Hotel Excelsior Venezia 83", title: "Venezia 83 · Il cast" },
+  "91": { alt: "Maria Antonina Macaluso foto ufficiale evento Venezia 83", title: "Venezia 83 · Maria Antonina" },
+};
+
+const VENEZIA_PHOTOS = Array.from({ length: 7 }, (_, i) => {
+  const num = 85 + i;
+  const idStr = String(num);
+  const fileName = `venezia-${String(i + 1).padStart(2, "0")}.jpg`;
+  const meta = VENEZIA_META[idStr];
+  return {
+    id: idStr,
+    src: `/images/photobook/${fileName}`,
+    alt: meta.alt,
+    title: meta.title,
+  };
+});
+
+// PHOTOBOOK_FULL = 83 scatti classici + 7 scatti Venezia = 90 scatti totali
+export const PHOTOBOOK_FULL = [...PHOTOBOOK, ...VENEZIA_PHOTOS];
+
 export const COLLEGAMENTI_ESTERI = [
   { name: "Angelo Faraci — Enciclopedia digitale", url: "https://angelo-faraci.vercel.app", note: "Regista, attore, produttore. Compagno artistico e di vita." },
   { name: "Rai Cinema", url: "https://www.raicinema.rai.it", note: "Produttore dei cortometraggi Provvidenza e Pietrazita." },
