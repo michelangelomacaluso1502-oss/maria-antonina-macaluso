@@ -13,10 +13,10 @@ import { SITE } from "@/lib/data";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} — Attrice Siciliana | Enciclopedia Digitale`,
-    template: `%s | ${SITE.name} — Enciclopedia Digitale`,
+    default: `Maria Antonina Macaluso — Attrice Siciliana`,
+    template: `%s | M. Antonina Macaluso`,
   },
-  description: "Maria Antonina Macaluso, attrice siciliana nata a Bologna il 9 novembre 2001, cresciuta a Camporeale (Palermo). Compagna artistica e di vita del regista Angelo Faraci dal 2019. Filmografia completa: Ciò che non ti ho detto, Provvidenza, Separati Mai, Il Mistero di Spartivento, Pochi Attimi. Photo Book 83 scatti 8K Ultra HD. Enciclopedia digitale ufficiale.",
+  description: "Maria Antonina Macaluso, attrice siciliana nata a Bologna il 9 novembre 2001, cresciuta a Camporeale (Palermo). Compagna artistica e di vita del regista Angelo Faraci dal 2019. Filmografia: Ciò che non ti ho detto, Provvidenza, Separati Mai, Pochi Attimi.",
   keywords: [
     "Maria Antonina Macaluso",
     "attrice siciliana",
@@ -49,13 +49,13 @@ export const metadata: Metadata = {
     locale: "it_IT",
     url: SITE.url,
     siteName: SITE.name,
-    title: `${SITE.name} — Attrice Siciliana | Enciclopedia Digitale`,
-    description: "Maria Antonina Macaluso, attrice siciliana. Enciclopedia digitale ufficiale con filmografia, biografia, photo book 8K.",
+    title: `Maria Antonina Macaluso — Attrice Siciliana`,
+    description: "Maria Antonina Macaluso, attrice siciliana. Enciclopedia digitale ufficiale con filmografia e photo book.",
     images: [{ url: "/images/hero-maria-antonina.jpg", width: 797, height: 1280, alt: SITE.name }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} — Attrice Siciliana | Enciclopedia Digitale`,
+    title: `Maria Antonina Macaluso — Attrice Siciliana`,
     description: "Maria Antonina Macaluso, attrice siciliana. Enciclopedia digitale ufficiale.",
     images: ["/images/hero-maria-antonina.jpg"],
   },
@@ -247,6 +247,20 @@ const personJsonLd = {
       publisher: { "@type": "Organization", name: "Radio Amica" },
       description:
         "Articolo dettagliato del 19 settembre 2026 sul trionfo di Pochi Attimi alla 83ª Mostra del Cinema di Venezia, con Maria Antonina Macaluso come protagonista femminile. Fonte autorevole siciliana.",
+    },
+    {
+      "@type": "Article",
+      headline: "Sodalizio artistico Macaluso-Faraci — 10 film dal 2019 al 2026",
+      url: `${SITE.url}/news/sodalizio-maria-antonina-angelo-faraci`,
+      image: `${SITE.url}/images/venezia/venezia-03.jpg`,
+      publisher: { "@type": "Organization", name: "Maria Antonina Macaluso — Enciclopedia digitale" },
+      description:
+        "Approfondimento originale sul sodalizio artistico e di vita tra Maria Antonina Macaluso e Angelo Faraci, dal primo incontro del 14 agosto 2019 a Palermo fino al Premio Leone Lungo a Venezia 83.",
+      datePublished: "2026-09-25T10:00:00Z",
+      about: [
+        { "@type": "Person", name: "Maria Antonina Macaluso" },
+        { "@type": "Person", name: "Angelo Faraci" },
+      ],
     },
   ],
   // performerIn: filmografia completa con copertine originali + regista + descrizione
