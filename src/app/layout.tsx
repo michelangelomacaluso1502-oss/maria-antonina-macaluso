@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
     default: `Maria Antonina Macaluso — Attrice Siciliana`,
-    template: `%s | M. Antonina Macaluso`,
+    template: `%s — M.A.M.`,
   },
   description: "Maria Antonina Macaluso, attrice siciliana nata a Bologna il 9 novembre 2001, cresciuta a Camporeale (Palermo). Compagna artistica e di vita del regista Angelo Faraci dal 2019. Filmografia: Ciò che non ti ho detto, Provvidenza, Separati Mai, Pochi Attimi.",
   keywords: [
@@ -262,6 +262,48 @@ const personJsonLd = {
         { "@type": "Person", name: "Angelo Faraci" },
       ],
     },
+    {
+      "@type": "Article",
+      headline: "Cast Pochi Attimi — scheda completa degli interpreti del nuovo film di Angelo Faraci",
+      url: `${SITE.url}/news/cast-pochi-attimi`,
+      image: `${SITE.url}/images/venezia/venezia-06.jpg`,
+      publisher: { "@type": "Organization", name: "Maria Antonina Macaluso — Enciclopedia digitale" },
+      description:
+        "Scheda completa del cast di Pochi Attimi: Maria Antonina Macaluso protagonista femminile, Angelo Faraci, Rosaria Lo Porto, Totò Borgese, Enio Drovandi, Massimo Spata.",
+      datePublished: "2026-09-28T09:00:00Z",
+      about: [
+        { "@type": "Movie", name: "Pochi Attimi" },
+        { "@type": "Person", name: "Maria Antonina Macaluso" },
+      ],
+    },
+    {
+      "@type": "Article",
+      headline: "Catastrofi ambientali italiane — il film Pochi Attimi di Angelo Faraci",
+      url: `${SITE.url}/news/catastrofi-ambientali-italiane`,
+      image: `${SITE.url}/images/venezia/venezia-05.jpg`,
+      publisher: { "@type": "Organization", name: "Maria Antonina Macaluso — Enciclopedia digitale" },
+      description:
+        "Approfondimento delle catastrofi ambientali italiane raccontate nel film Pochi Attimi di Angelo Faraci: dal terremoto del Belice del 1968 alle alluvioni recentissime.",
+      datePublished: "2026-09-28T11:00:00Z",
+      about: [
+        { "@type": "Movie", name: "Pochi Attimi" },
+        { "@type": "Place", name: "Valle del Belice" },
+      ],
+    },
+    {
+      "@type": "Article",
+      headline: "Camporeale — radici siciliane di Maria Antonina Macaluso",
+      url: `${SITE.url}/news/camporeale-radici-maria-antonina`,
+      image: `${SITE.url}/images/photobook/mam-15.jpg`,
+      publisher: { "@type": "Organization", name: "Maria Antonina Macaluso — Enciclopedia digitale" },
+      description:
+        "Approfondimento su Camporeale, paesino della provincia di Palermo dove è cresciuta Maria Antonina Macaluso: storia, cultura, vino e ulivi.",
+      datePublished: "2026-09-28T13:00:00Z",
+      about: [
+        { "@type": "Person", name: "Maria Antonina Macaluso" },
+        { "@type": "Place", name: "Camporeale" },
+      ],
+    },
   ],
   // performerIn: filmografia completa con copertine originali + regista + descrizione
   performerIn: [
@@ -500,6 +542,114 @@ const websiteJsonLd = {
   publisher: { "@type": "Person", name: "Maria Antonina Macaluso" },
 };
 
+// ClaimReview per fatti verificati (rafforza authority nel Knowledge Graph)
+const claimReviewJsonLd1 = {
+  "@context": "https://schema.org",
+  "@type": "ClaimReview",
+  claimReviewed: "Maria Antonina Macaluso ha ricevuto il Premio Speciale Leone Lungo alla 83ª Mostra del Cinema di Venezia il 6 settembre 2026.",
+  itemReviewed: {
+    "@type": "CreativeWork",
+    author: { "@type": "Organization", name: "Cinema Italiano" },
+    sameAs: "https://www.cinemaitaliano.info/news/92951/venezia-83-a-pochi-attimi-il-premio-leone.html",
+  },
+  reviewRating: {
+    "@type": "Rating",
+    ratingValue: "5",
+    bestRating: "5",
+    worstRating: "1",
+    alternateName: "Verificato da molteplici fonti giornalistiche",
+  },
+  author: { "@type": "Organization", name: "Maria Antonina Macaluso — Enciclopedia digitale" },
+  publisher: { "@type": "Organization", name: "Maria Antonina Macaluso — Enciclopedia digitale" },
+  datePublished: "2026-09-28T10:00:00Z",
+  url: `${SITE.url}/news/pochi-attimi-venezia-83`,
+};
+
+const claimReviewJsonLd2 = {
+  "@context": "https://schema.org",
+  "@type": "ClaimReview",
+  claimReviewed: "Maria Antonina Macaluso ha debuttato nel 2019 diretta da Angelo Faraci con la fiction Sky 'Ciò che non ti ho detto'.",
+  itemReviewed: {
+    "@type": "CreativeWork",
+    author: { "@type": "Organization", name: "IMDb" },
+    sameAs: "https://www.imdb.com/it/name/nm14708762",
+  },
+  reviewRating: {
+    "@type": "Rating",
+    ratingValue: "5",
+    bestRating: "5",
+    worstRating: "1",
+    alternateName: "Verificato da IMDb e da Wikipedia/EverybodyWiki",
+  },
+  author: { "@type": "Organization", name: "Maria Antonina Macaluso — Enciclopedia digitale" },
+  publisher: { "@type": "Organization", name: "Maria Antonina Macaluso — Enciclopedia digitale" },
+  datePublished: "2026-09-28T10:00:00Z",
+  url: `${SITE.url}/biografia`,
+};
+
+const claimReviewJsonLd3 = {
+  "@context": "https://schema.org",
+  "@type": "ClaimReview",
+  claimReviewed: "Maria Antonina Macaluso è nata a Bologna il 9 novembre 2001 ed è cresciuta a Camporeale, in provincia di Palermo.",
+  itemReviewed: {
+    "@type": "CreativeWork",
+    author: { "@type": "Organization", name: "Wikidata" },
+    sameAs: "https://www.wikidata.org/wiki/Q140944431",
+  },
+  reviewRating: {
+    "@type": "Rating",
+    ratingValue: "5",
+    bestRating: "5",
+    worstRating: "1",
+    alternateName: "Verificato da Wikidata Q140944431 con 16 fonti P854",
+  },
+  author: { "@type": "Organization", name: "Maria Antonina Macaluso — Enciclopedia digitale" },
+  publisher: { "@type": "Organization", name: "Maria Antonina Macaluso — Enciclopedia digitale" },
+  datePublished: "2026-09-28T10:00:00Z",
+  url: `${SITE.url}/biografia`,
+};
+
+// ItemList — filmografia come collection
+const filmografiaItemList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Filmografia di Maria Antonina Macaluso",
+  description: "Lista completa delle produzioni cinematografiche e televisive interpretate da Maria Antonina Macaluso dal 2019 al 2026.",
+  numberOfItems: 10,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Ciò che non ti ho detto (2019)", url: `${SITE.url}/film/cio-che-non-ti-ho-detto` },
+    { "@type": "ListItem", position: 2, name: "Don't Be Silent (2020)", url: `${SITE.url}/film/dont-be-silent` },
+    { "@type": "ListItem", position: 3, name: "Provvidenza (2021)", url: `${SITE.url}/film/provvidenza` },
+    { "@type": "ListItem", position: 4, name: "Pietrazita (2023)", url: `${SITE.url}/film/pietrazita` },
+    { "@type": "ListItem", position: 5, name: "Separati Mai (2023-2024)", url: `${SITE.url}/film/separati-mai` },
+    { "@type": "ListItem", position: 6, name: "Sabbie Nere (2023)", url: `${SITE.url}/film/sabbie-nere` },
+    { "@type": "ListItem", position: 7, name: "Vanina (2024)", url: `${SITE.url}/film/vanina` },
+    { "@type": "ListItem", position: 8, name: "Il Mistero di Spartivento (2024-2025)", url: `${SITE.url}/film/il-mistero-di-spartivento` },
+    { "@type": "ListItem", position: 9, name: "Eccellenza Siciliana (2025)", url: `${SITE.url}/altre-produzioni/eccellenza-siciliana` },
+    { "@type": "ListItem", position: 10, name: "Pochi Attimi (2026)", url: `${SITE.url}/film/pochi-attimi` },
+  ],
+};
+
+// ProfilePage — rafforza l'identity della homepage
+const profilePageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  mainEntity: {
+    "@type": "Person",
+    name: "Maria Antonina Macaluso",
+    url: SITE.url,
+  },
+  url: SITE.url,
+  datePublished: "2024-01-01T00:00:00Z",
+  dateModified: "2026-09-28T13:00:00Z",
+  inLanguage: "it-IT",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Maria Antonina Macaluso — Enciclopedia digitale",
+    url: SITE.url,
+  },
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="it" dir="ltr" suppressHydrationWarning>
@@ -576,6 +726,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        {/* ClaimReview — fatti verificati (rafforza authority per Knowledge Graph) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(claimReviewJsonLd1) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(claimReviewJsonLd2) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(claimReviewJsonLd3) }}
+        />
+        {/* ItemList — filmografia come collection strutturata */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(filmografiaItemList) }}
+        />
+        {/* ProfilePage — rafforza l'identity della homepage */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd) }}
         />
       </head>
       <body className="min-h-screen bg-noir text-cream antialiased" suppressHydrationWarning>

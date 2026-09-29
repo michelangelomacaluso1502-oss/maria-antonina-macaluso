@@ -23,6 +23,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/angelo-faraci", priority: 0.9, freq: "monthly" as const },
     { path: "/news/pochi-attimi-venezia-83", priority: 0.9, freq: "weekly" as const },
     { path: "/news/sodalizio-maria-antonina-angelo-faraci", priority: 0.9, freq: "weekly" as const },
+    { path: "/news/cast-pochi-attimi", priority: 0.8, freq: "monthly" as const },
+    { path: "/news/catastrofi-ambientali-italiane", priority: 0.8, freq: "monthly" as const },
+    { path: "/news/camporeale-radici-maria-antonina", priority: 0.8, freq: "monthly" as const },
   ];
 
   const entries: MetadataRoute.Sitemap = staticRoutes.map((r) => ({

@@ -35,11 +35,11 @@ export async function generateMetadata({
   const opera = ALTRE_PRODUZIONI.find((p) => p.slug === slug);
   if (!opera) return { title: "Opera non trovata" };
   return {
-    title: `${opera.title} — Altra Produzione`,
+    title: `${opera.title}`,
     description: opera.description,
     alternates: { canonical: `/altre-produzioni/${opera.slug}` },
     openGraph: {
-      title: `${opera.title} — Maria Antonina Macaluso`,
+      title: `${opera.title} (${opera.year})`,
       description: opera.description,
       images: [{ url: opera.poster || "/images/films/placeholder.svg", alt: opera.title }],
     },

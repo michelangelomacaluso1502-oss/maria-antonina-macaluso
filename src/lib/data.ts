@@ -585,6 +585,7 @@ export const FILMS: Film[] = [
     year: "2023",
     title: "Sabbie Nere",
     role: "Attrice",
+    poster: "/images/films/sabbie-nere.jpg",
     director: "Davide Marengo",
     type: "Serie TV",
     production: "Mediaset",
