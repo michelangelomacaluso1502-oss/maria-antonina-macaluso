@@ -26,6 +26,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/news/cast-pochi-attimi", priority: 0.8, freq: "monthly" as const },
     { path: "/news/catastrofi-ambientali-italiane", priority: 0.8, freq: "monthly" as const },
     { path: "/news/camporeale-radici-maria-antonina", priority: 0.8, freq: "monthly" as const },
+    { path: "/news/intervista-maria-antonina-macaluso", priority: 0.8, freq: "monthly" as const },
+    { path: "/news/ritratto-maria-antonina-24-anni", priority: 0.8, freq: "monthly" as const },
+    { path: "/news/percorso-artistico-cinema-sicilia", priority: 0.8, freq: "monthly" as const },
+    // === Hub tematici (tag pages) ===
+    { path: "/tag/angelo-faraci", priority: 0.8, freq: "monthly" as const },
+    { path: "/tag/venezia-83", priority: 0.8, freq: "monthly" as const },
+    { path: "/tag/cinema-siciliano", priority: 0.8, freq: "monthly" as const },
   ];
 
   const entries: MetadataRoute.Sitemap = staticRoutes.map((r) => ({

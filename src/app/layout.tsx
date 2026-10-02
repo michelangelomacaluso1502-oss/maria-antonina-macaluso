@@ -304,6 +304,45 @@ const personJsonLd = {
         { "@type": "Place", name: "Camporeale" },
       ],
     },
+    {
+      "@type": "Article",
+      headline: "Intervista a Maria Antonina Macaluso — attrice siciliana di 24 anni",
+      url: `${SITE.url}/news/intervista-maria-antonina-macaluso`,
+      image: `${SITE.url}/images/venezia/venezia-07.jpg`,
+      publisher: { "@type": "Organization", name: "Maria Antonina Macaluso — Enciclopedia digitale" },
+      description:
+        "Intervista a Maria Antonina Macaluso, attrice siciliana nata a Bologna e cresciuta a Camporeale. Dieci film con Angelo Faraci, Premio Leone Lungo a Venezia 83.",
+      datePublished: "2026-09-28T15:00:00Z",
+      about: [
+        { "@type": "Person", name: "Maria Antonina Macaluso" },
+        { "@type": "Movie", name: "Pochi Attimi" },
+      ],
+    },
+    {
+      "@type": "Article",
+      headline: "Ritratto di Maria Antonina Macaluso a 24 anni",
+      url: `${SITE.url}/news/ritratto-maria-antonina-24-anni`,
+      image: `${SITE.url}/images/photobook/mam-12.jpg`,
+      publisher: { "@type": "Organization", name: "Maria Antonina Macaluso — Enciclopedia digitale" },
+      description:
+        "Ritratto umano e artistico di Maria Antonina Macaluso a 24 anni: dieci film, Premio Leone Lungo, content creator, radici siciliane.",
+      datePublished: "2026-09-28T16:00:00Z",
+      about: [{ "@type": "Person", name: "Maria Antonina Macaluso" }],
+    },
+    {
+      "@type": "Article",
+      headline: "Percorso artistico di Maria Antonina Macaluso nel cinema siciliano",
+      url: `${SITE.url}/news/percorso-artistico-cinema-sicilia`,
+      image: `${SITE.url}/images/venezia/venezia-01.jpg`,
+      publisher: { "@type": "Organization", name: "Maria Antonina Macaluso — Enciclopedia digitale" },
+      description:
+        "Approfondimento del percorso artistico di Maria Antonina Macaluso nel cinema siciliano contemporaneo: dal debutto 2019 al Premio Leone Lungo a Venezia 83.",
+      datePublished: "2026-09-28T17:00:00Z",
+      about: [
+        { "@type": "Person", name: "Maria Antonina Macaluso" },
+        { "@type": "Person", name: "Angelo Faraci" },
+      ],
+    },
   ],
   // performerIn: filmografia completa con copertine originali + regista + descrizione
   performerIn: [
@@ -650,6 +689,93 @@ const profilePageJsonLd = {
   },
 };
 
+// Organization — publisher del sito come entità autorevole
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Maria Antonina Macaluso — Enciclopedia digitale",
+  alternateName: "Enciclopedia digitale Maria Antonina Macaluso",
+  url: SITE.url,
+  description: "Enciclopedia digitale ufficiale dedicata a Maria Antonina Macaluso, attrice siciliana. Include biografia, filmografia, photo book, news e approfondimenti.",
+  foundingDate: "2024-01-01",
+  founder: {
+    "@type": "Person",
+    name: "Maria Antonina Macaluso",
+    url: SITE.url,
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Camporeale",
+    addressRegion: "Palermo",
+    addressCountry: "IT",
+  },
+  areaServed: "Italy",
+  knowsLanguage: ["it-IT", "scn"],
+  logo: {
+    "@type": "ImageObject",
+    url: `${SITE.url}/images/hero-maria-antonina.jpg`,
+  },
+  sameAs: [
+    "https://www.instagram.com/mary.macaluso09",
+    "https://www.tiktok.com/@mary.macaluso",
+    "https://www.facebook.com/mary.macaluso.16",
+    "https://www.imdb.com/name/nm14708762/",
+    "https://www.wikidata.org/wiki/Q140944431",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "Press inquiries",
+    email: "mariantonina63@gmail.com",
+    areaServed: "IT",
+    availableLanguage: ["Italian", "Sicilian"],
+  },
+};
+
+// SiteNavigationElement — struttura di navigazione del sito (Google usa questo per sitelinks)
+const siteNavigationElementJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SiteNavigationElement",
+  name: "Navigazione principale",
+  url: SITE.url,
+  hasPart: [
+    { "@type": "WebPage", name: "Home", url: SITE.url },
+    { "@type": "WebPage", name: "Biografia", url: `${SITE.url}/biografia` },
+    { "@type": "WebPage", name: "Filmografia", url: `${SITE.url}/filmografia` },
+    { "@type": "WebPage", name: "Photo Book", url: `${SITE.url}/photobook` },
+    { "@type": "WebPage", name: "Timeline", url: `${SITE.url}/timeline` },
+    { "@type": "WebPage", name: "Premi", url: `${SITE.url}/premi` },
+    { "@type": "WebPage", name: "Festival", url: `${SITE.url}/festival` },
+    { "@type": "WebPage", name: "Articoli", url: `${SITE.url}/articoli` },
+    { "@type": "WebPage", name: "Multimedia", url: `${SITE.url}/multimedia` },
+    { "@type": "WebPage", name: "Angelo Faraci", url: `${SITE.url}/angelo-faraci` },
+    { "@type": "WebPage", name: "FAQ", url: `${SITE.url}/faq` },
+    { "@type": "WebPage", name: "Contatti", url: `${SITE.url}/contatti` },
+    { "@type": "WebPage", name: "Venezia 83", url: `${SITE.url}/news/pochi-attimi-venezia-83` },
+    { "@type": "WebPage", name: "Sodalizio artistico", url: `${SITE.url}/news/sodalizio-maria-antonina-angelo-faraci` },
+    { "@type": "WebPage", name: "Cast Pochi Attimi", url: `${SITE.url}/news/cast-pochi-attimi` },
+    { "@type": "WebPage", name: "Catastrofi ambientali", url: `${SITE.url}/news/catastrofi-ambientali-italiane` },
+    { "@type": "WebPage", name: "Camporeale", url: `${SITE.url}/news/camporeale-radici-maria-antonina` },
+    { "@type": "WebPage", name: "Intervista", url: `${SITE.url}/news/intervista-maria-antonina-macaluso` },
+    { "@type": "WebPage", name: "Ritratto 24 anni", url: `${SITE.url}/news/ritratto-maria-antonina-24-anni` },
+    { "@type": "WebPage", name: "Percorso artistico", url: `${SITE.url}/news/percorso-artistico-cinema-sicilia` },
+    { "@type": "WebPage", name: "Tag Angelo Faraci", url: `${SITE.url}/tag/angelo-faraci` },
+    { "@type": "WebPage", name: "Tag Venezia 83", url: `${SITE.url}/tag/venezia-83` },
+    { "@type": "WebPage", name: "Tag Cinema siciliano", url: `${SITE.url}/tag/cinema-siciliano` },
+  ],
+};
+
+// Speakable — ottimizzazione voice search
+const speakableJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Maria Antonina Macaluso — Attrice Siciliana",
+  url: SITE.url,
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: [".speakable-summary", "h1"],
+  },
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="it" dir="ltr" suppressHydrationWarning>
@@ -749,6 +875,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd) }}
+        />
+        {/* Organization — publisher come entità autorevole */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        {/* SiteNavigationElement — struttura di navigazione per Google sitelinks */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationElementJsonLd) }}
+        />
+        {/* Speakable — ottimizzazione voice search */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableJsonLd) }}
         />
       </head>
       <body className="min-h-screen bg-noir text-cream antialiased" suppressHydrationWarning>
