@@ -1,11 +1,9 @@
-import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/data";
 
-export default function sitemapNews(): MetadataRoute.Sitemap {
+export async function GET() {
   const base = SITE.url;
-  const now = new Date();
+  const now = new Date().toISOString();
 
-  // Solo le pagine news (articoli originali)
   const newsArticles = [
     { path: "/news/pochi-attimi-venezia-83", title: "VENEZIA 83 — Pochi Attimi al Premio Leone Lungo", date: "2026-08-16" },
     { path: "/news/sodalizio-maria-antonina-angelo-faraci", title: "Sodalizio artistico Macaluso-Faraci — 10 film", date: "2026-09-25" },
@@ -15,27 +13,45 @@ export default function sitemapNews(): MetadataRoute.Sitemap {
     { path: "/news/intervista-maria-antonina-macaluso", title: "Intervista a Maria Antonina Macaluso", date: "2026-09-28" },
     { path: "/news/ritratto-maria-antonina-24-anni", title: "Ritratto di Maria Antonina a 24 anni", date: "2026-09-28" },
     { path: "/news/percorso-artistico-cinema-sicilia", title: "Percorso artistico di Maria Antonina Macaluso nel cinema", date: "2026-09-28" },
-  ];
-
-  // Hub tematici (tag pages)
-  const tagPages = [
     { path: "/tag/angelo-faraci", title: "Angelo Faraci — regista e attore", date: "2026-09-28" },
     { path: "/tag/venezia-83", title: "Venezia 83 — Premio Leone Lungo", date: "2026-09-28" },
     { path: "/tag/cinema-siciliano", title: "Cinema siciliano contemporaneo", date: "2026-09-28" },
   ];
 
-  const allNews = [...newsArticles, ...tagPages];
+  const urls = newsArticles.map((n) => `  <url>
+    <loc>${base}${n.path}</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Maria Antonina Macaluso — Enciclopedia digitale</news:name>
+        <news:language>it-IT</news:language>
+      </news:publication>
+      <news:publication_date>${n.date}</news:publication_date>
+      <news:title>${escapeXml(n.title)}</news:title>
+    </news:news>
+  </url>`).join("\n");
 
-  return allNews.map((n) => ({
-    url: `${base}${n.path}`,
-    lastModified: now,
-    changeFrequency: "weekly" as const,
-    priority: 0.9,
-    // @ts-expect-error - news extension
-    news: {
-      title: n.title,
-      publication_date: n.date,
-      publication_language: "it-IT",
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+${urls}
+</urlset>`;
+
+  return new Response(xml, {
+    headers: {
+      "Content-Type": "application/xml; charset=utf-8",
+      "Cache-Control": "public, max-age=86400",
     },
-  }));
+  });
+}
+
+function escapeXml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
 }

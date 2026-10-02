@@ -52,7 +52,11 @@ export default function robots(): MetadataRoute.Robots {
         disallow: "/",
       },
     ],
-    sitemap: `${SITE.url}/sitemap.xml`,
+    sitemap: [
+      `${SITE.url}/sitemap.xml`,
+      `${SITE.url}/sitemap-news.xml`,
+      `${SITE.url}/sitemap-images.xml`,
+    ],
     host: SITE.url,
   };
 }
