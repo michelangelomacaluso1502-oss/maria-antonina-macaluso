@@ -29,6 +29,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/news/intervista-maria-antonina-macaluso", priority: 0.8, freq: "monthly" as const },
     { path: "/news/ritratto-maria-antonina-24-anni", priority: 0.8, freq: "monthly" as const },
     { path: "/news/percorso-artistico-cinema-sicilia", priority: 0.8, freq: "monthly" as const },
+    { path: "/news/angelo-faraci-regista-siciliano", priority: 0.9, freq: "monthly" as const },
+    { path: "/news/premi-riconoscimenti-maria-antonina", priority: 0.9, freq: "monthly" as const },
+    { path: "/news/valle-belice-1968-cinema-rinascita", priority: 0.9, freq: "monthly" as const },
     // === Hub tematici (tag pages) ===
     { path: "/tag/angelo-faraci", priority: 0.8, freq: "monthly" as const },
     { path: "/tag/venezia-83", priority: 0.8, freq: "monthly" as const },

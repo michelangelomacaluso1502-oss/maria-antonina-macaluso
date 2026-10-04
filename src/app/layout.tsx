@@ -343,6 +343,45 @@ const personJsonLd = {
         { "@type": "Person", name: "Angelo Faraci" },
       ],
     },
+    {
+      "@type": "Article",
+      headline: "Angelo Faraci — regista, attore e produttore siciliano",
+      url: `${SITE.url}/news/angelo-faraci-regista-siciliano`,
+      image: `${SITE.url}/images/venezia/venezia-03.jpg`,
+      publisher: { "@type": "Organization", name: "Maria Antonina Macaluso — Enciclopedia digitale" },
+      description:
+        "Biografia di Angelo Faraci, regista siciliano nato a Palermo il 13 agosto 1989. Enciclopedia digitale su angelo-faraci.vercel.app. IMDb nm11444273.",
+      datePublished: "2026-09-28T18:00:00Z",
+      about: [
+        { "@type": "Person", name: "Angelo Faraci", sameAs: "https://www.imdb.com/name/nm11444273/" },
+        { "@type": "Person", name: "Maria Antonina Macaluso" },
+      ],
+    },
+    {
+      "@type": "Article",
+      headline: "Premi e riconoscimenti di Maria Antonina Macaluso — cronologia",
+      url: `${SITE.url}/news/premi-riconoscimenti-maria-antonina`,
+      image: `${SITE.url}/images/venezia/venezia-05.jpg`,
+      publisher: { "@type": "Organization", name: "Maria Antonina Macaluso — Enciclopedia digitale" },
+      description:
+        "Cronologia dei 6 premi e riconoscimenti di Maria Antonina Macaluso dal 2021 al Premio Speciale Leone Lungo a Venezia 83 il 6 settembre 2026.",
+      datePublished: "2026-09-28T19:00:00Z",
+      about: [{ "@type": "Person", name: "Maria Antonina Macaluso" }],
+    },
+    {
+      "@type": "Article",
+      headline: "Valle del Belice — dal terremoto del 1968 al cinema con Pochi Attimi",
+      url: `${SITE.url}/news/valle-belice-1968-cinema-rinascita`,
+      image: `${SITE.url}/images/venezia/venezia-01.jpg`,
+      publisher: { "@type": "Organization", name: "Maria Antonina Macaluso — Enciclopedia digitale" },
+      description:
+        "Dal terremoto del Belice del 1968 al film Pochi Attimi di Angelo Faraci (2026) con Maria Antonina Macaluso come protagonista femminile.",
+      datePublished: "2026-09-28T20:00:00Z",
+      about: [
+        { "@type": "Place", name: "Valle del Belice" },
+        { "@type": "Movie", name: "Pochi Attimi" },
+      ],
+    },
   ],
   // performerIn: filmografia completa con copertine originali + regista + descrizione
   performerIn: [
