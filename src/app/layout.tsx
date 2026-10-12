@@ -652,11 +652,29 @@ const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Maria Antonina Macaluso — Attrice Siciliana",
+  alternateName: "Enciclopedia digitale Maria Antonina Macaluso",
   url: SITE.url,
   description: SITE.description,
   inLanguage: "it-IT",
   author: { "@type": "Person", name: "Maria Antonina Macaluso" },
   publisher: { "@type": "Person", name: "Maria Antonina Macaluso" },
+  // SearchAction — abilita il search box nei sitelinks Google
+  // Quando l'utente cerca "Maria Antonina Macaluso" su Google, il panel mostrerà
+  // un campo di ricerca che invia la query a questa URL template
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${SITE.url}/search?q={search_term_string}`,
+      actionPlatform: [
+        "https://schema.org/DesktopWebPlatform",
+        "https://schema.org/MobileWebPlatform",
+        "https://schema.org/AndroidPlatform",
+        "https://schema.org/IOSPlatform",
+      ],
+    },
+    "query-input": "required name=search_term_string",
+  },
 };
 
 // ClaimReview per fatti verificati (rafforza authority nel Knowledge Graph)

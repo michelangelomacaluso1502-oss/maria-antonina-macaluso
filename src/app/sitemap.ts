@@ -36,6 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/news/curiosita-fatti-maria-antonina", priority: 0.8, freq: "monthly" as const },
     // === Pagina enciclopedia (voce principale) ===
     { path: "/enciclopedia-maria-antonina", priority: 1, freq: "weekly" as const },
+    { path: "/search", priority: 0.3, freq: "weekly" as const },
     // === Hub tematici (tag pages) ===
     { path: "/tag/angelo-faraci", priority: 0.8, freq: "monthly" as const },
     { path: "/tag/venezia-83", priority: 0.8, freq: "monthly" as const },
