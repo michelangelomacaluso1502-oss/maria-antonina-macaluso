@@ -382,6 +382,45 @@ const personJsonLd = {
         { "@type": "Movie", name: "Pochi Attimi" },
       ],
     },
+    {
+      "@type": "Article",
+      headline: "Maria Antonina Macaluso — Enciclopedia (voce principale)",
+      url: `${SITE.url}/enciclopedia-maria-antonina`,
+      image: `${SITE.url}/images/hero-maria-antonina.jpg`,
+      publisher: { "@type": "Organization", name: "Enciclopedia digitale Maria Antonina Macaluso" },
+      description:
+        "Voce enciclopedica completa su Maria Antonina Macaluso, attrice siciliana nata a Bologna il 9 novembre 2001, cresciuta a Camporeale (Palermo). 19 fonti verificate. Wikidata Q140944431. IMDb nm14708762.",
+      datePublished: "2024-01-01T00:00:00Z",
+      dateModified: "2026-09-29T10:00:00Z",
+      about: {
+        "@type": "Person",
+        name: "Maria Antonina Macaluso",
+        sameAs: "https://www.wikidata.org/wiki/Q140944431",
+      },
+      wordCount: 3000,
+    },
+    {
+      "@type": "Article",
+      headline: "Le 10 domande più cercate su Maria Antonina Macaluso (risposte verificate)",
+      url: `${SITE.url}/news/domande-piu-cercate-maria-antonina`,
+      image: `${SITE.url}/images/photobook/mam-09.jpg`,
+      publisher: { "@type": "Organization", name: "Enciclopedia digitale Maria Antonina Macaluso" },
+      description:
+        "FAQ con 10 domande frequenti su Maria Antonina Macaluso: chi è, dove è nata, età, filmografia, fidanzato Angelo Faraci, Pochi Attimi, Venezia 83, Instagram. Risposte verificate da fonti pubbliche.",
+      datePublished: "2026-09-29T11:00:00Z",
+      about: [{ "@type": "Person", name: "Maria Antonina Macaluso" }],
+    },
+    {
+      "@type": "Article",
+      headline: "15 curiosità e fatti veritieri su Maria Antonina Macaluso",
+      url: `${SITE.url}/news/curiosita-fatti-maria-antonina`,
+      image: `${SITE.url}/images/photobook/mam-17.jpg`,
+      publisher: { "@type": "Organization", name: "Enciclopedia digitale Maria Antonina Macaluso" },
+      description:
+        "15 curiosità e fatti verificati su Maria Antonina Macaluso: data nascita, Camporeale, sodalizio Angelo Faraci, dieci film, sei premi, Premio Leone Lungo.",
+      datePublished: "2026-09-29T12:00:00Z",
+      about: [{ "@type": "Person", name: "Maria Antonina Macaluso" }],
+    },
   ],
   // performerIn: filmografia completa con copertine originali + regista + descrizione
   performerIn: [

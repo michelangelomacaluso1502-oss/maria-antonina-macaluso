@@ -32,6 +32,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/news/angelo-faraci-regista-siciliano", priority: 0.9, freq: "monthly" as const },
     { path: "/news/premi-riconoscimenti-maria-antonina", priority: 0.9, freq: "monthly" as const },
     { path: "/news/valle-belice-1968-cinema-rinascita", priority: 0.9, freq: "monthly" as const },
+    { path: "/news/domande-piu-cercate-maria-antonina", priority: 0.9, freq: "monthly" as const },
+    { path: "/news/curiosita-fatti-maria-antonina", priority: 0.8, freq: "monthly" as const },
+    // === Pagina enciclopedia (voce principale) ===
+    { path: "/enciclopedia-maria-antonina", priority: 1, freq: "weekly" as const },
     // === Hub tematici (tag pages) ===
     { path: "/tag/angelo-faraci", priority: 0.8, freq: "monthly" as const },
     { path: "/tag/venezia-83", priority: 0.8, freq: "monthly" as const },
