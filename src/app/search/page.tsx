@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import PageHero from "@/components/sections/PageHero";
 import SeoBoost from "@/components/site/SeoBoost";
 import SearchClient from "./search-client";
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: "Cerca nel sito",
   description: "Cerca tra articoli, film, news e pagine del sito dedicato a Maria Antonina Macaluso, attrice siciliana.",
   alternates: { canonical: "/search" },
-  robots: { index: false, follow: true }, // noindex per evitare duplicati nella SERP
+  robots: { index: false, follow: true },
 };
 
 const searchCollectionJsonLd = {
@@ -48,7 +49,9 @@ export default function SearchPage() {
         subtitle="Trova articoli, film, news e pagine del sito dedicato a Maria Antonina Macaluso."
         breadcrumb={[{ label: "Cerca" }]}
       />
-      <SearchClient />
+      <Suspense fallback={<div className="cinematic-container py-12 text-center text-cream/60">Caricamento...</div>}>
+        <SearchClient />
+      </Suspense>
     </main>
   );
 }
