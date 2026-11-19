@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5c2419"/>
+      <stop offset="100%" stop-color="#4a1c14"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="600" fill="url(#bg)"/>
+  <rect width="400" height="600" fill="url(#glow)"/>
+  <!-- Stelle -->
+  <g fill="#fff8dc" opacity="0.6">
+    <circle cx="60" cy="80" r="1.5"/>
+    <circle cx="120" cy="50" r="1"/>
+    <circle cx="320" cy="90" r="1.5"/>
+    <circle cx="340" cy="160" r="1"/>
+    <circle cx="80" cy="200" r="1"/>
+    <circle cx="350" cy="280" r="1.5"/>
+    <circle cx="50" cy="350" r="1"/>
+    <circle cx="330" cy="420" r="1.5"/>
+    <circle cx="70" cy="480" r="1"/>
+  </g>
+  <!-- Icona microfono -->
+  <g transform="translate(180, 130)" stroke="#ff6b35" stroke-width="2" fill="none">
+    <rect x="14" y="0" width="12" height="22" rx="6"/>
+    <path d="M6 18 Q6 32 20 32 Q34 32 34 18"/>
+    <line x1="20" y1="32" x2="20" y2="44"/>
+    <line x1="10" y1="44" x2="30" y2="44"/>
+  </g>
+  <!-- Titolo -->
+  <text x="200" y="240" text-anchor="middle" font-family="Playfair Display, serif" font-size="26" fill="#d4af37" font-weight="600">Di Tutto</text>
+  <text x="200" y="280" text-anchor="middle" font-family="Playfair Display, serif" font-style="italic" font-size="32" fill="#ff6b35" font-weight="600">un pò</text>
+  <!-- Anno -->
+  <text x="200" y="330" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" letter-spacing="4" fill="#cfc4b8">2025</text>
+  <!-- Tipo -->
+  <text x="200" y="365" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" letter-spacing="3" fill="#cfc4b8" opacity="0.7">SPECIALE TV · TALK SHOW</text>
+  <!-- Canali -->
+  <text x="200" y="405" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#ff6b35" font-weight="600">SICILMEDTV · ORAWEBTV</text>
+  <!-- Ruolo -->
+  <text x="200" y="440" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#cfc4b8" opacity="0.6">Speaker: Maria Antonina Macaluso</text>
+  <!-- M·M -->
+  <text x="200" y="540" text-anchor="middle" font-family="Playfair Display, serif" font-size="32" fill="#d4af37" opacity="0.6">M·M</text>
+</svg>
