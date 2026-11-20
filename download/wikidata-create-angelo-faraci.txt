@@ -1,0 +1,74 @@
+===============================================================================
+WIKIDATA — NUOVA VOCE DA CREARE: ANGELO FARACI
+===============================================================================
+Procedura: accedere a https://www.wikidata.org → "Crea un nuovo elemento"
+→ compilare Label/Description → aggiungere le dichiarazioni (statement) sotto.
+Ogni statement deve avere almeno una fonte (riferimento).
+
+-------------------------------------------------------------------------------
+DATI BASE
+-------------------------------------------------------------------------------
+Label (it):  Angelo Faraci
+Label (en):  Angelo Faraci
+Label (scn): Angelo Faraci  (siciliano — opzionale ma utile per cinema siciliano)
+Description (it):  attore, regista e produttore cinematografico italiano
+Description (en):  Italian actor, film director and producer
+
+-------------------------------------------------------------------------------
+STATEMENT DA INSERIRE (con fonte)
+-------------------------------------------------------------------------------
+
+P31  (instance of)       = Q5 (essere umano)
+P106 (occupazione)        = Q33999 (attore)
+                            + Q28389 (regista cinematografico)
+                            + Q3282637 (produttore cinematografico)
+P19  (luogo di nascita)   = Q3890 (Palermo)
+P569 (data di nascita)    = 1989-08-13
+P21  (sesso/genere)       = Q6581097 (maschio)
+P345 (IMDb ID)            = nm11444273
+                            Fonte: https://www.imdb.com/name/nm11444273/
+P2013 (Facebook ID)       = angelo.faraci.927
+                            Fonte: https://www.facebook.com/angelo.faraci.927
+P2003 (Instagram username)= angelo.faraci.13
+                            Fonte: https://www.instagram.com/angelo.faraci.13/
+P856 (sito web ufficiale) = https://mariaantoninamacaluso.it/angelo-faraci
+                            (pagina enciclopedia digitale sul sito ufficiale
+                             di Maria Antonina Macaluso, sua compagna artistica)
+P27  (cittadinanza)       = Q145 (Italia)
+P1412 (lingua parlata)    = Q652 (italiano), Q33965 (siciliano)
+
+-------------------------------------------------------------------------------
+COLLEGAMENTI FAMILIARI (dopo aver creato anche la voce di Marika)
+-------------------------------------------------------------------------------
+P3373 (fratello/sorella)  = [Marika Faraci — inserire Q-number dopo creazione]
+P451  (partner non coniugato) = Q140944431 (Maria Antonina Macaluso)
+                                 Fonte: https://mariaantoninamacaluso.it/angelo-faraci
+                                        (sodalizio artistico e di vita dal 2019)
+
+-------------------------------------------------------------------------------
+FILMOGRAFIA KEY (P161 = cast member / P57 = director)
+-------------------------------------------------------------------------------
+Pochi Attimi (2026)         — P57 (director) + P161 (cast)
+Separati Mai (2023-2024)    — P57
+Il Mistero di Spartivento    — P57
+Provvidenza (2021)          — P57
+Eccellenza Siciliana (2025) — P57
+(Per ogni film: verificare se esiste già una voce Wikidata del film;
+ se sì, linkare con Q-number; se no, aggiungere come "titolo" string.)
+
+-------------------------------------------------------------------------------
+PREMI
+-------------------------------------------------------------------------------
+Premio Speciale Leone Lungo — 83ª Mostra di Venezia (2026)
+  → P166 (award received): inserire se esiste voce Wikidata del premio
+
+-------------------------------------------------------------------------------
+NOTE
+-------------------------------------------------------------------------------
+- Angelo Faraci NON ha Wikipedia: la voce Wikidata è il primo passo.
+  Google può generare un mini-KP da Wikidata anche senza Wikipedia.
+- Fonte principale per la notabilità: Premio Leone Lungo a Venezia 83 (2026)
+  + filmografia Rai Cinema/Mediaset/Sky.
+- Dopo la creazione, aggiungere il sitelink a it.wikipedia QUANDO la voce
+  Wikipedia sarà pubblicata (se/subito).
+===============================================================================

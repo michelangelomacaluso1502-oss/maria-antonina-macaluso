@@ -1,0 +1,74 @@
+===============================================================================
+WIKIDATA — NUOVA VOCE DA CREARE: MARIKA FARACI
+===============================================================================
+Procedura: accedere a https://www.wikidata.org → "Crea un nuovo elemento"
+→ compilare Label/Description → aggiungere le dichiarazioni (statement) sotto.
+
+Marika Faraci (Saveria Faraci) — sorella di Angelo Faraci, attrice e modella.
+
+-------------------------------------------------------------------------------
+DATI BASE
+-------------------------------------------------------------------------------
+Label (it):  Marika Faraci
+Label (en):  Marika Faraci
+Description (it):  attrice, modella e docente di comunicazione italiana
+Description (en):  Italian actress, model and communication teacher
+
+-------------------------------------------------------------------------------
+STATEMENT DA INSERIRE (con fonte)
+-------------------------------------------------------------------------------
+
+P31  (instance of)       = Q5 (essere umano)
+P106 (occupazione)        = Q33999 (attore)
+                            + Q4610556 (modella)
+                            + Q18632568 (docente)  [insegnante di comunicazione]
+P19  (luogo di nascita)   = Q3890 (Palermo)
+P569 (data di nascita)    = 1995-09-06
+P21  (sesso/genere)       = Q6581072 (femmina)
+P1477 (nome di battesimo) = Saveria Faraci  [nome completo riportato dalla fonte]
+P345 (IMDb ID)            = nm14708763
+                            Fonte: https://www.imdb.com/name/nm14708763/
+P2013 (Facebook ID)       = marika.faraci95
+                            Fonte: https://www.facebook.com/marika.faraci95
+P2003 (Instagram username)= marika.faraci
+                            Fonte: https://www.instagram.com/marika.faraci/
+P856 (sito web ufficiale) = https://marikafaraci.altervista.org
+P27  (cittadinanza)       = Q145 (Italia)
+P1412 (lingua parlata)    = Q652 (italiano), Q33965 (siciliano)
+P69  (istruito presso)    = [verificare — PhD in Comunicazione, "Miss Sicily 110 e lode"]
+                            (inserire se si identifica l'università)
+
+-------------------------------------------------------------------------------
+COLLEGAMENTI FAMILIARI (dopo aver creato anche la voce di Angelo)
+-------------------------------------------------------------------------------
+P3373 (fratello/sorella)  = [Angelo Faraci — inserire Q-number dopo creazione]
+                            Fonte: IMDb lista Angelo Faraci → "Marika Faraci (Sibling)"
+                                   https://www.imdb.com/name/nm11444273/
+
+-------------------------------------------------------------------------------
+FILMOGRAFIA KEY (P161 = cast member)
+-------------------------------------------------------------------------------
+Pochi Attimi (2026)         — P161 (cast)
+Il cacciatore (2018)        — P161 (cast) — serie TV Rai
+De Serpentis Munere (2021)  — P161 (cast)
+(Per ogni film: verificare se esiste già una voce Wikidata; se sì, linkare.)
+
+-------------------------------------------------------------------------------
+EVENTI / RED CARPET
+-------------------------------------------------------------------------------
+83ª Mostra internazionale d'arte cinematografica di Venezia (2026)
+  → invitata ufficialmente come docente digitale e attrice
+  → P1344 (partecipante a): Q160618  (83ª Mostra — verificare Q-number)
+     Fonte: articoli stampa red carpet Venezia 83
+
+-------------------------------------------------------------------------------
+NOTE
+-------------------------------------------------------------------------------
+- Marika NON ha Wikipedia né Wikidata: questa voce è il primo passo.
+- Notabilità: partecipazione a Pochi Attimi (Premio Leone Lungo Venezia 83),
+  serie TV Rai "Il cacciatore", PhD/Miss Sicily, presenza red carpet Venezia.
+- Dopo la creazione, collegare a Angelo Faraci (P3373) e viceversa.
+- La creazione di voci Wikidata per Marika + Angelo + il collegamento con
+  Maria Antonina (Q140944431) forma un "grafo familiare" che Google usa per
+  validare l'entità → aumenta la probabilità di Knowledge Panel per tutti.
+===============================================================================
