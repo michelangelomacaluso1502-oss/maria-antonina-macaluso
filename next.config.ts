@@ -29,6 +29,7 @@ const nextConfig: NextConfig = {
   compress: true,
   productionBrowserSourceMaps: false,
   images: {
+    unoptimized: true,
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000, // 1 anno
     deviceSizes: [360, 414, 640, 750, 828, 1080, 1200, 1440, 1920], // Max 1920px per compatibilità tablet
