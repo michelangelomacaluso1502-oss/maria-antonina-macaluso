@@ -919,4 +919,10 @@
     <priority>0.5</priority>
     <image:image><image:loc>https://mariaantoninamacaluso.it/images/photobook/venezia-07.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://mariaantoninamacaluso.it/news/proiezione-pochi-attimi-cinema-empire-partinico</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
