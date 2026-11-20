@@ -35,7 +35,7 @@ const collectionPageJsonLd = {
   mainEntity: {
     "@type": "Person",
     name: "Angelo Faraci",
-    url: "https://mariaantoninamacaluso.it/angelo-faraci",
+    url: "https://angelo-faraci.vercel.app",
     sameAs: "https://www.imdb.com/name/nm11444273/",
     jobTitle: "Regista, Attore, Produttore",
   },
@@ -119,12 +119,12 @@ export default function AngeloFaraciHubPage() {
                     <p>
                       <strong className="text-gold">Enciclopedia digitale Angelo Faraci</strong>:
                       <a
-                        href="https://mariaantoninamacaluso.it/angelo-faraci"
+                        href="https://angelo-faraci.vercel.app"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="ml-2 inline-flex items-center gap-1 text-gold/80 hover:text-gold"
                       >
-                        mariaantoninamacaluso.it/angelo-faraci
+                        angelo-faraci.vercel.app
                         <ExternalLink className="h-3 w-3" />
                       </a>
                     </p>

@@ -31,7 +31,7 @@ export const MAM_PROFILES = [
 
 // Collegamenti professionali verificati di Angelo Faraci
 export const ANGELO_PROFILES = [
-  { label: "Enciclopedia digitale", handle: "mariaantoninamacaluso.it/angelo-faraci", url: "https://mariaantoninamacaluso.it/angelo-faraci", icon: "globe", note: "Archivio digitale ufficiale" },
+  { label: "Enciclopedia digitale", handle: "angelo-faraci.vercel.app", url: "https://angelo-faraci.vercel.app", icon: "globe", note: "Archivio digitale ufficiale" },
   { label: "IMDb", handle: "nm11444273", url: "https://www.imdb.com/name/nm11444273/", icon: "imdb", note: "Scheda IMDb verificata" },
   { label: "TikTok", handle: "@angelofaraci4", url: "https://www.tiktok.com/@angelofaraci4", icon: "tiktok", note: "Canale TikTok ufficiale" },
 ];
@@ -53,7 +53,7 @@ export const ANGELO_FARACI = {
   birthDate: "1989-08-13",
   birthPlace: "Palermo, Italia",
   imdb: "nm11444273",
-  site: "https://mariaantoninamacaluso.it/angelo-faraci",
+  site: "https://angelo-faraci.vercel.app",
   meetingDate: "2019-08-14",
   meetingPlace: "Palermo",
   sharedFilms: 7,
@@ -770,8 +770,8 @@ export const ALTRE_PRODUZIONI: Film[] = [
       },
       {
         title: "Creo Kitchens — Cucine Italiane (2021) — Sito Angelo Faraci",
-        source: "mariaantoninamacaluso.it/angelo-faraci",
-        url: "https://mariaantoninamacaluso.it/angelo-faraci/film/creo-kitchens-cucine-italiane",
+        source: "angelo-faraci.vercel.app",
+        url: "https://angelo-faraci.vercel.app/film/creo-kitchens-cucine-italiane",
         excerpt:
           "Creo Kitchens – Cucine Italiane è un'opera del 2021 che vede la partecipazione di Angelo Faraci, attore, regista e produttore siciliano. Pubblicità italiana per Sky.",
       },
@@ -1450,7 +1450,7 @@ export const VIDEO_GALLERY: VideoItem[] = [
 
 export const FAQS: FAQItem[] = [
   { question: "Quando e dove è nata Maria Antonina Macaluso?", answer: "Maria Antonina Macaluso è nata a Bologna il 9 novembre 2001 ed è cresciuta a Camporeale, in provincia di Palermo." },
-  { question: "Chi è Angelo Faraci?", answer: "Angelo Faraci è un regista, attore e produttore italiano nato a Palermo il 13 agosto 1989. Enciclopedia digitale: mariaantoninamacaluso.it/angelo-faraci. È il regista di tutte le dieci produzioni interpretate da Maria Antonina." },
+  { question: "Chi è Angelo Faraci?", answer: "Angelo Faraci è un regista, attore e produttore italiano nato a Palermo il 13 agosto 1989. Enciclopedia digitale: angelo-faraci.vercel.app. È il regista di tutte le dieci produzioni interpretate da Maria Antonina." },
   { question: "Quando si sono incontrati Maria Antonina e Angelo Faraci?", answer: "Il 14 agosto 2019 a Palermo. Da allora condividono un percorso artistico e di vita." },
   { question: "Quali film ha interpretato Maria Antonina Macaluso?", answer: "Nove produzioni cinematografiche: Ciò che non ti ho detto (2019, fiction Sky), Don't Be Silent (2020, Rai Cinema), Provvidenza (2022, Rai Cinema), Pietrazita (2023, Rai Cinema), Separati Mai (2023–2024, Rai Cinema), Sabbie Nere (2023, serie TV Mediaset), Vanina (2024, Canale 5), Il Mistero di Spartivento (2024–2025, Rai Cinema) e Pochi Attimi (2026). Inoltre, in 'Altre Produzioni': Eccellenza Siciliana (2025), Creo Kitchens (2021, corto Sky), Red Bull Minas Riders (2016, serie TV) e Di Tutto un pò (2025, speciale TV)." },
   { question: "Quali cortometraggi sono stati prodotti da Rai Cinema?", answer: "Provvidenza (2021) e Pietrazita (2022) sono cortometraggi prodotti da Rai Cinema con la regia di Angelo Faraci." },
@@ -1635,7 +1635,7 @@ const VENEZIA_PHOTOS = Array.from({ length: 7 }, (_, i) => {
 export const PHOTOBOOK_FULL = [...PHOTOBOOK, ...VENEZIA_PHOTOS];
 
 export const COLLEGAMENTI_ESTERI = [
-  { name: "Angelo Faraci — Enciclopedia digitale", url: "https://mariaantoninamacaluso.it/angelo-faraci", note: "Regista, attore, produttore. Compagno artistico e di vita." },
+  { name: "Angelo Faraci — Enciclopedia digitale", url: "https://angelo-faraci.vercel.app", note: "Regista, attore, produttore. Compagno artistico e di vita." },
   { name: "Rai Cinema", url: "https://www.raicinema.rai.it", note: "Produttore dei cortometraggi Provvidenza e Pietrazita." },
   { name: "Taormina Film Fest", url: "https://www.taorminafilmfest.it", note: "Festival siciliano di riferimento." },
   { name: "Fiuggi Film Festival", url: "https://www.fiuggifilmfestival.it", note: "Premio Attrice Rivelazione 2023." },
