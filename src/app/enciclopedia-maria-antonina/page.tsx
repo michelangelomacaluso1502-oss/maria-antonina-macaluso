@@ -98,7 +98,7 @@ const SCHEDA_IDENTITA = [
   { label: "Sodalizio artistico", valore: "Angelo Faraci (dal 14 agosto 2019)" },
   { label: "Wikidata", valore: "Q140944431" },
   { label: "IMDb", valore: "nm14708762" },
-  { label: "Enciclopedia digitale", valore: "maria-antonina-macaluso.vercel.app" },
+  { label: "Enciclopedia digitale", valore: "mariaantoninamacaluso.it" },
 ];
 
 export default function EnciclopediaPage() {

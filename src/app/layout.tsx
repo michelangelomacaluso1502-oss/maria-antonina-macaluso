@@ -121,8 +121,8 @@ const personJsonLd = {
     "https://www.facebook.com/mary.macaluso.16",
     "https://www.tiktok.com/@mary.macaluso",
     "https://www.imdb.com/name/nm14708762/",
-    "https://maria-antonina-macaluso.vercel.app",
-    "https://angelo-faraci.vercel.app",
+    "https://mariaantoninamacaluso.it",
+    "https://mariaantoninamacaluso.it/angelo-faraci",
     "https://www.wikidata.org/wiki/Q140944431",
     "https://cinematografica.altervista.org/maria-antonina-macaluso",
     "https://cronachemediterranee.net/vulcanica-content-creator-maria-antonina-macaluso",
@@ -163,7 +163,7 @@ const personJsonLd = {
     "@type": "Person",
     name: "Angelo Faraci",
     jobTitle: "Regista, Attore, Produttore",
-    url: "https://angelo-faraci.vercel.app",
+    url: "https://mariaantoninamacaluso.it/angelo-faraci",
     sameAs: "https://www.imdb.com/name/nm11444273/",
   },
   // subjectOf: articoli di fonti terze indipendenti su Maria Antonina
@@ -353,7 +353,7 @@ const personJsonLd = {
       image: `${SITE.url}/images/venezia/venezia-03.jpg`,
       publisher: { "@type": "Organization", name: "Maria Antonina Macaluso — Enciclopedia digitale" },
       description:
-        "Biografia di Angelo Faraci, regista siciliano nato a Palermo il 13 agosto 1989. Enciclopedia digitale su angelo-faraci.vercel.app. IMDb nm11444273.",
+        "Biografia di Angelo Faraci, regista siciliano nato a Palermo il 13 agosto 1989. Enciclopedia digitale su mariaantoninamacaluso.it/angelo-faraci. IMDb nm11444273.",
       datePublished: "2026-09-28T18:00:00Z",
       about: [
         { "@type": "Person", name: "Angelo Faraci", sameAs: "https://www.imdb.com/name/nm11444273/" },

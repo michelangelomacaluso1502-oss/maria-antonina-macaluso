@@ -139,7 +139,7 @@ const nextConfig: NextConfig = {
       source: "/api/(.*)",
       headers: [
         { key: "Cache-Control", value: "no-store, no-cache, must-revalidate" },
-        { key: "Access-Control-Allow-Origin", value: "https://maria-antonina-macaluso.vercel.app" },
+        { key: "Access-Control-Allow-Origin", value: "https://mariaantoninamacaluso.it" },
         { key: "Access-Control-Allow-Methods", value: "GET, POST, OPTIONS" },
         { key: "Access-Control-Allow-Headers", value: "Content-Type, Authorization" },
         { key: "Access-Control-Max-Age", value: "86400" },

@@ -164,7 +164,7 @@ const DOMANDE = [
   },
   {
     domanda: "Chi è il fidanzato di Maria Antonina Macaluso?",
-    risposta: "Maria Antonina Macaluso è compagna artistica e di vita del regista Angelo Faraci dal 14 agosto 2019. Angelo Faraci è nato a Palermo il 13 agosto 1989 ed è regista, attore e produttore. Il sodalizio artistico dura dal 2019 ed ha prodotto 10 film insieme. Angelo ha una enciclopedia digitale dedicata su angelo-faraci.vercel.app.",
+    risposta: "Maria Antonina Macaluso è compagna artistica e di vita del regista Angelo Faraci dal 14 agosto 2019. Angelo Faraci è nato a Palermo il 13 agosto 1989 ed è regista, attore e produttore. Il sodalizio artistico dura dal 2019 ed ha prodotto 10 film insieme. Angelo ha una enciclopedia digitale dedicata su mariaantoninamacaluso.it/angelo-faraci.",
     fonte: "Intervista Radio Amica storica",
     fonteUrl: "https://www.radioamica.it/da-un-piccolo-comune-allincontro-con-lattore-regista-angelo-faraci-lattrice-camporealese-maria-antonina-macaluso-si-racconta",
   },

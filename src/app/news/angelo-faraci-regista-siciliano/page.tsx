@@ -9,11 +9,11 @@ import { SITE } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Angelo Faraci — regista siciliano biografia",
-  description: "Biografia di Angelo Faraci, regista, attore e produttore siciliano nato a Palermo il 13 agosto 1989. Enciclopedia digitale su angelo-faraci.vercel.app. IMDb nm11444273.",
+  description: "Biografia di Angelo Faraci, regista, attore e produttore siciliano nato a Palermo il 13 agosto 1989. Enciclopedia digitale su mariaantoninamacaluso.it/angelo-faraci. IMDb nm11444273.",
   alternates: { canonical: "/news/angelo-faraci-regista-siciliano" },
   openGraph: {
     title: "Angelo Faraci — regista, attore, produttore siciliano",
-    description: "Biografia di Angelo Faraci, regista siciliano nato a Palermo il 13 agosto 1989. Enciclopedia digitale su angelo-faraci.vercel.app.",
+    description: "Biografia di Angelo Faraci, regista siciliano nato a Palermo il 13 agosto 1989. Enciclopedia digitale su mariaantoninamacaluso.it/angelo-faraci.",
     images: [{ url: "/images/venezia/venezia-03.jpg", width: 1025, height: 1280, alt: "Angelo Faraci e Maria Antonina Macaluso all'evento Venezia 83" }],
     type: "article",
     publishedTime: "2026-09-28T18:00:00Z",
@@ -43,7 +43,7 @@ const articleJsonLd = {
   keywords: ["Angelo Faraci", "regista siciliano", "Palermo", "attrice Maria Antonina Macaluso", "Enciclopedia digitale", "IMDb nm11444273"],
   citation: [
     "https://www.imdb.com/name/nm11444273/",
-    "https://angelo-faraci.vercel.app",
+    "https://mariaantoninamacaluso.it/angelo-faraci",
     "https://www.radioamica.it/da-un-piccolo-comune-allincontro-con-lattore-regista-angelo-faraci-lattrice-camporealese-maria-antonina-macaluso-si-racconta",
   ],
 };
@@ -158,12 +158,12 @@ export default function AngeloFaraciRegistaPage() {
                 <p>
                   L'enciclopedia digitale dedicata ad Angelo Faraci è disponibile all'URL:
                   <a
-                    href="https://angelo-faraci.vercel.app"
+                    href="https://mariaantoninamacaluso.it/angelo-faraci"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="ml-1 inline-flex items-center gap-1 text-gold/80 hover:text-gold"
                   >
-                    angelo-faraci.vercel.app
+                    mariaantoninamacaluso.it/angelo-faraci
                     <ExternalLink className="h-3 w-3" />
                   </a>.
                 </p>
@@ -294,13 +294,13 @@ export default function AngeloFaraciRegistaPage() {
                         Scheda Angelo Faraci — nm11444273
                       </a>
                       <a
-                        href="https://angelo-faraci.vercel.app"
+                        href="https://mariaantoninamacaluso.it/angelo-faraci"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block text-sm text-gold/80 hover:text-gold"
                       >
                         <strong className="uppercase text-[11px] tracking-wide-sm text-gold/70 mr-2">Enciclopedia digitale</strong>
-                        angelo-faraci.vercel.app
+                        mariaantoninamacaluso.it/angelo-faraci
                       </a>
                       <a
                         href="https://www.radioamica.it/da-un-piccolo-comune-allincontro-con-lattore-regista-angelo-faraci-lattrice-camporealese-maria-antonina-macaluso-si-racconta"
