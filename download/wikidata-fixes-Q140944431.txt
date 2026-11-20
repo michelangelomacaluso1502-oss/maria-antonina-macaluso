@@ -1,0 +1,73 @@
+===============================================================================
+WIKIDATA Q140944431 — MODIFICHE NECESSARIE
+===============================================================================
+Entità: https://www.wikidata.org/wiki/Q140944431
+Label: Maria Antonina Macaluso (it/en) — OK
+Desc: "attrice italiana" (it) — OK
+
+Stato attuale: 15 proprietà, 16 statement. SITELINKS: nessuna (manca la voce
+Wikipedia — verrà collegata dopo la pubblicazione della voce su it.wiki).
+
+-------------------------------------------------------------------------------
+MODIFICHE DA FARE (accedere a wikidata.org con account Wikipedia):
+-------------------------------------------------------------------------------
+
+1) AGGIUNGI — P27 (cittadinanza): Q145 (Italia)
+   Motivo: cittadina italiana (nata a Bologna). Attualmente ASSENTE.
+   Fonte: P19 (luogo di nascita) = Q1891 (Bologna, Italia)
+
+2) AGGIORNA — P856 (sito web ufficiale):
+   ATTUALE: https://maria-antonina-macaluso.vercel.app  ← URL VECCHIO (Vercel, progetto eliminato)
+   NUOVO:   https://mariaantoninamacaluso.it            ← dominio definitivo
+   Motivo: migrazione da Vercel a GitHub Pages + dominio proprio.
+
+3) AGGIUNGI — P2003 (nome utente Instagram): mary.macaluso09
+   URL di verifica: https://www.instagram.com/mary.macaluso09 (11.9K follower)
+
+4) AGGIUNGI — P4138 NON È mymovies (P4138 = Kinopoisk person ID).
+   Per il profilo mymovies (ID 410117): verificare se esiste una proprietà
+   Wikidata dedicata. In alternativa, aggiungere come qualifier sotto P856
+   o come "identificativo esterno" se si trova la proprietà corretta.
+   URL mymovies: https://www.mymovies.it/biografia/?id=410117
+
+5) (OPZIONALE) AGGIUNGI — TikTok: verificare la proprietà Wikidata corretta
+   per il nome utente TikTok (P7085 "TikTok username" da confermare).
+   Username: mary.macaluso (5.2K follower)
+   URL: https://www.tiktok.com/@mary.macaluso
+
+6) (OPZIONALE) AGGIUNGI — P106 (professione): già presente Q33999 (attore).
+   Potrebbe essere arricchito con Q2077551 (content creator) o Q115460164
+   se si vuole riflettere anche l'attività di content creator.
+
+7) (DOPO pubblicazione Wikipedia) AGGIUNGI sitelink itwiki:
+   Quando la voce sarà pubblicata su it.wikipedia.org, il sitelink verrà
+   creato automaticamente (collegamento tra Wikidata e Wikipedia).
+
+-------------------------------------------------------------------------------
+PROCEDURA:
+-------------------------------------------------------------------------------
+1. Accedere a https://www.wikidata.org con account Wikipedia
+2. Cercare Q140944431
+3. Per ogni modifica: cliccare "+ aggiungi dichiarazione" (o "modifica" per P856)
+4. Inserire il valore + una fonte (cite the official website or Instagram profile)
+5. Salvare con un summary tipo: "Aggiunta cittadinanza IT, aggiornato sito ufficiale, aggiunti social"
+
+IMPORTANTE: ogni statement dovrebbe avere una fonte (riferimento). Usare come
+fonte il sito ufficiale https://mariaantoninamacaluso.it o i profili social verificati.
+
+===============================================================================
+PERCHÉ QUESTE MODIFICHE SONO CRITICHE PER IL KNOWLEDGE PANEL:
+===============================================================================
+Google estrae i dati del Knowledge Panel principalmente da Wikidata + Wikipedia.
+- P27 (cittadinanza) → appare nel KP come "Italian"
+- P856 (sito ufficiale) → link ufficiale nel KP (ORA punta al vecchio Vercel!)
+- P2003/P7085 (social) → icine social nel KP
+- Sitelink itwiki → attiva il KP quando la voce Wikipedia viene indicizzata
+
+Senza queste correzioni, Google potrebbe:
+- non mostrare il sito ufficiale (o puntare al vecchio URL)
+- non collegare i social
+- non generare il KP finché la voce Wikipedia non è pubblicata
+
+Priorità: 1 e 2 sono URGENTI (dati sbagliati/assenti). 3-5 sono arricchimenti.
+===============================================================================
