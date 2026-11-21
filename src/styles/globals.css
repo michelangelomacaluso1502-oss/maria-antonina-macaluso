@@ -1215,3 +1215,46 @@ button, a.btn-cinema, a.btn-ghost-cinema, [role="button"] {
     border-color: #c9a96a !important;
   }
 }
+
+/* ============================================
+   PHOTOBOOK GRID: colonne custom > 12 per desktop
+   Tailwind v4 non supporta grid-cols-[20] syntax → uso class custom
+   ============================================ */
+.photobook-grid {
+  /* default mobile: 5 colonne */
+}
+@media (min-width: 1024px) {
+  /* LG desktop: 14 colonne (~70px su 1024px) */
+  .photobook-grid {
+    grid-template-columns: repeat(14, minmax(0, 1fr));
+    gap: 1.5px;
+  }
+}
+@media (min-width: 1280px) {
+  /* XL desktop: 16 colonne (~75px su 1280px) */
+  .photobook-grid {
+    grid-template-columns: repeat(16, minmax(0, 1fr));
+    gap: 2px;
+  }
+}
+@media (min-width: 1536px) {
+  /* 2XL desktop: 20 colonne (~75px su 1536px) */
+  .photobook-grid {
+    grid-template-columns: repeat(20, minmax(0, 1fr));
+    gap: 2px;
+  }
+}
+@media (min-width: 1920px) {
+  /* Full HD+: 24 colonne (~75px su 1920px) */
+  .photobook-grid {
+    grid-template-columns: repeat(24, minmax(0, 1fr));
+    gap: 2px;
+  }
+}
+@media (min-width: 2560px) {
+  /* 2K/4K: 30 colonne (~80px su 2560px) */
+  .photobook-grid {
+    grid-template-columns: repeat(30, minmax(0, 1fr));
+    gap: 2px;
+  }
+}
