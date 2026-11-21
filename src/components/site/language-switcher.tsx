@@ -107,6 +107,86 @@ function applyFromMemoryCache(lang: string): boolean {
   return applied > 0;
 }
 
+// === CLIENT-SIDE TRANSLATION (works on GitHub Pages static export) ===
+// Uses MyMemory API (free, CORS-enabled, no API key required, 5000 words/day/IP).
+// Falls back to original text on any error. Results cached in IndexedDB + memory.
+const MYMEMORY_ENDPOINT = "https://api.mymemory.translated.net/get";
+
+// Concurrency limiter: max 3 parallel requests to avoid rate-limiting
+async function translateBatchClientSide(
+  texts: string[],
+  sourceLang: string,
+  targetLang: string,
+): Promise<string[]> {
+  const CONCURRENCY = 3;
+  const results: string[] = new Array(texts.length).fill("");
+
+  async function translateOne(text: string, idx: number): Promise<void> {
+    const trimmed = text.trim();
+    if (!trimmed || trimmed.length < 2) {
+      results[idx] = text;
+      return;
+    }
+    // Skip if text is only numbers/symbols
+    if (/^[\d\s.,/:%@#\-+()]+$/.test(trimmed)) {
+      results[idx] = text;
+      return;
+    }
+    try {
+      const url = `${MYMEMORY_ENDPOINT}?q=${encodeURIComponent(text)}&langpair=${sourceLang}|${targetLang}`;
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 4000);
+      const res = await fetch(url, {
+        signal: controller.signal,
+        headers: { accept: "application/json" },
+      });
+      clearTimeout(timer);
+      if (!res.ok) {
+        results[idx] = text;
+        return;
+      }
+      const data = await res.json();
+      const translated: string = data?.responseData?.translatedText ?? text;
+      // MyMemory returns warnings/errors in translatedText sometimes (e.g. "MYMEMORY WARNING:")
+      if (translated && !translated.startsWith("MYMEMORY WARNING") && !translated.startsWith("INVALID")) {
+        results[idx] = translated;
+      } else {
+        results[idx] = text;
+      }
+    } catch {
+      results[idx] = text;
+    }
+  }
+
+  // Process with concurrency limit
+  const tasks: Promise<void>[] = [];
+  let running = 0;
+  let cursor = 0;
+
+  return new Promise((resolve) => {
+    function next() {
+      while (running < CONCURRENCY && cursor < texts.length) {
+        const idx = cursor++;
+        running++;
+        tasks.push(
+          translateOne(texts[idx], idx).finally(() => {
+            running--;
+            if (cursor < texts.length) {
+              next();
+            } else if (running === 0) {
+              resolve(results);
+            }
+          }),
+        );
+      }
+      if (cursor >= texts.length && running === 0) {
+        resolve(results);
+      }
+    }
+    next();
+  });
+}
+
 export default function LanguageSwitcher50() {
   const [current, setCurrent] = useState<LanguageDef>(getLang(DEFAULT_LANG));
   const [open, setOpen] = useState(false);
@@ -273,6 +353,33 @@ export default function LanguageSwitcher50() {
       const uniqueTexts = Array.from(byText.keys());
       const memCache = getLangCache(lang);
 
+      // === PRE-CARICA TRADUZIONI STATICHE JSON (14 lingue principali) ===
+      // Per le lingue con JSON statico in /public/translations/{lang}.json,
+      // popola la cache memory+IndexedDB con le traduzioni pre-caricate.
+      // Questo rende lo switch ISTANTANEO per le 14 lingue principali senza chiamare API.
+      const STATIC_LANGS = ["en", "es", "fr", "de", "pt", "ru", "zh", "ja", "ar", "hi", "ko", "tr", "pl", "nl"];
+      if (STATIC_LANGS.includes(lang) && memCache.size === 0) {
+        try {
+          const res = await fetch(`/translations/${lang}.json`, { cache: "force-cache" });
+          if (res.ok) {
+            const staticMap: Record<string, string> = await res.json();
+            const pairs: { text: string; translation: string }[] = [];
+            for (const [it, tr] of Object.entries(staticMap)) {
+              if (it && tr && it !== tr) {
+                memCache.set(it, tr);
+                pairs.push({ text: it, translation: tr });
+              }
+            }
+            // Save static translations to IndexedDB for future persistence
+            if (pairs.length > 0) {
+              batchSetCachedTranslations(SOURCE_LANG, lang, pairs).catch(() => {});
+            }
+          }
+        } catch {
+          // ignore - fallback to API for any missed texts
+        }
+      }
+
       // Check in-memory cache first (synchronous, instant)
       const toTranslate: string[] = [];
       const cached = new Map<string, string>();
@@ -307,21 +414,13 @@ export default function LanguageSwitcher50() {
         cachedEntries[i][0].textContent = cachedEntries[i][1];
       }
 
-      // Batch translate misses via API
+      // Batch translate misses via CLIENT-SIDE MyMemory API (works on GitHub Pages static)
+      // /api/translate route doesn't exist on static hosts → call MyMemory directly from browser.
+      // MyMemory: free, CORS-enabled, 5000 words/day/IP. Fallback to original text on error.
       for (let i = 0; i < toTranslate.length; i += BATCH_SIZE) {
         const batch = toTranslate.slice(i, i + BATCH_SIZE);
         try {
-          const res = await fetch("/api/translate", {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify({
-              texts: batch,
-              targetLang: lang,
-              sourceLang: SOURCE_LANG,
-            }),
-          });
-          const data = await res.json();
-          const translations: string[] = data?.translations ?? batch;
+          const translations = await translateBatchClientSide(batch, SOURCE_LANG, lang);
           const pairs = batch.map((text, idx) => ({
             text,
             translation: translations[idx] ?? text,

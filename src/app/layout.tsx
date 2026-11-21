@@ -909,6 +909,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
         <link rel="dns-prefetch" href="https://img.youtube.com" />
+        {/* Preconnect MyMemory API per traduzioni istantanee client-side */}
+        <link rel="preconnect" href="https://api.mymemory.translated.net" />
+        <link rel="dns-prefetch" href="https://api.mymemory.translated.net" />
         {/* Preload font CSS con font-display swap */}
         <link
           rel="preload"
