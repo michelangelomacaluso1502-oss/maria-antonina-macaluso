@@ -6,7 +6,7 @@ import SeoBoost from "@/components/site/SeoBoost";
 export const metadata: Metadata = {
   title: "Photo Book",
   description:
-    "Photo Book di Maria Antonina Macaluso: 83 scatti dell'attrice siciliana. Un archivio visivo del suo percorso.",
+    "Photo Book di Maria Antonina Macaluso: 90 scatti dell'attrice siciliana (83 scatti classici + 7 scatti Venezia 83). Un archivio visivo del suo percorso cinematografico.",
   alternates: { canonical: "/photobook" },
 };
 
@@ -21,8 +21,8 @@ export default function PhotoBookPage() {
       />
       <PageHero
         eyebrow="Photo Book"
-        title="Ottantatré scatti"
-        subtitle="Un archivio visivo dell'attrice siciliana"
+        title="Novanta scatti"
+        subtitle="Un archivio visivo dell'attrice siciliana — 83 scatti classici + 7 scatti Venezia 83"
         breadcrumb={[{ label: "Photo Book" }]}
       />
       <PhotoBook />
