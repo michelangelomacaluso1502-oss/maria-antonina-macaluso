@@ -4,3 +4,5 @@ Disallow: /api/
 Disallow: /_next/
 
 Sitemap: https://mariaantoninamacaluso.it/sitemap.xml
+Sitemap: https://mariaantoninamacaluso.it/sitemap-images.xml
+Sitemap: https://mariaantoninamacaluso.it/sitemap-news.xml
