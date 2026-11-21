@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { FILMS, MAM_IMDB_URL } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
@@ -110,13 +109,10 @@ export default async function FilmPage({
             <Reveal>
               <div className="zoom-wrap glass-card aspect-[2/3] w-full max-w-[300px] overflow-hidden">
                 {film.poster ? (
-                  <Image
+                  <img
                     src={film.poster}
                     alt={`Locandina ${film.title}`}
-                    fill
-                    sizes="(min-width: 768px) 300px, 100vw"
                     className="object-cover"
-                    priority
                   />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-smoke-light to-noir">
@@ -208,12 +204,9 @@ export default async function FilmPage({
               <div className="divider-cinema mt-6 max-w-xs" />
               <figure className="glass-card mt-8 overflow-hidden p-3">
                 <div className="relative aspect-[3/4] w-full overflow-hidden bg-noir">
-                  <Image
+                  <img
                     src="/images/films/dont-be-silent-set.jpg"
                     alt="Maria Antonina Macaluso con ciak DON'T BE SILENT sulla spiaggia al tramonto"
-                    fill
-                    sizes="(min-width: 768px) 768px, 100vw"
-                    quality={100}
                     className="object-cover"
                   />
                 </div>
@@ -304,11 +297,9 @@ export default async function FilmPage({
                   >
                     <div className="relative mb-3 aspect-[2/3] w-full overflow-hidden bg-gradient-to-br from-smoke-light to-noir">
                       {f.poster ? (
-                        <Image
+                        <img
                           src={f.poster}
                           alt={`Locandina ${f.title}`}
-                          fill
-                          sizes="(min-width: 640px) 33vw, 100vw"
                           className="object-cover transition-transform duration-700 group-hover:scale-105"
                           loading="lazy"
                         />

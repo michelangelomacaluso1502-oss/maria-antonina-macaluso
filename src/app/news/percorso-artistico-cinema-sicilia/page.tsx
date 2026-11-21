@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import PageHero from "@/components/sections/PageHero";
 import SeoBoost from "@/components/site/SeoBoost";
 import { Reveal } from "@/components/cinematic/Reveal";

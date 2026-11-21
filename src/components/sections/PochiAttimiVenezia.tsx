@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Reveal } from "@/components/cinematic/Reveal";
 import { ExternalLink, Calendar, MapPin, Award, Film, Users, Newspaper, Star } from "lucide-react";
 
@@ -156,14 +155,10 @@ export default function PochiAttimiVenezia() {
           <Reveal>
             <figure className="glass-card overflow-hidden p-3">
               <div className="relative aspect-[896/1200] w-full overflow-hidden bg-noir">
-                <Image
+                <img
                   src="/images/news/pochi-attimi-venezia-83.jpg"
                   alt="Locandina ufficiale — Pochi Attimi Premio Leone Lungo Venezia 83"
-                  fill
-                  sizes="(min-width: 768px) 400px, 100vw"
-                  quality={100}
                   className="object-contain"
-                  priority
                 />
               </div>
               <figcaption className="px-3 py-3 text-center text-xs uppercase tracking-wide-sm text-cream/50">

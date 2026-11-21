@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Reveal } from "@/components/cinematic/Reveal";
 import SectionHeading from "./SectionHeading";
 import { Heart, Calendar, MapPin, Film, ExternalLink } from "lucide-react";
@@ -118,13 +117,11 @@ export default function LoveStory() {
             <Reveal key={i} delay={(i % 3) * 80} className="masonry-item">
               <figure className="glass-card group overflow-hidden p-2">
                 <div className="zoom-wrap relative overflow-hidden">
-                  <Image
+                  <img
                     src={photo.src}
                     alt={photo.alt}
                     width={800}
                     height={photo.span === "wide" ? 500 : photo.span === "tall" ? 1200 : 800}
-                    sizes="(min-width: 1280px) 25vw, (min-width: 640px) 33vw, 50vw"
-                    quality={95}
                     className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />

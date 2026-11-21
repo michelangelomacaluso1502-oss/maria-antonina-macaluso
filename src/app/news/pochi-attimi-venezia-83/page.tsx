@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import PageHero from "@/components/sections/PageHero";
 import SeoBoost from "@/components/site/SeoBoost";
 import { Reveal } from "@/components/cinematic/Reveal";
@@ -98,14 +97,10 @@ export default function NewsPochiAttimiVenezia83() {
             <Reveal className="mb-12 flex justify-center">
               <figure className="glass-card overflow-hidden p-3 max-w-[360px]">
                 <div className="relative aspect-[896/1200] w-full overflow-hidden bg-noir">
-                  <Image
+                  <img
                     src="/images/news/pochi-attimi-venezia-83.jpg"
                     alt="Locandina ufficiale — Pochi Attimi Premio Leone Lungo Venezia 83"
-                    fill
-                    sizes="(min-width: 768px) 360px, 100vw"
-                    quality={100}
                     className="object-contain"
-                    priority
                   />
                 </div>
                 <figcaption className="px-3 py-3 text-center text-xs uppercase tracking-wide-sm text-cream/50">

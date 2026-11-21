@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
 import { Play, ExternalLink } from "lucide-react";
 
 interface YouTubeFacadeProps {
@@ -15,7 +14,7 @@ interface YouTubeFacadeProps {
  *
  * Ottimizzazioni:
  * 1. Precarica connessione YouTube al hover (dns-prefetch + preconnect)
- * 2. Iframe con loading="eager" (non lazy) quando attivato
+ * 2. Iframe con (non lazy) quando attivato
  * 3. Thumbnail hqdefault (più piccola, carica subito)
  * 4. Niente state intermedi — click diretto al iframe
  * 5. usa www.youtube.com (non nocookie) per compatibilità massima
@@ -68,13 +67,10 @@ export default function YouTubeFacade({
       className={`group relative aspect-video w-full overflow-hidden bg-noir cursor-pointer no-tap-highlight ${className}`}
       style={{ touchAction: "manipulation" }}
     >
-      <Image
+      <img
         src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
         alt={title}
-        fill
-        sizes="(min-width: 768px) 50vw, 100vw"
         className="object-cover transition-transform duration-300 group-hover:scale-105"
-        unoptimized
       />
       <div className="absolute inset-0 bg-gradient-to-t from-noir/80 via-noir/20 to-noir/30 transition-opacity group-hover:from-noir/70" />
       <div className="absolute inset-0 flex items-center justify-center">

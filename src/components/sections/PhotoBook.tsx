@@ -2,7 +2,6 @@ import { PHOTOBOOK_FULL } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
 import SectionHeading from "./SectionHeading";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 /**
@@ -37,12 +36,9 @@ export default function PhotoBook({ compact = false }: { compact?: boolean }) {
                   aria-label={p.alt}
                 >
                   <figure className="relative aspect-[3/4]">
-                    <Image
+                    <img
                       src={p.src}
                       alt={p.alt}
-                      fill
-                      sizes="(min-width: 1280px) 30vw, (min-width: 640px) 35vw, 50vw"
-                      quality={95}
                       loading="lazy"
                       className="object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
                     />
@@ -64,12 +60,9 @@ export default function PhotoBook({ compact = false }: { compact?: boolean }) {
                   aria-label={p.alt}
                 >
                   <figure className="relative aspect-[3/4]">
-                    <Image
+                    <img
                       src={p.src}
                       alt={p.alt}
-                      fill
-                      sizes="(min-width: 1280px) 20vw, (min-width: 640px) 30vw, 50vw"
-                      quality={95}
                       loading="lazy"
                       className="object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
                     />

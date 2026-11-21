@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import PageHero from "@/components/sections/PageHero";
 import SeoBoost from "@/components/site/SeoBoost";
 import { Reveal } from "@/components/cinematic/Reveal";
@@ -135,14 +134,10 @@ export default function CatastrofiAmbientaliItalianePage() {
             <Reveal className="mb-12">
               <figure className="glass-card overflow-hidden p-3">
                 <div className="relative aspect-[3/4] w-full overflow-hidden bg-noir">
-                  <Image
+                  <img
                     src="/images/venezia/venezia-05.jpg"
                     alt="Premio Leone Lungo a Pochi Attimi alla 83ª Mostra del Cinema di Venezia"
-                    fill
-                    sizes="(min-width: 768px) 768px, 100vw"
-                    quality={95}
                     className="object-cover"
-                    priority
                   />
                 </div>
                 <figcaption className="px-3 py-3 text-center text-xs uppercase tracking-wide-sm text-cream/50">

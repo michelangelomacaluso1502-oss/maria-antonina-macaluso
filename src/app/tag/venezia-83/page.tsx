@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import PageHero from "@/components/sections/PageHero";
 import SeoBoost from "@/components/site/SeoBoost";
 import { Reveal } from "@/components/cinematic/Reveal";
@@ -180,12 +179,9 @@ export default function Venezia83HubPage() {
                 {VENICE_GALLERY.map((photo, idx) => (
                   <figure key={idx} className="glass-card overflow-hidden p-2">
                     <div className="relative aspect-[3/4] w-full overflow-hidden bg-noir">
-                      <Image
+                      <img
                         src={photo.src}
                         alt={photo.alt}
-                        fill
-                        sizes="(min-width: 640px) 25vw, 50vw"
-                        quality={90}
                         className="object-cover"
                         loading="lazy"
                       />

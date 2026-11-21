@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-
 /**
  * FacebookEmbed — Anteprima cliccabile con immagine (stile YouTube)
  *
@@ -38,11 +36,9 @@ export default function FacebookEmbed({
         {/* Thumbnail — visibile per intero su tutti i device */}
         <div className="relative w-full overflow-hidden bg-noir sm:w-48 sm:shrink-0" style={{ aspectRatio: "4 / 3" }}>
           {thumbnail && !imageError ? (
-            <Image
+            <img
               src={thumbnail}
               alt={title}
-              fill
-              sizes="(min-width: 640px) 192px, 100vw"
               className="object-contain"
               onError={() => setImageError(true)}
               loading="lazy"

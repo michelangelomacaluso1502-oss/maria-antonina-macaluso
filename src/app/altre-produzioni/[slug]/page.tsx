@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ALTRE_PRODUZIONI } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
@@ -78,13 +77,9 @@ export default async function AltraProduzionePage({
           <Reveal>
             <figure className="glass-card overflow-hidden p-3">
               <div className={`relative ${POSTER_ASPECT[opera.slug] || "aspect-[2/3]"} w-full overflow-hidden bg-noir`}>
-                <Image
+                <img
                   src={opera.poster || "/images/films/placeholder.svg"}
                   alt={opera.title}
-                  fill
-                  sizes="(min-width: 768px) 400px, 100vw"
-                  quality={100}
-                  priority
                   className="object-cover"
                 />
               </div>
@@ -240,12 +235,9 @@ export default async function AltraProduzionePage({
           <h2 className="font-display text-2xl text-gold mb-4">Gallery Ultra HD</h2>
           <figure className="glass-card overflow-hidden p-3">
             <div className={`relative ${POSTER_ASPECT[opera.slug] || "aspect-[2/3]"} w-full overflow-hidden bg-noir`}>
-              <Image
+              <img
                 src={opera.poster || "/images/films/placeholder.svg"}
                 alt={opera.title}
-                fill
-                sizes="100vw"
-                quality={100}
                 className="object-contain"
               />
             </div>
@@ -268,12 +260,9 @@ export default async function AltraProduzionePage({
               <div className="grid gap-6 md:grid-cols-2">
                 <figure className="glass-card overflow-hidden p-3">
                   <div className="relative aspect-[9/16] w-full overflow-hidden bg-noir">
-                    <Image
+                    <img
                       src="/images/films/creo-kitchens-showroom-tgs.jpg"
                       alt="Servizio TGS Creo Kitchens — Angelo Faraci e Maria Antonina Macaluso nello showroom con logo TGS visibile"
-                      fill
-                      sizes="(min-width: 768px) 50vw, 100vw"
-                      quality={100}
                       className="object-cover"
                     />
                   </div>
@@ -283,12 +272,9 @@ export default async function AltraProduzionePage({
                 </figure>
                 <figure className="glass-card overflow-hidden p-3">
                   <div className="relative aspect-[3/2] w-full overflow-hidden bg-noir">
-                    <Image
+                    <img
                       src="/images/films/creo-kitchens-showroom-cucina.jpg"
                       alt="Showroom Creo Kitchens — isola centrale con cucina moderna, Maria Antonina e Angelo Faraci"
-                      fill
-                      sizes="(min-width: 768px) 50vw, 100vw"
-                      quality={100}
                       className="object-cover"
                     />
                   </div>

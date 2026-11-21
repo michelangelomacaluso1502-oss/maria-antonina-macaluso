@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { FILMS } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
 import SectionHeading from "./SectionHeading";
@@ -25,11 +24,9 @@ export default function Filmography({ compact = false }: { compact?: boolean }) 
               >
                 <div className="zoom-wrap relative mb-4 aspect-[2/3] w-full overflow-hidden bg-gradient-to-br from-smoke-light to-noir">
                   {f.poster ? (
-                    <Image
+                    <img
                       src={f.poster}
                       alt={`Locandina ${f.title}`}
-                      fill
-                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       className="object-contain object-center transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />

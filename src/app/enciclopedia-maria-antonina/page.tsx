@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import PageHero from "@/components/sections/PageHero";
 import SeoBoost from "@/components/site/SeoBoost";
 import { Reveal } from "@/components/cinematic/Reveal";
@@ -127,14 +126,10 @@ export default function EnciclopediaPage() {
               <div className="grid gap-8 md:grid-cols-[280px_1fr] md:items-start">
                 <figure className="glass-card overflow-hidden p-3">
                   <div className="relative aspect-[3/4] w-full overflow-hidden bg-noir">
-                    <Image
+                    <img
                       src="/images/hero-maria-antonina.jpg"
                       alt="Maria Antonina Macaluso — ritratto ufficiale"
-                      fill
-                      sizes="(min-width: 768px) 280px, 100vw"
-                      quality={95}
                       className="object-cover"
-                      priority
                     />
                   </div>
                   <figcaption className="px-3 py-3 text-center text-xs uppercase tracking-wide-sm text-cream/50">

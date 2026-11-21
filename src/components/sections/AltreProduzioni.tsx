@@ -1,7 +1,6 @@
 import { ALTRE_PRODUZIONI } from "@/lib/data";
 import { Reveal } from "@/components/cinematic/Reveal";
 import SectionHeading from "./SectionHeading";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Film, Mic, Tv } from "lucide-react";
 
@@ -53,12 +52,9 @@ export default function AltreProduzioni() {
                 <article className="glass-luxury card-lift-premium group flex h-full flex-col overflow-hidden">
                   {/* Poster adattivo — aspect ratio basato sull'orientamento reale */}
                   <div className={`relative ${aspectClass} w-full overflow-hidden bg-noir`}>
-                    <Image
+                    <img
                       src={opera.poster || "/images/films/placeholder.svg"}
                       alt={opera.title}
-                      fill
-                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                      quality={100}
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     {/* Overlay leggibilità */}
