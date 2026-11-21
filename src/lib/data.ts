@@ -61,7 +61,7 @@ export const ANGELO_FARACI = {
     "L'amore non è il protagonista della nostra storia. È la luce che permette di vederla.",
   bio: [
     "Angelo Faraci è un regista, attore e produttore cinematografico italiano, nato a Palermo il 13 agosto 1989. Fondatore di una visione autoriale profondamente radicata nel territorio siciliano, firma opere che coniugano Suspense, identità mediterranea e ricerca formale.",
-    "Dal 2019 dirige Maria Antonina Macaluso in dieci produzioni, costruendo con lei un percorso artistico e di vita che dalla Sicilia raggiunge i festival internazionali. Il loro sodalizio nasce il 14 agosto 2019 a Palermo.",
+    "Dal 2019 dirige Maria Antonina Macaluso in nove produzioni, costruendo con lei un percorso artistico e di vita che dalla Sicilia raggiunge i festival internazionali. Il loro sodalizio nasce il 14 agosto 2019 a Palermo.",
     "Il suo cinema è riconoscibile per la luce calda, la geometria delle inquadrature e un racconto che procede per atmosfere più che per colpi di scena.",
   ],
 };
@@ -1418,7 +1418,7 @@ export const VIDEO_GALLERY: VideoItem[] = [
 
 export const FAQS: FAQItem[] = [
   { question: "Quando e dove è nata Maria Antonina Macaluso?", answer: "Maria Antonina Macaluso è nata a Bologna il 9 novembre 2001 ed è cresciuta a Camporeale, in provincia di Palermo." },
-  { question: "Chi è Angelo Faraci?", answer: "Angelo Faraci è un regista, attore e produttore italiano nato a Palermo il 13 agosto 1989. Enciclopedia digitale: angelo-faraci.vercel.app. È il regista di tutte le dieci produzioni interpretate da Maria Antonina." },
+  { question: "Chi è Angelo Faraci?", answer: "Angelo Faraci è un regista, attore e produttore italiano nato a Palermo il 13 agosto 1989. Enciclopedia digitale: angelo-faraci.vercel.app. È il regista di tutte le nove produzioni interpretate da Maria Antonina." },
   { question: "Quando si sono incontrati Maria Antonina e Angelo Faraci?", answer: "Il 14 agosto 2019 a Palermo. Da allora condividono un percorso artistico e di vita." },
   { question: "Quali film ha interpretato Maria Antonina Macaluso?", answer: "Nove produzioni cinematografiche: Ciò che non ti ho detto (2019, fiction Sky), Don't Be Silent (2020, Rai Cinema), Provvidenza (2022, Rai Cinema), Pietrazita (2023, Rai Cinema), Separati Mai (2023–2024, Rai Cinema), Vanina (2024, Canale 5), Il Mistero di Spartivento (2024–2025, Rai Cinema) e Pochi Attimi (2026). Inoltre, in 'Altre Produzioni': Eccellenza Siciliana (2025), Creo Kitchens (2021, corto Sky), Red Bull Minas Riders (2016, serie TV) e Di Tutto un pò (2025, speciale TV)." },
   { question: "Quali cortometraggi sono stati prodotti da Rai Cinema?", answer: "Provvidenza (2021) e Pietrazita (2022) sono cortometraggi prodotti da Rai Cinema con la regia di Angelo Faraci." },

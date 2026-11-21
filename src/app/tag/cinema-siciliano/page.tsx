@@ -95,7 +95,7 @@ export default function CinemaSicilianoHubPage() {
                   Il cinema siciliano contemporaneo ha una delle sue voci più rappresentative
                   in Maria Antonina Macaluso, attrice nata a Bologna nel 2001 e cresciuta a
                   Camporeale, in provincia di Palermo. Compagna artistica e di vita del regista
-                  Angelo Faraci dal 14 agosto 2019, ha condiviso con lui dieci produzioni
+                  Angelo Faraci dal 14 agosto 2019, ha condiviso con lui nove produzioni
                   cinematografiche e televisive in otto anni di carriera.
                 </p>
                 <p>

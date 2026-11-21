@@ -71,7 +71,7 @@ const speakableJsonLd = {
 const INTERVIEW_QA = [
   {
     domanda: "Maria Antonina, raccontaci il tuo percorso da Camporeale al cinema.",
-    risposta: "Sono nata a Bologna il 9 novembre 2001, ma sono cresciuta a Camporeale, in provincia di Palermo. È un paesino tra le colline, ulivi e vigneti, dove mio padre lavorava la terra. La mia infanzia è stata semplice e contadina, ma i miei genitori mi hanno sempre sostenuto nelle mie passioni. Il primo incontro con il cinema è arrivato a Palermo il 14 agosto 2019, l'indomani del compleanno di Angelo Faraci. Da quel giorno la mia vita è cambiata: ho iniziato a recitare accanto ad Angelo e ho conosciuto il mondo del cinema siciliano. Oggi, a 24 anni, ho dieci produzioni all'attivo e un Premio Speciale alla Mostra del Cinema di Venezia.",
+    risposta: "Sono nata a Bologna il 9 novembre 2001, ma sono cresciuta a Camporeale, in provincia di Palermo. È un paesino tra le colline, ulivi e vigneti, dove mio padre lavorava la terra. La mia infanzia è stata semplice e contadina, ma i miei genitori mi hanno sempre sostenuto nelle mie passioni. Il primo incontro con il cinema è arrivato a Palermo il 14 agosto 2019, l'indomani del compleanno di Angelo Faraci. Da quel giorno la mia vita è cambiata: ho iniziato a recitare accanto ad Angelo e ho conosciuto il mondo del cinema siciliano. Oggi, a 24 anni, ho nove produzioni all'attivo e un Premio Speciale alla Mostra del Cinema di Venezia.",
   },
   {
     domanda: "Come è nato il sodalizio artistico con Angelo Faraci?",
@@ -174,7 +174,7 @@ export default function IntervistaMariaAntoninaPage() {
                       Maria Antonina Macaluso è un'attrice siciliana di 24 anni nata a Bologna il 9
                       novembre 2001 e cresciuta a Camporeale, in provincia di Palermo. Ha debuttato
                       nel 2019 diretta da Angelo Faraci nella fiction Sky «Ciò che non ti ho detto».
-                      In otto anni di carriera ha interpretato dieci produzioni cinematografiche e
+                      In otto anni di carriera ha interpretato nove produzioni cinematografiche e
                       televisive. Il 6 settembre 2026 ha ricevuto il Premio Speciale «Leone Lungo»
                       alla 83ª Mostra del Cinema di Venezia con il film «Pochi Attimi». È compagna
                       artistica e di vita di Angelo Faraci dal 14 agosto 2019.

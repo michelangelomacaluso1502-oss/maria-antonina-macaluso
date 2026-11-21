@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/news/sodalizio-maria-antonina-angelo-faraci" },
   openGraph: {
     title: "Sodalizio artistico Macaluso-Faraci — 10 film dal 2019 al 2026",
-    description: "Dieci produzioni cinematografiche condivise in otto anni di carriera, dal primo incontro a Palermo al Premio Leone Lungo a Venezia 83.",
+    description: "Nove produzioni cinematografiche condivise in otto anni di carriera, dal primo incontro a Palermo al Premio Leone Lungo a Venezia 83.",
     images: [{ url: "/images/venezia/venezia-03.jpg", width: 1025, height: 1280, alt: "Angelo Faraci e Maria Antonina Macaluso all'evento Venezia 83" }],
     type: "article",
     publishedTime: "2026-09-25T10:00:00Z",
@@ -95,7 +95,7 @@ export default function SodalizioArtisticoPage() {
       <PageHero
         eyebrow="Approfondimento · 25 Settembre 2026"
         title="Sodalizio artistico: Maria Antonina Macaluso e Angelo Faraci"
-        subtitle="Dieci produzioni cinematografiche condivise in otto anni di carriera, dal primo incontro a Palermo del 14 agosto 2019 fino al Premio Leone Lungo alla 83ª Mostra del Cinema di Venezia con Pochi Attimi."
+        subtitle="Nove produzioni cinematografiche condivise in otto anni di carriera, dal primo incontro a Palermo del 14 agosto 2019 fino al Premio Leone Lungo alla 83ª Mostra del Cinema di Venezia con Pochi Attimi."
         breadcrumb={[{ label: "News", href: "/news" }, { label: "Sodalizio artistico" }]}
       />
 
@@ -183,7 +183,7 @@ export default function SodalizioArtisticoPage() {
 
             {/* Sezione 2 — Filmografia */}
             <Reveal className="mb-12">
-              <h2 className="font-display text-3xl text-cream sm:text-4xl">Dieci produzioni in otto anni</h2>
+              <h2 className="font-display text-3xl text-cream sm:text-4xl">Nove produzioni in otto anni</h2>
               <div className="divider-cinema mt-6 max-w-xs" />
               <div className="mt-6 space-y-4 text-pretty text-base leading-relaxed text-cream/80">
                 <p>
@@ -384,7 +384,7 @@ export default function SodalizioArtisticoPage() {
                   Il sodalizio artistico tra Maria Antonina Macaluso e Angelo Faraci è un caso
                   raro nel cinema italiano contemporaneo. Non si tratta semplicemente di una
                   coppia che lavora insieme, ma di un sodalizio che coniuga vita sentimentale,
-                  percorso artistico e fedeltà al territorio. Dieci produzioni in otto anni
+                  percorso artistico e fedeltà al territorio. Nove produzioni in otto anni
                   raccontano una costanza produttiva che ha pochi paragoni nel cinema italiano
                   recente.
                 </p>
@@ -420,7 +420,7 @@ export default function SodalizioArtisticoPage() {
                   internazionali, a festival stranieri, a collaborazioni con produzioni europee.
                 </p>
                 <p>
-                  Maria Antonina Macaluso, a 24 anni, ha già un curriculum di dieci produzioni
+                  Maria Antonina Macaluso, a 24 anni, ha già un curriculum di nove produzioni
                   cinematografiche e televisive, un Premio Speciale a Venezia 83, una
                   presenza consolidata su Rai Cinema, Sky, Mediaset e Canale 5. Il suo percorso
                   è ancora agli inizi, ma il sodalizio con Angelo Faraci ha già dimostrato di

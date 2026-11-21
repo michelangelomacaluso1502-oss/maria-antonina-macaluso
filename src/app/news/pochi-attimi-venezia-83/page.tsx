@@ -363,7 +363,7 @@ export default function NewsPochiAttimiVenezia83() {
                     Maria Antonina e Angelo Faraci
                   </h3>
                   <p className="mt-2 text-sm text-cream/60">
-                    Dieci produzioni condivise dal 2019 al 2026 — un percorso artistico che da Palermo raggiunge Venezia 83.
+                    Nove produzioni condivise dal 2019 al 2026 — un percorso artistico che da Palermo raggiunge Venezia 83.
                   </p>
                 </Link>
               </div>

@@ -225,14 +225,14 @@ export default function CastPochiAttimiPage() {
                   <strong className="text-gold">Angelo Faraci</strong> è regista, soggettista e
                   attore protagonista nel ruolo di Salvatore. Nato a Palermo il 13 agosto 1989,
                   è regista, attore e produttore con una filmografia che parte dal 2019. Con
-                  Maria Antonina Macaluso ha condiviso dieci produzioni cinematografiche e
+                  Maria Antonina Macaluso ha condiviso nove produzioni cinematografiche e
                   televisive, dal debutto con la fiction Sky «Ciò che non ti ho detto» fino al
                   nuovo lungometraggio «Pochi Attimi».
                 </p>
                 <p>
                   <strong className="text-gold">Maria Antonina Macaluso</strong> è la protagonista
                   femminile del film. Attrice siciliana nata a Bologna il 9 novembre 2001 e
-                  cresciuta a Camporeale (Palermo), ha un curriculum di dieci produzioni
+                  cresciuta a Camporeale (Palermo), ha un curriculum di nove produzioni
                   cinematografiche e televisive, con presenze consolidte su Rai Cinema, Sky,
                   Mediaset e Canale 5. Ha ricevuto il Premio Speciale Leone Lungo alla 83ª Mostra
                   del Cinema di Venezia il 6 settembre 2026.

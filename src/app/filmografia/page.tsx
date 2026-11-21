@@ -16,7 +16,7 @@ const collectionJsonLd = {
   "@type": "CollectionPage",
   name: "Filmografia di Maria Antonina Macaluso",
   description:
-    "Filmografia completa di Maria Antonina Macaluso: dieci produzioni cinematografiche e televisive dal 2019 al 2026, dirette da Angelo Faraci.",
+    "Filmografia completa di Maria Antonina Macaluso: nove produzioni cinematografiche e televisive dal 2019 al 2026, dirette da Angelo Faraci.",
   url: `${SITE.url}/filmografia`,
   inLanguage: "it-IT",
   isPartOf: {

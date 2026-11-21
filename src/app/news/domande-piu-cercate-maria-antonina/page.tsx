@@ -139,7 +139,7 @@ const articleJsonLd = {
 const DOMANDE = [
   {
     domanda: "Chi è Maria Antonina Macaluso?",
-    risposta: "Maria Antonina Macaluso è un'attrice italiana nata a Bologna il 9 novembre 2001 e cresciuta a Camporeale (Palermo). Ha debuttato nel 2019 con la fiction Sky «Ciò che non ti ho detto» diretta da Angelo Faraci. In otto anni di carriera ha interpretato dieci produzioni cinematografiche e televisive.",
+    risposta: "Maria Antonina Macaluso è un'attrice italiana nata a Bologna il 9 novembre 2001 e cresciuta a Camporeale (Palermo). Ha debuttato nel 2019 con la fiction Sky «Ciò che non ti ho detto» diretta da Angelo Faraci. In otto anni di carriera ha interpretato nove produzioni cinematografiche e televisive.",
     fonte: "IMDb nm14708762, Wikidata Q140944431",
     fonteUrl: "https://www.imdb.com/it/name/nm14708762",
   },

@@ -151,7 +151,7 @@ export default function PercorsoArtisticoPage() {
       <PageHero
         eyebrow="Approfondimento · 28 Settembre 2026"
         title="Percorso artistico di Maria Antonina"
-        subtitle="Otto anni di cinema siciliano, dal debutto 2019 con Angelo Faraci al Premio Leone Lungo a Venezia 83 con «Pochi Attimi». Dieci produzioni, una consacrazione internazionale."
+        subtitle="Otto anni di cinema siciliano, dal debutto 2019 con Angelo Faraci al Premio Leone Lungo a Venezia 83 con «Pochi Attimi». Nove produzioni, una consacrazione internazionale."
         breadcrumb={[{ label: "News", href: "/news" }, { label: "Percorso artistico" }]}
       />
 

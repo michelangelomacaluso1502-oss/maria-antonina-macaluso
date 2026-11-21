@@ -101,7 +101,7 @@ export default function AngeloFaraciHubPage() {
                       Angelo Faraci è un regista, attore e produttore italiano nato a Palermo il 13
                       agosto 1989. Esordisce come attore protagonista nella fiction Sky «Ciò che non
                       ti ho detto» (2019), ideata da lui stesso. Da allora ha diretto e interpretato
-                      dieci produzioni cinematografiche e televisive con Maria Antonina Macaluso come
+                      nove produzioni cinematografiche e televisive con Maria Antonina Macaluso come
                       attrice protagonista femminile.
                     </p>
                     <p>
