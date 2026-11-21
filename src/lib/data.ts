@@ -1600,7 +1600,7 @@ const VENEZIA_PHOTOS = Array.from({ length: 7 }, (_, i) => {
 });
 
 // PHOTOBOOK_FULL = 83 scatti classici + 7 scatti Venezia = 90 scatti totali
-export const PHOTOBOOK_FULL = [...PHOTOBOOK...VENEZIA_PHOTOS];
+export const PHOTOBOOK_FULL = [...PHOTOBOOK, ...VENEZIA_PHOTOS];
 
 export const COLLEGAMENTI_ESTERI = [
   { name: "Angelo Faraci — Enciclopedia digitale", url: "https://angelo-faraci.vercel.app", note: "Regista, attore, produttore. Compagno artistico e di vita." },

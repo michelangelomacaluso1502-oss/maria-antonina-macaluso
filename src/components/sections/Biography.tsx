@@ -72,7 +72,7 @@ function renderTextWithLinks(text: string, links?: { text: string; url: string }
     remaining = remaining.substring(earliestIdx + earliestLink.text.length);
   }
 
-  return React.createElement(React.Fragment, null...parts);
+  return React.createElement(React.Fragment, null, ...parts);
 }
 
 export default function Biography() {
