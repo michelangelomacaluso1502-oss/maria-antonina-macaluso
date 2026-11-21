@@ -16,6 +16,7 @@ import ContentCreator from "@/components/sections/ContentCreator";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
 import PochiAttimiVenezia from "@/components/sections/PochiAttimiVenezia";
+import UpcomingScreenings from "@/components/sections/UpcomingScreenings";
 
 // One long, scrollable homepage — like the Angelo Faraci reference site.
 export default function HomePage() {
@@ -34,6 +35,7 @@ export default function HomePage() {
       <Festivals />
       <Articles />
       <PochiAttimiVenezia />
+      <UpcomingScreenings />
       <Quotes />
       <PhotoBook />
       <ContentCreator />

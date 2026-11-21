@@ -20,9 +20,9 @@ export default function PhotoBook({ compact = false }: { compact?: boolean }) {
           title="Novanta scatti"
           subtitle="Un archivio visivo dell'attrice siciliana"
         />
-        {/* Griglia uniforme responsive — foto piccole e compatte (stile Vercel)
-            Mobile: 4 colonne / Tablet: 6 / Desktop: 8 / XL: 10 */}
-        <div className="grid grid-cols-4 gap-1 sm:grid-cols-6 sm:gap-1.5 md:grid-cols-8 md:gap-2 xl:grid-cols-10">
+        {/* Griglia uniforme responsive — foto thumbnail ultra-compatte (stile Vercel)
+            Mobile: 5 colonne (~70px) / Tablet: 8 / Desktop: 10 / XL: 12 */}
+        <div className="grid grid-cols-5 gap-1 sm:grid-cols-8 sm:gap-1 md:grid-cols-10 md:gap-1.5 xl:grid-cols-12 xl:gap-2">
           {list.map((p, i) => (
             <Reveal key={p.id} delay={(i % 8) * 30}>
               <Link
