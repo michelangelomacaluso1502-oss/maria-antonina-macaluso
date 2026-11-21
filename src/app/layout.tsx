@@ -922,6 +922,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="google-site-verification" content="7k8LbVSFjRug2y5x-E2w6CGy4aYIIqHUaR66LnNMbhQ" />
         {/* Bing Webmaster verification */}
         <meta name="msvalidate.01" content="a8f3b7c9d2e1f4a6b8c0d2e4f6a8b0c2" />
+        {/* Hreflang per 14 lingue principali + x-default (sistema traduzioni client-side) */}
+        <link rel="alternate" hrefLang="it" href="https://mariaantoninamacaluso.it/" />
+        <link rel="alternate" hrefLang="en" href="https://mariaantoninamacaluso.it/" />
+        <link rel="alternate" hrefLang="es" href="https://mariaantoninamacaluso.it/" />
+        <link rel="alternate" hrefLang="fr" href="https://mariaantoninamacaluso.it/" />
+        <link rel="alternate" hrefLang="de" href="https://mariaantoninamacaluso.it/" />
+        <link rel="alternate" hrefLang="pt" href="https://mariaantoninamacaluso.it/" />
+        <link rel="alternate" hrefLang="ru" href="https://mariaantoninamacaluso.it/" />
+        <link rel="alternate" hrefLang="zh" href="https://mariaantoninamacaluso.it/" />
+        <link rel="alternate" hrefLang="ja" href="https://mariaantoninamacaluso.it/" />
+        <link rel="alternate" hrefLang="ar" href="https://mariaantoninamacaluso.it/" />
+        <link rel="alternate" hrefLang="hi" href="https://mariaantoninamacaluso.it/" />
+        <link rel="alternate" hrefLang="ko" href="https://mariaantoninamacaluso.it/" />
+        <link rel="alternate" hrefLang="tr" href="https://mariaantoninamacaluso.it/" />
+        <link rel="alternate" hrefLang="pl" href="https://mariaantoninamacaluso.it/" />
+        <link rel="alternate" hrefLang="nl" href="https://mariaantoninamacaluso.it/" />
+        <link rel="alternate" hrefLang="x-default" href="https://mariaantoninamacaluso.it/" />
         {/* Font CSS con font-display swap per eliminare FOUT */}
         <link
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Italiana&display=swap"

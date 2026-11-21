@@ -109,82 +109,91 @@ function applyFromMemoryCache(lang: string): boolean {
 
 // === CLIENT-SIDE TRANSLATION (works on GitHub Pages static export) ===
 // Uses MyMemory API (free, CORS-enabled, no API key required, 5000 words/day/IP).
-// Falls back to original text on any error. Results cached in IndexedDB + memory.
+// Concurrency = 1 (sequential) + delay 600ms between requests to avoid 429 rate-limit.
+// Retry once with 2s backoff on 429. Falls back to original text on persistent error.
+// Results cached in IndexedDB + memory for instant future switches.
 const MYMEMORY_ENDPOINT = "https://api.mymemory.translated.net/get";
+const REQUEST_DELAY_MS = 600; // delay between requests to avoid 429
+const MAX_RETRIES = 2;
 
-// Concurrency limiter: max 3 parallel requests to avoid rate-limiting
-async function translateBatchClientSide(
-  texts: string[],
+function sleep(ms: number): Promise<void> {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+async function translateOneWithRetry(
+  text: string,
   sourceLang: string,
   targetLang: string,
-): Promise<string[]> {
-  const CONCURRENCY = 3;
-  const results: string[] = new Array(texts.length).fill("");
+): Promise<string> {
+  const trimmed = text.trim();
+  if (!trimmed || trimmed.length < 2) return text;
+  // Skip if text is only numbers/symbols
+  if (/^[\d\s.,/:%@#\-+()]+$/.test(trimmed)) return text;
+  // Skip very long texts (>1500 chars) - MyMemory limit
+  if (trimmed.length > 1500) return text;
 
-  async function translateOne(text: string, idx: number): Promise<void> {
-    const trimmed = text.trim();
-    if (!trimmed || trimmed.length < 2) {
-      results[idx] = text;
-      return;
-    }
-    // Skip if text is only numbers/symbols
-    if (/^[\d\s.,/:%@#\-+()]+$/.test(trimmed)) {
-      results[idx] = text;
-      return;
-    }
+  for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
     try {
       const url = `${MYMEMORY_ENDPOINT}?q=${encodeURIComponent(text)}&langpair=${sourceLang}|${targetLang}`;
       const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 4000);
+      const timer = setTimeout(() => controller.abort(), 5000);
       const res = await fetch(url, {
         signal: controller.signal,
         headers: { accept: "application/json" },
       });
       clearTimeout(timer);
-      if (!res.ok) {
-        results[idx] = text;
-        return;
+
+      if (res.status === 429 || res.status === 503) {
+        // Rate limited - wait longer before retry
+        if (attempt < MAX_RETRIES - 1) {
+          await sleep(2000 * (attempt + 1));
+          continue;
+        }
+        return text; // give up after retries
       }
+
+      if (!res.ok) return text;
+
       const data = await res.json();
       const translated: string = data?.responseData?.translatedText ?? text;
-      // MyMemory returns warnings/errors in translatedText sometimes (e.g. "MYMEMORY WARNING:")
-      if (translated && !translated.startsWith("MYMEMORY WARNING") && !translated.startsWith("INVALID")) {
-        results[idx] = translated;
-      } else {
-        results[idx] = text;
+      // MyMemory returns warnings/errors in translatedText sometimes
+      if (
+        translated &&
+        !translated.startsWith("MYMEMORY WARNING") &&
+        !translated.startsWith("INVALID") &&
+        !translated.includes("PLEASE SELECT")
+      ) {
+        return translated;
       }
+      return text;
     } catch {
-      results[idx] = text;
+      if (attempt < MAX_RETRIES - 1) {
+        await sleep(1000);
+        continue;
+      }
+      return text;
+    }
+  }
+  return text;
+}
+
+// Sequential translation with delay between requests (anti-429)
+async function translateBatchClientSide(
+  texts: string[],
+  sourceLang: string,
+  targetLang: string,
+): Promise<string[]> {
+  const results: string[] = new Array(texts.length);
+
+  for (let i = 0; i < texts.length; i++) {
+    results[i] = await translateOneWithRetry(texts[i], sourceLang, targetLang);
+    // Delay between requests (skip after last)
+    if (i < texts.length - 1) {
+      await sleep(REQUEST_DELAY_MS);
     }
   }
 
-  // Process with concurrency limit
-  const tasks: Promise<void>[] = [];
-  let running = 0;
-  let cursor = 0;
-
-  return new Promise((resolve) => {
-    function next() {
-      while (running < CONCURRENCY && cursor < texts.length) {
-        const idx = cursor++;
-        running++;
-        tasks.push(
-          translateOne(texts[idx], idx).finally(() => {
-            running--;
-            if (cursor < texts.length) {
-              next();
-            } else if (running === 0) {
-              resolve(results);
-            }
-          }),
-        );
-      }
-      if (cursor >= texts.length && running === 0) {
-        resolve(results);
-      }
-    }
-    next();
-  });
+  return results;
 }
 
 export default function LanguageSwitcher50() {
