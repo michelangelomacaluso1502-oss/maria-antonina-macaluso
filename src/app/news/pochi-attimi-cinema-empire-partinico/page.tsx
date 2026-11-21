@@ -56,7 +56,7 @@ export default function Page() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }} />
-      <PageHero title="Pochi Attimi al Cinema Empire di Partinico" subtitle="Proiezione speciale del nuovo lungometraggio di Angelo Faraci" image="/images/films/pochi-attimi.jpg" />
+      <PageHero title="Pochi Attimi al Cinema Empire di Partinico" subtitle="Proiezione speciale del nuovo lungometraggio di Angelo Faraci" />
       <article className="cinematic-container py-16 md:py-24">
         <SeoBoost />
         <div className="mx-auto max-w-3xl">

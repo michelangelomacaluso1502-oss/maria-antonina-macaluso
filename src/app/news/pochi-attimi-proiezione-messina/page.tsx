@@ -56,7 +56,7 @@ export default function Page() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }} />
-      <PageHero title="Pochi Attimi in proiezione a Messina" subtitle="Il cinema siciliano di Angelo Faraci e Maria Antonina Macaluso allo Stretto" image="/images/films/pochi-attimi.jpg" />
+      <PageHero title="Pochi Attimi in proiezione a Messina" subtitle="Il cinema siciliano di Angelo Faraci e Maria Antonina Macaluso allo Stretto" />
       <article className="cinematic-container py-16 md:py-24">
         <SeoBoost />
         <div className="mx-auto max-w-3xl">
