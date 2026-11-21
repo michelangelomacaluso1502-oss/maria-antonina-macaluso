@@ -207,7 +207,7 @@ export default function AngeloFaraciRegistaPage() {
               <div className="divider-cinema mt-6 max-w-xs" />
               <div className="mt-6 space-y-4 text-pretty text-base leading-relaxed text-cream/80">
                 <p>
-                  Angelo Faraci ha diretto nove produzioni cinematografiche e televisive tra il
+                  Angelo Faraci ha diretto otto produzioni cinematografiche e televisive tra il
                   2019 e il 2026, con Maria Antonina Macaluso come attrice protagonista
                   femminile. Le opere sono distribuite su Sky, Rai Cinema, Mediaset e Canale 5,
                   e hanno ricevuto premi al Ciak Film Festival International di Fiuggi (2022),

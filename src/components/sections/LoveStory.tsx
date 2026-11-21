@@ -46,7 +46,7 @@ const MILESTONES = [
     year: "2020 → 2026",
     title: "Il sodalizio artistico",
     description:
-      "Angelo diventa il regista di tutte le nove produzioni interpretate da Maria Antonina. Insieme hanno calcato i red carpet di Taormina, Fiuggi, Roma e dei Tulipani di Seta Nera.",
+      "Angelo diventa il regista di sette delle otto produzioni interpretate da Maria Antonina. Insieme hanno calcato i red carpet di Taormina, Fiuggi, Roma e dei Tulipani di Seta Nera.",
   },
   {
     icon: Heart,

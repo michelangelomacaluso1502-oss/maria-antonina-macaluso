@@ -174,7 +174,7 @@ export default function IntervistaMariaAntoninaPage() {
                       Maria Antonina Macaluso è un'attrice siciliana di 24 anni nata a Bologna il 9
                       novembre 2001 e cresciuta a Camporeale, in provincia di Palermo. Ha debuttato
                       nel 2019 diretta da Angelo Faraci nella fiction Sky «Ciò che non ti ho detto».
-                      In otto anni di carriera ha interpretato nove produzioni cinematografiche e
+                      In otto anni di carriera ha interpretato otto produzioni cinematografiche e
                       televisive. Il 6 settembre 2026 ha ricevuto il Premio Speciale «Leone Lungo»
                       alla 83ª Mostra del Cinema di Venezia con il film «Pochi Attimi». È compagna
                       artistica e di vita di Angelo Faraci dal 14 agosto 2019.

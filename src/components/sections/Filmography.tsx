@@ -11,8 +11,8 @@ export default function Filmography({ compact = false }: { compact?: boolean }) 
       <div className="cinematic-container">
         <SectionHeading
           eyebrow="Filmografia"
-          title="Nove produzioni, una visione"
-          subtitle="Dal debutto Ciò che non ti ho detto (2019) a Pochi Attimi (2026) — tutti diretti da Angelo Faraci"
+          title="Otto produzioni, una visione"
+          subtitle="Dal debutto Ciò che non ti ho detto (2019) a Pochi Attimi (2026) — sette diretti da Angelo Faraci (più Vanina di Davide Marengo)"
         />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

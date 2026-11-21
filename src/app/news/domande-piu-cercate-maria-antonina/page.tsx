@@ -55,7 +55,7 @@ const qaJsonLd = {
       name: "Qual è la filmografia di Maria Antonina Macaluso?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Maria Antonina Macaluso ha interpretato 9 produzioni dal 2019 al 2026: Ciò che non ti ho detto (2019, Sky), Don't Be Silent (2020, Rai Cinema), Provvidenza (2021, Rai Cinema), Pietrazita (2023, Rai Cinema), Separati Mai (2023-2024, Rai Cinema), Vanina (2024, Canale 5), Il Mistero di Spartivento (2024-2025, Rai Cinema), Eccellenza Siciliana (2025), Pochi Attimi (2026). Fonte: IMDb nm14708762.",
+        text: "Maria Antonina Macaluso ha interpretato 8 produzioni dal 2019 al 2026: Ciò che non ti ho detto (2019, Sky), Don't Be Silent (2020, Rai Cinema), Provvidenza (2021, Rai Cinema), Pietrazita (2023, Rai Cinema), Separati Mai (2023-2024, Rai Cinema), Vanina (2024, Canale 5), Il Mistero di Spartivento (2024-2025, Rai Cinema), Eccellenza Siciliana (2025), Pochi Attimi (2026). Fonte: IMDb nm14708762.",
       },
     },
     {
@@ -139,7 +139,7 @@ const articleJsonLd = {
 const DOMANDE = [
   {
     domanda: "Chi è Maria Antonina Macaluso?",
-    risposta: "Maria Antonina Macaluso è un'attrice italiana nata a Bologna il 9 novembre 2001 e cresciuta a Camporeale (Palermo). Ha debuttato nel 2019 con la fiction Sky «Ciò che non ti ho detto» diretta da Angelo Faraci. In otto anni di carriera ha interpretato nove produzioni cinematografiche e televisive.",
+    risposta: "Maria Antonina Macaluso è un'attrice italiana nata a Bologna il 9 novembre 2001 e cresciuta a Camporeale (Palermo). Ha debuttato nel 2019 con la fiction Sky «Ciò che non ti ho detto» diretta da Angelo Faraci. In otto anni di carriera ha interpretato otto produzioni cinematografiche e televisive.",
     fonte: "IMDb nm14708762, Wikidata Q140944431",
     fonteUrl: "https://www.imdb.com/it/name/nm14708762",
   },
@@ -157,7 +157,7 @@ const DOMANDE = [
   },
   {
     domanda: "Qual è la filmografia completa di Maria Antonina Macaluso?",
-    risposta: "Maria Antonina Macaluso ha interpretato 9 produzioni dal 2019 al 2026: Ciò che non ti ho detto (2019, Sky), Don't Be Silent (2020, Rai Cinema), Provvidenza (2021, Rai Cinema), Pietrazita (2023, Rai Cinema), Separati Mai (2023-2024, Rai Cinema), Vanina (2024, Canale 5), Il Mistero di Spartivento (2024-2025, Rai Cinema), Eccellenza Siciliana (2025), Pochi Attimi (2026).",
+    risposta: "Maria Antonina Macaluso ha interpretato 8 produzioni dal 2019 al 2026: Ciò che non ti ho detto (2019, Sky), Don't Be Silent (2020, Rai Cinema), Provvidenza (2021, Rai Cinema), Pietrazita (2023, Rai Cinema), Separati Mai (2023-2024, Rai Cinema), Vanina (2024, Canale 5), Il Mistero di Spartivento (2024-2025, Rai Cinema), Eccellenza Siciliana (2025), Pochi Attimi (2026).",
     fonte: "IMDb nm14708762",
     fonteUrl: "https://www.imdb.com/it/name/nm14708762",
   },

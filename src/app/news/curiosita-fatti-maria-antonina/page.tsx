@@ -59,7 +59,7 @@ const CURIOSITA = [
   {
     numero: 2,
     titolo: "Ha 24 anni compiuti nel 2026",
-    testo: "Avendo ricevuto il Premio Speciale Leone Lungo a Venezia 83 il 6 settembre 2026, Maria Antonina aveva 24 anni compiuti da novembre 2025. A 24 anni ha già un curriculum di nove produzioni cinematografiche e televisive.",
+    testo: "Avendo ricevuto il Premio Speciale Leone Lungo a Venezia 83 il 6 settembre 2026, Maria Antonina aveva 24 anni compiuti da novembre 2025. A 24 anni ha già un curriculum di otto produzioni cinematografiche e televisive.",
     fonte: "Wikidata Q140944431",
   },
   {
@@ -71,7 +71,7 @@ const CURIOSITA = [
   {
     numero: 4,
     titolo: "Ha interpretato 10 produzioni in 8 anni",
-    testo: "Dal 2019 al 2026, Maria Antonina Macaluso ha interpretato nove produzioni: 3 cortometraggi Rai Cinema, 1 fiction Sky, 2 serie TV Mediaset e Canale 5, 1 documentario, 3 lungometraggi Rai Cinema o indipendenti.",
+    testo: "Dal 2019 al 2026, Maria Antonina Macaluso ha interpretato otto produzioni: 3 cortometraggi Rai Cinema, 1 fiction Sky, 2 serie TV Mediaset e Canale 5, 1 documentario, 3 lungometraggi Rai Cinema o indipendenti.",
     fonte: "IMDb nm14708762",
   },
   {

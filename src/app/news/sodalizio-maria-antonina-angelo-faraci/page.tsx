@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/news/sodalizio-maria-antonina-angelo-faraci" },
   openGraph: {
     title: "Sodalizio artistico Macaluso-Faraci — 10 film dal 2019 al 2026",
-    description: "Nove produzioni cinematografiche condivise in otto anni di carriera, dal primo incontro a Palermo al Premio Leone Lungo a Venezia 83.",
+    description: "Otto produzioni cinematografiche condivise in otto anni di carriera, dal primo incontro a Palermo al Premio Leone Lungo a Venezia 83.",
     images: [{ url: "/images/venezia/venezia-03.jpg", width: 1025, height: 1280, alt: "Angelo Faraci e Maria Antonina Macaluso all'evento Venezia 83" }],
     type: "article",
     publishedTime: "2026-09-25T10:00:00Z",
@@ -95,7 +95,7 @@ export default function SodalizioArtisticoPage() {
       <PageHero
         eyebrow="Approfondimento · 25 Settembre 2026"
         title="Sodalizio artistico: Maria Antonina Macaluso e Angelo Faraci"
-        subtitle="Nove produzioni cinematografiche condivise in otto anni di carriera, dal primo incontro a Palermo del 14 agosto 2019 fino al Premio Leone Lungo alla 83ª Mostra del Cinema di Venezia con Pochi Attimi."
+        subtitle="Otto produzioni cinematografiche condivise in otto anni di carriera, dal primo incontro a Palermo del 14 agosto 2019 fino al Premio Leone Lungo alla 83ª Mostra del Cinema di Venezia con Pochi Attimi."
         breadcrumb={[{ label: "News", href: "/news" }, { label: "Sodalizio artistico" }]}
       />
 

@@ -166,7 +166,7 @@ export default function PercorsoArtisticoPage() {
                 <p>
                   Il percorso artistico di Maria Antonina Macaluso è una delle storie più
                   significative del cinema siciliano contemporaneo. In otto anni di carriera,
-                  dal 2019 al 2026, ha interpretato nove produzioni cinematografiche e
+                  dal 2019 al 2026, ha interpretato otto produzioni cinematografiche e
                   televisive, tutte sotto la regia di Angelo Faraci (esclusa
                   Vanina, diretta da Davide Marengo). È un percorso denso, costante, fedele al
                   territorio siciliano.

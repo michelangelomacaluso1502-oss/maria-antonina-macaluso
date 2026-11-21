@@ -27,7 +27,7 @@ const encyclopediaJsonLd = {
   headline: "Maria Antonina Macaluso — Enciclopedia",
   alternativeHeadline: "Voce enciclopedica completa su attrice siciliana",
   description:
-    "Maria Antonina Macaluso è un'attrice italiana nata a Bologna il 9 novembre 2001, cresciuta a Camporeale (Palermo). Ha debuttato nel 2019 con la fiction Sky 'Ciò che non ti ho detto' diretta da Angelo Faraci. In otto anni di carriera ha interpretato nove produzioni cinematografiche. Ha ricevuto il Premio Speciale Leone Lungo alla 83ª Mostra del Cinema di Venezia il 6 settembre 2026 con il film 'Pochi Attimi'.",
+    "Maria Antonina Macaluso è un'attrice italiana nata a Bologna il 9 novembre 2001, cresciuta a Camporeale (Palermo). Ha debuttato nel 2019 con la fiction Sky 'Ciò che non ti ho detto' diretta da Angelo Faraci. In otto anni di carriera ha interpretato otto produzioni cinematografiche. Ha ricevuto il Premio Speciale Leone Lungo alla 83ª Mostra del Cinema di Venezia il 6 settembre 2026 con il film 'Pochi Attimi'.",
   image: [`${SITE.url}/images/hero-maria-antonina.jpg`],
   datePublished: "2024-01-01T00:00:00Z",
   dateModified: "2026-09-29T10:00:00Z",
@@ -47,7 +47,7 @@ const encyclopediaJsonLd = {
     sameAs: "https://www.wikidata.org/wiki/Q140944431",
   },
   inLanguage: "it-IT",
-  articleBody: "Maria Antonina Macaluso (Bologna, 9 novembre 2001) è un'attrice italiana cresciuta a Camporeale, in provincia di Palermo. Ha debuttato nel 2019 con la fiction Sky 'Ciò che non ti ho detto' diretta da Angelo Faraci. Ha interpretato nove produzioni cinematografiche e televisive tra il 2019 e il 2026, ricevendo sei premi tra cui il Premio Speciale Leone Lungo alla 83ª Mostra del Cinema di Venezia il 6 settembre 2026 per il film 'Pochi Attimi'.",
+  articleBody: "Maria Antonina Macaluso (Bologna, 9 novembre 2001) è un'attrice italiana cresciuta a Camporeale, in provincia di Palermo. Ha debuttato nel 2019 con la fiction Sky 'Ciò che non ti ho detto' diretta da Angelo Faraci. Ha interpretato otto produzioni cinematografiche e televisive tra il 2019 e il 2026, ricevendo sei premi tra cui il Premio Speciale Leone Lungo alla 83ª Mostra del Cinema di Venezia il 6 settembre 2026 per il film 'Pochi Attimi'.",
   articleSection: "Biografie — Attrici italiane",
   wordCount: 3000,
   keywords: [
@@ -149,7 +149,7 @@ export default function EnciclopediaPage() {
                       novembre 2001) è un'attrice italiana cresciuta a Camporeale, in provincia
                       di Palermo. Ha debuttato nel 2019 diretta da Angelo Faraci nella fiction
                       Sky «Ciò che non ti ho detto». In otto anni di carriera ha interpretato
-                      nove produzioni cinematografiche e televisive.
+                      otto produzioni cinematografiche e televisive.
                     </p>
                     <p>
                       Il 6 settembre 2026 ha ricevuto il Premio Speciale «Leone Lungo» alla

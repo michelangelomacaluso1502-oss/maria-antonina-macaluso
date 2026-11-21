@@ -7,7 +7,7 @@ import { SITE } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Filmografia",
   description:
-    "Filmografia completa di Maria Antonina Macaluso: sei film diretti da Angelo Faraci, da Provvidenza (2021) a Pochi Attimi (2026).",
+    "Filmografia completa di Maria Antonina Macaluso: sette film diretti da Angelo Faraci (su otto produzioni totali), da Provvidenza (2021) a Pochi Attimi (2026).",
   alternates: { canonical: "/filmografia" },
 };
 
@@ -16,7 +16,7 @@ const collectionJsonLd = {
   "@type": "CollectionPage",
   name: "Filmografia di Maria Antonina Macaluso",
   description:
-    "Filmografia completa di Maria Antonina Macaluso: nove produzioni cinematografiche e televisive dal 2019 al 2026, dirette da Angelo Faraci.",
+    "Filmografia completa di Maria Antonina Macaluso: otto produzioni cinematografiche e televisive dal 2019 al 2026, dirette da Angelo Faraci.",
   url: `${SITE.url}/filmografia`,
   inLanguage: "it-IT",
   isPartOf: {
@@ -52,8 +52,8 @@ export default function FilmografiaPage() {
       />
       <PageHero
         eyebrow="Filmografia"
-        title="Nove produzioni, una visione"
-        subtitle="Dal debutto Ciò che non ti ho detto (2019) a Pochi Attimi (2026) — tutti diretti da Angelo Faraci"
+        title="Otto produzioni, una visione"
+        subtitle="Dal debutto Ciò che non ti ho detto (2019) a Pochi Attimi (2026) — sette diretti da Angelo Faraci (più Vanina di Davide Marengo)"
         breadcrumb={[{ label: "Filmografia" }]}
       />
       <Filmography />

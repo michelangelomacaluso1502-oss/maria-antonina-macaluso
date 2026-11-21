@@ -98,7 +98,7 @@ export default function Ritratto24AnniPage() {
               <div className="mt-6 space-y-4 text-pretty text-base leading-relaxed text-cream/80">
                 <p>
                   A 24 anni, Maria Antonina Macaluso ha già un curriculum che molte attrici
-                  sognano per una vita intera. Nove produzioni cinematografiche e televisive,
+                  sognano per una vita intera. Otto produzioni cinematografiche e televisive,
                   distribuite su Sky, Rai Cinema, Mediaset e Canale 5. Un Premio Speciale alla
                   Mostra del Cinema di Venezia. Una presenza consolidata su Instagram con 11.900
                   follower, su TikTok con 5.200 follower, su Facebook con una community attiva.
