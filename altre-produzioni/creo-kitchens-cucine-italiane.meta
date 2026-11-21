@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/altre-produzioni/layout,_N_T_/altre-produzioni/[slug]/layout,_N_T_/altre-produzioni/[slug]/page,_N_T_/altre-produzioni/creo-kitchens-cucine-italiane"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/altre-produzioni/$d$slug/__PAGE__",
+    "/altre-produzioni/$d$slug",
+    "/altre-produzioni",
+    "/_index",
+    "/_head"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/premi/layout,_N_T_/premi/page,_N_T_/premi"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/premi/__PAGE__",
+    "/premi",
+    "/_index",
+    "/_head"
+  ]
+}

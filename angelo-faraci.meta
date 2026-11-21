@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/angelo-faraci/layout,_N_T_/angelo-faraci/page,_N_T_/angelo-faraci"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/angelo-faraci/__PAGE__",
+    "/angelo-faraci",
+    "/_index",
+    "/_head"
+  ]
+}

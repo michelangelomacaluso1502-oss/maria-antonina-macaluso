@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/news/layout,_N_T_/news/intervista-maria-antonina-macaluso/layout,_N_T_/news/intervista-maria-antonina-macaluso/page,_N_T_/news/intervista-maria-antonina-macaluso"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/news/intervista-maria-antonina-macaluso/__PAGE__",
+    "/news/intervista-maria-antonina-macaluso",
+    "/news",
+    "/_index",
+    "/_head"
+  ]
+}

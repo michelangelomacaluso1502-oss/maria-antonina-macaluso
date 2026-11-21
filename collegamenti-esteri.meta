@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/collegamenti-esteri/layout,_N_T_/collegamenti-esteri/page,_N_T_/collegamenti-esteri"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/collegamenti-esteri/__PAGE__",
+    "/collegamenti-esteri",
+    "/_index",
+    "/_head"
+  ]
+}
