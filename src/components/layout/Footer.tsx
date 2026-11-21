@@ -70,17 +70,13 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-gold/10">
-        <div className="cinematic-container flex flex-col items-center justify-between gap-3 py-6 text-center sm:flex-row sm:text-left">
-          <div className="space-y-1">
-            <p className="text-[11px] uppercase tracking-wide-sm text-cream/55">
-              © {year} {SITE.name}. Tutti i diritti riservati.
-            </p>
-            <p className="text-[10px] leading-relaxed tracking-wide-sm text-cream/40 max-w-2xl">
-              Opera protetta ai sensi della <strong className="text-gold/70 font-medium">Legge 22 aprile 1941, n. 633</strong> (Tutela del diritto d'autore e di altri diritti connessi al suo esercizio).
-              È vietata la riproduzione, anche parziale, di contenuti, immagini, marchi, loghi, layout e codice sorgente senza autorizzazione scritta dell'autrice.
-              Il sito, il codice sorgente, i testi, le immagini e la struttura sono di proprietà esclusiva di Maria Antonina Macaluso.
-            </p>
-          </div>
+        <div className="cinematic-container flex flex-col items-center justify-between gap-2 py-5 text-center sm:flex-row sm:text-left">
+          <p className="text-[11px] uppercase tracking-wide-sm text-cream/55">
+            © {year} {SITE.name}. Tutti i diritti riservati.
+          </p>
+          <p className="text-[10px] tracking-wide-sm text-cream/40">
+            <strong className="text-gold/70 font-medium">Legge 22 aprile 1941, n. 633</strong> — Riproduzione vietata
+          </p>
           <p className="text-[11px] tracking-wide-sm text-cream/35 shrink-0">
             Realizzato con cura cinematografica
           </p>
