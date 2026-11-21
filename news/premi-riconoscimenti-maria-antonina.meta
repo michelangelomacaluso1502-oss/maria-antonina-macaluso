@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/news/layout,_N_T_/news/premi-riconoscimenti-maria-antonina/layout,_N_T_/news/premi-riconoscimenti-maria-antonina/page,_N_T_/news/premi-riconoscimenti-maria-antonina"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/news/premi-riconoscimenti-maria-antonina/__PAGE__",
+    "/news/premi-riconoscimenti-maria-antonina",
+    "/news",
+    "/_index",
+    "/_head"
+  ]
+}

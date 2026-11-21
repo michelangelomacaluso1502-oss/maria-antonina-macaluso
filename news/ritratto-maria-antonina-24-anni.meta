@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/news/layout,_N_T_/news/ritratto-maria-antonina-24-anni/layout,_N_T_/news/ritratto-maria-antonina-24-anni/page,_N_T_/news/ritratto-maria-antonina-24-anni"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/news/ritratto-maria-antonina-24-anni/__PAGE__",
+    "/news/ritratto-maria-antonina-24-anni",
+    "/news",
+    "/_index",
+    "/_head"
+  ]
+}

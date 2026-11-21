@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/citazioni/layout,_N_T_/citazioni/page,_N_T_/citazioni"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/citazioni/__PAGE__",
+    "/citazioni",
+    "/_index",
+    "/_head"
+  ]
+}

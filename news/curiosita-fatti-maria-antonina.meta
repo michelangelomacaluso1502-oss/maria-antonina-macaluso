@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/news/layout,_N_T_/news/curiosita-fatti-maria-antonina/layout,_N_T_/news/curiosita-fatti-maria-antonina/page,_N_T_/news/curiosita-fatti-maria-antonina"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/news/curiosita-fatti-maria-antonina/__PAGE__",
+    "/news/curiosita-fatti-maria-antonina",
+    "/news",
+    "/_index",
+    "/_head"
+  ]
+}
