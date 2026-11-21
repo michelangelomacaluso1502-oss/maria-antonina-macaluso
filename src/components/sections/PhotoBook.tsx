@@ -20,9 +20,10 @@ export default function PhotoBook({ compact = false }: { compact?: boolean }) {
           title="Novanta scatti"
           subtitle="Un archivio visivo dell'attrice siciliana"
         />
-        {/* Griglia uniforme responsive — foto thumbnail ultra-compatte (stile Vercel)
-            Mobile: 5 colonne (~70px) / Tablet: 8 / Desktop: 10 / XL: 12 */}
-        <div className="grid grid-cols-5 gap-1 sm:grid-cols-8 sm:gap-1 md:grid-cols-10 md:gap-1.5 xl:grid-cols-12 xl:gap-2">
+        {/* Griglia uniforme responsive — foto thumbnail ultra-compatte su tutti i device
+            Mobile: 5 colonne (~67px) / Tablet: 8 / Desktop md: 12 / LG: 16 / XL: 20 / 2XL: 24
+            Su desktop 1920px: ~75px per img. Su 2560px: ~85px. Mai troppo grandi. */}
+        <div className="grid grid-cols-5 gap-1 sm:grid-cols-8 sm:gap-1 md:grid-cols-12 md:gap-1.5 lg:grid-cols-[16] lg:gap-1.5 xl:grid-cols-[20] xl:gap-2 2xl:grid-cols-[24] 2xl:gap-2">
           {list.map((p, i) => (
             <Reveal key={p.id} delay={(i % 8) * 30}>
               <Link
@@ -39,7 +40,7 @@ export default function PhotoBook({ compact = false }: { compact?: boolean }) {
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110 group-hover:brightness-110"
                   />
                   <figcaption className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-noir/80 via-transparent to-transparent p-1 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                    <span className="text-[9px] uppercase tracking-wide-sm text-cream/90 md:text-[10px]">{p.title}</span>
+                    <span className="text-[8px] uppercase tracking-wide-sm text-cream/90 md:text-[9px]">{p.title}</span>
                   </figcaption>
                 </figure>
               </Link>

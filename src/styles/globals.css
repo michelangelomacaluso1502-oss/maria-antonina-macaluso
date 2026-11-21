@@ -1067,3 +1067,151 @@ html.intro-lock body {
     linear-gradient(180deg, #08070a, #100e13 50%, #08070a);
 }
 /* .no-tap-highlight già definito sopra nella sezione MOBILE OPTIMIZATION */
+
+/* ============================================
+   CROSS-DEVICE: iOS / Mac / Android / Linux / Windows
+   Safe-area, scrollbar, font-rendering, touch, pointer
+   ============================================ */
+
+/* Safe-area iOS (notch, home indicator) */
+@supports (padding: env(safe-area-inset-top)) {
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  .cinematic-container {
+    padding-left: max(env(safe-area-inset-left), 1.5rem);
+    padding-right: max(env(safe-area-inset-right), 1.5rem);
+  }
+  /* Header fisso: rispetta notch */
+  header.fixed {
+    padding-top: env(safe-area-inset-top);
+  }
+  /* Footer: rispetta home indicator */
+  footer {
+    padding-bottom: max(env(safe-area-inset-bottom), 1rem);
+  }
+}
+
+/* Touch device: nascondi scrollbar nascent, previeni hover effects indesiderati */
+@media (hover: none) and (pointer: coarse) {
+  .group-hover\:scale-110:hover,
+  .group:hover .group-hover\:scale-110 {
+    transform: none;
+  }
+  .group-hover\:brightness-110:hover,
+  .group:hover .group-hover\:brightness-110 {
+    filter: none;
+  }
+  .group-hover\:opacity-100:hover,
+  .group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+  }
+}
+
+/* Desktop con mouse: abilita hover effects */
+@media (hover: hover) and (pointer: fine) {
+  /* Tooltip/hover gestures funzionanti */
+}
+
+/* Windows: scrollbar custom */
+@media (-moz-touch-enabled: 0) {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #08070a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(201, 169, 106, 0.3);
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(201, 169, 106, 0.5);
+  }
+}
+
+/* Firefox: scrollbar thin */
+@supports (scrollbar-width: thin) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(201, 169, 106, 0.3) #08070a;
+  }
+}
+
+/* Mac/iOS Safari: font rendering ottimizzato */
+@supports (-webkit-touch-callout: default) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  /* Fix iOS Safari 100vh bug */
+  .min-h-screen, .min-h-\[100svh\], .min-h-\[100vh\] {
+    min-height: 100svh;
+  }
+}
+
+/* Linux: rendering fonts Chromium */
+@supports (-webkit-appearance: none) and (background-clip: text) {
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+/* Android: previeni zoom su input focus (font-size >= 16px) */
+input, textarea, select {
+  font-size: 16px;
+}
+@media (min-width: 640px) {
+  input, textarea, select {
+    font-size: inherit;
+  }
+}
+
+/* Touch target minimo 44x44px (iOS HIG, Material Design) */
+button, a.btn-cinema, a.btn-ghost-cinema, [role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Print: nascondi elementi interattivi */
+@media print {
+  header, footer, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Dark mode preference (sistema) — già dark di default */
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* Reduced motion: disabilita animazioni */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast: miglior accessibilità */
+@media (prefers-contrast: high) {
+  .text-cream\/65, .text-cream\/70, .text-cream\/80 {
+    color: #f5efe4 !important;
+  }
+  .border-gold\/15, .border-gold\/40 {
+    border-color: #c9a96a !important;
+  }
+}
