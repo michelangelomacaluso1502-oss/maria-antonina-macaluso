@@ -248,13 +248,6 @@
     <image:image><image:loc>https://mariaantoninamacaluso.it/images/films/vanina.jpg</image:loc></image:image>
   </url>
   <url>
-<loc>https://mariaantoninamacaluso.it/film/sabbie-nere</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-    <image:image><image:loc>https://mariaantoninamacaluso.it/images/films/sabbie-nere.jpg</image:loc></image:image>
-  </url>
-  <url>
 <loc>https://mariaantoninamacaluso.it/film/pochi-attimi</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>yearly</changefreq>
