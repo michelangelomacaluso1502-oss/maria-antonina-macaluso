@@ -67,14 +67,12 @@ function renderTextWithLinks(text: string, links?: { text: string; url: string }
           rel: earliestLink.url.startsWith("mailto:") ? undefined : "noopener noreferrer",
           className: "link-source",
         },
-        earliestLink.text,
-      ),
-    );
+        earliestLink.text));
 
     remaining = remaining.substring(earliestIdx + earliestLink.text.length);
   }
 
-  return React.createElement(React.Fragment, null, ...parts);
+  return React.createElement(React.Fragment, null...parts);
 }
 
 export default function Biography() {
@@ -104,8 +102,7 @@ export default function Biography() {
                   <div
                     className={cn(
                       "md:grid md:grid-cols-2 md:items-start md:gap-10",
-                      flip && "md:[direction:rtl]",
-                    )}
+                      flip && "md:[direction:rtl]")}
                   >
                     <div className={cn("md:[direction:ltr]", flip ? "md:order-2 md:pl-10" : "md:pr-10 md:text-right")}>
                       <span className="font-display text-5xl text-gold/30">{ch.num}</span>
@@ -145,8 +142,7 @@ export default function Biography() {
                                     height={ASPECT_DIMS[sec.aspect ?? "4/5"].h}
                                     className={cn(
                                       "w-full object-cover transition-transform duration-700 group-hover:scale-105",
-                                      ASPECT_CLASS[sec.aspect ?? "4/5"],
-                                    )}
+                                      ASPECT_CLASS[sec.aspect ?? "4/5"])}
                                     loading="lazy"
                                   />
                                   <figcaption className="px-2 py-2 text-center text-[11px] uppercase tracking-wide-sm text-cream/50">

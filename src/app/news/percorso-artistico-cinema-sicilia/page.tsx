@@ -101,7 +101,7 @@ const TIMELINE_ARTISTICA = [
   },
   {
     anno: "2023",
-    titolo: "«Sabbie Nere» — Mediaset",
+    titolo: "",
     tipo: "Serie TV Mediaset",
     ruolo: "Interprete",
     descrizione: "Serie TV Mediaset con regia di Davide Marengo, Maria Antonina accanto ad Angelo Faraci nel cast televisivo.",
@@ -166,9 +166,9 @@ export default function PercorsoArtisticoPage() {
                 <p>
                   Il percorso artistico di Maria Antonina Macaluso è una delle storie più
                   significative del cinema siciliano contemporaneo. In otto anni di carriera,
-                  dal 2019 al 2026, ha interpretato dieci produzioni cinematografiche e
-                  televisive, tutte sotto la regia di Angelo Faraci (esclusi Sabbie Nere e
-                  Vanina, dirette da Davide Marengo). È un percorso denso, costante, fedele al
+                  dal 2019 al 2026, ha interpretato nove produzioni cinematografiche e
+                  televisive, tutte sotto la regia di Angelo Faraci (esclusa
+                  Vanina, diretta da Davide Marengo). È un percorso denso, costante, fedele al
                   territorio siciliano.
                 </p>
                 <p>

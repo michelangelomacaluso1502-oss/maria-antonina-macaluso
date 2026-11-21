@@ -217,7 +217,7 @@ export default function EnciclopediaPage() {
                   cortometraggio Rai Cinema «Don't Be Silent» (2020) al nuovo lungometraggio
                   «Pochi Attimi» (2026), passando per «Provvidenza» (2021, Premio Migliore
                   Sceneggiatura a Fiuggi), «Pietrazita» (2023), «Separati Mai» (2023-2024),
-                  «Sabbie Nere» (2023, Mediaset), «Vanina» (2024, Canale 5), «Il Mistero di
+                  «Vanina» (2024, Canale 5), «Il Mistero di
                   Spartivento» (2024-2025) e il documentario «Eccellenza Siciliana» (2025).
                 </p>
                 <p>
@@ -256,7 +256,6 @@ export default function EnciclopediaPage() {
                       { anno: "2021", titolo: "Provvidenza", tipo: "Cortometraggio", prod: "Rai Cinema", ruolo: "Protagonista femminile" },
                       { anno: "2023", titolo: "Pietrazita", tipo: "Cortometraggio", prod: "Rai Cinema", ruolo: "Interprete" },
                       { anno: "2023-2024", titolo: "Separati Mai", tipo: "Lungometraggio", prod: "Rai Cinema", ruolo: "Attrice" },
-                      { anno: "2023", titolo: "Sabbie Nere", tipo: "Serie TV", prod: "Mediaset", ruolo: "Interprete" },
                       { anno: "2024", titolo: "Vanina", tipo: "Serie TV", prod: "Canale 5", ruolo: "Partecipazione" },
                       { anno: "2024-2025", titolo: "Il Mistero di Spartivento", tipo: "Lungometraggio", prod: "Rai Cinema", ruolo: "Attrice" },
                       { anno: "2025", titolo: "Eccellenza Siciliana", tipo: "Documentario", prod: "Indipendente", ruolo: "Voce narrante" },

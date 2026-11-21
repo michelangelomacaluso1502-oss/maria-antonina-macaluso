@@ -79,6 +79,8 @@ print(f"[OK] sitemap-images.xml: {len(images)} immagini")
 
 # === SITEMAP-NEWS.XML ===
 news_articles = [
+    ("/news/pochi-attimi-cinema-empire-partinico", "Pochi Attimi — Proiezione Cinema Empire Partinico", "2026-11-20"),
+    ("/news/pochi-attimi-proiezione-messina", "Pochi Attimi — Proiezione Messina", "2026-11-21"),
     ("/news/pochi-attimi-venezia-83", "VENEZIA 83 — Pochi Attimi al Premio Leone Lungo", "2026-08-16"),
     ("/news/sodalizio-maria-antonina-angelo-faraci", "Sodalizio artistico Macaluso-Faraci — 10 film", "2026-09-25"),
     ("/news/cast-pochi-attimi", "Cast Pochi Attimi — scheda completa", "2026-09-28"),

@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://mariaantoninamacaluso.it/news/pochi-attimi-cinema-empire-partinico</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Maria Antonina Macaluso — Sito ufficiale</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2026-11-20</news:publication_date>
+      <news:title>Pochi Attimi — Proiezione Cinema Empire Partinico</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://mariaantoninamacaluso.it/news/pochi-attimi-proiezione-messina</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Maria Antonina Macaluso — Sito ufficiale</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2026-11-21</news:publication_date>
+      <news:title>Pochi Attimi — Proiezione Messina</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://mariaantoninamacaluso.it/news/pochi-attimi-venezia-83</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>

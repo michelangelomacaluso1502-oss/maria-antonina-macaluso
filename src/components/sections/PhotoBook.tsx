@@ -20,25 +20,26 @@ export default function PhotoBook({ compact = false }: { compact?: boolean }) {
           title="Novanta scatti"
           subtitle="Un archivio visivo dell'attrice siciliana"
         />
-        {/* Griglia uniforme responsive — foto compatte su tutti i device */}
-        <div className="grid grid-cols-3 gap-1.5 sm:grid-cols-4 sm:gap-2 md:grid-cols-5 md:gap-3 lg:gap-4 xl:grid-cols-6">
+        {/* Griglia uniforme responsive — foto piccole e compatte (stile Vercel)
+            Mobile: 4 colonne / Tablet: 6 / Desktop: 8 / XL: 10 */}
+        <div className="grid grid-cols-4 gap-1 sm:grid-cols-6 sm:gap-1.5 md:grid-cols-8 md:gap-2 xl:grid-cols-10">
           {list.map((p, i) => (
-            <Reveal key={p.id} delay={(i % 6) * 40}>
+            <Reveal key={p.id} delay={(i % 8) * 30}>
               <Link
                 href={`/photo/${p.id}`}
-                className="group block overflow-hidden bg-smoke rounded-md md:rounded-lg"
+                className="group block overflow-hidden bg-smoke rounded-sm md:rounded-md"
                 aria-label={p.alt}
               >
-                <figure className="relative aspect-[3/4]">
+                <figure className="relative aspect-square">
                   <img
                     src={p.src}
                     alt={p.alt}
                     loading="lazy"
                     decoding="async"
-                    className="h-full w-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-110"
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110 group-hover:brightness-110"
                   />
-                  <figcaption className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-noir/80 via-transparent to-transparent p-2 md:p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <span className="text-[10px] uppercase tracking-wide-sm text-cream/90 md:text-xs">{p.title}</span>
+                  <figcaption className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-noir/80 via-transparent to-transparent p-1 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                    <span className="text-[9px] uppercase tracking-wide-sm text-cream/90 md:text-[10px]">{p.title}</span>
                   </figcaption>
                 </figure>
               </Link>

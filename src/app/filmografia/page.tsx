@@ -34,7 +34,6 @@ const collectionJsonLd = {
     { "@type": "Movie", name: "Provvidenza", datePublished: "2021" },
     { "@type": "Movie", name: "Pietrazita", datePublished: "2023" },
     { "@type": "Movie", name: "Separati Mai", datePublished: "2023" },
-    { "@type": "Movie", name: "Sabbie Nere", datePublished: "2023" },
     { "@type": "Movie", name: "Vanina", datePublished: "2024" },
     { "@type": "Movie", name: "Il Mistero di Spartivento", datePublished: "2024" },
     { "@type": "Movie", name: "Pochi Attimi", datePublished: "2026" },
@@ -53,7 +52,7 @@ export default function FilmografiaPage() {
       />
       <PageHero
         eyebrow="Filmografia"
-        title="Dieci produzioni, una visione"
+        title="Nove produzioni, una visione"
         subtitle="Dal debutto Ciò che non ti ho detto (2019) a Pochi Attimi (2026) — tutti diretti da Angelo Faraci"
         breadcrumb={[{ label: "Filmografia" }]}
       />

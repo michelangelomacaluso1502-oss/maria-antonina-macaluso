@@ -51,7 +51,6 @@ const SEARCH_INDEX = [
   { type: "Film", title: "Provvidenza (2021)", url: "/film/provvidenza", keywords: "provvidenza 2021 cortometraggio rai cinema montalbano" },
   { type: "Film", title: "Pietrazita (2023)", url: "/film/pietrazita", keywords: "pietrazita 2023 cortometraggio rai cinema nebros" },
   { type: "Film", title: "Separati Mai (2023-2024)", url: "/film/separati-mai", keywords: "separati mai 2023 lungometraggio rai cinema" },
-  { type: "Film", title: "Sabbie Nere (2023)", url: "/film/sabbie-nere", keywords: "sabbie nere 2023 serie tv mediaset marengo" },
   { type: "Film", title: "Vanina (2024)", url: "/film/vanina", keywords: "vanina 2024 serie tv canale 5 mediaset catania" },
   { type: "Film", title: "Il Mistero di Spartivento (2024-2025)", url: "/film/il-mistero-di-spartivento", keywords: "mistero spartivento 2024 2025 rai cinema suspense" },
   { type: "Film", title: "Eccellenza Siciliana (2025)", url: "/altre-produzioni/eccellenza-siciliana", keywords: "eccellenza siciliana 2025 documentario" },

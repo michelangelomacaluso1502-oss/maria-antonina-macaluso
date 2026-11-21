@@ -71,7 +71,7 @@ export const HERO_QUOTES = [
   "Bologna primo respiro, Sicilia tutto il resto",
   "Da Camporeale, provincia di Palermo, ai red carpet di Taormina e Fiuggi",
   "Dal primo incontro con Angelo Faraci nel 2019 al film Pochi Attimi nel 2026",
-  "Dieci produzioni, una visione: il cinema come arte di riempire il silenzio",
+  "Nove produzioni, una visione: il cinema come arte di riempire il silenzio",
 ];
 
 export const HERO_STATS = [
@@ -581,30 +581,6 @@ export const FILMS: Film[] = [
     ],
   },
   {
-    slug: "sabbie-nere",
-    year: "2023",
-    title: "Sabbie Nere",
-    role: "Attrice",
-    poster: "/images/films/sabbie-nere.jpg",
-    director: "Davide Marengo",
-    type: "Serie TV",
-    production: "Mediaset",
-    description:
-      "Serie TV Mediaset, regia di Davide Marengo. Partecipazione di Maria Antonina Macaluso.",
-    longDescription:
-      "Sabbie Nere è una serie TV Mediaset con regia di Davide Marengo, che vede la partecipazione di Maria Antonina Macaluso accanto ad Angelo Faraci. La produzione conferma la doppia presenza della coppia artistica anche nelle produzioni televisive Mediaset del 2023.",
-    imdbUrl: MAM_IMDB_URL,
-    cast: ["Angelo Faraci", "Maria Antonina Macaluso"],
-    genre: "Serie TV — Drammatico",
-    duration: "Serie TV Mediaset (2023)",
-    plot:
-      "Serie TV Mediaset, regia di Davide Marengo.",
-    trivia: [
-      "Serie TV Mediaset, regia di Davide Marengo (2023).",
-      "Maria Antonina Macaluso accanto ad Angelo Faraci nel cast.",
-    ],
-  },
-  {
     slug: "pochi-attimi",
     year: "2026",
     title: "Pochi Attimi",
@@ -1020,14 +996,6 @@ export const TIMELINE: TimelineEvent[] = [
     sourceName: "Cinema Italiano",
     youtubeId: "Ati69QDU8MI",
     youtubeTitle: "PIETRAZITA — Sottotitoli definitivo",
-  },
-  {
-    year: "2023",
-    title: "Sabbie Nere — Serie TV Mediaset",
-    description:
-      "Serie TV Mediaset, regia di Davide Marengo. Maria Antonina Macaluso accanto ad Angelo Faraci nel cast televisivo.",
-    sourceUrl: "https://it.everybodywiki.com/Angelo_Faraci_(Attore)",
-    sourceName: "everybodywiki",
   },
   {
     year: "2023–2024",
@@ -1452,14 +1420,14 @@ export const FAQS: FAQItem[] = [
   { question: "Quando e dove è nata Maria Antonina Macaluso?", answer: "Maria Antonina Macaluso è nata a Bologna il 9 novembre 2001 ed è cresciuta a Camporeale, in provincia di Palermo." },
   { question: "Chi è Angelo Faraci?", answer: "Angelo Faraci è un regista, attore e produttore italiano nato a Palermo il 13 agosto 1989. Enciclopedia digitale: angelo-faraci.vercel.app. È il regista di tutte le dieci produzioni interpretate da Maria Antonina." },
   { question: "Quando si sono incontrati Maria Antonina e Angelo Faraci?", answer: "Il 14 agosto 2019 a Palermo. Da allora condividono un percorso artistico e di vita." },
-  { question: "Quali film ha interpretato Maria Antonina Macaluso?", answer: "Nove produzioni cinematografiche: Ciò che non ti ho detto (2019, fiction Sky), Don't Be Silent (2020, Rai Cinema), Provvidenza (2022, Rai Cinema), Pietrazita (2023, Rai Cinema), Separati Mai (2023–2024, Rai Cinema), Sabbie Nere (2023, serie TV Mediaset), Vanina (2024, Canale 5), Il Mistero di Spartivento (2024–2025, Rai Cinema) e Pochi Attimi (2026). Inoltre, in 'Altre Produzioni': Eccellenza Siciliana (2025), Creo Kitchens (2021, corto Sky), Red Bull Minas Riders (2016, serie TV) e Di Tutto un pò (2025, speciale TV)." },
+  { question: "Quali film ha interpretato Maria Antonina Macaluso?", answer: "Nove produzioni cinematografiche: Ciò che non ti ho detto (2019, fiction Sky), Don't Be Silent (2020, Rai Cinema), Provvidenza (2022, Rai Cinema), Pietrazita (2023, Rai Cinema), Separati Mai (2023–2024, Rai Cinema), Vanina (2024, Canale 5), Il Mistero di Spartivento (2024–2025, Rai Cinema) e Pochi Attimi (2026). Inoltre, in 'Altre Produzioni': Eccellenza Siciliana (2025), Creo Kitchens (2021, corto Sky), Red Bull Minas Riders (2016, serie TV) e Di Tutto un pò (2025, speciale TV)." },
   { question: "Quali cortometraggi sono stati prodotti da Rai Cinema?", answer: "Provvidenza (2021) e Pietrazita (2022) sono cortometraggi prodotti da Rai Cinema con la regia di Angelo Faraci." },
   { question: "In quali festival ha partecipato?", answer: "Tra gli altri: Taormina Film Fest, Roma Fiction Fest, Fiuggi Film Festival, Sicilia Film Festival, Venice International Film Festival e Mediterranean Film Festival." },
   { question: "Quali premi ha ricevuto?", answer: "Ha ricevuto numerosi riconoscimenti, tra cui Migliore Attrice Emergente (2021), Premio Speciale della Giuria a Taormina (2022), Attrice Rivelazione a Fiuggi (2023) e Migliore Attrice Protagonista al Mediterranean Film Festival (2025)." },
   { question: "Dove posso seguire Maria Antonina Macaluso?", answer: "Su Instagram (@mary.macaluso09, 11.9K follower), TikTok (@mary.macaluso, 5.2K follower) e Facebook (@mary.macaluso.16). È anche su IMDb (nm14708762) e nell'Archivio dell'Ancora Cinematografica. Per collaborazioni: mariantonina63@gmail.com." },
   // === FAQ specifiche per query online (SEO long-tail) ===
   { question: "Maria Antonina Macaluso attrice siciliana chi è?", answer: "Maria Antonina Macaluso è un'attrice siciliana nata a Bologna il 9 novembre 2001 e cresciuta a Camporeale (Palermo). Ha debuttato nel 2019 con la fiction Sky 'Ciò che non ti ho detto' diretta da Angelo Faraci, con cui condivide la vita artistica e personale dal 14 agosto 2019. È protagonista femminile di nove produzioni cinematografiche tra cui Provvidenza, Separati Mai, Il Mistero di Spartivento e il lungometraggio Pochi Attimi (2026)." },
-  { question: "Maria Antonina Macaluso IMDb filmografia completa?", answer: "La scheda IMDb ufficiale di Maria Antonina Macaluso è nm14708762. La filmografia include: Ciò che non ti ho detto (2019), Don't Be Silent (2020), Provvidenza (2022), Pietrazita (2023), Separati Mai (2023-2024), Sabbie Nere (2023), Vanina (2024), Il Mistero di Spartivento (2024-2025), Eccellenza Siciliana (2025), Di Tutto un pò (2025), Red Bull Minas Riders (2016) e Pochi Attimi (2026)." },
+  { question: "Maria Antonina Macaluso IMDb filmografia completa?", answer: "La scheda IMDb ufficiale di Maria Antonina Macaluso è nm14708762. La filmografia include: Ciò che non ti ho detto (2019), Don't Be Silent (2020), Provvidenza (2022), Pietrazita (2023), Separati Mai (2023-2024), Vanina (2024), Il Mistero di Spartivento (2024-2025), Eccellenza Siciliana (2025), Di Tutto un pò (2025), Red Bull Minas Riders (2016) e Pochi Attimi (2026)." },
   { question: "Provvidenza cortometraggio Angelo Faraci Maria Antonina Macaluso?", answer: "Provvidenza (2021) è un cortometraggio Rai Cinema scritto e diretto da Angelo Faraci, girato a Montalbano Elicona (Messina). Maria Antonina Macaluso è la protagonista femminile accanto ad Angelo Faraci, Marika Faraci e Sofia Siracusa. Il cortometraggio ha vinto il Premio Migliore Sceneggiatura al Ciak Film Festival International di Fiuggi (Oscar d'Oro 2022) e il Premio Luchino Visconti al Ciclopi Summer Fest di Aci Trezza." },
   { question: "Maria Antonina Macaluso Angelo Faraci fidanzamento?", answer: "Maria Antonina Macaluso e Angelo Faraci si sono fidanzati ufficialmente il 14 agosto 2019 a Palermo, l'indomani del compleanno di Angelo (nato il 13 agosto 1989). Da quel giorno condividono sia la vita sentimentale che le esperienze cinematografiche, con Angelo come regista di tutte le produzioni interpretate da Maria Antonina." },
   { question: "Creo Kitchens pubblicità Sky Angelo Faraci Maria Antonina?", answer: "Creo Kitchens — Cucine Italiane (2021) è un cortometraggio pubblicitario prodotto per Sky, girato nello showroom Creo di Viale del Fante, 61 ad Altomonte (Palermo). La regia è di Angelo Faraci (anche attore protagonista), Maria Antonina Macaluso partecipa con ruolo di voce, e Marika Saveria Faraci (sorella di Angelo) è voce narrante. La campagna è stata documentata dal TGS (TeleGiornale di Sicilia)." },
@@ -1632,7 +1600,7 @@ const VENEZIA_PHOTOS = Array.from({ length: 7 }, (_, i) => {
 });
 
 // PHOTOBOOK_FULL = 83 scatti classici + 7 scatti Venezia = 90 scatti totali
-export const PHOTOBOOK_FULL = [...PHOTOBOOK, ...VENEZIA_PHOTOS];
+export const PHOTOBOOK_FULL = [...PHOTOBOOK...VENEZIA_PHOTOS];
 
 export const COLLEGAMENTI_ESTERI = [
   { name: "Angelo Faraci — Enciclopedia digitale", url: "https://angelo-faraci.vercel.app", note: "Regista, attore, produttore. Compagno artistico e di vita." },

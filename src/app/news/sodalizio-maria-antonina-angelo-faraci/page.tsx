@@ -74,7 +74,6 @@ const FILMOGRAFIA_CONGIUNTA = [
   { year: "2021", title: "Provvidenza", type: "Cortometraggio Rai Cinema", role: "Protagonista femminile" },
   { year: "2023", title: "Pietrazita", type: "Cortometraggio Rai Cinema", role: "Interprete principale" },
   { year: "2023-2024", title: "Separati Mai", type: "Lungometraggio Rai Cinema", role: "Attrice" },
-  { year: "2023", title: "Sabbie Nere", type: "Serie TV Mediaset", role: "Interprete" },
   { year: "2024", title: "Vanina", type: "Serie TV Canale 5", role: "Partecipazione" },
   { year: "2024-2025", title: "Il Mistero di Spartivento", type: "Lungometraggio Rai Cinema", role: "Attrice" },
   { year: "2025", title: "Eccellenza Siciliana", type: "Documentario", role: "Voce narrante" },
@@ -299,8 +298,7 @@ export default function SodalizioArtisticoPage() {
                   distanza e al tempo, con una fotografia che valorizza i paesaggi siciliani.
                 </p>
                 <p>
-                  Nel 2023 Maria Antonina è anche nel cast di «Sabbie Nere», serie TV Mediaset
-                  diretta da Davide Marengo, accanto ad Angelo Faraci. L'anno successivo, nel
+                  L'anno successivo, nel
                   2024, partecipa a un episodio della prima stagione di «Vanina», serie TV Canale
                   5 / Mediaset, sempre con la regia di Davide Marengo. Nel 2024-2025 è la volta
                   de «Il Mistero di Spartivento», lungometraggio Rai Cinema con regia di Angelo

@@ -514,17 +514,6 @@ const personJsonLd = {
     },
     {
       "@type": "Movie",
-      name: "Sabbie Nere",
-      datePublished: "2023",
-      image: `${SITE.url}/images/films/separati-mai.jpg`,
-      director: { "@type": "Person", name: "Davide Marengo" },
-      genre: "Serie TV — Drammatico",
-      productionCompany: { "@type": "Organization", name: "Mediaset" },
-      description:
-        "Serie TV Mediaset con regia di Davide Marengo. Partecipazione di Maria Antonina Macaluso accanto ad Angelo Faraci.",
-    },
-    {
-      "@type": "Movie",
       name: "Vanina",
       alternateName: "Vanina — Un vicequestore a Catania",
       datePublished: "2024",
@@ -651,7 +640,7 @@ const faqJsonLd = {
       name: "Quali film ha interpretato Maria Antonina Macaluso?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Nove produzioni cinematografiche: Ciò che non ti ho detto (2019), Don't Be Silent (2020), Provvidenza (2022), Pietrazita (2023), Separati Mai (2023-2024), Sabbie Nere (2023), Vanina (2024), Il Mistero di Spartivento (2024-2025) e Pochi Attimi (2026).",
+        text: "Nove produzioni cinematografiche: Ciò che non ti ho detto (2019), Don't Be Silent (2020), Provvidenza (2022), Pietrazita (2023), Separati Mai (2023-2024), Vanina (2024), Il Mistero di Spartivento (2024-2025) e Pochi Attimi (2026).",
       },
     },
     {
@@ -783,11 +772,10 @@ const filmografiaItemList = {
     { "@type": "ListItem", position: 3, name: "Provvidenza (2021)", url: `${SITE.url}/film/provvidenza` },
     { "@type": "ListItem", position: 4, name: "Pietrazita (2023)", url: `${SITE.url}/film/pietrazita` },
     { "@type": "ListItem", position: 5, name: "Separati Mai (2023-2024)", url: `${SITE.url}/film/separati-mai` },
-    { "@type": "ListItem", position: 6, name: "Sabbie Nere (2023)", url: `${SITE.url}/film/sabbie-nere` },
-    { "@type": "ListItem", position: 7, name: "Vanina (2024)", url: `${SITE.url}/film/vanina` },
-    { "@type": "ListItem", position: 8, name: "Il Mistero di Spartivento (2024-2025)", url: `${SITE.url}/film/il-mistero-di-spartivento` },
-    { "@type": "ListItem", position: 9, name: "Eccellenza Siciliana (2025)", url: `${SITE.url}/altre-produzioni/eccellenza-siciliana` },
-    { "@type": "ListItem", position: 10, name: "Pochi Attimi (2026)", url: `${SITE.url}/film/pochi-attimi` },
+    { "@type": "ListItem", position: 6, name: "Vanina (2024)", url: `${SITE.url}/film/vanina` },
+    { "@type": "ListItem", position: 7, name: "Il Mistero di Spartivento (2024-2025)", url: `${SITE.url}/film/il-mistero-di-spartivento` },
+    { "@type": "ListItem", position: 8, name: "Eccellenza Siciliana (2025)", url: `${SITE.url}/altre-produzioni/eccellenza-siciliana` },
+    { "@type": "ListItem", position: 9, name: "Pochi Attimi (2026)", url: `${SITE.url}/film/pochi-attimi` },
   ],
 };
 
@@ -939,6 +927,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="alternate" hrefLang="pl" href="https://mariaantoninamacaluso.it/" />
         <link rel="alternate" hrefLang="nl" href="https://mariaantoninamacaluso.it/" />
         <link rel="alternate" hrefLang="x-default" href="https://mariaantoninamacaluso.it/" />
+        {/* === SECURITY HEADERS via meta http-equiv (GitHub Pages non supporta .htaccess/_headers) === */}
+        {/* Content Security Policy: previene XSS, injection, data exfiltration */}
+        <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://translate.google.com https://api.mymemory.translated.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://api.mymemory.translated.net https://translate.google.com; media-src 'self' https:; frame-src 'self' https://www.youtube.com https://translate.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';" />
+        {/* X-Frame-Options: previene clickjacking */}
+        <meta httpEquiv="X-Frame-Options" content="DENY" />
+        {/* X-Content-Type-Options: previene MIME sniffing */}
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        {/* Referrer-Policy: limita info referrer */}
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        {/* Permissions-Policy: disabilita API non necessarie */}
+        <meta httpEquiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()" />
+        {/* Strict-Transport-Security (HSTS): forza HTTPS */}
+        <meta httpEquiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload" />
+        {/* Copyright meta */}
+        <meta name="copyright" content="© 2026 Maria Antonina Macaluso. Tutti i diritti riservati. Legge 22 aprile 1941, n. 633." />
+        <meta name="dcterms.rightsHolder" content="Maria Antonina Macaluso" />
+        <meta name="dcterms.rights" content="Tutti i diritti riservati. Riproduzione vietata ai sensi della Legge 633/1941." />
+        {/* Anti-scraping (noarchive previene cache Google, altri permessi per SEO) */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1, noarchive" />
         {/* Font CSS con font-display swap per eliminare FOUT */}
         <link
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Italiana&display=swap"
