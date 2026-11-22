@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/news/layout,_N_T_/news/maria-antonina-macaluso-fiuggi-premio-attrice/layout,_N_T_/news/maria-antonina-macaluso-fiuggi-premio-attrice/page,_N_T_/news/maria-antonina-macaluso-fiuggi-premio-attrice"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/news/maria-antonina-macaluso-fiuggi-premio-attrice/__PAGE__",
+    "/news/maria-antonina-macaluso-fiuggi-premio-attrice",
+    "/news",
+    "/_index",
+    "/_head"
+  ]
+}

@@ -3,4 +3,4 @@
 :HL["/images/hero-maria-antonina.jpg","image",{"fetchPriority":"high"}]
 :HL["/_next/static/chunks/main-app.css","style"]
 :Hm"/_next/static/chunks/main-app.js"
-0:{"buildId":"VxMKETPSopb9NrcnU05kD","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"timeline","paramType":null,"paramKey":"timeline","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"l6YeBj2G9jTRu4DmmsMqA","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"timeline","paramType":null,"paramKey":"timeline","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

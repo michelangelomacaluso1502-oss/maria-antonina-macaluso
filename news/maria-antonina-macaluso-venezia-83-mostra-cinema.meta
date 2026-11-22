@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/news/layout,_N_T_/news/maria-antonina-macaluso-venezia-83-mostra-cinema/layout,_N_T_/news/maria-antonina-macaluso-venezia-83-mostra-cinema/page,_N_T_/news/maria-antonina-macaluso-venezia-83-mostra-cinema"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/news/maria-antonina-macaluso-venezia-83-mostra-cinema/__PAGE__",
+    "/news/maria-antonina-macaluso-venezia-83-mostra-cinema",
+    "/news",
+    "/_index",
+    "/_head"
+  ]
+}
