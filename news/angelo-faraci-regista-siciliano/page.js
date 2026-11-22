@@ -1,5 +1,5 @@
 var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/news/angelo-faraci-regista-siciliano/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__61d05fc6._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__59694376._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_4b9a0874._.js")
 R.c("server/chunks/ssr/_d403c5b4._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__9b01a216._.js")

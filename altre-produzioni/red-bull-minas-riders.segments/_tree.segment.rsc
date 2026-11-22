@@ -1,7 +1,7 @@
-:HL["/_next/static/chunks/ec24519a770c7f74.css","style"]
+:HL["/_next/static/chunks/482ee25033c38987.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Italiana&display=swap","style"]
 :HL["/images/hero-maria-antonina.jpg","image",{"fetchPriority":"high"}]
 :HL["/_next/static/chunks/main-app.css","style"]
 :Hm"/_next/static/chunks/main-app.js"
 :HL["/images/films/red-bull-minas-riders.jpg","image"]
-0:{"buildId":"GgHHiGPUrg0db0X_GIJA4","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"altre-produzioni","paramType":null,"paramKey":"altre-produzioni","hasRuntimePrefetch":false,"slots":{"children":{"name":"slug","paramType":"d","paramKey":"red-bull-minas-riders","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"E6rJxHxmZZ6-HazQkttnc","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"altre-produzioni","paramType":null,"paramKey":"altre-produzioni","hasRuntimePrefetch":false,"slots":{"children":{"name":"slug","paramType":"d","paramKey":"red-bull-minas-riders","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

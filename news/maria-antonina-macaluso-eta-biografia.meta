@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/news/layout,_N_T_/news/maria-antonina-macaluso-eta-biografia/layout,_N_T_/news/maria-antonina-macaluso-eta-biografia/page,_N_T_/news/maria-antonina-macaluso-eta-biografia"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/news/maria-antonina-macaluso-eta-biografia/__PAGE__",
+    "/news/maria-antonina-macaluso-eta-biografia",
+    "/news",
+    "/_index",
+    "/_head"
+  ]
+}

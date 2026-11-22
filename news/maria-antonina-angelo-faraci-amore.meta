@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/news/layout,_N_T_/news/maria-antonina-angelo-faraci-amore/layout,_N_T_/news/maria-antonina-angelo-faraci-amore/page,_N_T_/news/maria-antonina-angelo-faraci-amore"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/news/maria-antonina-angelo-faraci-amore/__PAGE__",
+    "/news/maria-antonina-angelo-faraci-amore",
+    "/news",
+    "/_index",
+    "/_head"
+  ]
+}

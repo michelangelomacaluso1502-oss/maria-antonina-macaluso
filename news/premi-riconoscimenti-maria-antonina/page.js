@@ -1,5 +1,5 @@
 var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/news/premi-riconoscimenti-maria-antonina/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__cf85dd17._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__d3b9766d._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_4b9a0874._.js")
 R.c("server/chunks/ssr/_367b43d9._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__9b01a216._.js")
