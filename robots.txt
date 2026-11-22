@@ -1,8 +1,48 @@
+# robots.txt — Maria Antonina Macaluso Sito Ufficiale
+# Sito principale: https://mariaantoninamacaluso.it
+# Hosted on GitHub Pages (HTTPS enforced)
+
+# === DISALLOW VERCEL (siti deprecatali/eliminati) ===
+# I vecchi deployment Vercel sono stati eliminati ma potrebbero
+# essere ancora indicizzati. Blocco crawlers dal tentare di accedere.
+# Questi URL ritornano 404 ma il blocco robots previene indicizzazione residua.
+
+# === ALLOW TUTTO IL SITO .it ===
 User-Agent: *
 Allow: /
+Allow: /biografia
+Allow: /filmografia
+Allow: /photobook
+Allow: /enciclopedia-maria-antonina
+Allow: /news/
+Allow: /film/
+Allow: /tag/
+Allow: /altre-produzioni/
+Allow: /images/
+Allow: /translations/
+Allow: /contatti
+Allow: /faq
+Allow: /collaborazioni
+Allow: /timeline
+Allow: /premi
+Allow: /festival
+Allow: /articoli
+Allow: /citazioni
+Allow: /multimedia
+Allow: /angelo-faraci
+Allow: /collegamenti-esteri
+Allow: /search
+
+# === DISALLOW percorsi tecnici ===
 Disallow: /api/
 Disallow: /_next/
+Disallow: /*?nocache=
+Disallow: /*?v=
 
+# === SITEMAP ===
 Sitemap: https://mariaantoninamacaluso.it/sitemap.xml
 Sitemap: https://mariaantoninamacaluso.it/sitemap-images.xml
 Sitemap: https://mariaantoninamacaluso.it/sitemap-news.xml
+
+# === CRAWL-DELAY per evitare sovraccarico ===
+Crawl-delay: 1
