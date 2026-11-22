@@ -1,5 +1,5 @@
 var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/news/percorso-artistico-cinema-sicilia/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__ca9b2c0b._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__a51f271b._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_4b9a0874._.js")
 R.c("server/chunks/ssr/_06c81be9._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__9b01a216._.js")

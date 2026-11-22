@@ -1,5 +1,5 @@
 var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/news/cast-pochi-attimi/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__1dab769a._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__9cd3a7d4._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_4b9a0874._.js")
 R.c("server/chunks/ssr/_cc6468e1._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__9b01a216._.js")

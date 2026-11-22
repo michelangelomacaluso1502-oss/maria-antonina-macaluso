@@ -1,5 +1,5 @@
 var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/tag/angelo-faraci/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__0be91377._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__5ef8c90b._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_4b9a0874._.js")
 R.c("server/chunks/ssr/_7253c5ed._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__9b01a216._.js")

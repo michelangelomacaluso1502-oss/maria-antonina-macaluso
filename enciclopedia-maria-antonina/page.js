@@ -1,5 +1,5 @@
 var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/enciclopedia-maria-antonina/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__9bb2ff2c._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__7af60920._.js")
 R.c("server/chunks/ssr/src_app_enciclopedia-maria-antonina_page_tsx_cadf71f8._.js")
 R.c("server/chunks/ssr/_4df7b570._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_4b9a0874._.js")

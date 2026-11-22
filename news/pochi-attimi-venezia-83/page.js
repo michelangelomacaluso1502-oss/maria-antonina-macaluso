@@ -1,5 +1,5 @@
 var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/news/pochi-attimi-venezia-83/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__874e6f6c._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__5db0d76f._.js")
 R.c("server/chunks/ssr/src_app_news_pochi-attimi-venezia-83_page_tsx_7307a8b1._.js")
 R.c("server/chunks/ssr/_c5720e3c._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_4b9a0874._.js")

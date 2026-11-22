@@ -1,5 +1,5 @@
 var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/news/maria-antonina-macaluso-prossimi-film-2026/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__0ab2fb17._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__b714d6fb._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_4b9a0874._.js")
 R.c("server/chunks/ssr/_635ccfeb._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__9b01a216._.js")

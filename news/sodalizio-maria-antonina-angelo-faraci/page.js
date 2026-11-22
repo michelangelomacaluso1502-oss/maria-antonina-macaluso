@@ -1,5 +1,5 @@
 var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/news/sodalizio-maria-antonina-angelo-faraci/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__558866e5._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__bb639aef._.js")
 R.c("server/chunks/ssr/src_app_news_sodalizio-maria-antonina-angelo-faraci_page_tsx_598ea70a._.js")
 R.c("server/chunks/ssr/_e2a71f32._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_4b9a0874._.js")

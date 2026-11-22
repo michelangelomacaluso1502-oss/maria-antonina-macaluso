@@ -1,5 +1,5 @@
 var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/news/intervista-maria-antonina-macaluso/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__4dd1126f._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__91c47bc6._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_4b9a0874._.js")
 R.c("server/chunks/ssr/_6021976f._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__9b01a216._.js")
