@@ -8,4 +8,4 @@
 :HL["/images/films/creo-kitchens.jpg","image"]
 :HL["/images/films/red-bull-minas-riders.jpg","image"]
 :HL["/images/films/di-tutto-un-po.jpg","image"]
-0:{"buildId":"E6rJxHxmZZ6-HazQkttnc","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"RzRFvYsmr2YbS0QiEb3jI","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
